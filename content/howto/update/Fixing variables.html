@@ -1,0 +1,1571 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixing the value of variables &#8212; ModelFlow</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Useful model instance properties and methods" href="../../Python/modelflow_features.html" />
+    <link rel="prev" title="Create many scenarios, simulate them and access results" href="create_save_scenarios.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ModelFlow</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model, solutions and Modelflow
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/intro/model%20and%20solution.html">
+   What is a Model in ModelFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/intro/Example%20Solow.html">
+   Example Solow model
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python and pandas stuff
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Python/Intro_Jupyter_notebook.html">
+   Introduction to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/pandas/dataframes.html">
+   Introduction to Pandas dataframes
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Updating variables
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="model%20update.html">
+   Update, modifying series in a dataframe using modelflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extending_dataframes.html">
+   Extend Pandas dataframes with ModelFLow capabilities.
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Simulate models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="create_experiment.html">
+   Create an experiment, simulate it and access results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="create_save_scenarios.html">
+   Create many scenarios, simulate them  and access results
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fixing the value of designated variables.
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Fixing the value of variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Features
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Python/modelflow_features.html">
+   Useful model instance properties and methods
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Structure
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../structure/Logical_structure.html">
+   Logical structure and dependencies.
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Onboarding
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
+   Specification of models (introduction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
+   Onboard a model defined in a .wf1 file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard/eviews/onboard%20many%20models%20from%20wf1.html">
+   Onboard all models  defined in .wf1 files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
+   Normalizing when onboarding  eviews models
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Attribution
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../attribution/Attribution%20background.html">
+   Attribution
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimization/Optimize_simpel.html">
+   Mean variance optimization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  More
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../litterature.html">
+   Litterature
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter book test
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../booktest.html">
+   Test of Jupyter book features.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/howto/update/Fixing variables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/howto/update/Fixing variables.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/content/howto/update/Fixing variables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-the-model-class">
+   Import the model class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">
+   Load a pre-existing model, data and descriptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-fix-the-values-for-variables">
+   How to fix the values for variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed">
+     .wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-run-the-model-with-the-new-dataframe">
+   Now run the model with the new dataframe
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fix-inf-show-relevant-variables-for-each-fixed-variables">
+     .fix_inf() Show relevant variables for each fixed variables.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-result-match-the-result-before-exogenizing-as-it-should">
+     The result match the result before exogenizing, as it should
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dump-the-model-and-solution-for-later-use">
+   Dump the model and solution for later use.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-advanced-information">
+   More advanced information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-of-potential-and-actual-fixed-variables">
+     List of potential and actual fixed variables.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-of-all-fixable-variables-for-this-model">
+       LIst of all fixable variables for this model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-of-fixed-variables">
+       List of fixed variables
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values">
+       Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#show-the-equations-for-the-calc-add-factor-model">
+       Show the equations for the .calc_add_factor_model
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fixing the value of variables</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-the-model-class">
+   Import the model class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">
+   Load a pre-existing model, data and descriptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-fix-the-values-for-variables">
+   How to fix the values for variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed">
+     .wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-run-the-model-with-the-new-dataframe">
+   Now run the model with the new dataframe
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fix-inf-show-relevant-variables-for-each-fixed-variables">
+     .fix_inf() Show relevant variables for each fixed variables.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-result-match-the-result-before-exogenizing-as-it-should">
+     The result match the result before exogenizing, as it should
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dump-the-model-and-solution-for-later-use">
+   Dump the model and solution for later use.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-advanced-information">
+   More advanced information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-of-potential-and-actual-fixed-variables">
+     List of potential and actual fixed variables.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-of-all-fixable-variables-for-this-model">
+       LIst of all fixable variables for this model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-of-fixed-variables">
+       List of fixed variables
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values">
+       Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#show-the-equations-for-the-calc-add-factor-model">
+       Show the equations for the .calc_add_factor_model
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fixing-the-value-of-variables">
+<h1>Fixing the value of variables<a class="headerlink" href="#fixing-the-value-of-variables" title="Permalink to this headline">¶</a></h1>
+<p>Provided a model has been specified to allow this. It is possible to fix the values of some endogenous variable. This can be
+useful in many situations. Also when a variable is fixed a matching add factor is calculated. This keeps the result unchanged
+when the fixing is lifted and the marginal properties of the model is preserved.</p>
+<div class="section" id="import-the-model-class">
+<h2>Import the model class<a class="headerlink" href="#import-the-model-class" title="Permalink to this headline">¶</a></h2>
+<p>This class incorporates most of the methods used to manage a model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="o">%</span><span class="k">load_ext</span> autoreload
+ <span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span> 
+<span class="kn">import</span> <span class="nn">modelwidget</span> <span class="k">as</span> <span class="nn">mw</span>
+<span class="n">model</span><span class="o">.</span><span class="n">widescreen</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">scroll_off</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+    div#notebook-container    { width: 95%; }
+    div#menubar-container     { width: 65%; }
+    div#maintoolbar-container { width: 99%; }
+</style>
+</div></div>
+</div>
+</div>
+<div class="section" id="load-a-pre-existing-model-data-and-descriptions">
+<h2>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">¶</a></h2>
+<p>The file <code class="docutils literal notranslate"><span class="pre">pak.pcim</span></code> contains a dump of model equations, dataframe, simulation options and variable descriptions. The file was created separately.</p>
+<p>The modelload method returns an instance <code class="docutils literal notranslate"><span class="pre">mpak</span></code> of the <code class="docutils literal notranslate"><span class="pre">model</span></code> class, and a dataframe <code class="docutils literal notranslate"><span class="pre">result</span></code> that holds the baseline run.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">,</span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-fix-the-values-for-variables">
+<h2>How to fix the values for variables<a class="headerlink" href="#how-to-fix-the-values-for-variables" title="Permalink to this headline">¶</a></h2>
+<p>The equation for a fixable variable should like this:</p>
+<blockquote>
+<div><p>frml &lt;z,exo&gt; VAR  = (expression)*(1-VAR_D) + VAR_X * VAR_D</p>
+</div></blockquote>
+<p>Each endogenous variable which has an _D variable and _X variable can be fixed</p>
+<p>_D=1 means that the variable is to be fixed and</p>
+<p>_X holds the value to which it should be fixed</p>
+<p>In the pak model all stocastic equations are fixable.</p>
+<div class="section" id="wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed">
+<h3>.wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed.<a class="headerlink" href="#wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed" title="Permalink to this headline">¶</a></h3>
+<p>The code fixes the values for some variables by setting the _X variable to the current value, and _D variable to 1 in the timespan [start,end].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_to_be_fixed</span> <span class="o">=</span> <span class="s1">&#39;PAKGGEXPCAPTCN PAKGGEXPGNFSCN PAKGGEXPOTHRCN PAKGGEXPTRNSCN&#39;</span>
+<span class="n">fix_df</span> <span class="o">=</span> <span class="n">mpak</span><span class="o">.</span><span class="n">fix</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">var_to_be_fixed</span><span class="p">,</span><span class="mi">2021</span><span class="p">,</span><span class="mi">2100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="now-run-the-model-with-the-new-dataframe">
+<h2>Now run the model with the new dataframe<a class="headerlink" href="#now-run-the-model-with-the-new-dataframe" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">mpak</span><span class="p">(</span><span class="n">fix_df</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Baseline&#39;</span><span class="p">)</span> <span class="c1"># _ is just a  name, the dataframe is not going to be used </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fix-inf-show-relevant-variables-for-each-fixed-variables">
+<h3>.fix_inf() Show relevant variables for each fixed variables.<a class="headerlink" href="#fix-inf-show-relevant-variables-for-each-fixed-variables" title="Permalink to this headline">¶</a></h3>
+<p>To make it short we only show the first 4 years</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span><span class="mi">2024</span><span class="p">):</span>
+    <span class="n">mpak</span><span class="o">.</span><span class="n">fix_inf</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Acquisition of non-financial assets
+
+FRML &lt;Z,EXO&gt; PAKGGEXPCAPTCN = (0.3*PAKGGEXPCAPTCN(-1)+(1-0.3)*(0.37*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+393385.011*DURING_2013 + PAKGGEXPCAPTCN_A)* (1-PAKGGEXPCAPTCN_D)+ PAKGGEXPCAPTCN_X*PAKGGEXPCAPTCN_D  $
+
+FRML &lt;CALC&gt; PAKGGEXPCAPTCN_A = (PAKGGEXPCAPTCN) - (0.3*PAKGGEXPCAPTCN(-1)+(1-0.3)*(0.37*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+393385.011*DURING_2013)$
+</pre></div>
+</div>
+<div class="output text_html"><style type="text/css">
+#T_8e769 thead tr:nth-child(1) th {
+  position: sticky;
+  background-color: white;
+  top: 0px;
+  z-index: 2;
+}
+#T_8e769 thead tr th:nth-child(1) {
+  position: sticky;
+  background-color: white;
+  left: 0px;
+  z-index: 3 !important;
+}
+#T_8e769 tbody tr th:nth-child(1) {
+  position: sticky;
+  background-color: white;
+  left: 0px;
+  z-index: 1;
+}
+#T_8e769 .pd-t {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #000066;
+  background-color: white;
+  color: #000066;
+  font-size: 0.8em;
+  width: 100%transform;
+  padding: 0.6em;
+  border-radius: 0.5em;
+}
+#T_8e769 #T_8e769_row0_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row0_col0 .pd-t::after {
+  content: "Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row0_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row0_col1 .pd-t::after {
+  content: "Exo value:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row0_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row0_col2 .pd-t::after {
+  content: "Exo dummy:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row0_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row0_col3 .pd-t::after {
+  content: "Add factor:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row1_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row1_col0 .pd-t::after {
+  content: "Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row1_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row1_col1 .pd-t::after {
+  content: "Exo value:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row1_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row1_col2 .pd-t::after {
+  content: "Exo dummy:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row1_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row1_col3 .pd-t::after {
+  content: "Add factor:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row2_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row2_col0 .pd-t::after {
+  content: "Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row2_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row2_col1 .pd-t::after {
+  content: "Exo value:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row2_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row2_col2 .pd-t::after {
+  content: "Exo dummy:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row2_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row2_col3 .pd-t::after {
+  content: "Add factor:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row3_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row3_col0 .pd-t::after {
+  content: "Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row3_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row3_col1 .pd-t::after {
+  content: "Exo value:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row3_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row3_col2 .pd-t::after {
+  content: "Exo dummy:Acquisition of non-financial assets";
+}
+#T_8e769 #T_8e769_row3_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_8e769 #T_8e769_row3_col3 .pd-t::after {
+  content: "Add factor:Acquisition of non-financial assets";
+}
+</style>
+<table id="T_8e769" class="table">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_8e769_level0_col0" class="col_heading level0 col0" >PAKGGEXPCAPTCN</th>
+      <th id="T_8e769_level0_col1" class="col_heading level0 col1" >PAKGGEXPCAPTCN_X</th>
+      <th id="T_8e769_level0_col2" class="col_heading level0 col2" >PAKGGEXPCAPTCN_D</th>
+      <th id="T_8e769_level0_col3" class="col_heading level0 col3" >PAKGGEXPCAPTCN_A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_8e769_level0_row0" class="row_heading level0 row0" >2021</th>
+      <td id="T_8e769_row0_col0" class="data row0 col0" >3078353.510066<span class="pd-t"></span></td>
+      <td id="T_8e769_row0_col1" class="data row0 col1" >3078353.510066<span class="pd-t"></span></td>
+      <td id="T_8e769_row0_col2" class="data row0 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_8e769_row0_col3" class="data row0 col3" >182969.550446<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_8e769_level0_row1" class="row_heading level0 row1" >2022</th>
+      <td id="T_8e769_row1_col0" class="data row1 col0" >3528758.482813<span class="pd-t"></span></td>
+      <td id="T_8e769_row1_col1" class="data row1 col1" >3528758.482813<span class="pd-t"></span></td>
+      <td id="T_8e769_row1_col2" class="data row1 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_8e769_row1_col3" class="data row1 col3" >155524.089286<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_8e769_level0_row2" class="row_heading level0 row2" >2023</th>
+      <td id="T_8e769_row2_col0" class="data row2 col0" >4022693.753973<span class="pd-t"></span></td>
+      <td id="T_8e769_row2_col1" class="data row2 col1" >4022693.753973<span class="pd-t"></span></td>
+      <td id="T_8e769_row2_col2" class="data row2 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_8e769_row2_col3" class="data row2 col3" >132195.458405<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_8e769_level0_row3" class="row_heading level0 row3" >2024</th>
+      <td id="T_8e769_row3_col0" class="data row3 col0" >4548342.435696<span class="pd-t"></span></td>
+      <td id="T_8e769_row3_col1" class="data row3 col1" >4548342.435696<span class="pd-t"></span></td>
+      <td id="T_8e769_row3_col2" class="data row3 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_8e769_row3_col3" class="data row3 col3" >112366.069948<span class="pd-t"></span></td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expenditure on Goods and Services
+
+FRML &lt;Z,EXO&gt; PAKGGEXPGNFSCN = (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012 + PAKGGEXPGNFSCN_A)* (1-PAKGGEXPGNFSCN_D)+ PAKGGEXPGNFSCN_X*PAKGGEXPGNFSCN_D  $
+
+FRML &lt;CALC&gt; PAKGGEXPGNFSCN_A = (PAKGGEXPGNFSCN) - (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012)$
+</pre></div>
+</div>
+<div class="output text_html"><style type="text/css">
+#T_6672c thead tr:nth-child(1) th {
+  position: sticky;
+  background-color: white;
+  top: 0px;
+  z-index: 2;
+}
+#T_6672c thead tr th:nth-child(1) {
+  position: sticky;
+  background-color: white;
+  left: 0px;
+  z-index: 3 !important;
+}
+#T_6672c tbody tr th:nth-child(1) {
+  position: sticky;
+  background-color: white;
+  left: 0px;
+  z-index: 1;
+}
+#T_6672c .pd-t {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #000066;
+  background-color: white;
+  color: #000066;
+  font-size: 0.8em;
+  width: 100%transform;
+  padding: 0.6em;
+  border-radius: 0.5em;
+}
+#T_6672c #T_6672c_row0_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row0_col0 .pd-t::after {
+  content: "Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row0_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row0_col1 .pd-t::after {
+  content: "Exo value:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row0_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row0_col2 .pd-t::after {
+  content: "Exo dummy:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row0_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row0_col3 .pd-t::after {
+  content: "Add factor:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row1_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row1_col0 .pd-t::after {
+  content: "Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row1_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row1_col1 .pd-t::after {
+  content: "Exo value:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row1_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row1_col2 .pd-t::after {
+  content: "Exo dummy:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row1_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row1_col3 .pd-t::after {
+  content: "Add factor:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row2_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row2_col0 .pd-t::after {
+  content: "Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row2_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row2_col1 .pd-t::after {
+  content: "Exo value:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row2_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row2_col2 .pd-t::after {
+  content: "Exo dummy:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row2_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row2_col3 .pd-t::after {
+  content: "Add factor:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row3_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row3_col0 .pd-t::after {
+  content: "Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row3_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row3_col1 .pd-t::after {
+  content: "Exo value:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row3_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row3_col2 .pd-t::after {
+  content: "Exo dummy:Expenditure on Goods and Services";
+}
+#T_6672c #T_6672c_row3_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_6672c #T_6672c_row3_col3 .pd-t::after {
+  content: "Add factor:Expenditure on Goods and Services";
+}
+</style>
+<table id="T_6672c" class="table">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_6672c_level0_col0" class="col_heading level0 col0" >PAKGGEXPGNFSCN</th>
+      <th id="T_6672c_level0_col1" class="col_heading level0 col1" >PAKGGEXPGNFSCN_X</th>
+      <th id="T_6672c_level0_col2" class="col_heading level0 col2" >PAKGGEXPGNFSCN_D</th>
+      <th id="T_6672c_level0_col3" class="col_heading level0 col3" >PAKGGEXPGNFSCN_A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_6672c_level0_row0" class="row_heading level0 row0" >2021</th>
+      <td id="T_6672c_row0_col0" class="data row0 col0" >6497667.188811<span class="pd-t"></span></td>
+      <td id="T_6672c_row0_col1" class="data row0 col1" >6497667.188811<span class="pd-t"></span></td>
+      <td id="T_6672c_row0_col2" class="data row0 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_6672c_row0_col3" class="data row0 col3" >292080.031679<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_6672c_level0_row1" class="row_heading level0 row1" >2022</th>
+      <td id="T_6672c_row1_col0" class="data row1 col0" >7494278.047168<span class="pd-t"></span></td>
+      <td id="T_6672c_row1_col1" class="data row1 col1" >7494278.047168<span class="pd-t"></span></td>
+      <td id="T_6672c_row1_col2" class="data row1 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_6672c_row1_col3" class="data row1 col3" >248267.965104<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_6672c_level0_row2" class="row_heading level0 row2" >2023</th>
+      <td id="T_6672c_row2_col0" class="data row2 col0" >8582274.932026<span class="pd-t"></span></td>
+      <td id="T_6672c_row2_col1" class="data row2 col1" >8582274.932026<span class="pd-t"></span></td>
+      <td id="T_6672c_row2_col2" class="data row2 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_6672c_row2_col3" class="data row2 col3" >211027.732527<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_6672c_level0_row3" class="row_heading level0 row3" >2024</th>
+      <td id="T_6672c_row3_col0" class="data row3 col0" >9736041.284385<span class="pd-t"></span></td>
+      <td id="T_6672c_row3_col1" class="data row3 col1" >9736041.284385<span class="pd-t"></span></td>
+      <td id="T_6672c_row3_col2" class="data row3 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_6672c_row3_col3" class="data row3 col3" >179373.421952<span class="pd-t"></span></td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Other Expenditure
+
+FRML &lt;Z,EXO&gt; PAKGGEXPOTHRCN = (-PAKGGEXPOTHRCN_A*PAKNYGDPMKTPXN*PAKNYGDPPOTLKN+PAKNYGDPMKTPXN*PAKNYGDPPOTLKN* (-0.00363915924526289) ) * (1-PAKGGEXPOTHRCN_D)+ PAKGGEXPOTHRCN_X*PAKGGEXPOTHRCN_D  $
+
+FRML &lt;CALC&gt; PAKGGEXPOTHRCN_A = -PAKGGEXPOTHRCN/(PAKNYGDPMKTPXN*PAKNYGDPPOTLKN)+ ((-0.00363915924526289)) $
+</pre></div>
+</div>
+<div class="output text_html"><style type="text/css">
+#T_87303 thead tr:nth-child(1) th {
+  position: sticky;
+  background-color: white;
+  top: 0px;
+  z-index: 2;
+}
+#T_87303 thead tr th:nth-child(1) {
+  position: sticky;
+  background-color: white;
+  left: 0px;
+  z-index: 3 !important;
+}
+#T_87303 tbody tr th:nth-child(1) {
+  position: sticky;
+  background-color: white;
+  left: 0px;
+  z-index: 1;
+}
+#T_87303 .pd-t {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #000066;
+  background-color: white;
+  color: #000066;
+  font-size: 0.8em;
+  width: 100%transform;
+  padding: 0.6em;
+  border-radius: 0.5em;
+}
+#T_87303 #T_87303_row0_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row0_col0 .pd-t::after {
+  content: "Other Expenditure";
+}
+#T_87303 #T_87303_row0_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row0_col1 .pd-t::after {
+  content: "Exo value:Other Expenditure";
+}
+#T_87303 #T_87303_row0_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row0_col2 .pd-t::after {
+  content: "Exo dummy:Other Expenditure";
+}
+#T_87303 #T_87303_row0_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row0_col3 .pd-t::after {
+  content: "Add factor:Other Expenditure";
+}
+#T_87303 #T_87303_row1_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row1_col0 .pd-t::after {
+  content: "Other Expenditure";
+}
+#T_87303 #T_87303_row1_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row1_col1 .pd-t::after {
+  content: "Exo value:Other Expenditure";
+}
+#T_87303 #T_87303_row1_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row1_col2 .pd-t::after {
+  content: "Exo dummy:Other Expenditure";
+}
+#T_87303 #T_87303_row1_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row1_col3 .pd-t::after {
+  content: "Add factor:Other Expenditure";
+}
+#T_87303 #T_87303_row2_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row2_col0 .pd-t::after {
+  content: "Other Expenditure";
+}
+#T_87303 #T_87303_row2_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row2_col1 .pd-t::after {
+  content: "Exo value:Other Expenditure";
+}
+#T_87303 #T_87303_row2_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row2_col2 .pd-t::after {
+  content: "Exo dummy:Other Expenditure";
+}
+#T_87303 #T_87303_row2_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row2_col3 .pd-t::after {
+  content: "Add factor:Other Expenditure";
+}
+#T_87303 #T_87303_row3_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row3_col0 .pd-t::after {
+  content: "Other Expenditure";
+}
+#T_87303 #T_87303_row3_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row3_col1 .pd-t::after {
+  content: "Exo value:Other Expenditure";
+}
+#T_87303 #T_87303_row3_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row3_col2 .pd-t::after {
+  content: "Exo dummy:Other Expenditure";
+}
+#T_87303 #T_87303_row3_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_87303 #T_87303_row3_col3 .pd-t::after {
+  content: "Add factor:Other Expenditure";
+}
+</style>
+<table id="T_87303" class="table">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_87303_level0_col0" class="col_heading level0 col0" >PAKGGEXPOTHRCN</th>
+      <th id="T_87303_level0_col1" class="col_heading level0 col1" >PAKGGEXPOTHRCN_X</th>
+      <th id="T_87303_level0_col2" class="col_heading level0 col2" >PAKGGEXPOTHRCN_D</th>
+      <th id="T_87303_level0_col3" class="col_heading level0 col3" >PAKGGEXPOTHRCN_A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_87303_level0_row0" class="row_heading level0 row0" >2021</th>
+      <td id="T_87303_row0_col0" class="data row0 col0" >-162497.103742<span class="pd-t"></span></td>
+      <td id="T_87303_row0_col1" class="data row0 col1" >-162497.103742<span class="pd-t"></span></td>
+      <td id="T_87303_row0_col2" class="data row0 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_87303_row0_col3" class="data row0 col3" >-0.000607<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_87303_level0_row1" class="row_heading level0 row1" >2022</th>
+      <td id="T_87303_row1_col0" class="data row1 col0" >-190323.987201<span class="pd-t"></span></td>
+      <td id="T_87303_row1_col1" class="data row1 col1" >-190323.987201<span class="pd-t"></span></td>
+      <td id="T_87303_row1_col2" class="data row1 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_87303_row1_col3" class="data row1 col3" >-0.000516<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_87303_level0_row2" class="row_heading level0 row2" >2023</th>
+      <td id="T_87303_row2_col0" class="data row2 col0" >-219895.640188<span class="pd-t"></span></td>
+      <td id="T_87303_row2_col1" class="data row2 col1" >-219895.640188<span class="pd-t"></span></td>
+      <td id="T_87303_row2_col2" class="data row2 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_87303_row2_col3" class="data row2 col3" >-0.000438<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_87303_level0_row3" class="row_heading level0 row3" >2024</th>
+      <td id="T_87303_row3_col0" class="data row3 col0" >-250821.370670<span class="pd-t"></span></td>
+      <td id="T_87303_row3_col1" class="data row3 col1" >-250821.370670<span class="pd-t"></span></td>
+      <td id="T_87303_row3_col2" class="data row3 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_87303_row3_col3" class="data row3 col3" >-0.000373<span class="pd-t"></span></td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transfers
+
+FRML &lt;Z,EXO&gt; PAKGGEXPTRNSCN = (0.91020884318931*PAKGGEXPTRNSCN(-1)+(1-0.91020884318931)*(0.06*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0))) + PAKGGEXPTRNSCN_A)* (1-PAKGGEXPTRNSCN_D)+ PAKGGEXPTRNSCN_X*PAKGGEXPTRNSCN_D  $
+
+FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGEXPTRNSCN(-1)+(1-0.91020884318931)*(0.06*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0))))$
+</pre></div>
+</div>
+<div class="output text_html"><style type="text/css">
+#T_0ad68 thead tr:nth-child(1) th {
+  position: sticky;
+  background-color: white;
+  top: 0px;
+  z-index: 2;
+}
+#T_0ad68 thead tr th:nth-child(1) {
+  position: sticky;
+  background-color: white;
+  left: 0px;
+  z-index: 3 !important;
+}
+#T_0ad68 tbody tr th:nth-child(1) {
+  position: sticky;
+  background-color: white;
+  left: 0px;
+  z-index: 1;
+}
+#T_0ad68 .pd-t {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #000066;
+  background-color: white;
+  color: #000066;
+  font-size: 0.8em;
+  width: 100%transform;
+  padding: 0.6em;
+  border-radius: 0.5em;
+}
+#T_0ad68 #T_0ad68_row0_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row0_col0 .pd-t::after {
+  content: "Transfers";
+}
+#T_0ad68 #T_0ad68_row0_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row0_col1 .pd-t::after {
+  content: "Exo value:Transfers";
+}
+#T_0ad68 #T_0ad68_row0_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row0_col2 .pd-t::after {
+  content: "Exo dummy:Transfers";
+}
+#T_0ad68 #T_0ad68_row0_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row0_col3 .pd-t::after {
+  content: "Add factor:Transfers";
+}
+#T_0ad68 #T_0ad68_row1_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row1_col0 .pd-t::after {
+  content: "Transfers";
+}
+#T_0ad68 #T_0ad68_row1_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row1_col1 .pd-t::after {
+  content: "Exo value:Transfers";
+}
+#T_0ad68 #T_0ad68_row1_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row1_col2 .pd-t::after {
+  content: "Exo dummy:Transfers";
+}
+#T_0ad68 #T_0ad68_row1_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row1_col3 .pd-t::after {
+  content: "Add factor:Transfers";
+}
+#T_0ad68 #T_0ad68_row2_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row2_col0 .pd-t::after {
+  content: "Transfers";
+}
+#T_0ad68 #T_0ad68_row2_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row2_col1 .pd-t::after {
+  content: "Exo value:Transfers";
+}
+#T_0ad68 #T_0ad68_row2_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row2_col2 .pd-t::after {
+  content: "Exo dummy:Transfers";
+}
+#T_0ad68 #T_0ad68_row2_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row2_col3 .pd-t::after {
+  content: "Add factor:Transfers";
+}
+#T_0ad68 #T_0ad68_row3_col0:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row3_col0 .pd-t::after {
+  content: "Transfers";
+}
+#T_0ad68 #T_0ad68_row3_col1:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row3_col1 .pd-t::after {
+  content: "Exo value:Transfers";
+}
+#T_0ad68 #T_0ad68_row3_col2:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row3_col2 .pd-t::after {
+  content: "Exo dummy:Transfers";
+}
+#T_0ad68 #T_0ad68_row3_col3:hover .pd-t {
+  visibility: visible;
+}
+#T_0ad68 #T_0ad68_row3_col3 .pd-t::after {
+  content: "Add factor:Transfers";
+}
+</style>
+<table id="T_0ad68" class="table">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_0ad68_level0_col0" class="col_heading level0 col0" >PAKGGEXPTRNSCN</th>
+      <th id="T_0ad68_level0_col1" class="col_heading level0 col1" >PAKGGEXPTRNSCN_X</th>
+      <th id="T_0ad68_level0_col2" class="col_heading level0 col2" >PAKGGEXPTRNSCN_D</th>
+      <th id="T_0ad68_level0_col3" class="col_heading level0 col3" >PAKGGEXPTRNSCN_A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_0ad68_level0_row0" class="row_heading level0 row0" >2021</th>
+      <td id="T_0ad68_row0_col0" class="data row0 col0" >519103.990362<span class="pd-t"></span></td>
+      <td id="T_0ad68_row0_col1" class="data row0 col1" >519103.990362<span class="pd-t"></span></td>
+      <td id="T_0ad68_row0_col2" class="data row0 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_0ad68_row0_col3" class="data row0 col3" >42678.845775<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_0ad68_level0_row1" class="row_heading level0 row1" >2022</th>
+      <td id="T_0ad68_row1_col0" class="data row1 col0" >559726.959122<span class="pd-t"></span></td>
+      <td id="T_0ad68_row1_col1" class="data row1 col1" >559726.959122<span class="pd-t"></span></td>
+      <td id="T_0ad68_row1_col2" class="data row1 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_0ad68_row1_col3" class="data row1 col3" >36277.018899<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_0ad68_level0_row2" class="row_heading level0 row2" >2023</th>
+      <td id="T_0ad68_row2_col0" class="data row2 col0" >599209.751293<span class="pd-t"></span></td>
+      <td id="T_0ad68_row2_col1" class="data row2 col1" >599209.751293<span class="pd-t"></span></td>
+      <td id="T_0ad68_row2_col2" class="data row2 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_0ad68_row2_col3" class="data row2 col3" >30835.466037<span class="pd-t"></span></td>
+    </tr>
+    <tr>
+      <th id="T_0ad68_level0_row3" class="row_heading level0 row3" >2024</th>
+      <td id="T_0ad68_row3_col0" class="data row3 col0" >638786.218861<span class="pd-t"></span></td>
+      <td id="T_0ad68_row3_col1" class="data row3 col1" >638786.218861<span class="pd-t"></span></td>
+      <td id="T_0ad68_row3_col2" class="data row3 col2" > 1 <span class="pd-t"></span></td>
+      <td id="T_0ad68_row3_col3" class="data row3 col3" >26210.145984<span class="pd-t"></span></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="the-result-match-the-result-before-exogenizing-as-it-should">
+<h3>The result match the result before exogenizing, as it should<a class="headerlink" href="#the-result-match-the-result-before-exogenizing-as-it-should" title="Permalink to this headline">¶</a></h3>
+<p>Numbers below show the difference in pct betwen the solution whitout and with fixing</p>
+<p>The difference is small and OK</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">keepswitch</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">mpak</span><span class="o">.</span><span class="n">keep_plot</span><span class="p">(</span><span class="s1">&#39;PAKNYGDPMKTPKN&#39;</span><span class="p">,</span><span class="n">diffpct</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">dec</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Fixing variables_14_0.png" src="../../../_images/Fixing variables_14_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dump-the-model-and-solution-for-later-use">
+<h2>Dump the model and solution for later use.<a class="headerlink" href="#dump-the-model-and-solution-for-later-use" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">modeldump</span><span class="p">(</span><span class="s1">&#39;../../models/pak_exogenized.pcim&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-advanced-information">
+<h2>More advanced information<a class="headerlink" href="#more-advanced-information" title="Permalink to this headline">¶</a></h2>
+<p>The model instance (here mpak) maintain properties related to the fixing of values</p>
+<div class="section" id="list-of-potential-and-actual-fixed-variables">
+<h3>List of potential and actual fixed variables.<a class="headerlink" href="#list-of-potential-and-actual-fixed-variables" title="Permalink to this headline">¶</a></h3>
+<p>The model instance (here mpak) maintain properties related to the fixing of values</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Variable type</p></th>
+<th class="text-align:left head"><p>Variable name suffix</p></th>
+<th class="text-align:left head"><p>Lists for all fixable variables</p></th>
+<th class="text-align:left head"><p>List of fixed variables</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Endogenous</p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p>.fix_endo</p></td>
+<td class="text-align:left"><p>.fix_endo_fixed</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Dummy</p></td>
+<td class="text-align:left"><p>_D</p></td>
+<td class="text-align:left"><p>.fix_dummy</p></td>
+<td class="text-align:left"><p>.fix_dummy_fixed</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Fixed value</p></td>
+<td class="text-align:left"><p>_X</p></td>
+<td class="text-align:left"><p>.fix_value</p></td>
+<td class="text-align:left"><p>.fix_value_fixed</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Add factor</p></td>
+<td class="text-align:left"><p>_A</p></td>
+<td class="text-align:left"><p>.fix_add_factor</p></td>
+<td class="text-align:left"><p>.fix_add_factor_fixed</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="list-of-all-fixable-variables-for-this-model">
+<h4>LIst of all fixable variables for this model<a class="headerlink" href="#list-of-all-fixable-variables-for-this-model" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_fix_var</span> <span class="o">=</span><span class="p">[</span><span class="nb">vars</span> <span class="k">for</span> <span class="nb">vars</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_dummy</span><span class="p">,</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_value</span><span class="p">,</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_add_factor</span><span class="p">)]</span>
+<span class="n">fix_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">all_fix_var</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Dummy&#39;</span><span class="p">,</span><span class="s1">&#39;Fixed value&#39;</span><span class="p">,</span><span class="s1">&#39;Add factor&#39;</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_endo</span><span class="p">)</span>
+<span class="n">mw</span><span class="o">.</span><span class="n">htmlwidget_df</span><span class="p">(</span><span class="n">mpak</span><span class="p">,</span><span class="n">fix_names</span><span class="p">)</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "42345b2d798349a5b73866b1e73b8964"}
+</script></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Dataframes with strings and zip</strong></p>
+<p>Pandas dataframes are very versatile. Here the dataframe is filled not with scalars but with strings.</p>
+<p>Also the zip function is used to combine lists. <a class="reference external" href="https://docs.python.org/3/library/functions.html#zip">More here</a></p>
+</div>
+</div>
+<div class="section" id="list-of-fixed-variables">
+<h4>List of fixed variables<a class="headerlink" href="#list-of-fixed-variables" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_fix_var</span> <span class="o">=</span><span class="p">[</span><span class="nb">vars</span> <span class="k">for</span> <span class="nb">vars</span> <span class="ow">in</span> 
+                 <span class="nb">zip</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_dummy_fixed</span><span class="p">,</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_value_fixed</span><span class="p">,</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_add_factor_fixed</span><span class="p">)]</span>
+<span class="n">fixed_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">fixed_fix_var</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Dummy&#39;</span><span class="p">,</span><span class="s1">&#39;Fixed value&#39;</span><span class="p">,</span><span class="s1">&#39;Add factor&#39;</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_endo_fixed</span><span class="p">)</span>
+<span class="n">mw</span><span class="o">.</span><span class="n">htmlwidget_df</span><span class="p">(</span><span class="n">mpak</span><span class="p">,</span><span class="n">fixed_names</span><span class="p">)</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "449990f3499742faa1788dff85bd4b29"}
+</script></div>
+</div>
+</div>
+<div class="section" id="is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values">
+<h4>Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values<a class="headerlink" href="#is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">split_calc_add_factor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="show-the-equations-for-the-calc-add-factor-model">
+<h4>Show the equations for the .calc_add_factor_model<a class="headerlink" href="#show-the-equations-for-the-calc-add-factor-model" title="Permalink to this headline">¶</a></h4>
+<p>Here only 3 are displayed. Delete the [:3] and all equations will be displayed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">calc_add_factor_model</span><span class="o">.</span><span class="n">equations</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;FRML &lt;CALC&gt; PAKBMFSTOTHRCD_A = -PAKBMFSTOTHRCD/PAKNYGDPMKTPCD+ ((-0.0106244247103773)) &#39;,
+ &#39; FRML &lt;CALC&gt; PAKBMFSTREMTCD_A = -PAKBMFSTREMTCD/PAKNYGDPMKTPCD+ ((5.83179728399106E-05)) &#39;,
+ &#39; FRML &lt;CALC&gt; PAKBMGSRGNFSCD_A = -100*PAKBMGSRGNFSCD/PAKBMGSRGNFSCD(-1)+ (((100 * ( (PAKNEIMPGNFSCD) / (PAKNEIMPGNFSCD(-1)) -1)) +0.16331992292838*DUMH)) +100&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"e6a78d47092d4b3aba4f6890f9e242fc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "54%"}}, "b3ba2e41d48d4c25b0e1736b1494e5d5": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "793e15f9564f46228dfcfed5e156868c": {"model_name": "LabelModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "LabelModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "LabelView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e6a78d47092d4b3aba4f6890f9e242fc", "placeholder": "\u200b", "style": "IPY_MODEL_b3ba2e41d48d4c25b0e1736b1494e5d5", "value": ""}}, "b0eb4fa0fba64b958c8c18aa7fa6f915": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5065d1300aed4843bbfe4afd51bb6105": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "42345b2d798349a5b73866b1e73b8964": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_b0eb4fa0fba64b958c8c18aa7fa6f915", "placeholder": "\u200b", "style": "IPY_MODEL_5065d1300aed4843bbfe4afd51bb6105", "value": "<style type=\"text/css\">\n#T_de4c3 thead tr:nth-child(1) th {\n  position: sticky;\n  background-color: white;\n  top: 0px;\n  z-index: 2;\n}\n#T_de4c3 thead tr th:nth-child(1) {\n  position: sticky;\n  background-color: white;\n  left: 0px;\n  z-index: 3 !important;\n}\n#T_de4c3 tbody tr th:nth-child(1) {\n  position: sticky;\n  background-color: white;\n  left: 0px;\n  z-index: 1;\n}\n#T_de4c3 .pd-t {\n  visibility: hidden;\n  position: absolute;\n  z-index: 1;\n  border: 1px solid #000066;\n  background-color: white;\n  color: #000066;\n  font-size: 0.8em;\n  width: 100%transform;\n  padding: 0.6em;\n  border-radius: 0.5em;\n}\n#T_de4c3 #T_de4c3_row0_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row0_col0 .pd-t::after {\n  content: \"Imports Other Factor Services and Transfers\";\n}\n#T_de4c3 #T_de4c3_row0_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row0_col1 .pd-t::after {\n  content: \"Imports Other Factor Services and Transfers\";\n}\n#T_de4c3 #T_de4c3_row0_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row0_col2 .pd-t::after {\n  content: \"Imports Other Factor Services and Transfers\";\n}\n#T_de4c3 #T_de4c3_row1_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row1_col0 .pd-t::after {\n  content: \"Remittance Outflows\";\n}\n#T_de4c3 #T_de4c3_row1_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row1_col1 .pd-t::after {\n  content: \"Remittance Outflows\";\n}\n#T_de4c3 #T_de4c3_row1_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row1_col2 .pd-t::after {\n  content: \"Remittance Outflows\";\n}\n#T_de4c3 #T_de4c3_row2_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row2_col0 .pd-t::after {\n  content: \"Imports Total\";\n}\n#T_de4c3 #T_de4c3_row2_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row2_col1 .pd-t::after {\n  content: \"Imports Total\";\n}\n#T_de4c3 #T_de4c3_row2_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row2_col2 .pd-t::after {\n  content: \"Imports Total\";\n}\n#T_de4c3 #T_de4c3_row3_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row3_col0 .pd-t::after {\n  content: \"Imports Merchandise\";\n}\n#T_de4c3 #T_de4c3_row3_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row3_col1 .pd-t::after {\n  content: \"Imports Merchandise\";\n}\n#T_de4c3 #T_de4c3_row3_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row3_col2 .pd-t::after {\n  content: \"Imports Merchandise\";\n}\n#T_de4c3 #T_de4c3_row4_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row4_col0 .pd-t::after {\n  content: \"Exports Other Factor Services and Transfers\";\n}\n#T_de4c3 #T_de4c3_row4_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row4_col1 .pd-t::after {\n  content: \"Exports Other Factor Services and Transfers\";\n}\n#T_de4c3 #T_de4c3_row4_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row4_col2 .pd-t::after {\n  content: \"Exports Other Factor Services and Transfers\";\n}\n#T_de4c3 #T_de4c3_row5_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row5_col0 .pd-t::after {\n  content: \"Remittance Inflows\";\n}\n#T_de4c3 #T_de4c3_row5_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row5_col1 .pd-t::after {\n  content: \"Remittance Inflows\";\n}\n#T_de4c3 #T_de4c3_row5_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row5_col2 .pd-t::after {\n  content: \"Remittance Inflows\";\n}\n#T_de4c3 #T_de4c3_row6_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row6_col0 .pd-t::after {\n  content: \"Exports Total\";\n}\n#T_de4c3 #T_de4c3_row6_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row6_col1 .pd-t::after {\n  content: \"Exports Total\";\n}\n#T_de4c3 #T_de4c3_row6_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row6_col2 .pd-t::after {\n  content: \"Exports Total\";\n}\n#T_de4c3 #T_de4c3_row7_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row7_col0 .pd-t::after {\n  content: \"Exports Merchandise\";\n}\n#T_de4c3 #T_de4c3_row7_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row7_col1 .pd-t::after {\n  content: \"Exports Merchandise\";\n}\n#T_de4c3 #T_de4c3_row7_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row7_col2 .pd-t::after {\n  content: \"Exports Merchandise\";\n}\n#T_de4c3 #T_de4c3_row8_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row8_col0 .pd-t::after {\n  content: \"CO2 Emissions\";\n}\n#T_de4c3 #T_de4c3_row8_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row8_col1 .pd-t::after {\n  content: \"CO2 Emissions\";\n}\n#T_de4c3 #T_de4c3_row8_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row8_col2 .pd-t::after {\n  content: \"CO2 Emissions\";\n}\n#T_de4c3 #T_de4c3_row9_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row9_col0 .pd-t::after {\n  content: \"Real money supply\";\n}\n#T_de4c3 #T_de4c3_row9_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row9_col1 .pd-t::after {\n  content: \"Real money supply\";\n}\n#T_de4c3 #T_de4c3_row9_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row9_col2 .pd-t::after {\n  content: \"Real money supply\";\n}\n#T_de4c3 #T_de4c3_row10_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row10_col0 .pd-t::after {\n  content: \"Policy Rate\";\n}\n#T_de4c3 #T_de4c3_row10_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row10_col1 .pd-t::after {\n  content: \"Policy Rate\";\n}\n#T_de4c3 #T_de4c3_row10_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row10_col2 .pd-t::after {\n  content: \"Policy Rate\";\n}\n#T_de4c3 #T_de4c3_row11_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row11_col0 .pd-t::after {\n  content: \"Domestic Debt\";\n}\n#T_de4c3 #T_de4c3_row11_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row11_col1 .pd-t::after {\n  content: \"Domestic Debt\";\n}\n#T_de4c3 #T_de4c3_row11_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row11_col2 .pd-t::after {\n  content: \"Domestic Debt\";\n}\n#T_de4c3 #T_de4c3_row12_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row12_col0 .pd-t::after {\n  content: \"External Debt\";\n}\n#T_de4c3 #T_de4c3_row12_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row12_col1 .pd-t::after {\n  content: \"External Debt\";\n}\n#T_de4c3 #T_de4c3_row12_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row12_col2 .pd-t::after {\n  content: \"External Debt\";\n}\n#T_de4c3 #T_de4c3_row13_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row13_col0 .pd-t::after {\n  content: \"General Government Debt (LCU)\";\n}\n#T_de4c3 #T_de4c3_row13_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row13_col1 .pd-t::after {\n  content: \"General Government Debt (LCU)\";\n}\n#T_de4c3 #T_de4c3_row13_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row13_col2 .pd-t::after {\n  content: \"General Government Debt (LCU)\";\n}\n#T_de4c3 #T_de4c3_row14_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row14_col0 .pd-t::after {\n  content: \"Debt revaluation\";\n}\n#T_de4c3 #T_de4c3_row14_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row14_col1 .pd-t::after {\n  content: \"Debt revaluation\";\n}\n#T_de4c3 #T_de4c3_row14_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row14_col2 .pd-t::after {\n  content: \"Debt revaluation\";\n}\n#T_de4c3 #T_de4c3_row15_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row15_col0 .pd-t::after {\n  content: \"Acquisition of non-financial assets\";\n}\n#T_de4c3 #T_de4c3_row15_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row15_col1 .pd-t::after {\n  content: \"Acquisition of non-financial assets\";\n}\n#T_de4c3 #T_de4c3_row15_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row15_col2 .pd-t::after {\n  content: \"Acquisition of non-financial assets\";\n}\n#T_de4c3 #T_de4c3_row16_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row16_col0 .pd-t::after {\n  content: \"Expenditure on Goods and Services\";\n}\n#T_de4c3 #T_de4c3_row16_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row16_col1 .pd-t::after {\n  content: \"Expenditure on Goods and Services\";\n}\n#T_de4c3 #T_de4c3_row16_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row16_col2 .pd-t::after {\n  content: \"Expenditure on Goods and Services\";\n}\n#T_de4c3 #T_de4c3_row17_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row17_col0 .pd-t::after {\n  content: \"Other Expenditure\";\n}\n#T_de4c3 #T_de4c3_row17_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row17_col1 .pd-t::after {\n  content: \"Other Expenditure\";\n}\n#T_de4c3 #T_de4c3_row17_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row17_col2 .pd-t::after {\n  content: \"Other Expenditure\";\n}\n#T_de4c3 #T_de4c3_row18_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row18_col0 .pd-t::after {\n  content: \"Transfers\";\n}\n#T_de4c3 #T_de4c3_row18_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row18_col1 .pd-t::after {\n  content: \"Transfers\";\n}\n#T_de4c3 #T_de4c3_row18_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row18_col2 .pd-t::after {\n  content: \"Transfers\";\n}\n#T_de4c3 #T_de4c3_row19_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row19_col0 .pd-t::after {\n  content: \"General government revenues, direct taxes\";\n}\n#T_de4c3 #T_de4c3_row19_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row19_col1 .pd-t::after {\n  content: \"General government revenues, direct taxes\";\n}\n#T_de4c3 #T_de4c3_row19_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row19_col2 .pd-t::after {\n  content: \"General government revenues, direct taxes\";\n}\n#T_de4c3 #T_de4c3_row20_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row20_col0 .pd-t::after {\n  content: \"Taxes on Goods and Services\";\n}\n#T_de4c3 #T_de4c3_row20_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row20_col1 .pd-t::after {\n  content: \"Taxes on Goods and Services\";\n}\n#T_de4c3 #T_de4c3_row20_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row20_col2 .pd-t::after {\n  content: \"Taxes on Goods and Services\";\n}\n#T_de4c3 #T_de4c3_row21_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row21_col0 .pd-t::after {\n  content: \"Grants\";\n}\n#T_de4c3 #T_de4c3_row21_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row21_col1 .pd-t::after {\n  content: \"Grants\";\n}\n#T_de4c3 #T_de4c3_row21_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row21_col2 .pd-t::after {\n  content: \"Grants\";\n}\n#T_de4c3 #T_de4c3_row22_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row22_col0 .pd-t::after {\n  content: \"General government revenues, other\";\n}\n#T_de4c3 #T_de4c3_row22_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row22_col1 .pd-t::after {\n  content: \"General government revenues, other\";\n}\n#T_de4c3 #T_de4c3_row22_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row22_col2 .pd-t::after {\n  content: \"General government revenues, other\";\n}\n#T_de4c3 #T_de4c3_row23_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row23_col0 .pd-t::after {\n  content: \"Trade Traxes\";\n}\n#T_de4c3 #T_de4c3_row23_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row23_col1 .pd-t::after {\n  content: \"Trade Traxes\";\n}\n#T_de4c3 #T_de4c3_row23_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row23_col2 .pd-t::after {\n  content: \"Trade Traxes\";\n}\n#T_de4c3 #T_de4c3_row24_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row24_col0 .pd-t::after {\n  content: \"Domestic interest rate differential (to policy rate)\";\n}\n#T_de4c3 #T_de4c3_row24_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row24_col1 .pd-t::after {\n  content: \"Domestic interest rate differential (to policy rate)\";\n}\n#T_de4c3 #T_de4c3_row24_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row24_col2 .pd-t::after {\n  content: \"Domestic interest rate differential (to policy rate)\";\n}\n#T_de4c3 #T_de4c3_row25_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row25_col0 .pd-t::after {\n  content: \"External interest rate differential (to US rate)\";\n}\n#T_de4c3 #T_de4c3_row25_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row25_col1 .pd-t::after {\n  content: \"External interest rate differential (to US rate)\";\n}\n#T_de4c3 #T_de4c3_row25_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row25_col2 .pd-t::after {\n  content: \"External interest rate differential (to US rate)\";\n}\n#T_de4c3 #T_de4c3_row26_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row26_col0 .pd-t::after {\n  content: \"Employment\";\n}\n#T_de4c3 #T_de4c3_row26_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row26_col1 .pd-t::after {\n  content: \"Employment\";\n}\n#T_de4c3 #T_de4c3_row26_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row26_col2 .pd-t::after {\n  content: \"Employment\";\n}\n#T_de4c3 #T_de4c3_row27_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row27_col0 .pd-t::after {\n  content: \"PAKNEADPKMAXKN\";\n}\n#T_de4c3 #T_de4c3_row27_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row27_col1 .pd-t::after {\n  content: \"PAKNEADPKMAXKN\";\n}\n#T_de4c3 #T_de4c3_row27_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row27_col2 .pd-t::after {\n  content: \"PAKNEADPKMAXKN\";\n}\n#T_de4c3 #T_de4c3_row28_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row28_col0 .pd-t::after {\n  content: \"Energy Consumption\";\n}\n#T_de4c3 #T_de4c3_row28_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row28_col1 .pd-t::after {\n  content: \"Energy Consumption\";\n}\n#T_de4c3 #T_de4c3_row28_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row28_col2 .pd-t::after {\n  content: \"Energy Consumption\";\n}\n#T_de4c3 #T_de4c3_row29_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row29_col0 .pd-t::after {\n  content: \"Government consumption (G&S)\";\n}\n#T_de4c3 #T_de4c3_row29_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row29_col1 .pd-t::after {\n  content: \"Government consumption (G&S)\";\n}\n#T_de4c3 #T_de4c3_row29_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row29_col2 .pd-t::after {\n  content: \"Government consumption (G&S)\";\n}\n#T_de4c3 #T_de4c3_row30_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row30_col0 .pd-t::after {\n  content: \"Government consumption (G&S)\";\n}\n#T_de4c3 #T_de4c3_row30_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row30_col1 .pd-t::after {\n  content: \"Government consumption (G&S)\";\n}\n#T_de4c3 #T_de4c3_row30_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row30_col2 .pd-t::after {\n  content: \"Government consumption (G&S)\";\n}\n#T_de4c3 #T_de4c3_row31_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row31_col0 .pd-t::after {\n  content: \"Non-Energy Consumption\";\n}\n#T_de4c3 #T_de4c3_row31_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row31_col1 .pd-t::after {\n  content: \"Non-Energy Consumption\";\n}\n#T_de4c3 #T_de4c3_row31_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row31_col2 .pd-t::after {\n  content: \"Non-Energy Consumption\";\n}\n#T_de4c3 #T_de4c3_row32_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row32_col0 .pd-t::after {\n  content: \"Household Consumption\";\n}\n#T_de4c3 #T_de4c3_row32_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row32_col1 .pd-t::after {\n  content: \"Household Consumption\";\n}\n#T_de4c3 #T_de4c3_row32_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row32_col2 .pd-t::after {\n  content: \"Household Consumption\";\n}\n#T_de4c3 #T_de4c3_row33_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row33_col0 .pd-t::after {\n  content: \"Exports (G&S)\";\n}\n#T_de4c3 #T_de4c3_row33_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row33_col1 .pd-t::after {\n  content: \"Exports (G&S)\";\n}\n#T_de4c3 #T_de4c3_row33_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row33_col2 .pd-t::after {\n  content: \"Exports (G&S)\";\n}\n#T_de4c3 #T_de4c3_row34_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row34_col0 .pd-t::after {\n  content: \"Exports\";\n}\n#T_de4c3 #T_de4c3_row34_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row34_col1 .pd-t::after {\n  content: \"Exports\";\n}\n#T_de4c3 #T_de4c3_row34_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row34_col2 .pd-t::after {\n  content: \"Exports\";\n}\n#T_de4c3 #T_de4c3_row35_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row35_col0 .pd-t::after {\n  content: \"Government Investment\";\n}\n#T_de4c3 #T_de4c3_row35_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row35_col1 .pd-t::after {\n  content: \"Government Investment\";\n}\n#T_de4c3 #T_de4c3_row35_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row35_col2 .pd-t::after {\n  content: \"Government Investment\";\n}\n#T_de4c3 #T_de4c3_row36_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row36_col0 .pd-t::after {\n  content: \"Government Investment\";\n}\n#T_de4c3 #T_de4c3_row36_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row36_col1 .pd-t::after {\n  content: \"Government Investment\";\n}\n#T_de4c3 #T_de4c3_row36_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row36_col2 .pd-t::after {\n  content: \"Government Investment\";\n}\n#T_de4c3 #T_de4c3_row37_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row37_col0 .pd-t::after {\n  content: \"Private Investment\";\n}\n#T_de4c3 #T_de4c3_row37_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row37_col1 .pd-t::after {\n  content: \"Private Investment\";\n}\n#T_de4c3 #T_de4c3_row37_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row37_col2 .pd-t::after {\n  content: \"Private Investment\";\n}\n#T_de4c3 #T_de4c3_row38_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row38_col0 .pd-t::after {\n  content: \"Private Investment\";\n}\n#T_de4c3 #T_de4c3_row38_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row38_col1 .pd-t::after {\n  content: \"Private Investment\";\n}\n#T_de4c3 #T_de4c3_row38_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row38_col2 .pd-t::after {\n  content: \"Private Investment\";\n}\n#T_de4c3 #T_de4c3_row39_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row39_col0 .pd-t::after {\n  content: \"Imports (G&S)\";\n}\n#T_de4c3 #T_de4c3_row39_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row39_col1 .pd-t::after {\n  content: \"Imports (G&S)\";\n}\n#T_de4c3 #T_de4c3_row39_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row39_col2 .pd-t::after {\n  content: \"Imports (G&S)\";\n}\n#T_de4c3 #T_de4c3_row40_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row40_col0 .pd-t::after {\n  content: \"Imports (Non-energy)\";\n}\n#T_de4c3 #T_de4c3_row40_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row40_col1 .pd-t::after {\n  content: \"Imports (Non-energy)\";\n}\n#T_de4c3 #T_de4c3_row40_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row40_col2 .pd-t::after {\n  content: \"Imports (Non-energy)\";\n}\n#T_de4c3 #T_de4c3_row41_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row41_col0 .pd-t::after {\n  content: \"PAKNEKRTTOTLCN\";\n}\n#T_de4c3 #T_de4c3_row41_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row41_col1 .pd-t::after {\n  content: \"PAKNEKRTTOTLCN\";\n}\n#T_de4c3 #T_de4c3_row41_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row41_col2 .pd-t::after {\n  content: \"PAKNEKRTTOTLCN\";\n}\n#T_de4c3 #T_de4c3_row42_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row42_col0 .pd-t::after {\n  content: \"Agriculture (Crops)\";\n}\n#T_de4c3 #T_de4c3_row42_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row42_col1 .pd-t::after {\n  content: \"Agriculture (Crops)\";\n}\n#T_de4c3 #T_de4c3_row42_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row42_col2 .pd-t::after {\n  content: \"Agriculture (Crops)\";\n}\n#T_de4c3 #T_de4c3_row43_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row43_col0 .pd-t::after {\n  content: \"Agriculture (Crops)\";\n}\n#T_de4c3 #T_de4c3_row43_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row43_col1 .pd-t::after {\n  content: \"Agriculture (Crops)\";\n}\n#T_de4c3 #T_de4c3_row43_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row43_col2 .pd-t::after {\n  content: \"Agriculture (Crops)\";\n}\n#T_de4c3 #T_de4c3_row44_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row44_col0 .pd-t::after {\n  content: \"Agriculture (Fishery)\";\n}\n#T_de4c3 #T_de4c3_row44_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row44_col1 .pd-t::after {\n  content: \"Agriculture (Fishery)\";\n}\n#T_de4c3 #T_de4c3_row44_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row44_col2 .pd-t::after {\n  content: \"Agriculture (Fishery)\";\n}\n#T_de4c3 #T_de4c3_row45_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row45_col0 .pd-t::after {\n  content: \"Agriculture (Fishery)\";\n}\n#T_de4c3 #T_de4c3_row45_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row45_col1 .pd-t::after {\n  content: \"Agriculture (Fishery)\";\n}\n#T_de4c3 #T_de4c3_row45_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row45_col2 .pd-t::after {\n  content: \"Agriculture (Fishery)\";\n}\n#T_de4c3 #T_de4c3_row46_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row46_col0 .pd-t::after {\n  content: \"Agriculture (Forrestry)\";\n}\n#T_de4c3 #T_de4c3_row46_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row46_col1 .pd-t::after {\n  content: \"Agriculture (Forrestry)\";\n}\n#T_de4c3 #T_de4c3_row46_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row46_col2 .pd-t::after {\n  content: \"Agriculture (Forrestry)\";\n}\n#T_de4c3 #T_de4c3_row47_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row47_col0 .pd-t::after {\n  content: \"Agriculture (Forrestry)\";\n}\n#T_de4c3 #T_de4c3_row47_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row47_col1 .pd-t::after {\n  content: \"Agriculture (Forrestry)\";\n}\n#T_de4c3 #T_de4c3_row47_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row47_col2 .pd-t::after {\n  content: \"Agriculture (Forrestry)\";\n}\n#T_de4c3 #T_de4c3_row48_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row48_col0 .pd-t::after {\n  content: \"Coal deflator\";\n}\n#T_de4c3 #T_de4c3_row48_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row48_col1 .pd-t::after {\n  content: \"Coal deflator\";\n}\n#T_de4c3 #T_de4c3_row48_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row48_col2 .pd-t::after {\n  content: \"Coal deflator\";\n}\n#T_de4c3 #T_de4c3_row49_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row49_col0 .pd-t::after {\n  content: \"Direct energy demand\";\n}\n#T_de4c3 #T_de4c3_row49_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row49_col1 .pd-t::after {\n  content: \"Direct energy demand\";\n}\n#T_de4c3 #T_de4c3_row49_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row49_col2 .pd-t::after {\n  content: \"Direct energy demand\";\n}\n#T_de4c3 #T_de4c3_row50_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row50_col0 .pd-t::after {\n  content: \"Gas deflator\";\n}\n#T_de4c3 #T_de4c3_row50_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row50_col1 .pd-t::after {\n  content: \"Gas deflator\";\n}\n#T_de4c3 #T_de4c3_row50_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row50_col2 .pd-t::after {\n  content: \"Gas deflator\";\n}\n#T_de4c3 #T_de4c3_row51_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row51_col0 .pd-t::after {\n  content: \"Industry (Construction)\";\n}\n#T_de4c3 #T_de4c3_row51_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row51_col1 .pd-t::after {\n  content: \"Industry (Construction)\";\n}\n#T_de4c3 #T_de4c3_row51_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row51_col2 .pd-t::after {\n  content: \"Industry (Construction)\";\n}\n#T_de4c3 #T_de4c3_row52_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row52_col0 .pd-t::after {\n  content: \"Industry (Construction)\";\n}\n#T_de4c3 #T_de4c3_row52_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row52_col1 .pd-t::after {\n  content: \"Industry (Construction)\";\n}\n#T_de4c3 #T_de4c3_row52_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row52_col2 .pd-t::after {\n  content: \"Industry (Construction)\";\n}\n#T_de4c3 #T_de4c3_row53_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row53_col0 .pd-t::after {\n  content: \"Industry (Mining)\";\n}\n#T_de4c3 #T_de4c3_row53_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row53_col1 .pd-t::after {\n  content: \"Industry (Mining)\";\n}\n#T_de4c3 #T_de4c3_row53_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row53_col2 .pd-t::after {\n  content: \"Industry (Mining)\";\n}\n#T_de4c3 #T_de4c3_row54_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row54_col0 .pd-t::after {\n  content: \"Industry (Mining)\";\n}\n#T_de4c3 #T_de4c3_row54_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row54_col1 .pd-t::after {\n  content: \"Industry (Mining)\";\n}\n#T_de4c3 #T_de4c3_row54_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row54_col2 .pd-t::after {\n  content: \"Industry (Mining)\";\n}\n#T_de4c3 #T_de4c3_row55_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row55_col0 .pd-t::after {\n  content: \"Industry (Other)\";\n}\n#T_de4c3 #T_de4c3_row55_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row55_col1 .pd-t::after {\n  content: \"Industry (Other)\";\n}\n#T_de4c3 #T_de4c3_row55_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row55_col2 .pd-t::after {\n  content: \"Industry (Other)\";\n}\n#T_de4c3 #T_de4c3_row56_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row56_col0 .pd-t::after {\n  content: \"PAKNVINDOTHRTXN\";\n}\n#T_de4c3 #T_de4c3_row56_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row56_col1 .pd-t::after {\n  content: \"PAKNVINDOTHRTXN\";\n}\n#T_de4c3 #T_de4c3_row56_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row56_col2 .pd-t::after {\n  content: \"PAKNVINDOTHRTXN\";\n}\n#T_de4c3 #T_de4c3_row57_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row57_col0 .pd-t::after {\n  content: \"Oil deflator\";\n}\n#T_de4c3 #T_de4c3_row57_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row57_col1 .pd-t::after {\n  content: \"Oil deflator\";\n}\n#T_de4c3 #T_de4c3_row57_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row57_col2 .pd-t::after {\n  content: \"Oil deflator\";\n}\n#T_de4c3 #T_de4c3_row58_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row58_col0 .pd-t::after {\n  content: \"Renewable deflator\";\n}\n#T_de4c3 #T_de4c3_row58_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row58_col1 .pd-t::after {\n  content: \"Renewable deflator\";\n}\n#T_de4c3 #T_de4c3_row58_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row58_col2 .pd-t::after {\n  content: \"Renewable deflator\";\n}\n#T_de4c3 #T_de4c3_row59_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row59_col0 .pd-t::after {\n  content: \"Services (Finance)\";\n}\n#T_de4c3 #T_de4c3_row59_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row59_col1 .pd-t::after {\n  content: \"Services (Finance)\";\n}\n#T_de4c3 #T_de4c3_row59_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row59_col2 .pd-t::after {\n  content: \"Services (Finance)\";\n}\n#T_de4c3 #T_de4c3_row60_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row60_col0 .pd-t::after {\n  content: \"Services (Finance)\";\n}\n#T_de4c3 #T_de4c3_row60_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row60_col1 .pd-t::after {\n  content: \"Services (Finance)\";\n}\n#T_de4c3 #T_de4c3_row60_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row60_col2 .pd-t::after {\n  content: \"Services (Finance)\";\n}\n#T_de4c3 #T_de4c3_row61_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row61_col0 .pd-t::after {\n  content: \"Services (Government)\";\n}\n#T_de4c3 #T_de4c3_row61_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row61_col1 .pd-t::after {\n  content: \"Services (Government)\";\n}\n#T_de4c3 #T_de4c3_row61_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row61_col2 .pd-t::after {\n  content: \"Services (Government)\";\n}\n#T_de4c3 #T_de4c3_row62_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row62_col0 .pd-t::after {\n  content: \"Services (Government)\";\n}\n#T_de4c3 #T_de4c3_row62_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row62_col1 .pd-t::after {\n  content: \"Services (Government)\";\n}\n#T_de4c3 #T_de4c3_row62_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row62_col2 .pd-t::after {\n  content: \"Services (Government)\";\n}\n#T_de4c3 #T_de4c3_row63_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row63_col0 .pd-t::after {\n  content: \"Services (Housing)\";\n}\n#T_de4c3 #T_de4c3_row63_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row63_col1 .pd-t::after {\n  content: \"Services (Housing)\";\n}\n#T_de4c3 #T_de4c3_row63_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row63_col2 .pd-t::after {\n  content: \"Services (Housing)\";\n}\n#T_de4c3 #T_de4c3_row64_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row64_col0 .pd-t::after {\n  content: \"Services (Housing)\";\n}\n#T_de4c3 #T_de4c3_row64_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row64_col1 .pd-t::after {\n  content: \"Services (Housing)\";\n}\n#T_de4c3 #T_de4c3_row64_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row64_col2 .pd-t::after {\n  content: \"Services (Housing)\";\n}\n#T_de4c3 #T_de4c3_row65_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row65_col0 .pd-t::after {\n  content: \"Services (Private)\";\n}\n#T_de4c3 #T_de4c3_row65_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row65_col1 .pd-t::after {\n  content: \"Services (Private)\";\n}\n#T_de4c3 #T_de4c3_row65_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row65_col2 .pd-t::after {\n  content: \"Services (Private)\";\n}\n#T_de4c3 #T_de4c3_row66_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row66_col0 .pd-t::after {\n  content: \"Services (Transport)\";\n}\n#T_de4c3 #T_de4c3_row66_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row66_col1 .pd-t::after {\n  content: \"Services (Transport)\";\n}\n#T_de4c3 #T_de4c3_row66_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row66_col2 .pd-t::after {\n  content: \"Services (Transport)\";\n}\n#T_de4c3 #T_de4c3_row67_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row67_col0 .pd-t::after {\n  content: \"Services (Transport)\";\n}\n#T_de4c3 #T_de4c3_row67_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row67_col1 .pd-t::after {\n  content: \"Services (Transport)\";\n}\n#T_de4c3 #T_de4c3_row67_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row67_col2 .pd-t::after {\n  content: \"Services (Transport)\";\n}\n#T_de4c3 #T_de4c3_row68_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row68_col0 .pd-t::after {\n  content: \"Services (Wholesale)\";\n}\n#T_de4c3 #T_de4c3_row68_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row68_col1 .pd-t::after {\n  content: \"Services (Wholesale)\";\n}\n#T_de4c3 #T_de4c3_row68_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row68_col2 .pd-t::after {\n  content: \"Services (Wholesale)\";\n}\n#T_de4c3 #T_de4c3_row69_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row69_col0 .pd-t::after {\n  content: \"Services (Wholesale)\";\n}\n#T_de4c3 #T_de4c3_row69_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row69_col1 .pd-t::after {\n  content: \"Services (Wholesale)\";\n}\n#T_de4c3 #T_de4c3_row69_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row69_col2 .pd-t::after {\n  content: \"Services (Wholesale)\";\n}\n#T_de4c3 #T_de4c3_row70_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row70_col0 .pd-t::after {\n  content: \"GDP at factor cost\";\n}\n#T_de4c3 #T_de4c3_row70_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row70_col1 .pd-t::after {\n  content: \"GDP at factor cost\";\n}\n#T_de4c3 #T_de4c3_row70_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row70_col2 .pd-t::after {\n  content: \"GDP at factor cost\";\n}\n#T_de4c3 #T_de4c3_row71_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row71_col0 .pd-t::after {\n  content: \"Formal wage\";\n}\n#T_de4c3 #T_de4c3_row71_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row71_col1 .pd-t::after {\n  content: \"Formal wage\";\n}\n#T_de4c3 #T_de4c3_row71_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row71_col2 .pd-t::after {\n  content: \"Formal wage\";\n}\n#T_de4c3 #T_de4c3_row72_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row72_col0 .pd-t::after {\n  content: \"Informal wage\";\n}\n#T_de4c3 #T_de4c3_row72_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row72_col1 .pd-t::after {\n  content: \"Informal wage\";\n}\n#T_de4c3 #T_de4c3_row72_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row72_col2 .pd-t::after {\n  content: \"Informal wage\";\n}\n#T_de4c3 #T_de4c3_row73_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row73_col0 .pd-t::after {\n  content: \"LCU: $\";\n}\n#T_de4c3 #T_de4c3_row73_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row73_col1 .pd-t::after {\n  content: \"LCU: $\";\n}\n#T_de4c3 #T_de4c3_row73_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row73_col2 .pd-t::after {\n  content: \"LCU: $\";\n}\n#T_de4c3 #T_de4c3_row74_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row74_col0 .pd-t::after {\n  content: \"PAKVELOCITY\";\n}\n#T_de4c3 #T_de4c3_row74_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row74_col1 .pd-t::after {\n  content: \"PAKVELOCITY\";\n}\n#T_de4c3 #T_de4c3_row74_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_de4c3 #T_de4c3_row74_col2 .pd-t::after {\n  content: \"PAKVELOCITY\";\n}\n</style>\n<table id=\"T_de4c3\" class=\"table\">\n  <thead>\n    <tr>\n      <th class=\"blank level0\" >&nbsp;</th>\n      <th id=\"T_de4c3_level0_col0\" class=\"col_heading level0 col0\" >Dummy</th>\n      <th id=\"T_de4c3_level0_col1\" class=\"col_heading level0 col1\" >Fixed value</th>\n      <th id=\"T_de4c3_level0_col2\" class=\"col_heading level0 col2\" >Add factor</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th id=\"T_de4c3_level0_row0\" class=\"row_heading level0 row0\" >PAKBMFSTOTHRCD</th>\n      <td id=\"T_de4c3_row0_col0\" class=\"data row0 col0\" >PAKBMFSTOTHRCD_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row0_col1\" class=\"data row0 col1\" >PAKBMFSTOTHRCD_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row0_col2\" class=\"data row0 col2\" >PAKBMFSTOTHRCD_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row1\" class=\"row_heading level0 row1\" >PAKBMFSTREMTCD</th>\n      <td id=\"T_de4c3_row1_col0\" class=\"data row1 col0\" >PAKBMFSTREMTCD_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row1_col1\" class=\"data row1 col1\" >PAKBMFSTREMTCD_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row1_col2\" class=\"data row1 col2\" >PAKBMFSTREMTCD_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row2\" class=\"row_heading level0 row2\" >PAKBMGSRGNFSCD</th>\n      <td id=\"T_de4c3_row2_col0\" class=\"data row2 col0\" >PAKBMGSRGNFSCD_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row2_col1\" class=\"data row2 col1\" >PAKBMGSRGNFSCD_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row2_col2\" class=\"data row2 col2\" >PAKBMGSRGNFSCD_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row3\" class=\"row_heading level0 row3\" >PAKBMGSRMRCHCD</th>\n      <td id=\"T_de4c3_row3_col0\" class=\"data row3 col0\" >PAKBMGSRMRCHCD_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row3_col1\" class=\"data row3 col1\" >PAKBMGSRMRCHCD_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row3_col2\" class=\"data row3 col2\" >PAKBMGSRMRCHCD_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row4\" class=\"row_heading level0 row4\" >PAKBXFSTOTHRCD</th>\n      <td id=\"T_de4c3_row4_col0\" class=\"data row4 col0\" >PAKBXFSTOTHRCD_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row4_col1\" class=\"data row4 col1\" >PAKBXFSTOTHRCD_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row4_col2\" class=\"data row4 col2\" >PAKBXFSTOTHRCD_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row5\" class=\"row_heading level0 row5\" >PAKBXFSTREMTCD</th>\n      <td id=\"T_de4c3_row5_col0\" class=\"data row5 col0\" >PAKBXFSTREMTCD_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row5_col1\" class=\"data row5 col1\" >PAKBXFSTREMTCD_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row5_col2\" class=\"data row5 col2\" >PAKBXFSTREMTCD_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row6\" class=\"row_heading level0 row6\" >PAKBXGSRGNFSCD</th>\n      <td id=\"T_de4c3_row6_col0\" class=\"data row6 col0\" >PAKBXGSRGNFSCD_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row6_col1\" class=\"data row6 col1\" >PAKBXGSRGNFSCD_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row6_col2\" class=\"data row6 col2\" >PAKBXGSRGNFSCD_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row7\" class=\"row_heading level0 row7\" >PAKBXGSRMRCHCD</th>\n      <td id=\"T_de4c3_row7_col0\" class=\"data row7 col0\" >PAKBXGSRMRCHCD_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row7_col1\" class=\"data row7 col1\" >PAKBXGSRMRCHCD_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row7_col2\" class=\"data row7 col2\" >PAKBXGSRMRCHCD_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row8\" class=\"row_heading level0 row8\" >PAKCO2EM</th>\n      <td id=\"T_de4c3_row8_col0\" class=\"data row8 col0\" >PAKCO2EM_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row8_col1\" class=\"data row8 col1\" >PAKCO2EM_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row8_col2\" class=\"data row8 col2\" >PAKCO2EM_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row9\" class=\"row_heading level0 row9\" >PAKFMLBLMTWOKN</th>\n      <td id=\"T_de4c3_row9_col0\" class=\"data row9 col0\" >PAKFMLBLMTWOKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row9_col1\" class=\"data row9 col1\" >PAKFMLBLMTWOKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row9_col2\" class=\"data row9 col2\" >PAKFMLBLMTWOKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row10\" class=\"row_heading level0 row10\" >PAKFMLBLPOLYXN</th>\n      <td id=\"T_de4c3_row10_col0\" class=\"data row10 col0\" >PAKFMLBLPOLYXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row10_col1\" class=\"data row10 col1\" >PAKFMLBLPOLYXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row10_col2\" class=\"data row10 col2\" >PAKFMLBLPOLYXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row11\" class=\"row_heading level0 row11\" >PAKGGDBTDOMTCN</th>\n      <td id=\"T_de4c3_row11_col0\" class=\"data row11 col0\" >PAKGGDBTDOMTCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row11_col1\" class=\"data row11 col1\" >PAKGGDBTDOMTCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row11_col2\" class=\"data row11 col2\" >PAKGGDBTDOMTCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row12\" class=\"row_heading level0 row12\" >PAKGGDBTEXTLCN</th>\n      <td id=\"T_de4c3_row12_col0\" class=\"data row12 col0\" >PAKGGDBTEXTLCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row12_col1\" class=\"data row12 col1\" >PAKGGDBTEXTLCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row12_col2\" class=\"data row12 col2\" >PAKGGDBTEXTLCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row13\" class=\"row_heading level0 row13\" >PAKGGDBTTOTLCN</th>\n      <td id=\"T_de4c3_row13_col0\" class=\"data row13 col0\" >PAKGGDBTTOTLCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row13_col1\" class=\"data row13 col1\" >PAKGGDBTTOTLCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row13_col2\" class=\"data row13 col2\" >PAKGGDBTTOTLCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row14\" class=\"row_heading level0 row14\" >PAKGGDBTVALTCN</th>\n      <td id=\"T_de4c3_row14_col0\" class=\"data row14 col0\" >PAKGGDBTVALTCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row14_col1\" class=\"data row14 col1\" >PAKGGDBTVALTCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row14_col2\" class=\"data row14 col2\" >PAKGGDBTVALTCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row15\" class=\"row_heading level0 row15\" >PAKGGEXPCAPTCN</th>\n      <td id=\"T_de4c3_row15_col0\" class=\"data row15 col0\" >PAKGGEXPCAPTCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row15_col1\" class=\"data row15 col1\" >PAKGGEXPCAPTCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row15_col2\" class=\"data row15 col2\" >PAKGGEXPCAPTCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row16\" class=\"row_heading level0 row16\" >PAKGGEXPGNFSCN</th>\n      <td id=\"T_de4c3_row16_col0\" class=\"data row16 col0\" >PAKGGEXPGNFSCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row16_col1\" class=\"data row16 col1\" >PAKGGEXPGNFSCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row16_col2\" class=\"data row16 col2\" >PAKGGEXPGNFSCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row17\" class=\"row_heading level0 row17\" >PAKGGEXPOTHRCN</th>\n      <td id=\"T_de4c3_row17_col0\" class=\"data row17 col0\" >PAKGGEXPOTHRCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row17_col1\" class=\"data row17 col1\" >PAKGGEXPOTHRCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row17_col2\" class=\"data row17 col2\" >PAKGGEXPOTHRCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row18\" class=\"row_heading level0 row18\" >PAKGGEXPTRNSCN</th>\n      <td id=\"T_de4c3_row18_col0\" class=\"data row18 col0\" >PAKGGEXPTRNSCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row18_col1\" class=\"data row18 col1\" >PAKGGEXPTRNSCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row18_col2\" class=\"data row18 col2\" >PAKGGEXPTRNSCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row19\" class=\"row_heading level0 row19\" >PAKGGREVDRCTCN</th>\n      <td id=\"T_de4c3_row19_col0\" class=\"data row19 col0\" >PAKGGREVDRCTCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row19_col1\" class=\"data row19 col1\" >PAKGGREVDRCTCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row19_col2\" class=\"data row19 col2\" >PAKGGREVDRCTCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row20\" class=\"row_heading level0 row20\" >PAKGGREVGNFSCN</th>\n      <td id=\"T_de4c3_row20_col0\" class=\"data row20 col0\" >PAKGGREVGNFSCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row20_col1\" class=\"data row20 col1\" >PAKGGREVGNFSCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row20_col2\" class=\"data row20 col2\" >PAKGGREVGNFSCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row21\" class=\"row_heading level0 row21\" >PAKGGREVGRNTCN</th>\n      <td id=\"T_de4c3_row21_col0\" class=\"data row21 col0\" >PAKGGREVGRNTCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row21_col1\" class=\"data row21 col1\" >PAKGGREVGRNTCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row21_col2\" class=\"data row21 col2\" >PAKGGREVGRNTCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row22\" class=\"row_heading level0 row22\" >PAKGGREVOTHRCN</th>\n      <td id=\"T_de4c3_row22_col0\" class=\"data row22 col0\" >PAKGGREVOTHRCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row22_col1\" class=\"data row22 col1\" >PAKGGREVOTHRCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row22_col2\" class=\"data row22 col2\" >PAKGGREVOTHRCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row23\" class=\"row_heading level0 row23\" >PAKGGREVTRDECN</th>\n      <td id=\"T_de4c3_row23_col0\" class=\"data row23 col0\" >PAKGGREVTRDECN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row23_col1\" class=\"data row23 col1\" >PAKGGREVTRDECN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row23_col2\" class=\"data row23 col2\" >PAKGGREVTRDECN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row24\" class=\"row_heading level0 row24\" >PAKINTRDDIFF</th>\n      <td id=\"T_de4c3_row24_col0\" class=\"data row24 col0\" >PAKINTRDDIFF_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row24_col1\" class=\"data row24 col1\" >PAKINTRDDIFF_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row24_col2\" class=\"data row24 col2\" >PAKINTRDDIFF_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row25\" class=\"row_heading level0 row25\" >PAKINTREDIFF</th>\n      <td id=\"T_de4c3_row25_col0\" class=\"data row25 col0\" >PAKINTREDIFF_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row25_col1\" class=\"data row25 col1\" >PAKINTREDIFF_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row25_col2\" class=\"data row25 col2\" >PAKINTREDIFF_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row26\" class=\"row_heading level0 row26\" >PAKLMEMPTOTLCN</th>\n      <td id=\"T_de4c3_row26_col0\" class=\"data row26 col0\" >PAKLMEMPTOTLCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row26_col1\" class=\"data row26 col1\" >PAKLMEMPTOTLCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row26_col2\" class=\"data row26 col2\" >PAKLMEMPTOTLCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row27\" class=\"row_heading level0 row27\" >PAKNEADPKMAXKN</th>\n      <td id=\"T_de4c3_row27_col0\" class=\"data row27 col0\" >PAKNEADPKMAXKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row27_col1\" class=\"data row27 col1\" >PAKNEADPKMAXKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row27_col2\" class=\"data row27 col2\" >PAKNEADPKMAXKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row28\" class=\"row_heading level0 row28\" >PAKNECONENGYXN</th>\n      <td id=\"T_de4c3_row28_col0\" class=\"data row28 col0\" >PAKNECONENGYXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row28_col1\" class=\"data row28 col1\" >PAKNECONENGYXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row28_col2\" class=\"data row28 col2\" >PAKNECONENGYXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row29\" class=\"row_heading level0 row29\" >PAKNECONGOVTCN</th>\n      <td id=\"T_de4c3_row29_col0\" class=\"data row29 col0\" >PAKNECONGOVTCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row29_col1\" class=\"data row29 col1\" >PAKNECONGOVTCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row29_col2\" class=\"data row29 col2\" >PAKNECONGOVTCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row30\" class=\"row_heading level0 row30\" >PAKNECONGOVTXN</th>\n      <td id=\"T_de4c3_row30_col0\" class=\"data row30 col0\" >PAKNECONGOVTXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row30_col1\" class=\"data row30 col1\" >PAKNECONGOVTXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row30_col2\" class=\"data row30 col2\" >PAKNECONGOVTXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row31\" class=\"row_heading level0 row31\" >PAKNECONOTHRXN</th>\n      <td id=\"T_de4c3_row31_col0\" class=\"data row31 col0\" >PAKNECONOTHRXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row31_col1\" class=\"data row31 col1\" >PAKNECONOTHRXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row31_col2\" class=\"data row31 col2\" >PAKNECONOTHRXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row32\" class=\"row_heading level0 row32\" >PAKNECONPRVTKN</th>\n      <td id=\"T_de4c3_row32_col0\" class=\"data row32 col0\" >PAKNECONPRVTKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row32_col1\" class=\"data row32 col1\" >PAKNECONPRVTKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row32_col2\" class=\"data row32 col2\" >PAKNECONPRVTKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row33\" class=\"row_heading level0 row33\" >PAKNEEXPGNFSKN</th>\n      <td id=\"T_de4c3_row33_col0\" class=\"data row33 col0\" >PAKNEEXPGNFSKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row33_col1\" class=\"data row33 col1\" >PAKNEEXPGNFSKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row33_col2\" class=\"data row33 col2\" >PAKNEEXPGNFSKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row34\" class=\"row_heading level0 row34\" >PAKNEEXPGNFSXN</th>\n      <td id=\"T_de4c3_row34_col0\" class=\"data row34 col0\" >PAKNEEXPGNFSXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row34_col1\" class=\"data row34 col1\" >PAKNEEXPGNFSXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row34_col2\" class=\"data row34 col2\" >PAKNEEXPGNFSXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row35\" class=\"row_heading level0 row35\" >PAKNEGDIFGOVCN</th>\n      <td id=\"T_de4c3_row35_col0\" class=\"data row35 col0\" >PAKNEGDIFGOVCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row35_col1\" class=\"data row35 col1\" >PAKNEGDIFGOVCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row35_col2\" class=\"data row35 col2\" >PAKNEGDIFGOVCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row36\" class=\"row_heading level0 row36\" >PAKNEGDIFGOVXN</th>\n      <td id=\"T_de4c3_row36_col0\" class=\"data row36 col0\" >PAKNEGDIFGOVXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row36_col1\" class=\"data row36 col1\" >PAKNEGDIFGOVXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row36_col2\" class=\"data row36 col2\" >PAKNEGDIFGOVXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row37\" class=\"row_heading level0 row37\" >PAKNEGDIFPRVKN</th>\n      <td id=\"T_de4c3_row37_col0\" class=\"data row37 col0\" >PAKNEGDIFPRVKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row37_col1\" class=\"data row37 col1\" >PAKNEGDIFPRVKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row37_col2\" class=\"data row37 col2\" >PAKNEGDIFPRVKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row38\" class=\"row_heading level0 row38\" >PAKNEGDIFPRVXN</th>\n      <td id=\"T_de4c3_row38_col0\" class=\"data row38 col0\" >PAKNEGDIFPRVXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row38_col1\" class=\"data row38 col1\" >PAKNEGDIFPRVXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row38_col2\" class=\"data row38 col2\" >PAKNEGDIFPRVXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row39\" class=\"row_heading level0 row39\" >PAKNEIMPGNFSKN</th>\n      <td id=\"T_de4c3_row39_col0\" class=\"data row39 col0\" >PAKNEIMPGNFSKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row39_col1\" class=\"data row39 col1\" >PAKNEIMPGNFSKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row39_col2\" class=\"data row39 col2\" >PAKNEIMPGNFSKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row40\" class=\"row_heading level0 row40\" >PAKNEIMPGSNEXN</th>\n      <td id=\"T_de4c3_row40_col0\" class=\"data row40 col0\" >PAKNEIMPGSNEXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row40_col1\" class=\"data row40 col1\" >PAKNEIMPGSNEXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row40_col2\" class=\"data row40 col2\" >PAKNEIMPGSNEXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row41\" class=\"row_heading level0 row41\" >PAKNEKRTTOTLCN</th>\n      <td id=\"T_de4c3_row41_col0\" class=\"data row41 col0\" >PAKNEKRTTOTLCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row41_col1\" class=\"data row41 col1\" >PAKNEKRTTOTLCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row41_col2\" class=\"data row41 col2\" >PAKNEKRTTOTLCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row42\" class=\"row_heading level0 row42\" >PAKNVAGRCRPSKN</th>\n      <td id=\"T_de4c3_row42_col0\" class=\"data row42 col0\" >PAKNVAGRCRPSKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row42_col1\" class=\"data row42 col1\" >PAKNVAGRCRPSKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row42_col2\" class=\"data row42 col2\" >PAKNVAGRCRPSKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row43\" class=\"row_heading level0 row43\" >PAKNVAGRCRPSXN</th>\n      <td id=\"T_de4c3_row43_col0\" class=\"data row43 col0\" >PAKNVAGRCRPSXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row43_col1\" class=\"data row43 col1\" >PAKNVAGRCRPSXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row43_col2\" class=\"data row43 col2\" >PAKNVAGRCRPSXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row44\" class=\"row_heading level0 row44\" >PAKNVAGRFSNGKN</th>\n      <td id=\"T_de4c3_row44_col0\" class=\"data row44 col0\" >PAKNVAGRFSNGKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row44_col1\" class=\"data row44 col1\" >PAKNVAGRFSNGKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row44_col2\" class=\"data row44 col2\" >PAKNVAGRFSNGKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row45\" class=\"row_heading level0 row45\" >PAKNVAGRFSNGXN</th>\n      <td id=\"T_de4c3_row45_col0\" class=\"data row45 col0\" >PAKNVAGRFSNGXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row45_col1\" class=\"data row45 col1\" >PAKNVAGRFSNGXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row45_col2\" class=\"data row45 col2\" >PAKNVAGRFSNGXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row46\" class=\"row_heading level0 row46\" >PAKNVAGRFSTYKN</th>\n      <td id=\"T_de4c3_row46_col0\" class=\"data row46 col0\" >PAKNVAGRFSTYKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row46_col1\" class=\"data row46 col1\" >PAKNVAGRFSTYKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row46_col2\" class=\"data row46 col2\" >PAKNVAGRFSTYKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row47\" class=\"row_heading level0 row47\" >PAKNVAGRFSTYXN</th>\n      <td id=\"T_de4c3_row47_col0\" class=\"data row47 col0\" >PAKNVAGRFSTYXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row47_col1\" class=\"data row47 col1\" >PAKNVAGRFSTYXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row47_col2\" class=\"data row47 col2\" >PAKNVAGRFSTYXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row48\" class=\"row_heading level0 row48\" >PAKNVCOLPRODXN</th>\n      <td id=\"T_de4c3_row48_col0\" class=\"data row48 col0\" >PAKNVCOLPRODXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row48_col1\" class=\"data row48 col1\" >PAKNVCOLPRODXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row48_col2\" class=\"data row48 col2\" >PAKNVCOLPRODXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row49\" class=\"row_heading level0 row49\" >PAKNVENGTOTLKN</th>\n      <td id=\"T_de4c3_row49_col0\" class=\"data row49 col0\" >PAKNVENGTOTLKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row49_col1\" class=\"data row49 col1\" >PAKNVENGTOTLKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row49_col2\" class=\"data row49 col2\" >PAKNVENGTOTLKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row50\" class=\"row_heading level0 row50\" >PAKNVGASPRODXN</th>\n      <td id=\"T_de4c3_row50_col0\" class=\"data row50 col0\" >PAKNVGASPRODXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row50_col1\" class=\"data row50 col1\" >PAKNVGASPRODXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row50_col2\" class=\"data row50 col2\" >PAKNVGASPRODXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row51\" class=\"row_heading level0 row51\" >PAKNVINDCNSTKN</th>\n      <td id=\"T_de4c3_row51_col0\" class=\"data row51 col0\" >PAKNVINDCNSTKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row51_col1\" class=\"data row51 col1\" >PAKNVINDCNSTKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row51_col2\" class=\"data row51 col2\" >PAKNVINDCNSTKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row52\" class=\"row_heading level0 row52\" >PAKNVINDCNSTXN</th>\n      <td id=\"T_de4c3_row52_col0\" class=\"data row52 col0\" >PAKNVINDCNSTXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row52_col1\" class=\"data row52 col1\" >PAKNVINDCNSTXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row52_col2\" class=\"data row52 col2\" >PAKNVINDCNSTXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row53\" class=\"row_heading level0 row53\" >PAKNVINDMNGSKN</th>\n      <td id=\"T_de4c3_row53_col0\" class=\"data row53 col0\" >PAKNVINDMNGSKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row53_col1\" class=\"data row53 col1\" >PAKNVINDMNGSKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row53_col2\" class=\"data row53 col2\" >PAKNVINDMNGSKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row54\" class=\"row_heading level0 row54\" >PAKNVINDMNGSXN</th>\n      <td id=\"T_de4c3_row54_col0\" class=\"data row54 col0\" >PAKNVINDMNGSXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row54_col1\" class=\"data row54 col1\" >PAKNVINDMNGSXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row54_col2\" class=\"data row54 col2\" >PAKNVINDMNGSXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row55\" class=\"row_heading level0 row55\" >PAKNVINDOTHRTKN</th>\n      <td id=\"T_de4c3_row55_col0\" class=\"data row55 col0\" >PAKNVINDOTHRTKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row55_col1\" class=\"data row55 col1\" >PAKNVINDOTHRTKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row55_col2\" class=\"data row55 col2\" >PAKNVINDOTHRTKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row56\" class=\"row_heading level0 row56\" >PAKNVINDOTHRTXN</th>\n      <td id=\"T_de4c3_row56_col0\" class=\"data row56 col0\" >PAKNVINDOTHRTXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row56_col1\" class=\"data row56 col1\" >PAKNVINDOTHRTXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row56_col2\" class=\"data row56 col2\" >PAKNVINDOTHRTXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row57\" class=\"row_heading level0 row57\" >PAKNVOILPRODXN</th>\n      <td id=\"T_de4c3_row57_col0\" class=\"data row57 col0\" >PAKNVOILPRODXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row57_col1\" class=\"data row57 col1\" >PAKNVOILPRODXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row57_col2\" class=\"data row57 col2\" >PAKNVOILPRODXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row58\" class=\"row_heading level0 row58\" >PAKNVRENPRODXN</th>\n      <td id=\"T_de4c3_row58_col0\" class=\"data row58 col0\" >PAKNVRENPRODXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row58_col1\" class=\"data row58 col1\" >PAKNVRENPRODXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row58_col2\" class=\"data row58 col2\" >PAKNVRENPRODXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row59\" class=\"row_heading level0 row59\" >PAKNVSRVFINSKN</th>\n      <td id=\"T_de4c3_row59_col0\" class=\"data row59 col0\" >PAKNVSRVFINSKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row59_col1\" class=\"data row59 col1\" >PAKNVSRVFINSKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row59_col2\" class=\"data row59 col2\" >PAKNVSRVFINSKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row60\" class=\"row_heading level0 row60\" >PAKNVSRVFINSXN</th>\n      <td id=\"T_de4c3_row60_col0\" class=\"data row60 col0\" >PAKNVSRVFINSXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row60_col1\" class=\"data row60 col1\" >PAKNVSRVFINSXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row60_col2\" class=\"data row60 col2\" >PAKNVSRVFINSXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row61\" class=\"row_heading level0 row61\" >PAKNVSRVGOVSKN</th>\n      <td id=\"T_de4c3_row61_col0\" class=\"data row61 col0\" >PAKNVSRVGOVSKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row61_col1\" class=\"data row61 col1\" >PAKNVSRVGOVSKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row61_col2\" class=\"data row61 col2\" >PAKNVSRVGOVSKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row62\" class=\"row_heading level0 row62\" >PAKNVSRVGOVSXN</th>\n      <td id=\"T_de4c3_row62_col0\" class=\"data row62 col0\" >PAKNVSRVGOVSXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row62_col1\" class=\"data row62 col1\" >PAKNVSRVGOVSXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row62_col2\" class=\"data row62 col2\" >PAKNVSRVGOVSXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row63\" class=\"row_heading level0 row63\" >PAKNVSRVHSNGKN</th>\n      <td id=\"T_de4c3_row63_col0\" class=\"data row63 col0\" >PAKNVSRVHSNGKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row63_col1\" class=\"data row63 col1\" >PAKNVSRVHSNGKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row63_col2\" class=\"data row63 col2\" >PAKNVSRVHSNGKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row64\" class=\"row_heading level0 row64\" >PAKNVSRVHSNGXN</th>\n      <td id=\"T_de4c3_row64_col0\" class=\"data row64 col0\" >PAKNVSRVHSNGXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row64_col1\" class=\"data row64 col1\" >PAKNVSRVHSNGXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row64_col2\" class=\"data row64 col2\" >PAKNVSRVHSNGXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row65\" class=\"row_heading level0 row65\" >PAKNVSRVPRVSXN</th>\n      <td id=\"T_de4c3_row65_col0\" class=\"data row65 col0\" >PAKNVSRVPRVSXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row65_col1\" class=\"data row65 col1\" >PAKNVSRVPRVSXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row65_col2\" class=\"data row65 col2\" >PAKNVSRVPRVSXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row66\" class=\"row_heading level0 row66\" >PAKNVSRVTRNSKN</th>\n      <td id=\"T_de4c3_row66_col0\" class=\"data row66 col0\" >PAKNVSRVTRNSKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row66_col1\" class=\"data row66 col1\" >PAKNVSRVTRNSKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row66_col2\" class=\"data row66 col2\" >PAKNVSRVTRNSKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row67\" class=\"row_heading level0 row67\" >PAKNVSRVTRNSXN</th>\n      <td id=\"T_de4c3_row67_col0\" class=\"data row67 col0\" >PAKNVSRVTRNSXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row67_col1\" class=\"data row67 col1\" >PAKNVSRVTRNSXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row67_col2\" class=\"data row67 col2\" >PAKNVSRVTRNSXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row68\" class=\"row_heading level0 row68\" >PAKNVSRVWHSLKN</th>\n      <td id=\"T_de4c3_row68_col0\" class=\"data row68 col0\" >PAKNVSRVWHSLKN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row68_col1\" class=\"data row68 col1\" >PAKNVSRVWHSLKN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row68_col2\" class=\"data row68 col2\" >PAKNVSRVWHSLKN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row69\" class=\"row_heading level0 row69\" >PAKNVSRVWHSLXN</th>\n      <td id=\"T_de4c3_row69_col0\" class=\"data row69 col0\" >PAKNVSRVWHSLXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row69_col1\" class=\"data row69 col1\" >PAKNVSRVWHSLXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row69_col2\" class=\"data row69 col2\" >PAKNVSRVWHSLXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row70\" class=\"row_heading level0 row70\" >PAKNYGDPFCSTXN</th>\n      <td id=\"T_de4c3_row70_col0\" class=\"data row70 col0\" >PAKNYGDPFCSTXN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row70_col1\" class=\"data row70 col1\" >PAKNYGDPFCSTXN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row70_col2\" class=\"data row70 col2\" >PAKNYGDPFCSTXN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row71\" class=\"row_heading level0 row71\" >PAKNYWRTFORMCN</th>\n      <td id=\"T_de4c3_row71_col0\" class=\"data row71 col0\" >PAKNYWRTFORMCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row71_col1\" class=\"data row71 col1\" >PAKNYWRTFORMCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row71_col2\" class=\"data row71 col2\" >PAKNYWRTFORMCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row72\" class=\"row_heading level0 row72\" >PAKNYWRTINFMCN</th>\n      <td id=\"T_de4c3_row72_col0\" class=\"data row72 col0\" >PAKNYWRTINFMCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row72_col1\" class=\"data row72 col1\" >PAKNYWRTINFMCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row72_col2\" class=\"data row72 col2\" >PAKNYWRTINFMCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row73\" class=\"row_heading level0 row73\" >PAKPANUSATLS</th>\n      <td id=\"T_de4c3_row73_col0\" class=\"data row73 col0\" >PAKPANUSATLS_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row73_col1\" class=\"data row73 col1\" >PAKPANUSATLS_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row73_col2\" class=\"data row73 col2\" >PAKPANUSATLS_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_de4c3_level0_row74\" class=\"row_heading level0 row74\" >PAKVELOCITY</th>\n      <td id=\"T_de4c3_row74_col0\" class=\"data row74 col0\" >PAKVELOCITY_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row74_col1\" class=\"data row74 col1\" >PAKVELOCITY_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_de4c3_row74_col2\" class=\"data row74 col2\" >PAKVELOCITY_A<span class=\"pd-t\"></span></td>\n    </tr>\n  </tbody>\n</table>\n"}}, "e0714314529645258df9d7f93f4e8bf8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "54%"}}, "0f89aa81f8e345c69b509f05dc32b4b7": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "82a4dfba8f5a4232aecc29c8cc9b69c2": {"model_name": "LabelModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "LabelModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "LabelView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e0714314529645258df9d7f93f4e8bf8", "placeholder": "\u200b", "style": "IPY_MODEL_0f89aa81f8e345c69b509f05dc32b4b7", "value": ""}}, "032f782f0acc4ea8a67aef48da1b0694": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f5773334392545feac7c080c926ae741": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "449990f3499742faa1788dff85bd4b29": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_032f782f0acc4ea8a67aef48da1b0694", "placeholder": "\u200b", "style": "IPY_MODEL_f5773334392545feac7c080c926ae741", "value": "<style type=\"text/css\">\n#T_45f8c thead tr:nth-child(1) th {\n  position: sticky;\n  background-color: white;\n  top: 0px;\n  z-index: 2;\n}\n#T_45f8c thead tr th:nth-child(1) {\n  position: sticky;\n  background-color: white;\n  left: 0px;\n  z-index: 3 !important;\n}\n#T_45f8c tbody tr th:nth-child(1) {\n  position: sticky;\n  background-color: white;\n  left: 0px;\n  z-index: 1;\n}\n#T_45f8c .pd-t {\n  visibility: hidden;\n  position: absolute;\n  z-index: 1;\n  border: 1px solid #000066;\n  background-color: white;\n  color: #000066;\n  font-size: 0.8em;\n  width: 100%transform;\n  padding: 0.6em;\n  border-radius: 0.5em;\n}\n#T_45f8c #T_45f8c_row0_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row0_col0 .pd-t::after {\n  content: \"Acquisition of non-financial assets\";\n}\n#T_45f8c #T_45f8c_row0_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row0_col1 .pd-t::after {\n  content: \"Acquisition of non-financial assets\";\n}\n#T_45f8c #T_45f8c_row0_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row0_col2 .pd-t::after {\n  content: \"Acquisition of non-financial assets\";\n}\n#T_45f8c #T_45f8c_row1_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row1_col0 .pd-t::after {\n  content: \"Expenditure on Goods and Services\";\n}\n#T_45f8c #T_45f8c_row1_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row1_col1 .pd-t::after {\n  content: \"Expenditure on Goods and Services\";\n}\n#T_45f8c #T_45f8c_row1_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row1_col2 .pd-t::after {\n  content: \"Expenditure on Goods and Services\";\n}\n#T_45f8c #T_45f8c_row2_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row2_col0 .pd-t::after {\n  content: \"Other Expenditure\";\n}\n#T_45f8c #T_45f8c_row2_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row2_col1 .pd-t::after {\n  content: \"Other Expenditure\";\n}\n#T_45f8c #T_45f8c_row2_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row2_col2 .pd-t::after {\n  content: \"Other Expenditure\";\n}\n#T_45f8c #T_45f8c_row3_col0:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row3_col0 .pd-t::after {\n  content: \"Transfers\";\n}\n#T_45f8c #T_45f8c_row3_col1:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row3_col1 .pd-t::after {\n  content: \"Transfers\";\n}\n#T_45f8c #T_45f8c_row3_col2:hover .pd-t {\n  visibility: visible;\n}\n#T_45f8c #T_45f8c_row3_col2 .pd-t::after {\n  content: \"Transfers\";\n}\n</style>\n<table id=\"T_45f8c\" class=\"table\">\n  <thead>\n    <tr>\n      <th class=\"blank level0\" >&nbsp;</th>\n      <th id=\"T_45f8c_level0_col0\" class=\"col_heading level0 col0\" >Dummy</th>\n      <th id=\"T_45f8c_level0_col1\" class=\"col_heading level0 col1\" >Fixed value</th>\n      <th id=\"T_45f8c_level0_col2\" class=\"col_heading level0 col2\" >Add factor</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th id=\"T_45f8c_level0_row0\" class=\"row_heading level0 row0\" >PAKGGEXPCAPTCN</th>\n      <td id=\"T_45f8c_row0_col0\" class=\"data row0 col0\" >PAKGGEXPCAPTCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_45f8c_row0_col1\" class=\"data row0 col1\" >PAKGGEXPCAPTCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_45f8c_row0_col2\" class=\"data row0 col2\" >PAKGGEXPCAPTCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_45f8c_level0_row1\" class=\"row_heading level0 row1\" >PAKGGEXPGNFSCN</th>\n      <td id=\"T_45f8c_row1_col0\" class=\"data row1 col0\" >PAKGGEXPGNFSCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_45f8c_row1_col1\" class=\"data row1 col1\" >PAKGGEXPGNFSCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_45f8c_row1_col2\" class=\"data row1 col2\" >PAKGGEXPGNFSCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_45f8c_level0_row2\" class=\"row_heading level0 row2\" >PAKGGEXPOTHRCN</th>\n      <td id=\"T_45f8c_row2_col0\" class=\"data row2 col0\" >PAKGGEXPOTHRCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_45f8c_row2_col1\" class=\"data row2 col1\" >PAKGGEXPOTHRCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_45f8c_row2_col2\" class=\"data row2 col2\" >PAKGGEXPOTHRCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n    <tr>\n      <th id=\"T_45f8c_level0_row3\" class=\"row_heading level0 row3\" >PAKGGEXPTRNSCN</th>\n      <td id=\"T_45f8c_row3_col0\" class=\"data row3 col0\" >PAKGGEXPTRNSCN_D<span class=\"pd-t\"></span></td>\n      <td id=\"T_45f8c_row3_col1\" class=\"data row3 col1\" >PAKGGEXPTRNSCN_X<span class=\"pd-t\"></span></td>\n      <td id=\"T_45f8c_row3_col2\" class=\"data row3 col2\" >PAKGGEXPTRNSCN_A<span class=\"pd-t\"></span></td>\n    </tr>\n  </tbody>\n</table>\n"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\howto\update"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="create_save_scenarios.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Create many scenarios, simulate them  and access results</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../Python/modelflow_features.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Useful model instance properties and methods</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ib Hansen<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1049 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example Solow model &#8212; ModelFlow</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Introduction to the Jupyter Notebook" href="../../Python/Intro_Jupyter_notebook.html" />
+    <link rel="prev" title="What is a Model in ModelFlow" href="model%20and%20solution.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ModelFlow</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model, solutions and Modelflow
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="model%20and%20solution.html">
+   What is a Model in ModelFlow
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Example Solow model
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python and pandas stuff
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Python/Intro_Jupyter_notebook.html">
+   Introduction to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/dataframes.html">
+   Introduction to Pandas dataframes
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Updating variables
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/update/model%20update.html">
+   Update, modifying series in a dataframe using modelflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/update/extending_dataframes.html">
+   Extend Pandas dataframes with ModelFLow capabilities.
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Simulate models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/update/create_experiment.html">
+   Create an experiment, simulate it and access results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/update/create_save_scenarios.html">
+   Create many scenarios, simulate them  and access results
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fixing the value of designated variables.
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/update/Fixing%20variables.html">
+   Fixing the value of variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Features
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Python/modelflow_features.html">
+   Useful model instance properties and methods
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Structure
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/structure/Logical_structure.html">
+   Logical structure and dependencies.
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Onboarding
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="model%20specification.html">
+   Specification of models (introduction)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
+   Onboard a model defined in a .wf1 file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/onboard/eviews/onboard%20many%20models%20from%20wf1.html">
+   Onboard all models  defined in .wf1 files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
+   Normalizing when onboarding  eviews models
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Attribution
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/attribution/Attribution%20background.html">
+   Attribution
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/optimization/Optimize_simpel.html">
+   Mean variance optimization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  More
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../litterature.html">
+   Litterature
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter book test
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../booktest.html">
+   Test of Jupyter book features.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/notebooks/intro/Example Solow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/notebooks/intro/Example Solow.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/content/notebooks/intro/Example Solow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specify-the-model">
+   Specify the model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-model-class-instance">
+   Create a model class instance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-some-data">
+   Create some data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-the-model">
+   Run the model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-scenario-and-run-again">
+   Create a scenario and run again
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-the-results-are-also-embedded-in-msolow">
+   Now the results are also embedded in msolow.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspect-results-two-ways">
+   Inspect results  - two ways
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#through-dataframes">
+     Through dataframes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-the-model-instance-also-contains-the-results">
+   But the model instance also contains the results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-operator">
+     using the [ ] operator
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#look-at-variables-starting-with-a-c">
+       Look at variables starting with a C
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#look-at-all-endogenous-variables">
+       Look at all endogenous variables
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-keept-solutions">
+     using the keept solutions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-advanced-topics">
+   More advanced topics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-logical-stucture">
+     The logical stucture
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model-structure">
+       Model structure
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adjacency-matrix">
+       Adjacency matrix
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-function-used-to-solve-the-model">
+     The python function used to solve the model.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Example Solow model</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specify-the-model">
+   Specify the model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-model-class-instance">
+   Create a model class instance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-some-data">
+   Create some data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-the-model">
+   Run the model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-scenario-and-run-again">
+   Create a scenario and run again
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-the-results-are-also-embedded-in-msolow">
+   Now the results are also embedded in msolow.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspect-results-two-ways">
+   Inspect results  - two ways
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#through-dataframes">
+     Through dataframes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-the-model-instance-also-contains-the-results">
+   But the model instance also contains the results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-operator">
+     using the [ ] operator
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#look-at-variables-starting-with-a-c">
+       Look at variables starting with a C
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#look-at-all-endogenous-variables">
+       Look at all endogenous variables
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-keept-solutions">
+     using the keept solutions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-advanced-topics">
+   More advanced topics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-logical-stucture">
+     The logical stucture
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model-structure">
+       Model structure
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adjacency-matrix">
+       Adjacency matrix
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-function-used-to-solve-the-model">
+     The python function used to solve the model.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="example-solow-model">
+<h1>Example Solow model<a class="headerlink" href="#example-solow-model" title="Permalink to this headline">¶</a></h1>
+<p>In this jupyter notebook we will specify, solve and analyse a simple Solow model in ModelFlow.</p>
+<p>You can find this notebook on our Github page &lt;link&gt; or by downloading it from &lt;upper right corner&gt;</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Required packages</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Modelflow modules</span>
+<span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span>
+
+<span class="c1">#for publication </span>
+<span class="n">latex</span><span class="o">=</span><span class="mi">1</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="specify-the-model">
+<h2>Specify the model<a class="headerlink" href="#specify-the-model" title="Permalink to this headline">¶</a></h2>
+<p>We start by defining the logic of the Solow model in the Business Logic Language.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"><strong>Business Logic Language</strong></p>
+<p>More on how to specify models <a class="reference internal" href="model%20specification.html"><span class="doc std std-doc">here</span></a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fsolow</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="s1">Income          = a  * Capital**alfa * Labor **(1-alfa) </span>
+<span class="s1">Consumption     = (1-saving_rate)  * Income </span>
+<span class="s1">Investment      = Income - Consumption </span>
+<span class="s1">diff(Capital)   = Investment-Depreciation_rate * Capital(-1)</span>
+<span class="s1">diff(Labor)     = Labor_growth * Labor(-1) </span>
+<span class="s1">Capital_intensity = Capital/Labor </span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-model-class-instance">
+<h2>Create a model class instance<a class="headerlink" href="#create-a-model-class-instance" title="Permalink to this headline">¶</a></h2>
+<p>After defining the Business Logic Language and storing it in the variable ‘fsolow’, we create a class instance called msolow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">from_eq</span><span class="p">(</span><span class="n">fsolow</span><span class="p">,</span><span class="n">modelname</span><span class="o">=</span><span class="s1">&#39;Solow model&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above the equation for Capital and Labor on the left hand side of the = consist of an expressing <code class="docutils literal notranslate"><span class="pre">diff(Capital)</span></code> and <code class="docutils literal notranslate"><span class="pre">diff(Labor)</span></code>. The equations are not normalized.</p>
+<p>To solve a model in modelflow all equations has to be normalized. Meaning that the left hand side only consist of variables not expressions. So the function <code class="docutils literal notranslate"><span class="pre">model.from_eq</span></code> will normalize the equations as the first step before the model can be solved.</p>
+<p>In this case <strong>first</strong> <code class="docutils literal notranslate"><span class="pre">diff(Capital)</span></code> is transformed to <span class="math notranslate nohighlight">\(\Delta capital = capital-capital(-1)\)</span>. <strong>Then</strong> the lagged variables is moved to the right side of the =.
+The same goes for diff(labor)</p>
+<p>So the normalized business language of the model now looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span><span class="o">.</span><span class="n">print_model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FRML &lt;&gt; INCOME          = A  * CAPITAL**ALFA * LABOR **(1-ALFA)  $
+FRML &lt;&gt; CONSUMPTION     = (1-SAVING_RATE)  * INCOME  $
+FRML &lt;&gt; INVESTMENT      = INCOME - CONSUMPTION  $
+FRML &lt;&gt; CAPITAL=CAPITAL(-1)+(INVESTMENT-DEPRECIATION_RATE * CAPITAL(-1))$
+FRML &lt;&gt; LABOR=LABOR(-1)+(LABOR_GROWTH * LABOR(-1))$
+FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-some-data">
+<h2>Create some data<a class="headerlink" href="#create-some-data" title="Permalink to this headline">¶</a></h2>
+<p>To show what Modelflow can do, we create som data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">300</span>  
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;LABOR&#39;</span><span class="p">:[</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">,</span>
+                   <span class="s1">&#39;CAPITAL&#39;</span><span class="p">:[</span><span class="mi">100</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> 
+                   <span class="s1">&#39;ALFA&#39;</span><span class="p">:[</span><span class="mf">0.5</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> 
+                   <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> 
+                   <span class="s1">&#39;DEPRECIATES_RATE&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> 
+                   <span class="s1">&#39;LABOR_GROWTH&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> 
+                   <span class="s1">&#39;SAVING_RATIO&#39;</span><span class="p">:[</span><span class="mf">0.05</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1">#this prints out the first 5 rows of the dataframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LABOR</th>
+      <th>CAPITAL</th>
+      <th>ALFA</th>
+      <th>A</th>
+      <th>DEPRECIATES_RATE</th>
+      <th>LABOR_GROWTH</th>
+      <th>SAVING_RATIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100</td>
+      <td>100</td>
+      <td>0.5</td>
+      <td>1</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>100</td>
+      <td>100</td>
+      <td>0.5</td>
+      <td>1</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>100</td>
+      <td>100</td>
+      <td>0.5</td>
+      <td>1</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>100</td>
+      <td>100</td>
+      <td>0.5</td>
+      <td>1</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>100</td>
+      <td>100</td>
+      <td>0.5</td>
+      <td>1</td>
+      <td>0.05</td>
+      <td>0.01</td>
+      <td>0.05</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="run-the-model">
+<h2>Run the model<a class="headerlink" href="#run-the-model" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">msolow</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;Baseline&#39;</span><span class="p">)</span> <span class="c1"># The model is simulated for all years possible</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-scenario-and-run-again">
+<h2>Create a scenario and run again<a class="headerlink" href="#create-a-scenario-and-run-again" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"><strong>dataframe.upd</strong></p>
+<p>When importing modelclass all pandas dataframes are enriched with a a handy way to create a new pandas dataframe with updated series.</p>
+<p>In this case df.upd will create a a new dataframe with updated LABOR_GROWTH</p>
+<p>For additional explanation look <a class="reference internal" href="../../howto/update/model%20update.html"><span class="doc std std-doc">here</span></a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfscenario</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;LABOR_GROWTH + 0.002&#39;</span><span class="p">)</span>  <span class="c1"># Increase by 0.002</span>
+<span class="n">scenario</span>   <span class="o">=</span> <span class="n">msolow</span><span class="p">(</span><span class="n">dfscenario</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;Higher labor growth&#39;</span><span class="p">)</span> <span class="c1"># simulate the model </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="now-the-results-are-also-embedded-in-msolow">
+<h2>Now the results are also embedded in msolow.<a class="headerlink" href="#now-the-results-are-also-embedded-in-msolow" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.basedf</span></code> contains the first run of the model</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.lastdf</span></code> contains the last run of the model</p></li>
+</ul>
+<p>Also in this case the keyword <code class="docutils literal notranslate"><span class="pre">keep</span></code> is used the results are stored in a dictionary <code class="docutils literal notranslate"><span class="pre">.keep_solutions</span></code> This can be useful when comparing several scenarios.</p>
+</div>
+<div class="section" id="inspect-results-two-ways">
+<h2>Inspect results  - two ways<a class="headerlink" href="#inspect-results-two-ways" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="through-dataframes">
+<h3>Through dataframes<a class="headerlink" href="#through-dataframes" title="Permalink to this headline">¶</a></h3>
+<p>Here the resulting dataframe is used ‘as is’. In this case using the plotting feature.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">-</span><span class="n">result</span> 
+<span class="n">diff</span><span class="p">[</span><span class="s1">&#39;INCOME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Impact on income&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Example Solow_19_0.png" src="../../../_images/Example Solow_19_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="but-the-model-instance-also-contains-the-results">
+<h2>But the model instance also contains the results<a class="headerlink" href="#but-the-model-instance-also-contains-the-results" title="Permalink to this headline">¶</a></h2>
+<p>And they can be used in a more user friendly way</p>
+<div class="section" id="using-the-operator">
+<h3>using the [ ] operator<a class="headerlink" href="#using-the-operator" title="Permalink to this headline">¶</a></h3>
+<p>We can select the variables of interest with wildcards</p>
+<p>this will operate the results stored in <code class="docutils literal notranslate"><span class="pre">basedf</span></code> and <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code></p>
+<div class="section" id="look-at-variables-starting-with-a-c">
+<h4>Look at variables starting with a C<a class="headerlink" href="#look-at-variables-starting-with-a-c" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span><span class="p">[</span><span class="s1">&#39;c*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dif</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Impact&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Example Solow_24_0.png" src="../../../_images/Example Solow_24_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="look-at-all-endogenous-variables">
+<h4>Look at all endogenous variables<a class="headerlink" href="#look-at-all-endogenous-variables" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span><span class="p">[</span><span class="s1">&#39;#ENDO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dif</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sharey</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Impact&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Example Solow_26_0.png" src="../../../_images/Example Solow_26_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-the-keept-solutions">
+<h3>using the keept solutions<a class="headerlink" href="#using-the-keept-solutions" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">msolow</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">msolow</span><span class="o">.</span><span class="n">keep_plot</span><span class="p">(</span><span class="s1">&#39;income con*&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Example Solow_28_0.png" src="../../../_images/Example Solow_28_0.png" />
+<img alt="../../../_images/Example Solow_28_1.png" src="../../../_images/Example Solow_28_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-advanced-topics">
+<h2>More advanced topics<a class="headerlink" href="#more-advanced-topics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-logical-stucture">
+<h3>The logical stucture<a class="headerlink" href="#the-logical-stucture" title="Permalink to this headline">¶</a></h3>
+<p>Now the model has been analyzed, and the structure can be displayed.</p>
+<p>You will find more on the logical structure <a class="reference internal" href="../../howto/structure/Logical_structure.html"><span class="doc std std-doc">here</span></a></p>
+<div class="section" id="model-structure">
+<h4>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span><span class="o">.</span><span class="n">drawmodel</span><span class="p">(</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Model Structure&quot;</span><span class="p">,</span> <span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Example Solow_32_0.png" src="../../../_images/Example Solow_32_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="adjacency-matrix">
+<h4>Adjacency matrix<a class="headerlink" href="#adjacency-matrix" title="Permalink to this headline">¶</a></h4>
+<p>Another way to illustrate the dependency graph is an adjacency matrix.</p>
+<p>The variables  [‘INVESTMENT’, ‘CONSUMPTION’, ‘CAPITAL’, ‘INCOME’] in the red area are the core of the model and has to be solved as a system.</p>
+<p>LABOR is the prolog and can be calculated before the core is solved. While CAPITAL_INTENSE is the epilog which can be calculated after the core is solved.</p>
+<p>Many models comform to this pattern. And for solving purpose a model is divided into a prolog, core and an epilog. Even if the core is actually consistent of several strong components.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span><span class="o">.</span><span class="n">plotadjacency</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Example Solow_34_0.png" src="../../../_images/Example Solow_34_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-python-function-used-to-solve-the-model">
+<span id="solow-python-code"></span><h3>The python function used to solve the model.<a class="headerlink" href="#the-python-function-used-to-solve-the-model" title="Permalink to this headline">¶</a></h3>
+<p>Is generated by the transpiler and looks like this</p>
+<p>The user will hopeful  newer have to relate to this code. The point of modelflow is, that the user has to relate to the specification of the business logic, not the implementation in code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">msolow</span><span class="o">.</span><span class="n">make_los_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def make_los(funks=[],errorfunk=None):
+    import time
+    import tqdm
+    from numba import jit
+    from modeluserfunk import jit, recode
+    from modelBLfunk import array, classfunk, clognorm, exp, gamma, inspect, jit, lifetime_credit_loss, log, logit, logit_inverse, lognorm, matrix, mv_opt, mv_opt_prop, norm, normcdf, qgamma, sqrt, sum_excel, transpose
+    def prolog0(values,outvalues,row,alfa=1.0):
+        try :
+            pass
+            values[row,0]=values[row-1,0]+(values[row,5]*values[row-1,0])
+        except :
+            errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=9,overeq=0)
+            raise
+        return 
+    def prolog(values,outvalues,row,alfa=1.0):
+        prolog0(values,outvalues,row,alfa=alfa)
+        return  
+    def core0(values,outvalues,row,alfa=1.0):
+        try :
+            pass
+            values[row,9]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
+            values[row,8]=(1-values[row,7])*values[row,9]
+            values[row,12]=values[row,9]-values[row,8]
+            values[row,1]=values[row-1,1]+(values[row,12]-values[row,11]*values[row-1,1])
+        except :
+            errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=20,overeq=1)
+            raise
+        return 
+    def core(values,outvalues,row,alfa=1.0):
+        core0(values,outvalues,row,alfa=alfa)
+        return  
+    def epilog0(values,outvalues,row,alfa=1.0):
+        try :
+            pass
+            values[row,10]=values[row,1]/values[row,0]
+        except :
+            errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=34,overeq=5)
+            raise
+        return 
+    def epilog(values,outvalues,row,alfa=1.0):
+        epilog0(values,outvalues,row,alfa=alfa)
+        return  
+    return prolog,core,epilog
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks\intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="model%20and%20solution.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">What is a Model in ModelFlow</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../Python/Intro_Jupyter_notebook.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to the Jupyter Notebook</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ib Hansen<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
