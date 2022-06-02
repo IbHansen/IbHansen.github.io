@@ -164,11 +164,25 @@ const thebe_selector_output = ".output, .cell_output"
    Create many scenarios, simulate them  and access results
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fixing the value of designated variables.
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../update/Fixing%20variables.html">
    Fixing the value of variables
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Features
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../Python/modelflow_features.html">
    Useful model instance properties and methods
@@ -469,14 +483,12 @@ Fitted          : Y_FITTED = Y(-1)*EXP( (3*((LOG(X+B))-(LOG(X(-1)+B(-1))))) )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : X
-Original        : x  = 3 
-Preprocessed    : X=3
-Normalized      : X = (3 + X_A)* (1-X_D)+ X_X*X_D 
-Calc_add_factor : X_A = (X) - (3)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">normal</span><span class="p">(</span><span class="s1">&#39;x  = 3 &#39;</span><span class="p">,</span><span class="n">exo_adjust</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: normal() got an unexpected keyword argument &#39;exo_adjust&#39;
 </pre></div>
 </div>
 </div>

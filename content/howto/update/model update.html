@@ -48,6 +48,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -716,7 +718,7 @@ typical updates of economic variables.</p>
 <p>Will create a new dataframe based on the dataframe df where the variable <code class="docutils literal notranslate"><span class="pre">THE_ANSWER</span></code> has the value 42.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>The df dataframe wil remain unchanged. The newdf contains the new updated values (and all non-updated variables from df.</p>
+<p>The df dataframe remains unchanged. The newdf contains the new updated values (and all non-updated variables from df.</p>
 </div>
 <p>To make df.update useful you can also:</p>
 <ul class="simple">
@@ -725,7 +727,8 @@ typical updates of economic variables.</p>
 <li><p>Control the time for which the update has effect</p></li>
 <li><p>Use one input which is used for all time frames, or a input for each time</p></li>
 <li><p>Keep the growth rate after the update time frame.</p></li>
-<li><p>Display the results</p></li>
+<li><p>Display the results
+http://localhost:8888/notebooks/wb%20new/Modelflow/working_paper/thebook/content/howto/update/model%20update.ipynb#</p></li>
 </ul>
 <p><strong>Types of update:</strong></p>
 <table class="colwidths-auto table">

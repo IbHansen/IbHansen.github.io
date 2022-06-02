@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction &#8212; ModelFlow   ibs </title>
+    <title>Introduction &#8212; ModelFlow</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -48,6 +48,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="What is a Model in ModelFlow" href="notebooks/intro/model%20and%20solution.html" />
@@ -375,15 +377,15 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>ModelFlow is a Python library developed to leverage on the Pandas data managegement library and the broader Python exosystem. So that models can be solved and models and results can be analyzed and vizualized.</p>
-<p><strong>Model Specification</strong> With ModelFlow you can specify your models as concise and intuitive equations. ModelFlow transforms your equations into Pythttp://localhost:8888/edit/wb%20new/Modelflow/working_paper/ibsbook/introduction.md#hon code and solves your model.</p>
+<p><strong>Model Specification</strong> With ModelFlow you can specify your models as concise and intuitive equations. ModelFlow transforms your equations into Python code and solves your model.</p>
 <p><strong>Large models</strong>.
-ModelFlow can handle models with 1 million equations and more. The library is therefore especially suited for Macroeconomists who handle very large models.</p>
+ModelFlow can handle models with 1 million equations and more. The library is therefore also suited for very large models.</p>
 <p><strong>Agile model development</strong>
 The models are specified at a high level of abstraction and are processed fast. This makes ModelFlow the obvious choice when developing and experimenting with large models.</p>
 <p><strong>Onboarding models</strong>.
 Creating a model often entails recycling several models specified in different ways: Excel, Latex, Dynare, Python and other languages/tools.
-ModelFlow, which is nested in the Python’s ecosystem, makes it possible to transform models defined in many different languages into ModelFlow models.
-<strong>Onboarding data</strong>.
+ModelFlow, which is nested in the Python’s ecosystem, makes it possible to transform models defined in many different languages into ModelFlow models.</p>
+<p><strong>Onboarding data</strong>.
 ModelFlow is build on top of Pythons Pandas Library, which makes it easy to import and manage many different types of data.</p>
 <p><strong>Analytic</strong> ModelFlow provides you with a range of visual tools that help you understand your models and your results.</p>
 <p><strong>Open Source</strong>
