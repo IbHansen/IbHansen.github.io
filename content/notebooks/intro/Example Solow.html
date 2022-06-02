@@ -37,9 +37,12 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -49,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -955,10 +958,10 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
     def core0(values,outvalues,row,alfa=1.0):
         try :
             pass
-            values[row,9]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
-            values[row,8]=(1-values[row,7])*values[row,9]
-            values[row,12]=values[row,9]-values[row,8]
-            values[row,1]=values[row-1,1]+(values[row,12]-values[row,11]*values[row-1,1])
+            values[row,8]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
+            values[row,11]=(1-values[row,12])*values[row,8]
+            values[row,10]=values[row,8]-values[row,11]
+            values[row,1]=values[row-1,1]+(values[row,10]-values[row,9]*values[row-1,1])
         except :
             errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=20,overeq=1)
             raise
@@ -969,7 +972,7 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
     def epilog0(values,outvalues,row,alfa=1.0):
         try :
             pass
-            values[row,10]=values[row,1]/values[row,0]
+            values[row,7]=values[row,1]/values[row,0]
         except :
             errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=34,overeq=5)
             raise
