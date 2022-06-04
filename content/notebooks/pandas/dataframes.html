@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to Pandas dataframes &#8212; ModelFlow</title>
+    <title>5. Introduction to Pandas dataframes &#8212; ModelFlow</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,12 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Update, modifying series in a dataframe using modelflow" href="../../howto/update/model%20update.html" />
-    <link rel="prev" title="Introduction to the Jupyter Notebook" href="../../Python/Intro_Jupyter_notebook.html" />
+    <link rel="prev" title="4. Introduction to the Jupyter Notebook" href="../../Python/Intro_Jupyter_notebook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,12 +106,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro/model%20and%20solution.html">
-   What is a Model in ModelFlow
+   1. What is a Model in ModelFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../intro/Example%20Solow.html">
-   Example Solow model
+   3. Example Solow model
   </a>
  </li>
 </ul>
@@ -125,12 +123,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/Intro_Jupyter_notebook.html">
-   Introduction to the Jupyter Notebook
+   4. Introduction to the Jupyter Notebook
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Introduction to Pandas dataframes
+   5. Introduction to Pandas dataframes
   </a>
  </li>
 </ul>
@@ -384,67 +382,67 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-the-pandas-library">
-   Import the pandas library
+   5.1. Import the pandas library
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-a-dataframe">
-   What is a dataframe
+   5.2. What is a dataframe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#attributes">
-   Attributes
+   5.3. Attributes
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#columns-column-names">
-     .columns, column names
+     5.3.1. .columns, column names
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#column-names-in-modelflow">
-     Column names in  Modelflow
+     5.3.2. Column names in  Modelflow
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#index-and-time-dimensions-in-modelflow">
-     .index and time dimensions in Modelflow
+     5.3.3. .index and time dimensions in Modelflow
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#eval-evalueation-expressions">
-     .eval() evalueation expressions
+     5.3.4. .eval() evalueation expressions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#loc-when-slicing-a-dataframe">
-     .loc[] when slicing a dataframe
+     5.3.5. .loc[] when slicing a dataframe
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-row-column-a-single-element">
-       .loc[row,column] A single element
+       5.3.5.1. .loc[row,column] A single element
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-column-a-single-column">
-       .loc[:,column] A single column
+       5.3.5.2. .loc[:,column] A single column
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-row-a-single-row">
-       .loc[row,:] A single row
+       5.3.5.3. .loc[row,:] A single row
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-names-several-columns">
-       .loc[:,[names…]] Several columns
+       5.3.5.4. .loc[:,[names…]] Several columns
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-slices-of-the-dataframe-can-also-be-assigned-values">
-       .loc[] Slices of the dataframe can also be assigned values
+       5.3.5.5. .loc[] Slices of the dataframe can also be assigned values
       </a>
      </li>
     </ul>
@@ -473,67 +471,67 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-the-pandas-library">
-   Import the pandas library
+   5.1. Import the pandas library
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-a-dataframe">
-   What is a dataframe
+   5.2. What is a dataframe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#attributes">
-   Attributes
+   5.3. Attributes
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#columns-column-names">
-     .columns, column names
+     5.3.1. .columns, column names
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#column-names-in-modelflow">
-     Column names in  Modelflow
+     5.3.2. Column names in  Modelflow
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#index-and-time-dimensions-in-modelflow">
-     .index and time dimensions in Modelflow
+     5.3.3. .index and time dimensions in Modelflow
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#eval-evalueation-expressions">
-     .eval() evalueation expressions
+     5.3.4. .eval() evalueation expressions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#loc-when-slicing-a-dataframe">
-     .loc[] when slicing a dataframe
+     5.3.5. .loc[] when slicing a dataframe
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-row-column-a-single-element">
-       .loc[row,column] A single element
+       5.3.5.1. .loc[row,column] A single element
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-column-a-single-column">
-       .loc[:,column] A single column
+       5.3.5.2. .loc[:,column] A single column
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-row-a-single-row">
-       .loc[row,:] A single row
+       5.3.5.3. .loc[row,:] A single row
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-names-several-columns">
-       .loc[:,[names…]] Several columns
+       5.3.5.4. .loc[:,[names…]] Several columns
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loc-slices-of-the-dataframe-can-also-be-assigned-values">
-       .loc[] Slices of the dataframe can also be assigned values
+       5.3.5.5. .loc[] Slices of the dataframe can also be assigned values
       </a>
      </li>
     </ul>
@@ -550,14 +548,14 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-pandas-dataframes">
-<h1>Introduction to Pandas dataframes<a class="headerlink" href="#introduction-to-pandas-dataframes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Introduction to Pandas dataframes<a class="headerlink" href="#introduction-to-pandas-dataframes" title="Permalink to this headline">¶</a></h1>
 <p>Modelflow is built on top of the Pandas library. Pandas is the Swiss knife of data science and can perform an impressing array of tasks.</p>
 <p>This tutorial is a very short introduction to how pandas dataframes are used with Modelflow.</p>
 <p>For more info on pandas:</p>
 <p><a class="reference external" href="https://pandas.pydata.org/">Pandas homepage</a></p>
 <p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">Pandas community tutorials</a></p>
 <div class="section" id="import-the-pandas-library">
-<h2>Import the pandas library<a class="headerlink" href="#import-the-pandas-library" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Import the pandas library<a class="headerlink" href="#import-the-pandas-library" title="Permalink to this headline">¶</a></h2>
 <p>The convention is, that pandas is imported as pd</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -568,7 +566,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="what-is-a-dataframe">
-<h2>What is a dataframe<a class="headerlink" href="#what-is-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>What is a dataframe<a class="headerlink" href="#what-is-a-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>A dataframe is a two-dimensional data structure with named rows and columns </span></p>
 <p>Creating a dataframe can be done in many ways. Here we are creating a Dataframe from a dictionary and  assigning a list of years as the index.</p>
 <div class="cell docutils container">
@@ -636,7 +634,7 @@ const thebe_selector_output = ".output, .cell_output"
 However for more advanced use a variable can also be a timeserie of matrices or vectors.</p>
 </div>
 <div class="section" id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <p>Lets take a look at some of the most important attributes of a dataframe.</p>
 <p>To learn more check out the <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">official pandas website</a>.</p>
 <div class="margin sidebar">
@@ -645,7 +643,7 @@ However for more advanced use a variable can also be a timeserie of matrices or 
 They are accessed by the . operator</p>
 </div>
 <div class="section" id="columns-column-names">
-<h3>.columns, column names<a class="headerlink" href="#columns-column-names" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.1. </span>.columns, column names<a class="headerlink" href="#columns-column-names" title="Permalink to this headline">¶</a></h3>
 <p>.columns gives you the names of the columns in the dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -662,7 +660,7 @@ They are accessed by the . operator</p>
 <p>The dataframe df has 3 columns.</p>
 </div>
 <div class="section" id="column-names-in-modelflow">
-<h3>Column names in  Modelflow<a class="headerlink" href="#column-names-in-modelflow" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2. </span>Column names in  Modelflow<a class="headerlink" href="#column-names-in-modelflow" title="Permalink to this headline">¶</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title">Modelflow variable names</p>
 <p>Many python Objects are legal as column names in a dataframe, but not as variable names (column names)  in modelflow</p>
@@ -679,7 +677,7 @@ They are accessed by the . operator</p>
 </ul>
 </div>
 <div class="section" id="index-and-time-dimensions-in-modelflow">
-<h3>.index and time dimensions in Modelflow<a class="headerlink" href="#index-and-time-dimensions-in-modelflow" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.3. </span>.index and time dimensions in Modelflow<a class="headerlink" href="#index-and-time-dimensions-in-modelflow" title="Permalink to this headline">¶</a></h3>
 <p>The row names are called .index. For yearly models a list of integers like in <code class="docutils literal notranslate"><span class="pre">df</span></code> is fine.<br>
 Pandas has a number of data types for different date and time objects. They can all be used for models with other frequencies.<br>However be aware that plots will not necessary be working well with all index names.</p>
 <p>When modelflow uses a lagged variable like <code class="docutils literal notranslate"><span class="pre">A(-1)</span></code> It will take the value from the row above the current row. No matter if the index is an integer, a year, quarter or a millisecond. The same goes for leads <code class="docutils literal notranslate"><span class="pre">A(+1)</span></code>  That will be the value in the next row.</p>
@@ -697,7 +695,7 @@ Pandas has a number of data types for different date and time objects. They can 
 </div>
 </div>
 <div class="section" id="eval-evalueation-expressions">
-<h3>.eval() evalueation expressions<a class="headerlink" href="#eval-evalueation-expressions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.4. </span>.eval() evalueation expressions<a class="headerlink" href="#eval-evalueation-expressions" title="Permalink to this headline">¶</a></h3>
 <p>With this method expressions can be evaluated and new columns created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,9 +770,9 @@ Pandas has a number of data types for different date and time objects. They can 
 <p>However, .eval cannot handle lagged variables and no systems of equations. Modelflow can!</p>
 </div>
 <div class="section" id="loc-when-slicing-a-dataframe">
-<h3>.loc[] when slicing a dataframe<a class="headerlink" href="#loc-when-slicing-a-dataframe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.5. </span>.loc[] when slicing a dataframe<a class="headerlink" href="#loc-when-slicing-a-dataframe" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="loc-row-column-a-single-element">
-<h4>.loc[row,column] A single element<a class="headerlink" href="#loc-row-column-a-single-element" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.5.1. </span>.loc[row,column] A single element<a class="headerlink" href="#loc-row-column-a-single-element" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2019</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
@@ -789,7 +787,7 @@ Pandas has a number of data types for different date and time objects. They can 
 </div>
 </div>
 <div class="section" id="loc-column-a-single-column">
-<h4>.loc[:,column] A single column<a class="headerlink" href="#loc-column-a-single-column" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.5.2. </span>.loc[:,column] A single column<a class="headerlink" href="#loc-column-a-single-column" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
@@ -808,7 +806,7 @@ Name: C, dtype: int64
 </div>
 </div>
 <div class="section" id="loc-row-a-single-row">
-<h4>.loc[row,:] A single row<a class="headerlink" href="#loc-row-a-single-row" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.5.3. </span>.loc[row,:] A single row<a class="headerlink" href="#loc-row-a-single-row" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2019</span><span class="p">,:]</span>
@@ -826,7 +824,7 @@ Name: 2019, dtype: int64
 </div>
 </div>
 <div class="section" id="loc-names-several-columns">
-<h4>.loc[:,[names…]] Several columns<a class="headerlink" href="#loc-names-several-columns" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.5.4. </span>.loc[:,[names…]] Several columns<a class="headerlink" href="#loc-names-several-columns" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]]</span>
@@ -883,7 +881,7 @@ Name: 2019, dtype: int64
 </div>
 </div>
 <div class="section" id="loc-slices-of-the-dataframe-can-also-be-assigned-values">
-<h4>.loc[] Slices of the dataframe can also be assigned values<a class="headerlink" href="#loc-slices-of-the-dataframe-can-also-be-assigned-values" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.5.5. </span>.loc[] Slices of the dataframe can also be assigned values<a class="headerlink" href="#loc-slices-of-the-dataframe-can-also-be-assigned-values" title="Permalink to this headline">¶</a></h4>
 <p>This can be very handy when updating scenarios.<br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -984,7 +982,7 @@ A link <a class="reference external" href="https://jakevdp.github.io/PythonDataS
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to the Jupyter Notebook</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Introduction to the Jupyter Notebook</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../../howto/update/model%20update.html" title="next page">

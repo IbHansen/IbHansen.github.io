@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to the Jupyter Notebook &#8212; ModelFlow</title>
+    <title>4. Introduction to the Jupyter Notebook &#8212; ModelFlow</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,14 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introduction to Pandas dataframes" href="../notebooks/pandas/dataframes.html" />
-    <link rel="prev" title="Example Solow model" href="../notebooks/intro/Example%20Solow.html" />
+    <link rel="next" title="5. Introduction to Pandas dataframes" href="../notebooks/pandas/dataframes.html" />
+    <link rel="prev" title="3. Example Solow model" href="../notebooks/intro/Example%20Solow.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,12 +108,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/intro/model%20and%20solution.html">
-   What is a Model in ModelFlow
+   1. What is a Model in ModelFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/intro/Example%20Solow.html">
-   Example Solow model
+   3. Example Solow model
   </a>
  </li>
 </ul>
@@ -127,12 +125,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Introduction to the Jupyter Notebook
+   4. Introduction to the Jupyter Notebook
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/pandas/dataframes.html">
-   Introduction to Pandas dataframes
+   5. Introduction to Pandas dataframes
   </a>
  </li>
 </ul>
@@ -386,51 +384,51 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multiple-ways-to-interact-with-python">
-   Multiple ways to interact with Python
+   4.1. Multiple ways to interact with Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-idea-of-the-notebook">
-   The idea of the notebook
+   4.2. The idea of the notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#jupyter-notebook-basics">
-   Jupyter Notebook basics
+   4.3. Jupyter Notebook basics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-to-execute-cells-and-display-results">
-     How to execute cells and display results
+     4.3.1. How to execute cells and display results
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#but-no-display-when-line-ends-in">
-       But no display when line ends in ;
+       4.3.1.1. But no display when line ends in ;
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-to-add-delete-and-move-cells">
-     How to add, delete and move cells
+     4.3.2. How to add, delete and move cells
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#auto-complete-and-context-sensitive-help">
-     Auto-complete and context-sensitive help
+     4.3.3. Auto-complete and context-sensitive help
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#latex-support">
-     LaTeX support
+     4.3.4. LaTeX support
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-few-words-on-import-statements">
-   A few words on ‘import’ statements
+   4.4. A few words on ‘import’ statements
   </a>
  </li>
 </ul>
@@ -455,51 +453,51 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multiple-ways-to-interact-with-python">
-   Multiple ways to interact with Python
+   4.1. Multiple ways to interact with Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-idea-of-the-notebook">
-   The idea of the notebook
+   4.2. The idea of the notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#jupyter-notebook-basics">
-   Jupyter Notebook basics
+   4.3. Jupyter Notebook basics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-to-execute-cells-and-display-results">
-     How to execute cells and display results
+     4.3.1. How to execute cells and display results
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#but-no-display-when-line-ends-in">
-       But no display when line ends in ;
+       4.3.1.1. But no display when line ends in ;
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-to-add-delete-and-move-cells">
-     How to add, delete and move cells
+     4.3.2. How to add, delete and move cells
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#auto-complete-and-context-sensitive-help">
-     Auto-complete and context-sensitive help
+     4.3.3. Auto-complete and context-sensitive help
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#latex-support">
-     LaTeX support
+     4.3.4. LaTeX support
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-few-words-on-import-statements">
-   A few words on ‘import’ statements
+   4.4. A few words on ‘import’ statements
   </a>
  </li>
 </ul>
@@ -512,9 +510,9 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-the-jupyter-notebook">
-<h1>Introduction to the Jupyter Notebook<a class="headerlink" href="#introduction-to-the-jupyter-notebook" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Introduction to the Jupyter Notebook<a class="headerlink" href="#introduction-to-the-jupyter-notebook" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="multiple-ways-to-interact-with-python">
-<h2>Multiple ways to interact with Python<a class="headerlink" href="#multiple-ways-to-interact-with-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Multiple ways to interact with Python<a class="headerlink" href="#multiple-ways-to-interact-with-python" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>From the command line (simply type ‘python’ or ‘ipython’)</p></li>
 <li><p>Plain text editor (e.g. Notepad++)</p></li>
@@ -526,7 +524,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><a class="reference external" href="https://docs.jupyter.org/en/latest/">The official Jupyter site</a> is a good starting point. But there are many good sites out there.</p>
 </div>
 <div class="section" id="the-idea-of-the-notebook">
-<h2>The idea of the notebook<a class="headerlink" href="#the-idea-of-the-notebook" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>The idea of the notebook<a class="headerlink" href="#the-idea-of-the-notebook" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Keep code and output close together (in “cells”)</p></li>
 <li><p>Great for documenting the analytical steps</p></li>
@@ -541,7 +539,7 @@ prototype code in the notebook and consolidate it into scripts later on</p></li>
 </ul>
 </div>
 <div class="section" id="jupyter-notebook-basics">
-<h2>Jupyter Notebook basics<a class="headerlink" href="#jupyter-notebook-basics" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Jupyter Notebook basics<a class="headerlink" href="#jupyter-notebook-basics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Jupyter derives from <strong>Ju</strong>lia + <strong>Pyt</strong>hon + <strong>R</strong></p></li>
 <li><p>A separate Python process (a <strong>‘kernel’</strong>) is started for each notebook</p>
@@ -564,7 +562,7 @@ prototype code in the notebook and consolidate it into scripts later on</p></li>
 </li>
 </ul>
 <div class="section" id="how-to-execute-cells-and-display-results">
-<h3>How to execute cells and display results<a class="headerlink" href="#how-to-execute-cells-and-display-results" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.1. </span>How to execute cells and display results<a class="headerlink" href="#how-to-execute-cells-and-display-results" title="Permalink to this headline">¶</a></h3>
 <p>Useful shortcuts: (see also “Help” =&gt; “Keyboard Shortcuts” or simply press keyboard icon in the toolbar)</p>
 <ul class="simple">
 <li><p><strong>shift + ctrl</strong>: run cell and stay in cell</p></li>
@@ -605,7 +603,7 @@ prototype code in the notebook and consolidate it into scripts later on</p></li>
 </div>
 </div>
 <div class="section" id="but-no-display-when-line-ends-in">
-<h4>But no display when line ends in ;<a class="headerlink" href="#but-no-display-when-line-ends-in" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">4.3.1.1. </span>But no display when line ends in ;<a class="headerlink" href="#but-no-display-when-line-ends-in" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
@@ -617,7 +615,7 @@ prototype code in the notebook and consolidate it into scripts later on</p></li>
 </div>
 </div>
 <div class="section" id="how-to-add-delete-and-move-cells">
-<h3>How to add, delete and move cells<a class="headerlink" href="#how-to-add-delete-and-move-cells" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.2. </span>How to add, delete and move cells<a class="headerlink" href="#how-to-add-delete-and-move-cells" title="Permalink to this headline">¶</a></h3>
 <p>Toolbar</p>
 <ul class="simple">
 <li><p><strong>+ button</strong>: add a cell below</p></li>
@@ -627,14 +625,14 @@ prototype code in the notebook and consolidate it into scripts later on</p></li>
 </ul>
 </div>
 <div class="section" id="auto-complete-and-context-sensitive-help">
-<h3>Auto-complete and context-sensitive help<a class="headerlink" href="#auto-complete-and-context-sensitive-help" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.3. </span>Auto-complete and context-sensitive help<a class="headerlink" href="#auto-complete-and-context-sensitive-help" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>tab</strong>: autocomplete and  method selection</p></li>
 <li><p><strong>double tab</strong>: documention (double tab for full doc)</p></li>
 </ul>
 </div>
 <div class="section" id="latex-support">
-<h3>LaTeX support<a class="headerlink" href="#latex-support" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.4. </span>LaTeX support<a class="headerlink" href="#latex-support" title="Permalink to this headline">¶</a></h3>
 <p>Markdown mode includes LaTeX support.<br>
 Inline enclose the latex in <code class="docutils literal notranslate"><span class="pre">$</span></code>:</p>
 <p>An Equation: <code class="docutils literal notranslate"><span class="pre">$y_t</span> <span class="pre">=</span> <span class="pre">\beta_0</span> <span class="pre">+</span> <span class="pre">\beta_1</span> <span class="pre">x_t</span> <span class="pre">+</span> <span class="pre">u_t\$</span></code> will show like this:</p>
@@ -643,7 +641,7 @@ Inline enclose the latex in <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="section" id="a-few-words-on-import-statements">
-<h2>A few words on ‘import’ statements<a class="headerlink" href="#a-few-words-on-import-statements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4. </span>A few words on ‘import’ statements<a class="headerlink" href="#a-few-words-on-import-statements" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import and call a built-in module</span>
@@ -735,13 +733,13 @@ Inline enclose the latex in <code class="docutils literal notranslate"><span cla
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Example Solow model</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Example Solow model</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../notebooks/pandas/dataframes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Pandas dataframes</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Introduction to Pandas dataframes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

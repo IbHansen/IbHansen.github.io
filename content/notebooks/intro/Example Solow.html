@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example Solow model &#8212; ModelFlow</title>
+    <title>3. Example Solow model &#8212; ModelFlow</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,14 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Introduction to the Jupyter Notebook" href="../../Python/Intro_Jupyter_notebook.html" />
-    <link rel="prev" title="What is a Model in ModelFlow" href="model%20and%20solution.html" />
+    <link rel="prev" title="1. What is a Model in ModelFlow" href="model%20and%20solution.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,12 +108,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="model%20and%20solution.html">
-   What is a Model in ModelFlow
+   1. What is a Model in ModelFlow
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Example Solow model
+   3. Example Solow model
   </a>
  </li>
 </ul>
@@ -386,100 +384,100 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#specify-the-model">
-   Specify the model
+   3.1. Specify the model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-model-class-instance">
-   Create a model class instance
+   3.2. Create a model class instance
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-some-data">
-   Create some data
+   3.3. Create some data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#run-the-model">
-   Run the model
+   3.4. Run the model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-scenario-and-run-again">
-   Create a scenario and run again
+   3.5. Create a scenario and run again
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-the-results-are-also-embedded-in-msolow">
-   Now the results are also embedded in msolow.
+   3.6. Now the results are also embedded in msolow.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inspect-results-two-ways">
-   Inspect results  - two ways
+  <a class="reference internal nav-link" href="#inspect-results-in-alternative-ways">
+   3.7. Inspect results  - in alternative ways
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#through-dataframes">
-     Through dataframes
+     3.7.1. Through dataframes
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#but-the-model-instance-also-contains-the-results">
-   But the model instance also contains the results
+  <a class="reference internal nav-link" href="#the-model-instance-also-contains-the-results">
+   3.8. The model instance also contains the results
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-the-operator">
-     using the [ ] operator
+     3.8.1. Using the [ ] operator
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#look-at-variables-starting-with-a-c">
-       Look at variables starting with a C
+       3.8.1.1. Look at variables starting with a C
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#look-at-all-endogenous-variables">
-       Look at all endogenous variables
+       3.8.1.2. Look at all endogenous variables
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-the-keept-solutions">
-     using the keept solutions
+     3.8.2. Using the keept solutions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-advanced-topics">
-   More advanced topics
+   3.9. More advanced topics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-logical-stucture">
-     The logical stucture
+     3.9.1. The logical stucture
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#model-structure">
-       Model structure
+       3.9.1.1. Model structure
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#adjacency-matrix">
-       Adjacency matrix
+       3.9.1.2. Adjacency matrix
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-python-function-used-to-solve-the-model">
-     The python function used to solve the model.
+     3.9.2. The python function used to solve the model
     </a>
    </li>
   </ul>
@@ -506,100 +504,100 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#specify-the-model">
-   Specify the model
+   3.1. Specify the model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-model-class-instance">
-   Create a model class instance
+   3.2. Create a model class instance
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-some-data">
-   Create some data
+   3.3. Create some data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#run-the-model">
-   Run the model
+   3.4. Run the model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-scenario-and-run-again">
-   Create a scenario and run again
+   3.5. Create a scenario and run again
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-the-results-are-also-embedded-in-msolow">
-   Now the results are also embedded in msolow.
+   3.6. Now the results are also embedded in msolow.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inspect-results-two-ways">
-   Inspect results  - two ways
+  <a class="reference internal nav-link" href="#inspect-results-in-alternative-ways">
+   3.7. Inspect results  - in alternative ways
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#through-dataframes">
-     Through dataframes
+     3.7.1. Through dataframes
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#but-the-model-instance-also-contains-the-results">
-   But the model instance also contains the results
+  <a class="reference internal nav-link" href="#the-model-instance-also-contains-the-results">
+   3.8. The model instance also contains the results
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-the-operator">
-     using the [ ] operator
+     3.8.1. Using the [ ] operator
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#look-at-variables-starting-with-a-c">
-       Look at variables starting with a C
+       3.8.1.1. Look at variables starting with a C
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#look-at-all-endogenous-variables">
-       Look at all endogenous variables
+       3.8.1.2. Look at all endogenous variables
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-the-keept-solutions">
-     using the keept solutions
+     3.8.2. Using the keept solutions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-advanced-topics">
-   More advanced topics
+   3.9. More advanced topics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-logical-stucture">
-     The logical stucture
+     3.9.1. The logical stucture
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#model-structure">
-       Model structure
+       3.9.1.1. Model structure
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#adjacency-matrix">
-       Adjacency matrix
+       3.9.1.2. Adjacency matrix
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-python-function-used-to-solve-the-model">
-     The python function used to solve the model.
+     3.9.2. The python function used to solve the model
     </a>
    </li>
   </ul>
@@ -614,9 +612,8 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="example-solow-model">
-<h1>Example Solow model<a class="headerlink" href="#example-solow-model" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Example Solow model<a class="headerlink" href="#example-solow-model" title="Permalink to this headline">¶</a></h1>
 <p>In this jupyter notebook we will specify, solve and analyse a simple Solow model in ModelFlow.</p>
-<p>You can find this notebook on our Github page &lt;link&gt; or by downloading it from &lt;upper right corner&gt;</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Required packages</span>
@@ -632,7 +629,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="specify-the-model">
-<h2>Specify the model<a class="headerlink" href="#specify-the-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Specify the model<a class="headerlink" href="#specify-the-model" title="Permalink to this headline">¶</a></h2>
 <p>We start by defining the logic of the Solow model in the Business Logic Language.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"><strong>Business Logic Language</strong></p>
@@ -654,7 +651,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="create-a-model-class-instance">
-<h2>Create a model class instance<a class="headerlink" href="#create-a-model-class-instance" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Create a model class instance<a class="headerlink" href="#create-a-model-class-instance" title="Permalink to this headline">¶</a></h2>
 <p>After defining the Business Logic Language and storing it in the variable ‘fsolow’, we create a class instance called msolow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,10 +660,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Above the equation for Capital and Labor on the left hand side of the = consist of an expressing <code class="docutils literal notranslate"><span class="pre">diff(Capital)</span></code> and <code class="docutils literal notranslate"><span class="pre">diff(Labor)</span></code>. The equations are not normalized.</p>
+<p>Above the equation for Capital and Labor on the left hand side of the = (equal to) consist of an expressing <code class="docutils literal notranslate"><span class="pre">diff(Capital)</span></code> and <code class="docutils literal notranslate"><span class="pre">diff(Labor)</span></code>. The equations are not normalized.</p>
 <p>To solve a model in modelflow all equations has to be normalized. Meaning that the left hand side only consist of variables not expressions. So the function <code class="docutils literal notranslate"><span class="pre">model.from_eq</span></code> will normalize the equations as the first step before the model can be solved.</p>
 <p>In this case <strong>first</strong> <code class="docutils literal notranslate"><span class="pre">diff(Capital)</span></code> is transformed to <span class="math notranslate nohighlight">\(\Delta capital = capital-capital(-1)\)</span>. <strong>Then</strong> the lagged variables is moved to the right side of the =.
-The same goes for diff(labor)</p>
+The same goes for diff(labor).</p>
 <p>So the normalized business language of the model now looks like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -687,8 +684,8 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="create-some-data">
-<h2>Create some data<a class="headerlink" href="#create-some-data" title="Permalink to this headline">¶</a></h2>
-<p>To show what Modelflow can do, we create som data.</p>
+<h2><span class="section-number">3.3. </span>Create some data<a class="headerlink" href="#create-some-data" title="Permalink to this headline">¶</a></h2>
+<p>To show what Modelflow can do, we create a Pandas dataframe with input data. And print the first 5 out of 300 observations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">300</span>  
@@ -788,7 +785,7 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="run-the-model">
-<h2>Run the model<a class="headerlink" href="#run-the-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Run the model<a class="headerlink" href="#run-the-model" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">msolow</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;Baseline&#39;</span><span class="p">)</span> <span class="c1"># The model is simulated for all years possible</span>
@@ -798,7 +795,7 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="create-a-scenario-and-run-again">
-<h2>Create a scenario and run again<a class="headerlink" href="#create-a-scenario-and-run-again" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5. </span>Create a scenario and run again<a class="headerlink" href="#create-a-scenario-and-run-again" title="Permalink to this headline">¶</a></h2>
 <div class="margin sidebar">
 <p class="sidebar-title"><strong>dataframe.upd</strong></p>
 <p>When importing modelclass all pandas dataframes are enriched with a a handy way to create a new pandas dataframe with updated series.</p>
@@ -815,17 +812,17 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="now-the-results-are-also-embedded-in-msolow">
-<h2>Now the results are also embedded in msolow.<a class="headerlink" href="#now-the-results-are-also-embedded-in-msolow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.6. </span>Now the results are also embedded in msolow.<a class="headerlink" href="#now-the-results-are-also-embedded-in-msolow" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.basedf</span></code> contains the first run of the model</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.lastdf</span></code> contains the last run of the model</p></li>
 </ul>
-<p>Also in this case the keyword <code class="docutils literal notranslate"><span class="pre">keep</span></code> is used the results are stored in a dictionary <code class="docutils literal notranslate"><span class="pre">.keep_solutions</span></code> This can be useful when comparing several scenarios.</p>
+<p>Also in this case the keyword <code class="docutils literal notranslate"><span class="pre">keep</span></code> is used. This causes the results to be  stored in a dictionary <code class="docutils literal notranslate"><span class="pre">msolow.keep_solutions</span></code>. This can be useful when comparing several scenarios.</p>
 </div>
-<div class="section" id="inspect-results-two-ways">
-<h2>Inspect results  - two ways<a class="headerlink" href="#inspect-results-two-ways" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inspect-results-in-alternative-ways">
+<h2><span class="section-number">3.7. </span>Inspect results  - in alternative ways<a class="headerlink" href="#inspect-results-in-alternative-ways" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="through-dataframes">
-<h3>Through dataframes<a class="headerlink" href="#through-dataframes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.1. </span>Through dataframes<a class="headerlink" href="#through-dataframes" title="Permalink to this headline">¶</a></h3>
 <p>Here the resulting dataframe is used ‘as is’. In this case using the plotting feature.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -840,15 +837,14 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 </div>
-<div class="section" id="but-the-model-instance-also-contains-the-results">
-<h2>But the model instance also contains the results<a class="headerlink" href="#but-the-model-instance-also-contains-the-results" title="Permalink to this headline">¶</a></h2>
-<p>And they can be used in a more user friendly way</p>
+<div class="section" id="the-model-instance-also-contains-the-results">
+<h2><span class="section-number">3.8. </span>The model instance also contains the results<a class="headerlink" href="#the-model-instance-also-contains-the-results" title="Permalink to this headline">¶</a></h2>
+<p>These results can used in a more efficient way.</p>
 <div class="section" id="using-the-operator">
-<h3>using the [ ] operator<a class="headerlink" href="#using-the-operator" title="Permalink to this headline">¶</a></h3>
-<p>We can select the variables of interest with wildcards</p>
-<p>this will operate the results stored in <code class="docutils literal notranslate"><span class="pre">basedf</span></code> and <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code></p>
+<h3><span class="section-number">3.8.1. </span>Using the [ ] operator<a class="headerlink" href="#using-the-operator" title="Permalink to this headline">¶</a></h3>
+<p>We can select the variables of interest with wildcards. This will operate the results stored in <code class="docutils literal notranslate"><span class="pre">basedf</span></code> and <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code></p>
 <div class="section" id="look-at-variables-starting-with-a-c">
-<h4>Look at variables starting with a C<a class="headerlink" href="#look-at-variables-starting-with-a-c" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.8.1.1. </span>Look at variables starting with a C<a class="headerlink" href="#look-at-variables-starting-with-a-c" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span><span class="p">[</span><span class="s1">&#39;c*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dif</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Impact&#39;</span><span class="p">);</span>
@@ -861,7 +857,7 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="look-at-all-endogenous-variables">
-<h4>Look at all endogenous variables<a class="headerlink" href="#look-at-all-endogenous-variables" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.8.1.2. </span>Look at all endogenous variables<a class="headerlink" href="#look-at-all-endogenous-variables" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span><span class="p">[</span><span class="s1">&#39;#ENDO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dif</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sharey</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Impact&#39;</span><span class="p">);</span>
@@ -875,7 +871,10 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="using-the-keept-solutions">
-<h3>using the keept solutions<a class="headerlink" href="#using-the-keept-solutions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.8.2. </span>Using the keept solutions<a class="headerlink" href="#using-the-keept-solutions" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned above, because the keyword <code class="docutils literal notranslate"><span class="pre">keep</span></code> was used. The results are also stored in a dictionary. These data can
+also be used for charting.</p>
+<p>The reason for placing the results in a dictionary is to enable comparison of many scenarios, not just the first and the last.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">msolow</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
@@ -891,13 +890,13 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="more-advanced-topics">
-<h2>More advanced topics<a class="headerlink" href="#more-advanced-topics" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.9. </span>More advanced topics<a class="headerlink" href="#more-advanced-topics" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-logical-stucture">
-<h3>The logical stucture<a class="headerlink" href="#the-logical-stucture" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.9.1. </span>The logical stucture<a class="headerlink" href="#the-logical-stucture" title="Permalink to this headline">¶</a></h3>
 <p>Now the model has been analyzed, and the structure can be displayed.</p>
 <p>You will find more on the logical structure <a class="reference internal" href="../../howto/structure/Logical_structure.html"><span class="doc std std-doc">here</span></a></p>
 <div class="section" id="model-structure">
-<h4>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.9.1.1. </span>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msolow</span><span class="o">.</span><span class="n">drawmodel</span><span class="p">(</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Model Structure&quot;</span><span class="p">,</span> <span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
@@ -910,7 +909,7 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="adjacency-matrix">
-<h4>Adjacency matrix<a class="headerlink" href="#adjacency-matrix" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.9.1.2. </span>Adjacency matrix<a class="headerlink" href="#adjacency-matrix" title="Permalink to this headline">¶</a></h4>
 <p>Another way to illustrate the dependency graph is an adjacency matrix.</p>
 <p>The variables  [‘INVESTMENT’, ‘CONSUMPTION’, ‘CAPITAL’, ‘INCOME’] in the red area are the core of the model and has to be solved as a system.</p>
 <p>LABOR is the prolog and can be calculated before the core is solved. While CAPITAL_INTENSE is the epilog which can be calculated after the core is solved.</p>
@@ -928,9 +927,8 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
 </div>
 </div>
 <div class="section" id="the-python-function-used-to-solve-the-model">
-<span id="solow-python-code"></span><h3>The python function used to solve the model.<a class="headerlink" href="#the-python-function-used-to-solve-the-model" title="Permalink to this headline">¶</a></h3>
-<p>Is generated by the transpiler and looks like this</p>
-<p>The user will hopeful  newer have to relate to this code. The point of modelflow is, that the user has to relate to the specification of the business logic, not the implementation in code.</p>
+<span id="solow-python-code"></span><h3><span class="section-number">3.9.2. </span>The python function used to solve the model<a class="headerlink" href="#the-python-function-used-to-solve-the-model" title="Permalink to this headline">¶</a></h3>
+<p>In order to solve the model Modelflow will generate a python function which implements the model. The user will hopeful  newer have to relate to the generated python code. <strong>The point of modelflow is, that the user has to relate to the specification of the business logic, not the implementation in code</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">msolow</span><span class="o">.</span><span class="n">make_los_text</span><span class="p">)</span>
@@ -958,10 +956,10 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
     def core0(values,outvalues,row,alfa=1.0):
         try :
             pass
-            values[row,8]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
-            values[row,11]=(1-values[row,12])*values[row,8]
-            values[row,10]=values[row,8]-values[row,11]
-            values[row,1]=values[row-1,1]+(values[row,10]-values[row,9]*values[row-1,1])
+            values[row,12]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
+            values[row,9]=(1-values[row,10])*values[row,12]
+            values[row,7]=values[row,12]-values[row,9]
+            values[row,1]=values[row-1,1]+(values[row,7]-values[row,8]*values[row-1,1])
         except :
             errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=20,overeq=1)
             raise
@@ -972,7 +970,7 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
     def epilog0(values,outvalues,row,alfa=1.0):
         try :
             pass
-            values[row,7]=values[row,1]/values[row,0]
+            values[row,11]=values[row,1]/values[row,0]
         except :
             errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=34,overeq=5)
             raise
@@ -1018,7 +1016,7 @@ FRML &lt;&gt; CAPITAL_INTENSITY = CAPITAL/LABOR  $
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">What is a Model in ModelFlow</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>What is a Model in ModelFlow</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../../Python/Intro_Jupyter_notebook.html" title="next page">
