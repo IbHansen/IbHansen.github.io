@@ -1,7 +1,13 @@
 
 # Introduction
 
-ModelFlow is a Python library developed to leverage on the Pandas data managegement library and the broader Python exosystem. So that models can be solved and models and results can be analyzed and vizualized. 
+```{warning}
+This Jupyter book is work in progress and very much a draft.
+
+Please send any comments to Ib 
+```
+
+ModelFlow is a Python library developed to leverage on the Pandas data managegement library and the broader Python ecosystem. So that models can be solved and models and results can be analyzed and vizualized. 
 
 **Model Specification** With ModelFlow you can specify your models as concise and intuitive equations. ModelFlow transforms your equations into Python code and solves your model.
 

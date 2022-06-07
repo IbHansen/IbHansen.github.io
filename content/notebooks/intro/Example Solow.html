@@ -958,10 +958,10 @@ also be used for charting.</p>
     def core0(values,outvalues,row,alfa=1.0):
         try :
             pass
-            values[row,10]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
-            values[row,9]=(1-values[row,8])*values[row,10]
-            values[row,11]=values[row,10]-values[row,9]
-            values[row,1]=values[row-1,1]+(values[row,11]-values[row,12]*values[row-1,1])
+            values[row,7]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
+            values[row,12]=(1-values[row,11])*values[row,7]
+            values[row,8]=values[row,7]-values[row,12]
+            values[row,1]=values[row-1,1]+(values[row,8]-values[row,10]*values[row-1,1])
         except :
             errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=20,overeq=1)
             raise
@@ -972,7 +972,7 @@ also be used for charting.</p>
     def epilog0(values,outvalues,row,alfa=1.0):
         try :
             pass
-            values[row,7]=values[row,1]/values[row,0]
+            values[row,9]=values[row,1]/values[row,0]
         except :
             errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=34,overeq=5)
             raise

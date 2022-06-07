@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="17. Attribution" href="../../attribution/Attribution%20background.html" />
@@ -481,24 +479,26 @@ Fitted          : Y_FITTED = Y(-1)*EXP( (3*((LOG(X+B))-(LOG(X(-1)+B(-1))))) )
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="s1">&#39;x  = 3 &#39;</span><span class="p">,</span><span class="n">exo_adjust</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="s1">&#39;x  = 3 &#39;</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">normal</span><span class="p">(</span><span class="s1">&#39;x  = 3 &#39;</span><span class="p">,</span><span class="n">exo_adjust</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: normal() got an unexpected keyword argument &#39;exo_adjust&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : X
+Original        : x  = 3 
+Preprocessed    : X=3
+Normalized      : X = (3 + X_A)                               
+Calc_add_factor : X_A = (X) - (3)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="s1">&#39;pct_growth(x)  = pct_growth(y) &#39;</span><span class="p">,</span><span class="n">exo_adjust</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="s1">&#39;pct_growth(x)  = pct_growth(y) &#39;</span><span class="p">,</span><span class="n">make_fixable</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

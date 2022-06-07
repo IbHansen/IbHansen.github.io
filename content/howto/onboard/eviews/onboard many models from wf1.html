@@ -622,10 +622,10 @@ To handle that two types of transformations can be provided for a specific model
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\agosoln.wf1
 Assummed model name: AGO
+Eviewsline to run :smpl @ALL
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eviewsline to run :smpl @ALL
-Eviewsline to run :series MEAN_AGOBNCABFUNDCD_DIV_AGONYGDPMKTPCD = @MEAN(AGOBNCABFUNDCD/AGONYGDPMKTPCD,&quot;2000 2020&quot;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eviewsline to run :series MEAN_AGOBNCABFUNDCD_DIV_AGONYGDPMKTPCD = @MEAN(AGOBNCABFUNDCD/AGONYGDPMKTPCD,&quot;2000 2020&quot;)
 The model: AGO is unlinked 
 Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\agosoln_modelflow.wf2
 </pre></div>
@@ -689,23 +689,6 @@ Assummed model name: PER
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:PER
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>testmodel calculated  
-Calculation of add factors for PER calculated  
-Error in callback &lt;bound method AutoreloadMagics.post_execute_hook of &lt;IPython.extensions.autoreload.AutoreloadMagics object at 0x000001EC857761C0&gt;&gt; (for post_execute):
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\IPython\extensions\autoreload.py:613,</span> in <span class="ni">AutoreloadMagics.post_execute_hook</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">611</span> <span class="k">def</span> <span class="nf">post_execute_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">612</span>     <span class="sd">&quot;&quot;&quot;Cache the modification times of any modules imported in this execution&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">613</span>     <span class="n">newly_loaded_modules</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">loaded_modules</span>
-<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">for</span> <span class="n">modname</span> <span class="ow">in</span> <span class="n">newly_loaded_modules</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">615</span>         <span class="n">_</span><span class="p">,</span> <span class="n">pymtime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reloader</span><span class="o">.</span><span class="n">filename_and_mtime</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">modname</span><span class="p">])</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
