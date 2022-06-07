@@ -498,7 +498,7 @@ Calc_add_factor : X_A = (X) - (3)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="s1">&#39;pct_growth(x)  = pct_growth(y) &#39;</span><span class="p">,</span><span class="n">make_fixable</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="s1">&#39;pct_growth(x)  = pct_growth(y) &#39;</span><span class="p">,</span><span class="n">make_fixable</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -506,7 +506,8 @@ Calc_add_factor : X_A = (X) - (3)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : X
 Original        : pct_growth(x)  = pct_growth(y) 
 Preprocessed    :  (100 * ( (X) / (X(-1)) -1)) = (100 * ( (Y) / (Y(-1)) -1)) 
-Normalized      : X =  ((100 * ( (Y) / (Y(-1)) -1))) *X(-1)/100+X(-1)
+Normalized      : X = X_A*X(-1)/100+ ((100 * ( (Y) / (Y(-1)) -1))) *X(-1)/100+X(-1)
+Calc_add_factor : X_A = 100*X/X(-1)- (((100 * ( (Y) / (Y(-1)) -1)))) -100
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
