@@ -199,13 +199,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Fixing the value of designated variables.
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../howto/fixing/Fixing%20variables.html">
+   14. Fixing the value of variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Features
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/modelflow_features.html">
-   14. Useful model instance properties and methods
+   15. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -217,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../howto/structure/Logical_structure.html">
-   15. Logical structure and dependencies.
+   16. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -229,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../howto/attribution/Attribution%20background.html">
-   16. Attribution
+   17. Attribution
   </a>
  </li>
 </ul>
@@ -241,7 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="model%20specification.html">
-   17. Specification of models (introduction)
+   18. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -253,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../howto/optimization/Optimize_simpel.html">
-   18. Mean variance optimization
+   19. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -265,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../litterature.html">
-   20. Litterature
+   21. Litterature
   </a>
  </li>
 </ul>
@@ -277,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../booktest.html">
-   21. Test of Jupyter book features.
+   22. Test of Jupyter book features.
   </a>
  </li>
 </ul>
@@ -958,10 +970,10 @@ also be used for charting.</p>
     def core0(values,outvalues,row,alfa=1.0):
         try :
             pass
-            values[row,10]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
-            values[row,9]=(1-values[row,7])*values[row,10]
-            values[row,11]=values[row,10]-values[row,9]
-            values[row,1]=values[row-1,1]+(values[row,11]-values[row,12]*values[row-1,1])
+            values[row,11]=values[row,3]*values[row,1]**values[row,2]*values[row,0]**(1-values[row,2])
+            values[row,7]=(1-values[row,10])*values[row,11]
+            values[row,8]=values[row,11]-values[row,7]
+            values[row,1]=values[row-1,1]+(values[row,8]-values[row,12]*values[row-1,1])
         except :
             errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=20,overeq=1)
             raise
@@ -972,7 +984,7 @@ also be used for charting.</p>
     def epilog0(values,outvalues,row,alfa=1.0):
         try :
             pass
-            values[row,8]=values[row,1]/values[row,0]
+            values[row,9]=values[row,1]/values[row,0]
         except :
             errorfunk(values,sys.exc_info()[2].tb_lineno,overhead=34,overeq=5)
             raise
