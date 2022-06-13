@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. Fixing the value of variables &#8212; ModelFlow</title>
+    <title>13. Fixing the value of variables &#8212; ModelFlow</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,12 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="11. Useful model instance properties and methods" href="../../Python/modelflow_features.html" />
-    <link rel="prev" title="9. Create many scenarios, simulate them and access results" href="create_save_scenarios.html" />
+    <link rel="next" title="14. Useful model instance properties and methods" href="../../Python/modelflow_features.html" />
+    <link rel="prev" title="12. Normalizing when onboarding eviews models" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -170,13 +168,35 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Onboarding MFMod models from .wf1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
+   10. Onboard a model defined in a .wf1 file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard/eviews/onboard%20many%20models%20from%20wf1.html">
+   11. Onboard all models  defined in .wf1 files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
+   12. Normalizing when onboarding  eviews models
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Fixing the value of designated variables.
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   10. Fixing the value of variables
+   13. Fixing the value of variables
   </a>
  </li>
 </ul>
@@ -188,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/modelflow_features.html">
-   11. Useful model instance properties and methods
+   14. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -200,34 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../structure/Logical_structure.html">
-   12. Logical structure and dependencies.
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Onboarding
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
-   13. Specification of models (introduction)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
-   14. Onboard a model defined in a .wf1 file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../onboard/eviews/onboard%20many%20models%20from%20wf1.html">
-   15. Onboard all models  defined in .wf1 files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
-   16. Normalizing when onboarding  eviews models
+   15. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -239,7 +232,19 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../attribution/Attribution%20background.html">
-   17. Attribution
+   16. Attribution
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Specification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
+   17. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -384,76 +389,76 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-the-model-class">
-   10.1. Import the model class
+   13.1. Import the model class
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">
-   10.2. Load a pre-existing model, data and descriptions
+   13.2. Load a pre-existing model, data and descriptions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-fix-the-values-for-variables">
-   10.3. How to fix the values for variables
+   13.3. How to fix the values for variables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed">
-     10.3.1. .wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed
+     13.3.1. .wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-run-the-model-with-the-new-dataframe">
-   10.4. Now run the model with the new dataframe
+   13.4. Now run the model with the new dataframe
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fix-inf-show-relevant-variables-for-each-fixed-variables">
-     10.4.1. .fix_inf() Show relevant variables for each fixed variables
+     13.4.1. .fix_inf() Show relevant variables for each fixed variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-result-match-the-result-before-exogenizing-as-it-should">
-     10.4.2. The result match the result before exogenizing, as it should
+     13.4.2. The result match the result before exogenizing, as it should
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dump-the-model-and-solution-for-later-use">
-   10.5. Dump the model and solution for later use
+   13.5. Dump the model and solution for later use
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-advanced-information">
-   10.6. More advanced information
+   13.6. More advanced information
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#list-of-potential-and-actual-fixed-variables">
-     10.6.1. List of potential and actual fixed variables
+     13.6.1. List of potential and actual fixed variables
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#list-of-all-fixable-variables-for-this-model">
-       10.6.1.1. LIst of all fixable variables for this model
+       13.6.1.1. LIst of all fixable variables for this model
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#list-of-fixed-variables">
-       10.6.1.2. List of fixed variables
+       13.6.1.2. List of fixed variables
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values">
-       10.6.1.3. Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values
+       13.6.1.3. Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#show-the-equations-for-the-calc-add-factor-model">
-       10.6.1.4. Show the equations for the .calc_add_factor_model
+       13.6.1.4. Show the equations for the .calc_add_factor_model
       </a>
      </li>
     </ul>
@@ -482,76 +487,76 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-the-model-class">
-   10.1. Import the model class
+   13.1. Import the model class
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">
-   10.2. Load a pre-existing model, data and descriptions
+   13.2. Load a pre-existing model, data and descriptions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-fix-the-values-for-variables">
-   10.3. How to fix the values for variables
+   13.3. How to fix the values for variables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed">
-     10.3.1. .wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed
+     13.3.1. .wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-run-the-model-with-the-new-dataframe">
-   10.4. Now run the model with the new dataframe
+   13.4. Now run the model with the new dataframe
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fix-inf-show-relevant-variables-for-each-fixed-variables">
-     10.4.1. .fix_inf() Show relevant variables for each fixed variables
+     13.4.1. .fix_inf() Show relevant variables for each fixed variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-result-match-the-result-before-exogenizing-as-it-should">
-     10.4.2. The result match the result before exogenizing, as it should
+     13.4.2. The result match the result before exogenizing, as it should
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dump-the-model-and-solution-for-later-use">
-   10.5. Dump the model and solution for later use
+   13.5. Dump the model and solution for later use
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-advanced-information">
-   10.6. More advanced information
+   13.6. More advanced information
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#list-of-potential-and-actual-fixed-variables">
-     10.6.1. List of potential and actual fixed variables
+     13.6.1. List of potential and actual fixed variables
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#list-of-all-fixable-variables-for-this-model">
-       10.6.1.1. LIst of all fixable variables for this model
+       13.6.1.1. LIst of all fixable variables for this model
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#list-of-fixed-variables">
-       10.6.1.2. List of fixed variables
+       13.6.1.2. List of fixed variables
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values">
-       10.6.1.3. Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values
+       13.6.1.3. Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#show-the-equations-for-the-calc-add-factor-model">
-       10.6.1.4. Show the equations for the .calc_add_factor_model
+       13.6.1.4. Show the equations for the .calc_add_factor_model
       </a>
      </li>
     </ul>
@@ -568,12 +573,12 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="fixing-the-value-of-variables">
-<h1><span class="section-number">10. </span>Fixing the value of variables<a class="headerlink" href="#fixing-the-value-of-variables" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">13. </span>Fixing the value of variables<a class="headerlink" href="#fixing-the-value-of-variables" title="Permalink to this headline">¶</a></h1>
 <p>Provided a model has been specified to allow this it is possible to fix the values of some endogenous variable. This can be
 useful in many situations. Also when a variable is fixed a matching add factor is calculated. This keeps the result unchanged
 when the fixing is lifted and the marginal properties of the model is preserved.</p>
 <div class="section" id="import-the-model-class">
-<h2><span class="section-number">10.1. </span>Import the model class<a class="headerlink" href="#import-the-model-class" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1. </span>Import the model class<a class="headerlink" href="#import-the-model-class" title="Permalink to this headline">¶</a></h2>
 <p>This class incorporates most of the methods used to manage a model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -604,7 +609,7 @@ when the fixing is lifted and the marginal properties of the model is preserved.
 </div>
 </div>
 <div class="section" id="load-a-pre-existing-model-data-and-descriptions">
-<h2><span class="section-number">10.2. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.2. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">¶</a></h2>
 <p>The file <code class="docutils literal notranslate"><span class="pre">pak.pcim</span></code> contains a dump of model equations, dataframe, simulation options and variable descriptions. The file was created separately.</p>
 <p>The modelload method returns an instance <code class="docutils literal notranslate"><span class="pre">mpak</span></code> of the <code class="docutils literal notranslate"><span class="pre">model</span></code> class, and a dataframe <code class="docutils literal notranslate"><span class="pre">result</span></code> that holds the baseline run.</p>
 <div class="cell docutils container">
@@ -616,7 +621,7 @@ when the fixing is lifted and the marginal properties of the model is preserved.
 </div>
 </div>
 <div class="section" id="how-to-fix-the-values-for-variables">
-<h2><span class="section-number">10.3. </span>How to fix the values for variables<a class="headerlink" href="#how-to-fix-the-values-for-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.3. </span>How to fix the values for variables<a class="headerlink" href="#how-to-fix-the-values-for-variables" title="Permalink to this headline">¶</a></h2>
 <p>The equation for a fixable variable should like this:</p>
 <blockquote>
 <div><p>frml &lt;z,exo&gt; VAR  = (expression)*(1-VAR_D) + VAR_X * VAR_D</p>
@@ -626,7 +631,7 @@ when the fixing is lifted and the marginal properties of the model is preserved.
 <p>_X holds the value to which it should be fixed</p>
 <p>In the pak model all stocastic equations are fixable.</p>
 <div class="section" id="wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed">
-<h3><span class="section-number">10.3.1. </span>.wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed<a class="headerlink" href="#wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">13.3.1. </span>.wb_exog(dataframe,variable pattern, start,end) Returns a dataframe where variables matching pattern are fixed<a class="headerlink" href="#wb-exog-dataframe-variable-pattern-start-end-returns-a-dataframe-where-variables-matching-pattern-are-fixed" title="Permalink to this headline">¶</a></h3>
 <p>The code fixes the values for some variables by setting the _X variable to the current value, and _D variable to 1 in the timespan [start,end].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -639,7 +644,7 @@ when the fixing is lifted and the marginal properties of the model is preserved.
 </div>
 </div>
 <div class="section" id="now-run-the-model-with-the-new-dataframe">
-<h2><span class="section-number">10.4. </span>Now run the model with the new dataframe<a class="headerlink" href="#now-run-the-model-with-the-new-dataframe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.4. </span>Now run the model with the new dataframe<a class="headerlink" href="#now-run-the-model-with-the-new-dataframe" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">mpak</span><span class="p">(</span><span class="n">fix_df</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Baseline&#39;</span><span class="p">)</span> <span class="c1"># _ is just a  name, the dataframe is not going to be used </span>
@@ -648,7 +653,7 @@ when the fixing is lifted and the marginal properties of the model is preserved.
 </div>
 </div>
 <div class="section" id="fix-inf-show-relevant-variables-for-each-fixed-variables">
-<h3><span class="section-number">10.4.1. </span>.fix_inf() Show relevant variables for each fixed variables<a class="headerlink" href="#fix-inf-show-relevant-variables-for-each-fixed-variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">13.4.1. </span>.fix_inf() Show relevant variables for each fixed variables<a class="headerlink" href="#fix-inf-show-relevant-variables-for-each-fixed-variables" title="Permalink to this headline">¶</a></h3>
 <p>To make it short we only show the first 4 years</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1366,7 +1371,7 @@ FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGE
 </div>
 </div>
 <div class="section" id="the-result-match-the-result-before-exogenizing-as-it-should">
-<h3><span class="section-number">10.4.2. </span>The result match the result before exogenizing, as it should<a class="headerlink" href="#the-result-match-the-result-before-exogenizing-as-it-should" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">13.4.2. </span>The result match the result before exogenizing, as it should<a class="headerlink" href="#the-result-match-the-result-before-exogenizing-as-it-should" title="Permalink to this headline">¶</a></h3>
 <p>Numbers below show the difference in pct betwen the solution whitout and with fixing</p>
 <p>The difference is small and OK</p>
 <div class="cell docutils container">
@@ -1383,7 +1388,7 @@ FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGE
 </div>
 </div>
 <div class="section" id="dump-the-model-and-solution-for-later-use">
-<h2><span class="section-number">10.5. </span>Dump the model and solution for later use<a class="headerlink" href="#dump-the-model-and-solution-for-later-use" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.5. </span>Dump the model and solution for later use<a class="headerlink" href="#dump-the-model-and-solution-for-later-use" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">modeldump</span><span class="p">(</span><span class="s1">&#39;../../models/pak_exogenized.pcim&#39;</span><span class="p">)</span>
@@ -1393,10 +1398,10 @@ FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGE
 </div>
 </div>
 <div class="section" id="more-advanced-information">
-<h2><span class="section-number">10.6. </span>More advanced information<a class="headerlink" href="#more-advanced-information" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.6. </span>More advanced information<a class="headerlink" href="#more-advanced-information" title="Permalink to this headline">¶</a></h2>
 <p>The model instance (here mpak) maintain properties related to the fixing of values.</p>
 <div class="section" id="list-of-potential-and-actual-fixed-variables">
-<h3><span class="section-number">10.6.1. </span>List of potential and actual fixed variables<a class="headerlink" href="#list-of-potential-and-actual-fixed-variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">13.6.1. </span>List of potential and actual fixed variables<a class="headerlink" href="#list-of-potential-and-actual-fixed-variables" title="Permalink to this headline">¶</a></h3>
 <p>The model instance (here mpak) maintain properties related to the fixing of values.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1430,7 +1435,7 @@ FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGE
 </tbody>
 </table>
 <div class="section" id="list-of-all-fixable-variables-for-this-model">
-<h4><span class="section-number">10.6.1.1. </span>LIst of all fixable variables for this model<a class="headerlink" href="#list-of-all-fixable-variables-for-this-model" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">13.6.1.1. </span>LIst of all fixable variables for this model<a class="headerlink" href="#list-of-all-fixable-variables-for-this-model" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_fix_var</span> <span class="o">=</span><span class="p">[</span><span class="nb">vars</span> <span class="k">for</span> <span class="nb">vars</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_dummy</span><span class="p">,</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_value</span><span class="p">,</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix_add_factor</span><span class="p">)]</span>
@@ -1452,7 +1457,7 @@ FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGE
 </div>
 </div>
 <div class="section" id="list-of-fixed-variables">
-<h4><span class="section-number">10.6.1.2. </span>List of fixed variables<a class="headerlink" href="#list-of-fixed-variables" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">13.6.1.2. </span>List of fixed variables<a class="headerlink" href="#list-of-fixed-variables" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_fix_var</span> <span class="o">=</span><span class="p">[</span><span class="nb">vars</span> <span class="k">for</span> <span class="nb">vars</span> <span class="ow">in</span> 
@@ -1469,7 +1474,7 @@ FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGE
 </div>
 </div>
 <div class="section" id="is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values">
-<h4><span class="section-number">10.6.1.3. </span>Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values<a class="headerlink" href="#is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">13.6.1.3. </span>Is there a model (.calc_add_factor_model) available  to calculate the add factors corresponding to the fixed values<a class="headerlink" href="#is-there-a-model-calc-add-factor-model-available-to-calculate-the-add-factors-corresponding-to-the-fixed-values" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">split_calc_add_factor</span>
@@ -1484,7 +1489,7 @@ FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGE
 </div>
 </div>
 <div class="section" id="show-the-equations-for-the-calc-add-factor-model">
-<h4><span class="section-number">10.6.1.4. </span>Show the equations for the .calc_add_factor_model<a class="headerlink" href="#show-the-equations-for-the-calc-add-factor-model" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">13.6.1.4. </span>Show the equations for the .calc_add_factor_model<a class="headerlink" href="#show-the-equations-for-the-calc-add-factor-model" title="Permalink to this headline">¶</a></h4>
 <p>Here only 3 are displayed. Delete the [:3] and all equations will be displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1536,17 +1541,17 @@ FRML &lt;CALC&gt; PAKGGEXPTRNSCN_A = (PAKGGEXPTRNSCN) - (0.91020884318931*PAKGGE
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="create_save_scenarios.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9. </span>Create many scenarios, simulate them  and access results</p>
+            <p class="prev-next-title"><span class="section-number">12. </span>Normalizing when onboarding  eviews models</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../../Python/modelflow_features.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Useful model instance properties and methods</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Useful model instance properties and methods</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

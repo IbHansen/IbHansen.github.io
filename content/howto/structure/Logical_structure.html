@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12. Logical structure and dependencies. &#8212; ModelFlow</title>
+    <title>15. Logical structure and dependencies. &#8212; ModelFlow</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="13. Specification of models (introduction)" href="../../notebooks/intro/model%20specification.html" />
-    <link rel="prev" title="11. Useful model instance properties and methods" href="../../Python/modelflow_features.html" />
+    <link rel="next" title="16. Attribution" href="../attribution/Attribution%20background.html" />
+    <link rel="prev" title="14. Useful model instance properties and methods" href="../../Python/modelflow_features.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -153,30 +153,45 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Simulate models
+  Make experiments
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../update/create_experiment.html">
+  <a class="reference internal" href="../experiments/create_experiment.html">
    8. Create an experiment, simulate it and access results
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../update/create_save_scenarios.html">
+  <a class="reference internal" href="../experiments/create_save_scenarios.html">
    9. Create many scenarios, simulate them  and access results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../experiments/Standard%20experiment%20simple.html">
+   10. A experiment using Taxes on Goods and Services
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Fixing the value of designated variables.
+  Onboarding MFMod models from .wf1
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../update/Fixing%20variables.html">
-   10. Fixing the value of variables
+  <a class="reference internal" href="../onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
+   11. Onboard a model defined in a .wf1 file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard/eviews/onboard%20many%20models%20from%20wf1.html">
+   12. Onboard all models  defined in .wf1 files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
+   13. Normalizing when onboarding  eviews models
   </a>
  </li>
 </ul>
@@ -188,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/modelflow_features.html">
-   11. Useful model instance properties and methods
+   14. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -200,34 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   12. Logical structure and dependencies.
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Onboarding
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
-   13. Specification of models (introduction)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
-   14. Onboard a model defined in a .wf1 file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../onboard/eviews/onboard%20many%20models%20from%20wf1.html">
-   15. Onboard all models  defined in .wf1 files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
-   16. Normalizing when onboarding  eviews models
+   15. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -239,7 +227,19 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../attribution/Attribution%20background.html">
-   17. Attribution
+   16. Attribution
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Specification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
+   17. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -383,65 +383,55 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   12.1. Background
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">
-   12.2. Load a pre-existing model, data and descriptions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-the-dependency-graph">
-   12.3. What is the dependency graph
+   15.1. Load a pre-existing model, data and descriptions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trace-upstream-variables">
-   12.4. Trace upstream variables:
+   15.2. Trace upstream variables:
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-incoming-variables-the-variables-on-the-right-hand-side-can-be-displayed-as-a-graph">
-     12.4.1. The incoming variables (the variables on the right hand side) can be displayed as a graph
+    <a class="reference internal nav-link" href="#the-incoming-variables-can-be-displayed-as-a-graph">
+     15.2.1. The incoming variables can be displayed as a graph
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tracepre-filter-minimal-impact-not-all-links-are-relevant-so-the-tree-can-be-pruned">
-     12.4.2. .tracepre(,,,filter=&lt;minimal impact&gt;) Not all links are relevant. So the tree can be pruned.
+    <a class="reference internal nav-link" href="#tracepre-filter-minimal-impact-pruning-the-tree">
+     15.2.2. .tracepre(,,,filter=&lt;minimal impact&gt;) Pruning the tree
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tracepre-up-upstream-levels">
-     12.4.3. .tracepre(,,,up=&lt;upstream levels&gt;)
+     15.2.3. .tracepre(,,,up=&lt;upstream levels&gt;)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tracepre-fokus2-variable-pattern-growthshow-true-additional-information-regarding-selected-variables">
-     12.4.4. tracepre(,fokus2=’variable pattern’,growthshow=True) Additional information regarding selected variables
+     15.2.4. tracepre(,fokus2=&lt;variable pattern&gt;,growthshow=True) Additional information regarding selected variables
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tracedep-gives-exactly-the-same-for-downstream-dependent-variables">
-   12.5. .tracedep gives exactly the same for downstream (dependent variables)
+  <a class="reference internal nav-link" href="#tracedep-match-tracepre-for-downstream-dependent-variables">
+   15.3. .tracedep match .tracepre for downstream (dependent variables)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modeldash-the-really-convenient-way-to-navigate-the-dependency-graph">
-   12.6. .modeldash() The really convenient  way to navigate the dependency graph
+   15.4. .modeldash() The really convenient  way to navigate the dependency graph
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-the-adjacency-matrix-for-current-periode">
-   12.7. Plot the adjacency matrix for current periode
+   15.5. Plot the adjacency matrix for current periode
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-the-adjacency-matrix-including-lagged-effects">
-   12.8. Plot the adjacency matrix including lagged effects
+   15.6. Plot the adjacency matrix including lagged effects
   </a>
  </li>
 </ul>
@@ -465,65 +455,55 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   12.1. Background
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">
-   12.2. Load a pre-existing model, data and descriptions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-the-dependency-graph">
-   12.3. What is the dependency graph
+   15.1. Load a pre-existing model, data and descriptions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trace-upstream-variables">
-   12.4. Trace upstream variables:
+   15.2. Trace upstream variables:
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-incoming-variables-the-variables-on-the-right-hand-side-can-be-displayed-as-a-graph">
-     12.4.1. The incoming variables (the variables on the right hand side) can be displayed as a graph
+    <a class="reference internal nav-link" href="#the-incoming-variables-can-be-displayed-as-a-graph">
+     15.2.1. The incoming variables can be displayed as a graph
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tracepre-filter-minimal-impact-not-all-links-are-relevant-so-the-tree-can-be-pruned">
-     12.4.2. .tracepre(,,,filter=&lt;minimal impact&gt;) Not all links are relevant. So the tree can be pruned.
+    <a class="reference internal nav-link" href="#tracepre-filter-minimal-impact-pruning-the-tree">
+     15.2.2. .tracepre(,,,filter=&lt;minimal impact&gt;) Pruning the tree
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tracepre-up-upstream-levels">
-     12.4.3. .tracepre(,,,up=&lt;upstream levels&gt;)
+     15.2.3. .tracepre(,,,up=&lt;upstream levels&gt;)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tracepre-fokus2-variable-pattern-growthshow-true-additional-information-regarding-selected-variables">
-     12.4.4. tracepre(,fokus2=’variable pattern’,growthshow=True) Additional information regarding selected variables
+     15.2.4. tracepre(,fokus2=&lt;variable pattern&gt;,growthshow=True) Additional information regarding selected variables
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tracedep-gives-exactly-the-same-for-downstream-dependent-variables">
-   12.5. .tracedep gives exactly the same for downstream (dependent variables)
+  <a class="reference internal nav-link" href="#tracedep-match-tracepre-for-downstream-dependent-variables">
+   15.3. .tracedep match .tracepre for downstream (dependent variables)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modeldash-the-really-convenient-way-to-navigate-the-dependency-graph">
-   12.6. .modeldash() The really convenient  way to navigate the dependency graph
+   15.4. .modeldash() The really convenient  way to navigate the dependency graph
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-the-adjacency-matrix-for-current-periode">
-   12.7. Plot the adjacency matrix for current periode
+   15.5. Plot the adjacency matrix for current periode
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-the-adjacency-matrix-including-lagged-effects">
-   12.8. Plot the adjacency matrix including lagged effects
+   15.6. Plot the adjacency matrix including lagged effects
   </a>
  </li>
 </ul>
@@ -536,33 +516,36 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="logical-structure-and-dependencies">
-<h1><span class="section-number">12. </span>Logical structure and dependencies.<a class="headerlink" href="#logical-structure-and-dependencies" title="Permalink to this headline">¶</a></h1>
-<p>When solving models it is useful to be able to use the causal (logical) structure of the model. By identifying equations which comprise simultaneous block (contain feedback looks) and recursive
-blocks the model can be divided into smaller sub-models. Only simultaneous equations have to be solved iterative the recursive equations have to be <a class="reference external" href="https://en.wikipedia.org/wiki/Topological_sorting">topological sorted</a> and then calculated.</p>
-<p>Also it can be useful for the developer and user to be able to use the logical structure to
-understand the the models structure and how it works.</p>
-<p>In this chapter different ways to look at the logical structure is explorer. <br>
-The logical structure can be viewed as a <a class="reference external" href="https://en.wikipedia.org/wiki/Directed_graph">directed graph</a>. Different graphs are relevant depending on the purpose. <br></p>
+<h1><span class="section-number">15. </span>Logical structure and dependencies.<a class="headerlink" href="#logical-structure-and-dependencies" title="Permalink to this headline">¶</a></h1>
+<p>When solving models it is useful to be able to use the causal (logical) structure of the model.</p>
+<p>An introduction to causal analysis of models can be found in <span id="id1"><a class="reference internal" href="../../litterature.html#id4" title="K.C. Kogiku. An Introduction to Macroeconomic Models. McGwaw-Hill, 1968. URL: https://books.google.de/books?id=jp4LzQEACAAJ.">Kogiku</a></span>(1968). A more elaborate text is here <span id="id2"><a class="reference internal" href="../../litterature.html#id2" title="Ron Berndsen. Causal ordering in economic models. Decision Support Systems, 1995. doi:10.1016/0167-9236(94)00034-P.">Berndsen</a></span>(1995).</p>
+<p>By identifying equations which comprise simultaneous block (contain feedback loops) and recursive
+blocks the model can be divided into smaller sub-models. Only simultaneous equations have to be solved iterative. The recursive equations have to be <a class="reference external" href="https://en.wikipedia.org/wiki/Topological_sorting">topological sorted</a> and then calculated in the sorted order.</p>
+<p>In this chapter different ways to look at the logical structure is explored. <br>
+The logical structure can be viewed as a <a class="reference external" href="https://en.wikipedia.org/wiki/Directed_graph">directed graph</a>.</p>
 <ul class="simple">
-<li><p>The Python package <a class="reference external" href="https://networkx.org/">networkx</a> is used to store and analyze graphs</p></li>
-<li><p>The program <a class="reference external" href="https://graphviz.org/">Graphviz</a> is used to draw nice looking graphs basen on scripts in the dot language</p></li>
+<li><p>The Python package <a class="reference external" href="https://networkx.org/">networkx</a> is used to store and analyze graphs.</p></li>
+<li><p>The program <a class="reference external" href="https://graphviz.org/">Graphviz</a> is used to draw handsome charts based on scripts in the dot language.</p></li>
 <li><p>The model class writes dot scripts based on the Networkx directed graphs.</p></li>
 </ul>
 <p>The model class contains a number of methods and properties which uses the dependency graphs. A subset is exposed in this chapter.</p>
-<div class="section" id="background">
-<h2><span class="section-number">12.1. </span>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
-<p>An introduction to causal analysis of models can be found in <span id="id1"><a class="reference internal" href="../../litterature.html#id4" title="K.C. Kogiku. An Introduction to Macroeconomic Models. McGwaw-Hill, 1968. URL: https://books.google.de/books?id=jp4LzQEACAAJ.">Kogiku</a></span>(1968) a more elaborate text is here <span id="id2"><a class="reference internal" href="../../litterature.html#id2" title="Ron Berndsen. Causal ordering in economic models. Decision Support Systems, 1995. doi:10.1016/0167-9236(94)00034-P.">Berndsen</a></span>(1995).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span> 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="load-a-pre-existing-model-data-and-descriptions">
-<h2><span class="section-number">12.2. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.1. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">¶</a></h2>
 <p>The file <code class="docutils literal notranslate"><span class="pre">pak.pcim</span></code> contains a dump of model equations, dataframe, simulation options and variable descriptions.
 The next cell:</p>
 <ul class="simple">
-<li><p>Loads model and simulates to establish a baseline</p></li>
-<li><p>Creates a dataframe with a tax rate of 29 USD/Ton for carbon emission for 3 sectors</p></li>
-<li><p>Simulates the new experiment</p></li>
+<li><p>Loads the model and simulates it to establish a baseline.</p></li>
+<li><p>Creates a dataframe with a tax rate of 29 USD/Ton for carbon emission for 3 energy types.</p></li>
+<li><p>Simulates the new experiment.</p></li>
 </ul>
-<p>You can find more on this experiment <a class="reference internal" href="../update/create_experiment.html"><span class="doc std std-doc">here</span></a></p>
+<p>You can find more on this experiment <span class="xref myst">here</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">,</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -573,13 +556,9 @@ The next cell:</p>
 </div>
 </div>
 </div>
-<div class="section" id="what-is-the-dependency-graph">
-<h2><span class="section-number">12.3. </span>What is the dependency graph<a class="headerlink" href="#what-is-the-dependency-graph" title="Permalink to this headline">¶</a></h2>
-<p>Modelflow maintains graphs (networks) of the logical structure of a model.</p>
-</div>
 <div class="section" id="trace-upstream-variables">
-<h2><span class="section-number">12.4. </span>Trace upstream variables:<a class="headerlink" href="#trace-upstream-variables" title="Permalink to this headline">¶</a></h2>
-<p>The equation for <strong>GDP</strong></p>
+<h2><span class="section-number">15.2. </span>Trace upstream variables:<a class="headerlink" href="#trace-upstream-variables" title="Permalink to this headline">¶</a></h2>
+<p>Lets look at The equation for <strong>GDP</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">frml</span>
@@ -604,9 +583,9 @@ PAKNYGDPDISCKN: Statistical Discrepency (Expenditure Side)
 </div>
 </div>
 </div>
-<div class="section" id="the-incoming-variables-the-variables-on-the-right-hand-side-can-be-displayed-as-a-graph">
-<h3><span class="section-number">12.4.1. </span>The incoming variables (the variables on the right hand side) can be displayed as a graph<a class="headerlink" href="#the-incoming-variables-the-variables-on-the-right-hand-side-can-be-displayed-as-a-graph" title="Permalink to this headline">¶</a></h3>
-<p>The width of the arrow reflect how much of the impact can be attributed to this variable.</p>
+<div class="section" id="the-incoming-variables-can-be-displayed-as-a-graph">
+<h3><span class="section-number">15.2.1. </span>The incoming variables can be displayed as a graph<a class="headerlink" href="#the-incoming-variables-can-be-displayed-as-a-graph" title="Permalink to this headline">¶</a></h3>
+<p>That is, the preceding variables on the right hand side of the equation for GDP is shown as a directed graph. The width of the arrow reflect how much of the impact can be attributed to this variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latex</span><span class="o">=</span><span class="mi">0</span>
@@ -615,22 +594,22 @@ PAKNYGDPDISCKN: Statistical Discrepency (Expenditure Side)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Logical_structure_10_0.svg" src="../../../_images/Logical_structure_10_0.svg" /></div>
+<img alt="../../../_images/Logical_structure_8_0.svg" src="../../../_images/Logical_structure_8_0.svg" /></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>png=latex</strong></p>
 <p>The default behavior when displaying graphs in a <em>jupyter notebook</em> is to produce images in .svg format.
 These images scale well and the mouseover
-feature can be used. That is on mouseover the variable the equation for each variable is displayed
-and on mouseover the edge the percent explanation for this variable is displayed</p>
+feature can be used. That is: On mouseover of a node, the variable and the equation are displayed.
+On mouseover on an edge the percent attribution for this variable is displayed</p>
 <p>Unfortunately this <em>jupyter book</em> (that is not a notebook) can not be build into a latex and PDF  form using images in svg format.</p>
-<p>In order when the version is made to a pdf file the latex variable has to be set to True in the start. If this notebook is used as a notebook set latex=0 and use the mouseover feature.</p>
+<p>When a  pdf file is created, the latex variable has to be set to True. If this notebook is used as a notebook set latex=0 and use the mouseover feature.</p>
 </div>
 </div>
-<div class="section" id="tracepre-filter-minimal-impact-not-all-links-are-relevant-so-the-tree-can-be-pruned">
-<h3><span class="section-number">12.4.2. </span>.tracepre(,,,filter=&lt;minimal impact&gt;) Not all links are relevant. So the tree can be pruned.<a class="headerlink" href="#tracepre-filter-minimal-impact-not-all-links-are-relevant-so-the-tree-can-be-pruned" title="Permalink to this headline">¶</a></h3>
-<p>Then only  links where the minimal impact is more than &lt;minimal impact&gt; are show.</p>
+<div class="section" id="tracepre-filter-minimal-impact-pruning-the-tree">
+<h3><span class="section-number">15.2.2. </span>.tracepre(,,,filter=&lt;minimal impact&gt;) Pruning the tree<a class="headerlink" href="#tracepre-filter-minimal-impact-pruning-the-tree" title="Permalink to this headline">¶</a></h3>
+<p>Not all preceding variables have impact. By using filter=&lt;minimal impact&gt; only  links where the minimal impact is more than &lt;minimal impact&gt; are show.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
@@ -638,11 +617,11 @@ and on mouseover the edge the percent explanation for this variable is displayed
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Logical_structure_13_0.svg" src="../../../_images/Logical_structure_13_0.svg" /></div>
+<img alt="../../../_images/Logical_structure_11_0.svg" src="../../../_images/Logical_structure_11_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="tracepre-up-upstream-levels">
-<h3><span class="section-number">12.4.3. </span>.tracepre(,,,up=&lt;upstream levels&gt;)<a class="headerlink" href="#tracepre-up-upstream-levels" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.3. </span>.tracepre(,,,up=&lt;upstream levels&gt;)<a class="headerlink" href="#tracepre-up-upstream-levels" title="Permalink to this headline">¶</a></h3>
 <p>Combined with filter we can look behind the dependencies</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,12 +630,13 @@ and on mouseover the edge the percent explanation for this variable is displayed
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Logical_structure_15_0.svg" src="../../../_images/Logical_structure_15_0.svg" /></div>
+<img alt="../../../_images/Logical_structure_13_0.svg" src="../../../_images/Logical_structure_13_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="tracepre-fokus2-variable-pattern-growthshow-true-additional-information-regarding-selected-variables">
-<h3><span class="section-number">12.4.4. </span>tracepre(,fokus2=’variable pattern’,growthshow=True) Additional information regarding selected variables<a class="headerlink" href="#tracepre-fokus2-variable-pattern-growthshow-true-additional-information-regarding-selected-variables" title="Permalink to this headline">¶</a></h3>
-<p>The data for selected nodes can be displayed by mentioning the variable in fokus2= and growthshow=True will ensure that growth rates are included.</p>
+<h3><span class="section-number">15.2.4. </span>tracepre(,fokus2=&lt;variable pattern&gt;,growthshow=True) Additional information regarding selected variables<a class="headerlink" href="#tracepre-fokus2-variable-pattern-growthshow-true-additional-information-regarding-selected-variables" title="Permalink to this headline">¶</a></h3>
+<p>The data for selected nodes can be displayed by mentioning the variable in fokus2=&lt;variable pattern&gt;.<br>
+To also show growth rates, growthshow=True can be specified.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2024</span><span class="p">):</span>
@@ -665,12 +645,12 @@ and on mouseover the edge the percent explanation for this variable is displayed
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Logical_structure_17_0.svg" src="../../../_images/Logical_structure_17_0.svg" /></div>
+<img alt="../../../_images/Logical_structure_15_0.svg" src="../../../_images/Logical_structure_15_0.svg" /></div>
 </div>
 </div>
 </div>
-<div class="section" id="tracedep-gives-exactly-the-same-for-downstream-dependent-variables">
-<h2><span class="section-number">12.5. </span>.tracedep gives exactly the same for downstream (dependent variables)<a class="headerlink" href="#tracedep-gives-exactly-the-same-for-downstream-dependent-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tracedep-match-tracepre-for-downstream-dependent-variables">
+<h2><span class="section-number">15.3. </span>.tracedep match .tracepre for downstream (dependent variables)<a class="headerlink" href="#tracedep-match-tracepre-for-downstream-dependent-variables" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracedep</span><span class="p">()</span>
@@ -678,13 +658,13 @@ and on mouseover the edge the percent explanation for this variable is displayed
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Logical_structure_19_0.svg" src="../../../_images/Logical_structure_19_0.svg" /></div>
+<img alt="../../../_images/Logical_structure_17_0.svg" src="../../../_images/Logical_structure_17_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="modeldash-the-really-convenient-way-to-navigate-the-dependency-graph">
-<h2><span class="section-number">12.6. </span>.modeldash() The really convenient  way to navigate the dependency graph<a class="headerlink" href="#modeldash-the-really-convenient-way-to-navigate-the-dependency-graph" title="Permalink to this headline">¶</a></h2>
-<p>This is the way to navigate the dependency graph. You can point and click and much more</p>
-<p>Unfortunately you can not run it from this manual. Only if you are running a notebook.</p>
+<h2><span class="section-number">15.4. </span>.modeldash() The really convenient  way to navigate the dependency graph<a class="headerlink" href="#modeldash-the-really-convenient-way-to-navigate-the-dependency-graph" title="Permalink to this headline">¶</a></h2>
+<p>This is the way to navigate the dependency graph. You can point and click and much more.</p>
+<p>Unfortunately you can not run this facility from this manual. It only works in a live notebook on your local computer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -706,7 +686,9 @@ No module named &#39;dash_interactive_graphviz&#39;
 <p><img alt="dash.png" src="../../../_images/dash.png" /></p>
 </div>
 <div class="section" id="plot-the-adjacency-matrix-for-current-periode">
-<h2><span class="section-number">12.7. </span>Plot the adjacency matrix for current periode<a class="headerlink" href="#plot-the-adjacency-matrix-for-current-periode" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.5. </span>Plot the adjacency matrix for current periode<a class="headerlink" href="#plot-the-adjacency-matrix-for-current-periode" title="Permalink to this headline">¶</a></h2>
+<p>Another way to display the logical graph is as an <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_matrix">adjacency matrix</a>.</p>
+<p>This is the structure of the graph of  endogenous variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">plotadjacency</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">nolag</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
@@ -714,12 +696,12 @@ No module named &#39;dash_interactive_graphviz&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Logical_structure_25_0.png" src="../../../_images/Logical_structure_25_0.png" />
+<img alt="../../../_images/Logical_structure_23_0.png" src="../../../_images/Logical_structure_23_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="plot-the-adjacency-matrix-including-lagged-effects">
-<h2><span class="section-number">12.8. </span>Plot the adjacency matrix including lagged effects<a class="headerlink" href="#plot-the-adjacency-matrix-including-lagged-effects" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.6. </span>Plot the adjacency matrix including lagged effects<a class="headerlink" href="#plot-the-adjacency-matrix-including-lagged-effects" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">plotadjacency</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">nolag</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
@@ -727,7 +709,7 @@ No module named &#39;dash_interactive_graphviz&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Logical_structure_27_0.png" src="../../../_images/Logical_structure_27_0.png" />
+<img alt="../../../_images/Logical_structure_25_0.png" src="../../../_images/Logical_structure_25_0.png" />
 </div>
 </div>
 </div>
@@ -768,13 +750,13 @@ No module named &#39;dash_interactive_graphviz&#39;
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">11. </span>Useful model instance properties and methods</p>
+            <p class="prev-next-title"><span class="section-number">14. </span>Useful model instance properties and methods</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../notebooks/intro/model%20specification.html" title="next page">
+    <a class='right-next' id="next-link" href="../attribution/Attribution%20background.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Specification of models (introduction)</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Attribution</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

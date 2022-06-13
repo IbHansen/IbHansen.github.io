@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15. Onboard all models defined in .wf1 files &#8212; ModelFlow</title>
+    <title>12. Onboard all models defined in .wf1 files &#8212; ModelFlow</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="16. Normalizing when onboarding eviews models" href="Normalizing%20when%20onboarding%20eviews.html" />
-    <link rel="prev" title="14. Onboard a model defined in a .wf1 file" href="onboard%20one%20model%20from%20%20wf1.html" />
+    <link rel="next" title="13. Normalizing when onboarding eviews models" href="Normalizing%20when%20onboarding%20eviews.html" />
+    <link rel="prev" title="11. Onboard a model defined in a .wf1 file" href="onboard%20one%20model%20from%20%20wf1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -153,30 +153,45 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Simulate models
+  Make experiments
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../update/create_experiment.html">
+  <a class="reference internal" href="../../experiments/create_experiment.html">
    8. Create an experiment, simulate it and access results
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../update/create_save_scenarios.html">
+  <a class="reference internal" href="../../experiments/create_save_scenarios.html">
    9. Create many scenarios, simulate them  and access results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../experiments/Standard%20experiment%20simple.html">
+   10. A experiment using Taxes on Goods and Services
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Fixing the value of designated variables.
+  Onboarding MFMod models from .wf1
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../update/Fixing%20variables.html">
-   10. Fixing the value of variables
+  <a class="reference internal" href="onboard%20one%20model%20from%20%20wf1.html">
+   11. Onboard a model defined in a .wf1 file
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   12. Onboard all models  defined in .wf1 files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Normalizing%20when%20onboarding%20eviews.html">
+   13. Normalizing when onboarding  eviews models
   </a>
  </li>
 </ul>
@@ -188,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../Python/modelflow_features.html">
-   11. Useful model instance properties and methods
+   14. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -200,34 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../structure/Logical_structure.html">
-   12. Logical structure and dependencies.
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Onboarding
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../notebooks/intro/model%20specification.html">
-   13. Specification of models (introduction)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="onboard%20one%20model%20from%20%20wf1.html">
-   14. Onboard a model defined in a .wf1 file
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   15. Onboard all models  defined in .wf1 files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Normalizing%20when%20onboarding%20eviews.html">
-   16. Normalizing when onboarding  eviews models
+   15. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -239,7 +227,19 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../attribution/Attribution%20background.html">
-   17. Attribution
+   16. Attribution
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Specification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../notebooks/intro/model%20specification.html">
+   17. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -384,33 +384,50 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#list-potential-files">
-   15.1. List potential files
+   12.1. List potential files
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-specific-transformations">
-   15.2. Model specific transformations
+   12.2. Model specific transformations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#transform-all-wf1-files-in-the-folder">
-   15.3. Transform all wf1 files in the folder
+   12.3. Transform all wf1 files in the folder
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#check-all-the-models">
-   15.4. Check all the models
+   12.4. Check all the models
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#run-the-models">
-   15.5. Run the models
+   12.5. Run the models
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#make-some-names-in-the-namespace">
-   15.6. Make some names in the namespace
+   12.6. Make some names in the namespace
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-create-a-list-of-all-variable-names">
+   12.7. Lets create a list of all variable names
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#government-consumption">
+     12.7.1. Government consumption
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#government-investment">
+     12.7.2. Government investment
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -434,33 +451,50 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#list-potential-files">
-   15.1. List potential files
+   12.1. List potential files
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-specific-transformations">
-   15.2. Model specific transformations
+   12.2. Model specific transformations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#transform-all-wf1-files-in-the-folder">
-   15.3. Transform all wf1 files in the folder
+   12.3. Transform all wf1 files in the folder
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#check-all-the-models">
-   15.4. Check all the models
+   12.4. Check all the models
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#run-the-models">
-   15.5. Run the models
+   12.5. Run the models
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#make-some-names-in-the-namespace">
-   15.6. Make some names in the namespace
+   12.6. Make some names in the namespace
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-create-a-list-of-all-variable-names">
+   12.7. Lets create a list of all variable names
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#government-consumption">
+     12.7.1. Government consumption
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#government-investment">
+     12.7.2. Government investment
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -472,7 +506,7 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="onboard-all-models-defined-in-wf1-files">
-<h1><span class="section-number">15. </span>Onboard all models  defined in .wf1 files<a class="headerlink" href="#onboard-all-models-defined-in-wf1-files" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">12. </span>Onboard all models  defined in .wf1 files<a class="headerlink" href="#onboard-all-models-defined-in-wf1-files" title="Permalink to this headline">¶</a></h1>
 <p>This notebook takes all .wf1 workfile from the folder wfs\ and transform the models  it to a modelflow model.<br></p>
 <p>The overall process is performed in a Dataclass named:<strong>GrapWfModel</strong><br>
 Close study of this class can be rewarding, but is outside the need of most users.<br>
@@ -557,7 +591,7 @@ The GrapWfModel instance in general keeps most of the steps so the developer can
 </div>
 </div>
 <div class="section" id="list-potential-files">
-<h2><span class="section-number">15.1. </span>List potential files<a class="headerlink" href="#list-potential-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1. </span>List potential files<a class="headerlink" href="#list-potential-files" title="Permalink to this headline">¶</a></h2>
 <p>The workfiles are located in the <code class="docutils literal notranslate"><span class="pre">wfs</span></code> folder. <br>
 The <a class="reference external" href="https://docs.python.org/3/library/pathlib.html">pathlib.Path</a> class is used to find all wf1 files</p>
 <div class="cell docutils container">
@@ -579,7 +613,7 @@ The model and date for per is located in this workfile:wfs\PERMOD_damage_asFacto
 </div>
 </div>
 <div class="section" id="model-specific-transformations">
-<h2><span class="section-number">15.2. </span>Model specific transformations<a class="headerlink" href="#model-specific-transformations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.2. </span>Model specific transformations<a class="headerlink" href="#model-specific-transformations" title="Permalink to this headline">¶</a></h2>
 <p>Not all Eviews equations has a direct counterpart in modelflow.<br>
 To handle that two types of transformations can be provided for a specific model.</p>
 <ul class="simple">
@@ -602,7 +636,7 @@ To handle that two types of transformations can be provided for a specific model
 </div>
 </div>
 <div class="section" id="transform-all-wf1-files-in-the-folder">
-<h2><span class="section-number">15.3. </span>Transform all wf1 files in the folder<a class="headerlink" href="#transform-all-wf1-files-in-the-folder" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.3. </span>Transform all wf1 files in the folder<a class="headerlink" href="#transform-all-wf1-files-in-the-folder" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allmodels</span> <span class="o">=</span> <span class="p">{</span><span class="n">modelname</span><span class="p">:</span> 
@@ -623,10 +657,10 @@ To handle that two types of transformations can be provided for a specific model
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\agosoln.wf1
 Assummed model name: AGO
 Eviewsline to run :smpl @ALL
+Eviewsline to run :series MEAN_AGOBNCABFUNDCD_DIV_AGONYGDPMKTPCD = @MEAN(AGOBNCABFUNDCD/AGONYGDPMKTPCD,&quot;2000 2020&quot;)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eviewsline to run :series MEAN_AGOBNCABFUNDCD_DIV_AGONYGDPMKTPCD = @MEAN(AGOBNCABFUNDCD/AGONYGDPMKTPCD,&quot;2000 2020&quot;)
-The model: AGO is unlinked 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: AGO is unlinked 
 Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\agosoln_modelflow.wf2
 </pre></div>
 </div>
@@ -641,10 +675,10 @@ Calculation of add factors for AGO calculated
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\MDAsoln.wf1
 Assummed model name: MDA
+Eviewsline to run :Scalar _MDASBBREV_at_COEF_2 = _MDASBBREV.@COEF(+2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eviewsline to run :Scalar _MDASBBREV_at_COEF_2 = _MDASBBREV.@COEF(+2)
-The model: MDA is unlinked 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: MDA is unlinked 
 Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\MDAsoln_modelflow.wf2
 </pre></div>
 </div>
@@ -683,19 +717,172 @@ Assummed model name: PER
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PERMOD_damage_asFactor20220322_modelflow.wf2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name: PER
+Model name: PER
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:PER
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">allmodels</span> <span class="o">=</span> <span class="p">{</span><span class="n">modelname</span><span class="p">:</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>      <span class="n">GrabWfModel</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                         <span class="n">eviews_run_lines</span><span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">_eviews_run_lines&#39;</span><span class="p">,[]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                         <span class="n">country_trans</span>    <span class="o">=</span>   <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">_trans&#39;</span>   <span class="p">,</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[:]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                         <span class="n">make_fitted</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>        <span class="c1"># make equatios for fitted values of stocastic equations </span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                         <span class="n">do_add_factor_calc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>   <span class="c1"># Calculate the add factors which makes the stocastic equations match    </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                         <span class="n">fit_start</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span>          <span class="c1"># Start of calculation of fittet model in baseline (to have some historic values) </span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                         <span class="n">fit_end</span>   <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>           <span class="c1"># end of calc for fittted model, if None taken from mdmfsa options  </span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                         <span class="n">disable_progress</span> <span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                         <span class="p">)</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                   <span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">filename</span> <span class="ow">in</span> <span class="n">filedict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="nn">Input In [5],</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">allmodels</span> <span class="o">=</span> <span class="p">{</span><span class="n">modelname</span><span class="p">:</span> 
+<span class="ne">----&gt; </span><span class="mi">2</span>      <span class="n">GrabWfModel</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                         <span class="n">eviews_run_lines</span><span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">_eviews_run_lines&#39;</span><span class="p">,[]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                         <span class="n">country_trans</span>    <span class="o">=</span>   <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">_trans&#39;</span>   <span class="p">,</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[:]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                         <span class="n">make_fitted</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>        <span class="c1"># make equatios for fitted values of stocastic equations </span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                         <span class="n">do_add_factor_calc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>   <span class="c1"># Calculate the add factors which makes the stocastic equations match    </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                         <span class="n">fit_start</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span>          <span class="c1"># Start of calculation of fittet model in baseline (to have some historic values) </span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                         <span class="n">fit_end</span>   <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>           <span class="c1"># end of calc for fittted model, if None taken from mdmfsa options  </span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                         <span class="n">disable_progress</span> <span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                         <span class="p">)</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                   <span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">filename</span> <span class="ow">in</span> <span class="n">filedict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="nn">File &lt;string&gt;:17,</span> in <span class="ni">__init__</span><span class="nt">(self, filename, modelname, eviews_run_lines, model_all_about, start, end, country_trans, country_df_trans, make_fitted, fit_start, fit_end, do_add_factor_calc, test_frml, disable_progress)</span>
+
+<span class="nn">File C:\modelflow2\modelflow\modelgrabwf2.py:207,</span> in <span class="ni">GrabWfModel.__post_init__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New modelflow line:</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;@ in lines &#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">207</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml</span> <span class="o">=</span> <span class="p">[</span><span class="n">nz</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">make_fitted</span><span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">make_fixable</span> <span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">eviews</span><span class="o">=</span><span class="n">e</span><span class="p">)</span> 
+<span class="g g-Whitespace">    </span><span class="mi">208</span>                  <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">typ</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">line_type</span><span class="p">,</span><span class="n">eviewsline</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>             <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Normalizing model&#39;</span><span class="p">,</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">),</span><span class="n">bar_format</span><span class="o">=</span><span class="n">bars</span><span class="p">,</span><span class="n">disable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">disable_progress</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">endo_var</span><span class="p">:</span> <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml</span><span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="n">lfname</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&lt;Z,EXO&gt; &quot;</span> <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s1">&#39;stoc&#39;</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">line_type</span> <span class="p">]</span>
+
+<span class="nn">File C:\modelflow2\modelflow\modelgrabwf2.py:207,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New modelflow line:</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;@ in lines &#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">207</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml</span> <span class="o">=</span> <span class="p">[</span><span class="n">nz</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">make_fitted</span><span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">make_fixable</span> <span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">eviews</span><span class="o">=</span><span class="n">e</span><span class="p">)</span> 
+<span class="g g-Whitespace">    </span><span class="mi">208</span>                  <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">typ</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">line_type</span><span class="p">,</span><span class="n">eviewsline</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>             <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Normalizing model&#39;</span><span class="p">,</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">),</span><span class="n">bar_format</span><span class="o">=</span><span class="n">bars</span><span class="p">,</span><span class="n">disable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">disable_progress</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">endo_var</span><span class="p">:</span> <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml</span><span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="n">lfname</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&lt;Z,EXO&gt; &quot;</span> <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s1">&#39;stoc&#39;</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">line_type</span> <span class="p">]</span>
+
+<span class="nn">File C:\modelflow2\modelflow\modelnormalize.py:241,</span> in <span class="ni">normal</span><span class="nt">(ind_o, the_endo, add_add_factor, do_preprocess, add_suffix, endo_lhs, make_fixable, make_fitted, eviews)</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">kat_fit</span><span class="o">=</span><span class="n">sympify</span><span class="p">(</span><span class="n">transeq_fit</span><span class="p">,</span><span class="n">clash</span><span class="p">)</span>  
+<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="c1"># breakpoint()</span>
+<span class="ne">--&gt; </span><span class="mi">241</span>     <span class="n">endo_frml_fit</span>  <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">kat_fit</span><span class="p">,</span><span class="n">endo</span>  <span class="p">,</span><span class="n">simplify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">rational</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">warn</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="n">res_rhs_fit</span>    <span class="o">=</span><span class="n">stripstring</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">endo_frml_fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">post</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;__RHS__&#39;</span><span class="p">,</span><span class="sa">f</span><span class="s1">&#39; (</span><span class="si">{</span><span class="n">rhs</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s1">) &#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">endo_lhs</span> <span class="k">else</span> \
+<span class="g g-Whitespace">    </span><span class="mi">243</span>             <span class="n">stripstring</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">endo_frml_fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">post</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">if</span> <span class="n">make_fixable</span> <span class="p">:</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\solvers\solvers.py:1106,</span> in <span class="ni">solve</span><span class="nt">(f, *symbols, **flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span> <span class="c1">#</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span> <span class="c1"># try to get a solution</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span> <span class="c1">###########################################################################</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span> <span class="k">if</span> <span class="n">bare_f</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1106</span>     <span class="n">solution</span> <span class="o">=</span> <span class="n">_solve</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">symbols</span><span class="p">,</span> <span class="o">**</span><span class="n">flags</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1107</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1108</span>     <span class="n">solution</span> <span class="o">=</span> <span class="n">_solve_system</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="o">**</span><span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\solvers\solvers.py:1661,</span> in <span class="ni">_solve</span><span class="nt">(f, *symbols, **flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1659</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1660</span>     <span class="n">t</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1661</span>     <span class="n">iv</span> <span class="o">=</span> <span class="n">_solve</span><span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">t</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="o">**</span><span class="n">flags</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1662</span>     <span class="n">soln</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ordered</span><span class="p">({</span><span class="n">i</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">iv</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">soln</span><span class="p">}))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1663</span> <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1664</span>     <span class="c1"># perhaps _tsolve can handle f_num</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\solvers\solvers.py:1486,</span> in <span class="ni">_solve</span><span class="nt">(f, *symbols, **flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1484</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1485</span>     <span class="k">if</span> <span class="n">poly</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1486</span>         <span class="n">poly</span> <span class="o">=</span> <span class="n">Poly</span><span class="p">(</span><span class="n">f_num</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1487</span>     <span class="k">if</span> <span class="n">poly</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1488</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;could not convert </span><span class="si">%s</span><span class="s1"> to Poly&#39;</span> <span class="o">%</span> <span class="n">f_num</span><span class="p">)</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\polys\polytools.py:181,</span> in <span class="ni">Poly.__new__</span><span class="nt">(cls, rep, *gens, **args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_from_poly</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">181</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_from_expr</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\polys\polytools.py:310,</span> in <span class="ni">Poly._from_expr</span><span class="nt">(cls, rep, opt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span> <span class="nd">@classmethod</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span> <span class="k">def</span> <span class="nf">_from_expr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">rep</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="sd">&quot;&quot;&quot;Construct a polynomial from an expression. &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">310</span>     <span class="n">rep</span><span class="p">,</span> <span class="n">opt</span> <span class="o">=</span> <span class="n">_dict_from_expr</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_from_dict</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\polys\polyutils.py:370,</span> in <span class="ni">_dict_from_expr</span><span class="nt">(expr, opt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="n">rep</span><span class="p">,</span> <span class="n">gens</span> <span class="o">=</span> <span class="n">_dict_from_expr_if_gens</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">370</span>     <span class="n">rep</span><span class="p">,</span> <span class="n">gens</span> <span class="o">=</span> <span class="n">_dict_from_expr_no_gens</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="k">return</span> <span class="n">rep</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="n">clone</span><span class="p">({</span><span class="s1">&#39;gens&#39;</span><span class="p">:</span> <span class="n">gens</span><span class="p">})</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\polys\polyutils.py:313,</span> in <span class="ni">_dict_from_expr_no_gens</span><span class="nt">(expr, opt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="k">def</span> <span class="nf">_dict_from_expr_no_gens</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span>     <span class="sd">&quot;&quot;&quot;Transform an expression into a multinomial form and figure out generators. &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">313</span>     <span class="p">(</span><span class="n">poly</span><span class="p">,),</span> <span class="n">gens</span> <span class="o">=</span> <span class="n">_parallel_dict_from_expr_no_gens</span><span class="p">((</span><span class="n">expr</span><span class="p">,),</span> <span class="n">opt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>     <span class="k">return</span> <span class="n">poly</span><span class="p">,</span> <span class="n">gens</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\polys\polyutils.py:276,</span> in <span class="ni">_parallel_dict_from_expr_no_gens</span><span class="nt">(exprs, opt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span>         <span class="n">terms</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">coeff</span><span class="p">,</span> <span class="n">elements</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="n">reprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">276</span> <span class="n">gens</span> <span class="o">=</span> <span class="n">_sort_gens</span><span class="p">(</span><span class="n">gens</span><span class="p">,</span> <span class="n">opt</span><span class="o">=</span><span class="n">opt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="n">k</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">gens</span><span class="p">),</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gens</span><span class="p">):</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\polys\polyutils.py:102,</span> in <span class="ni">_sort_gens</span><span class="nt">(gens, **args)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">return</span> <span class="p">(</span><span class="n">_max_order</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">102</span>     <span class="n">gens</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">gens</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">order_key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="k">pass</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\polys\polyutils.py:74,</span> in <span class="ni">_sort_gens.&lt;locals&gt;.order_key</span><span class="nt">(gen)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">def</span> <span class="nf">order_key</span><span class="p">(</span><span class="n">gen</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">74</span>     <span class="n">gen</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="k">if</span> <span class="n">wrt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\core\_print_helpers.py:29,</span> in <span class="ni">Printable.__str__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="kn">from</span> <span class="nn">sympy.printing.str</span> <span class="kn">import</span> <span class="n">sstr</span>
+<span class="ne">---&gt; </span><span class="mi">29</span>     <span class="k">return</span> <span class="n">sstr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\printing\printer.py:372,</span> in <span class="ni">_PrintFunction.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">371</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">372</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__wrapped__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\printing\str.py:1000,</span> in <span class="ni">sstr</span><span class="nt">(expr, **settings)</span>
+<span class="g g-Whitespace">    </span><span class="mi">983</span> <span class="nd">@print_function</span><span class="p">(</span><span class="n">StrPrinter</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">984</span> <span class="k">def</span> <span class="nf">sstr</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">settings</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">985</span>     <span class="sd">&quot;&quot;&quot;Returns the expression as a string.</span>
+<span class="g g-Whitespace">    </span><span class="mi">986</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">987</span><span class="sd">     For large expressions where speed is a concern, use the setting</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">997</span><span class="sd">     &#39;Eq(a + b, 0)&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">998</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1000</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">StrPrinter</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>     <span class="n">s</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">doprint</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1003</span>     <span class="k">return</span> <span class="n">s</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\printing\printer.py:259,</span> in <span class="ni">Printer.__init__</span><span class="nt">(self, settings)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">259</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_str</span> <span class="o">=</span> <span class="nb">str</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_initial_settings</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_context</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>  <span class="c1"># mutable during printing</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="check-all-the-models">
-<h2><span class="section-number">15.4. </span>Check all the models<a class="headerlink" href="#check-all-the-models" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.4. </span>Check all the models<a class="headerlink" href="#check-all-the-models" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">cmodel</span> <span class="ow">in</span> <span class="n">allmodels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -745,7 +932,7 @@ Chekking residuals for PER 2016 to 2300
 </div>
 </div>
 <div class="section" id="run-the-models">
-<h2><span class="section-number">15.5. </span>Run the models<a class="headerlink" href="#run-the-models" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.5. </span>Run the models<a class="headerlink" href="#run-the-models" title="Permalink to this headline">¶</a></h2>
 <p>Some models need a different alfa (dampening factor in Gauss iterations) in order to solve.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -758,7 +945,7 @@ Chekking residuals for PER 2016 to 2300
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">cmodel</span> <span class="ow">in</span> <span class="n">allmodels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">cmodel</span><span class="o">.</span><span class="n">mmodel</span><span class="p">(</span><span class="n">cmodel</span><span class="o">.</span><span class="n">base_input</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="n">alfadict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">modelname</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
-    <span class="n">cmodel</span><span class="o">.</span><span class="n">mmodel</span><span class="o">.</span><span class="n">modeldump</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;modelflowdumps/</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  
+    <span class="n">cmodel</span><span class="o">.</span><span class="n">mmodel</span><span class="o">.</span><span class="n">modeldump</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;modelflowdumps/</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">.pcim&#39;</span><span class="p">)</span>  
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1"> run and saved&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -784,21 +971,25 @@ per run and saved
 
  Directory of c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\modelflowdumps
 
-20-04-2022  14:20    &lt;DIR&gt;          .
-14-05-2022  23:43    &lt;DIR&gt;          ..
-14-05-2022  23:45         1.434.250 ago
-14-05-2022  23:45         1.029.618 mda
-14-05-2022  23:45         3.386.584 pak
-14-05-2022  23:45        11.979.848 per
-               4 File(s)     17.830.300 bytes
-               2 Dir(s)  795.074.887.680 bytes free
+10-06-2022  16:23    &lt;DIR&gt;          .
+10-06-2022  16:23    &lt;DIR&gt;          ..
+09-06-2022  11:41         1.434.250 ago
+10-06-2022  16:23         1.434.250 ago.pcim
+09-06-2022  11:41         1.029.618 mda
+10-06-2022  16:23         1.029.618 mda.pcim
+09-06-2022  11:41         3.386.584 pak
+10-06-2022  16:23         3.386.584 pak.pcim
+09-06-2022  11:41        11.979.848 per
+10-06-2022  16:23        11.979.848 per.pcim
+               8 File(s)     35.660.600 bytes
+               2 Dir(s)  790.141.247.488 bytes free
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="make-some-names-in-the-namespace">
-<h2><span class="section-number">15.6. </span>Make some names in the namespace<a class="headerlink" href="#make-some-names-in-the-namespace" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.6. </span>Make some names in the namespace<a class="headerlink" href="#make-some-names-in-the-namespace" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">cmodel</span> <span class="ow">in</span> <span class="n">allmodels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -829,6 +1020,287 @@ mper, per_baseline and per_cmodel has been created
 <span class="n">_</span> <span class="o">=</span> <span class="n">mpak</span><span class="p">(</span><span class="n">pak_baseline</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="n">thissilent</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">mper</span><span class="p">(</span><span class="n">per_baseline</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="n">thissilent</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lets-create-a-list-of-all-variable-names">
+<h2><span class="section-number">12.7. </span>Lets create a list of all variable names<a class="headerlink" href="#lets-create-a-list-of-all-variable-names" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allvar</span> <span class="o">=</span> <span class="p">[</span><span class="n">varname</span> <span class="k">for</span> <span class="n">cmodel</span>  <span class="ow">in</span> <span class="n">allmodels</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">varname</span> <span class="ow">in</span> <span class="n">cmodel</span><span class="o">.</span><span class="n">mmodel</span><span class="o">.</span><span class="n">allvar</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allvar</span> <span class="o">=</span> <span class="p">[</span><span class="n">varname</span> <span class="k">for</span> <span class="n">thismodel</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mago</span><span class="p">,</span><span class="n">mmda</span><span class="p">,</span><span class="n">mpak</span><span class="p">,</span><span class="n">mper</span><span class="p">]</span> <span class="k">for</span> <span class="n">varname</span> <span class="ow">in</span> <span class="n">thismodel</span><span class="o">.</span><span class="n">allvar</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allvar_dict</span>  <span class="o">=</span> <span class="p">{</span><span class="n">varname</span><span class="p">:</span><span class="n">cmodel</span><span class="o">.</span><span class="n">mmodel</span><span class="o">.</span><span class="n">var_description</span><span class="p">[</span><span class="n">varname</span><span class="p">]</span> <span class="k">for</span> <span class="n">cmodel</span>  <span class="ow">in</span> <span class="n">allmodels</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">varname</span> <span class="ow">in</span> <span class="n">cmodel</span><span class="o">.</span><span class="n">mmodel</span><span class="o">.</span><span class="n">allvar</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">allvar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2872
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fnmatch</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fnmatch</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">allvar</span><span class="p">,</span> <span class="s1">&#39;*NECONGOVTCN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;AGONECONGOVTCN&#39;, &#39;MDANECONGOVTCN&#39;, &#39;PAKNECONGOVTCN&#39;, &#39;PERNECONGOVTCN&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">allvar</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2763
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getnames</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span><span class="n">allvar</span><span class="o">=</span><span class="n">allvar</span><span class="p">,</span><span class="n">allvar_dict</span><span class="o">=</span><span class="n">allvar_dict</span><span class="p">):</span>
+    <span class="n">selected</span> <span class="o">=</span> <span class="p">[(</span><span class="n">varname</span><span class="p">,</span><span class="n">allvar_dict</span><span class="p">[</span><span class="n">varname</span><span class="p">])</span> <span class="k">for</span> <span class="n">varname</span> <span class="ow">in</span> <span class="n">fnmatch</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">allvar_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">pat</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">selected</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="government-consumption">
+<h3><span class="section-number">12.7.1. </span>Government consumption<a class="headerlink" href="#government-consumption" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getnames</span><span class="p">(</span><span class="s1">&#39;*NECONGOVTCN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;AGONECONGOVTCN&#39;, &#39;Nominal Govt Cons&#39;)
+(&#39;MDANECONGOVTCN&#39;, &#39;GDP: Final Consumption: Public Administration LCU thousands&#39;)
+(&#39;PAKNECONGOVTCN&#39;, &#39;Govt. Cons., LCU mn&#39;)
+(&#39;PERNECONGOVTCN&#39;, &#39;PERNECONGOVTCN&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="government-investment">
+<h3><span class="section-number">12.7.2. </span>Government investment<a class="headerlink" href="#government-investment" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getnames</span><span class="p">(</span><span class="s1">&#39;*NEGDIFGOVCN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;AGONEGDIFGOVCN&#39;, &#39;AGONEGDIFGOVCN&#39;)
+(&#39;MDANEGDIFGOVCN&#39;, &#39;MDANEGDIFGOVCN&#39;)
+(&#39;PAKNEGDIFGOVCN&#39;, &#39;Public Fixed Domestic Inv., LCU mn&#39;)
+(&#39;PERNEGDIFGOVCN&#39;, &#39;PERNEGDIFGOVCN&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getnames</span><span class="p">(</span><span class="s1">&#39;*LMEMPTOTLCN*&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;PAKLMEMPTOTLCN_X&#39;, &#39;Fix value:Employment&#39;)
+(&#39;PAKLMEMPTOTLCN_D&#39;, &#39;Fix dummy:Employment&#39;)
+(&#39;PAKLMEMPTOTLCN&#39;, &#39;Employment&#39;)
+(&#39;PAKLMEMPTOTLCN_FITTED&#39;, &#39;Fitted  value:Employment&#39;)
+(&#39;PAKLMEMPTOTLCN_A&#39;, &#39;Add factor:Employment&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getnames</span><span class="p">(</span><span class="s1">&#39;*GGEXPWAGECN*&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;AGOGGEXPWAGECN_A&#39;, &#39;Add factor:Wages and Salaries&#39;)
+(&#39;AGOGGEXPWAGECN_D&#39;, &#39;Fix dummy:Wages and Salaries&#39;)
+(&#39;AGOGGEXPWAGECN&#39;, &#39;Wages and Salaries&#39;)
+(&#39;AGOGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Wages and Salaries&#39;)
+(&#39;AGOGGEXPWAGECN_VALUE_2019&#39;, &#39;AGOGGEXPWAGECN_VALUE_2019&#39;)
+(&#39;AGOGGEXPWAGECN_X&#39;, &#39;Fix value:Wages and Salaries&#39;)
+(&#39;MDAGGEXPWAGECN_X&#39;, &#39;Fix value:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN_A&#39;, &#39;Add factor:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN_D&#39;, &#39;Fix dummy:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN&#39;, &#39;Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;PERGGEXPWAGECN_A&#39;, &#39;Add factor:PERGGEXPWAGECN&#39;)
+(&#39;PERGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:PERGGEXPWAGECN&#39;)
+(&#39;PERGGEXPWAGECN_X&#39;, &#39;Fix value:PERGGEXPWAGECN&#39;)
+(&#39;PERGGEXPWAGECN&#39;, &#39;PERGGEXPWAGECN&#39;)
+(&#39;PERGGEXPWAGECN_D&#39;, &#39;Fix dummy:PERGGEXPWAGECN&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKBXFSTREMTCD</span><span class="o">.</span><span class="n">frml</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endogeneous: PAKBXFSTREMTCD: Exp., Remittances (BOP), US$ mn
+Formular: FRML &lt;Z,EXO&gt; PAKBXFSTREMTCD = (PAKBXFSTREMTCD_A*PAKNYGDPMKTPCD+PAKNYGDPMKTPCD* (0.053028373687723) ) * (1-PAKBXFSTREMTCD_D)+ PAKBXFSTREMTCD_X*PAKBXFSTREMTCD_D  $
+
+PAKBXFSTREMTCD  : Exp., Remittances (BOP), US$ mn
+PAKBXFSTREMTCD_A: Add factor:Exp., Remittances (BOP), US$ mn
+PAKBXFSTREMTCD_D: Fix dummy:Exp., Remittances (BOP), US$ mn
+PAKBXFSTREMTCD_X: Fix value:Exp., Remittances (BOP), US$ mn
+PAKNYGDPMKTPCD  : 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKGGEXPGNFSCN</span><span class="o">.</span><span class="n">frml</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endogeneous: PAKGGEXPGNFSCN: General government expenditure on goods and services (millions lcu)
+Formular: FRML &lt;Z,EXO&gt; PAKGGEXPGNFSCN = (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012 + PAKGGEXPGNFSCN_A)* (1-PAKGGEXPGNFSCN_D)+ PAKGGEXPGNFSCN_X*PAKGGEXPGNFSCN_D  $
+
+PAKGGEXPGNFSCN  : General government expenditure on goods and services (millions lcu)
+DURING_2012     : 
+PAKGGEXPGNFSCN_A: Add factor:General government expenditure on goods and services (millions lcu)
+PAKGGEXPGNFSCN_D: Fix dummy:General government expenditure on goods and services (millions lcu)
+PAKGGEXPGNFSCN_X: Fix value:General government expenditure on goods and services (millions lcu)
+PAKGGEXPINTPCN  : General government interest payments on public debt (millions lcu)
+PAKGGREVTOTLCN  : General government revenues, total (millions lcu)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">modeldash</span><span class="p">(</span><span class="s1">&#39;PAKNECONGOVTCN&#39;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apprun
+Dash app running on http://127.0.0.1:5001/
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ibhan\Anaconda3\lib\site-packages\jupyter_dash\jupyter_app.py:139: UserWarning: The &#39;environ[&#39;werkzeug.server.shutdown&#39;]&#39; function is deprecated and will be removed in Werkzeug 2.1.
+  func()
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dash_graph(mmodel=&lt;
+Model name                              :                  PAK 
+Model structure                         :         Simultaneous 
+Number of variables                     :                  841 
+Number of exogeneous  variables         :                  463 
+Number of endogeneous variables         :                  378 
+&gt;, pre_var=&#39;PAKNECONGOVTCN&#39;, filter=0, up=1, down=0, time_att=False, attshow=False, all=False, dashport=5001, debug=False, jupyter=1, show_trigger=False, inline=False, lag=False, threshold=0.5, growthshow=False)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allmodels</span><span class="p">[</span><span class="s1">&#39;pak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">all_frml_dict</span><span class="p">[</span><span class="s1">&#39;PAKGGEXPGNFSCN&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : PAKGGEXPGNFSCN
+Original        : PAKGGEXPGNFSCN=0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012
+Preprocessed    : PAKGGEXPGNFSCN=0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012
+Normalized      : PAKGGEXPGNFSCN = (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012 + PAKGGEXPGNFSCN_A)* (1-PAKGGEXPGNFSCN_D)+ PAKGGEXPGNFSCN_X*PAKGGEXPGNFSCN_D 
+Calc_add_factor : PAKGGEXPGNFSCN_A = (PAKGGEXPGNFSCN) - (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012)
+Fitted          : PAKGGEXPGNFSCN_FITTED = 0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012
+Eviews          : PAKGGEXPGNFSCN = 0.3*PAKGGEXPGNFSCN( - 1) + (1 - 0.3)*(0.80*(PAKGGREVTOTLCN - PAKGGEXPINTPCN( - 0))) + 505277.259999999*@DURING(&quot;2012&quot;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allmodels</span><span class="p">[</span><span class="s1">&#39;ago&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">all_frml_dict</span><span class="p">[</span><span class="s1">&#39;AGONECONGOVTCN&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : AGONECONGOVTCN
+Original        : DIFF(AGONECONGOVTCN)=DIFF(AGOGGEXPGNFSCN+AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100+14591.8357729705*DUMH
+Preprocessed    : ((AGONECONGOVTCN)-(AGONECONGOVTCN(-1)))=((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH
+Normalized      : AGONECONGOVTCN = (AGONECONGOVTCN_A+ (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH) +AGONECONGOVTCN(-1)) * (1-AGONECONGOVTCN_D)+ AGONECONGOVTCN_X*AGONECONGOVTCN_D 
+Calc_add_factor : AGONECONGOVTCN_A = AGONECONGOVTCN- ((((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH)) -AGONECONGOVTCN(-1)
+Fitted          : AGONECONGOVTCN_FITTED =  (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH) +AGONECONGOVTCN(-1)
+Eviews          : D(AGONECONGOVTCN) = D(AGOGGEXPGNFSCN + AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100 + 14591.8357729705*DUMH
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allmodels</span><span class="p">[</span><span class="s1">&#39;pak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mmodel</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;
+Model name                              :                  PAK 
+Model structure                         :         Simultaneous 
+Number of variables                     :                  841 
+Number of exogeneous  variables         :                  463 
+Number of endogeneous variables         :                  378 
+&gt;
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -864,13 +1336,13 @@ mper, per_baseline and per_cmodel has been created
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">14. </span>Onboard a model defined in a .wf1 file</p>
+            <p class="prev-next-title"><span class="section-number">11. </span>Onboard a model defined in a .wf1 file</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Normalizing%20when%20onboarding%20eviews.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>Normalizing when onboarding  eviews models</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Normalizing when onboarding  eviews models</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
