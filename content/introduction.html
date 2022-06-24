@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction &#8212; ModelFlow</title>
+    <title>Introduction &#8212; MFMod models in Python with ModelFlow</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. What is a Model in ModelFlow" href="notebooks/intro/model%20and%20solution.html" />
@@ -75,14 +77,9 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ModelFlow</h1>
+      <h1 class="site-logo" id="site-title">MFMod models in Python with ModelFlow</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -211,13 +208,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Fixing the value of designated variables.
+  modifying models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="howto/fixing/Fixing%20variables.html">
    16. Fixing the value of variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="howto/modifymodel/create_real_model.html">
+   17. Modified equation to to keep real tax rates
   </a>
  </li>
 </ul>
@@ -229,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Python/modelflow_features.html">
-   17. Useful model instance properties and methods
+   19. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -241,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="howto/structure/Logical_structure.html">
-   18. Logical structure and dependencies.
+   20. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -253,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="howto/attribution/Attribution%20background.html">
-   19. Attribution
+   21. Attribution
   </a>
  </li>
 </ul>
@@ -265,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/intro/model%20specification.html">
-   20. Specification of models (introduction)
+   22. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -277,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="howto/optimization/Optimize_simpel.html">
-   21. Mean variance optimization
+   23. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -289,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="litterature.html">
-   23. Litterature
+   25. Litterature
   </a>
  </li>
 </ul>
@@ -381,9 +383,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This Jupyter book is work in progress and very much a draft.</p>
-<p>Please send any comments to Ib</p>
+<p>Please send any suggestions and comments to Ib</p>
 </div>
-<p>ModelFlow is a Python library developed to leverage on the Pandas data managegement library and the broader Python ecosystem. Using Modelflow you can:</p>
+<p>The purpose of this Jupyter Book is to intro
+duce the handeling of <a class="reference external" href="https://openknowledge.worldbank.org/handle/10986/32217">World Bank’s macroeconomic and fiscal model(MFMod)</a> in python. This is acomplished through a python library: <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
+<p>ModelFlow is a Python library developed to leverage on the Pandas data management library and the broader Python ecosystem. Using Modelflow you can:</p>
 <ul class="simple">
 <li><p>Solve models</p></li>
 <li><p>Analyze models</p></li>
@@ -396,13 +400,15 @@ ModelFlow can handle models with 1 million equations and more. The library is th
 <p><strong>Agile model development</strong>
 The models are specified at a high level of abstraction and are processed fast. This makes ModelFlow the obvious choice when developing and experimenting with large models.</p>
 <p><strong>Onboarding models</strong>.
-Creating a model often entails recycling several models specified in different ways: Excel, Latex, Dynare, Python and other languages/tools.
+Creating a model often entails recycling several models specified in different ways: Eviews, Excel, Latex, Dynare, Python and other languages/tools.
 ModelFlow, which is nested in the Python’s ecosystem, makes it possible to transform models defined in many different languages into ModelFlow models.</p>
 <p><strong>Onboarding data</strong>.
 ModelFlow is build on top of Pythons Pandas Library. Pandas is the swiss army knife for datascience and has a lot of data wrangeling capabilities and in anddition makes it easy to import and manage data from different sources.</p>
 <p><strong>Analytic</strong> ModelFlow provides you with a range of visual tools that help you understand your models and your results.</p>
 <p><strong>Open Source</strong>
 Be part of the community. The entire library is written in Python and is to be found on our Github page. So you can adjust the tools to your needs or help develope the library further.</p>
+<p><strong>Acknowledgment</strong><br>
+&lt;Fortcomming&gt;</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">

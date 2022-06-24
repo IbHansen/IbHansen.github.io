@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search &#8212; ModelFlow</title>
+    <title>Search &#8212; MFMod models in Python with ModelFlow</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="_static/searchtools.js"></script>
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -80,14 +82,9 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ModelFlow</h1>
+      <h1 class="site-logo" id="site-title">MFMod models in Python with ModelFlow</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="#" method="get">
@@ -216,13 +213,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Fixing the value of designated variables.
+  modifying models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="content/howto/fixing/Fixing%20variables.html">
    16. Fixing the value of variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/howto/modifymodel/create_real_model.html">
+   17. Modified equation to to keep real tax rates
   </a>
  </li>
 </ul>
@@ -234,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="content/Python/modelflow_features.html">
-   17. Useful model instance properties and methods
+   19. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -246,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="content/howto/structure/Logical_structure.html">
-   18. Logical structure and dependencies.
+   20. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -258,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="content/howto/attribution/Attribution%20background.html">
-   19. Attribution
+   21. Attribution
   </a>
  </li>
 </ul>
@@ -270,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="content/notebooks/intro/model%20specification.html">
-   20. Specification of models (introduction)
+   22. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -282,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="content/howto/optimization/Optimize_simpel.html">
-   21. Mean variance optimization
+   23. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -294,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="content/litterature.html">
-   23. Litterature
+   25. Litterature
   </a>
  </li>
 </ul>

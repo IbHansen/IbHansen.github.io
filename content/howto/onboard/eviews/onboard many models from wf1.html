@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>14. Onboard all models defined in .wf1 files &#8212; ModelFlow</title>
+    <title>14. Onboard all models defined in .wf1 files &#8212; MFMod models in Python with ModelFlow</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="15. Normalizing when onboarding eviews models" href="Normalizing%20when%20onboarding%20eviews.html" />
@@ -76,14 +78,9 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
       
       
-      <img src="../../../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ModelFlow</h1>
+      <h1 class="site-logo" id="site-title">MFMod models in Python with ModelFlow</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
@@ -212,13 +209,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Fixing the value of designated variables.
+  modifying models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../fixing/Fixing%20variables.html">
    16. Fixing the value of variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modifymodel/create_real_model.html">
+   17. Modified equation to to keep real tax rates
   </a>
  </li>
 </ul>
@@ -230,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../Python/modelflow_features.html">
-   17. Useful model instance properties and methods
+   19. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -242,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../structure/Logical_structure.html">
-   18. Logical structure and dependencies.
+   20. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -254,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../attribution/Attribution%20background.html">
-   19. Attribution
+   21. Attribution
   </a>
  </li>
 </ul>
@@ -266,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../notebooks/intro/model%20specification.html">
-   20. Specification of models (introduction)
+   22. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -278,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../optimization/Optimize_simpel.html">
-   21. Mean variance optimization
+   23. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -290,7 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../litterature.html">
-   23. Litterature
+   25. Litterature
   </a>
  </li>
 </ul>
@@ -598,12 +600,6 @@ The GrapWfModel instance in general keeps most of the steps so the developer can
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autoreload extension is already loaded. To reload it, use:
-  %reload_ext autoreload
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="list-potential-files">
 <h2><span class="section-number">14.1. </span>List potential files<a class="headerlink" href="#list-potential-files" title="Permalink to this headline">¶</a></h2>
@@ -673,44 +669,173 @@ To handle that two types of transformations can be provided for a specific model
 Assummed model name: AGO
 Eviewsline to run :smpl @ALL
 Eviewsline to run :series MEAN_AGOBNCABFUNDCD_DIV_AGONYGDPMKTPCD = @MEAN(AGOBNCABFUNDCD/AGONYGDPMKTPCD,&quot;2000 2020&quot;)
-The model: AGO is unlinked 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: AGO is unlinked 
 Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\agosoln_modelflow.wf2
 Model name: AGO
-
-Processing the model:AGO
-testmodel calculated  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:AGO
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>testmodel calculated  
 Calculation of add factors for AGO calculated  
-
-Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\MDAsoln.wf1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\MDAsoln.wf1
 Assummed model name: MDA
 Eviewsline to run :Scalar _MDASBBREV_at_COEF_2 = _MDASBBREV.@COEF(+2)
-The model: MDA is unlinked 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: MDA is unlinked 
 Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\MDAsoln_modelflow.wf2
-Model name: MDA
-
-Processing the model:MDA
-testmodel calculated  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name: MDA
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:MDA
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>testmodel calculated  
 Calculation of add factors for MDA calculated  
-
-Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PAKSoln.wf1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PAKSoln.wf1
 Assummed model name: PAK
-The model: PAK is unlinked 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: PAK is unlinked 
 Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PAKSoln_modelflow.wf2
-Model name: PAK
-
-Processing the model:PAK
-testmodel calculated  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name: PAK
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:PAK
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>testmodel calculated  
 Calculation of add factors for PAK calculated  
-
-Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PERMOD_damage_asFactor20220322.wf1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PERMOD_damage_asFactor20220322.wf1
 Assummed model name: PER
-The model: PER is unlinked 
-Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PERMOD_damage_asFactor20220322_modelflow.wf2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: PER is unlinked 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PERMOD_damage_asFactor20220322_modelflow.wf2
 Model name: PER
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:PER
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">allmodels</span> <span class="o">=</span> <span class="p">{</span><span class="n">modelname</span><span class="p">:</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>      <span class="n">GrabWfModel</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                         <span class="n">eviews_run_lines</span><span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">_eviews_run_lines&#39;</span><span class="p">,[]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                         <span class="n">country_trans</span>    <span class="o">=</span>   <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">_trans&#39;</span>   <span class="p">,</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[:]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                         <span class="n">make_fitted</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>        <span class="c1"># make equatios for fitted values of stocastic equations </span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                         <span class="n">do_add_factor_calc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>   <span class="c1"># Calculate the add factors which makes the stocastic equations match    </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                         <span class="n">fit_start</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span>          <span class="c1"># Start of calculation of fittet model in baseline (to have some historic values) </span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                         <span class="n">fit_end</span>   <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>           <span class="c1"># end of calc for fittted model, if None taken from mdmfsa options  </span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                         <span class="n">disable_progress</span> <span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                         <span class="p">)</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                   <span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">filename</span> <span class="ow">in</span> <span class="n">filedict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
-Processing the model:PER
-testmodel calculated  
-Calculation of add factors for PER calculated  
+<span class="nn">Input In [5],</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">allmodels</span> <span class="o">=</span> <span class="p">{</span><span class="n">modelname</span><span class="p">:</span> 
+<span class="ne">----&gt; </span><span class="mi">2</span>      <span class="n">GrabWfModel</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                         <span class="n">eviews_run_lines</span><span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">_eviews_run_lines&#39;</span><span class="p">,[]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                         <span class="n">country_trans</span>    <span class="o">=</span>   <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">modelname</span><span class="si">}</span><span class="s1">_trans&#39;</span>   <span class="p">,</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[:]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                         <span class="n">make_fitted</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>        <span class="c1"># make equatios for fitted values of stocastic equations </span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                         <span class="n">do_add_factor_calc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>   <span class="c1"># Calculate the add factors which makes the stocastic equations match    </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                         <span class="n">fit_start</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span>          <span class="c1"># Start of calculation of fittet model in baseline (to have some historic values) </span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                         <span class="n">fit_end</span>   <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>           <span class="c1"># end of calc for fittted model, if None taken from mdmfsa options  </span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                         <span class="n">disable_progress</span> <span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                         <span class="p">)</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                   <span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">filename</span> <span class="ow">in</span> <span class="n">filedict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="nn">File &lt;string&gt;:17,</span> in <span class="ni">__init__</span><span class="nt">(self, filename, modelname, eviews_run_lines, model_all_about, start, end, country_trans, country_df_trans, make_fitted, fit_start, fit_end, do_add_factor_calc, test_frml, disable_progress)</span>
+
+<span class="nn">File C:\modelflow2\modelflow\modelgrabwf2.py:207,</span> in <span class="ni">GrabWfModel.__post_init__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New modelflow line:</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;@ in lines &#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">207</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml</span> <span class="o">=</span> <span class="p">[</span><span class="n">nz</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">make_fitted</span><span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">make_fixable</span> <span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">eviews</span><span class="o">=</span><span class="n">e</span><span class="p">)</span> 
+<span class="g g-Whitespace">    </span><span class="mi">208</span>                  <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">typ</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">line_type</span><span class="p">,</span><span class="n">eviewsline</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>             <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Normalizing model&#39;</span><span class="p">,</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">),</span><span class="n">bar_format</span><span class="o">=</span><span class="n">bars</span><span class="p">,</span><span class="n">disable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">disable_progress</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">endo_var</span><span class="p">:</span> <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml</span><span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="n">lfname</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&lt;Z,EXO&gt; &quot;</span> <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s1">&#39;stoc&#39;</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">line_type</span> <span class="p">]</span>
+
+<span class="nn">File C:\modelflow2\modelflow\modelgrabwf2.py:207,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New modelflow line:</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;@ in lines &#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">207</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml</span> <span class="o">=</span> <span class="p">[</span><span class="n">nz</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">make_fitted</span><span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">make_fixable</span> <span class="o">=</span><span class="p">(</span><span class="n">typ</span><span class="o">==</span><span class="s1">&#39;stoc&#39;</span><span class="p">),</span><span class="n">eviews</span><span class="o">=</span><span class="n">e</span><span class="p">)</span> 
+<span class="g g-Whitespace">    </span><span class="mi">208</span>                  <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">typ</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">line_type</span><span class="p">,</span><span class="n">eviewsline</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>             <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Normalizing model&#39;</span><span class="p">,</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">),</span><span class="n">bar_format</span><span class="o">=</span><span class="n">bars</span><span class="p">,</span><span class="n">disable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">disable_progress</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">endo_var</span><span class="p">:</span> <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_frml</span><span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="n">lfname</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&lt;Z,EXO&gt; &quot;</span> <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s1">&#39;stoc&#39;</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">line_type</span> <span class="p">]</span>
+
+<span class="nn">File C:\modelflow2\modelflow\modelnormalize.py:231,</span> in <span class="ni">normal</span><span class="nt">(ind_o, the_endo, add_add_factor, do_preprocess, add_suffix, endo_lhs, make_fixable, make_fitted, eviews)</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span> <span class="n">kat</span><span class="o">=</span><span class="n">sympify</span><span class="p">(</span><span class="n">transeq</span><span class="p">,</span><span class="n">clash</span><span class="p">)</span>  
+<span class="g g-Whitespace">    </span><span class="mi">229</span> <span class="c1"># breakpoint()</span>
+<span class="ne">--&gt; </span><span class="mi">231</span> <span class="n">endo_frml</span>  <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">kat</span><span class="p">,</span><span class="n">endo</span>  <span class="p">,</span><span class="n">simplify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">rational</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">warn</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">res_rhs</span>    <span class="o">=</span><span class="n">stripstring</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">endo_frml</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">post</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;__RHS__&#39;</span><span class="p">,</span><span class="sa">f</span><span class="s1">&#39; (</span><span class="si">{</span><span class="n">rhs</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s1">) &#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">endo_lhs</span> <span class="k">else</span> \
+<span class="g g-Whitespace">    </span><span class="mi">233</span>             <span class="n">stripstring</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">endo_frml</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">post</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">if</span> <span class="n">make_fitted</span><span class="p">:</span>            
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\solvers\solvers.py:1089,</span> in <span class="ni">solve</span><span class="nt">(f, *symbols, **flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1085</span>             <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nsimplify</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">rational</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1087</span> <span class="c1"># capture any denominators before rewriting since</span>
+<span class="g g-Whitespace">   </span><span class="mi">1088</span> <span class="c1"># they may disappear after the rewrite, e.g. issue 14779</span>
+<span class="ne">-&gt; </span><span class="mi">1089</span> <span class="n">flags</span><span class="p">[</span><span class="s1">&#39;_denominators&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_simple_dens</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">symbols</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1090</span> <span class="c1"># Any embedded piecewise functions need to be brought out to the</span>
+<span class="g g-Whitespace">   </span><span class="mi">1091</span> <span class="c1"># top level so that the appropriate strategy gets selected.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1092</span> <span class="c1"># However, this is necessary only if one of the piecewise</span>
+<span class="g g-Whitespace">   </span><span class="mi">1093</span> <span class="c1"># functions depends on one of the symbols we are solving for.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1094</span> <span class="k">def</span> <span class="nf">_has_piecewise</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\solvers\solvers.py:119,</span> in <span class="ni">_simple_dens</span><span class="nt">(f, symbols)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span> <span class="nf">_simple_dens</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">symbols</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="c1"># when checking if a denominator is zero, we can just check the</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="c1"># base of powers with nonzero exponents since if the base is zero</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>     <span class="c1"># the power will be zero, too. To keep it simple and fast, we</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span>     <span class="c1"># limit simplification to exponents that are Numbers</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="n">dens</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">119</span>     <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">denoms</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">symbols</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">is_Pow</span> <span class="ow">and</span> <span class="n">d</span><span class="o">.</span><span class="n">exp</span><span class="o">.</span><span class="n">is_Number</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>             <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">exp</span><span class="o">.</span><span class="n">is_zero</span><span class="p">:</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\solvers\solvers.py:167,</span> in <span class="ni">denoms</span><span class="nt">(eq, *symbols)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Expr</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span>     <span class="k">continue</span>
+<span class="ne">--&gt; </span><span class="mi">167</span> <span class="n">den</span> <span class="o">=</span> <span class="n">denom</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="k">if</span> <span class="n">den</span> <span class="ow">is</span> <span class="n">S</span><span class="o">.</span><span class="n">One</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span>     <span class="k">continue</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\simplify\radsimp.py:1120,</span> in <span class="ni">denom</span><span class="nt">(expr)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1119</span> <span class="k">def</span> <span class="nf">denom</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1120</span>     <span class="k">return</span> <span class="n">fraction</span><span class="p">(</span><span class="n">expr</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\simplify\radsimp.py:1085,</span> in <span class="ni">fraction</span><span class="nt">(expr, exact)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1082</span> <span class="n">numer</span><span class="p">,</span> <span class="n">denom</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">Mul</span><span class="o">.</span><span class="n">make_args</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1085</span>     <span class="k">if</span> <span class="n">term</span><span class="o">.</span><span class="n">is_commutative</span> <span class="ow">and</span> <span class="p">(</span><span class="n">term</span><span class="o">.</span><span class="n">is_Pow</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">exp</span><span class="p">)):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1086</span>         <span class="n">b</span><span class="p">,</span> <span class="n">ex</span> <span class="o">=</span> <span class="n">term</span><span class="o">.</span><span class="n">as_base_exp</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1087</span>         <span class="k">if</span> <span class="n">ex</span><span class="o">.</span><span class="n">is_negative</span><span class="p">:</span>
+
+<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\sympy\functions\elementary\exponential.py:214,</span> in <span class="ni">ExpMeta.__instancecheck__</span><span class="nt">(cls, instance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">if</span> <span class="n">exp</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="k">return</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">214</span> <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">Pow</span><span class="p">)</span> <span class="ow">and</span> <span class="n">instance</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">S</span><span class="o">.</span><span class="n">Exp1</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

@@ -4,10 +4,13 @@
 ```{warning}
 This Jupyter book is work in progress and very much a draft.
 
-Please send any comments to Ib 
+Please send any suggestions and comments to Ib 
 ```
 
-ModelFlow is a Python library developed to leverage on the Pandas data managegement library and the broader Python ecosystem. Using Modelflow you can:
+The purpose of this Jupyter Book is to intro
+duce the handeling of [World Bank's macroeconomic and fiscal model\(MFMod\)](https://openknowledge.worldbank.org/handle/10986/32217) in python. This is acomplished through a python library: ```modelflow```. 
+
+ModelFlow is a Python library developed to leverage on the Pandas data management library and the broader Python ecosystem. Using Modelflow you can:
  - Solve models
  - Analyze models
  - Analyze results
@@ -23,7 +26,7 @@ ModelFlow can handle models with 1 million equations and more. The library is th
 The models are specified at a high level of abstraction and are processed fast. This makes ModelFlow the obvious choice when developing and experimenting with large models.
 
 **Onboarding models**.
-Creating a model often entails recycling several models specified in different ways: Excel, Latex, Dynare, Python and other languages/tools.
+Creating a model often entails recycling several models specified in different ways: Eviews, Excel, Latex, Dynare, Python and other languages/tools.
 ModelFlow, which is nested in the Python's ecosystem, makes it possible to transform models defined in many different languages into ModelFlow models.
 
 **Onboarding data**.
@@ -33,3 +36,6 @@ ModelFlow is build on top of Pythons Pandas Library. Pandas is the swiss army kn
 
 **Open Source**
 Be part of the community. The entire library is written in Python and is to be found on our Github page. So you can adjust the tools to your needs or help develope the library further.
+
+**Acknowledgment**<br> 
+\<Fortcomming> 

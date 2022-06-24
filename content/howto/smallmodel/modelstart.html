@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8. Create a small model from scratch and save it &#8212; ModelFlow</title>
+    <title>8. Create a small model from scratch and save it &#8212; MFMod models in Python with ModelFlow</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -78,14 +80,9 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
       
       
-      <img src="../../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ModelFlow</h1>
+      <h1 class="site-logo" id="site-title">MFMod models in Python with ModelFlow</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -214,13 +211,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Fixing the value of designated variables.
+  modifying models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fixing/Fixing%20variables.html">
    16. Fixing the value of variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modifymodel/create_real_model.html">
+   17. Modified equation to to keep real tax rates
   </a>
  </li>
 </ul>
@@ -232,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/modelflow_features.html">
-   17. Useful model instance properties and methods
+   19. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -244,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../structure/Logical_structure.html">
-   18. Logical structure and dependencies.
+   20. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -256,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../attribution/Attribution%20background.html">
-   19. Attribution
+   21. Attribution
   </a>
  </li>
 </ul>
@@ -268,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
-   20. Specification of models (introduction)
+   22. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -280,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../optimization/Optimize_simpel.html">
-   21. Mean variance optimization
+   23. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -292,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../litterature.html">
-   23. Litterature
+   25. Litterature
   </a>
  </li>
 </ul>
@@ -602,12 +604,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autoreload extension is already loaded. To reload it, use:
-  %reload_ext autoreload
 </pre></div>
 </div>
 </div>
@@ -1063,17 +1059,17 @@ Normalized      : G = (G(-1)*EXP(G_A+ (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*(
 Calc_add_factor : G_A = - ((-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1)))))) +LOG(G)-LOG(G(-1))
 Fitted          : G_FITTED = G(-1)*EXP( (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1))))) )
 
-Frml name:&lt;FIXABLE, Z&gt;
+Frml name:&lt;FIXABLE, DAMP&gt;
 Endo_var        : I
-Original        :  DLOG(I)  = -C2_I*  (LOG(I(-1))-  LOG(Y(-1)-G(-1)) - C1_I)   +C3_I*DLOG(Y) 
+Original        :  DLOG(I)  =    -C2_I*  (LOG(I(-1))-  LOG(Y(-1)-G(-1)) - C1_I)   +C3_I*DLOG(Y) 
 Preprocessed    : ((LOG(I))-(LOG(I(-1))))=-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))
 Normalized      : I = (I(-1)*EXP(I_A+ (-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))) )) * (1-I_D)+ I_X*I_D 
 Calc_add_factor : I_A = - ((-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1)))))) +LOG(I)-LOG(I(-1))
 Fitted          : I_FITTED = I(-1)*EXP( (-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))) )
 
-Frml name:&lt;FIXABLE, Z&gt;
+Frml name:&lt;FIXABLE, DAMP&gt;
 Endo_var        : M
-Original        :  DLOG(M) =  -C2_M*  (LOG(M(-1))-   LOG(GDE(-1))    - C1_M)   +C3_M*DLOG(GDE)
+Original        :  DLOG(M) =     -C2_M*  (LOG(M(-1))-   LOG(GDE(-1))    - C1_M)   +C3_M*DLOG(GDE)
 Preprocessed    : ((LOG(M))-(LOG(M(-1))))=-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M*((LOG(GDE))-(LOG(GDE(-1))))
 Normalized      : M = (M(-1)*EXP(M_A+ (-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M*((LOG(GDE))-(LOG(GDE(-1))))) )) * (1-M_D)+ M_X*M_D 
 Calc_add_factor : M_A = - ((-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M*((LOG(GDE))-(LOG(GDE(-1)))))) +LOG(M)-LOG(M(-1))
@@ -1145,8 +1141,8 @@ which makes left hand side equals to the right hand side (without any fixing)</p
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FRML &lt;FIXABLE, DAMP&gt; CPV = (CPV(-1)*EXP(CPV_A+ (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )) * (1-CPV_D)+ CPV_X*CPV_D $
 FRML &lt;FIXABLE, DAMP&gt; G = (G(-1)*EXP(G_A+ (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1))))) )) * (1-G_D)+ G_X*G_D $
-FRML &lt;FIXABLE, Z&gt; I = (I(-1)*EXP(I_A+ (-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))) )) * (1-I_D)+ I_X*I_D $
-FRML &lt;FIXABLE, Z&gt; M = (M(-1)*EXP(M_A+ (-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M*((LOG(GDE))-(LOG(GDE(-1))))) )) * (1-M_D)+ M_X*M_D $
+FRML &lt;FIXABLE, DAMP&gt; I = (I(-1)*EXP(I_A+ (-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))) )) * (1-I_D)+ I_X*I_D $
+FRML &lt;FIXABLE, DAMP&gt; M = (M(-1)*EXP(M_A+ (-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M*((LOG(GDE))-(LOG(GDE(-1))))) )) * (1-M_D)+ M_X*M_D $
 FRML &lt;IDENT&gt; Y = CPV+I+G+X-M+YDISC$
 FRML &lt;IDENT&gt; GDE = CPV+I+G$
 FRML &lt;FIT&gt; CPV_FITTED = CPV(-1)*EXP( (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )$
@@ -1293,323 +1289,17 @@ m     0.37  -1.57 5.0929</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [17],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">baseline_first</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">smalldata</span><span class="p">,</span><span class="n">parameters_melted</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># the original data plus the parameters </span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">baseline_first</span>  <span class="o">=</span> <span class="n">msmallmodel</span><span class="o">.</span><span class="n">insertModelVar</span><span class="p">(</span><span class="n">baseline_first</span><span class="p">)</span> <span class="c1"># to make sure all modelvariable are in the dataframe </span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">baseline_first</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>index</th>
-      <th>2011</th>
-      <th>2012</th>
-      <th>2013</th>
-      <th>2014</th>
-      <th>2015</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Y</th>
-      <td>1.562682e+06</td>
-      <td>1.632040e+06</td>
-      <td>1.689572e+06</td>
-      <td>1.791141e+06</td>
-      <td>1.862357e+06</td>
-    </tr>
-    <tr>
-      <th>CPV</th>
-      <td>1.320302e+06</td>
-      <td>1.360376e+06</td>
-      <td>1.396402e+06</td>
-      <td>1.438904e+06</td>
-      <td>1.476067e+06</td>
-    </tr>
-    <tr>
-      <th>I</th>
-      <td>3.739388e+05</td>
-      <td>3.811702e+05</td>
-      <td>4.145568e+05</td>
-      <td>4.664730e+05</td>
-      <td>5.364167e+05</td>
-    </tr>
-    <tr>
-      <th>G</th>
-      <td>1.312720e+05</td>
-      <td>1.288601e+05</td>
-      <td>1.242549e+05</td>
-      <td>1.385327e+05</td>
-      <td>1.544669e+05</td>
-    </tr>
-    <tr>
-      <th>X</th>
-      <td>1.217150e+05</td>
-      <td>1.462929e+05</td>
-      <td>1.652346e+05</td>
-      <td>1.947055e+05</td>
-      <td>1.992149e+05</td>
-    </tr>
-    <tr>
-      <th>M</th>
-      <td>4.442322e+05</td>
-      <td>4.577457e+05</td>
-      <td>5.224477e+05</td>
-      <td>6.322079e+05</td>
-      <td>6.927948e+05</td>
-    </tr>
-    <tr>
-      <th>YDISC</th>
-      <td>5.968622e+04</td>
-      <td>7.308714e+04</td>
-      <td>1.115720e+05</td>
-      <td>1.847331e+05</td>
-      <td>1.889869e+05</td>
-    </tr>
-    <tr>
-      <th>C2_CPV</th>
-      <td>3.800000e-01</td>
-      <td>3.800000e-01</td>
-      <td>3.800000e-01</td>
-      <td>3.800000e-01</td>
-      <td>3.800000e-01</td>
-    </tr>
-    <tr>
-      <th>C1_CPV</th>
-      <td>-1.100000e-01</td>
-      <td>-1.100000e-01</td>
-      <td>-1.100000e-01</td>
-      <td>-1.100000e-01</td>
-      <td>-1.100000e-01</td>
-    </tr>
-    <tr>
-      <th>C3_CPV</th>
-      <td>2.946000e-02</td>
-      <td>2.946000e-02</td>
-      <td>2.946000e-02</td>
-      <td>2.946000e-02</td>
-      <td>2.946000e-02</td>
-    </tr>
-    <tr>
-      <th>C2_G</th>
-      <td>3.000000e-01</td>
-      <td>3.000000e-01</td>
-      <td>3.000000e-01</td>
-      <td>3.000000e-01</td>
-      <td>3.000000e-01</td>
-    </tr>
-    <tr>
-      <th>C1_G</th>
-      <td>-2.597400e+00</td>
-      <td>-2.597400e+00</td>
-      <td>-2.597400e+00</td>
-      <td>-2.597400e+00</td>
-      <td>-2.597400e+00</td>
-    </tr>
-    <tr>
-      <th>C3_G</th>
-      <td>1.332000e+00</td>
-      <td>1.332000e+00</td>
-      <td>1.332000e+00</td>
-      <td>1.332000e+00</td>
-      <td>1.332000e+00</td>
-    </tr>
-    <tr>
-      <th>C2_I</th>
-      <td>2.794700e-02</td>
-      <td>2.794700e-02</td>
-      <td>2.794700e-02</td>
-      <td>2.794700e-02</td>
-      <td>2.794700e-02</td>
-    </tr>
-    <tr>
-      <th>C1_I</th>
-      <td>-5.153480e-01</td>
-      <td>-5.153480e-01</td>
-      <td>-5.153480e-01</td>
-      <td>-5.153480e-01</td>
-      <td>-5.153480e-01</td>
-    </tr>
-    <tr>
-      <th>C3_I</th>
-      <td>1.696700e+00</td>
-      <td>1.696700e+00</td>
-      <td>1.696700e+00</td>
-      <td>1.696700e+00</td>
-      <td>1.696700e+00</td>
-    </tr>
-    <tr>
-      <th>C2_M</th>
-      <td>3.700000e-01</td>
-      <td>3.700000e-01</td>
-      <td>3.700000e-01</td>
-      <td>3.700000e-01</td>
-      <td>3.700000e-01</td>
-    </tr>
-    <tr>
-      <th>C1_M</th>
-      <td>-1.570000e+00</td>
-      <td>-1.570000e+00</td>
-      <td>-1.570000e+00</td>
-      <td>-1.570000e+00</td>
-      <td>-1.570000e+00</td>
-    </tr>
-    <tr>
-      <th>C3_M</th>
-      <td>5.092900e+00</td>
-      <td>5.092900e+00</td>
-      <td>5.092900e+00</td>
-      <td>5.092900e+00</td>
-      <td>5.092900e+00</td>
-    </tr>
-    <tr>
-      <th>CPV_D</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>I_X</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>G_A</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>I_D</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>CPV_X</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>M_X</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>I_FITTED</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>GDE</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>G_X</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>G_D</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>CPV_A</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>M_A</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>M_FITTED</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>G_FITTED</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>M_D</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>CPV_FITTED</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>I_A</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;parameters_melted&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="generate-the-variables-defined-by-identities-in-the-specification">

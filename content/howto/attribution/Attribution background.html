@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>19. Attribution &#8212; ModelFlow</title>
+    <title>21. Attribution &#8212; MFMod models in Python with ModelFlow</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,12 +51,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="20. Specification of models (introduction)" href="../../notebooks/intro/model%20specification.html" />
-    <link rel="prev" title="18. Logical structure and dependencies." href="../structure/Logical_structure.html" />
+    <link rel="next" title="22. Specification of models (introduction)" href="../../notebooks/intro/model%20specification.html" />
+    <link rel="prev" title="20. Logical structure and dependencies." href="../structure/Logical_structure.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -78,14 +80,9 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
       
       
-      <img src="../../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ModelFlow</h1>
+      <h1 class="site-logo" id="site-title">MFMod models in Python with ModelFlow</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -214,13 +211,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Fixing the value of designated variables.
+  modifying models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fixing/Fixing%20variables.html">
    16. Fixing the value of variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modifymodel/create_real_model.html">
+   17. Modified equation to to keep real tax rates
   </a>
  </li>
 </ul>
@@ -232,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/modelflow_features.html">
-   17. Useful model instance properties and methods
+   19. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -244,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../structure/Logical_structure.html">
-   18. Logical structure and dependencies.
+   20. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -256,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   19. Attribution
+   21. Attribution
   </a>
  </li>
 </ul>
@@ -268,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
-   20. Specification of models (introduction)
+   22. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -280,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../optimization/Optimize_simpel.html">
-   21. Mean variance optimization
+   23. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -292,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../litterature.html">
-   23. Litterature
+   25. Litterature
   </a>
  </li>
 </ul>
@@ -385,104 +387,104 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   19.1. Setup
+   21.1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">
-   19.2. Load a pre-existing model, data and descriptions
+   21.2. Load a pre-existing model, data and descriptions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   19.3. Attribution
+   21.3. Attribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#which-function-model-attribution-or-single-equation-attribution">
-   19.4. Which function: Model attribution or  single equation attribution?
+   21.4. Which function: Model attribution or  single equation attribution?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#which-output">
-   19.5. Which output?
+   21.5. Which output?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#which-input">
-   19.6. Which input?
+   21.6. Which input?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#totdif-makes-an-instance-of-a-model-attribution-class">
-   19.7. .totdif() Makes an instance of a  model attribution class
+   21.7. .totdif() Makes an instance of a  model attribution class
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#explain-all-will-visualize-the-results">
-     19.7.1. .explain_all will visualize the results
+     21.7.1. .explain_all will visualize the results
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#or-we-can-use-interactive-widgets">
-     19.7.2. Or we can use interactive widgets
+     21.7.2. Or we can use interactive widgets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-advanced-model-attribution">
-     19.7.3. More advanced model attribution
+     21.7.3. More advanced model attribution
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#formula-attribution">
-   19.8. Formula attribution
+   21.8. Formula attribution
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-equation-attribution-output">
-     19.8.1. Single equation attribution output
+     21.8.1. Single equation attribution output
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-equation-attribution-chart">
-     19.8.2. Single equation attribution chart
+     21.8.2. Single equation attribution chart
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#chart-in-pct-of-the-total">
-     19.8.3. Chart in pct of the total
+     21.8.3. Chart in pct of the total
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#chart-for-one-year">
-     19.8.4. Chart for one year
+     21.8.4. Chart for one year
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sorting-of-attribution">
-     19.8.5. Sorting of attribution
+     21.8.5. Sorting of attribution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#truncate-attribution">
-     19.8.6. Truncate attribution
+     21.8.6. Truncate attribution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#attribution-when-comparing-time-frames">
-     19.8.7. Attribution when comparing time frames
+     21.8.7. Attribution when comparing time frames
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualizing-attribution-in-dependency-graphs">
-     19.8.8. Visualizing attribution in dependency graphs
+     21.8.8. Visualizing attribution in dependency graphs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-attribution-can-be-filtered-and-more-levels-can-be-displayed">
-     19.8.9. The attribution can be filtered and more levels can be displayed.
+     21.8.9. The attribution can be filtered and more levels can be displayed.
     </a>
    </li>
   </ul>
@@ -509,104 +511,104 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   19.1. Setup
+   21.1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">
-   19.2. Load a pre-existing model, data and descriptions
+   21.2. Load a pre-existing model, data and descriptions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   19.3. Attribution
+   21.3. Attribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#which-function-model-attribution-or-single-equation-attribution">
-   19.4. Which function: Model attribution or  single equation attribution?
+   21.4. Which function: Model attribution or  single equation attribution?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#which-output">
-   19.5. Which output?
+   21.5. Which output?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#which-input">
-   19.6. Which input?
+   21.6. Which input?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#totdif-makes-an-instance-of-a-model-attribution-class">
-   19.7. .totdif() Makes an instance of a  model attribution class
+   21.7. .totdif() Makes an instance of a  model attribution class
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#explain-all-will-visualize-the-results">
-     19.7.1. .explain_all will visualize the results
+     21.7.1. .explain_all will visualize the results
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#or-we-can-use-interactive-widgets">
-     19.7.2. Or we can use interactive widgets
+     21.7.2. Or we can use interactive widgets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-advanced-model-attribution">
-     19.7.3. More advanced model attribution
+     21.7.3. More advanced model attribution
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#formula-attribution">
-   19.8. Formula attribution
+   21.8. Formula attribution
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-equation-attribution-output">
-     19.8.1. Single equation attribution output
+     21.8.1. Single equation attribution output
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-equation-attribution-chart">
-     19.8.2. Single equation attribution chart
+     21.8.2. Single equation attribution chart
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#chart-in-pct-of-the-total">
-     19.8.3. Chart in pct of the total
+     21.8.3. Chart in pct of the total
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#chart-for-one-year">
-     19.8.4. Chart for one year
+     21.8.4. Chart for one year
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sorting-of-attribution">
-     19.8.5. Sorting of attribution
+     21.8.5. Sorting of attribution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#truncate-attribution">
-     19.8.6. Truncate attribution
+     21.8.6. Truncate attribution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#attribution-when-comparing-time-frames">
-     19.8.7. Attribution when comparing time frames
+     21.8.7. Attribution when comparing time frames
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualizing-attribution-in-dependency-graphs">
-     19.8.8. Visualizing attribution in dependency graphs
+     21.8.8. Visualizing attribution in dependency graphs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-attribution-can-be-filtered-and-more-levels-can-be-displayed">
-     19.8.9. The attribution can be filtered and more levels can be displayed.
+     21.8.9. The attribution can be filtered and more levels can be displayed.
     </a>
    </li>
   </ul>
@@ -621,11 +623,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="attribution">
-<h1><span class="section-number">19. </span>Attribution<a class="headerlink" href="#attribution" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">21. </span>Attribution<a class="headerlink" href="#attribution" title="Permalink to this headline">¶</a></h1>
 <p>When inspecting the impact of experiments it is very useful to be able to analyze which input changes drives the impact. Also for a specific simulation it can be useful to analyze which input changes drives the year to year changes.</p>
 <p>Modelflow has some tools to automate this process and to visualize the impact. This chapter gives an introduction to the concept ‘attribution’ and demonstrates how Modelflow’s built-in functionalities help you explore and understand your results and which variables drive the change.</p>
 <div class="section" id="setup">
-<h2><span class="section-number">19.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">21.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>This class incorporates most of the methods used to manage a model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -652,7 +654,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="load-a-pre-existing-model-data-and-descriptions">
-<h2><span class="section-number">19.2. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">21.2. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">¶</a></h2>
 <p>The file <code class="docutils literal notranslate"><span class="pre">pak.pcim</span></code> contains a dump of model equations, dataframe, simulation options and variable descriptions:</p>
 <ul class="simple">
 <li><p>Loads model and simulates to establish a baseline.</p></li>
@@ -671,7 +673,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id1">
-<span id="id2"></span><h2><span class="section-number">19.3. </span>Attribution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><span class="section-number">21.3. </span>Attribution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Experience shows that it is useful to be able to explain the difference between the result from two runs, or between two time periods.</p>
 <ul class="simple">
 <li><p>The first level of understanding the difference is to look at selected formulas and find out, how much each input variables accounts for.</p></li>
@@ -686,26 +688,26 @@ exogenous variables to the results of the model.</p></li>
 <p><span class="math notranslate nohighlight">\(\Delta y = \underbrace{\Delta a \dfrac{\partial {f}}{\partial{a}}(a,b)}_{\Omega a} + 
 \underbrace{\Delta b \dfrac{\partial {f}}{\partial{b}}(a,b)}_{\Omega b}+Residual\)</span></p>
 <p>ModelFlow will do a numerical approximation of <span class="math notranslate nohighlight">\(\Omega a\)</span> and <span class="math notranslate nohighlight">\(\Omega b\)</span>. This is done by looking at the two runs of the model:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b722f26c-041d-4834-9182-ae0efb27539f">
-<span class="eqno">(19.1)<a class="headerlink" href="#equation-b722f26c-041d-4834-9182-ae0efb27539f" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}  
+<div class="amsmath math notranslate nohighlight" id="equation-ebc39984-97d3-47e1-8e49-79d9f52ac6c8">
+<span class="eqno">(21.1)<a class="headerlink" href="#equation-ebc39984-97d3-47e1-8e49-79d9f52ac6c8" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}  
 y_0&amp;=&amp;f(a_{0},b_{0}) \\
 y_1&amp;=&amp;f(a_0+\Delta a,b_{0}+ \Delta b)
 \end{eqnarray}\]</div>
 <p>So <span class="math notranslate nohighlight">\(\Omega a\)</span> and <span class="math notranslate nohighlight">\(\Omega b\)</span> can be determined:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8787dcf2-4d49-4c31-847b-7b7456672716">
-<span class="eqno">(19.2)<a class="headerlink" href="#equation-8787dcf2-4d49-4c31-847b-7b7456672716" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}  
+<div class="amsmath math notranslate nohighlight" id="equation-f5ca31d1-64d1-478e-992f-6f980b0546dc">
+<span class="eqno">(21.2)<a class="headerlink" href="#equation-f5ca31d1-64d1-478e-992f-6f980b0546dc" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}  
 \Omega f_a&amp;=&amp;f(a_1,b_1 )-f(a_1-\Delta a,b_1) \\
 \Omega f_b&amp;=&amp;f(a_1,b_1 )-f(a_1,b_1-\Delta  b)
 \end{eqnarray}\]</div>
 <p>And:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35659f62-8a0f-4b2f-b1c5-e22180770ddf">
-<span class="eqno">(19.3)<a class="headerlink" href="#equation-35659f62-8a0f-4b2f-b1c5-e22180770ddf" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-8b17a04f-2915-4a1e-9996-bb77d4af7346">
+<span class="eqno">(21.3)<a class="headerlink" href="#equation-8b17a04f-2915-4a1e-9996-bb77d4af7346" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 residual = \Omega f_a + \Omega f_b -(y_1 - y_0) 
 \end{eqnarray}\]</div>
 <p>If the model is fairly linear, the residual will be small.</p>
 </div>
 <div class="section" id="which-function-model-attribution-or-single-equation-attribution">
-<h2><span class="section-number">19.4. </span>Which function: Model attribution or  single equation attribution?<a class="headerlink" href="#which-function-model-attribution-or-single-equation-attribution" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">21.4. </span>Which function: Model attribution or  single equation attribution?<a class="headerlink" href="#which-function-model-attribution-or-single-equation-attribution" title="Permalink to this headline">¶</a></h2>
 <p>To recap. Above we just used the term <span class="math notranslate nohighlight">\(f\)</span> for the function. <span class="math notranslate nohighlight">\(f\)</span> can actually be two different types of functions.</p>
 <ul class="simple">
 <li><p>The complete model<br>In this case the <span class="math notranslate nohighlight">\(\Delta a\)</span>,<span class="math notranslate nohighlight">\(\Delta b\)</span> … can be different exogenous variables.</p></li>
@@ -714,7 +716,7 @@ residual = \Omega f_a + \Omega f_b -(y_1 - y_0)
 <p>Examples will be given below.</p>
 </div>
 <div class="section" id="which-output">
-<h2><span class="section-number">19.5. </span>Which output?<a class="headerlink" href="#which-output" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">21.5. </span>Which output?<a class="headerlink" href="#which-output" title="Permalink to this headline">¶</a></h2>
 <p>Let’s pretend we only have two variables <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>:</p>
 <ul class="simple">
 <li><p>Absolute levels:  <span class="math notranslate nohighlight">\(\Omega a\)</span> and <span class="math notranslate nohighlight">\(\Omega b\)</span> …</p></li>
@@ -723,7 +725,7 @@ residual = \Omega f_a + \Omega f_b -(y_1 - y_0)
 </ul>
 </div>
 <div class="section" id="which-input">
-<h2><span class="section-number">19.6. </span>Which input?<a class="headerlink" href="#which-input" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">21.6. </span>Which input?<a class="headerlink" href="#which-input" title="Permalink to this headline">¶</a></h2>
 <p>What exactly is <span class="math notranslate nohighlight">\(\Delta a\)</span> and <span class="math notranslate nohighlight">\(\Delta b\)</span>? There are two possibilities:</p>
 <ol class="simple">
 <li><p>The difference between the two scenarios in .basedf and .lastdf</p></li>
@@ -731,7 +733,7 @@ residual = \Omega f_a + \Omega f_b -(y_1 - y_0)
 </ol>
 </div>
 <div class="section" id="totdif-makes-an-instance-of-a-model-attribution-class">
-<h2><span class="section-number">19.7. </span>.totdif() Makes an instance of a  model attribution class<a class="headerlink" href="#totdif-makes-an-instance-of-a-model-attribution-class" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">21.7. </span>.totdif() Makes an instance of a  model attribution class<a class="headerlink" href="#totdif-makes-an-instance-of-a-model-attribution-class" title="Permalink to this headline">¶</a></h2>
 <p>.totdif() returns a class instance of the totdif class. The totdif class contains a number of
 methods and properties which can slice and dice attribution at the model level.<br> Without any parameters it
 takes all changed exogenous variables and finds the attribution from each of these.</p>
@@ -743,13 +745,13 @@ takes all changed exogenous variables and finds the attribution from each of the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total dekomp took       :         5.342 Seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total dekomp took       :         4.240 Seconds
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="explain-all-will-visualize-the-results">
-<h3><span class="section-number">19.7.1. </span>.explain_all will visualize the results<a class="headerlink" href="#explain-all-will-visualize-the-results" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.7.1. </span>.explain_all will visualize the results<a class="headerlink" href="#explain-all-will-visualize-the-results" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">showvar</span> <span class="o">=</span> <span class="s1">&#39;PAKNYGDPMKTPKN PAKCCEMISCO2CKN PAKCCEMISCO2OKN PAKCCEMISCO2GKN PAKGGREVTOTLCN&#39;</span>
@@ -763,7 +765,7 @@ takes all changed exogenous variables and finds the attribution from each of the
 </div>
 </div>
 <div class="section" id="or-we-can-use-interactive-widgets">
-<h3><span class="section-number">19.7.2. </span>Or we can use interactive widgets<a class="headerlink" href="#or-we-can-use-interactive-widgets" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.7.2. </span>Or we can use interactive widgets<a class="headerlink" href="#or-we-can-use-interactive-widgets" title="Permalink to this headline">¶</a></h3>
 <p>This allows the user to select the specific variable of interest and what to display:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -778,7 +780,7 @@ takes all changed exogenous variables and finds the attribution from each of the
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ec64e1cbd37b48a59b4a0ac17d382466", "version_major": 2, "version_minor": 0}
+{"version_major": 2, "version_minor": 0, "model_id": "6e598579520641dd96c0f9a2f66956d6"}
 </script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
@@ -787,7 +789,7 @@ takes all changed exogenous variables and finds the attribution from each of the
 <p>When the results are displayed, they can be filtered, sliced and diced in a number of ways.</p>
 </div>
 <div class="section" id="more-advanced-model-attribution">
-<h3><span class="section-number">19.7.3. </span>More advanced model attribution<a class="headerlink" href="#more-advanced-model-attribution" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.7.3. </span>More advanced model attribution<a class="headerlink" href="#more-advanced-model-attribution" title="Permalink to this headline">¶</a></h3>
 <p>For some  models (like the EBA bank stress test model) the number of changed exogenous variables can be large. Using a dictionary to contain the experiments allows us to create experiments where all variables for each country are analyzed, or each macro variable for all countries are analyzed.</p>
 <p>Also it is possible to use aggregated sums - useful for looking at impact on PD’s. Or just the last time period - useful for looking at CET1 ratios.</p>
 <p>If there are many experiments, data can be filtered in order to look only at the variables with an impact above a certain threshold.</p>
@@ -796,11 +798,11 @@ the order of rows and/or columns - useful for bank names.</p>
 </div>
 </div>
 <div class="section" id="formula-attribution">
-<h2><span class="section-number">19.8. </span>Formula attribution<a class="headerlink" href="#formula-attribution" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">21.8. </span>Formula attribution<a class="headerlink" href="#formula-attribution" title="Permalink to this headline">¶</a></h2>
 <p>Attribution analysis on the formula level is performed by the method <strong>.dekomp</strong>.</p>
 <p>This method utilizes that two attributes .basedf and .lastdf containing the first and the last run are contained in the model instance. Also all the formulas are contained in the instance. Therefore a model, just with one formula - is created. Then experiments mentioned above is run for each period and each right hand side variable.</p>
 <div class="section" id="single-equation-attribution-output">
-<h3><span class="section-number">19.8.1. </span>Single equation attribution output<a class="headerlink" href="#single-equation-attribution-output" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.1. </span>Single equation attribution output<a class="headerlink" href="#single-equation-attribution-output" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2025</span><span class="p">):</span>
@@ -846,7 +848,7 @@ PAKCCEMISCO2GKN 0         -0.1%       -0.1%       -0.1%       -0.1%       -0.1% 
 </div>
 </div>
 <div class="section" id="single-equation-attribution-chart">
-<h3><span class="section-number">19.8.2. </span>Single equation attribution chart<a class="headerlink" href="#single-equation-attribution-chart" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.2. </span>Single equation attribution chart<a class="headerlink" href="#single-equation-attribution-chart" title="Permalink to this headline">¶</a></h3>
 <p>The results can be visualized in different ways.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -860,7 +862,7 @@ PAKCCEMISCO2GKN 0         -0.1%       -0.1%       -0.1%       -0.1%       -0.1% 
 </div>
 </div>
 <div class="section" id="chart-in-pct-of-the-total">
-<h3><span class="section-number">19.8.3. </span>Chart in pct of the total<a class="headerlink" href="#chart-in-pct-of-the-total" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.3. </span>Chart in pct of the total<a class="headerlink" href="#chart-in-pct-of-the-total" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">dekomp_plot</span><span class="p">(</span><span class="s1">&#39;PAKGGREVTOTLCN&#39;</span><span class="p">,</span><span class="n">rename</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
@@ -873,7 +875,7 @@ PAKCCEMISCO2GKN 0         -0.1%       -0.1%       -0.1%       -0.1%       -0.1% 
 </div>
 </div>
 <div class="section" id="chart-for-one-year">
-<h3><span class="section-number">19.8.4. </span>Chart for one year<a class="headerlink" href="#chart-for-one-year" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.4. </span>Chart for one year<a class="headerlink" href="#chart-for-one-year" title="Permalink to this headline">¶</a></h3>
 <p>The attribution for one year can be dispalyed in a waterfall chart.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -887,7 +889,7 @@ PAKCCEMISCO2GKN 0         -0.1%       -0.1%       -0.1%       -0.1%       -0.1% 
 </div>
 </div>
 <div class="section" id="sorting-of-attribution">
-<h3><span class="section-number">19.8.5. </span>Sorting of attribution<a class="headerlink" href="#sorting-of-attribution" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.5. </span>Sorting of attribution<a class="headerlink" href="#sorting-of-attribution" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">dekomp_plot_per</span><span class="p">(</span><span class="s1">&#39;PAKNYGDPMKTPKN&#39;</span><span class="p">,</span><span class="n">per</span><span class="o">=</span><span class="mi">2040</span><span class="p">,</span><span class="n">pct</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">rename</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ysize</span><span class="o">=</span><span class="mi">12</span><span class="p">);</span>
@@ -900,7 +902,7 @@ PAKCCEMISCO2GKN 0         -0.1%       -0.1%       -0.1%       -0.1%       -0.1% 
 </div>
 </div>
 <div class="section" id="truncate-attribution">
-<h3><span class="section-number">19.8.6. </span>Truncate attribution<a class="headerlink" href="#truncate-attribution" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.6. </span>Truncate attribution<a class="headerlink" href="#truncate-attribution" title="Permalink to this headline">¶</a></h3>
 <p>Some equations have a lot of small contributions. These can be aggregated through the <code class="docutils literal notranslate"><span class="pre">threshold=&lt;some</span> <span class="pre">number&gt;</span></code> parameter.
 Variables for which all contributions are below the threshold will be lumped together in the <strong>small</strong> bin. Like below:</p>
 <div class="cell docutils container">
@@ -915,7 +917,7 @@ Variables for which all contributions are below the threshold will be lumped tog
 </div>
 </div>
 <div class="section" id="attribution-when-comparing-time-frames">
-<h3><span class="section-number">19.8.7. </span>Attribution when comparing time frames<a class="headerlink" href="#attribution-when-comparing-time-frames" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.7. </span>Attribution when comparing time frames<a class="headerlink" href="#attribution-when-comparing-time-frames" title="Permalink to this headline">¶</a></h3>
 <p>In this case we seek to find out which variables explains the development from year to year. This is done only for the .lastdf dateframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -990,7 +992,7 @@ PAKDISPREPKN   0          0.0%        0.0%        0.0%        0.0%        0.0%
 </div>
 </div>
 <div class="section" id="visualizing-attribution-in-dependency-graphs">
-<h3><span class="section-number">19.8.8. </span>Visualizing attribution in dependency graphs<a class="headerlink" href="#visualizing-attribution-in-dependency-graphs" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.8. </span>Visualizing attribution in dependency graphs<a class="headerlink" href="#visualizing-attribution-in-dependency-graphs" title="Permalink to this headline">¶</a></h3>
 <p>The logical graph of the model can be used to show the upstream and downstream variable for a specific variable. More on this <a class="reference internal" href="../structure/Logical_structure.html"><span class="doc std std-doc">here</span></a><br>
 When drawing the logical graph for a variable the model attribution will be used to guide the thickness of edges between nodes (variables). This enables a visual impression of which
 variables drives the impact.</p>
@@ -1012,7 +1014,7 @@ enable svg format.</p>
 </div>
 </div>
 <div class="section" id="the-attribution-can-be-filtered-and-more-levels-can-be-displayed">
-<h3><span class="section-number">19.8.9. </span>The attribution can be filtered and more levels can be displayed.<a class="headerlink" href="#the-attribution-can-be-filtered-and-more-levels-can-be-displayed" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">21.8.9. </span>The attribution can be filtered and more levels can be displayed.<a class="headerlink" href="#the-attribution-can-be-filtered-and-more-levels-can-be-displayed" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">up</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">down</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">,</span><span class="nb">filter</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> 
@@ -1061,13 +1063,13 @@ enable svg format.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">18. </span>Logical structure and dependencies.</p>
+            <p class="prev-next-title"><span class="section-number">20. </span>Logical structure and dependencies.</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../../notebooks/intro/model%20specification.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">20. </span>Specification of models (introduction)</p>
+        <p class="prev-next-title"><span class="section-number">22. </span>Specification of models (introduction)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
