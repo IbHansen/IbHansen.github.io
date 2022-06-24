@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. What is a Model in ModelFlow" href="notebooks/intro/model%20and%20solution.html" />
@@ -295,18 +293,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Jupyter book test
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="booktest.html">
-   24. Test of Jupyter book features.
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -358,22 +344,6 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/introduction.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -413,7 +383,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This Jupyter book is work in progress and very much a draft.</p>
 <p>Please send any comments to Ib</p>
 </div>
-<p>ModelFlow is a Python library developed to leverage on the Pandas data managegement library and the broader Python ecosystem. So that models can be solved and models and results can be analyzed and vizualized.</p>
+<p>ModelFlow is a Python library developed to leverage on the Pandas data managegement library and the broader Python ecosystem. Using Modelflow you can:</p>
+<ul class="simple">
+<li><p>Solve models</p></li>
+<li><p>Analyze models</p></li>
+<li><p>Analyze results</p></li>
+<li><p>Visualize results</p></li>
+</ul>
 <p><strong>Model Specification</strong> With ModelFlow you can specify your models as concise and intuitive equations. ModelFlow transforms your equations into Python code and solves your model.</p>
 <p><strong>Large models</strong>.
 ModelFlow can handle models with 1 million equations and more. The library is therefore also suited for very large models.</p>
@@ -423,12 +399,10 @@ The models are specified at a high level of abstraction and are processed fast. 
 Creating a model often entails recycling several models specified in different ways: Excel, Latex, Dynare, Python and other languages/tools.
 ModelFlow, which is nested in the Python’s ecosystem, makes it possible to transform models defined in many different languages into ModelFlow models.</p>
 <p><strong>Onboarding data</strong>.
-ModelFlow is build on top of Pythons Pandas Library, which makes it easy to import and manage many different types of data.</p>
+ModelFlow is build on top of Pythons Pandas Library. Pandas is the swiss army knife for datascience and has a lot of data wrangeling capabilities and in anddition makes it easy to import and manage data from different sources.</p>
 <p><strong>Analytic</strong> ModelFlow provides you with a range of visual tools that help you understand your models and your results.</p>
 <p><strong>Open Source</strong>
-Be part of the community. The entire library is written in Python and is to be found on our Github page. Adjust the tools to your needs or help develope the library even further.</p>
-<div class="toctree-wrapper compound">
-</div>
+Be part of the community. The entire library is written in Python and is to be found on our Github page. So you can adjust the tools to your needs or help develope the library further.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">

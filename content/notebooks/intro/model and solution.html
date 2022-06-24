@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -298,18 +296,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Jupyter book test
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../booktest.html">
-   24. Test of Jupyter book features.
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -360,22 +346,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 
             <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/notebooks/intro/model and solution.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -600,9 +570,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="what-is-a-model-in-modelflow">
 <h1><span class="section-number">1. </span>What is a Model in ModelFlow<a class="headerlink" href="#what-is-a-model-in-modelflow" title="Permalink to this headline">¶</a></h1>
-<p>The term <a class="reference external" href="https://en.wikipedia.org/wiki/Model"><strong>model</strong></a> can mean different things to different people. A model is the eyes of the ModelFlow library is a <strong>discrete</strong> model that can be defined as one or several <strong>mathematical equations</strong>. The equations are the same for every time frame, <span class="math notranslate nohighlight">\(t\)</span> and <em>can</em> have <strong>lagged</strong> and <strong>leaded</strong> variables.</p>
-<p>A good book on solution is <span id="id1"><a class="reference internal" href="../../litterature.html#id8" title="Giorgio Pauletto. Computational Solution of Large-Scale Macroeconometric Models. Kluwer Academic Publishers, 01 1997. ISBN 978-1-4419-4778-9. doi:10.1007/978-1-4757-2631-2_3.">Pauletto</a></span> also  <span id="id2"><a class="reference internal" href="../../litterature.html#id7" title="Christian E. Petersen and Christopher A. Sims. Computer simulation of large-scale econometric models: project link. International Journal of High Performance Computing Applications, 1987. URL: (http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.853.6387&amp;rep=rep1&amp;type=pdf, doi:10.1177/109434208700100404.">Petersen and Sims</a></span> is a useful paper.</p>
-<p>A such model could consist of one or several equations the following variables:</p>
+<p>The term <a class="reference external" href="https://en.wikipedia.org/wiki/Model"><strong>model</strong></a> can mean different things to different people. A model in the eyes of the ModelFlow library is a <strong>discrete</strong> model that can be defined as one or several <strong>mathematical equations</strong>. The equations are the same for every time frame, <span class="math notranslate nohighlight">\(t\)</span> and <em>can</em> have <strong>lagged</strong> and <strong>leaded</strong> variables.</p>
+<p>A good book on model solution is <span id="id1"><a class="reference internal" href="../../litterature.html#id8" title="Giorgio Pauletto. Computational Solution of Large-Scale Macroeconometric Models. Kluwer Academic Publishers, 01 1997. ISBN 978-1-4419-4778-9. doi:10.1007/978-1-4757-2631-2_3.">Pauletto</a></span> also  <span id="id2"><a class="reference internal" href="../../litterature.html#id7" title="Christian E. Petersen and Christopher A. Sims. Computer simulation of large-scale econometric models: project link. International Journal of High Performance Computing Applications, 1987. URL: (http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.853.6387&amp;rep=rep1&amp;type=pdf, doi:10.1177/109434208700100404.">Petersen and Sims</a></span> is a useful paper.</p>
+<p>Such a model could consist of one or several equations where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbf{n}\)</span> number of endogenous variables</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathbf{k}\)</span> number of exogenous variables</p></li>
@@ -640,7 +610,7 @@ demand_t  &amp;=  f^1(price_t) \\
 supply_t  &amp;= f^2(price_t)\\ 
 demand_t &amp;= supply_t
 \end{align*}\]</div>
-<p>If it is difficult to rewrite the model with  an explicit expression for the price, the model can be made to a un-normalized model:</p>
+<p>If it is difficult to rewrite the model with  an explicit expression for the price, the model can be made to an un-normalized model:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 0   &amp;=  f^1(price_t)-demand_t \\

@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -298,18 +296,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Jupyter book test
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../booktest.html">
-   24. Test of Jupyter book features.
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -360,22 +346,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 
             <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/howto/attribution/Attribution background.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -716,20 +686,20 @@ exogenous variables to the results of the model.</p></li>
 <p><span class="math notranslate nohighlight">\(\Delta y = \underbrace{\Delta a \dfrac{\partial {f}}{\partial{a}}(a,b)}_{\Omega a} + 
 \underbrace{\Delta b \dfrac{\partial {f}}{\partial{b}}(a,b)}_{\Omega b}+Residual\)</span></p>
 <p>ModelFlow will do a numerical approximation of <span class="math notranslate nohighlight">\(\Omega a\)</span> and <span class="math notranslate nohighlight">\(\Omega b\)</span>. This is done by looking at the two runs of the model:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9cdaf5b0-c0de-4088-a3ac-d4332f333966">
-<span class="eqno">(19.1)<a class="headerlink" href="#equation-9cdaf5b0-c0de-4088-a3ac-d4332f333966" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}  
+<div class="amsmath math notranslate nohighlight" id="equation-b722f26c-041d-4834-9182-ae0efb27539f">
+<span class="eqno">(19.1)<a class="headerlink" href="#equation-b722f26c-041d-4834-9182-ae0efb27539f" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}  
 y_0&amp;=&amp;f(a_{0},b_{0}) \\
 y_1&amp;=&amp;f(a_0+\Delta a,b_{0}+ \Delta b)
 \end{eqnarray}\]</div>
 <p>So <span class="math notranslate nohighlight">\(\Omega a\)</span> and <span class="math notranslate nohighlight">\(\Omega b\)</span> can be determined:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ffaa7c2-2537-4c0a-8a30-e26f0af924c9">
-<span class="eqno">(19.2)<a class="headerlink" href="#equation-0ffaa7c2-2537-4c0a-8a30-e26f0af924c9" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}  
+<div class="amsmath math notranslate nohighlight" id="equation-8787dcf2-4d49-4c31-847b-7b7456672716">
+<span class="eqno">(19.2)<a class="headerlink" href="#equation-8787dcf2-4d49-4c31-847b-7b7456672716" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}  
 \Omega f_a&amp;=&amp;f(a_1,b_1 )-f(a_1-\Delta a,b_1) \\
 \Omega f_b&amp;=&amp;f(a_1,b_1 )-f(a_1,b_1-\Delta  b)
 \end{eqnarray}\]</div>
 <p>And:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9b115bd3-d799-4cbd-b02d-b6e62a7f9071">
-<span class="eqno">(19.3)<a class="headerlink" href="#equation-9b115bd3-d799-4cbd-b02d-b6e62a7f9071" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-35659f62-8a0f-4b2f-b1c5-e22180770ddf">
+<span class="eqno">(19.3)<a class="headerlink" href="#equation-35659f62-8a0f-4b2f-b1c5-e22180770ddf" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 residual = \Omega f_a + \Omega f_b -(y_1 - y_0) 
 \end{eqnarray}\]</div>
 <p>If the model is fairly linear, the residual will be small.</p>
