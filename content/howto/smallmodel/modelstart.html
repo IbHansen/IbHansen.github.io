@@ -105,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../notebooks/intro/model%20and%20solution.html">
-   1. What is a Model in ModelFlow
+   1. What is a Model in ModelFlow ?
   </a>
  </li>
  <li class="toctree-l1">
@@ -189,23 +189,35 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Keept experiments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../keep/Create%20and%20modify%20charts%20with%20keep_plot.html">
+   13. Load a model and data inclusive the keept scenarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Onboarding MFMod models from .wf1
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
-   13. Onboard a model defined in a .wf1 file
+   26. Onboard a model defined in a .wf1 file
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/onboard%20many%20models%20from%20wf1.html">
-   14. Onboard all models  defined in .wf1 files
+   27. Onboard all models  defined in .wf1 files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
-   15. Normalizing when onboarding  eviews models
+   28. Normalizing when onboarding  eviews models
   </a>
  </li>
 </ul>
@@ -217,12 +229,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fixing/Fixing%20variables.html">
-   16. Fixing the value of variables
+   29. Fixing the value of variables
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../modifymodel/create_real_model.html">
-   17. Modified equation to to keep real tax rates
+   30. Modified equation to to keep real tax rates
   </a>
  </li>
 </ul>
@@ -234,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/modelflow_features.html">
-   19. Useful model instance properties and methods
+   32. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -246,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../structure/Logical_structure.html">
-   20. Logical structure and dependencies.
+   33. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -258,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../attribution/Attribution%20background.html">
-   21. Attribution
+   34. Attribution
   </a>
  </li>
 </ul>
@@ -270,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
-   22. Specification of models (introduction)
+   35. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -282,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../optimization/Optimize_simpel.html">
-   23. Mean variance optimization
+   36. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -294,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../litterature.html">
-   25. Litterature
+   38. Litterature
   </a>
  </li>
 </ul>
@@ -403,77 +415,87 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-equations">
+   8.3. The Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convert-the-specification-to-modelflow">
-   8.3. Convert the specification to modelflow
+   8.4. Convert the specification to modelflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#on-normalization-and-enrichment-of-equations">
+   8.5. On normalization and enrichment of equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-the-model">
-   8.4. Get the model
+   8.6. Get the model
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inject-some-variable-descriptions">
-     8.4.1. Inject some variable descriptions.
+     8.6.1. Inject some variable descriptions.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-model-equations">
-     8.4.2. The model equations
+     8.6.2. The model equations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-model-structure-can-be-drawn">
-     8.4.3. The model structure can be drawn
+     8.6.3. The model structure can be drawn
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#only-the-endogenous-variables">
-     8.4.4. Only the endogenous variables
+     8.6.4. Only the endogenous variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-adjacendy-matrix-for-the-endogenous-variables">
-     8.4.5. The adjacendy matrix for the endogenous variables.
+     8.6.5. The adjacendy matrix for the endogenous variables.
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-dataframe-has-to-be-enriched">
-   8.5. The Dataframe has to be enriched:
+   8.7. The Dataframe has to be enriched:
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-parameter-values">
-     8.5.1. The parameter values
+     8.7.1. The parameter values
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generate-the-variables-defined-by-identities-in-the-specification">
-     8.5.2. Generate the variables defined by identities in the specification.
+     8.7.2. Generate the variables defined by identities in the specification.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generate-the-add-factors-which-will-ensure-that-the-model-result-match-the-data">
-     8.5.3. Generate the add factors which will ensure that the model result match the data
+     8.7.3. Generate the add factors which will ensure that the model result match the data
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-all-data-is-ready-and-the-model-can-be-simulated">
-   8.6. Now all data is ready and the model can be simulated
+   8.8. Now all data is ready and the model can be simulated
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-solution-match-the-actual-values">
-   8.7. The solution match the actual values
+   8.9. The solution match the actual values
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dump-the-model-and-the-data-in-a-file-to-be-used-in-the-next-episode">
-   8.8. Dump the model and the data in a file to be used in the next episode
+   8.10. Dump the model and the data in a file to be used in the next episode
   </a>
  </li>
 </ul>
@@ -514,77 +536,87 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-equations">
+   8.3. The Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convert-the-specification-to-modelflow">
-   8.3. Convert the specification to modelflow
+   8.4. Convert the specification to modelflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#on-normalization-and-enrichment-of-equations">
+   8.5. On normalization and enrichment of equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-the-model">
-   8.4. Get the model
+   8.6. Get the model
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inject-some-variable-descriptions">
-     8.4.1. Inject some variable descriptions.
+     8.6.1. Inject some variable descriptions.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-model-equations">
-     8.4.2. The model equations
+     8.6.2. The model equations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-model-structure-can-be-drawn">
-     8.4.3. The model structure can be drawn
+     8.6.3. The model structure can be drawn
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#only-the-endogenous-variables">
-     8.4.4. Only the endogenous variables
+     8.6.4. Only the endogenous variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-adjacendy-matrix-for-the-endogenous-variables">
-     8.4.5. The adjacendy matrix for the endogenous variables.
+     8.6.5. The adjacendy matrix for the endogenous variables.
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-dataframe-has-to-be-enriched">
-   8.5. The Dataframe has to be enriched:
+   8.7. The Dataframe has to be enriched:
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-parameter-values">
-     8.5.1. The parameter values
+     8.7.1. The parameter values
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generate-the-variables-defined-by-identities-in-the-specification">
-     8.5.2. Generate the variables defined by identities in the specification.
+     8.7.2. Generate the variables defined by identities in the specification.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generate-the-add-factors-which-will-ensure-that-the-model-result-match-the-data">
-     8.5.3. Generate the add factors which will ensure that the model result match the data
+     8.7.3. Generate the add factors which will ensure that the model result match the data
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-all-data-is-ready-and-the-model-can-be-simulated">
-   8.6. Now all data is ready and the model can be simulated
+   8.8. Now all data is ready and the model can be simulated
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-solution-match-the-actual-values">
-   8.7. The solution match the actual values
+   8.9. The solution match the actual values
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dump-the-model-and-the-data-in-a-file-to-be-used-in-the-next-episode">
-   8.8. Dump the model and the data in a file to be used in the next episode
+   8.10. Dump the model and the data in a file to be used in the next episode
   </a>
  </li>
 </ul>
@@ -949,6 +981,9 @@ Lets make consumption a function of GDP (a proxy for incomes) and just to be fan
  <span class="n">gde</span><span class="o">=</span><span class="n">cpv</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="n">g</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="the-equations">
+<h2><span class="section-number">8.3. </span>The Equations<a class="headerlink" href="#the-equations" title="Permalink to this headline">¶</a></h2>
 <p>Now these equations are written in modelflow format and letting the parameters start with c as it makes it more easy to translate estimates from eviews.</p>
 <p>Each equation can be prefixed by options enclosed in &lt;&gt;.</p>
 <table class="colwidths-auto table">
@@ -969,10 +1004,10 @@ Lets make consumption a function of GDP (a proxy for incomes) and just to be fan
 </tr>
 </tbody>
 </table>
-<p>The specification is a <strong>string</strong> object and assigned to a variable called: smallmodel.</p>
+<p>The specification is a <strong>string</strong> object and assigned to a variable called: fsmallmodel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smallmodel</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fsmallmodel</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">&lt;fixable, damp&gt; dlog(cpv)= -c2_cpv*(log(cpv(-1))-log(y(-1)) -        c1_cpv)+c3_cpv*dlog(y)</span>
 
 <span class="s1">&lt;fixable, damp&gt; dlog(g)  = -c2_g*  (log(g(-1))-  log(y(-1)) -        c1_g)  +c3_g*dlog(y)</span>
@@ -981,7 +1016,7 @@ Lets make consumption a function of GDP (a proxy for incomes) and just to be fan
 <span class="s1"> </span>
 <span class="s1">&lt;fixable, damp&gt; dlog(m) =     -c2_m*  (log(m(-1))-   log(gde(-1))    - c1_m)   +c3_m*dlog(gde)</span>
 <span class="s1"> </span>
-<span class="s1">&lt;ident&gt; y=cpv+i+g+x-m+ydisc</span>
+<span class="s1">&lt;ident&gt; y=cpv+i+g+x-m+ydisc </span>
 <span class="s1"> </span>
 <span class="s1">&lt;ident&gt; gde=cpv+i+g</span>
 
@@ -992,7 +1027,7 @@ Lets make consumption a function of GDP (a proxy for incomes) and just to be fan
 </div>
 </div>
 <div class="section" id="convert-the-specification-to-modelflow">
-<h2><span class="section-number">8.3. </span>Convert the specification to modelflow<a class="headerlink" href="#convert-the-specification-to-modelflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.4. </span>Convert the specification to modelflow<a class="headerlink" href="#convert-the-specification-to-modelflow" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>specification</strong> in itself can not be used for anything useful - it is just a string. The next step is to use the
 specification to create an instance of the  <strong>model class</strong> which can solve the model. Instances of the <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">class</span></code> wraps most of the capabilities of modelflow. Actually we will create a number<br />
 instances of model, as there are additional calculations to be done. So for this particular type of model another class: *<strong>GrabMacroModel</strong> is used to process the model specification. It will handle:</p>
@@ -1036,20 +1071,63 @@ instances of model, as there are additional calculations to be done. So for this
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="on-normalization-and-enrichment-of-equations">
+<h2><span class="section-number">8.5. </span>On normalization and enrichment of equations<a class="headerlink" href="#on-normalization-and-enrichment-of-equations" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thismodel</span> <span class="o">=</span> <span class="n">GrabMacroModel</span><span class="p">(</span><span class="n">smallmodel</span><span class="p">,</span><span class="n">modelname</span> <span class="o">=</span> <span class="s1">&#39;Small demo model&#39;</span><span class="p">,</span><span class="n">make_fitted</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">debug</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modelnormalize</span> <span class="kn">import</span> <span class="n">normal</span> 
+<span class="n">normal</span><span class="p">(</span><span class="s1">&#39;dlog(a) = dlog(b(-7)) &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : A
+Original        : dlog(a) = dlog(b(-7)) 
+Preprocessed    : ((LOG(A))-(LOG(A(-1))))=((LOG(B(-7)))-(LOG(B(-8))))
+Normalized      : A = A(-1)*EXP(A_A+ (((LOG(B(-7)))-(LOG(B(-8))))) )
+Calc_add_factor : A_A = - ((((LOG(B(-7)))-(LOG(B(-8)))))) +LOG(A)-LOG(A(-1))
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="s1">&#39;a = b&#39;</span><span class="p">,</span><span class="n">make_fixable</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">make_fitted</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">add_add_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : A
+Original        : a = b
+Preprocessed    : A=B
+Normalized      : A = (B + A_A)* (1-A_D)+ A_X*A_D 
+Calc_add_factor : A_A = (A) - (B)
+Fitted          : A_FITTED = B
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thismodel</span> <span class="o">=</span> <span class="n">GrabMacroModel</span><span class="p">(</span><span class="n">fsmallmodel</span><span class="p">,</span><span class="n">modelname</span> <span class="o">=</span> <span class="s1">&#39;Small demo model&#39;</span><span class="p">,</span><span class="n">make_fitted</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">debug</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frml name:&lt;FIXABLE, DAMP&gt;
 Endo_var        : CPV
-Original        :  DLOG(CPV)= -C2_CPV*(LOG(CPV(-1))-LOG(Y(-1)) -        C1_CPV)+C3_CPV*DLOG(Y)
-Preprocessed    : ((LOG(CPV))-(LOG(CPV(-1))))=-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))
-Normalized      : CPV = (CPV(-1)*EXP(CPV_A+ (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )) * (1-CPV_D)+ CPV_X*CPV_D 
-Calc_add_factor : CPV_A = - ((-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1)))))) +LOG(CPV)-LOG(CPV(-1))
-Fitted          : CPV_FITTED = CPV(-1)*EXP( (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )
+Original        :  DLOG(CPV)= -C2_CPV*(LOG(CPV(-1))-LOG(Y(-1)) -        C1_CPV)+C3_CPV*DLOG(Y))
+Preprocessed    : ((LOG(CPV))-(LOG(CPV(-1))))=-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1)))))
+Normalized      : CPV = (CPV(-1)*EXP(CPV_A+ (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1)))))) )) * (1-CPV_D)+ CPV_X*CPV_D 
+Calc_add_factor : CPV_A = - ((-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))))) +LOG(CPV)-LOG(CPV(-1))
+Fitted          : CPV_FITTED = CPV(-1)*EXP( (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1)))))) )
 
 Frml name:&lt;FIXABLE, DAMP&gt;
 Endo_var        : G
@@ -1077,7 +1155,7 @@ Fitted          : M_FITTED = M(-1)*EXP( (-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3
 
 Frml name:&lt;IDENT&gt;
 Endo_var        : Y
-Original        :  Y=CPV+I+G+X-M+YDISC
+Original        :  Y=CPV+I+G+X-M+YDISC 
 Preprocessed    : Y=CPV+I+G+X-M+YDISC
 Normalized      : Y = CPV+I+G+X-M+YDISC
 
@@ -1092,7 +1170,7 @@ Normalized      : GDE = CPV+I+G
 </div>
 </div>
 <div class="section" id="get-the-model">
-<h2><span class="section-number">8.4. </span>Get the model<a class="headerlink" href="#get-the-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.6. </span>Get the model<a class="headerlink" href="#get-the-model" title="Permalink to this headline">¶</a></h2>
 <p>As a convention <strong>m</strong> is used as prefix for model objects.</p>
 <p>So the model is called <code class="docutils literal notranslate"><span class="pre">msmallmodel</span></code></p>
 <div class="cell docutils container">
@@ -1103,7 +1181,7 @@ Normalized      : GDE = CPV+I+G
 </div>
 </div>
 <div class="section" id="inject-some-variable-descriptions">
-<h3><span class="section-number">8.4.1. </span>Inject some variable descriptions.<a class="headerlink" href="#inject-some-variable-descriptions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.6.1. </span>Inject some variable descriptions.<a class="headerlink" href="#inject-some-variable-descriptions" title="Permalink to this headline">¶</a></h3>
 <p>A Python dictionary is used for storing variable descriptions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1124,7 +1202,7 @@ Normalized      : GDE = CPV+I+G
 </div>
 </div>
 <div class="section" id="the-model-equations">
-<h3><span class="section-number">8.4.2. </span>The model equations<a class="headerlink" href="#the-model-equations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.6.2. </span>The model equations<a class="headerlink" href="#the-model-equations" title="Permalink to this headline">¶</a></h3>
 <p>Each equation has the form:</p>
 <blockquote>
 <div><p>FRML &lt;[options]…&gt; &lt;left hand variable&gt; = &lt;right hand side expression&gt;$</p>
@@ -1159,7 +1237,7 @@ FRML &lt;CALC_ADD_FACTOR&gt; M_A = - ((-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M
 </div>
 </div>
 <div class="section" id="the-model-structure-can-be-drawn">
-<h3><span class="section-number">8.4.3. </span>The model structure can be drawn<a class="headerlink" href="#the-model-structure-can-be-drawn" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.6.3. </span>The model structure can be drawn<a class="headerlink" href="#the-model-structure-can-be-drawn" title="Permalink to this headline">¶</a></h3>
 <p>Notice that mouseover shows additional information</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1168,11 +1246,11 @@ FRML &lt;CALC_ADD_FACTOR&gt; M_A = - ((-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/modelstart_22_0.svg" src="../../../_images/modelstart_22_0.svg" /></div>
+<img alt="../../../_images/modelstart_26_0.svg" src="../../../_images/modelstart_26_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="only-the-endogenous-variables">
-<h3><span class="section-number">8.4.4. </span>Only the endogenous variables<a class="headerlink" href="#only-the-endogenous-variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.6.4. </span>Only the endogenous variables<a class="headerlink" href="#only-the-endogenous-variables" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msmallmodel</span><span class="o">.</span><span class="n">drawendo</span><span class="p">()</span>
@@ -1180,11 +1258,11 @@ FRML &lt;CALC_ADD_FACTOR&gt; M_A = - ((-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/modelstart_24_0.svg" src="../../../_images/modelstart_24_0.svg" /></div>
+<img alt="../../../_images/modelstart_28_0.svg" src="../../../_images/modelstart_28_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="the-adjacendy-matrix-for-the-endogenous-variables">
-<h3><span class="section-number">8.4.5. </span>The adjacendy matrix for the endogenous variables.<a class="headerlink" href="#the-adjacendy-matrix-for-the-endogenous-variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.6.5. </span>The adjacendy matrix for the endogenous variables.<a class="headerlink" href="#the-adjacendy-matrix-for-the-endogenous-variables" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msmallmodel</span><span class="o">.</span><span class="n">plotadjacency</span><span class="p">();</span>
@@ -1192,7 +1270,7 @@ FRML &lt;CALC_ADD_FACTOR&gt; M_A = - ((-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/modelstart_26_0.png" src="../../../_images/modelstart_26_0.png" />
+<img alt="../../../_images/modelstart_30_0.png" src="../../../_images/modelstart_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1256,7 +1334,7 @@ FRML &lt;CALC_ADD_FACTOR&gt; M_A = - ((-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M
 </div>
 </div>
 <div class="section" id="the-dataframe-has-to-be-enriched">
-<h2><span class="section-number">8.5. </span>The Dataframe has to be enriched:<a class="headerlink" href="#the-dataframe-has-to-be-enriched" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.7. </span>The Dataframe has to be enriched:<a class="headerlink" href="#the-dataframe-has-to-be-enriched" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The the parameter values</p></li>
 <li><p>Variables mentioned in the model, but not present in the dataframe</p></li>
@@ -1264,7 +1342,7 @@ FRML &lt;CALC_ADD_FACTOR&gt; M_A = - ((-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M
 <li><p>Add factors ensuring that the solution match the data has to be calculated.</p></li>
 </ul>
 <div class="section" id="the-parameter-values">
-<h3><span class="section-number">8.5.1. </span>The parameter values<a class="headerlink" href="#the-parameter-values" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.7.1. </span>The parameter values<a class="headerlink" href="#the-parameter-values" title="Permalink to this headline">¶</a></h3>
 <p>Modelflow is <strong>not an estimation tool</strong>. So we have to provide the estimated parameters. <br>
 This can be done in several way:</p>
 <ul class="simple">
@@ -1273,13 +1351,19 @@ This can be done in several way:</p>
 </ul>
 <p>For this purpose a “magic” jupyter command will be used. It will create a dataframe with the right values:</p>
 <p><strong>Modelflow don’t have a special datatype for parameters</strong> so we just repeat the same value for all years</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  c2      c1      c3 
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">dataframe</span> parameters   periods=20 start=2011 melt t 
+
+      c2      c1      c3 
+cpv   0.38 -0.11 0.02946
+g     0.3 -2.5974  1.332   
+i     0.027947 -0.515348 1.6967
+m     0.37  -1.57 5.0929 
 </pre></div>
 </div>
-<p>cpv   0.38 -0.11 0.02946
-g     0.3 -2.5974  1.332<br />
-i     0.027947 -0.515348 1.6967
-m     0.37  -1.57 5.0929</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_first</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">smalldata</span><span class="p">,</span><span class="n">parameters_melted</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># the original data plus the parameters </span>
@@ -1289,21 +1373,327 @@ m     0.37  -1.57 5.0929</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [17],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">baseline_first</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">smalldata</span><span class="p">,</span><span class="n">parameters_melted</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># the original data plus the parameters </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">baseline_first</span>  <span class="o">=</span> <span class="n">msmallmodel</span><span class="o">.</span><span class="n">insertModelVar</span><span class="p">(</span><span class="n">baseline_first</span><span class="p">)</span> <span class="c1"># to make sure all modelvariable are in the dataframe </span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">baseline_first</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;parameters_melted&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>index</th>
+      <th>2011</th>
+      <th>2012</th>
+      <th>2013</th>
+      <th>2014</th>
+      <th>2015</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Y</th>
+      <td>1.562682e+06</td>
+      <td>1.632040e+06</td>
+      <td>1.689572e+06</td>
+      <td>1.791141e+06</td>
+      <td>1.862357e+06</td>
+    </tr>
+    <tr>
+      <th>CPV</th>
+      <td>1.320302e+06</td>
+      <td>1.360376e+06</td>
+      <td>1.396402e+06</td>
+      <td>1.438904e+06</td>
+      <td>1.476067e+06</td>
+    </tr>
+    <tr>
+      <th>I</th>
+      <td>3.739388e+05</td>
+      <td>3.811702e+05</td>
+      <td>4.145568e+05</td>
+      <td>4.664730e+05</td>
+      <td>5.364167e+05</td>
+    </tr>
+    <tr>
+      <th>G</th>
+      <td>1.312720e+05</td>
+      <td>1.288601e+05</td>
+      <td>1.242549e+05</td>
+      <td>1.385327e+05</td>
+      <td>1.544669e+05</td>
+    </tr>
+    <tr>
+      <th>X</th>
+      <td>1.217150e+05</td>
+      <td>1.462929e+05</td>
+      <td>1.652346e+05</td>
+      <td>1.947055e+05</td>
+      <td>1.992149e+05</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <td>4.442322e+05</td>
+      <td>4.577457e+05</td>
+      <td>5.224477e+05</td>
+      <td>6.322079e+05</td>
+      <td>6.927948e+05</td>
+    </tr>
+    <tr>
+      <th>YDISC</th>
+      <td>5.968622e+04</td>
+      <td>7.308714e+04</td>
+      <td>1.115720e+05</td>
+      <td>1.847331e+05</td>
+      <td>1.889869e+05</td>
+    </tr>
+    <tr>
+      <th>C2_CPV</th>
+      <td>3.800000e-01</td>
+      <td>3.800000e-01</td>
+      <td>3.800000e-01</td>
+      <td>3.800000e-01</td>
+      <td>3.800000e-01</td>
+    </tr>
+    <tr>
+      <th>C1_CPV</th>
+      <td>-1.100000e-01</td>
+      <td>-1.100000e-01</td>
+      <td>-1.100000e-01</td>
+      <td>-1.100000e-01</td>
+      <td>-1.100000e-01</td>
+    </tr>
+    <tr>
+      <th>C3_CPV</th>
+      <td>2.946000e-02</td>
+      <td>2.946000e-02</td>
+      <td>2.946000e-02</td>
+      <td>2.946000e-02</td>
+      <td>2.946000e-02</td>
+    </tr>
+    <tr>
+      <th>C2_G</th>
+      <td>3.000000e-01</td>
+      <td>3.000000e-01</td>
+      <td>3.000000e-01</td>
+      <td>3.000000e-01</td>
+      <td>3.000000e-01</td>
+    </tr>
+    <tr>
+      <th>C1_G</th>
+      <td>-2.597400e+00</td>
+      <td>-2.597400e+00</td>
+      <td>-2.597400e+00</td>
+      <td>-2.597400e+00</td>
+      <td>-2.597400e+00</td>
+    </tr>
+    <tr>
+      <th>C3_G</th>
+      <td>1.332000e+00</td>
+      <td>1.332000e+00</td>
+      <td>1.332000e+00</td>
+      <td>1.332000e+00</td>
+      <td>1.332000e+00</td>
+    </tr>
+    <tr>
+      <th>C2_I</th>
+      <td>2.794700e-02</td>
+      <td>2.794700e-02</td>
+      <td>2.794700e-02</td>
+      <td>2.794700e-02</td>
+      <td>2.794700e-02</td>
+    </tr>
+    <tr>
+      <th>C1_I</th>
+      <td>-5.153480e-01</td>
+      <td>-5.153480e-01</td>
+      <td>-5.153480e-01</td>
+      <td>-5.153480e-01</td>
+      <td>-5.153480e-01</td>
+    </tr>
+    <tr>
+      <th>C3_I</th>
+      <td>1.696700e+00</td>
+      <td>1.696700e+00</td>
+      <td>1.696700e+00</td>
+      <td>1.696700e+00</td>
+      <td>1.696700e+00</td>
+    </tr>
+    <tr>
+      <th>C2_M</th>
+      <td>3.700000e-01</td>
+      <td>3.700000e-01</td>
+      <td>3.700000e-01</td>
+      <td>3.700000e-01</td>
+      <td>3.700000e-01</td>
+    </tr>
+    <tr>
+      <th>C1_M</th>
+      <td>-1.570000e+00</td>
+      <td>-1.570000e+00</td>
+      <td>-1.570000e+00</td>
+      <td>-1.570000e+00</td>
+      <td>-1.570000e+00</td>
+    </tr>
+    <tr>
+      <th>C3_M</th>
+      <td>5.092900e+00</td>
+      <td>5.092900e+00</td>
+      <td>5.092900e+00</td>
+      <td>5.092900e+00</td>
+      <td>5.092900e+00</td>
+    </tr>
+    <tr>
+      <th>CPV_D</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>GDE</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>M_FITTED</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>I_D</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>G_X</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>G_A</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>M_A</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>I_A</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>G_D</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>I_FITTED</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>CPV_A</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>CPV_FITTED</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>G_FITTED</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>M_X</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>I_X</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>M_D</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>CPV_X</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="generate-the-variables-defined-by-identities-in-the-specification">
-<h3><span class="section-number">8.5.2. </span>Generate the variables defined by identities in the specification.<a class="headerlink" href="#generate-the-variables-defined-by-identities-in-the-specification" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.7.2. </span>Generate the variables defined by identities in the specification.<a class="headerlink" href="#generate-the-variables-defined-by-identities-in-the-specification" title="Permalink to this headline">¶</a></h3>
 <p>The two variable Y and GDE are not in the original data, but are defined in identities. This can be
 handled by modelflow. Identities are marked by the option  &lt;IDENT&gt;.</p>
 <p>A model which can calculate the identities based on the option can be extracted from the model instance by <code class="docutils literal notranslate"><span class="pre">.get_histmodel()</span></code>.</p>
@@ -1401,7 +1791,7 @@ FRML &lt;IDENT&gt; GDE = CPV+I+G$
 </div>
 </div>
 <div class="section" id="generate-the-add-factors-which-will-ensure-that-the-model-result-match-the-data">
-<h3><span class="section-number">8.5.3. </span>Generate the add factors which will ensure that the model result match the data<a class="headerlink" href="#generate-the-add-factors-which-will-ensure-that-the-model-result-match-the-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.7.3. </span>Generate the add factors which will ensure that the model result match the data<a class="headerlink" href="#generate-the-add-factors-which-will-ensure-that-the-model-result-match-the-data" title="Permalink to this headline">¶</a></h3>
 <p>If we run the model now the result might be far from the actual values. To take care of this we have to calculate the add factors which makes this happen. The model for doing that is imbedded in the model - remember the equations for this where prepared in an earlier step.</p>
 <p>The model is named <code class="docutils literal notranslate"><span class="pre">.calc_add_factor_model()</span></code> and run for the relevant years:</p>
 <p>In addition if a model to create fitted values is present it will also be run.</p>
@@ -1691,7 +2081,37 @@ Small demo model calc fittet values calculated
       <td>0.000000e+00</td>
     </tr>
     <tr>
-      <th>I_X</th>
+      <th>GDE</th>
+      <td>2.043910e+06</td>
+      <td>2.166951e+06</td>
+      <td>2.244080e+06</td>
+      <td>2.417042e+06</td>
+      <td>2.598996e+06</td>
+      <td>2.793225e+06</td>
+      <td>2.838796e+06</td>
+    </tr>
+    <tr>
+      <th>M_FITTED</th>
+      <td>6.266769e+05</td>
+      <td>7.352346e+05</td>
+      <td>7.061892e+05</td>
+      <td>8.910391e+05</td>
+      <td>1.062194e+06</td>
+      <td>1.214574e+06</td>
+      <td>9.724242e+05</td>
+    </tr>
+    <tr>
+      <th>I_D</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>G_X</th>
       <td>0.000000e+00</td>
       <td>0.000000e+00</td>
       <td>0.000000e+00</td>
@@ -1711,27 +2131,27 @@ Small demo model calc fittet values calculated
       <td>9.622777e-02</td>
     </tr>
     <tr>
-      <th>I_D</th>
+      <th>M_A</th>
       <td>0.000000e+00</td>
       <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
+      <td>1.187554e-02</td>
+      <td>2.814086e-02</td>
+      <td>2.671811e-02</td>
+      <td>-5.081463e-02</td>
+      <td>5.783861e-03</td>
     </tr>
     <tr>
-      <th>CPV_X</th>
+      <th>I_A</th>
       <td>0.000000e+00</td>
       <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
+      <td>3.662101e-02</td>
+      <td>4.515832e-02</td>
+      <td>-2.600525e-02</td>
+      <td>-1.394604e-02</td>
+      <td>-1.421480e-02</td>
     </tr>
     <tr>
-      <th>M_X</th>
+      <th>G_D</th>
       <td>0.000000e+00</td>
       <td>0.000000e+00</td>
       <td>0.000000e+00</td>
@@ -1751,36 +2171,6 @@ Small demo model calc fittet values calculated
       <td>8.560435e+05</td>
     </tr>
     <tr>
-      <th>GDE</th>
-      <td>2.043910e+06</td>
-      <td>2.166951e+06</td>
-      <td>2.244080e+06</td>
-      <td>2.417042e+06</td>
-      <td>2.598996e+06</td>
-      <td>2.793225e+06</td>
-      <td>2.838796e+06</td>
-    </tr>
-    <tr>
-      <th>G_X</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
-      <th>G_D</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-    </tr>
-    <tr>
       <th>CPV_A</th>
       <td>0.000000e+00</td>
       <td>0.000000e+00</td>
@@ -1789,46 +2179,6 @@ Small demo model calc fittet values calculated
       <td>-4.686922e-03</td>
       <td>-1.460601e-02</td>
       <td>-3.395268e-02</td>
-    </tr>
-    <tr>
-      <th>M_A</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>1.187554e-02</td>
-      <td>2.814086e-02</td>
-      <td>2.671811e-02</td>
-      <td>-5.081463e-02</td>
-      <td>5.783861e-03</td>
-    </tr>
-    <tr>
-      <th>M_FITTED</th>
-      <td>6.266769e+05</td>
-      <td>7.352346e+05</td>
-      <td>7.061892e+05</td>
-      <td>8.910391e+05</td>
-      <td>1.062194e+06</td>
-      <td>1.214574e+06</td>
-      <td>9.724242e+05</td>
-    </tr>
-    <tr>
-      <th>G_FITTED</th>
-      <td>1.348067e+05</td>
-      <td>1.442680e+05</td>
-      <td>1.504155e+05</td>
-      <td>1.535884e+05</td>
-      <td>1.775517e+05</td>
-      <td>1.819100e+05</td>
-      <td>1.743952e+05</td>
-    </tr>
-    <tr>
-      <th>M_D</th>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
     </tr>
     <tr>
       <th>CPV_FITTED</th>
@@ -1841,14 +2191,54 @@ Small demo model calc fittet values calculated
       <td>1.865086e+06</td>
     </tr>
     <tr>
-      <th>I_A</th>
+      <th>G_FITTED</th>
+      <td>1.348067e+05</td>
+      <td>1.442680e+05</td>
+      <td>1.504155e+05</td>
+      <td>1.535884e+05</td>
+      <td>1.775517e+05</td>
+      <td>1.819100e+05</td>
+      <td>1.743952e+05</td>
+    </tr>
+    <tr>
+      <th>M_X</th>
       <td>0.000000e+00</td>
       <td>0.000000e+00</td>
-      <td>3.662101e-02</td>
-      <td>4.515832e-02</td>
-      <td>-2.600525e-02</td>
-      <td>-1.394604e-02</td>
-      <td>-1.421480e-02</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>I_X</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>M_D</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>CPV_X</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
     </tr>
   </tbody>
 </table>
@@ -1857,7 +2247,7 @@ Small demo model calc fittet values calculated
 </div>
 </div>
 <div class="section" id="now-all-data-is-ready-and-the-model-can-be-simulated">
-<h2><span class="section-number">8.6. </span>Now all data is ready and the model can be simulated<a class="headerlink" href="#now-all-data-is-ready-and-the-model-can-be-simulated" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.8. </span>Now all data is ready and the model can be simulated<a class="headerlink" href="#now-all-data-is-ready-and-the-model-can-be-simulated" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">msmallmodel</span><span class="p">(</span><span class="n">fitbaseline</span><span class="p">,</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span><span class="s1">&#39;2030&#39;</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;sim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -1869,6 +2259,7 @@ Small demo model calc fittet values calculated
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Will start solving: Small demo model
 Create compiled solving function for Small demo model
 ljit=False stringjit=True  transpile_reset=False  hasattr(self, f&quot;pro_{jitname}&quot;)=False
+now makelos makes a sim solvefunction
 2020 Solved in 6 iterations
 2021 Solved in 6 iterations
 2022 Solved in 6 iterations
@@ -1887,7 +2278,7 @@ Small demo model solved
 </div>
 </div>
 <div class="section" id="the-solution-match-the-actual-values">
-<h2><span class="section-number">8.7. </span>The solution match the actual values<a class="headerlink" href="#the-solution-match-the-actual-values" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.9. </span>The solution match the actual values<a class="headerlink" href="#the-solution-match-the-actual-values" title="Permalink to this headline">¶</a></h2>
 <p>So it is a starting point for scenario experiments</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1897,12 +2288,12 @@ Small demo model solved
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "de2041ff9ed84686b60bd451500f73e0", "version_major": 2, "version_minor": 0}
+{"model_id": "ba218c5f461e4e03ae2e2bcba062c2eb", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"></div></div>
 </div>
 </div>
 <div class="section" id="dump-the-model-and-the-data-in-a-file-to-be-used-in-the-next-episode">
-<h2><span class="section-number">8.8. </span>Dump the model and the data in a file to be used in the next episode<a class="headerlink" href="#dump-the-model-and-the-data-in-a-file-to-be-used-in-the-next-episode" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.10. </span>Dump the model and the data in a file to be used in the next episode<a class="headerlink" href="#dump-the-model-and-the-data-in-a-file-to-be-used-in-the-next-episode" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msmallmodel</span><span class="o">.</span><span class="n">modeldump</span><span class="p">(</span><span class="s1">&#39;models/smallmodel.pcim&#39;</span><span class="p">)</span>

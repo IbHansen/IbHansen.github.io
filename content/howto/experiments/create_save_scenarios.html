@@ -105,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../notebooks/intro/model%20and%20solution.html">
-   1. What is a Model in ModelFlow
+   1. What is a Model in ModelFlow ?
   </a>
  </li>
  <li class="toctree-l1">
@@ -189,23 +189,35 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Keept experiments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../keep/Create%20and%20modify%20charts%20with%20keep_plot.html">
+   13. Load a model and data inclusive the keept scenarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Onboarding MFMod models from .wf1
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
-   13. Onboard a model defined in a .wf1 file
+   26. Onboard a model defined in a .wf1 file
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/onboard%20many%20models%20from%20wf1.html">
-   14. Onboard all models  defined in .wf1 files
+   27. Onboard all models  defined in .wf1 files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
-   15. Normalizing when onboarding  eviews models
+   28. Normalizing when onboarding  eviews models
   </a>
  </li>
 </ul>
@@ -217,12 +229,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fixing/Fixing%20variables.html">
-   16. Fixing the value of variables
+   29. Fixing the value of variables
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../modifymodel/create_real_model.html">
-   17. Modified equation to to keep real tax rates
+   30. Modified equation to to keep real tax rates
   </a>
  </li>
 </ul>
@@ -234,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/modelflow_features.html">
-   19. Useful model instance properties and methods
+   32. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -246,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../structure/Logical_structure.html">
-   20. Logical structure and dependencies.
+   33. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -258,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../attribution/Attribution%20background.html">
-   21. Attribution
+   34. Attribution
   </a>
  </li>
 </ul>
@@ -270,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
-   22. Specification of models (introduction)
+   35. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -282,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../optimization/Optimize_simpel.html">
-   23. Mean variance optimization
+   36. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -294,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../litterature.html">
-   25. Litterature
+   38. Litterature
   </a>
  </li>
 </ul>
@@ -816,85 +828,6 @@ item in the dictionary. The key is the variable name in the plot:</p>
 </div>
 <div class="cell_output docutils container">
 <img alt="../../../_images/create_save_scenarios_25_0.png" src="../../../_images/create_save_scenarios_25_0.png" />
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [11],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">variable</span><span class="p">,</span><span class="n">figure</span> <span class="ow">in</span> <span class="n">plot_level</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">display</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;graph/</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">_test.png&#39;</span><span class="p">)</span> <span class="c1"># save in png format </span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;graph/</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">_test.pdf&#39;</span><span class="p">)</span> <span class="c1"># save in pdf format </span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;graph/</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">_test.svg&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\matplotlib\figure.py:3046,</span> in <span class="ni">Figure.savefig</span><span class="nt">(self, fname, transparent, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3042</span>     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3043</span>         <span class="n">stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3044</span>             <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">_cm_set</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">))</span>
-<span class="ne">-&gt; </span><span class="mi">3046</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\matplotlib\backend_bases.py:2319,</span> in <span class="ni">FigureCanvasBase.print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2315</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2316</span>     <span class="c1"># _get_renderer may change the figure dpi (as vector formats</span>
-<span class="g g-Whitespace">   </span><span class="mi">2317</span>     <span class="c1"># force the figure dpi to 72), so we need to set it again here.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2318</span>     <span class="k">with</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_setattr_cm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2319</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">print_method</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2320</span>             <span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2321</span>             <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2322</span>             <span class="n">edgecolor</span><span class="o">=</span><span class="n">edgecolor</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2323</span>             <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2324</span>             <span class="n">bbox_inches_restore</span><span class="o">=</span><span class="n">_bbox_inches_restore</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2325</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2326</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2327</span>     <span class="k">if</span> <span class="n">bbox_inches</span> <span class="ow">and</span> <span class="n">restore_bbox</span><span class="p">:</span>
-
-<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\matplotlib\backend_bases.py:1648,</span> in <span class="ni">_check_savefig_extra_args.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1640</span>     <span class="n">_api</span><span class="o">.</span><span class="n">warn_deprecated</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1641</span>         <span class="s1">&#39;3.3&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">removal</span><span class="o">=</span><span class="s1">&#39;3.6&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1642</span>         <span class="n">message</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">() got unexpected keyword argument &quot;&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1643</span>                 <span class="o">+</span> <span class="n">arg</span> <span class="o">+</span> <span class="s1">&#39;&quot; which is no longer supported as of &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1644</span>                 <span class="s1">&#39;</span><span class="si">%(since)s</span><span class="s1"> and will become an error &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1645</span>                 <span class="s1">&#39;</span><span class="si">%(removal)s</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1646</span>     <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1648</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\matplotlib\_api\deprecation.py:415,</span> in <span class="ni">delete_parameter.&lt;locals&gt;.wrapper</span><span class="nt">(*inner_args, **inner_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="n">deprecation_addendum</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span>         <span class="sa">f</span><span class="s2">&quot;If any parameter follows </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">, they should be passed as &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>         <span class="sa">f</span><span class="s2">&quot;keyword, not positionally.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>     <span class="n">warn_deprecated</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span>         <span class="n">since</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">410</span>         <span class="n">name</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span>                  <span class="k">else</span> <span class="n">deprecation_addendum</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">415</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inner_args</span><span class="p">,</span> <span class="o">**</span><span class="n">inner_kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\matplotlib\backends\backend_agg.py:541,</span> in <span class="ni">FigureCanvasAgg.print_png</span><span class="nt">(self, filename_or_obj, metadata, pil_kwargs, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span><span class="sd"> Write the figure to a PNG file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span><span class="sd">     *metadata*, including the default &#39;Software&#39; key.</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span> <span class="n">FigureCanvasAgg</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">541</span> <span class="n">mpl</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">filename_or_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_rgba</span><span class="p">(),</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;upper&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">dpi</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">dpi</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="o">=</span><span class="n">pil_kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\matplotlib\image.py:1675,</span> in <span class="ni">imsave</span><span class="nt">(fname, arr, vmin, vmax, cmap, format, origin, dpi, metadata, pil_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1673</span> <span class="n">pil_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;format&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1674</span> <span class="n">pil_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;dpi&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">dpi</span><span class="p">,</span> <span class="n">dpi</span><span class="p">))</span>
-<span class="ne">-&gt; </span><span class="mi">1675</span> <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">pil_kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\Anaconda3\envs\mf\lib\site-packages\PIL\Image.py:2297,</span> in <span class="ni">Image.save</span><span class="nt">(self, fp, format, **params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2295</span>         <span class="n">fp</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r+b&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2296</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2297</span>         <span class="n">fp</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w+b&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2299</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2300</span>     <span class="n">save_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;graph/PAKCCEMISCO2TKN_test.png&#39;
-</pre></div>
-</div>
 </div>
 </div>
 </div>
