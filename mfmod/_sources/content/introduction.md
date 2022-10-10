@@ -7,8 +7,8 @@ This Jupyter book is work in progress and very much a draft.
 Please send any suggestions and comments to Ib 
 ```
 
-The purpose of this Jupyter Book is to intro
-duce the handeling of [World Bank's macroeconomic and fiscal model\(MFMod\)](https://openknowledge.worldbank.org/handle/10986/32217) in python. This is acomplished through a python library: ```modelflow```. 
+The purpose of this Jupyter Book is to introduce 
+the handeling of [World Bank's macroeconomic and fiscal model\(MFMod\)](https://openknowledge.worldbank.org/handle/10986/32217) in python. This is acomplished through a python library: ```modelflow```. 
 
 ModelFlow is a Python library developed to leverage on the Pandas data management library and the broader Python ecosystem. Using Modelflow you can:
  - Solve models
@@ -30,7 +30,7 @@ Creating a model often entails recycling several models specified in different w
 ModelFlow, which is nested in the Python's ecosystem, makes it possible to transform models defined in many different languages into ModelFlow models.
 
 **Onboarding data**.
-ModelFlow is build on top of Pythons Pandas Library. Pandas is the swiss army knife for datascience and has a lot of data wrangeling capabilities and in anddition makes it easy to import and manage data from different sources.
+ModelFlow is build on top of Pythons Pandas Library. Pandas is the swiss army knife for datascience and has a lot of data wrangeling capabilities and in addition makes it easy to import and manage data from different sources.
 
 **Analytic** ModelFlow provides you with a range of visual tools that help you understand your models and your results.
 

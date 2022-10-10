@@ -274,13 +274,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Target and instruments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../targetinstruments/One%20target%20one%20instrument%20with%203%20instrument%20variables.html">
+   36. One target one instrument with 3 instrument variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Specification
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../notebooks/intro/model%20specification.html">
-   36. Specification of models (introduction)
+   37. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -292,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../optimization/Optimize_simpel.html">
-   37. Mean variance optimization
+   38. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -304,7 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../litterature.html">
-   39. Litterature
+   40. Litterature
   </a>
  </li>
 </ul>
@@ -521,7 +533,8 @@ Calc_add_factor : X_A = (X) - (3)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : X
 Original        : pct_growth(x)  = pct_growth(y) 
 Preprocessed    :  (100 * ( (X) / (X(-1)) -1)) = (100 * ( (Y) / (Y(-1)) -1)) 
-Normalized      : X =  ((100 * ( (Y) / (Y(-1)) -1))) *X(-1)/100+X(-1)
+Normalized      : X = X_A*X(-1)/100+ ((100 * ( (Y) / (Y(-1)) -1))) *X(-1)/100+X(-1)
+Calc_add_factor : X_A = 100*X/X(-1)- (((100 * ( (Y) / (Y(-1)) -1)))) -100
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>

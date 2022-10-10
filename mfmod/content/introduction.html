@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. What is a Model in ModelFlow ?" href="notebooks/intro/model%20and%20solution.html" />
@@ -271,13 +273,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Target and instruments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="howto/targetinstruments/One%20target%20one%20instrument%20with%203%20instrument%20variables.html">
+   36. One target one instrument with 3 instrument variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Specification
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/intro/model%20specification.html">
-   36. Specification of models (introduction)
+   37. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -289,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="howto/optimization/Optimize_simpel.html">
-   37. Mean variance optimization
+   38. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -301,7 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="litterature.html">
-   39. Litterature
+   40. Litterature
   </a>
  </li>
 </ul>
@@ -395,8 +409,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This Jupyter book is work in progress and very much a draft.</p>
 <p>Please send any suggestions and comments to Ib</p>
 </div>
-<p>The purpose of this Jupyter Book is to intro
-duce the handeling of <a class="reference external" href="https://openknowledge.worldbank.org/handle/10986/32217">World Bank’s macroeconomic and fiscal model(MFMod)</a> in python. This is acomplished through a python library: <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
+<p>The purpose of this Jupyter Book is to introduce
+the handeling of <a class="reference external" href="https://openknowledge.worldbank.org/handle/10986/32217">World Bank’s macroeconomic and fiscal model(MFMod)</a> in python. This is acomplished through a python library: <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
 <p>ModelFlow is a Python library developed to leverage on the Pandas data management library and the broader Python ecosystem. Using Modelflow you can:</p>
 <ul class="simple">
 <li><p>Solve models</p></li>
@@ -413,13 +427,15 @@ The models are specified at a high level of abstraction and are processed fast. 
 Creating a model often entails recycling several models specified in different ways: Eviews, Excel, Latex, Dynare, Python and other languages/tools.
 ModelFlow, which is nested in the Python’s ecosystem, makes it possible to transform models defined in many different languages into ModelFlow models.</p>
 <p><strong>Onboarding data</strong>.
-ModelFlow is build on top of Pythons Pandas Library. Pandas is the swiss army knife for datascience and has a lot of data wrangeling capabilities and in anddition makes it easy to import and manage data from different sources.</p>
+ModelFlow is build on top of Pythons Pandas Library. Pandas is the swiss army knife for datascience and has a lot of data wrangeling capabilities and in addition makes it easy to import and manage data from different sources.</p>
 <p><strong>Analytic</strong> ModelFlow provides you with a range of visual tools that help you understand your models and your results.</p>
 <p><strong>Open Source</strong>
 Be part of the community. The entire library is written in Python and is to be found on this <a class="reference external" href="https://github.com/IbHansen/Modelflow2">Github page</a>  . So you can adjust the tools to your needs or help develope the library further.</p>
 <p>The documentation can be viewed <a class="reference external" href="https://ibhansen.github.io/doc">here</a></p>
 <p><strong>Acknowledgment</strong><br>
 &lt;Fortcomming&gt;</p>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">

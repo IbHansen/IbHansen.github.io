@@ -1,0 +1,97 @@
+Traceback (most recent call last):
+  File "C:\Users\ibhan\anaconda3\envs\mfdoc39\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\ibhan\anaconda3\envs\mfdoc39\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\ibhan\anaconda3\envs\mfdoc39\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\ibhan\anaconda3\envs\mfdoc39\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\ibhan\anaconda3\envs\mfdoc39\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\ibhan\anaconda3\envs\mfdoc39\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\ibhan\anaconda3\envs\mfdoc39\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\ibhan\anaconda3\envs\mfdoc39\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+mvaluta.drawmodel(png=1)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mKeyError[0m                                  Traceback (most recent call last)
+File [1;32mC:\modelflow2\modelflow\modelclass.py:1070[0m, in [0;36mOrg_model_Mixin.__getattr__[1;34m(self, name)[0m
+[0;32m   1069[0m [38;5;28;01mtry[39;00m:
+[1;32m-> 1070[0m     [38;5;28;01mreturn[39;00m [43mmv[49m[38;5;241;43m.[39;49m[43mvarvis[49m[43m([49m[43mmodel[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mvar[49m[38;5;241;43m=[39;49m[43mname[49m[38;5;241;43m.[39;49m[43mupper[49m[43m([49m[43m)[49m[43m)[49m
+[0;32m   1071[0m [38;5;28;01mexcept[39;00m:
+[0;32m   1072[0m     [38;5;66;03m#            print(name)[39;00m
+
+File [1;32mC:\modelflow2\modelflow\modelvis.py:270[0m, in [0;36mvarvis.__init__[1;34m(self, model, var)[0m
+[0;32m    269[0m [38;5;28mself[39m[38;5;241m.[39mvar [38;5;241m=[39m var
+[1;32m--> 270[0m [38;5;28mself[39m[38;5;241m.[39mendo [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmodel[49m[38;5;241;43m.[39;49m[43mallvar[49m[43m[[49m[43mvar[49m[43m][49m[[38;5;124m'[39m[38;5;124mendo[39m[38;5;124m'[39m]
+
+[1;31mKeyError[0m: 'CURRENT_PER'
+
+During handling of the above exception, another exception occurred:
+
+[1;31mAttributeError[0m                            Traceback (most recent call last)
+Cell [1;32mIn [5], line 1[0m
+[1;32m----> 1[0m mvaluta[38;5;241m.[39mdrawmodel(png[38;5;241m=[39m[38;5;241m1[39m)
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:1942[0m, in [0;36mGraph_Draw_Mixin.drawmodel[1;34m(self, lag, **kwargs)[0m
+[0;32m   1940[0m graph [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mtotgraph [38;5;28;01mif[39;00m lag [38;5;28;01melse[39;00m [38;5;28mself[39m[38;5;241m.[39mtotgraph_nolag
+[0;32m   1941[0m alllinks [38;5;241m=[39m (node([38;5;241m0[39m, n[[38;5;241m1[39m], n[[38;5;241m0[39m]) [38;5;28;01mfor[39;00m n [38;5;129;01min[39;00m graph[38;5;241m.[39medges())
+[1;32m-> 1942[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mtodot2(alllinks, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:2527[0m, in [0;36mGraph_Draw_Mixin.todot2[1;34m(self, alledges, navn, **kwargs)[0m
+[0;32m   2503[0m     [38;5;28;01mdef[39;00m [38;5;21mtodot2[39m([38;5;28mself[39m, alledges, navn[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[0;32m   2504[0m         [38;5;124;03m''' makes a drawing of all edges in list alledges[39;00m
+[0;32m   2505[0m [38;5;124;03m        all is the edges[39;00m
+[0;32m   2506[0m 
+[1;32m   (...)[0m
+[0;32m   2524[0m 
+[0;32m   2525[0m [38;5;124;03m'''[39;00m
+[1;32m-> 2527[0m         dot [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mmakedotnew(alledges, navn[38;5;241m=[39mnavn, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m   2529[0m         fname [38;5;241m=[39m kwargs[38;5;241m.[39mget([38;5;124m'[39m[38;5;124msaveas[39m[38;5;124m'[39m, navn [38;5;28;01mif[39;00m navn [38;5;28;01melse[39;00m [38;5;124m"[39m[38;5;124mA_model_graph[39m[38;5;124m"[39m)
+[0;32m   2531[0m         [38;5;28;01mif[39;00m kwargs[38;5;241m.[39mget([38;5;124m'[39m[38;5;124mdot[39m[38;5;124m'[39m, [38;5;28;01mFalse[39;00m):
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:2415[0m, in [0;36mGraph_Draw_Mixin.makedotnew[1;34m(self, alledges, navn, **kwargs)[0m
+[0;32m   2413[0m [38;5;28;01mif[39;00m att:
+[0;32m   2414[0m     to_att [38;5;241m=[39m {p [38;5;28;01mfor[39;00m l, p, c [38;5;129;01min[39;00m alllinks }[38;5;241m|[39m{ c[38;5;241m.[39msplit([38;5;124m'[39m[38;5;124m([39m[38;5;124m'[39m)[[38;5;241m0[39m] [38;5;28;01mfor[39;00m l, p, c [38;5;129;01min[39;00m alllinks [38;5;28;01mif[39;00m c[38;5;241m.[39msplit([38;5;124m'[39m[38;5;124m([39m[38;5;124m'[39m)[[38;5;241m0[39m] [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mendogene}
+[1;32m-> 2415[0m     [38;5;28mself[39m[38;5;241m.[39matt_dic [38;5;241m=[39m {v: [38;5;28mself[39m[38;5;241m.[39mget_att_pct(
+[0;32m   2416[0m         v[38;5;241m.[39msplit([38;5;124m'[39m[38;5;124m([39m[38;5;124m'[39m)[[38;5;241m0[39m], lag[38;5;241m=[39m[38;5;28;01mFalse[39;00m, start[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m, end[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m) [38;5;28;01mfor[39;00m v [38;5;129;01min[39;00m to_att}
+[0;32m   2417[0m     [38;5;28mself[39m[38;5;241m.[39matt_dic_level [38;5;241m=[39m {v: [38;5;28mself[39m[38;5;241m.[39mget_att_level(
+[0;32m   2418[0m         v[38;5;241m.[39msplit([38;5;124m'[39m[38;5;124m([39m[38;5;124m'[39m)[[38;5;241m0[39m], lag[38;5;241m=[39m[38;5;28;01mFalse[39;00m, start[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m, end[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m) [38;5;28;01mfor[39;00m v [38;5;129;01min[39;00m to_att}
+[0;32m   2421[0m ibh [38;5;241m=[39m {node([38;5;241m0[39m, x[38;5;241m.[39mparent, x[38;5;241m.[39mchild)
+[0;32m   2422[0m        [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m alllinks}  [38;5;66;03m# To weed out multible  links[39;00m
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:2415[0m, in [0;36m<dictcomp>[1;34m(.0)[0m
+[0;32m   2413[0m [38;5;28;01mif[39;00m att:
+[0;32m   2414[0m     to_att [38;5;241m=[39m {p [38;5;28;01mfor[39;00m l, p, c [38;5;129;01min[39;00m alllinks }[38;5;241m|[39m{ c[38;5;241m.[39msplit([38;5;124m'[39m[38;5;124m([39m[38;5;124m'[39m)[[38;5;241m0[39m] [38;5;28;01mfor[39;00m l, p, c [38;5;129;01min[39;00m alllinks [38;5;28;01mif[39;00m c[38;5;241m.[39msplit([38;5;124m'[39m[38;5;124m([39m[38;5;124m'[39m)[[38;5;241m0[39m] [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mendogene}
+[1;32m-> 2415[0m     [38;5;28mself[39m[38;5;241m.[39matt_dic [38;5;241m=[39m {v: [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mget_att_pct[49m[43m([49m
+[0;32m   2416[0m [43m        [49m[43mv[49m[38;5;241;43m.[39;49m[43msplit[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m([39;49m[38;5;124;43m'[39;49m[43m)[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m,[49m[43m [49m[43mlag[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m[43m [49m[43mstart[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mend[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43m'[39;49m[43m)[49m [38;5;28;01mfor[39;00m v [38;5;129;01min[39;00m to_att}
+[0;32m   2417[0m     [38;5;28mself[39m[38;5;241m.[39matt_dic_level [38;5;241m=[39m {v: [38;5;28mself[39m[38;5;241m.[39mget_att_level(
+[0;32m   2418[0m         v[38;5;241m.[39msplit([38;5;124m'[39m[38;5;124m([39m[38;5;124m'[39m)[[38;5;241m0[39m], lag[38;5;241m=[39m[38;5;28;01mFalse[39;00m, start[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m, end[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m) [38;5;28;01mfor[39;00m v [38;5;129;01min[39;00m to_att}
+[0;32m   2421[0m ibh [38;5;241m=[39m {node([38;5;241m0[39m, x[38;5;241m.[39mparent, x[38;5;241m.[39mchild)
+[0;32m   2422[0m        [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m alllinks}  [38;5;66;03m# To weed out multible  links[39;00m
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:1456[0m, in [0;36mDekomp_Mixin.get_att_pct[1;34m(self, n, filter, lag, start, end, time_att)[0m
+[0;32m   1453[0m [38;5;28;01mdef[39;00m [38;5;21mget_att_pct[39m([38;5;28mself[39m, n, [38;5;28mfilter[39m[38;5;241m=[39m[38;5;28;01mFalse[39;00m, lag[38;5;241m=[39m[38;5;28;01mTrue[39;00m, start[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m, end[38;5;241m=[39m[38;5;124m'[39m[38;5;124m'[39m,time_att[38;5;241m=[39m[38;5;28;01mFalse[39;00m):
+[0;32m   1454[0m     [38;5;124;03m''' det attribution pct for a variable.[39;00m
+[0;32m   1455[0m [38;5;124;03m     I little effort to change from multiindex to single node name'''[39;00m
+[1;32m-> 1456[0m     tstart [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcurrent_per[49m[[38;5;241m0[39m] [38;5;28;01mif[39;00m start [38;5;241m==[39m[38;5;124m'[39m[38;5;124m'[39m [38;5;28;01melse[39;00m start
+[0;32m   1457[0m     tend   [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mcurrent_per[[38;5;241m-[39m[38;5;241m1[39m] [38;5;28;01mif[39;00m end [38;5;241m==[39m[38;5;124m'[39m[38;5;124m'[39m [38;5;28;01melse[39;00m end
+[0;32m   1458[0m     res [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mdekomp(n, lprint[38;5;241m=[39m[38;5;241m0[39m, start[38;5;241m=[39mtstart, end[38;5;241m=[39mtend,time_att[38;5;241m=[39mtime_att)
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:1073[0m, in [0;36mOrg_model_Mixin.__getattr__[1;34m(self, name)[0m
+[0;32m   1070[0m     [38;5;28;01mreturn[39;00m mv[38;5;241m.[39mvarvis(model[38;5;241m=[39m[38;5;28mself[39m, var[38;5;241m=[39mname[38;5;241m.[39mupper())
+[0;32m   1071[0m [38;5;28;01mexcept[39;00m:
+[0;32m   1072[0m     [38;5;66;03m#            print(name)[39;00m
+[1;32m-> 1073[0m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m
+[0;32m   1074[0m     [38;5;28;01mpass[39;00m
+
+[1;31mAttributeError[0m: 
+AttributeError: 
+
