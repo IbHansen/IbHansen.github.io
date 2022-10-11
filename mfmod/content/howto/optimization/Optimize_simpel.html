@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>38. Mean variance optimization &#8212; MFMod models in Python with ModelFlow</title>
+    <title>26. Mean variance optimization &#8212; MFMod models in Python with ModelFlow</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="40. Litterature" href="../../litterature.html" />
-    <link rel="prev" title="37. Specification of models (introduction)" href="../../notebooks/intro/model%20specification.html" />
+    <link rel="next" title="27. Litterature" href="../../litterature.html" />
+    <link rel="prev" title="25. Specification of models (introduction)" href="../../notebooks/intro/model%20specification.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -207,17 +207,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/onboard%20one%20model%20from%20%20wf1.html">
-   27. Onboard a model defined in a .wf1 file
+   15. Onboard a model defined in a .wf1 file
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/onboard%20many%20models%20from%20wf1.html">
-   28. Onboard all models  defined in .wf1 files
+   16. Onboard all models  defined in .wf1 files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../onboard/eviews/Normalizing%20when%20onboarding%20eviews.html">
-   29. Normalizing when onboarding  eviews models
+   17. Normalizing when onboarding  eviews models
   </a>
  </li>
 </ul>
@@ -229,12 +229,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fixing/Fixing%20variables.html">
-   30. Fixing the value of variables
+   18. Fixing the value of variables
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../modifymodel/create_real_model.html">
-   31. Modified equation to to keep real tax rates
+   19. Modified equation to to keep real tax rates
   </a>
  </li>
 </ul>
@@ -246,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Python/modelflow_features.html">
-   33. Useful model instance properties and methods
+   21. Useful model instance properties and methods
   </a>
  </li>
 </ul>
@@ -258,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../structure/Logical_structure.html">
-   34. Logical structure and dependencies.
+   22. Logical structure and dependencies.
   </a>
  </li>
 </ul>
@@ -270,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../attribution/Attribution%20background.html">
-   35. Attribution
+   23. Attribution
   </a>
  </li>
 </ul>
@@ -282,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../targetinstruments/One%20target%20one%20instrument%20with%203%20instrument%20variables.html">
-   36. One target one instrument with 3 instrument variables
+   24. One target one instrument with 3 instrument variables
   </a>
  </li>
 </ul>
@@ -294,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../notebooks/intro/model%20specification.html">
-   37. Specification of models (introduction)
+   25. Specification of models (introduction)
   </a>
  </li>
 </ul>
@@ -306,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   38. Mean variance optimization
+   26. Mean variance optimization
   </a>
  </li>
 </ul>
@@ -318,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../litterature.html">
-   40. Litterature
+   27. Litterature
   </a>
  </li>
 </ul>
@@ -409,154 +409,77 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   38. Mean variance optimization
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-variance-problem">
+   26.1. Mean variance problem
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   39. Mean variance optimization
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quadratic-program">
+   26.2. Quadratic program
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-variance-problem">
-     39.1. Mean variance problem
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#translation-from-mean-variance-to-quadratic-program">
+   26.3. Translation from Mean Variance to quadratic program
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grouping-af-variables">
+   26.4. Grouping af variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mv-opt-mean-variance-to-quadratic-programming">
+   26.5. mv_opt() Mean variance to Quadratic Programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-currency-mix-with-three-currencies">
+   26.6. Example: currency mix with three currencies.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specify-the-model-in-the-business-language">
+     26.6.1. Specify the model in the business language
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quadratic-program">
-     39.2. Quadratic program
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-model-instance">
+     26.6.2. Create a model instance
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     39.3. Quadratic program
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equation-the-expanded-model-equations">
+     26.6.3. .equation The expanded model equations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#translation-from-mean-variance-to-quadratic-program">
-     39.4. Translation from Mean Variance to quadratic program
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drawmodel-visualizing-the-structure-of-the-model">
+     26.6.4. .drawmodel() Visualizing the structure of the model
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     39.5. Translation from Mean Variance to quadratic program
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-dataframe">
+     26.6.5. Create a Dataframe
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-af-variables">
-     39.6. Grouping af variables
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-values-to-the-exogenous-variables">
+     26.6.6. Assigning values to the exogenous variables
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-python-function">
-     39.7. A Python function
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solve-the-model-for-all-the-experiments">
+   26.7. Solve the model for all the experiments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualization-of-results">
+     26.7.1. Visualization of results
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mv-opt-mean-variance-to-quadratic-programming">
-     39.8. mv_opt() Mean variance to Quadratic Programming
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-small-example-currency-mix-with-3-currencies">
-     39.9. A small example, currency mix with 3 currencies.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-currency-mix-with-three-currencies">
-     39.10. Example: currency mix with three currencies.
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#specify-the-model-in-the-business-language">
-       39.10.1. Specify the model in the business language
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       39.10.2. Specify the model in the business language
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#make-a-model-instance">
-       39.10.3. Make a model instance
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-model-instance">
-       39.10.4. Create a model instance
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-expanded-model-equations">
-       39.10.5. The expanded model equations
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#equation-the-expanded-model-equations">
-       39.10.6. .equation The expanded model equations
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-structure-of-the-model">
-       39.10.7. The structure of the model
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#drawmodel-visualizing-the-structure-of-the-model">
-       39.10.8. .drawmodel() Visualizing the structure of the model
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#istopo-he-model-is-not-simultaneous">
-       39.10.9. .istopo he model is not simultaneous
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#istopo-simultaneous-model">
-       39.10.10. .istopo Simultaneous model?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#make-a-dataframe-with-500-experiments-with-increasing-risk-apatite">
-       39.10.11. Make a dataframe with 500 experiments with increasing risk-apatite
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-dataframe">
-       39.10.12. Create a Dataframe
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#input-exogeneous-variables">
-       39.10.13. Input exogeneous variables
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assigning-values-to-the-exogenous-variables">
-       39.10.14. Assigning values to the exogenous variables
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solve-the-model-for-all-the-experiments">
-     39.11. Solve the model for all the experiments
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#show-the-result-in-nice-plots">
-       39.11.1. Show the result in nice plots
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#visualization-of-results">
-       39.11.2. Visualization of results
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -580,154 +503,77 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   38. Mean variance optimization
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-variance-problem">
+   26.1. Mean variance problem
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   39. Mean variance optimization
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quadratic-program">
+   26.2. Quadratic program
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-variance-problem">
-     39.1. Mean variance problem
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#translation-from-mean-variance-to-quadratic-program">
+   26.3. Translation from Mean Variance to quadratic program
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grouping-af-variables">
+   26.4. Grouping af variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mv-opt-mean-variance-to-quadratic-programming">
+   26.5. mv_opt() Mean variance to Quadratic Programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-currency-mix-with-three-currencies">
+   26.6. Example: currency mix with three currencies.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specify-the-model-in-the-business-language">
+     26.6.1. Specify the model in the business language
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quadratic-program">
-     39.2. Quadratic program
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-model-instance">
+     26.6.2. Create a model instance
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     39.3. Quadratic program
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equation-the-expanded-model-equations">
+     26.6.3. .equation The expanded model equations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#translation-from-mean-variance-to-quadratic-program">
-     39.4. Translation from Mean Variance to quadratic program
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drawmodel-visualizing-the-structure-of-the-model">
+     26.6.4. .drawmodel() Visualizing the structure of the model
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     39.5. Translation from Mean Variance to quadratic program
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-dataframe">
+     26.6.5. Create a Dataframe
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-af-variables">
-     39.6. Grouping af variables
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-values-to-the-exogenous-variables">
+     26.6.6. Assigning values to the exogenous variables
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-python-function">
-     39.7. A Python function
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solve-the-model-for-all-the-experiments">
+   26.7. Solve the model for all the experiments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualization-of-results">
+     26.7.1. Visualization of results
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mv-opt-mean-variance-to-quadratic-programming">
-     39.8. mv_opt() Mean variance to Quadratic Programming
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-small-example-currency-mix-with-3-currencies">
-     39.9. A small example, currency mix with 3 currencies.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-currency-mix-with-three-currencies">
-     39.10. Example: currency mix with three currencies.
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#specify-the-model-in-the-business-language">
-       39.10.1. Specify the model in the business language
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       39.10.2. Specify the model in the business language
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#make-a-model-instance">
-       39.10.3. Make a model instance
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-model-instance">
-       39.10.4. Create a model instance
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-expanded-model-equations">
-       39.10.5. The expanded model equations
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#equation-the-expanded-model-equations">
-       39.10.6. .equation The expanded model equations
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-structure-of-the-model">
-       39.10.7. The structure of the model
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#drawmodel-visualizing-the-structure-of-the-model">
-       39.10.8. .drawmodel() Visualizing the structure of the model
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#istopo-he-model-is-not-simultaneous">
-       39.10.9. .istopo he model is not simultaneous
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#istopo-simultaneous-model">
-       39.10.10. .istopo Simultaneous model?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#make-a-dataframe-with-500-experiments-with-increasing-risk-apatite">
-       39.10.11. Make a dataframe with 500 experiments with increasing risk-apatite
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-dataframe">
-       39.10.12. Create a Dataframe
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#input-exogeneous-variables">
-       39.10.13. Input exogeneous variables
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assigning-values-to-the-exogenous-variables">
-       39.10.14. Assigning values to the exogenous variables
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solve-the-model-for-all-the-experiments">
-     39.11. Solve the model for all the experiments
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#show-the-result-in-nice-plots">
-       39.11.1. Show the result in nice plots
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#visualization-of-results">
-       39.11.2. Visualization of results
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -740,32 +586,15 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><span style='color:Blue'> ORIGINAL </span></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="mean-variance-optimization">
-<h1><span class="section-number">38. </span>Mean variance optimization<a class="headerlink" href="#mean-variance-optimization" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="mean-variance-optimization">
+<h1><span class="section-number">26. </span>Mean variance optimization<a class="headerlink" href="#mean-variance-optimization" title="Permalink to this headline">¶</a></h1>
 <p><strong>This is an advanced notebook which requires prior knowledge on optimization and linear algebra</strong></p>
-<p>The <a class="reference external" href="https://cvxopt.org">CVXOPT </a> library can solve convex optimization problems. In Modelflow it is harnesses to solve <strong>mean variance</strong> problems as they frequently arise in finance.</p>
+<p>The <a class="reference external" href="https://cvxopt.org">CVXOPT </a> library can solve convex optimization problems. In Modelflow this is harnesses to solve <strong>mean variance</strong> problems as they frequently arise in finance.</p>
 <p>This notebook first takes the reader through how a mean variance problem can be restated as a quadratic problem, which is a standard problem for CVXOPT. It covers a little more general mean variance problem which also a stylized bank balance sheet optimization problem.</p>
 <p><strong>The notebook is fairly advanced and requires some previous knowledge.</strong></p>
 <p>A small currency mix optimization model with 3 currencies is used to illustrate the optimization.</p>
 <p>Notice also that the rows in this example has nothing to do with time, but indicates the risk level. This does not matter, as no lags or leads are involved.</p>
 <p>Enjoy</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">39. </span>Mean variance optimization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><strong>This is an advanced notebook which requires prior knowledge on optimization and linear algebra</strong></p>
-<p>The <a class="reference external" href="https://cvxopt.org">CVXOPT </a> library can solve convex optimization problems. In Modelflow it is harnesses <span style='color:Blue'> is this an expression? </span> to  solve <strong>mean variance</strong> problems as they frequently arise in finance.</p>
-<p>This notebook takes the reader through how a mean variance problem can be restated as a quadratic problem, which is a standard problem for CVXOPT. It covers a little more general mean variance problem which <span style='color:Blue'> include? </span> also a stylized bank balance sheet optimization problem.</p>
-<p>A small currency mix optimization model with three currencies is used to illustrate the optimization.</p>
-<p>Notice also that the rows in this example have nothing to do with time, but indicate the risk level. This does not matter, as no lags or leads are involved.</p>
-<p>Enjoy</p>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-<p>import matplotlib.pyplot as plt
-import seaborn as sns
-import pandas as pd</p>
-<p>from modelclass import model
-model.widescreen();
-model.scroll_off();</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -790,7 +619,7 @@ model.scroll_off();</p>
 </div></div>
 </div>
 <div class="section" id="mean-variance-problem">
-<h2><span class="section-number">39.1. </span>Mean variance problem<a class="headerlink" href="#mean-variance-problem" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">26.1. </span>Mean variance problem<a class="headerlink" href="#mean-variance-problem" title="Permalink to this headline">¶</a></h2>
 <p>A mean variance problem for allocating positions to banks.
 let:</p>
 <div class="math notranslate nohighlight">
@@ -824,24 +653,9 @@ Budget&amp;\text{initial sum of the positions, as no new money is injected the s
                    &amp; \mathbf 1^T\mathbf x = Budget &amp; \mbox{Sum of positions = E, we are not getting more money}
 \end{array}
 \end{split}\]</div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
 </div>
 <div class="section" id="quadratic-program">
-<h2><span class="section-number">39.2. </span>Quadratic program<a class="headerlink" href="#quadratic-program" title="Permalink to this headline">¶</a></h2>
-<p>The general quadradic optimization problem is usually formulated in this way:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{lr}
-\mbox{minimize:}   &amp;\frac{1}{2} x^TPx + q^T x \\
-\mbox{subject to:} &amp; G x \preceq h \\
-                  &amp; Ax = b
-\end{array}
-\end{split}\]</div>
-<p>P,q,G,h,A,b are the parameters quadradic program algorithmes usualy have as inputs.
-This also goes for the <strong>cvxopt</strong> package which is used in this example.</p>
-</div>
-<div class="section" id="id2">
-<h2><span class="section-number">39.3. </span>Quadratic program<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">26.2. </span>Quadratic program<a class="headerlink" href="#quadratic-program" title="Permalink to this headline">¶</a></h2>
 <p>The general quadratic optimization problem is usually formulated in this way:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -853,28 +667,9 @@ This also goes for the <strong>cvxopt</strong> package which is used in this exa
 \end{split}\]</div>
 <p>P,q,G,h,A,b are the parameters quadratic program algorithms usually have as inputs.
 This also goes for the <strong>cvxopt</strong> package which is used in this example.</p>
-<p><span style='color:Blue'> ORIGINAL </span></p>
 </div>
 <div class="section" id="translation-from-mean-variance-to-quadratic-program">
-<h2><span class="section-number">39.4. </span>Translation from Mean Variance to quadratic program<a class="headerlink" href="#translation-from-mean-variance-to-quadratic-program" title="Permalink to this headline">¶</a></h2>
-<p>To solve the Mean variance problem the problem has to be translated to the standard quadradic programming formulation. This can be done acording to this recipie:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{ll}
-P &amp; = 2\times (1-\lambda)\times  \Sigma \\
-q &amp; = -\lambda\times r \\ 
-G &amp;= \begin{bmatrix} -x^{min} \\ 
-\phantom{-}x^{max} \\ 
- Capital \\ 
- -LCR\\ 
- \end{bmatrix}\\
-A &amp;= \mathbf 1^T \\
-b &amp;= Budget\\
-\end{array}
-\end{split}\]</div>
-</div>
-<div class="section" id="id3">
-<h2><span class="section-number">39.5. </span>Translation from Mean Variance to quadratic program<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">26.3. </span>Translation from Mean Variance to quadratic program<a class="headerlink" href="#translation-from-mean-variance-to-quadratic-program" title="Permalink to this headline">¶</a></h2>
 <p>To solve the Mean variance problem the problem has to be translated to the standard quadratic programming formulation. This can be done according to this recipe:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -890,8 +685,6 @@ A &amp;= \mathbf 1^T \\
 b &amp;= Budget\\
 \end{array}
 \end{split}\]</div>
-<p><span style='color:Blue'> ORIGINAL </span>
-So in a exampel with 3 positions <span class="math notranslate nohighlight">\( G \times x \preceq h  \)</span> can be constructed this way:</p>
 <p>So in a example with 3 positions <span class="math notranslate nohighlight">\( G \times x \preceq h  \)</span> can be constructed this way:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -923,12 +716,11 @@ So in a exampel with 3 positions <span class="math notranslate nohighlight">\( G
 \end{bmatrix}
 \end{array}
 \end{split}\]</div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
 </div>
 <div class="section" id="grouping-af-variables">
-<h2><span class="section-number">39.6. </span>Grouping af variables<a class="headerlink" href="#grouping-af-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">26.4. </span>Grouping af variables<a class="headerlink" href="#grouping-af-variables" title="Permalink to this headline">¶</a></h2>
 <p>If we want to group position so that positions have are proportional, it can be done by adding rows to A and b
-if <span class="math notranslate nohighlight">\(position_{1}\)</span> should be equal to <span class="math notranslate nohighlight">\(position_2\)</span> <span style='color:Blue'> grammar. Not sure how to revise without changing meaning </span> :</p>
+if <span class="math notranslate nohighlight">\(position_{1}\)</span> should be equal to <span class="math notranslate nohighlight">\(position_2\)</span></p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{gather*}
 A = \begin{bmatrix} 
@@ -948,15 +740,9 @@ A = \begin{bmatrix}
 		2 &amp;  -1 &amp; 0 \\
 		\end{bmatrix}
 \end{gather*}\]</div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-</div>
-<div class="section" id="a-python-function">
-<h2><span class="section-number">39.7. </span>A Python function<a class="headerlink" href="#a-python-function" title="Permalink to this headline">¶</a></h2>
-<p>The function translate the Mean variance problem to a Quadratic programming problem.</p>
-<p>Call to this function can be incorporated in the business logic. It is already available in Modelflow.</p>
 </div>
 <div class="section" id="mv-opt-mean-variance-to-quadratic-programming">
-<h2><span class="section-number">39.8. </span>mv_opt() Mean variance to Quadratic Programming<a class="headerlink" href="#mv-opt-mean-variance-to-quadratic-programming" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">26.5. </span>mv_opt() Mean variance to Quadratic Programming<a class="headerlink" href="#mv-opt-mean-variance-to-quadratic-programming" title="Permalink to this headline">¶</a></h2>
 <p>The function mv_opt() translates the Mean variance problem to a Quadratic programming problem.</p>
 <p>Calls to this function can be incorporated in the business logic.  <span style='color:Blue'> Include more explanation. </span></p>
 <p><span style='color:Blue'> Why is the function defined here? And not “just” called upon and explained like the others? </span></p>
@@ -982,31 +768,11 @@ A = \begin{bmatrix}
     ```
 </pre></div>
 </div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-</div>
-<div class="section" id="a-small-example-currency-mix-with-3-currencies">
-<h2><span class="section-number">39.9. </span>A small example, currency mix with 3 currencies.<a class="headerlink" href="#a-small-example-currency-mix-with-3-currencies" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="example-currency-mix-with-three-currencies">
-<h2><span class="section-number">39.10. </span>Example: currency mix with three currencies.<a class="headerlink" href="#example-currency-mix-with-three-currencies" title="Permalink to this headline">¶</a></h2>
-<p><span style='color:Blue'> ORIGINAL </span></p>
+<h2><span class="section-number">26.6. </span>Example: currency mix with three currencies.<a class="headerlink" href="#example-currency-mix-with-three-currencies" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="specify-the-model-in-the-business-language">
-<h3><span class="section-number">39.10.1. </span>Specify the model in the business language<a class="headerlink" href="#specify-the-model-in-the-business-language" title="Permalink to this headline">¶</a></h3>
-<p>Here the crucial call to the optimizer is:</p>
-<p><span class="math notranslate nohighlight">\(positions          =  mv\_opt(msigma,vreturn,riskaversion, total, 
-                                       [[risk\_weights] , [-lcr\_weights] , [leverage\_weights]],
-                                           [capital, -lcr , equity] ,min_w,max_w) \)</span></p>
-<p>The rest of the business logic sets op the parameters, and pack and unpack the variables to apropiate matrices.</p>
-<p>Notice:</p>
-<ul class="simple">
-<li><p>matrix in frmlname indicates that the left hand side is a matrix</p></li>
-<li><p>the matrix function creates a matrix from nested lists</p></li>
-<li><p>the to_matrix function creates a</p></li>
-<li><p>argexpand(list,argument) will expand the argument to all elements in list and substitute</p></li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h3><span class="section-number">39.10.2. </span>Specify the model in the business language<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">26.6.1. </span>Specify the model in the business language<a class="headerlink" href="#specify-the-model-in-the-business-language" title="Permalink to this headline">¶</a></h3>
 <p>First the model is specified in business language.</p>
 <p>tvaluate sets up the parameters, packs and unpacks the variables to appropriate matrices as well as uses the mv_opt optimizer function to define ‘positions’:</p>
 <p><span class="math notranslate nohighlight">\(positions          =  mv\_opt(msigma,vreturn,riskaversion, total, 
@@ -1052,13 +818,9 @@ A = \begin{bmatrix}
 </div>
 </div>
 </div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-</div>
-<div class="section" id="make-a-model-instance">
-<h3><span class="section-number">39.10.3. </span>Make a model instance<a class="headerlink" href="#make-a-model-instance" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="create-a-model-instance">
-<h3><span class="section-number">39.10.4. </span>Create a model instance<a class="headerlink" href="#create-a-model-instance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">26.6.2. </span>Create a model instance<a class="headerlink" href="#create-a-model-instance" title="Permalink to this headline">¶</a></h3>
 <p>After we have defined our problem in the business language, we can create a model instance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1067,14 +829,9 @@ A = \begin{bmatrix}
 </div>
 </div>
 </div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-</div>
-<div class="section" id="the-expanded-model-equations">
-<h3><span class="section-number">39.10.5. </span>The expanded model equations<a class="headerlink" href="#the-expanded-model-equations" title="Permalink to this headline">¶</a></h3>
-<p>Here you can see how the matrices are constructed and how tuple unpacking is used to extract values from vectors.</p>
 </div>
 <div class="section" id="equation-the-expanded-model-equations">
-<h3><span class="section-number">39.10.6. </span>.equation The expanded model equations<a class="headerlink" href="#equation-the-expanded-model-equations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">26.6.3. </span>.equation The expanded model equations<a class="headerlink" href="#equation-the-expanded-model-equations" title="Permalink to this headline">¶</a></h3>
 <p>Here you can see how the matrices are constructed and how tuple unpacking is used to extract values from vectors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1111,13 +868,9 @@ FRML XX      POSITION_USD,POSITION_JPY,POSITION_EUR = POSITIONS $
 </div>
 </div>
 </div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-</div>
-<div class="section" id="the-structure-of-the-model">
-<h3><span class="section-number">39.10.7. </span>The structure of the model<a class="headerlink" href="#the-structure-of-the-model" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="drawmodel-visualizing-the-structure-of-the-model">
-<h3><span class="section-number">39.10.8. </span>.drawmodel() Visualizing the structure of the model<a class="headerlink" href="#drawmodel-visualizing-the-structure-of-the-model" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">26.6.4. </span>.drawmodel() Visualizing the structure of the model<a class="headerlink" href="#drawmodel-visualizing-the-structure-of-the-model" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mvaluta</span><span class="o">.</span><span class="n">drawmodel</span><span class="p">(</span><span class="n">png</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1125,37 +878,12 @@ FRML XX      POSITION_USD,POSITION_JPY,POSITION_EUR = POSITIONS $
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Optimize_simpel_29_0.png" src="../../../_images/Optimize_simpel_29_0.png" />
+<img alt="../../../_images/Optimize_simpel_18_0.png" src="../../../_images/Optimize_simpel_18_0.png" />
 </div>
 </div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-</div>
-<div class="section" id="istopo-he-model-is-not-simultaneous">
-<h3><span class="section-number">39.10.9. </span>.istopo he model is not simultaneous<a class="headerlink" href="#istopo-he-model-is-not-simultaneous" title="Permalink to this headline">¶</a></h3>
-<p>The property mvaluta.istopo is true if the dependency graph is a Directed Acyclical Graph (a DAG). Then the model has no feedback.</p>
-</div>
-<div class="section" id="istopo-simultaneous-model">
-<h3><span class="section-number">39.10.10. </span>.istopo Simultaneous model?<a class="headerlink" href="#istopo-simultaneous-model" title="Permalink to this headline">¶</a></h3>
-<p>The property er.istopo is true if the dependency graph is a Directed Acyclic Graph (a DAG). Then the model has no feedback.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mvaluta</span><span class="o">.</span><span class="n">istopo</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-</div>
-<div class="section" id="make-a-dataframe-with-500-experiments-with-increasing-risk-apatite">
-<h3><span class="section-number">39.10.11. </span>Make a dataframe with 500 experiments with increasing risk-apatite<a class="headerlink" href="#make-a-dataframe-with-500-experiments-with-increasing-risk-apatite" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="create-a-dataframe">
-<h3><span class="section-number">39.10.12. </span>Create a Dataframe<a class="headerlink" href="#create-a-dataframe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">26.6.5. </span>Create a Dataframe<a class="headerlink" href="#create-a-dataframe" title="Permalink to this headline">¶</a></h3>
 <p>We have defined a model. Let’s create some data.</p>
 <p>We are creating a  dataframe, df, with 500 experiments with increasing risk-apatite.</p>
 <div class="cell docutils container">
@@ -1168,13 +896,9 @@ FRML XX      POSITION_USD,POSITION_JPY,POSITION_EUR = POSITIONS $
 </div>
 </div>
 </div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-</div>
-<div class="section" id="input-exogeneous-variables">
-<h3><span class="section-number">39.10.13. </span>Input exogeneous variables<a class="headerlink" href="#input-exogeneous-variables" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="assigning-values-to-the-exogenous-variables">
-<h3><span class="section-number">39.10.14. </span>Assigning values to the exogenous variables<a class="headerlink" href="#assigning-values-to-the-exogenous-variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">26.6.6. </span>Assigning values to the exogenous variables<a class="headerlink" href="#assigning-values-to-the-exogenous-variables" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">TOTAL</span>     <span class="o">=</span> <span class="mf">10.0</span>
@@ -1207,8 +931,7 @@ FRML XX      POSITION_USD,POSITION_JPY,POSITION_EUR = POSITIONS $
 </div>
 </div>
 <div class="section" id="solve-the-model-for-all-the-experiments">
-<h2><span class="section-number">39.11. </span>Solve the model for all the experiments<a class="headerlink" href="#solve-the-model-for-all-the-experiments" title="Permalink to this headline">¶</a></h2>
-<p><span style='color:Blue'> Probably good idea to change to word ‘slut’ to ‘end’ or something else. It means something different in English :) </span></p>
+<h2><span class="section-number">26.7. </span>Solve the model for all the experiments<a class="headerlink" href="#solve-the-model-for-all-the-experiments" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">mvaluta</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">slut</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">experiments</span><span class="p">),</span> <span class="n">silent</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>  <span class="c1"># Run the model </span>
@@ -1216,13 +939,8 @@ FRML XX      POSITION_USD,POSITION_JPY,POSITION_EUR = POSITIONS $
 </div>
 </div>
 </div>
-<p><span style='color:Blue'> ORIGINAL </span></p>
-<div class="section" id="show-the-result-in-nice-plots">
-<h3><span class="section-number">39.11.1. </span>Show the result in nice plots<a class="headerlink" href="#show-the-result-in-nice-plots" title="Permalink to this headline">¶</a></h3>
-</div>
 <div class="section" id="visualization-of-results">
-<h3><span class="section-number">39.11.2. </span>Visualization of results<a class="headerlink" href="#visualization-of-results" title="Permalink to this headline">¶</a></h3>
-<p><span style='color:Blue'> Add explanation </span></p>
+<h3><span class="section-number">26.7.1. </span>Visualization of results<a class="headerlink" href="#visualization-of-results" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">RISK</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">RISK</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
@@ -1240,7 +958,7 @@ FRML XX      POSITION_USD,POSITION_JPY,POSITION_EUR = POSITIONS $
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Optimize_simpel_45_0.png" src="../../../_images/Optimize_simpel_45_0.png" />
+<img alt="../../../_images/Optimize_simpel_26_0.png" src="../../../_images/Optimize_simpel_26_0.png" />
 </div>
 </div>
 </div>
@@ -1276,13 +994,13 @@ FRML XX      POSITION_USD,POSITION_JPY,POSITION_EUR = POSITIONS $
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">37. </span>Specification of models (introduction)</p>
+            <p class="prev-next-title"><span class="section-number">25. </span>Specification of models (introduction)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../../litterature.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">40. </span>Litterature</p>
+        <p class="prev-next-title"><span class="section-number">27. </span>Litterature</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

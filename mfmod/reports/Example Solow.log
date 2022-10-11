@@ -17,36 +17,32 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-msolow.print_model
+#Required packages
+import pandas as pd
+
+# Modelflow modules
+from modelclass import model
+   
+#for publication 
+latex=0
+model.widescreen()
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mKeyError[0m                                  Traceback (most recent call last)
-File [1;32mC:\modelflow2\modelflow\modelclass.py:1070[0m, in [0;36mOrg_model_Mixin.__getattr__[1;34m(self, name)[0m
-[0;32m   1069[0m [38;5;28;01mtry[39;00m:
-[1;32m-> 1070[0m     [38;5;28;01mreturn[39;00m [43mmv[49m[38;5;241;43m.[39;49m[43mvarvis[49m[43m([49m[43mmodel[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mvar[49m[38;5;241;43m=[39;49m[43mname[49m[38;5;241;43m.[39;49m[43mupper[49m[43m([49m[43m)[49m[43m)[49m
-[0;32m   1071[0m [38;5;28;01mexcept[39;00m:
-[0;32m   1072[0m     [38;5;66;03m#            print(name)[39;00m
+Traceback [1;36m(most recent call last)[0m:
 
-File [1;32mC:\modelflow2\modelflow\modelvis.py:270[0m, in [0;36mvarvis.__init__[1;34m(self, model, var)[0m
-[0;32m    269[0m [38;5;28mself[39m[38;5;241m.[39mvar [38;5;241m=[39m var
-[1;32m--> 270[0m [38;5;28mself[39m[38;5;241m.[39mendo [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmodel[49m[38;5;241;43m.[39;49m[43mallvar[49m[43m[[49m[43mvar[49m[43m][49m[[38;5;124m'[39m[38;5;124mendo[39m[38;5;124m'[39m]
+[0m  File [0;32m~\anaconda3\envs\mfdoc39\lib\site-packages\IPython\core\interactiveshell.py:3378[0m in [0;35mrun_code[0m
+    exec(code_obj, self.user_global_ns, self.user_ns)[0m
 
-[1;31mKeyError[0m: 'PRINT_MODEL'
+[0m  Cell [0;32mIn [1], line 5[0m
+    from modelclass import model[0m
 
-During handling of the above exception, another exception occurred:
+[1;36m  File [1;32mC:\modelflow2\modelflow\modelclass.py:96[1;36m
+[1;33m    from modelnormalize import normal[1;36m
 
-[1;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [1;32mIn [4], line 1[0m
-[1;32m----> 1[0m msolow[38;5;241m.[39mprint_model
+[1;36m  File [1;32mC:\modelflow2\modelflow\modelnormalize.py:344[1;36m[0m
+[1;33m    elem_trans('DLOG(PAKNVRENPRODXN)=DLOG((WLDHYDROPOWER*PAKPANUSATLS)/(@ELEM(WLDHYDROPOWER,2011)*@ELEM(PAKPANUSATLS,2011)))-0.00421833463034*DUMH')[0m
+[1;37m    ^[0m
+[1;31mIndentationError[0m[1;31m:[0m unexpected indent
 
-File [1;32mC:\modelflow2\modelflow\modelclass.py:1073[0m, in [0;36mOrg_model_Mixin.__getattr__[1;34m(self, name)[0m
-[0;32m   1070[0m     [38;5;28;01mreturn[39;00m mv[38;5;241m.[39mvarvis(model[38;5;241m=[39m[38;5;28mself[39m, var[38;5;241m=[39mname[38;5;241m.[39mupper())
-[0;32m   1071[0m [38;5;28;01mexcept[39;00m:
-[0;32m   1072[0m     [38;5;66;03m#            print(name)[39;00m
-[1;32m-> 1073[0m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m
-[0;32m   1074[0m     [38;5;28;01mpass[39;00m
-
-[1;31mAttributeError[0m: 
-AttributeError: 
+IndentationError: unexpected indent (modelnormalize.py, line 344)
 

@@ -17,24 +17,26 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-alternative  =  baseline.upd("<2023 2100> PAKGGREVCO2CER PAKGGREVCO2GER PAKGGREVCO2OER = 29")
+from modelclass import model 
+model.widescreen()
+model.scroll_off()
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [1;32mIn [8], line 1[0m
-[1;32m----> 1[0m alternative  [38;5;241m=[39m  baseline[38;5;241m.[39mupd([38;5;124m"[39m[38;5;124m<2023 2100> PAKGGREVCO2CER PAKGGREVCO2GER PAKGGREVCO2OER = 29[39m[38;5;124m"[39m)
+Traceback [1;36m(most recent call last)[0m:
 
-File [1;32m~\anaconda3\envs\mfdoc39\lib\site-packages\pandas\core\generic.py:5907[0m, in [0;36mNDFrame.__getattr__[1;34m(self, name)[0m
-[0;32m   5900[0m [38;5;28;01mif[39;00m (
-[0;32m   5901[0m     name [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_internal_names_set
-[0;32m   5902[0m     [38;5;129;01mand[39;00m name [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_metadata
-[0;32m   5903[0m     [38;5;129;01mand[39;00m name [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_accessors
-[0;32m   5904[0m     [38;5;129;01mand[39;00m [38;5;28mself[39m[38;5;241m.[39m_info_axis[38;5;241m.[39m_can_hold_identifiers_and_holds_name(name)
-[0;32m   5905[0m ):
-[0;32m   5906[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[name]
-[1;32m-> 5907[0m [38;5;28;01mreturn[39;00m [38;5;28;43mobject[39;49m[38;5;241;43m.[39;49m[38;5;21;43m__getattribute__[39;49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mname[49m[43m)[49m
+[0m  File [0;32m~\anaconda3\envs\mfdoc39\lib\site-packages\IPython\core\interactiveshell.py:3378[0m in [0;35mrun_code[0m
+    exec(code_obj, self.user_global_ns, self.user_ns)[0m
 
-[1;31mAttributeError[0m: 'DataFrame' object has no attribute 'upd'
-AttributeError: 'DataFrame' object has no attribute 'upd'
+[0m  Cell [0;32mIn [2], line 1[0m
+    from modelclass import model[0m
+
+[1;36m  File [1;32mC:\modelflow2\modelflow\modelclass.py:96[1;36m
+[1;33m    from modelnormalize import normal[1;36m
+
+[1;36m  File [1;32mC:\modelflow2\modelflow\modelnormalize.py:344[1;36m[0m
+[1;33m    elem_trans('DLOG(PAKNVRENPRODXN)=DLOG((WLDHYDROPOWER*PAKPANUSATLS)/(@ELEM(WLDHYDROPOWER,2011)*@ELEM(PAKPANUSATLS,2011)))-0.00421833463034*DUMH')[0m
+[1;37m    ^[0m
+[1;31mIndentationError[0m[1;31m:[0m unexpected indent
+
+IndentationError: unexpected indent (modelnormalize.py, line 344)
 

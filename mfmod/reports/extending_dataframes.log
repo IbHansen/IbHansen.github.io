@@ -17,8 +17,9 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-res = df.mfcalc('dlog( a) =  0.02',showeq=1)
-res.pct_change()*100
+import pandas as pd  # Python data science library
+import modelmf       # Add useful features to pandas dataframes 
+                     # using utlities initially developed for modelflow
 ------------------
 
 Traceback [1;36m(most recent call last)[0m:
@@ -26,25 +27,19 @@ Traceback [1;36m(most recent call last)[0m:
 [0m  File [0;32m~\anaconda3\envs\mfdoc39\lib\site-packages\IPython\core\interactiveshell.py:3378[0m in [0;35mrun_code[0m
     exec(code_obj, self.user_global_ns, self.user_ns)[0m
 
-[0m  Cell [0;32mIn [9], line 1[0m
-    res = df.mfcalc('dlog( a) =  0.02',showeq=1)[0m
+[0m  Cell [0;32mIn [2], line 2[0m
+    import modelmf       # Add useful features to pandas dataframes[0m
 
-[0m  File [0;32mC:\modelflow2\modelflow\modelmf.py:114[0m in [0;35m__call__[0m
-    res = self._obj.mf(eq,**kwargs).solve(**{**kwargs,**{'start':start,'slut':slut,'silent':True}})[0m
+[0m  File [0;32mC:\modelflow2\modelflow\modelmf.py:17[0m
+    from modelclass import model[0m
 
-[0m  File [0;32mC:\modelflow2\modelflow\modelmf.py:55[0m in [0;35msolve[0m
-    res = self.model(this,**self.solveopt)[0m
+[1;36m  File [1;32mC:\modelflow2\modelflow\modelclass.py:96[1;36m
+[1;33m    from modelnormalize import normal[1;36m
 
-[0m  File [0;32mC:\modelflow2\modelflow\modelclass.py:3625[0m in [0;35m__call__[0m
-    outdf = self.model_solver(*args, **newkwargs)[0m
-
-[1;36m  File [1;32mC:\modelflow2\modelflow\modelclass.py:525[1;36m in [1;35mxgenr[1;36m
-[1;33m    exec(make_los_text, globals())  # creates the los function[1;36m
-
-[1;36m  File [1;32m<string>:6[1;36m[0m
-[1;33m    dlog(values[row,0])=0.02[0m
+[1;36m  File [1;32mC:\modelflow2\modelflow\modelnormalize.py:344[1;36m[0m
+[1;33m    elem_trans('DLOG(PAKNVRENPRODXN)=DLOG((WLDHYDROPOWER*PAKPANUSATLS)/(@ELEM(WLDHYDROPOWER,2011)*@ELEM(PAKPANUSATLS,2011)))-0.00421833463034*DUMH')[0m
 [1;37m    ^[0m
-[1;31mSyntaxError[0m[1;31m:[0m cannot assign to function call
+[1;31mIndentationError[0m[1;31m:[0m unexpected indent
 
-SyntaxError: cannot assign to function call (<string>, line 6)
+IndentationError: unexpected indent (modelnormalize.py, line 344)
 

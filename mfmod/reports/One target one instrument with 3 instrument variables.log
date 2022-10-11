@@ -17,28 +17,27 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-bau_2100 =baseline.loc[2100,'PAKCCEMISCO2TKN']
-bau_2022 = baseline.loc[2022,'PAKCCEMISCO2TKN']
-bau_growth_rate = (bau_2100/bau_2022)**(1/(2100-2022))
-
-target_2100 = baseline.loc[2100,'PAKCCEMISCO2TKN']*(1-reduction_percent/100)
-target_growth_rate = (target_value/bau_2022)**(1/(2100-2022))
-
-print(f"Business as usual Emission value in 2100: {BAU_2100:13,.0f}")
-print(f"Business as usual Emission value in 2100: {target_2100:13,.0f}")
-print(f"Business as usual growth rate in percent: {bau_growth_rate-1:13,.1%}")
-print(f"Target growth rate in percent           : {target_growth_rate-1:13,.1%}")
+from modelclass import model 
+import modelmf
+model.widescreen()
+model.scroll_off()
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
-Cell [1;32mIn [9], line 6[0m
-[0;32m      3[0m bau_growth_rate [38;5;241m=[39m (bau_2100[38;5;241m/[39mbau_2022)[38;5;241m*[39m[38;5;241m*[39m([38;5;241m1[39m[38;5;241m/[39m([38;5;241m2100[39m[38;5;241m-[39m[38;5;241m2022[39m))
-[0;32m      5[0m target_2100 [38;5;241m=[39m baseline[38;5;241m.[39mloc[[38;5;241m2100[39m,[38;5;124m'[39m[38;5;124mPAKCCEMISCO2TKN[39m[38;5;124m'[39m][38;5;241m*[39m([38;5;241m1[39m[38;5;241m-[39mreduction_percent[38;5;241m/[39m[38;5;241m100[39m)
-[1;32m----> 6[0m target_growth_rate [38;5;241m=[39m (target_value[38;5;241m/[39mbau_2022)[38;5;241m*[39m[38;5;241m*[39m([38;5;241m1[39m[38;5;241m/[39m([38;5;241m2100[39m[38;5;241m-[39m[38;5;241m2022[39m))
-[0;32m      8[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mBusiness as usual Emission value in 2100: [39m[38;5;132;01m{[39;00mBAU_2100[38;5;132;01m:[39;00m[38;5;124m13,.0f[39m[38;5;132;01m}[39;00m[38;5;124m"[39m)
-[0;32m      9[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mBusiness as usual Emission value in 2100: [39m[38;5;132;01m{[39;00mtarget_2100[38;5;132;01m:[39;00m[38;5;124m13,.0f[39m[38;5;132;01m}[39;00m[38;5;124m"[39m)
+Traceback [1;36m(most recent call last)[0m:
 
-[1;31mNameError[0m: name 'target_value' is not defined
-NameError: name 'target_value' is not defined
+[0m  File [0;32m~\anaconda3\envs\mfdoc39\lib\site-packages\IPython\core\interactiveshell.py:3378[0m in [0;35mrun_code[0m
+    exec(code_obj, self.user_global_ns, self.user_ns)[0m
+
+[0m  Cell [0;32mIn [2], line 1[0m
+    from modelclass import model[0m
+
+[1;36m  File [1;32mC:\modelflow2\modelflow\modelclass.py:96[1;36m
+[1;33m    from modelnormalize import normal[1;36m
+
+[1;36m  File [1;32mC:\modelflow2\modelflow\modelnormalize.py:344[1;36m[0m
+[1;33m    elem_trans('DLOG(PAKNVRENPRODXN)=DLOG((WLDHYDROPOWER*PAKPANUSATLS)/(@ELEM(WLDHYDROPOWER,2011)*@ELEM(PAKPANUSATLS,2011)))-0.00421833463034*DUMH')[0m
+[1;37m    ^[0m
+[1;31mIndentationError[0m[1;31m:[0m unexpected indent
+
+IndentationError: unexpected indent (modelnormalize.py, line 344)
 
