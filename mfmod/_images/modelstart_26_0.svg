@@ -1,140 +1,169 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="518pt" viewBox="0.00 0.00 720.00 518.06">
-<g id="graph0" class="graph" transform="scale(0.36018 0.36018) rotate(0) translate(4 1434.35)">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="441pt" viewBox="0.00 0.00 720.00 441.09">
+<g id="graph0" class="graph" transform="scale(0.331644 0.331644) rotate(0) translate(4 1326)">
 <title>TD</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-1434.35 1995,-1434.35 1995,4 -4,4"/>
-<text text-anchor="middle" x="995.5" y="-7.8" font-family="Times New Roman,serif" font-size="14.00">A_model_graph</text>
-<!-- GDE(&#45;1) -->
+<polygon fill="white" stroke="none" points="-4,4 -4,-1326 2167,-1326 2167,4 -4,4"/>
+<text text-anchor="middle" x="1081.5" y="-7.8" font-family="Times New Roman,serif" font-size="14.00">A_model_graph</text>
+<!-- C3_M -->
 <g id="node1" class="node">
-<title>GDE(-1)</title>
-<g id="a_node1"><a xlink:title="Gross Domestic Expenditure
-FRML &lt;IDENT&gt; GDE = CPV+I+G$">
-<polygon fill="springgreen" stroke="black" points="222,-415.24 0,-415.24 0,-379.24 222,-379.24 222,-415.24"/>
-<text text-anchor="start" x="6" y="-393.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">GDE(-1):Gross Domestic Expenditure</text>
+<title>C3_M</title>
+<g id="a_node1"><a xlink:title="C3_M
+Exogen">
+<polygon fill="yellow" stroke="black" points="102.5,-550 48.5,-550 48.5,-514 102.5,-514 102.5,-550"/>
+<text text-anchor="start" x="55.5" y="-527.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C3_M:</text>
 </a>
 </g>
 </g>
 <!-- M -->
-<g id="node13" class="node">
+<g id="node11" class="node">
 <title>M</title>
-<g id="a_node13"><a xlink:title="Import
+<g id="a_node11"><a xlink:title="Import
 FRML &lt;FIXABLE, DAMP&gt; M = (M(-1)*EXP(M_A+ (-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M*((LOG(GDE))-(LOG(GDE(-1))))) )) * (1-M_D)+ M_X*M_D $">
-<polygon fill="#63b8ff" stroke="black" points="353.5,-550.24 286.5,-550.24 286.5,-514.24 353.5,-514.24 353.5,-550.24"/>
-<text text-anchor="start" x="293" y="-528.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M:Import</text>
+<polygon fill="#63b8ff" stroke="black" points="282.5,-1192 215.5,-1192 215.5,-1156 282.5,-1156 282.5,-1192"/>
+<text text-anchor="start" x="222" y="-1169.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M:Import</text>
 </a>
 </g>
 </g>
-<!-- GDE(&#45;1)&#45;&gt;M -->
-<g id="edge52" class="edge">
-<title>GDE(-1)-&gt;M</title>
-<g id="a_edge52"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M204.04,-415.3C210.29,-417.89 216.35,-420.85 222,-424.24 255.89,-444.54 284.64,-480.47 301.85,-505.28"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="299.15,-507.54 307.65,-513.87 304.95,-503.62 299.15,-507.54"/>
+<!-- C3_M&#45;&gt;M -->
+<g id="edge23" class="edge">
+<title>C3_M-&gt;M</title>
+<g id="a_edge23"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M81.36,-550.18C105.36,-640.03 211.33,-1036.75 240.53,-1146.04"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="237.22,-1147.22 243.19,-1155.98 243.99,-1145.41 237.22,-1147.22"/>
 </a>
 </g>
 </g>
 <!-- M_FITTED -->
-<g id="node38" class="node">
+<g id="node22" class="node">
 <title>M_FITTED</title>
-<g id="a_node38"><a xlink:title="Fitted  value:Import
+<g id="a_node22"><a xlink:title="Fitted  value:Import
 FRML &lt;FIT&gt; M_FITTED = M(-1)*EXP( (-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M*((LOG(GDE))-(LOG(GDE(-1))))) )$">
-<polygon fill="#63b8ff" stroke="black" points="1983.5,-556.24 1791.5,-556.24 1791.5,-520.24 1983.5,-520.24 1983.5,-556.24"/>
-<text text-anchor="start" x="1797.5" y="-534.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M_FITTED:Fitted  value:Import</text>
+<polygon fill="#63b8ff" stroke="black" points="2163,-1215 1971,-1215 1971,-1179 2163,-1179 2163,-1215"/>
+<text text-anchor="start" x="1977" y="-1192.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M_FITTED:Fitted  value:Import</text>
 </a>
 </g>
 </g>
-<!-- GDE(&#45;1)&#45;&gt;M_FITTED -->
-<g id="edge74" class="edge">
-<title>GDE(-1)-&gt;M_FITTED</title>
-<g id="a_edge74"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M186.28,-415.28C306.71,-444.5 532.11,-499.06 541,-500.24 779.86,-531.94 1507.02,-537.22 1780.77,-538.08"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1781.09,-541.58 1791.1,-538.11 1781.11,-534.58 1781.09,-541.58"/>
+<!-- C3_M&#45;&gt;M_FITTED -->
+<g id="edge15" class="edge">
+<title>C3_M-&gt;M_FITTED</title>
+<g id="a_edge15"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M78.57,-513.88C90.04,-423.21 154.01,-23 389.5,-23 389.5,-23 389.5,-23 1577,-23 1692.98,-23 1825.7,-177.83 1935,-417 2059.44,-689.3 2066.94,-1063.57 2066.42,-1168.59"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2062.92,-1168.68 2066.34,-1178.71 2069.92,-1168.74 2062.92,-1168.68"/>
 </a>
 </g>
 </g>
-<!-- M_X -->
+<!-- I_FITTED -->
 <g id="node2" class="node">
-<title>M_X</title>
-<g id="a_node2"><a xlink:title="Fix value:Import
-Exogen">
-<polygon fill="yellow" stroke="black" points="180,-469.24 42,-469.24 42,-433.24 180,-433.24 180,-469.24"/>
-<text text-anchor="start" x="48" y="-447.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M_X:Fix value:Import</text>
-</a>
-</g>
-</g>
-<!-- M_X&#45;&gt;M -->
-<g id="edge32" class="edge">
-<title>M_X-&gt;M</title>
-<g id="a_edge32"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M180.08,-464.93C194.15,-468.6 208.73,-473.02 222,-478.24 242.78,-486.4 264.61,-498.23 282.28,-508.74"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="280.76,-511.9 291.12,-514.08 284.38,-505.91 280.76,-511.9"/>
-</a>
-</g>
-</g>
-<!-- X -->
-<g id="node3" class="node">
-<title>X</title>
-<g id="a_node3"><a xlink:title="Export
-Exogen">
-<polygon fill="yellow" stroke="black" points="351.5,-1045.24 288.5,-1045.24 288.5,-1009.24 351.5,-1009.24 351.5,-1045.24"/>
-<text text-anchor="start" x="295" y="-1023.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">X:Export</text>
-</a>
-</g>
-</g>
-<!-- Y -->
-<g id="node34" class="node">
-<title>Y</title>
-<g id="a_node34"><a xlink:title="GDP
-FRML &lt;IDENT&gt; Y = CPV+I+G+X-M+YDISC$">
-<polygon fill="#63b8ff" stroke="black" points="488.5,-1072.24 434.5,-1072.24 434.5,-1036.24 488.5,-1036.24 488.5,-1072.24"/>
-<text text-anchor="start" x="441.5" y="-1050.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">Y:GDP</text>
-</a>
-</g>
-</g>
-<!-- X&#45;&gt;Y -->
-<g id="edge76" class="edge">
-<title>X-&gt;Y</title>
-<g id="a_edge76"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M351.61,-1033.16C373.04,-1037.31 401.74,-1042.86 424.3,-1047.23"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="423.7,-1050.68 434.18,-1049.14 425.03,-1043.81 423.7,-1050.68"/>
+<title>I_FITTED</title>
+<g id="a_node2"><a xlink:title="Fitted  value:Investment
+FRML &lt;FIT&gt; I_FITTED = I(-1)*EXP( (-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))) )$">
+<polygon fill="#63b8ff" stroke="black" points="1927.5,-462 1720.5,-462 1720.5,-426 1927.5,-426 1927.5,-462"/>
+<text text-anchor="start" x="1727" y="-439.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I_FITTED:Fitted  value:Investment</text>
 </a>
 </g>
 </g>
 <!-- I_X -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>I_X</title>
-<g id="a_node4"><a xlink:title="Fix value:Investment
+<g id="a_node3"><a xlink:title="Fix value:Investment
 Exogen">
-<polygon fill="yellow" stroke="black" points="1178.5,-899.24 1025.5,-899.24 1025.5,-863.24 1178.5,-863.24 1178.5,-899.24"/>
-<text text-anchor="start" x="1032" y="-877.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I_X:Fix value:Investment</text>
+<polygon fill="yellow" stroke="black" points="1107.5,-664 954.5,-664 954.5,-628 1107.5,-628 1107.5,-664"/>
+<text text-anchor="start" x="961" y="-641.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I_X:Fix value:Investment</text>
 </a>
 </g>
 </g>
 <!-- I -->
-<g id="node33" class="node">
+<g id="node15" class="node">
 <title>I</title>
-<g id="a_node33"><a xlink:title="Investment
+<g id="a_node15"><a xlink:title="Investment
 FRML &lt;FIXABLE, DAMP&gt; I = (I(-1)*EXP(I_A+ (-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))) )) * (1-I_D)+ I_X*I_D $">
-<polygon fill="#63b8ff" stroke="black" points="1409.5,-872.24 1327.5,-872.24 1327.5,-836.24 1409.5,-836.24 1409.5,-872.24"/>
-<text text-anchor="start" x="1333.5" y="-850.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I:Investment</text>
+<polygon fill="#63b8ff" stroke="black" points="1338.5,-582 1256.5,-582 1256.5,-546 1338.5,-546 1338.5,-582"/>
+<text text-anchor="start" x="1262.5" y="-559.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I:Investment</text>
 </a>
 </g>
 </g>
 <!-- I_X&#45;&gt;I -->
-<g id="edge4" class="edge">
+<g id="edge20" class="edge">
 <title>I_X-&gt;I</title>
-<g id="a_edge4"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1178.8,-873.5C1223.22,-868.97 1278.1,-863.36 1317.2,-859.37"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1317.7,-862.84 1327.29,-858.34 1316.99,-855.88 1317.7,-862.84"/>
+<g id="a_edge20"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1091.18,-627.88C1100.82,-624.92 1110.69,-621.88 1120,-619 1162.74,-605.78 1211.27,-590.65 1246.61,-579.61"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1247.71,-582.93 1256.21,-576.61 1245.62,-576.25 1247.71,-582.93"/>
 </a>
 </g>
 </g>
-<!-- G_FITTED -->
+<!-- G_A -->
+<g id="node4" class="node">
+<title>G_A</title>
+<g id="a_node4"><a xlink:title="Add factor:Government
+Exogen">
+<polygon fill="yellow" stroke="black" points="678,-435 505,-435 505,-399 678,-399 678,-435"/>
+<text text-anchor="start" x="511.5" y="-412.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G_A:Add factor:Government</text>
+</a>
+</g>
+</g>
+<!-- G -->
+<g id="node34" class="node">
+<title>G</title>
+<g id="a_node34"><a xlink:title="Government
+FRML &lt;FIXABLE, DAMP&gt; G = (G(-1)*EXP(G_A+ (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1))))) )) * (1-G_D)+ G_X*G_D $">
+<polygon fill="#63b8ff" stroke="black" points="874.5,-332 780.5,-332 780.5,-296 874.5,-296 874.5,-332"/>
+<text text-anchor="start" x="786.5" y="-309.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G:Government</text>
+</a>
+</g>
+</g>
+<!-- G_A&#45;&gt;G -->
+<g id="edge9" class="edge">
+<title>G_A-&gt;G</title>
+<g id="a_edge9"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M678.27,-400.71C690.39,-396.58 702.34,-391.43 713,-385 733.2,-372.82 729.64,-359.48 749,-346 755.71,-341.33 763.2,-337.16 770.82,-333.51"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="772.44,-336.62 780.12,-329.31 769.56,-330.24 772.44,-336.62"/>
+</a>
+</g>
+</g>
+<!-- C1_CPV -->
 <g id="node5" class="node">
-<title>G_FITTED</title>
-<g id="a_node5"><a xlink:title="Fitted  value:Government
-FRML &lt;FIT&gt; G_FITTED = G(-1)*EXP( (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1))))) )$">
-<polygon fill="#63b8ff" stroke="black" points="1478.5,-1256.24 1258.5,-1256.24 1258.5,-1220.24 1478.5,-1220.24 1478.5,-1256.24"/>
-<text text-anchor="start" x="1264.5" y="-1234.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G_FITTED:Fitted  value:Government</text>
+<title>C1_CPV</title>
+<g id="a_node5"><a xlink:title="C1_CPV
+Exogen">
+<polygon fill="yellow" stroke="black" points="623.5,-1070 559.5,-1070 559.5,-1034 623.5,-1034 623.5,-1070"/>
+<text text-anchor="start" x="565.5" y="-1047.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C1_CPV:</text>
+</a>
+</g>
+</g>
+<!-- CPV -->
+<g id="node16" class="node">
+<title>CPV</title>
+<g id="a_node16"><a xlink:title="Private Consumption
+FRML &lt;FIXABLE, DAMP&gt; CPV = (CPV(-1)*EXP(CPV_A+ (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )) * (1-CPV_D)+ CPV_X*CPV_D $">
+<polygon fill="#63b8ff" stroke="black" points="906,-918 749,-918 749,-882 906,-882 906,-918"/>
+<text text-anchor="start" x="755.5" y="-895.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV:Private Consumption</text>
+</a>
+</g>
+</g>
+<!-- C1_CPV&#45;&gt;CPV -->
+<g id="edge64" class="edge">
+<title>C1_CPV-&gt;CPV</title>
+<g id="a_edge64"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M623.59,-1050.21C649.1,-1047.58 685.39,-1041.07 713,-1025 755.02,-1000.55 790.23,-955.32 809.82,-926.49"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="812.77,-928.38 815.39,-918.11 806.94,-924.51 812.77,-928.38"/>
+</a>
+</g>
+</g>
+<!-- CPV_FITTED -->
+<g id="node38" class="node">
+<title>CPV_FITTED</title>
+<g id="a_node38"><a xlink:title="Fitted  value:Private Consumption
+FRML &lt;FIT&gt; CPV_FITTED = CPV(-1)*EXP( (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )$">
+<polygon fill="#63b8ff" stroke="black" points="1439,-1021 1156,-1021 1156,-985 1439,-985 1439,-1021"/>
+<text text-anchor="start" x="1162.5" y="-998.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV_FITTED:Fitted  value:Private Consumption</text>
+</a>
+</g>
+</g>
+<!-- C1_CPV&#45;&gt;CPV_FITTED -->
+<g id="edge11" class="edge">
+<title>C1_CPV-&gt;CPV_FITTED</title>
+<g id="a_edge11"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M623.72,-1049.93C705.3,-1044.5 931.61,-1029.37 1120,-1016 1128.37,-1015.41 1136.96,-1014.79 1145.64,-1014.17"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1146.13,-1017.64 1155.85,-1013.43 1145.62,-1010.66 1146.13,-1017.64"/>
 </a>
 </g>
 </g>
@@ -143,533 +172,27 @@ FRML &lt;FIT&gt; G_FITTED = G(-1)*EXP( (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*
 <title>CPV_X</title>
 <g id="a_node6"><a xlink:title="Fix value:Private Consumption
 Exogen">
-<polygon fill="yellow" stroke="black" points="777,-219.24 548,-219.24 548,-183.24 777,-183.24 777,-219.24"/>
-<text text-anchor="start" x="554.5" y="-197.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV_X:Fix value:Private Consumption</text>
-</a>
-</g>
-</g>
-<!-- CPV -->
-<g id="node37" class="node">
-<title>CPV</title>
-<g id="a_node37"><a xlink:title="Private Consumption
-FRML &lt;FIXABLE, DAMP&gt; CPV = (CPV(-1)*EXP(CPV_A+ (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )) * (1-CPV_D)+ CPV_X*CPV_D $">
-<polygon fill="#63b8ff" stroke="black" points="977,-339.24 820,-339.24 820,-303.24 977,-303.24 977,-339.24"/>
-<text text-anchor="start" x="826.5" y="-317.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV:Private Consumption</text>
+<polygon fill="yellow" stroke="black" points="706,-908 477,-908 477,-872 706,-872 706,-908"/>
+<text text-anchor="start" x="483.5" y="-885.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV_X:Fix value:Private Consumption</text>
 </a>
 </g>
 </g>
 <!-- CPV_X&#45;&gt;CPV -->
-<g id="edge7" class="edge">
+<g id="edge72" class="edge">
 <title>CPV_X-&gt;CPV</title>
-<g id="a_edge7"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M769.32,-219.37C774.47,-221.95 779.41,-224.89 784,-228.24 809.45,-246.76 796.22,-268.61 820,-289.24 823.72,-292.47 827.81,-295.4 832.11,-298.06"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="830.74,-301.31 841.18,-303.15 834.17,-295.2 830.74,-301.31"/>
-</a>
-</g>
-</g>
-<!-- C1_M -->
-<g id="node7" class="node">
-<title>C1_M</title>
-<g id="a_node7"><a xlink:title="C1_M
-Exogen">
-<polygon fill="yellow" stroke="black" points="138,-1056.24 84,-1056.24 84,-1020.24 138,-1020.24 138,-1056.24"/>
-<text text-anchor="start" x="91" y="-1034.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C1_M:</text>
-</a>
-</g>
-</g>
-<!-- C1_M&#45;&gt;M -->
-<g id="edge16" class="edge">
-<title>C1_M-&gt;M</title>
-<g id="a_edge16"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M119.37,-1020.23C150.36,-944.46 270.3,-651.28 307.76,-559.72"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="311.07,-560.87 311.61,-550.29 304.59,-558.22 311.07,-560.87"/>
-</a>
-</g>
-</g>
-<!-- C1_M&#45;&gt;M_FITTED -->
-<g id="edge50" class="edge">
-<title>C1_M-&gt;M_FITTED</title>
-<g id="a_edge50"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M129.92,-1056.34C185.06,-1110.58 359.45,-1271.43 541,-1327.24 747.25,-1390.63 1333,-1388.65 1510,-1265.24 1537.41,-1246.13 1529.03,-1228.02 1546,-1199.24 1631.02,-1054.99 1671.45,-1030.15 1748,-881.24 1805.89,-768.63 1856.76,-626.02 1877.09,-566.42"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1880.52,-567.2 1880.41,-556.61 1873.89,-564.95 1880.52,-567.2"/>
-</a>
-</g>
-</g>
-<!-- G_A -->
-<g id="node8" class="node">
-<title>G_A</title>
-<g id="a_node8"><a xlink:title="Add factor:Government
-Exogen">
-<polygon fill="yellow" stroke="black" points="749,-963.24 576,-963.24 576,-927.24 749,-927.24 749,-963.24"/>
-<text text-anchor="start" x="582.5" y="-941.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G_A:Add factor:Government</text>
-</a>
-</g>
-</g>
-<!-- G -->
-<g id="node25" class="node">
-<title>G</title>
-<g id="a_node25"><a xlink:title="Government
-FRML &lt;FIXABLE, DAMP&gt; G = (G(-1)*EXP(G_A+ (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1))))) )) * (1-G_D)+ G_X*G_D $">
-<polygon fill="#63b8ff" stroke="black" points="945.5,-1135.24 851.5,-1135.24 851.5,-1099.24 945.5,-1099.24 945.5,-1135.24"/>
-<text text-anchor="start" x="857.5" y="-1113.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G:Government</text>
-</a>
-</g>
-</g>
-<!-- G_A&#45;&gt;G -->
-<g id="edge14" class="edge">
-<title>G_A-&gt;G</title>
-<g id="a_edge14"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M749.02,-952.69C761.88,-956.95 774.12,-963.19 784,-972.24 822.87,-1007.83 784.31,-1046.45 820,-1085.24 826.09,-1091.85 833.75,-1097.14 841.87,-1101.35"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="840.63,-1104.63 851.17,-1105.67 843.57,-1098.28 840.63,-1104.63"/>
-</a>
-</g>
-</g>
-<!-- G(&#45;1) -->
-<g id="node9" class="node">
-<title>G(-1)</title>
-<g id="a_node9"><a xlink:title="Government
-FRML &lt;FIXABLE, DAMP&gt; G = (G(-1)*EXP(G_A+ (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1))))) )) * (1-G_D)+ G_X*G_D $">
-<polygon fill="springgreen" stroke="black" points="1159.5,-1153.24 1044.5,-1153.24 1044.5,-1117.24 1159.5,-1117.24 1159.5,-1153.24"/>
-<text text-anchor="start" x="1051" y="-1131.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G(-1):Government</text>
-</a>
-</g>
-</g>
-<!-- G(&#45;1)&#45;&gt;G_FITTED -->
-<g id="edge56" class="edge">
-<title>G(-1)-&gt;G_FITTED</title>
-<g id="a_edge56"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1153.83,-1153.39C1166.03,-1157.84 1179.01,-1162.65 1191,-1167.24 1232.59,-1183.16 1279.33,-1202 1314.25,-1216.27"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1313.2,-1219.62 1323.78,-1220.17 1315.85,-1213.15 1313.2,-1219.62"/>
-</a>
-</g>
-</g>
-<!-- I_FITTED -->
-<g id="node11" class="node">
-<title>I_FITTED</title>
-<g id="a_node11"><a xlink:title="Fitted  value:Investment
-FRML &lt;FIT&gt; I_FITTED = I(-1)*EXP( (-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))) )$">
-<polygon fill="#63b8ff" stroke="black" points="1991,-1039.24 1784,-1039.24 1784,-1003.24 1991,-1003.24 1991,-1039.24"/>
-<text text-anchor="start" x="1790.5" y="-1017.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I_FITTED:Fitted  value:Investment</text>
-</a>
-</g>
-</g>
-<!-- G(&#45;1)&#45;&gt;I_FITTED -->
-<g id="edge22" class="edge">
-<title>G(-1)-&gt;I_FITTED</title>
-<g id="a_edge22"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1159.93,-1143.04C1274.49,-1156.6 1539.69,-1177.21 1748,-1111.24 1790.36,-1097.82 1832.19,-1067.67 1858.61,-1045.96"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1860.88,-1048.62 1866.29,-1039.52 1856.38,-1043.26 1860.88,-1048.62"/>
-</a>
-</g>
-</g>
-<!-- G(&#45;1)&#45;&gt;G -->
-<g id="edge54" class="edge">
-<title>G(-1)-&gt;G</title>
-<g id="a_edge54"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1044.2,-1136.31C1016.61,-1134.65 983.54,-1131.7 955.99,-1128.42"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="956.08,-1124.9 945.73,-1127.15 955.22,-1131.85 956.08,-1124.9"/>
-</a>
-</g>
-</g>
-<!-- G(&#45;1)&#45;&gt;I -->
-<g id="edge28" class="edge">
-<title>G(-1)-&gt;I</title>
-<g id="a_edge28"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1131.35,-1116.98C1149.32,-1104.77 1172.57,-1087.79 1191,-1070.24 1255.83,-1008.5 1319.06,-923.3 1349.2,-880.71"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1352.23,-882.49 1355.12,-872.29 1346.5,-878.46 1352.23,-882.49"/>
-</a>
-</g>
-</g>
-<!-- YDISC -->
-<g id="node10" class="node">
-<title>YDISC</title>
-<g id="a_node10"><a xlink:title="Discrepance
-Exogen">
-<polygon fill="yellow" stroke="black" points="382,-1099.24 258,-1099.24 258,-1063.24 382,-1063.24 382,-1099.24"/>
-<text text-anchor="start" x="264" y="-1077.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">YDISC:Discrepance</text>
-</a>
-</g>
-</g>
-<!-- YDISC&#45;&gt;Y -->
-<g id="edge59" class="edge">
-<title>YDISC-&gt;Y</title>
-<g id="a_edge59"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M382.19,-1069.39C396.63,-1066.6 411.57,-1063.71 424.48,-1061.21"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="425.19,-1064.64 434.34,-1059.3 423.86,-1057.76 425.19,-1064.64"/>
-</a>
-</g>
-</g>
-<!-- CPV_D -->
-<g id="node12" class="node">
-<title>CPV_D</title>
-<g id="a_node12"><a xlink:title="Fix dummy:Private Consumption
-Exogen">
-<polygon fill="yellow" stroke="black" points="784,-327.24 541,-327.24 541,-291.24 784,-291.24 784,-327.24"/>
-<text text-anchor="start" x="547.5" y="-305.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV_D:Fix dummy:Private Consumption</text>
-</a>
-</g>
-</g>
-<!-- CPV_D&#45;&gt;CPV -->
-<g id="edge13" class="edge">
-<title>CPV_D-&gt;CPV</title>
-<g id="a_edge13"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M784.27,-315.43C792.85,-315.87 801.4,-316.31 809.75,-316.74"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="809.64,-320.24 819.8,-317.25 809.99,-313.25 809.64,-320.24"/>
+<g id="a_edge72"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M706.07,-894.85C717.01,-895.32 728,-895.79 738.64,-896.25"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="738.58,-899.75 748.72,-896.68 738.88,-892.75 738.58,-899.75"/>
 </a>
 </g>
 </g>
 <!-- M(&#45;1) -->
-<g id="node27" class="node">
+<g id="node7" class="node">
 <title>M(-1)</title>
-<g id="a_node27"><a xlink:title="Import
+<g id="a_node7"><a xlink:title="Import
 FRML &lt;FIXABLE, DAMP&gt; M = (M(-1)*EXP(M_A+ (-C2_M*(LOG(M(-1))-LOG(GDE(-1))-C1_M)+C3_M*((LOG(GDE))-(LOG(GDE(-1))))) )) * (1-M_D)+ M_X*M_D $">
-<polygon fill="springgreen" stroke="black" points="505,-550.24 418,-550.24 418,-514.24 505,-514.24 505,-550.24"/>
-<text text-anchor="start" x="424.5" y="-528.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M(-1):Import</text>
-</a>
-</g>
-</g>
-<!-- M&#45;&gt;M(&#45;1) -->
-<g id="edge37" class="edge">
-<title>M-&gt;M(-1)</title>
-<g id="a_edge37"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M353.71,-526.42C369.8,-525.52 389.61,-525.27 407.77,-525.67"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="407.85,-529.17 417.95,-525.97 408.05,-522.18 407.85,-529.17"/>
-</a>
-</g>
-</g>
-<!-- M&#45;&gt;Y -->
-<g id="edge77" class="edge">
-<title>M-&gt;Y</title>
-<g id="a_edge77"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M325.88,-550.51C346.66,-628.26 427.81,-931.92 453,-1026.17"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="449.69,-1027.36 455.66,-1036.11 456.46,-1025.55 449.69,-1027.36"/>
-</a>
-</g>
-</g>
-<!-- I_A -->
-<g id="node14" class="node">
-<title>I_A</title>
-<g id="a_node14"><a xlink:title="Add factor:Investment
-Exogen">
-<polygon fill="yellow" stroke="black" points="1182,-845.24 1022,-845.24 1022,-809.24 1182,-809.24 1182,-845.24"/>
-<text text-anchor="start" x="1028" y="-823.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I_A:Add factor:Investment</text>
-</a>
-</g>
-</g>
-<!-- I_A&#45;&gt;I -->
-<g id="edge6" class="edge">
-<title>I_A-&gt;I</title>
-<g id="a_edge6"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1182,-835.3C1225.69,-839.76 1278.69,-845.17 1316.83,-849.07"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1316.87,-852.59 1327.18,-850.12 1317.58,-845.62 1316.87,-852.59"/>
-</a>
-</g>
-</g>
-<!-- CPV_FITTED -->
-<g id="node15" class="node">
-<title>CPV_FITTED</title>
-<g id="a_node15"><a xlink:title="Fitted  value:Private Consumption
-FRML &lt;FIT&gt; CPV_FITTED = CPV(-1)*EXP( (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )$">
-<polygon fill="#63b8ff" stroke="black" points="1510,-404.24 1227,-404.24 1227,-368.24 1510,-368.24 1510,-404.24"/>
-<text text-anchor="start" x="1233.5" y="-382.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV_FITTED:Fitted  value:Private Consumption</text>
-</a>
-</g>
-</g>
-<!-- G_D -->
-<g id="node16" class="node">
-<title>G_D</title>
-<g id="a_node16"><a xlink:title="Fix dummy:Government
-Exogen">
-<polygon fill="yellow" stroke="black" points="752,-909.24 573,-909.24 573,-873.24 752,-873.24 752,-909.24"/>
-<text text-anchor="start" x="579.5" y="-887.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G_D:Fix dummy:Government</text>
-</a>
-</g>
-</g>
-<!-- G_D&#45;&gt;G -->
-<g id="edge62" class="edge">
-<title>G_D-&gt;G</title>
-<g id="a_edge62"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M752.23,-898.75C764.08,-903.09 775.17,-909.33 784,-918.24 837.47,-972.14 771.33,-1026.96 820,-1085.24 825.96,-1092.38 833.77,-1097.94 842.14,-1102.28"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="840.83,-1105.53 851.38,-1106.52 843.75,-1099.17 840.83,-1105.53"/>
-</a>
-</g>
-</g>
-<!-- C2_I -->
-<g id="node17" class="node">
-<title>C2_I</title>
-<g id="a_node17"><a xlink:title="C2_I
-Exogen">
-<polygon fill="yellow" stroke="black" points="1129,-1061.24 1075,-1061.24 1075,-1025.24 1129,-1025.24 1129,-1061.24"/>
-<text text-anchor="start" x="1087" y="-1039.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C2_I:</text>
-</a>
-</g>
-</g>
-<!-- C2_I&#45;&gt;I_FITTED -->
-<g id="edge31" class="edge">
-<title>C2_I-&gt;I_FITTED</title>
-<g id="a_edge31"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1129.07,-1042.51C1228.54,-1039.71 1587.92,-1029.62 1773.63,-1024.41"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1773.81,-1027.9 1783.71,-1024.12 1773.61,-1020.91 1773.81,-1027.9"/>
-</a>
-</g>
-</g>
-<!-- C2_I&#45;&gt;I -->
-<g id="edge40" class="edge">
-<title>C2_I-&gt;I</title>
-<g id="a_edge40"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1129.26,-1038.39C1147.44,-1034.29 1171.72,-1027.28 1191,-1016.24 1254.99,-979.59 1315,-916.01 1345.85,-880.37"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1348.86,-882.24 1352.7,-872.37 1343.54,-877.69 1348.86,-882.24"/>
-</a>
-</g>
-</g>
-<!-- C3_G -->
-<g id="node18" class="node">
-<title>C3_G</title>
-<g id="a_node18"><a xlink:title="C3_G
-Exogen">
-<polygon fill="yellow" stroke="black" points="689.5,-1298.24 635.5,-1298.24 635.5,-1262.24 689.5,-1262.24 689.5,-1298.24"/>
-<text text-anchor="start" x="644.5" y="-1276.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C3_G:</text>
-</a>
-</g>
-</g>
-<!-- C3_G&#45;&gt;G_FITTED -->
-<g id="edge51" class="edge">
-<title>C3_G-&gt;G_FITTED</title>
-<g id="a_edge51"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M689.66,-1281.34C766.71,-1284.24 999.41,-1290.64 1191,-1271.24 1219.04,-1268.4 1249.28,-1263.45 1276.68,-1258.23"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1277.48,-1261.64 1286.63,-1256.3 1276.15,-1254.77 1277.48,-1261.64"/>
-</a>
-</g>
-</g>
-<!-- C3_G&#45;&gt;G -->
-<g id="edge45" class="edge">
-<title>C3_G-&gt;G</title>
-<g id="a_edge45"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M689.44,-1262.17C731.78,-1232.67 815.77,-1174.17 863.06,-1141.23"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="865.24,-1143.97 871.45,-1135.38 861.24,-1138.23 865.24,-1143.97"/>
-</a>
-</g>
-</g>
-<!-- C3_I -->
-<g id="node19" class="node">
-<title>C3_I</title>
-<g id="a_node19"><a xlink:title="C3_I
-Exogen">
-<polygon fill="yellow" stroke="black" points="1129,-1007.24 1075,-1007.24 1075,-971.24 1129,-971.24 1129,-1007.24"/>
-<text text-anchor="start" x="1087" y="-985.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C3_I:</text>
-</a>
-</g>
-</g>
-<!-- C3_I&#45;&gt;I_FITTED -->
-<g id="edge3" class="edge">
-<title>C3_I-&gt;I_FITTED</title>
-<g id="a_edge3"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1129.07,-990.3C1228.54,-994.36 1587.92,-1009.04 1773.63,-1016.63"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1773.57,-1020.13 1783.71,-1017.04 1773.86,-1013.13 1773.57,-1020.13"/>
-</a>
-</g>
-</g>
-<!-- C3_I&#45;&gt;I -->
-<g id="edge21" class="edge">
-<title>C3_I-&gt;I</title>
-<g id="a_edge21"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1129.04,-983.09C1146.89,-978.44 1170.89,-971.3 1191,-962.24 1243.69,-938.49 1299.85,-901.94 1334.32,-878.06"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1336.41,-880.87 1342.6,-872.27 1332.4,-875.13 1336.41,-880.87"/>
-</a>
-</g>
-</g>
-<!-- C1_G -->
-<g id="node20" class="node">
-<title>C1_G</title>
-<g id="a_node20"><a xlink:title="C1_G
-Exogen">
-<polygon fill="yellow" stroke="black" points="689.5,-1181.24 635.5,-1181.24 635.5,-1145.24 689.5,-1145.24 689.5,-1181.24"/>
-<text text-anchor="start" x="644.5" y="-1159.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C1_G:</text>
-</a>
-</g>
-</g>
-<!-- C1_G&#45;&gt;G_FITTED -->
-<g id="edge12" class="edge">
-<title>C1_G-&gt;G_FITTED</title>
-<g id="a_edge12"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M689.55,-1170.17C747.28,-1185.14 890.54,-1220.22 1013,-1233.24 1091.03,-1241.53 1179.25,-1242.8 1248.17,-1241.99"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1248.24,-1245.49 1258.19,-1241.86 1248.15,-1238.49 1248.24,-1245.49"/>
-</a>
-</g>
-</g>
-<!-- C1_G&#45;&gt;G -->
-<g id="edge20" class="edge">
-<title>C1_G-&gt;G</title>
-<g id="a_edge20"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M689.89,-1158.05C726.38,-1150.88 793.16,-1137.75 841.14,-1128.32"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="841.94,-1131.73 851.08,-1126.36 840.59,-1124.86 841.94,-1131.73"/>
-</a>
-</g>
-</g>
-<!-- C1_I -->
-<g id="node21" class="node">
-<title>C1_I</title>
-<g id="a_node21"><a xlink:title="C1_I
-Exogen">
-<polygon fill="yellow" stroke="black" points="1129,-953.24 1075,-953.24 1075,-917.24 1129,-917.24 1129,-953.24"/>
-<text text-anchor="start" x="1087" y="-931.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C1_I:</text>
-</a>
-</g>
-</g>
-<!-- C1_I&#45;&gt;I_FITTED -->
-<g id="edge64" class="edge">
-<title>C1_I-&gt;I_FITTED</title>
-<g id="a_edge64"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1129.14,-937.76C1216.72,-946.28 1507.85,-974.98 1748,-1003.24 1756.31,-1004.21 1764.89,-1005.26 1773.53,-1006.33"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1773.32,-1009.83 1783.67,-1007.59 1774.18,-1002.88 1773.32,-1009.83"/>
-</a>
-</g>
-</g>
-<!-- C1_I&#45;&gt;I -->
-<g id="edge69" class="edge">
-<title>C1_I-&gt;I</title>
-<g id="a_edge69"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1129.33,-927.17C1173.09,-913.77 1261.5,-886.7 1317.43,-869.57"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1318.6,-872.87 1327.13,-866.6 1316.55,-866.18 1318.6,-872.87"/>
-</a>
-</g>
-</g>
-<!-- CPV(&#45;1) -->
-<g id="node22" class="node">
-<title>CPV(-1)</title>
-<g id="a_node22"><a xlink:title="Private Consumption
-FRML &lt;FIXABLE, DAMP&gt; CPV = (CPV(-1)*EXP(CPV_A+ (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )) * (1-CPV_D)+ CPV_X*CPV_D $">
-<polygon fill="springgreen" stroke="black" points="1191,-339.24 1013,-339.24 1013,-303.24 1191,-303.24 1191,-339.24"/>
-<text text-anchor="start" x="1019" y="-317.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV(-1):Private Consumption</text>
-</a>
-</g>
-</g>
-<!-- CPV(&#45;1)&#45;&gt;CPV_FITTED -->
-<g id="edge75" class="edge">
-<title>CPV(-1)-&gt;CPV_FITTED</title>
-<g id="a_edge75"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1176.33,-339.26C1209.72,-347.46 1249.42,-357.22 1283.96,-365.71"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1283.48,-369.19 1294.03,-368.18 1285.15,-362.4 1283.48,-369.19"/>
-</a>
-</g>
-</g>
-<!-- CPV(&#45;1)&#45;&gt;CPV -->
-<g id="edge49" class="edge">
-<title>CPV(-1)-&gt;CPV</title>
-<g id="a_edge49"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1012.68,-327.94C1004.26,-328 995.72,-328 987.3,-327.94"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="987.15,-324.44 977.12,-327.83 987.08,-331.44 987.15,-324.44"/>
-</a>
-</g>
-</g>
-<!-- CPV_A -->
-<g id="node23" class="node">
-<title>CPV_A</title>
-<g id="a_node23"><a xlink:title="Add factor:Private Consumption
-Exogen">
-<polygon fill="yellow" stroke="black" points="781,-273.24 544,-273.24 544,-237.24 781,-237.24 781,-273.24"/>
-<text text-anchor="start" x="550.5" y="-251.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV_A:Add factor:Private Consumption</text>
-</a>
-</g>
-</g>
-<!-- CPV_A&#45;&gt;CPV -->
-<g id="edge48" class="edge">
-<title>CPV_A-&gt;CPV</title>
-<g id="a_edge48"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M749.37,-273.25C761.06,-276.06 772.86,-279.09 784,-282.24 802.1,-287.36 821.55,-293.72 839.15,-299.8"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="838.12,-303.15 848.71,-303.15 840.43,-296.54 838.12,-303.15"/>
-</a>
-</g>
-</g>
-<!-- C2_CPV -->
-<g id="node24" class="node">
-<title>C2_CPV</title>
-<g id="a_node24"><a xlink:title="C2_CPV
-Exogen">
-<polygon fill="yellow" stroke="black" points="694.5,-491.24 630.5,-491.24 630.5,-455.24 694.5,-455.24 694.5,-491.24"/>
-<text text-anchor="start" x="636.5" y="-469.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C2_CPV:</text>
-</a>
-</g>
-</g>
-<!-- C2_CPV&#45;&gt;CPV_FITTED -->
-<g id="edge23" class="edge">
-<title>C2_CPV-&gt;CPV_FITTED</title>
-<g id="a_edge23"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M694.73,-468.2C719.37,-463.76 754.4,-456.4 784,-446.24 800.73,-440.49 802.9,-433.78 820,-429.24 892.2,-410.05 1081.15,-398.24 1216.87,-391.97"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1217.13,-395.46 1226.96,-391.5 1216.81,-388.46 1217.13,-395.46"/>
-</a>
-</g>
-</g>
-<!-- C2_CPV&#45;&gt;CPV -->
-<g id="edge10" class="edge">
-<title>C2_CPV-&gt;CPV</title>
-<g id="a_edge10"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M694.51,-472.62C720.49,-470.71 757.48,-464.61 784,-446.24 808.02,-429.6 801,-413.43 820,-391.24 833.93,-374.97 851.5,-358.81 866.39,-346.12"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="868.93,-348.56 874.35,-339.45 864.44,-343.19 868.93,-348.56"/>
-</a>
-</g>
-</g>
-<!-- G&#45;&gt;G(&#45;1) -->
-<g id="edge18" class="edge">
-<title>G-&gt;G(-1)</title>
-<g id="a_edge18"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M945.73,-1115.59C971.92,-1116.89 1005.15,-1119.65 1034.14,-1122.87"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1033.86,-1126.36 1044.2,-1124.02 1034.66,-1119.4 1033.86,-1126.36"/>
-</a>
-</g>
-</g>
-<!-- GDE -->
-<g id="node26" class="node">
-<title>GDE</title>
-<g id="a_node26"><a xlink:title="Gross Domestic Expenditure
-FRML &lt;IDENT&gt; GDE = CPV+I+G$">
-<polygon fill="#63b8ff" stroke="black" points="1748,-373.24 1546,-373.24 1546,-337.24 1748,-337.24 1748,-373.24"/>
-<text text-anchor="start" x="1552" y="-351.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">GDE:Gross Domestic Expenditure</text>
-</a>
-</g>
-</g>
-<!-- G&#45;&gt;GDE -->
-<g id="edge72" class="edge">
-<title>G-&gt;GDE</title>
-<g id="a_edge72"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M899.49,-1098.95C900.38,-1035.79 911.2,-823.65 1013,-695.24 1054,-643.52 1459.83,-444.94 1599.25,-377.67"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1600.95,-380.74 1608.44,-373.24 1597.91,-374.43 1600.95,-380.74"/>
-</a>
-</g>
-</g>
-<!-- G&#45;&gt;Y -->
-<g id="edge66" class="edge">
-<title>G-&gt;Y</title>
-<g id="a_edge66"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M851.41,-1108.84C831,-1102.85 806.56,-1095.65 784,-1091.24 681.81,-1071.27 558.56,-1065.54 498.68,-1060.45"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="498.87,-1056.95 488.6,-1059.54 498.24,-1063.93 498.87,-1056.95"/>
-</a>
-</g>
-</g>
-<!-- GDE&#45;&gt;GDE(&#45;1) -->
-<g id="edge5" class="edge">
-<title>GDE-&gt;GDE(-1)</title>
-<g id="a_edge5"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1641.66,-336.97C1629.69,-290.94 1591.52,-169.95 1510,-115.24 1358.59,-13.6 1285.36,-63.24 1103,-63.24 460.5,-63.24 460.5,-63.24 460.5,-63.24 371.76,-63.24 191.34,-291.82 131.66,-370.79"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="128.84,-368.71 125.62,-378.8 134.43,-372.92 128.84,-368.71"/>
-</a>
-</g>
-</g>
-<!-- GDE&#45;&gt;M -->
-<g id="edge15" class="edge">
-<title>GDE-&gt;M</title>
-<g id="a_edge15"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1624.93,-336.97C1555.52,-278.73 1325.72,-101.24 1103,-101.24 897.5,-101.24 897.5,-101.24 897.5,-101.24 818.17,-101.24 607.93,-77.64 541,-120.24 398.57,-210.89 342.3,-426.61 326.25,-504"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="322.78,-503.48 324.25,-513.97 329.65,-504.86 322.78,-503.48"/>
-</a>
-</g>
-</g>
-<!-- GDE&#45;&gt;M_FITTED -->
-<g id="edge26" class="edge">
-<title>GDE-&gt;M_FITTED</title>
-<g id="a_edge26"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1671.74,-373.45C1714.96,-406.61 1806.47,-476.83 1854.9,-513.99"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1852.79,-516.78 1862.86,-520.1 1857.05,-511.23 1852.79,-516.78"/>
+<polygon fill="springgreen" stroke="black" points="434,-1238 347,-1238 347,-1202 434,-1202 434,-1238"/>
+<text text-anchor="start" x="353.5" y="-1215.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M(-1):Import</text>
 </a>
 </g>
 </g>
@@ -677,442 +200,919 @@ FRML &lt;IDENT&gt; GDE = CPV+I+G$">
 <g id="edge35" class="edge">
 <title>M(-1)-&gt;M</title>
 <g id="a_edge35"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M417.95,-538.51C400.85,-539.14 381.16,-539.15 364.01,-538.53"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="363.86,-535.01 353.71,-538.06 363.54,-542.01 363.86,-535.01"/>
+<path fill="none" stroke="black" stroke-width="0.5" d="M346.95,-1212.24C329.68,-1207.19 309.79,-1200.62 292.52,-1194.29"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="293.3,-1190.85 282.71,-1190.61 290.84,-1197.4 293.3,-1190.85"/>
 </a>
 </g>
 </g>
 <!-- M(&#45;1)&#45;&gt;M_FITTED -->
-<g id="edge9" class="edge">
+<g id="edge27" class="edge">
 <title>M(-1)-&gt;M_FITTED</title>
-<g id="a_edge9"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M505.06,-536.31C582.88,-543.39 753.4,-557.24 897.5,-557.24 897.5,-557.24 897.5,-557.24 1369.5,-557.24 1512.05,-557.24 1676.57,-549.93 1781.02,-544.38"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1781.45,-547.87 1791.25,-543.84 1781.08,-540.88 1781.45,-547.87"/>
+<g id="a_edge27"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M434.1,-1220C512,-1220 682.63,-1220 826.5,-1220 826.5,-1220 826.5,-1220 1577,-1220 1709.5,-1220 1861.96,-1211.47 1960.94,-1204.8"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1961.21,-1208.29 1970.95,-1204.12 1960.73,-1201.31 1961.21,-1208.29"/>
 </a>
 </g>
 </g>
-<!-- Y(&#45;1) -->
-<g id="node28" class="node">
-<title>Y(-1)</title>
-<g id="a_node28"><a xlink:title="GDP
+<!-- GDE(&#45;1) -->
+<g id="node8" class="node">
+<title>GDE(-1)</title>
+<g id="a_node8"><a xlink:title="Gross Domestic Expenditure
+FRML &lt;IDENT&gt; GDE = CPV+I+G$">
+<polygon fill="springgreen" stroke="black" points="1935,-1192 1713,-1192 1713,-1156 1935,-1156 1935,-1192"/>
+<text text-anchor="start" x="1719" y="-1169.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">GDE(-1):Gross Domestic Expenditure</text>
+</a>
+</g>
+</g>
+<!-- GDE(&#45;1)&#45;&gt;M -->
+<g id="edge37" class="edge">
+<title>GDE(-1)-&gt;M</title>
+<g id="a_edge37"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1713,-1174C1606.87,-1174 1441.69,-1174 1298.5,-1174 590.5,-1174 590.5,-1174 590.5,-1174 483.55,-1174 357.69,-1174 293.08,-1174"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="292.87,-1170.5 282.87,-1174 292.87,-1177.5 292.87,-1170.5"/>
+</a>
+</g>
+</g>
+<!-- GDE(&#45;1)&#45;&gt;M_FITTED -->
+<g id="edge28" class="edge">
+<title>GDE(-1)-&gt;M_FITTED</title>
+<g id="a_edge28"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1935.27,-1184.52C1943.73,-1185.33 1952.26,-1186.15 1960.69,-1186.95"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1960.61,-1190.46 1970.9,-1187.92 1961.28,-1183.49 1960.61,-1190.46"/>
+</a>
+</g>
+</g>
+<!-- X -->
+<g id="node9" class="node">
+<title>X</title>
+<g id="a_node9"><a xlink:title="Export
+Exogen">
+<polygon fill="yellow" stroke="black" points="280.5,-625 217.5,-625 217.5,-589 280.5,-589 280.5,-625"/>
+<text text-anchor="start" x="224" y="-602.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">X:Export</text>
+</a>
+</g>
+</g>
+<!-- Y -->
+<g id="node25" class="node">
+<title>Y</title>
+<g id="a_node25"><a xlink:title="GDP
 FRML &lt;IDENT&gt; Y = CPV+I+G+X-M+YDISC$">
-<polygon fill="springgreen" stroke="black" points="699,-855.24 626,-855.24 626,-819.24 699,-819.24 699,-855.24"/>
-<text text-anchor="start" x="632.5" y="-833.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">Y(-1):GDP</text>
+<polygon fill="#63b8ff" stroke="black" points="417.5,-598 363.5,-598 363.5,-562 417.5,-562 417.5,-598"/>
+<text text-anchor="start" x="370.5" y="-575.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">Y:GDP</text>
 </a>
 </g>
 </g>
-<!-- Y(&#45;1)&#45;&gt;G_FITTED -->
-<g id="edge58" class="edge">
-<title>Y(-1)-&gt;G_FITTED</title>
-<g id="a_edge58"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M699.03,-835.49C726.04,-836.19 762.16,-841.82 784,-864.24 841.84,-923.61 763.57,-986.52 820,-1047.24 869.25,-1100.23 921.08,-1044.34 977,-1090.24 1004.66,-1112.93 984.42,-1140.72 1013,-1162.24 1077.28,-1210.62 1112.33,-1178.37 1191,-1195.24 1222.59,-1202.01 1257.15,-1210.24 1287.25,-1217.69"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1286.73,-1221.16 1297.28,-1220.18 1288.42,-1214.37 1286.73,-1221.16"/>
-</a>
-</g>
-</g>
-<!-- Y(&#45;1)&#45;&gt;I_FITTED -->
-<g id="edge24" class="edge">
-<title>Y(-1)-&gt;I_FITTED</title>
-<g id="a_edge24"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M699.14,-840.4C724.03,-843.73 757.42,-850.52 784,-864.24 814.41,-879.94 981.05,-1057.98 1013,-1070.24 1148.71,-1122.3 1569.74,-1069.12 1773.61,-1038.97"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1774.37,-1042.4 1783.75,-1037.46 1773.34,-1035.47 1774.37,-1042.4"/>
-</a>
-</g>
-</g>
-<!-- Y(&#45;1)&#45;&gt;CPV_FITTED -->
-<g id="edge11" class="edge">
-<title>Y(-1)-&gt;CPV_FITTED</title>
-<g id="a_edge11"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M679.05,-819.22C705.76,-789 762.99,-727.27 820,-685.24 989.1,-560.55 1216.31,-453.14 1316.46,-408.42"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1318.03,-411.55 1325.75,-404.29 1315.19,-405.16 1318.03,-411.55"/>
-</a>
-</g>
-</g>
-<!-- Y(&#45;1)&#45;&gt;G -->
-<g id="edge55" class="edge">
-<title>Y(-1)-&gt;G</title>
-<g id="a_edge55"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M699.23,-835.29C726.35,-835.88 762.53,-841.46 784,-864.24 852.26,-936.65 758.17,-1007.26 820,-1085.24 825.84,-1092.61 833.68,-1098.3 842.12,-1102.68"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="840.91,-1105.98 851.46,-1106.95 843.82,-1099.61 840.91,-1105.98"/>
-</a>
-</g>
-</g>
-<!-- Y(&#45;1)&#45;&gt;I -->
-<g id="edge29" class="edge">
-<title>Y(-1)-&gt;I</title>
-<g id="a_edge29"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M689.08,-819.15C766.41,-766.82 1003.97,-623.42 1191,-695.24 1260.62,-721.97 1319.95,-790.27 1348.79,-828.07"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1346,-830.19 1354.8,-836.1 1351.61,-825.99 1346,-830.19"/>
-</a>
-</g>
-</g>
-<!-- Y(&#45;1)&#45;&gt;CPV -->
-<g id="edge61" class="edge">
-<title>Y(-1)-&gt;CPV</title>
-<g id="a_edge61"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M671.69,-819.18C706.58,-742.24 842.92,-441.6 885.03,-348.72"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="888.31,-349.97 889.25,-339.42 881.94,-347.08 888.31,-349.97"/>
+<!-- X&#45;&gt;Y -->
+<g id="edge54" class="edge">
+<title>X-&gt;Y</title>
+<g id="a_edge54"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M280.61,-601.07C302.04,-596.93 330.74,-591.37 353.3,-587.01"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="354.03,-590.43 363.18,-585.09 352.7,-583.56 354.03,-590.43"/>
 </a>
 </g>
 </g>
 <!-- M_A -->
-<g id="node29" class="node">
+<g id="node10" class="node">
 <title>M_A</title>
-<g id="a_node29"><a xlink:title="Add factor:Import
+<g id="a_node10"><a xlink:title="Add factor:Import
 Exogen">
-<polygon fill="yellow" stroke="black" points="183.5,-577.24 38.5,-577.24 38.5,-541.24 183.5,-541.24 183.5,-577.24"/>
-<text text-anchor="start" x="45" y="-555.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M_A:Add factor:Import</text>
+<polygon fill="yellow" stroke="black" points="148,-1160 3,-1160 3,-1124 148,-1124 148,-1160"/>
+<text text-anchor="start" x="9.5" y="-1137.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M_A:Add factor:Import</text>
 </a>
 </g>
 </g>
 <!-- M_A&#45;&gt;M -->
-<g id="edge2" class="edge">
+<g id="edge61" class="edge">
 <title>M_A-&gt;M</title>
-<g id="a_edge2"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M183.53,-549.91C214.37,-545.88 249.42,-541.31 276.14,-537.83"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="276.85,-541.26 286.31,-536.5 275.94,-534.32 276.85,-541.26"/>
+<g id="a_edge61"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M148.24,-1155.39C167.54,-1158.99 187.83,-1162.77 205.02,-1165.98"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="204.82,-1169.5 215.29,-1167.9 206.11,-1162.62 204.82,-1169.5"/>
 </a>
 </g>
 </g>
-<!-- C3_M -->
-<g id="node30" class="node">
-<title>C3_M</title>
-<g id="a_node30"><a xlink:title="C3_M
-Exogen">
-<polygon fill="yellow" stroke="black" points="138,-202.24 84,-202.24 84,-166.24 138,-166.24 138,-202.24"/>
-<text text-anchor="start" x="91" y="-180.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C3_M:</text>
+<!-- M&#45;&gt;M(&#45;1) -->
+<g id="edge40" class="edge">
+<title>M-&gt;M(-1)</title>
+<g id="a_edge40"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M282.71,-1178.96C300.84,-1183.94 323.68,-1191.28 343.57,-1198.47"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="342.48,-1201.8 353.07,-1201.98 344.9,-1195.23 342.48,-1201.8"/>
 </a>
 </g>
 </g>
-<!-- C3_M&#45;&gt;M -->
-<g id="edge42" class="edge">
-<title>C3_M-&gt;M</title>
-<g id="a_edge42"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M122.84,-202.46C157,-259.89 262.57,-437.37 303.01,-505.35"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="300.15,-507.39 308.27,-514.2 306.17,-503.81 300.15,-507.39"/>
-</a>
-</g>
-</g>
-<!-- C3_M&#45;&gt;M_FITTED -->
-<g id="edge65" class="edge">
-<title>C3_M-&gt;M_FITTED</title>
-<g id="a_edge65"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M134.05,-166C186.84,-124.23 326.16,-25.24 460.5,-25.24 460.5,-25.24 460.5,-25.24 1369.5,-25.24 1432.71,-25.24 1454.89,-16.29 1510,-47.24 1652.7,-127.38 1649.88,-197.25 1748,-328.24 1795.49,-391.64 1845.21,-470.61 1870.16,-511.27"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1867.32,-513.34 1875.53,-520.04 1873.3,-509.69 1867.32,-513.34"/>
+<!-- M&#45;&gt;Y -->
+<g id="edge70" class="edge">
+<title>M-&gt;Y</title>
+<g id="a_edge70"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M254.25,-1155.9C274.21,-1070.93 358.62,-711.48 382.93,-607.99"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="386.33,-608.79 385.21,-598.25 379.52,-607.19 386.33,-608.79"/>
 </a>
 </g>
 </g>
 <!-- C2_M -->
-<g id="node31" class="node">
+<g id="node12" class="node">
 <title>C2_M</title>
-<g id="a_node31"><a xlink:title="C2_M
+<g id="a_node12"><a xlink:title="C2_M
 Exogen">
-<polygon fill="yellow" stroke="black" points="138,-631.24 84,-631.24 84,-595.24 138,-595.24 138,-631.24"/>
-<text text-anchor="start" x="91" y="-609.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C2_M:</text>
+<polygon fill="yellow" stroke="black" points="102.5,-1322 48.5,-1322 48.5,-1286 102.5,-1286 102.5,-1322"/>
+<text text-anchor="start" x="55.5" y="-1299.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C2_M:</text>
 </a>
 </g>
 </g>
 <!-- C2_M&#45;&gt;M -->
-<g id="edge19" class="edge">
+<g id="edge56" class="edge">
 <title>C2_M-&gt;M</title>
-<g id="a_edge19"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M138.39,-608.82C161.06,-604.54 194.36,-597.09 222,-586.24 242.78,-578.08 264.61,-566.25 282.28,-555.74"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="284.38,-558.56 291.12,-550.39 280.76,-552.57 284.38,-558.56"/>
+<g id="a_edge56"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M102.71,-1297.75C117.66,-1293.42 136.29,-1286.67 151,-1277 182.63,-1256.21 211.32,-1223.13 229.16,-1200.09"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="231.96,-1202.18 235.22,-1192.1 226.39,-1197.95 231.96,-1202.18"/>
 </a>
 </g>
 </g>
 <!-- C2_M&#45;&gt;M_FITTED -->
-<g id="edge30" class="edge">
+<g id="edge25" class="edge">
 <title>C2_M-&gt;M_FITTED</title>
-<g id="a_edge30"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M138.21,-610.96C196.23,-606.11 339.94,-595.24 460.5,-595.24 460.5,-595.24 460.5,-595.24 1369.5,-595.24 1538.29,-595.24 1580.72,-586.73 1748,-564.24 1760.95,-562.5 1774.52,-560.35 1787.89,-558.05"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1788.82,-561.44 1798.06,-556.26 1787.6,-554.54 1788.82,-561.44"/>
+<g id="a_edge25"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M102.88,-1304C156.75,-1304 283.26,-1304 389.5,-1304 389.5,-1304 389.5,-1304 1577,-1304 1737.48,-1304 1780.77,-1301.35 1935,-1257 1966.26,-1248.01 1999.56,-1232.67 2024.77,-1219.76"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2026.41,-1222.84 2033.67,-1215.12 2023.18,-1216.64 2026.41,-1222.84"/>
 </a>
 </g>
 </g>
-<!-- I_D -->
-<g id="node32" class="node">
-<title>I_D</title>
-<g id="a_node32"><a xlink:title="Fix dummy:Investment
+<!-- GDE -->
+<g id="node13" class="node">
+<title>GDE</title>
+<g id="a_node13"><a xlink:title="Gross Domestic Expenditure
+FRML &lt;IDENT&gt; GDE = CPV+I+G$">
+<polygon fill="#63b8ff" stroke="black" points="1677,-1028 1475,-1028 1475,-992 1677,-992 1677,-1028"/>
+<text text-anchor="start" x="1481" y="-1005.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">GDE:Gross Domestic Expenditure</text>
+</a>
+</g>
+</g>
+<!-- GDE&#45;&gt;GDE(&#45;1) -->
+<g id="edge53" class="edge">
+<title>GDE-&gt;GDE(-1)</title>
+<g id="a_edge53"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1590.8,-1028.23C1613.3,-1056.69 1660.66,-1111.56 1713,-1142 1719.65,-1145.87 1726.8,-1149.3 1734.15,-1152.33"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1732.95,-1155.62 1743.54,-1155.97 1735.48,-1149.09 1732.95,-1155.62"/>
+</a>
+</g>
+</g>
+<!-- GDE&#45;&gt;M -->
+<g id="edge59" class="edge">
+<title>GDE-&gt;M</title>
+<g id="a_edge59"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1529.35,-1028.05C1436.99,-1062.89 1220.71,-1136 1032,-1136 590.5,-1136 590.5,-1136 590.5,-1136 482.88,-1136 357.3,-1154.98 292.91,-1166.11"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="291.98,-1162.72 282.73,-1167.89 293.19,-1169.62 291.98,-1162.72"/>
+</a>
+</g>
+</g>
+<!-- GDE&#45;&gt;M_FITTED -->
+<g id="edge55" class="edge">
+<title>GDE-&gt;M_FITTED</title>
+<g id="a_edge55"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1624.33,-1028.1C1714.8,-1062.7 1911.9,-1138.07 2009.26,-1175.3"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2008.05,-1178.59 2018.64,-1178.89 2010.55,-1172.05 2008.05,-1178.59"/>
+</a>
+</g>
+</g>
+<!-- C1_I -->
+<g id="node14" class="node">
+<title>C1_I</title>
+<g id="a_node14"><a xlink:title="C1_I
 Exogen">
-<polygon fill="yellow" stroke="black" points="1185,-791.24 1019,-791.24 1019,-755.24 1185,-755.24 1185,-791.24"/>
-<text text-anchor="start" x="1025" y="-769.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I_D:Fix dummy:Investment</text>
+<polygon fill="yellow" stroke="black" points="1058,-462 1004,-462 1004,-426 1058,-426 1058,-462"/>
+<text text-anchor="start" x="1016" y="-439.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C1_I:</text>
 </a>
 </g>
 </g>
-<!-- I_D&#45;&gt;I -->
-<g id="edge34" class="edge">
-<title>I_D-&gt;I</title>
-<g id="a_edge34"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1162.03,-791.31C1208.74,-805.62 1273.25,-825.37 1317.45,-838.91"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1316.53,-842.29 1327.12,-841.87 1318.58,-835.6 1316.53,-842.29"/>
+<!-- C1_I&#45;&gt;I_FITTED -->
+<g id="edge46" class="edge">
+<title>C1_I-&gt;I_FITTED</title>
+<g id="a_edge46"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1058.32,-444C1158.94,-444 1522.99,-444 1710.16,-444"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1710.31,-447.5 1720.31,-444 1710.31,-440.5 1710.31,-447.5"/>
+</a>
+</g>
+</g>
+<!-- C1_I&#45;&gt;I -->
+<g id="edge29" class="edge">
+<title>C1_I-&gt;I</title>
+<g id="a_edge29"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1058.1,-452.62C1075.77,-458.66 1099.54,-467.21 1120,-476 1166.79,-496.09 1218.78,-522.54 1254.13,-541.17"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1252.72,-544.39 1263.2,-545.97 1256,-538.2 1252.72,-544.39"/>
 </a>
 </g>
 </g>
 <!-- I&#45;&gt;GDE -->
-<g id="edge44" class="edge">
+<g id="edge77" class="edge">
 <title>I-&gt;GDE</title>
-<g id="a_edge44"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1387.99,-835.92C1417.04,-806.37 1473.77,-745.37 1510,-685.24 1573.05,-580.59 1619.65,-441.39 1637.74,-382.94"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1641.11,-383.89 1640.69,-373.31 1634.42,-381.84 1641.11,-383.89"/>
+<g id="a_edge77"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1309.68,-582.04C1352.63,-651.31 1507.13,-900.53 1558.36,-983.17"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1555.44,-985.08 1563.68,-991.74 1561.38,-981.4 1555.44,-985.08"/>
 </a>
 </g>
 </g>
 <!-- I&#45;&gt;Y -->
-<g id="edge38" class="edge">
+<g id="edge1" class="edge">
 <title>I-&gt;Y</title>
-<g id="a_edge38"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1341.56,-836.17C1277.48,-787.85 1109.9,-666.71 1013,-755.24 947.44,-815.14 1035.12,-1086.09 977,-1153.24 913.23,-1226.9 625.37,-1247.96 541,-1199.24 498.64,-1174.78 477.09,-1117.79 468,-1082.79"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="471.31,-1081.6 465.56,-1072.7 464.5,-1083.24 471.31,-1081.6"/>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1256.36,-569.38C1190.64,-572.53 1056,-572.29 942,-574 748.14,-576.91 515.97,-584.62 427.83,-583.23"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="427.64,-579.72 417.57,-583.01 427.49,-586.72 427.64,-579.72"/>
 </a>
 </g>
 </g>
 <!-- I(&#45;1) -->
-<g id="node39" class="node">
+<g id="node26" class="node">
 <title>I(-1)</title>
-<g id="a_node39"><a xlink:title="Investment
+<g id="a_node26"><a xlink:title="Investment
 FRML &lt;FIXABLE, DAMP&gt; I = (I(-1)*EXP(I_A+ (-C2_I*(LOG(I(-1))-LOG(Y(-1)-G(-1))-C1_I)+C3_I*((LOG(Y))-(LOG(Y(-1))))) )) * (1-I_D)+ I_X*I_D $">
-<polygon fill="springgreen" stroke="black" points="1698,-872.24 1596,-872.24 1596,-836.24 1698,-836.24 1698,-872.24"/>
-<text text-anchor="start" x="1602" y="-850.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I(-1):Investment</text>
+<polygon fill="springgreen" stroke="black" points="1627,-582 1525,-582 1525,-546 1627,-546 1627,-582"/>
+<text text-anchor="start" x="1531" y="-559.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I(-1):Investment</text>
 </a>
 </g>
 </g>
 <!-- I&#45;&gt;I(&#45;1) -->
-<g id="edge39" class="edge">
-<title>I-&gt;I(-1)</title>
-<g id="a_edge39"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1409.71,-849.31C1456,-847.16 1532.51,-846.91 1585.89,-848.56"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1585.79,-852.05 1595.9,-848.9 1586.03,-845.06 1585.79,-852.05"/>
-</a>
-</g>
-</g>
-<!-- Y&#45;&gt;G_FITTED -->
-<g id="edge46" class="edge">
-<title>Y-&gt;G_FITTED</title>
-<g id="a_edge46"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M465.3,-1072.27C473.94,-1125.25 501.94,-1278.46 541,-1307.24 580.43,-1336.29 1061.03,-1311.76 1191,-1290.24 1230.87,-1283.63 1274.44,-1270.86 1308.31,-1259.62"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1309.69,-1262.85 1318.05,-1256.35 1307.45,-1256.22 1309.69,-1262.85"/>
-</a>
-</g>
-</g>
-<!-- Y&#45;&gt;I_FITTED -->
-<g id="edge33" class="edge">
-<title>Y-&gt;I_FITTED</title>
-<g id="a_edge33"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M465.17,-1072.61C473.63,-1128.19 501.63,-1292.84 541,-1327.24 730.43,-1492.74 849.46,-1409.24 1101,-1409.24 1101,-1409.24 1101,-1409.24 1369.5,-1409.24 1610.66,-1409.24 1811.25,-1135.83 1869.45,-1048.03"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1872.53,-1049.71 1875.08,-1039.43 1866.68,-1045.88 1872.53,-1049.71"/>
-</a>
-</g>
-</g>
-<!-- Y&#45;&gt;CPV_FITTED -->
-<g id="edge1" class="edge">
-<title>Y-&gt;CPV_FITTED</title>
-<g id="a_edge1"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M464.77,-1036.18C470.83,-993.53 490.52,-884.61 541,-810.24 686.93,-595.24 771.53,-561.21 1013,-465.24 1082.67,-437.55 1164.09,-418.54 1231.32,-406.12"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1232.35,-409.49 1241.56,-404.26 1231.09,-402.6 1232.35,-409.49"/>
-</a>
-</g>
-</g>
-<!-- Y&#45;&gt;G -->
-<g id="edge71" class="edge">
-<title>Y-&gt;G</title>
-<g id="a_edge71"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M488.6,-1049.74C543.68,-1046.9 675.68,-1052.07 784,-1073.24 809.45,-1078.21 837.28,-1086.74 859.01,-1095.2"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="857.96,-1098.55 868.54,-1099.07 860.59,-1092.07 857.96,-1098.55"/>
-</a>
-</g>
-</g>
-<!-- Y&#45;&gt;Y(&#45;1) -->
-<g id="edge63" class="edge">
-<title>Y-&gt;Y(-1)</title>
-<g id="a_edge63"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M464.48,-1036.12C469.63,-998.07 487.07,-909.63 541,-864.24 561.59,-846.9 590.97,-840.08 615.57,-837.62"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="616.08,-841.09 625.78,-836.82 615.53,-834.11 616.08,-841.09"/>
-</a>
-</g>
-</g>
-<!-- Y&#45;&gt;I -->
-<g id="edge41" class="edge">
-<title>Y-&gt;I</title>
-<g id="a_edge41"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M468.53,-1072.68C477.93,-1101.96 499.45,-1157.24 541,-1181.24 625.37,-1229.96 913.23,-1208.9 977,-1135.24 1035.12,-1068.09 947.44,-797.14 1013,-737.24 1110.93,-647.76 1281.07,-772.47 1343.58,-829.1"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1341.28,-831.74 1350.99,-835.97 1346.03,-826.6 1341.28,-831.74"/>
-</a>
-</g>
-</g>
-<!-- Y&#45;&gt;CPV -->
-<g id="edge53" class="edge">
-<title>Y-&gt;CPV</title>
-<g id="a_edge53"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M463.84,-1036.22C472.26,-931.55 518.22,-407.88 541,-383.24 559.2,-363.55 710.29,-338.72 809.85,-326.88"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="810.39,-330.34 819.92,-325.7 809.58,-323.38 810.39,-330.34"/>
-</a>
-</g>
-</g>
-<!-- C1_CPV -->
-<g id="node35" class="node">
-<title>C1_CPV</title>
-<g id="a_node35"><a xlink:title="C1_CPV
-Exogen">
-<polygon fill="yellow" stroke="black" points="694.5,-437.24 630.5,-437.24 630.5,-401.24 694.5,-401.24 694.5,-437.24"/>
-<text text-anchor="start" x="636.5" y="-415.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C1_CPV:</text>
-</a>
-</g>
-</g>
-<!-- C1_CPV&#45;&gt;CPV_FITTED -->
 <g id="edge8" class="edge">
-<title>C1_CPV-&gt;CPV_FITTED</title>
+<title>I-&gt;I(-1)</title>
 <g id="a_edge8"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M694.76,-412.05C726.2,-405.19 776.17,-395.33 820,-391.24 953.65,-378.76 1106.45,-378.53 1216.61,-380.83"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1216.72,-384.33 1226.8,-381.05 1216.88,-377.33 1216.72,-384.33"/>
-</a>
-</g>
-</g>
-<!-- C1_CPV&#45;&gt;CPV -->
-<g id="edge57" class="edge">
-<title>C1_CPV-&gt;CPV</title>
-<g id="a_edge57"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M694.54,-415.32C719.87,-411.14 755.92,-402.88 784,-387.24 803.23,-376.53 801.52,-365.19 820,-353.24 825.29,-349.81 831.01,-346.63 836.87,-343.71"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="838.58,-346.77 846.13,-339.33 835.59,-340.44 838.58,-346.77"/>
-</a>
-</g>
-</g>
-<!-- M_D -->
-<g id="node36" class="node">
-<title>M_D</title>
-<g id="a_node36"><a xlink:title="Fix dummy:Import
-Exogen">
-<polygon fill="yellow" stroke="black" points="186.5,-523.24 35.5,-523.24 35.5,-487.24 186.5,-487.24 186.5,-523.24"/>
-<text text-anchor="start" x="42" y="-501.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M_D:Fix dummy:Import</text>
-</a>
-</g>
-</g>
-<!-- M_D&#45;&gt;M -->
-<g id="edge27" class="edge">
-<title>M_D-&gt;M</title>
-<g id="a_edge27"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M186.73,-514.98C216.76,-518.9 250.29,-523.28 276.08,-526.64"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="275.9,-530.15 286.27,-527.97 276.81,-523.2 275.9,-530.15"/>
-</a>
-</g>
-</g>
-<!-- CPV&#45;&gt;CPV(&#45;1) -->
-<g id="edge36" class="edge">
-<title>CPV-&gt;CPV(-1)</title>
-<g id="a_edge36"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M977.12,-314.65C985.48,-314.53 994.08,-314.48 1002.64,-314.49"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1002.66,-317.99 1012.68,-314.53 1002.69,-310.99 1002.66,-317.99"/>
+<path fill="none" stroke="black" stroke-width="0.5" d="M1338.71,-559.07C1385,-556.93 1461.51,-556.68 1514.89,-558.32"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1514.79,-561.82 1524.9,-558.66 1515.03,-554.82 1514.79,-561.82"/>
 </a>
 </g>
 </g>
 <!-- CPV&#45;&gt;GDE -->
-<g id="edge67" class="edge">
+<g id="edge14" class="edge">
 <title>CPV-&gt;GDE</title>
-<g id="a_edge67"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M963.86,-303.18C979.79,-299.47 996.91,-296.13 1013,-294.24 1207.64,-271.4 1436.7,-309.56 1558.87,-335.11"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1558.4,-338.59 1568.91,-337.23 1559.85,-331.74 1558.4,-338.59"/>
+<g id="a_edge14"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M906.1,-899.49C964.99,-899.94 1047.84,-902.35 1120,-911 1263.66,-928.23 1297.89,-944 1439,-976 1457.31,-980.15 1476.93,-984.89 1495.41,-989.48"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1494.7,-992.91 1505.25,-991.94 1496.4,-986.12 1494.7,-992.91"/>
 </a>
 </g>
 </g>
 <!-- CPV&#45;&gt;Y -->
-<g id="edge60" class="edge">
+<g id="edge21" class="edge">
 <title>CPV-&gt;Y</title>
-<g id="a_edge60"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M819.92,-337.88C720.82,-355.01 559.82,-380.88 541,-401.24 519.24,-424.77 476.35,-903.45 465.2,-1025.97"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="461.7,-1025.79 464.28,-1036.06 468.67,-1026.42 461.7,-1025.79"/>
+<g id="a_edge21"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M754.03,-881.88C752.26,-880.34 750.58,-878.71 749,-877 713.31,-838.21 746.57,-804.64 713,-764 635.44,-670.09 493.81,-618.71 427.52,-595.03"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="428.52,-591.67 417.92,-591.6 426.16,-598.27 428.52,-591.67"/>
 </a>
 </g>
 </g>
-<!-- I(&#45;1)&#45;&gt;I_FITTED -->
-<g id="edge70" class="edge">
-<title>I(-1)-&gt;I_FITTED</title>
-<g id="a_edge70"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1673.98,-872.43C1717.26,-902.73 1804.11,-963.55 1852.31,-997.3"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1850.36,-1000.2 1860.55,-1003.07 1854.37,-994.47 1850.36,-1000.2"/>
+<!-- CPV(&#45;1) -->
+<g id="node31" class="node">
+<title>CPV(-1)</title>
+<g id="a_node31"><a xlink:title="Private Consumption
+FRML &lt;FIXABLE, DAMP&gt; CPV = (CPV(-1)*EXP(CPV_A+ (-C2_CPV*(LOG(CPV(-1))-LOG(Y(-1))-C1_CPV)+C3_CPV*((LOG(Y))-(LOG(Y(-1))))) )) * (1-CPV_D)+ CPV_X*CPV_D $">
+<polygon fill="springgreen" stroke="black" points="1120,-956 942,-956 942,-920 1120,-920 1120,-956"/>
+<text text-anchor="start" x="948" y="-933.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV(-1):Private Consumption</text>
 </a>
 </g>
 </g>
-<!-- I(&#45;1)&#45;&gt;I -->
-<g id="edge17" class="edge">
-<title>I(-1)-&gt;I</title>
-<g id="a_edge17"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1595.9,-859.58C1546.04,-861.45 1469.94,-861.46 1419.96,-859.59"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1419.84,-856.08 1409.71,-859.17 1419.55,-863.08 1419.84,-856.08"/>
+<!-- CPV&#45;&gt;CPV(&#45;1) -->
+<g id="edge12" class="edge">
+<title>CPV-&gt;CPV(-1)</title>
+<g id="a_edge12"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M906.12,-908.05C923.01,-911 940.82,-914.38 957.51,-917.82"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="957.23,-921.34 967.73,-919.97 958.66,-914.49 957.23,-921.34"/>
 </a>
 </g>
 </g>
-<!-- C3_CPV -->
-<g id="node40" class="node">
-<title>C3_CPV</title>
-<g id="a_node40"><a xlink:title="C3_CPV
+<!-- CPV_D -->
+<g id="node17" class="node">
+<title>CPV_D</title>
+<g id="a_node17"><a xlink:title="Fix dummy:Private Consumption
 Exogen">
-<polygon fill="yellow" stroke="black" points="694.5,-165.24 630.5,-165.24 630.5,-129.24 694.5,-129.24 694.5,-165.24"/>
-<text text-anchor="start" x="636.5" y="-143.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C3_CPV:</text>
+<polygon fill="yellow" stroke="black" points="713,-854 470,-854 470,-818 713,-818 713,-854"/>
+<text text-anchor="start" x="476.5" y="-831.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV_D:Fix dummy:Private Consumption</text>
 </a>
 </g>
 </g>
-<!-- C3_CPV&#45;&gt;CPV_FITTED -->
+<!-- CPV_D&#45;&gt;CPV -->
 <g id="edge43" class="edge">
-<title>C3_CPV-&gt;CPV_FITTED</title>
+<title>CPV_D-&gt;CPV</title>
 <g id="a_edge43"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M694.62,-153.36C777.37,-170.17 1008.95,-220.76 1191,-294.24 1239.83,-313.94 1293.06,-342.79 1328.16,-362.91"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1326.71,-366.11 1337.12,-368.08 1330.21,-360.05 1326.71,-366.11"/>
+<path fill="none" stroke="black" stroke-width="0.5" d="M677.67,-854.03C689.58,-856.85 701.63,-859.88 713,-863 729.96,-867.65 748.14,-873.29 764.88,-878.74"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="763.95,-882.12 774.55,-881.92 766.14,-875.47 763.95,-882.12"/>
 </a>
 </g>
 </g>
-<!-- C3_CPV&#45;&gt;CPV -->
-<g id="edge25" class="edge">
-<title>C3_CPV-&gt;CPV</title>
-<g id="a_edge25"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M694.6,-146.05C721.54,-146.72 759.86,-152.02 784,-174.24 823.41,-210.5 783.84,-249.73 820,-289.24 822.74,-292.23 825.81,-294.95 829.09,-297.43"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="827.37,-300.49 837.65,-303.08 831.23,-294.65 827.37,-300.49"/>
-</a>
-</g>
-</g>
-<!-- C2_G -->
-<g id="node41" class="node">
-<title>C2_G</title>
-<g id="a_node41"><a xlink:title="C2_G
+<!-- M_D -->
+<g id="node18" class="node">
+<title>M_D</title>
+<g id="a_node18"><a xlink:title="Fix dummy:Import
 Exogen">
-<polygon fill="yellow" stroke="black" points="689.5,-1127.24 635.5,-1127.24 635.5,-1091.24 689.5,-1091.24 689.5,-1127.24"/>
-<text text-anchor="start" x="644.5" y="-1105.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C2_G:</text>
+<polygon fill="yellow" stroke="black" points="151,-1106 0,-1106 0,-1070 151,-1070 151,-1106"/>
+<text text-anchor="start" x="6.5" y="-1083.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M_D:Fix dummy:Import</text>
 </a>
 </g>
 </g>
-<!-- C2_G&#45;&gt;G_FITTED -->
-<g id="edge73" class="edge">
-<title>C2_G-&gt;G_FITTED</title>
-<g id="a_edge73"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M689.88,-1114.9C714.33,-1120.2 751.69,-1128.46 784,-1136.24 886.18,-1160.84 909.72,-1175.76 1013,-1195.24 1090.81,-1209.91 1179.22,-1220.65 1248.28,-1227.72"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1248.02,-1231.21 1258.32,-1228.74 1248.73,-1224.25 1248.02,-1231.21"/>
-</a>
-</g>
-</g>
-<!-- C2_G&#45;&gt;G -->
-<g id="edge68" class="edge">
-<title>C2_G-&gt;G</title>
-<g id="a_edge68"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M689.89,-1110.14C726.3,-1111.38 792.88,-1113.66 840.84,-1115.3"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="840.97,-1118.81 851.08,-1115.65 841.21,-1111.81 840.97,-1118.81"/>
+<!-- M_D&#45;&gt;M -->
+<g id="edge26" class="edge">
+<title>M_D-&gt;M</title>
+<g id="a_edge26"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M130.34,-1106.06C137.38,-1108.84 144.43,-1111.85 151,-1115 172.38,-1125.25 195.09,-1138.9 213.16,-1150.49"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="211.33,-1153.48 221.63,-1155.98 215.15,-1147.6 211.33,-1153.48"/>
 </a>
 </g>
 </g>
 <!-- G_X -->
-<g id="node42" class="node">
+<g id="node19" class="node">
 <title>G_X</title>
-<g id="a_node42"><a xlink:title="Fix value:Government
+<g id="a_node19"><a xlink:title="Fix value:Government
 Exogen">
-<polygon fill="yellow" stroke="black" points="745.5,-1017.24 579.5,-1017.24 579.5,-981.24 745.5,-981.24 745.5,-1017.24"/>
-<text text-anchor="start" x="585.5" y="-995.04" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G_X:Fix value:Government</text>
+<polygon fill="yellow" stroke="black" points="674.5,-325 508.5,-325 508.5,-289 674.5,-289 674.5,-325"/>
+<text text-anchor="start" x="514.5" y="-302.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G_X:Fix value:Government</text>
 </a>
 </g>
 </g>
 <!-- G_X&#45;&gt;G -->
-<g id="edge47" class="edge">
+<g id="edge51" class="edge">
 <title>G_X-&gt;G</title>
+<g id="a_edge51"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M674.67,-309.46C706.22,-310.4 741.49,-311.46 770.09,-312.31"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="770.2,-315.82 780.3,-312.62 770.41,-308.82 770.2,-315.82"/>
+</a>
+</g>
+</g>
+<!-- C2_I -->
+<g id="node20" class="node">
+<title>C2_I</title>
+<g id="a_node20"><a xlink:title="C2_I
+Exogen">
+<polygon fill="yellow" stroke="black" points="1058,-826 1004,-826 1004,-790 1058,-790 1058,-826"/>
+<text text-anchor="start" x="1016" y="-803.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C2_I:</text>
+</a>
+</g>
+</g>
+<!-- C2_I&#45;&gt;I_FITTED -->
+<g id="edge52" class="edge">
+<title>C2_I-&gt;I_FITTED</title>
+<g id="a_edge52"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1058.03,-808.29C1151.59,-808.03 1475.85,-795.85 1677,-646 1741.04,-598.3 1788.62,-514.4 1810.19,-471.28"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1813.37,-472.75 1814.64,-462.23 1807.09,-469.66 1813.37,-472.75"/>
+</a>
+</g>
+</g>
+<!-- C2_I&#45;&gt;I -->
+<g id="edge39" class="edge">
+<title>C2_I-&gt;I</title>
+<g id="a_edge39"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1058.01,-804.17C1076.51,-800.5 1101.31,-793.59 1120,-781 1159.31,-754.52 1241.3,-642.25 1278.02,-590.42"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1281.01,-592.25 1283.92,-582.06 1275.29,-588.21 1281.01,-592.25"/>
+</a>
+</g>
+</g>
+<!-- G(&#45;1) -->
+<g id="node21" class="node">
+<title>G(-1)</title>
+<g id="a_node21"><a xlink:title="Government
+FRML &lt;FIXABLE, DAMP&gt; G = (G(-1)*EXP(G_A+ (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1))))) )) * (1-G_D)+ G_X*G_D $">
+<polygon fill="springgreen" stroke="black" points="1088.5,-332 973.5,-332 973.5,-296 1088.5,-296 1088.5,-332"/>
+<text text-anchor="start" x="980" y="-309.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G(-1):Government</text>
+</a>
+</g>
+</g>
+<!-- G(&#45;1)&#45;&gt;I_FITTED -->
+<g id="edge67" class="edge">
+<title>G(-1)-&gt;I_FITTED</title>
+<g id="a_edge67"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1088.83,-313.91C1202.67,-315.07 1465.83,-324.62 1677,-384 1711.25,-393.63 1748.31,-408.92 1776.52,-421.66"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1775.18,-424.9 1785.73,-425.87 1778.09,-418.53 1775.18,-424.9"/>
+</a>
+</g>
+</g>
+<!-- G(&#45;1)&#45;&gt;I -->
+<g id="edge58" class="edge">
+<title>G(-1)-&gt;I</title>
+<g id="a_edge58"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1051.45,-332.38C1098.18,-376.56 1216.85,-488.72 1270.03,-538.98"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1267.71,-541.6 1277.38,-545.93 1272.52,-536.51 1267.71,-541.6"/>
+</a>
+</g>
+</g>
+<!-- G(&#45;1)&#45;&gt;G -->
+<g id="edge30" class="edge">
+<title>G(-1)-&gt;G</title>
+<g id="a_edge30"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M973.2,-320.14C945.61,-320.96 912.54,-320.95 884.99,-320.13"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="884.84,-316.63 874.73,-319.78 884.6,-323.62 884.84,-316.63"/>
+</a>
+</g>
+</g>
+<!-- G_FITTED -->
+<g id="node37" class="node">
+<title>G_FITTED</title>
+<g id="a_node37"><a xlink:title="Fitted  value:Government
+FRML &lt;FIT&gt; G_FITTED = G(-1)*EXP( (-C2_G*(LOG(G(-1))-LOG(Y(-1))-C1_G)+C3_G*((LOG(Y))-(LOG(Y(-1))))) )$">
+<polygon fill="#63b8ff" stroke="black" points="1407.5,-229 1187.5,-229 1187.5,-193 1407.5,-193 1407.5,-229"/>
+<text text-anchor="start" x="1193.5" y="-206.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G_FITTED:Fitted  value:Government</text>
+</a>
+</g>
+</g>
+<!-- G(&#45;1)&#45;&gt;G_FITTED -->
+<g id="edge10" class="edge">
+<title>G(-1)-&gt;G_FITTED</title>
+<g id="a_edge10"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1082.83,-295.85C1095.03,-291.4 1108.01,-286.59 1120,-282 1161.59,-266.08 1208.33,-247.23 1243.25,-232.96"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1244.85,-236.09 1252.78,-229.06 1242.2,-229.61 1244.85,-236.09"/>
+</a>
+</g>
+</g>
+<!-- G_D -->
+<g id="node23" class="node">
+<title>G_D</title>
+<g id="a_node23"><a xlink:title="Fix dummy:Government
+Exogen">
+<polygon fill="yellow" stroke="black" points="681,-489 502,-489 502,-453 681,-453 681,-489"/>
+<text text-anchor="start" x="508.5" y="-466.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">G_D:Fix dummy:Government</text>
+</a>
+</g>
+</g>
+<!-- G_D&#45;&gt;G -->
+<g id="edge63" class="edge">
+<title>G_D-&gt;G</title>
+<g id="a_edge63"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M681.08,-462.02C692.74,-457.86 703.81,-452.05 713,-444 747.9,-413.42 716.84,-379.45 749,-346 755.23,-339.52 762.96,-334.3 771.11,-330.12"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="772.82,-333.19 780.44,-325.82 769.89,-326.83 772.82,-333.19"/>
+</a>
+</g>
+</g>
+<!-- Y(&#45;1) -->
+<g id="node24" class="node">
+<title>Y(-1)</title>
+<g id="a_node24"><a xlink:title="GDP
+FRML &lt;IDENT&gt; Y = CPV+I+G+X-M+YDISC$">
+<polygon fill="springgreen" stroke="black" points="628,-543 555,-543 555,-507 628,-507 628,-543"/>
+<text text-anchor="start" x="561.5" y="-520.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">Y(-1):GDP</text>
+</a>
+</g>
+</g>
+<!-- Y(&#45;1)&#45;&gt;I_FITTED -->
+<g id="edge74" class="edge">
+<title>Y(-1)-&gt;I_FITTED</title>
+<g id="a_edge74"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M628.11,-518.19C652.25,-513.28 684.77,-506.12 713,-498 854.97,-457.14 882.27,-398 1030,-398 1030,-398 1030,-398 1298.5,-398 1440.85,-398 1604.1,-415.02 1710.15,-428.36"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1709.87,-431.85 1720.23,-429.63 1710.75,-424.9 1709.87,-431.85"/>
+</a>
+</g>
+</g>
+<!-- Y(&#45;1)&#45;&gt;I -->
+<g id="edge68" class="edge">
+<title>Y(-1)-&gt;I</title>
+<g id="a_edge68"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M628.23,-520.38C713.7,-510.16 936.5,-488.51 1120,-514 1163.68,-520.07 1211.75,-534.2 1246.68,-545.9"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1245.58,-549.22 1256.17,-549.13 1247.83,-542.59 1245.58,-549.22"/>
+</a>
+</g>
+</g>
+<!-- Y(&#45;1)&#45;&gt;CPV -->
+<g id="edge60" class="edge">
+<title>Y(-1)-&gt;CPV</title>
+<g id="a_edge60"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M615.82,-543.41C643.75,-566.84 689.68,-610.09 713,-658 754.44,-743.15 689.86,-794.04 749,-868 751.37,-870.96 754.05,-873.65 756.97,-876.09"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="755.01,-878.99 765.17,-882 759.1,-873.31 755.01,-878.99"/>
+</a>
+</g>
+</g>
+<!-- Y(&#45;1)&#45;&gt;G -->
+<g id="edge47" class="edge">
+<title>Y(-1)-&gt;G</title>
 <g id="a_edge47"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M745.53,-1012.42C759.16,-1016.96 772.56,-1023.05 784,-1031.24 807.46,-1048.02 797.7,-1066.94 820,-1085.24 826.55,-1090.61 834.13,-1095.2 841.93,-1099.08"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="840.6,-1102.31 851.14,-1103.31 843.52,-1095.95 840.6,-1102.31"/>
+<path fill="none" stroke="black" stroke-width="0.5" d="M628.07,-526.5C654.92,-525.65 690.81,-519.92 713,-498 762.39,-449.21 703.96,-398.83 749,-346 754.96,-339 762.7,-333.51 770.98,-329.21"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="772.5,-332.36 780.11,-324.99 769.56,-326.01 772.5,-332.36"/>
+</a>
+</g>
+</g>
+<!-- Y(&#45;1)&#45;&gt;G_FITTED -->
+<g id="edge22" class="edge">
+<title>Y(-1)-&gt;G_FITTED</title>
+<g id="a_edge22"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M628.18,-526.02C654.73,-524.85 690.18,-518.95 713,-498 752.14,-462.07 710.71,-420.84 749,-384 801.13,-333.84 847.33,-383.33 906,-341 929.39,-324.12 918.14,-303.22 942,-287 962.11,-273.33 1087.11,-248.47 1183.05,-230.91"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1183.91,-234.31 1193.12,-229.08 1182.65,-227.43 1183.91,-234.31"/>
+</a>
+</g>
+</g>
+<!-- Y(&#45;1)&#45;&gt;CPV_FITTED -->
+<g id="edge33" class="edge">
+<title>Y(-1)-&gt;CPV_FITTED</title>
+<g id="a_edge33"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M625.05,-543.09C650.09,-557.64 685.04,-579.33 713,-602 825.78,-693.45 822.06,-753.16 942,-835 1013.05,-883.49 1042.25,-874.2 1120,-911 1166.74,-933.12 1219.14,-960.81 1254.61,-980"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1253.24,-983.24 1263.7,-984.94 1256.58,-977.09 1253.24,-983.24"/>
+</a>
+</g>
+</g>
+<!-- Y&#45;&gt;I_FITTED -->
+<g id="edge57" class="edge">
+<title>Y-&gt;I_FITTED</title>
+<g id="a_edge57"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M391.43,-561.8C391.51,-479.59 396.41,-144.08 470,-78 529.01,-25.01 747.19,-61 826.5,-61 826.5,-61 826.5,-61 1298.5,-61 1540.53,-61 1745.44,-330.27 1805.31,-417.26"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1802.6,-419.49 1811.12,-425.78 1808.39,-415.55 1802.6,-419.49"/>
+</a>
+</g>
+</g>
+<!-- Y&#45;&gt;I -->
+<g id="edge48" class="edge">
+<title>Y-&gt;I</title>
+<g id="a_edge48"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M417.57,-575.12C496.53,-567.28 740.05,-559.04 942,-556 1050.43,-554.37 1177.54,-554.51 1246.25,-557.69"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1246.19,-561.19 1256.36,-558.2 1246.55,-554.2 1246.19,-561.19"/>
+</a>
+</g>
+</g>
+<!-- Y&#45;&gt;CPV -->
+<g id="edge34" class="edge">
+<title>Y-&gt;CPV</title>
+<g id="a_edge34"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M417.92,-582.38C479.1,-595.54 631.45,-647.27 713,-746 746.57,-786.64 713.31,-820.21 749,-859 756.4,-867.04 766.11,-873.11 776.16,-877.91"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="774.85,-881.16 785.41,-881.98 777.67,-874.75 774.85,-881.16"/>
+</a>
+</g>
+</g>
+<!-- Y&#45;&gt;Y(&#45;1) -->
+<g id="edge69" class="edge">
+<title>Y-&gt;Y(-1)</title>
+<g id="a_edge69"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M417.62,-572.17C432.87,-567.64 452.49,-561.89 470,-557 494.79,-550.08 522.55,-542.68 545.17,-536.75"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="546.06,-540.13 554.85,-534.21 544.28,-533.36 546.06,-540.13"/>
+</a>
+</g>
+</g>
+<!-- Y&#45;&gt;G -->
+<g id="edge13" class="edge">
+<title>Y-&gt;G</title>
+<g id="a_edge13"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M392.88,-561.87C397.18,-521.95 413.65,-427.94 470,-381 481.56,-371.37 672.87,-334.07 770.34,-319.25"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="770.95,-322.7 780.33,-317.76 769.92,-315.77 770.95,-322.7"/>
+</a>
+</g>
+</g>
+<!-- Y&#45;&gt;G_FITTED -->
+<g id="edge75" class="edge">
+<title>Y-&gt;G_FITTED</title>
+<g id="a_edge75"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M391.62,-561.87C392.57,-483.66 400.69,-176.53 470,-118 583.22,-22.4 1046.15,-139.87 1225.27,-190.21"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1224.54,-193.64 1235.12,-192.99 1226.45,-186.9 1224.54,-193.64"/>
+</a>
+</g>
+</g>
+<!-- Y&#45;&gt;CPV_FITTED -->
+<g id="edge66" class="edge">
+<title>Y-&gt;CPV_FITTED</title>
+<g id="a_edge66"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M391.37,-598.17C391.23,-680.25 395.26,-1015.1 470,-1079 581.24,-1174.11 1036.35,-1070.43 1219.56,-1023.55"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1220.58,-1026.9 1229.39,-1021.02 1218.83,-1020.12 1220.58,-1026.9"/>
+</a>
+</g>
+</g>
+<!-- I(&#45;1)&#45;&gt;I_FITTED -->
+<g id="edge36" class="edge">
+<title>I(-1)-&gt;I_FITTED</title>
+<g id="a_edge36"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1614.1,-545.9C1657.63,-524.67 1729.86,-489.44 1776.94,-466.47"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1778.55,-469.58 1786.01,-462.05 1775.48,-463.28 1778.55,-469.58"/>
+</a>
+</g>
+</g>
+<!-- I(&#45;1)&#45;&gt;I -->
+<g id="edge24" class="edge">
+<title>I(-1)-&gt;I</title>
+<g id="a_edge24"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1524.9,-569.34C1475.04,-571.22 1398.94,-571.22 1348.96,-569.35"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1348.84,-565.85 1338.71,-568.93 1348.55,-572.84 1348.84,-565.85"/>
+</a>
+</g>
+</g>
+<!-- C1_G -->
+<g id="node27" class="node">
+<title>C1_G</title>
+<g id="a_node27"><a xlink:title="C1_G
+Exogen">
+<polygon fill="yellow" stroke="black" points="618.5,-217 564.5,-217 564.5,-181 618.5,-181 618.5,-217"/>
+<text text-anchor="start" x="573.5" y="-194.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C1_G:</text>
+</a>
+</g>
+</g>
+<!-- C1_G&#45;&gt;G -->
+<g id="edge2" class="edge">
+<title>C1_G-&gt;G</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M618.96,-201.56C644.12,-204.76 682.55,-211.66 713,-226 746.55,-241.8 779.43,-268.94 801.09,-288.92"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="798.86,-291.62 808.54,-295.92 803.65,-286.52 798.86,-291.62"/>
+</a>
+</g>
+</g>
+<!-- C1_G&#45;&gt;G_FITTED -->
+<g id="edge6" class="edge">
+<title>C1_G-&gt;G_FITTED</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M618.81,-199.45C708.77,-200.98 1007.85,-206.08 1177.09,-208.96"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1177.23,-212.47 1187.29,-209.14 1177.35,-205.47 1177.23,-212.47"/>
+</a>
+</g>
+</g>
+<!-- CPV_A -->
+<g id="node28" class="node">
+<title>CPV_A</title>
+<g id="a_node28"><a xlink:title="Add factor:Private Consumption
+Exogen">
+<polygon fill="yellow" stroke="black" points="710,-800 473,-800 473,-764 710,-764 710,-800"/>
+<text text-anchor="start" x="479.5" y="-777.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CPV_A:Add factor:Private Consumption</text>
+</a>
+</g>
+</g>
+<!-- CPV_A&#45;&gt;CPV -->
+<g id="edge16" class="edge">
+<title>CPV_A-&gt;CPV</title>
+<g id="a_edge16"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M697.97,-800.07C703.24,-802.67 708.29,-805.63 713,-809 737.97,-826.89 725.65,-848.04 749,-868 752.84,-871.29 757.07,-874.27 761.51,-876.97"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="759.81,-880.03 770.25,-881.83 763.21,-873.91 759.81,-880.03"/>
+</a>
+</g>
+</g>
+<!-- I_A -->
+<g id="node29" class="node">
+<title>I_A</title>
+<g id="a_node29"><a xlink:title="Add factor:Investment
+Exogen">
+<polygon fill="yellow" stroke="black" points="1111,-610 951,-610 951,-574 1111,-574 1111,-610"/>
+<text text-anchor="start" x="957" y="-587.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I_A:Add factor:Investment</text>
+</a>
+</g>
+</g>
+<!-- I_A&#45;&gt;I -->
+<g id="edge73" class="edge">
+<title>I_A-&gt;I</title>
+<g id="a_edge73"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1111,-583.64C1154.69,-579.01 1207.69,-573.4 1245.83,-569.36"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1246.6,-572.8 1256.18,-568.27 1245.86,-565.84 1246.6,-572.8"/>
+</a>
+</g>
+</g>
+<!-- C1_M -->
+<g id="node30" class="node">
+<title>C1_M</title>
+<g id="a_node30"><a xlink:title="C1_M
+Exogen">
+<polygon fill="yellow" stroke="black" points="102.5,-1268 48.5,-1268 48.5,-1232 102.5,-1232 102.5,-1268"/>
+<text text-anchor="start" x="55.5" y="-1245.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C1_M:</text>
+</a>
+</g>
+</g>
+<!-- C1_M&#45;&gt;M -->
+<g id="edge3" class="edge">
+<title>C1_M-&gt;M</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M102.66,-1241.38C117.08,-1236.42 135.21,-1229.82 151,-1223 169.41,-1215.05 189.26,-1205.25 206.18,-1196.51"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="208,-1199.51 215.25,-1191.78 204.76,-1193.3 208,-1199.51"/>
+</a>
+</g>
+</g>
+<!-- C1_M&#45;&gt;M_FITTED -->
+<g id="edge76" class="edge">
+<title>C1_M-&gt;M_FITTED</title>
+<g id="a_edge76"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M102.86,-1252.26C156.68,-1256.67 283.13,-1266 389.5,-1266 389.5,-1266 389.5,-1266 1577,-1266 1737.1,-1266 1777.06,-1252.23 1935,-1226 1949.99,-1223.51 1965.84,-1220.41 1981.14,-1217.17"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1982.07,-1220.55 1991.11,-1215.02 1980.59,-1213.7 1982.07,-1220.55"/>
+</a>
+</g>
+</g>
+<!-- CPV(&#45;1)&#45;&gt;CPV -->
+<g id="edge65" class="edge">
+<title>CPV(-1)-&gt;CPV</title>
+<g id="a_edge65"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M941.65,-928.04C928.01,-925.57 914.07,-922.88 900.84,-920.15"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="901.38,-916.69 890.88,-918.06 899.94,-923.54 901.38,-916.69"/>
+</a>
+</g>
+</g>
+<!-- CPV(&#45;1)&#45;&gt;CPV_FITTED -->
+<g id="edge41" class="edge">
+<title>CPV(-1)-&gt;CPV_FITTED</title>
+<g id="a_edge41"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1105.33,-956.02C1138.72,-964.23 1178.42,-973.98 1212.96,-982.47"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1212.48,-985.96 1223.03,-984.95 1214.15,-979.16 1212.48,-985.96"/>
+</a>
+</g>
+</g>
+<!-- YDISC -->
+<g id="node32" class="node">
+<title>YDISC</title>
+<g id="a_node32"><a xlink:title="Discrepance
+Exogen">
+<polygon fill="yellow" stroke="black" points="311,-571 187,-571 187,-535 311,-535 311,-571"/>
+<text text-anchor="start" x="193" y="-548.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">YDISC:Discrepance</text>
+</a>
+</g>
+</g>
+<!-- YDISC&#45;&gt;Y -->
+<g id="edge5" class="edge">
+<title>YDISC-&gt;Y</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M311.19,-564.84C325.63,-567.64 340.57,-570.53 353.48,-573.03"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="352.86,-576.47 363.34,-574.94 354.19,-569.6 352.86,-576.47"/>
+</a>
+</g>
+</g>
+<!-- C2_CPV -->
+<g id="node33" class="node">
+<title>C2_CPV</title>
+<g id="a_node33"><a xlink:title="C2_CPV
+Exogen">
+<polygon fill="yellow" stroke="black" points="623.5,-962 559.5,-962 559.5,-926 623.5,-926 623.5,-962"/>
+<text text-anchor="start" x="565.5" y="-939.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C2_CPV:</text>
+</a>
+</g>
+</g>
+<!-- C2_CPV&#45;&gt;CPV -->
+<g id="edge4" class="edge">
+<title>C2_CPV-&gt;CPV</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M623.57,-938.16C652.98,-932.63 698.51,-924.07 739.01,-916.45"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="739.73,-919.88 748.91,-914.59 738.43,-913 739.73,-919.88"/>
+</a>
+</g>
+</g>
+<!-- C2_CPV&#45;&gt;CPV_FITTED -->
+<g id="edge44" class="edge">
+<title>C2_CPV-&gt;CPV_FITTED</title>
+<g id="a_edge44"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M623.66,-946.61C713.34,-954.13 976.51,-976.18 1145.9,-990.38"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1145.66,-993.87 1155.91,-991.22 1146.24,-986.89 1145.66,-993.87"/>
+</a>
+</g>
+</g>
+<!-- G&#45;&gt;GDE -->
+<g id="edge31" class="edge">
+<title>G-&gt;GDE</title>
+<g id="a_edge31"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M874.59,-325.03C1002.72,-356.55 1359.01,-450.36 1439,-537 1501.16,-604.34 1554.64,-890.92 1570.34,-982.06"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1566.89,-982.67 1572.02,-991.94 1573.79,-981.49 1566.89,-982.67"/>
+</a>
+</g>
+</g>
+<!-- G&#45;&gt;G(&#45;1) -->
+<g id="edge7" class="edge">
+<title>G-&gt;G(-1)</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M874.73,-308.22C900.92,-307.18 934.15,-306.98 963.14,-307.6"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="963.11,-311.1 973.2,-307.86 963.29,-304.1 963.11,-311.1"/>
+</a>
+</g>
+</g>
+<!-- G&#45;&gt;Y -->
+<g id="edge38" class="edge">
+<title>G-&gt;Y</title>
+<g id="a_edge38"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M780.33,-327.56C686.63,-349.4 481.97,-389.03 470,-399 422.55,-438.53 403.38,-511.43 395.94,-551.74"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="392.47,-551.28 394.21,-561.73 399.37,-552.47 392.47,-551.28"/>
+</a>
+</g>
+</g>
+<!-- C2_G -->
+<g id="node35" class="node">
+<title>C2_G</title>
+<g id="a_node35"><a xlink:title="C2_G
+Exogen">
+<polygon fill="yellow" stroke="black" points="618.5,-163 564.5,-163 564.5,-127 618.5,-127 618.5,-163"/>
+<text text-anchor="start" x="573.5" y="-140.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C2_G:</text>
+</a>
+</g>
+</g>
+<!-- C2_G&#45;&gt;G -->
+<g id="edge45" class="edge">
+<title>C2_G-&gt;G</title>
+<g id="a_edge45"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M618.84,-145.91C644.61,-147.9 684.09,-153.94 713,-172 758.8,-200.61 794.08,-254.42 812.44,-286.95"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="809.49,-288.85 817.38,-295.92 815.62,-285.47 809.49,-288.85"/>
+</a>
+</g>
+</g>
+<!-- C2_G&#45;&gt;G_FITTED -->
+<g id="edge18" class="edge">
+<title>C2_G-&gt;G_FITTED</title>
+<g id="a_edge18"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M618.81,-147.47C708.77,-155.9 1007.85,-183.94 1177.09,-199.81"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1177.01,-203.31 1187.29,-200.76 1177.66,-196.34 1177.01,-203.31"/>
+</a>
+</g>
+</g>
+<!-- I_D -->
+<g id="node36" class="node">
+<title>I_D</title>
+<g id="a_node36"><a xlink:title="Fix dummy:Investment
+Exogen">
+<polygon fill="yellow" stroke="black" points="1114,-718 948,-718 948,-682 1114,-682 1114,-718"/>
+<text text-anchor="start" x="954" y="-695.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">I_D:Fix dummy:Investment</text>
+</a>
+</g>
+</g>
+<!-- I_D&#45;&gt;I -->
+<g id="edge62" class="edge">
+<title>I_D-&gt;I</title>
+<g id="a_edge62"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1097.57,-681.93C1105.24,-679.22 1112.87,-676.23 1120,-673 1172.92,-649.02 1229.24,-611.97 1263.65,-587.86"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1265.77,-590.65 1271.91,-582.02 1261.73,-584.93 1265.77,-590.65"/>
+</a>
+</g>
+</g>
+<!-- C3_G -->
+<g id="node39" class="node">
+<title>C3_G</title>
+<g id="a_node39"><a xlink:title="C3_G
+Exogen">
+<polygon fill="yellow" stroke="black" points="618.5,-271 564.5,-271 564.5,-235 618.5,-235 618.5,-271"/>
+<text text-anchor="start" x="573.5" y="-248.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C3_G:</text>
+</a>
+</g>
+</g>
+<!-- C3_G&#45;&gt;G -->
+<g id="edge42" class="edge">
+<title>C3_G-&gt;G</title>
+<g id="a_edge42"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M618.96,-258.37C643.46,-263.47 680.85,-271.59 713,-280 731.89,-284.94 752.38,-290.89 770.69,-296.43"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="769.74,-299.8 780.32,-299.36 771.78,-293.1 769.74,-299.8"/>
+</a>
+</g>
+</g>
+<!-- C3_G&#45;&gt;G_FITTED -->
+<g id="edge17" class="edge">
+<title>C3_G-&gt;G_FITTED</title>
+<g id="a_edge17"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M618.81,-251.43C708.77,-246.06 1007.85,-228.22 1177.09,-218.12"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1177.52,-221.6 1187.29,-217.52 1177.1,-214.62 1177.52,-221.6"/>
+</a>
+</g>
+</g>
+<!-- M_X -->
+<g id="node40" class="node">
+<title>M_X</title>
+<g id="a_node40"><a xlink:title="Fix value:Import
+Exogen">
+<polygon fill="yellow" stroke="black" points="144.5,-1214 6.5,-1214 6.5,-1178 144.5,-1178 144.5,-1214"/>
+<text text-anchor="start" x="12.5" y="-1191.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M_X:Fix value:Import</text>
+</a>
+</g>
+</g>
+<!-- M_X&#45;&gt;M -->
+<g id="edge50" class="edge">
+<title>M_X-&gt;M</title>
+<g id="a_edge50"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M144.77,-1187.24C165.17,-1184.63 186.95,-1181.83 205.21,-1179.49"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="205.77,-1182.95 215.25,-1178.2 204.88,-1176 205.77,-1182.95"/>
+</a>
+</g>
+</g>
+<!-- C3_I -->
+<g id="node41" class="node">
+<title>C3_I</title>
+<g id="a_node41"><a xlink:title="C3_I
+Exogen">
+<polygon fill="yellow" stroke="black" points="1058,-772 1004,-772 1004,-736 1058,-736 1058,-772"/>
+<text text-anchor="start" x="1016" y="-749.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C3_I:</text>
+</a>
+</g>
+</g>
+<!-- C3_I&#45;&gt;I_FITTED -->
+<g id="edge49" class="edge">
+<title>C3_I-&gt;I_FITTED</title>
+<g id="a_edge49"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1058.13,-752.38C1149.37,-745.73 1460.02,-714.71 1677,-591 1731.21,-560.09 1779,-503.56 1804.17,-470.33"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1807.2,-472.13 1810.37,-462.02 1801.59,-467.95 1807.2,-472.13"/>
+</a>
+</g>
+</g>
+<!-- C3_I&#45;&gt;I -->
+<g id="edge32" class="edge">
+<title>C3_I-&gt;I</title>
+<g id="a_edge32"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1058.15,-750.99C1076.96,-747.7 1102.08,-740.92 1120,-727 1144.26,-708.16 1135.27,-690.67 1156,-668 1185.64,-635.59 1226.66,-606.59 1256.73,-587.5"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1258.68,-590.41 1265.3,-582.14 1254.96,-584.48 1258.68,-590.41"/>
+</a>
+</g>
+</g>
+<!-- C3_CPV -->
+<g id="node42" class="node">
+<title>C3_CPV</title>
+<g id="a_node42"><a xlink:title="C3_CPV
+Exogen">
+<polygon fill="yellow" stroke="black" points="623.5,-1016 559.5,-1016 559.5,-980 623.5,-980 623.5,-1016"/>
+<text text-anchor="start" x="565.5" y="-993.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">C3_CPV:</text>
+</a>
+</g>
+</g>
+<!-- C3_CPV&#45;&gt;CPV -->
+<g id="edge19" class="edge">
+<title>C3_CPV-&gt;CPV</title>
+<g id="a_edge19"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M623.58,-994C648.44,-990.1 683.85,-982.97 713,-971 742.42,-958.92 772.82,-939.47 794.74,-923.98"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="796.92,-926.72 803,-918.04 792.84,-921.03 796.92,-926.72"/>
+</a>
+</g>
+</g>
+<!-- C3_CPV&#45;&gt;CPV_FITTED -->
+<g id="edge71" class="edge">
+<title>C3_CPV-&gt;CPV_FITTED</title>
+<g id="a_edge71"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M623.66,-998.22C713.34,-998.86 976.51,-1000.73 1145.9,-1001.93"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1145.89,-1005.43 1155.91,-1002 1145.94,-998.43 1145.89,-1005.43"/>
 </a>
 </g>
 </g>

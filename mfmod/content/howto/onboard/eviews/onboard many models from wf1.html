@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>16. Onboard all models defined in .wf1 files &#8212; MFMod models in Python with ModelFlow</title>
     
-  <link href="../../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../../index.html">
       
       
@@ -88,14 +102,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../introduction.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Model, solutions and Modelflow
  </span>
@@ -322,91 +337,164 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/content/howto/onboard/eviews/onboard many models from wf1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/content/howto/onboard/eviews/onboard many models from wf1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/content/howto/onboard/eviews/onboard many models from wf1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/content/howto/onboard/eviews/onboard many models from wf1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#list-potential-files">
    16.1. List potential files
@@ -461,12 +549,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Onboard all models  defined in .wf1 files</h1>
@@ -537,11 +624,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="onboard-all-models-defined-in-wf1-files">
-<h1><span class="section-number">16. </span>Onboard all models  defined in .wf1 files<a class="headerlink" href="#onboard-all-models-defined-in-wf1-files" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="onboard-all-models-defined-in-wf1-files">
+<h1><span class="section-number">16. </span>Onboard all models  defined in .wf1 files<a class="headerlink" href="#onboard-all-models-defined-in-wf1-files" title="Permalink to this headline">#</a></h1>
 <p>This notebook takes all .wf1 workfile from the folder wfs\ and transform the models  it to a modelflow model.<br></p>
 <p>The overall process is performed in a Dataclass named:<strong>GrapWfModel</strong><br>
 Close study of this class can be rewarding, but is outside the need of most users.<br>
@@ -602,8 +690,8 @@ Now we have a model and a dataframe with all variables which are needed. b The G
 </div>
 </div>
 </div>
-<div class="section" id="list-potential-files">
-<h2><span class="section-number">16.1. </span>List potential files<a class="headerlink" href="#list-potential-files" title="Permalink to this headline">¶</a></h2>
+<section id="list-potential-files">
+<h2><span class="section-number">16.1. </span>List potential files<a class="headerlink" href="#list-potential-files" title="Permalink to this headline">#</a></h2>
 <p>The workfiles are located in the <code class="docutils literal notranslate"><span class="pre">wfs</span></code> folder. <br>
 The <a class="reference external" href="https://docs.python.org/3/library/pathlib.html">pathlib.Path</a> class is used to find all wf1 files</p>
 <div class="cell docutils container">
@@ -623,9 +711,9 @@ The model and date for per is located in this workfile:wfs\PERMOD_damage_asFacto
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="model-specific-transformations">
-<h2><span class="section-number">16.2. </span>Model specific transformations<a class="headerlink" href="#model-specific-transformations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="model-specific-transformations">
+<h2><span class="section-number">16.2. </span>Model specific transformations<a class="headerlink" href="#model-specific-transformations" title="Permalink to this headline">#</a></h2>
 <p>Not all Eviews equations has a direct counterpart in modelflow.<br>
 To handle that two types of transformations can be provided for a specific model.</p>
 <ul class="simple">
@@ -646,9 +734,9 @@ To handle that two types of transformations can be provided for a specific model
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="transform-all-wf1-files-in-the-folder">
-<h2><span class="section-number">16.3. </span>Transform all wf1 files in the folder<a class="headerlink" href="#transform-all-wf1-files-in-the-folder" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="transform-all-wf1-files-in-the-folder">
+<h2><span class="section-number">16.3. </span>Transform all wf1 files in the folder<a class="headerlink" href="#transform-all-wf1-files-in-the-folder" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allmodels</span> <span class="o">=</span> <span class="p">{</span><span class="n">modelname</span><span class="p">:</span> 
@@ -671,12 +759,13 @@ Assummed model name: AGO
 Eviewsline to run :smpl @ALL
 Eviewsline to run :series MEAN_AGOBNCABFUNDCD_DIV_AGONYGDPMKTPCD = @MEAN(AGOBNCABFUNDCD/AGONYGDPMKTPCD,&quot;2000 2020&quot;)
 The model: AGO is unlinked 
-Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\agosoln_modelflow.wf2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name: AGO
-
-Processing the model:AGO
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\agosoln_modelflow.wf2
+Model name: AGO
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:AGO
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>testmodel calculated  
@@ -687,10 +776,10 @@ Calculation of add factors for AGO calculated
 Assummed model name: MDA
 Eviewsline to run :Scalar _MDASBBREV_at_COEF_2 = _MDASBBREV.@COEF(+2)
 The model: MDA is unlinked 
-Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\MDAsoln_modelflow.wf2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name: MDA
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\MDAsoln_modelflow.wf2
+Model name: MDA
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:MDA
@@ -702,7 +791,9 @@ Calculation of add factors for MDA calculated
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PAKSoln.wf1
 Assummed model name: PAK
-The model: PAK is unlinked 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: PAK is unlinked 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PAKSoln_modelflow.wf2
@@ -718,7 +809,9 @@ Calculation of add factors for PAK calculated
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PERMOD_damage_asFactor20220322.wf1
 Assummed model name: PER
-The model: PER is unlinked 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: PER is unlinked 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing C:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\wfs\PERMOD_damage_asFactor20220322_modelflow.wf2
@@ -736,9 +829,9 @@ Calculation of add factors for PER calculated
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="check-all-the-models">
-<h2><span class="section-number">16.4. </span>Check all the models<a class="headerlink" href="#check-all-the-models" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="check-all-the-models">
+<h2><span class="section-number">16.4. </span>Check all the models<a class="headerlink" href="#check-all-the-models" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">cmodel</span> <span class="ow">in</span> <span class="n">allmodels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -750,8 +843,9 @@ Calculation of add factors for PER calculated
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AGO calculated  
 
 Chekking residuals for AGO 2016 to 2060
-
-Variable with residuals above threshold
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable with residuals above threshold
 AGONECONPRVTCN                        , Max difference:  2861.03139496 Max Pct    0.0000106457% It is number    44 in the solveorder and error number 1
 AGONEGDIFGOVCN                        , Max difference:    21.01837921 Max Pct    0.0000013130% It is number    55 in the solveorder and error number 2
 AGONEGDIFTOTCN                        , Max difference:   177.46922302 Max Pct    0.0000007316% It is number    58 in the solveorder and error number 3
@@ -761,14 +855,18 @@ AGONEEXPGNFSCN                        , Max difference:   504.25928497 Max Pct  
 AGONEIMPGNFSCN                        , Max difference:  1101.58077240 Max Pct    0.0000111348% It is number    71 in the solveorder and error number 7
 AGONYYWBTOTLCN                        , Max difference:   286.10862160 Max Pct    0.0000091250% It is number    80 in the solveorder and error number 8
 AGOGGREVTOTLCN                        , Max difference:   136.30834198 Max Pct    0.0000014056% It is number    81 in the solveorder and error number 9
-AGOGGEXPINTPCN                        , Max difference:    99.77352953 Max Pct    0.0000082146% It is number    86 in the solveorder and error number 10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AGOGGEXPINTPCN                        , Max difference:    99.77352953 Max Pct    0.0000082146% It is number    86 in the solveorder and error number 10
 AGONVGDPFCSTCN                        , Max difference:   455.67959595 Max Pct    0.0000009309% It is number    93 in the solveorder and error number 11
 AGONYTAXNINDKN                        , Max difference:     1.37211440 Max Pct    0.0014202837% It is number    95 in the solveorder and error number 12
 AGONVAGRTOTLCN                        , Max difference:     5.06173030 Max Pct    0.0000057479% It is number    96 in the solveorder and error number 13
 AGONVINDMINGCN                        , Max difference:    89.14881706 Max Pct    0.0000037522% It is number    97 in the solveorder and error number 14
 AGONVSRVPUBLCN                        , Max difference:   597.87203789 Max Pct    0.0000183998% It is number    98 in the solveorder and error number 15
 AGONVGDPOTHRCN                        , Max difference:   355.96192932 Max Pct    0.0000005341% It is number    99 in the solveorder and error number 16
-AGONYGDPMKTPCN                        , Max difference:   296.17025757 Max Pct    0.0000012217% It is number   147 in the solveorder and error number 17
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AGONYGDPMKTPCN                        , Max difference:   296.17025757 Max Pct    0.0000012217% It is number   147 in the solveorder and error number 17
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MDA calculated  
@@ -793,9 +891,9 @@ Chekking residuals for PER 2016 to 2300
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="run-the-models">
-<h2><span class="section-number">16.5. </span>Run the models<a class="headerlink" href="#run-the-models" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="run-the-models">
+<h2><span class="section-number">16.5. </span>Run the models<a class="headerlink" href="#run-the-models" title="Permalink to this headline">#</a></h2>
 <p>Some models need a different alfa (dampening factor in Gauss iterations) in order to solve.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,25 +936,25 @@ mda run and saved
 
  Directory of c:\wb new\Modelflow\working_paper\thebook\content\howto\onboard\eviews\modelflowdumps
 
-27-06-2022  02:14    &lt;DIR&gt;          .
-11-10-2022  16:00    &lt;DIR&gt;          ..
-27-06-2022  02:14         1.434.250 ago
-11-10-2022  19:24         1.434.181 ago.pcim
-27-06-2022  02:14         1.029.618 mda
-11-10-2022  19:24         1.029.604 mda.pcim
-27-06-2022  02:14         3.386.584 pak
-11-10-2022  19:24         3.386.691 pak.pcim
-27-06-2022  02:14        11.979.848 per
-11-10-2022  19:24        11.980.021 per.pcim
+27-06-2022  01:14    &lt;DIR&gt;          .
+17-10-2022  21:28    &lt;DIR&gt;          ..
+27-06-2022  01:14         1.434.250 ago
+06-11-2022  17:11         1.434.181 ago.pcim
+27-06-2022  01:14         1.029.618 mda
+06-11-2022  17:11         1.029.604 mda.pcim
+27-06-2022  01:14         3.386.584 pak
+06-11-2022  17:11         3.386.691 pak.pcim
+27-06-2022  01:14        11.979.848 per
+06-11-2022  17:11        11.980.021 per.pcim
                8 File(s)     35.660.797 bytes
-               2 Dir(s)  751.341.367.296 bytes free
+               2 Dir(s)  744.390.721.536 bytes free
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="make-some-names-in-the-namespace">
-<h2><span class="section-number">16.6. </span>Make some names in the namespace<a class="headerlink" href="#make-some-names-in-the-namespace" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="make-some-names-in-the-namespace">
+<h2><span class="section-number">16.6. </span>Make some names in the namespace<a class="headerlink" href="#make-some-names-in-the-namespace" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">modelname</span><span class="p">,</span><span class="n">cmodel</span> <span class="ow">in</span> <span class="n">allmodels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -890,12 +988,12 @@ mper, per_baseline and per_cmodel has been created
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="from-here-testing-will-be-deleted">
-<h2><span class="section-number">16.7. </span>From here testing - will be deleted<a class="headerlink" href="#from-here-testing-will-be-deleted" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="lets-create-a-list-of-all-variable-names">
-<h2><span class="section-number">16.8. </span>Lets create a list of all variable names<a class="headerlink" href="#lets-create-a-list-of-all-variable-names" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="from-here-testing-will-be-deleted">
+<h2><span class="section-number">16.7. </span>From here testing - will be deleted<a class="headerlink" href="#from-here-testing-will-be-deleted" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="lets-create-a-list-of-all-variable-names">
+<h2><span class="section-number">16.8. </span>Lets create a list of all variable names<a class="headerlink" href="#lets-create-a-list-of-all-variable-names" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allvar</span> <span class="o">=</span> <span class="p">[</span><span class="n">varname</span> <span class="k">for</span> <span class="n">cmodel</span>  <span class="ow">in</span> <span class="n">allmodels</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">varname</span> <span class="ow">in</span> <span class="n">cmodel</span><span class="o">.</span><span class="n">mmodel</span><span class="o">.</span><span class="n">allvar</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
@@ -969,8 +1067,8 @@ mper, per_baseline and per_cmodel has been created
 </div>
 </div>
 </div>
-<div class="section" id="government-consumption">
-<h3><span class="section-number">16.8.1. </span>Government consumption<a class="headerlink" href="#government-consumption" title="Permalink to this headline">¶</a></h3>
+<section id="government-consumption">
+<h3><span class="section-number">16.8.1. </span>Government consumption<a class="headerlink" href="#government-consumption" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getnames</span><span class="p">(</span><span class="s1">&#39;*NECONGOVTCN&#39;</span><span class="p">)</span>
@@ -986,9 +1084,9 @@ mper, per_baseline and per_cmodel has been created
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="government-investment">
-<h3><span class="section-number">16.8.2. </span>Government investment<a class="headerlink" href="#government-investment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="government-investment">
+<h3><span class="section-number">16.8.2. </span>Government investment<a class="headerlink" href="#government-investment" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getnames</span><span class="p">(</span><span class="s1">&#39;*NEGDIFGOVCN&#39;</span><span class="p">)</span>
@@ -1011,10 +1109,10 @@ mper, per_baseline and per_cmodel has been created
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;PAKLMEMPTOTLCN_FITTED&#39;, &#39;Fitted  value:Employment&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;PAKLMEMPTOTLCN_A&#39;, &#39;Add factor:Employment&#39;)
 (&#39;PAKLMEMPTOTLCN&#39;, &#39;Employment&#39;)
 (&#39;PAKLMEMPTOTLCN_D&#39;, &#39;Fix dummy:Employment&#39;)
-(&#39;PAKLMEMPTOTLCN_A&#39;, &#39;Add factor:Employment&#39;)
+(&#39;PAKLMEMPTOTLCN_FITTED&#39;, &#39;Fitted  value:Employment&#39;)
 (&#39;PAKLMEMPTOTLCN_X&#39;, &#39;Fix value:Employment&#39;)
 </pre></div>
 </div>
@@ -1027,22 +1125,22 @@ mper, per_baseline and per_cmodel has been created
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;AGOGGEXPWAGECN_VALUE_2019&#39;, &#39;AGOGGEXPWAGECN_VALUE_2019&#39;)
-(&#39;AGOGGEXPWAGECN&#39;, &#39;Wages and Salaries&#39;)
-(&#39;AGOGGEXPWAGECN_A&#39;, &#39;Add factor:Wages and Salaries&#39;)
-(&#39;AGOGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Wages and Salaries&#39;)
-(&#39;AGOGGEXPWAGECN_X&#39;, &#39;Fix value:Wages and Salaries&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;AGOGGEXPWAGECN_A&#39;, &#39;Add factor:Wages and Salaries&#39;)
+(&#39;AGOGGEXPWAGECN_VALUE_2019&#39;, &#39;AGOGGEXPWAGECN_VALUE_2019&#39;)
 (&#39;AGOGGEXPWAGECN_D&#39;, &#39;Fix dummy:Wages and Salaries&#39;)
-(&#39;MDAGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Expenditure: Wages and Salaries LCU millions&#39;)
-(&#39;MDAGGEXPWAGECN_A&#39;, &#39;Add factor:Expenditure: Wages and Salaries LCU millions&#39;)
-(&#39;MDAGGEXPWAGECN_D&#39;, &#39;Fix dummy:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;AGOGGEXPWAGECN_X&#39;, &#39;Fix value:Wages and Salaries&#39;)
+(&#39;AGOGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Wages and Salaries&#39;)
+(&#39;AGOGGEXPWAGECN&#39;, &#39;Wages and Salaries&#39;)
 (&#39;MDAGGEXPWAGECN&#39;, &#39;Expenditure: Wages and Salaries LCU millions&#39;)
 (&#39;MDAGGEXPWAGECN_X&#39;, &#39;Fix value:Expenditure: Wages and Salaries LCU millions&#39;)
-(&#39;PERGGEXPWAGECN_D&#39;, &#39;Fix dummy:PERGGEXPWAGECN&#39;)
+(&#39;MDAGGEXPWAGECN_A&#39;, &#39;Add factor:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN_D&#39;, &#39;Fix dummy:Expenditure: Wages and Salaries LCU millions&#39;)
 (&#39;PERGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:PERGGEXPWAGECN&#39;)
+(&#39;PERGGEXPWAGECN_D&#39;, &#39;Fix dummy:PERGGEXPWAGECN&#39;)
+(&#39;PERGGEXPWAGECN&#39;, &#39;PERGGEXPWAGECN&#39;)
 (&#39;PERGGEXPWAGECN_A&#39;, &#39;Add factor:PERGGEXPWAGECN&#39;)
 (&#39;PERGGEXPWAGECN_X&#39;, &#39;Fix value:PERGGEXPWAGECN&#39;)
-(&#39;PERGGEXPWAGECN&#39;, &#39;PERGGEXPWAGECN&#39;)
 </pre></div>
 </div>
 </div>
@@ -1110,7 +1208,7 @@ Fitted          : PAKGGEXPGNFSCN_FITTED = 0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(
 Eviews          : PAKGGEXPGNFSCN = 0.3*PAKGGEXPGNFSCN( - 1) + (1 - 0.3)*(0.80*(PAKGGREVTOTLCN - PAKGGEXPINTPCN( - 0))) + 505277.259999999*@DURING(&quot;2012&quot;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normalized_frml(endo_var=&#39;PAKGGEXPGNFSCN&#39;, original=&#39;PAKGGEXPGNFSCN=0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012\r&#39;, preprocessed=&#39;PAKGGEXPGNFSCN=0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012\r&#39;, normalized=&#39;PAKGGEXPGNFSCN = (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012 + PAKGGEXPGNFSCN_A)* (1-PAKGGEXPGNFSCN_D)+ PAKGGEXPGNFSCN_X*PAKGGEXPGNFSCN_D &#39;, calc_add_factor=&#39;PAKGGEXPGNFSCN_A = (PAKGGEXPGNFSCN) - (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012)&#39;, un_normalized=&#39;&#39;, fitted=&#39;PAKGGEXPGNFSCN_FITTED = 0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012&#39;, eviews=&#39;PAKGGEXPGNFSCN = 0.3*PAKGGEXPGNFSCN( - 1) + (1 - 0.3)*(0.80*(PAKGGREVTOTLCN - PAKGGEXPINTPCN( - 0))) + 505277.259999999*@DURING(&quot;2012&quot;)\r&#39;)
 </pre></div>
 </div>
 </div>
@@ -1131,7 +1229,7 @@ Fitted          : AGONECONGOVTCN_FITTED =  (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AG
 Eviews          : D(AGONECONGOVTCN) = D(AGOGGEXPGNFSCN + AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100 + 14591.8357729705*DUMH
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normalized_frml(endo_var=&#39;AGONECONGOVTCN&#39;, original=&#39;DIFF(AGONECONGOVTCN)=DIFF(AGOGGEXPGNFSCN+AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100+14591.8357729705*DUMH\r&#39;, preprocessed=&#39;((AGONECONGOVTCN)-(AGONECONGOVTCN(-1)))=((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH\r&#39;, normalized=&#39;AGONECONGOVTCN = (AGONECONGOVTCN_A+ (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH) +AGONECONGOVTCN(-1)) * (1-AGONECONGOVTCN_D)+ AGONECONGOVTCN_X*AGONECONGOVTCN_D &#39;, calc_add_factor=&#39;AGONECONGOVTCN_A = AGONECONGOVTCN- ((((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH)) -AGONECONGOVTCN(-1)&#39;, un_normalized=&#39;&#39;, fitted=&#39;AGONECONGOVTCN_FITTED =  (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH) +AGONECONGOVTCN(-1)&#39;, eviews=&#39;D(AGONECONGOVTCN) = D(AGOGGEXPGNFSCN + AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100 + 14591.8357729705*DUMH\r&#39;)
 </pre></div>
 </div>
 </div>
@@ -1154,9 +1252,9 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1180,9 +1278,11 @@ Number of endogeneous variables         :                  378
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="onboard%20one%20model%20from%20%20wf1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1198,24 +1298,28 @@ Number of endogeneous variables         :                  378
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ib Hansen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ib Hansen<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

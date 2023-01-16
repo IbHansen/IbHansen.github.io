@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>6. Update, modifying series in a dataframe using modelflow &#8212; MFMod models in Python with ModelFlow</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
       
@@ -90,14 +104,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../introduction.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../introduction.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Model, solutions and Modelflow
  </span>
@@ -324,91 +339,164 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/howto/update/model update.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/content/howto/update/model update.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/content/howto/update/model update.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/content/howto/update/model update.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setting-up-the-workspace">
    6.1. Setting up the workspace
@@ -558,12 +646,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Update, modifying series in a dataframe using modelflow</h1>
@@ -729,11 +816,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="update-modifying-series-in-a-dataframe-using-modelflow">
-<span id="upd"></span><h1><span class="section-number">6. </span>Update, modifying series in a dataframe using modelflow<a class="headerlink" href="#update-modifying-series-in-a-dataframe-using-modelflow" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="update-modifying-series-in-a-dataframe-using-modelflow">
+<span id="upd"></span><h1><span class="section-number">6. </span>Update, modifying series in a dataframe using modelflow<a class="headerlink" href="#update-modifying-series-in-a-dataframe-using-modelflow" title="Permalink to this headline">#</a></h1>
 <p>Often when we are working with a model we will want to modify individual data points or series in a model (for example when doing a simulation, or if there is a data update to one or more series.
 This can be done straight using pandas methods.</p>
 <p>However the <strong>dataframe.upd</strong> function in Modelflow simplifies this exercise.
@@ -810,8 +898,8 @@ except lines with the –no_keep_growth option</p>
 <p>Examples later.</p>
 <p><strong>Comments</strong></p>
 <p>Everyting after a # until line end is regarded as a comment</p>
-<div class="section" id="setting-up-the-workspace">
-<h2><span class="section-number">6.1. </span>Setting up the workspace<a class="headerlink" href="#setting-up-the-workspace" title="Permalink to this headline">¶</a></h2>
+<section id="setting-up-the-workspace">
+<h2><span class="section-number">6.1. </span>Setting up the workspace<a class="headerlink" href="#setting-up-the-workspace" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -831,9 +919,9 @@ except lines with the –no_keep_growth option</p>
 </style>
 </div></div>
 </div>
-</div>
-<div class="section" id="create-dataframe-to-update">
-<h2><span class="section-number">6.2. </span>Create dataframe to update:<a class="headerlink" href="#create-dataframe-to-update" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-dataframe-to-update">
+<h2><span class="section-number">6.2. </span>Create dataframe to update:<a class="headerlink" href="#create-dataframe-to-update" title="Permalink to this headline">#</a></h2>
 <p>Now a pandas dataframe with one column and 6 rows are created. The column is has the name <code class="docutils literal notranslate"><span class="pre">A</span></code> and the rows have index 2020 to 2025.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -900,9 +988,9 @@ except lines with the –no_keep_growth option</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> creates a dataframe  <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame">Description</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[2020+v</span> <span class="pre">for</span> <span class="pre">v</span> <span class="pre">in</span> <span class="pre">range(number_of_rows)]</span></code> defines a list comprehension which creates a list of the integers from 2020 to 2025 (see below for list comprehensions)</p></li>
 </ul>
-</div>
-<div class="section" id="use-dataframe-loc-to-make-a-new-variable">
-<h2><span class="section-number">6.3. </span>Use dataframe.loc to make a new variable<a class="headerlink" href="#use-dataframe-loc-to-make-a-new-variable" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="use-dataframe-loc-to-make-a-new-variable">
+<h2><span class="section-number">6.3. </span>Use dataframe.loc to make a new variable<a class="headerlink" href="#use-dataframe-loc-to-make-a-new-variable" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> is used to access or set values in a dataframe based on row and column labels.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html">Description</a></p></li>
@@ -974,14 +1062,14 @@ except lines with the –no_keep_growth option</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="use-dataframe-upd-to-modify-a-series-in-a-dataframe-or-to-add-a-series-to-a-dataframe">
-<h2><span class="section-number">6.4. </span>Use dataframe.upd()  to  modify a series in a dataframe or to add a series to a dataframe<a class="headerlink" href="#use-dataframe-upd-to-modify-a-series-in-a-dataframe-or-to-add-a-series-to-a-dataframe" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="use-dataframe-upd-to-modify-a-series-in-a-dataframe-or-to-add-a-series-to-a-dataframe">
+<h2><span class="section-number">6.4. </span>Use dataframe.upd()  to  modify a series in a dataframe or to add a series to a dataframe<a class="headerlink" href="#use-dataframe-upd-to-modify-a-series-in-a-dataframe-or-to-add-a-series-to-a-dataframe" title="Permalink to this headline">#</a></h2>
 <p>Upd makes it much easier to create new series (compare the below, with the complicated pandas code above).</p>
-<div class="section" id="setting-value-equal-to-input">
-<h3><span class="section-number">6.4.1. </span>= Setting value equal to input<a class="headerlink" href="#setting-value-equal-to-input" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="creates-a-new-data-series-called-c-in-the-dataframe-with-values-of-142-everywhere">
-<h4><span class="section-number">6.4.1.1. </span>Creates a new data series called c in the dataframe with values of 142 everywhere<a class="headerlink" href="#creates-a-new-data-series-called-c-in-the-dataframe-with-values-of-142-everywhere" title="Permalink to this headline">¶</a></h4>
+<section id="setting-value-equal-to-input">
+<h3><span class="section-number">6.4.1. </span>= Setting value equal to input<a class="headerlink" href="#setting-value-equal-to-input" title="Permalink to this headline">#</a></h3>
+<section id="creates-a-new-data-series-called-c-in-the-dataframe-with-values-of-142-everywhere">
+<h4><span class="section-number">6.4.1.1. </span>Creates a new data series called c in the dataframe with values of 142 everywhere<a class="headerlink" href="#creates-a-new-data-series-called-c-in-the-dataframe-with-values-of-142-everywhere" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;c = 142&#39;</span><span class="p">)</span> 
@@ -1054,9 +1142,9 @@ except lines with the –no_keep_growth option</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="setting-specific-datapoints-to-specific-values">
-<h4><span class="section-number">6.4.1.2. </span>Setting specific datapoints to specific values<a class="headerlink" href="#setting-specific-datapoints-to-specific-values" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="setting-specific-datapoints-to-specific-values">
+<h4><span class="section-number">6.4.1.2. </span>Setting specific datapoints to specific values<a class="headerlink" href="#setting-specific-datapoints-to-specific-values" title="Permalink to this headline">#</a></h4>
 <p>In this example, upd uses the equals operator.  This indicates that the variable a should be set equal to the indicated values following the = operator (42 44 45 46 in this example). The dates enclosed in &lt;&gt; indicate the period over which the change should be applied.</p>
 <p>Either:</p>
 <ul class="simple">
@@ -1140,10 +1228,10 @@ except lines with the –no_keep_growth option</p>
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="adding-the-specified-values-to-all-values-in-a-range-the-operator">
-<h3><span class="section-number">6.4.2. </span>Adding  the specified  values to all values in a range (the + operator)<a class="headerlink" href="#adding-the-specified-values-to-all-values-in-a-range-the-operator" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="adding-the-specified-values-to-all-values-in-a-range-the-operator">
+<h3><span class="section-number">6.4.2. </span>Adding  the specified  values to all values in a range (the + operator)<a class="headerlink" href="#adding-the-specified-values-to-all-values-in-a-range-the-operator" title="Permalink to this headline">#</a></h3>
 <p>NB: Here upd with the  + operator indicates that we are adding 42.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1212,9 +1300,9 @@ except lines with the –no_keep_growth option</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="multiplying-all-values-in-a-range-by-the-specified-values-the-operator">
-<h3><span class="section-number">6.4.3. </span>Multiplying all values in a range by the specified values (the * operator)<a class="headerlink" href="#multiplying-all-values-in-a-range-by-the-specified-values-the-operator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multiplying-all-values-in-a-range-by-the-specified-values-the-operator">
+<h3><span class="section-number">6.4.3. </span>Multiplying all values in a range by the specified values (the * operator)<a class="headerlink" href="#multiplying-all-values-in-a-range-by-the-specified-values-the-operator" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
@@ -1282,9 +1370,9 @@ except lines with the –no_keep_growth option</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="increasing-all-values-in-a-range-by-a-specified-percent-amount-the-operator">
-<h3><span class="section-number">6.4.4. </span>Increasing all  values in a range by a  specified percent amount (the % operator)<a class="headerlink" href="#increasing-all-values-in-a-range-by-a-specified-percent-amount-the-operator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="increasing-all-values-in-a-range-by-a-specified-percent-amount-the-operator">
+<h3><span class="section-number">6.4.4. </span>Increasing all  values in a range by a  specified percent amount (the % operator)<a class="headerlink" href="#increasing-all-values-in-a-range-by-a-specified-percent-amount-the-operator" title="Permalink to this headline">#</a></h3>
 <p>In this example:</p>
 <ul class="simple">
 <li><p>A is increased by 42 and 44% over the range 2021 through 2022.</p></li>
@@ -1368,9 +1456,9 @@ except lines with the –no_keep_growth option</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="set-the-percent-growth-rate-to-specified-values-growth">
-<h3><span class="section-number">6.4.5. </span>Set the percent growth rate to specified values (=GROWTH)<a class="headerlink" href="#set-the-percent-growth-rate-to-specified-values-growth" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="set-the-percent-growth-rate-to-specified-values-growth">
+<h3><span class="section-number">6.4.5. </span>Set the percent growth rate to specified values (=GROWTH)<a class="headerlink" href="#set-the-percent-growth-rate-to-specified-values-growth" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
@@ -1435,9 +1523,9 @@ Growth:
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="add-or-subtract-from-the-existing-percent-growth-rate-growth-operator">
-<h3><span class="section-number">6.4.6. </span>Add or subtract from the existing percent growth rate (+GROWTH operator)<a class="headerlink" href="#add-or-subtract-from-the-existing-percent-growth-rate-growth-operator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="add-or-subtract-from-the-existing-percent-growth-rate-growth-operator">
+<h3><span class="section-number">6.4.6. </span>Add or subtract from the existing percent growth rate (+GROWTH operator)<a class="headerlink" href="#add-or-subtract-from-the-existing-percent-growth-rate-growth-operator" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
@@ -1472,9 +1560,9 @@ Growth:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="set-delta-var-t-var-t-1-to-specified-values-diff-operator">
-<h3><span class="section-number">6.4.7. </span>Set <span class="math notranslate nohighlight">\(\Delta = var_t - var_{t-1}\)</span> to specified values (=diff operator)<a class="headerlink" href="#set-delta-var-t-var-t-1-to-specified-values-diff-operator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="set-delta-var-t-var-t-1-to-specified-values-diff-operator">
+<h3><span class="section-number">6.4.7. </span>Set <span class="math notranslate nohighlight">\(\Delta = var_t - var_{t-1}\)</span> to specified values (=diff operator)<a class="headerlink" href="#set-delta-var-t-var-t-1-to-specified-values-diff-operator" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
@@ -1553,9 +1641,9 @@ Growth:
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="recall-that-we-have-not-overwritten-df-so-the-df-dataframe-is-unchanged">
-<h3><span class="section-number">6.4.8. </span>Recall  that we have not overwritten df, so the df dataframe is unchanged.<a class="headerlink" href="#recall-that-we-have-not-overwritten-df-so-the-df-dataframe-is-unchanged" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="recall-that-we-have-not-overwritten-df-so-the-df-dataframe-is-unchanged">
+<h3><span class="section-number">6.4.8. </span>Recall  that we have not overwritten df, so the df dataframe is unchanged.<a class="headerlink" href="#recall-that-we-have-not-overwritten-df-so-the-df-dataframe-is-unchanged" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
@@ -1620,14 +1708,14 @@ Growth:
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="upd-keep-growth-keep-growth-keep-the-growth-rate-in-the-years-after-the-update">
-<h2><span class="section-number">6.5. </span>.upd(,,,keep_growth)/–keep_growth, keep the growth rate in the years after the update<a class="headerlink" href="#upd-keep-growth-keep-growth-keep-the-growth-rate-in-the-years-after-the-update" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="upd-keep-growth-keep-growth-keep-the-growth-rate-in-the-years-after-the-update">
+<h2><span class="section-number">6.5. </span>.upd(,,,keep_growth)/–keep_growth, keep the growth rate in the years after the update<a class="headerlink" href="#upd-keep-growth-keep-growth-keep-the-growth-rate-in-the-years-after-the-update" title="Permalink to this headline">#</a></h2>
 <p>Before a series is updated the growth rate of the series is calculated. After a series has been updated, it is possible to use the saved growth rate to do an automatic update of the series from the end of the “proper” update period until the end of the dataframe.</p>
 <p>This allows to update variables for which new information is available, but keep the growth rate the same as before the update in the period after the update time.</p>
-<div class="section" id="first-make-a-dataframe-with-some-growth-rate">
-<h3><span class="section-number">6.5.1. </span>First make a dataframe with some growth rate<a class="headerlink" href="#first-make-a-dataframe-with-some-growth-rate" title="Permalink to this headline">¶</a></h3>
+<section id="first-make-a-dataframe-with-some-growth-rate">
+<h3><span class="section-number">6.5.1. </span>First make a dataframe with some growth rate<a class="headerlink" href="#first-make-a-dataframe-with-some-growth-rate" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&lt;2021 2025&gt; a =growth 1 2 3 4 5&#39;</span><span class="p">)</span>  
@@ -1657,9 +1745,9 @@ Growth:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="now-update-a-in-2021-to-2023-to-a-new-value">
-<h3><span class="section-number">6.5.2. </span>now update A in 2021 to 2023 to a new value,<a class="headerlink" href="#now-update-a-in-2021-to-2023-to-a-new-value" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="now-update-a-in-2021-to-2023-to-a-new-value">
+<h3><span class="section-number">6.5.2. </span>now update A in 2021 to 2023 to a new value,<a class="headerlink" href="#now-update-a-in-2021-to-2023-to-a-new-value" title="Permalink to this headline">#</a></h3>
 <p>and watch how values after 2023 are updated, so the gowth rate after the update is unchanged</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1693,12 +1781,12 @@ Growth:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-more-advanced-example">
-<h3><span class="section-number">6.5.3. </span>A more advanced example<a class="headerlink" href="#a-more-advanced-example" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="a-more-advanced-example">
+<h3><span class="section-number">6.5.3. </span>A more advanced example<a class="headerlink" href="#a-more-advanced-example" title="Permalink to this headline">#</a></h3>
 <p>Where more advanced python is used</p>
-<div class="section" id="first-create-a-string-with-update-lines">
-<h4><span class="section-number">6.5.3.1. </span>First create a string with update lines<a class="headerlink" href="#first-create-a-string-with-update-lines" title="Permalink to this headline">¶</a></h4>
+<section id="first-create-a-string-with-update-lines">
+<h4><span class="section-number">6.5.3.1. </span>First create a string with update lines<a class="headerlink" href="#first-create-a-string-with-update-lines" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>                               
@@ -1754,9 +1842,9 @@ description:<br></p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="use-the-update-lines-to-update-a-dataframe">
-<h4><span class="section-number">6.5.3.2. </span>Use the update lines to update a dataframe<a class="headerlink" href="#use-the-update-lines-to-update-a-dataframe" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="use-the-update-lines-to-update-a-dataframe">
+<h4><span class="section-number">6.5.3.2. </span>Use the update lines to update a dataframe<a class="headerlink" href="#use-the-update-lines-to-update-a-dataframe" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfnew</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
@@ -1850,9 +1938,9 @@ description:<br></p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="update-the-new-dataframe-and-keep-some-of-the-growth-rates">
-<h4><span class="section-number">6.5.3.3. </span>Update the new dataframe and keep some of the growth rates<a class="headerlink" href="#update-the-new-dataframe-and-keep-some-of-the-growth-rates" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="update-the-new-dataframe-and-keep-some-of-the-growth-rates">
+<h4><span class="section-number">6.5.3.3. </span>Update the new dataframe and keep some of the growth rates<a class="headerlink" href="#update-the-new-dataframe-and-keep-some-of-the-growth-rates" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">keep_growth=True</span></code> now all lines as default keep the growth rate</p>
 <ul class="simple">
 <li><p>c,d are updated in 2022 and 2023 and keep the growth rates afterwards</p></li>
@@ -1891,15 +1979,15 @@ Growth:
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="kg-can-replace-keep-growth-and-nkg-can-replace-non-keep-growth">
-<h3><span class="section-number">6.5.4. </span>–kg can replace –keep_growth and –nkg can replace –non_keep_growth<a class="headerlink" href="#kg-can-replace-keep-growth-and-nkg-can-replace-non-keep-growth" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="kg-can-replace-keep-growth-and-nkg-can-replace-non-keep-growth">
+<h3><span class="section-number">6.5.4. </span>–kg can replace –keep_growth and –nkg can replace –non_keep_growth<a class="headerlink" href="#kg-can-replace-keep-growth-and-nkg-can-replace-non-keep-growth" title="Permalink to this headline">#</a></h3>
 <p>Just to make typing more easy</p>
-</div>
-</div>
-<div class="section" id="update-several-variable-in-one-line">
-<h2><span class="section-number">6.6. </span>Update several variable in one line<a class="headerlink" href="#update-several-variable-in-one-line" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="update-several-variable-in-one-line">
+<h2><span class="section-number">6.6. </span>Update several variable in one line<a class="headerlink" href="#update-several-variable-in-one-line" title="Permalink to this headline">#</a></h2>
 <p>Sometime there is a need to update several variable with the same value over the same time frame. To ease this case .update can accept several variables in one line</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2025,9 +2113,9 @@ Growth:
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="upd-scale-number-default-1-scale-the-updates">
-<h2><span class="section-number">6.7. </span>.upd(,,scale=&lt;number, default=1&gt;) Scale the updates<a class="headerlink" href="#upd-scale-number-default-1-scale-the-updates" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="upd-scale-number-default-1-scale-the-updates">
+<h2><span class="section-number">6.7. </span>.upd(,,scale=&lt;number, default=1&gt;) Scale the updates<a class="headerlink" href="#upd-scale-number-default-1-scale-the-updates" title="Permalink to this headline">#</a></h2>
 <p>When creating scenarios consistent of several updates it can be useful to be able to create
 a number of scenarios based on one update but with different scale. For instance scale=0 is the baseline while scale=0.5 is a scenario half
 the severity.</p>
@@ -2100,9 +2188,9 @@ Growth:
 2023  1.5  0.0
 2024  2.0  0.0
 2025  2.5  0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>severity=1
+
+
+severity=1
 Dataframe:
                A      B
 2020  100.000000  100.0
@@ -2124,9 +2212,9 @@ Growth:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="upd-lprint-true-prints-vaues-the-before-and-after-update">
-<h2><span class="section-number">6.8. </span>.upd(,,lprint=True ) prints vaues the before and after update<a class="headerlink" href="#upd-lprint-true-prints-vaues-the-before-and-after-update" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="upd-lprint-true-prints-vaues-the-before-and-after-update">
+<h2><span class="section-number">6.8. </span>.upd(,,lprint=True ) prints vaues the before and after update<a class="headerlink" href="#upd-lprint-true-prints-vaues-the-before-and-after-update" title="Permalink to this headline">#</a></h2>
 <p>When creating scenarios consistent of several updates it can be useful to be able to create
 a number of scenarios based on one update but with different scale. For instance scale=0 is the baseline wile scale=0.5 is a scenario half
 the severity.</p>
@@ -2203,9 +2291,9 @@ A                    Before                After                 Diff
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="upd-create-true-requires-the-variable-to-exist">
-<h2><span class="section-number">6.9. </span>.upd(,,create=True ) Requires the variable to exist<a class="headerlink" href="#upd-create-true-requires-the-variable-to-exist" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="upd-create-true-requires-the-variable-to-exist">
+<h2><span class="section-number">6.9. </span>.upd(,,create=True ) Requires the variable to exist<a class="headerlink" href="#upd-create-true-requires-the-variable-to-exist" title="Permalink to this headline">#</a></h2>
 <p>Until now .upd has created variables if they did not exist in the input dataframe.</p>
 <p>To catch misspellings the parameter <code class="docutils literal notranslate"><span class="pre">create</span></code> can be set to False.
 New variables will not be created, and an exception will be raised.</p>
@@ -2231,9 +2319,9 @@ Set create=True if you want the variable created:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-call">
-<h2><span class="section-number">6.10. </span>The call<a class="headerlink" href="#the-call" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-call">
+<h2><span class="section-number">6.10. </span>The call<a class="headerlink" href="#the-call" title="Permalink to this headline">#</a></h2>
 <p>def update(indf, updates, lprint=False,scale = 1.0,create=True,keep_growth=False,start=’’,end=’’)</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Args:
         indf (DataFrame): input dataframe.
@@ -2251,8 +2339,8 @@ Set create=True if you want the variable created:
     &quot;&lt;&quot;[[start] end]&quot;&gt;&quot; &lt;var....&gt; &lt;=|+|*|%|=growth|+growth|=diff&gt; &lt;value&gt;...  [--keep_growth_rate|--no_keep_growth_rate]
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2276,9 +2364,11 @@ Set create=True if you want the variable created:
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../notebooks/pandas/dataframes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2294,24 +2384,28 @@ Set create=True if you want the variable created:
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ib Hansen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ib Hansen<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
