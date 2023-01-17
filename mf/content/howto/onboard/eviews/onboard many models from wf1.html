@@ -793,10 +793,11 @@ Eviewsline to run :series MEAN_AGOBNCABFUNDCD_DIV_AGONYGDPMKTPCD = @MEAN(AGOBNCA
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: AGO is unlinked 
 Writing C:\modelflow manual\working_paper\thebook\content\howto\onboard\eviews\wfs\agosoln_modelflow.wf2
-Model name: AGO
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:AGO
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name: AGO
+
+Processing the model:AGO
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>testmodel calculated  
@@ -829,10 +830,10 @@ Assummed model name: PAK
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model: PAK is unlinked 
-Writing C:\modelflow manual\working_paper\thebook\content\howto\onboard\eviews\wfs\PAKSoln_modelflow.wf2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name: PAK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing C:\modelflow manual\working_paper\thebook\content\howto\onboard\eviews\wfs\PAKSoln_modelflow.wf2
+Model name: PAK
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing the model:PAK
@@ -874,16 +875,16 @@ Calculation of add factors for PER calculated
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AGO calculated  
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chekking residuals for AGO 2016 to 2060
 
-Variable with residuals above threshold
-AGONECONPRVTCN                        , Max difference:  2861.03139496 Max Pct    0.0000106457% It is number    44 in the solveorder and error number 1
-AGONEGDIFGOVCN                        , Max difference:    21.01837921 Max Pct    0.0000013130% It is number    55 in the solveorder and error number 2
+Chekking residuals for AGO 2016 to 2060
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AGONEGDIFTOTCN                        , Max difference:   177.46922302 Max Pct    0.0000007316% It is number    58 in the solveorder and error number 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable with residuals above threshold
+AGONECONPRVTCN                        , Max difference:  2861.03139496 Max Pct    0.0000106457% It is number    44 in the solveorder and error number 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AGONEGDIFGOVCN                        , Max difference:    21.01837921 Max Pct    0.0000013130% It is number    55 in the solveorder and error number 2
+AGONEGDIFTOTCN                        , Max difference:   177.46922302 Max Pct    0.0000007316% It is number    58 in the solveorder and error number 3
 AGONEEXPNOILCN                        , Max difference:    34.74809837 Max Pct    0.0000022911% It is number    63 in the solveorder and error number 4
 AGONEEXPGOILCN                        , Max difference:   544.94689941 Max Pct    0.0000026926% It is number    66 in the solveorder and error number 5
 AGONEEXPGNFSCN                        , Max difference:   504.25928497 Max Pct    0.0000023486% It is number    67 in the solveorder and error number 6
@@ -970,13 +971,13 @@ mda run and saved
  Directory of c:\modelflow manual\working_paper\thebook\content\howto\onboard\eviews\modelflowdumps
 
 10-01-2023  21:48    &lt;DIR&gt;          .
-10-01-2023  21:25    &lt;DIR&gt;          ..
-13-01-2023  12:12         1.434.181 ago.pcim
-13-01-2023  12:12         1.029.601 mda.pcim
-13-01-2023  12:12         3.386.691 pak.pcim
-13-01-2023  12:12        11.980.021 per.pcim
+17-01-2023  12:34    &lt;DIR&gt;          ..
+17-01-2023  13:28         1.434.181 ago.pcim
+17-01-2023  13:28         1.029.601 mda.pcim
+17-01-2023  13:28         3.386.691 pak.pcim
+17-01-2023  13:28        11.980.021 per.pcim
                4 File(s)     17.830.494 bytes
-               2 Dir(s)  729.134.596.096 bytes free
+               2 Dir(s)  727.783.165.952 bytes free
 </pre></div>
 </div>
 </div>
@@ -1138,11 +1139,11 @@ mper, per_baseline and per_cmodel has been created
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;PAKLMEMPTOTLCN_X&#39;, &#39;Fix value:Employment&#39;)
-(&#39;PAKLMEMPTOTLCN&#39;, &#39;Employment&#39;)
-(&#39;PAKLMEMPTOTLCN_FITTED&#39;, &#39;Fitted  value:Employment&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;PAKLMEMPTOTLCN_D&#39;, &#39;Fix dummy:Employment&#39;)
 (&#39;PAKLMEMPTOTLCN_A&#39;, &#39;Add factor:Employment&#39;)
-(&#39;PAKLMEMPTOTLCN_D&#39;, &#39;Fix dummy:Employment&#39;)
+(&#39;PAKLMEMPTOTLCN_FITTED&#39;, &#39;Fitted  value:Employment&#39;)
+(&#39;PAKLMEMPTOTLCN_X&#39;, &#39;Fix value:Employment&#39;)
+(&#39;PAKLMEMPTOTLCN&#39;, &#39;Employment&#39;)
 </pre></div>
 </div>
 </div>
@@ -1154,21 +1155,21 @@ mper, per_baseline and per_cmodel has been created
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;AGOGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Wages and Salaries&#39;)
-(&#39;AGOGGEXPWAGECN_D&#39;, &#39;Fix dummy:Wages and Salaries&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;AGOGGEXPWAGECN_VALUE_2019&#39;, &#39;AGOGGEXPWAGECN_VALUE_2019&#39;)
 (&#39;AGOGGEXPWAGECN_A&#39;, &#39;Add factor:Wages and Salaries&#39;)
-(&#39;AGOGGEXPWAGECN_VALUE_2019&#39;, &#39;AGOGGEXPWAGECN_VALUE_2019&#39;)
+(&#39;AGOGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Wages and Salaries&#39;)
 (&#39;AGOGGEXPWAGECN&#39;, &#39;Wages and Salaries&#39;)
+(&#39;AGOGGEXPWAGECN_D&#39;, &#39;Fix dummy:Wages and Salaries&#39;)
 (&#39;AGOGGEXPWAGECN_X&#39;, &#39;Fix value:Wages and Salaries&#39;)
 (&#39;MDAGGEXPWAGECN_X&#39;, &#39;Fix value:Expenditure: Wages and Salaries LCU millions&#39;)
-(&#39;MDAGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Expenditure: Wages and Salaries LCU millions&#39;)
-(&#39;MDAGGEXPWAGECN_A&#39;, &#39;Add factor:Expenditure: Wages and Salaries LCU millions&#39;)
-(&#39;MDAGGEXPWAGECN_D&#39;, &#39;Fix dummy:Expenditure: Wages and Salaries LCU millions&#39;)
 (&#39;MDAGGEXPWAGECN&#39;, &#39;Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN_D&#39;, &#39;Fix dummy:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN_A&#39;, &#39;Add factor:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;MDAGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:Expenditure: Wages and Salaries LCU millions&#39;)
+(&#39;PERGGEXPWAGECN&#39;, &#39;PERGGEXPWAGECN&#39;)
+(&#39;PERGGEXPWAGECN_A&#39;, &#39;Add factor:PERGGEXPWAGECN&#39;)
 (&#39;PERGGEXPWAGECN_X&#39;, &#39;Fix value:PERGGEXPWAGECN&#39;)
 (&#39;PERGGEXPWAGECN_D&#39;, &#39;Fix dummy:PERGGEXPWAGECN&#39;)
-(&#39;PERGGEXPWAGECN_A&#39;, &#39;Add factor:PERGGEXPWAGECN&#39;)
-(&#39;PERGGEXPWAGECN&#39;, &#39;PERGGEXPWAGECN&#39;)
 (&#39;PERGGEXPWAGECN_FITTED&#39;, &#39;Fitted  value:PERGGEXPWAGECN&#39;)
 </pre></div>
 </div>
@@ -1228,16 +1229,13 @@ PAKGGREVTOTLCN  : General government revenues, total (millions lcu)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : PAKGGEXPGNFSCN
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : PAKGGEXPGNFSCN
 Original        : PAKGGEXPGNFSCN=0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012
 Preprocessed    : PAKGGEXPGNFSCN=0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012
 Normalized      : PAKGGEXPGNFSCN = (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012 + PAKGGEXPGNFSCN_A)* (1-PAKGGEXPGNFSCN_D)+ PAKGGEXPGNFSCN_X*PAKGGEXPGNFSCN_D 
 Calc_add_factor : PAKGGEXPGNFSCN_A = (PAKGGEXPGNFSCN) - (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012)
 Fitted          : PAKGGEXPGNFSCN_FITTED = 0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012
 Eviews          : PAKGGEXPGNFSCN = 0.3*PAKGGEXPGNFSCN( - 1) + (1 - 0.3)*(0.80*(PAKGGREVTOTLCN - PAKGGEXPINTPCN( - 0))) + 505277.259999999*@DURING(&quot;2012&quot;)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normalized_frml(endo_var=&#39;PAKGGEXPGNFSCN&#39;, original=&#39;PAKGGEXPGNFSCN=0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012\r&#39;, preprocessed=&#39;PAKGGEXPGNFSCN=0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012\r&#39;, normalized=&#39;PAKGGEXPGNFSCN = (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012 + PAKGGEXPGNFSCN_A)* (1-PAKGGEXPGNFSCN_D)+ PAKGGEXPGNFSCN_X*PAKGGEXPGNFSCN_D &#39;, calc_add_factor=&#39;PAKGGEXPGNFSCN_A = (PAKGGEXPGNFSCN) - (0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012)&#39;, un_normalized=&#39;&#39;, fitted=&#39;PAKGGEXPGNFSCN_FITTED = 0.3*PAKGGEXPGNFSCN(-1)+(1-0.3)*(0.80*(PAKGGREVTOTLCN-PAKGGEXPINTPCN(-0)))+505277.259999999*DURING_2012&#39;, eviews=&#39;PAKGGEXPGNFSCN = 0.3*PAKGGEXPGNFSCN( - 1) + (1 - 0.3)*(0.80*(PAKGGREVTOTLCN - PAKGGEXPINTPCN( - 0))) + 505277.259999999*@DURING(&quot;2012&quot;)\r&#39;)
 </pre></div>
 </div>
 </div>
@@ -1249,16 +1247,13 @@ Eviews          : PAKGGEXPGNFSCN = 0.3*PAKGGEXPGNFSCN( - 1) + (1 - 0.3)*(0.80*(P
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : AGONECONGOVTCN
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Endo_var        : AGONECONGOVTCN
 Original        : DIFF(AGONECONGOVTCN)=DIFF(AGOGGEXPGNFSCN+AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100+14591.8357729705*DUMH
 Preprocessed    : ((AGONECONGOVTCN)-(AGONECONGOVTCN(-1)))=((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH
 Normalized      : AGONECONGOVTCN = (AGONECONGOVTCN_A+ (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH) +AGONECONGOVTCN(-1)) * (1-AGONECONGOVTCN_D)+ AGONECONGOVTCN_X*AGONECONGOVTCN_D 
 Calc_add_factor : AGONECONGOVTCN_A = AGONECONGOVTCN- ((((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH)) -AGONECONGOVTCN(-1)
 Fitted          : AGONECONGOVTCN_FITTED =  (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH) +AGONECONGOVTCN(-1)
 Eviews          : D(AGONECONGOVTCN) = D(AGOGGEXPGNFSCN + AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100 + 14591.8357729705*DUMH
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normalized_frml(endo_var=&#39;AGONECONGOVTCN&#39;, original=&#39;DIFF(AGONECONGOVTCN)=DIFF(AGOGGEXPGNFSCN+AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100+14591.8357729705*DUMH\r&#39;, preprocessed=&#39;((AGONECONGOVTCN)-(AGONECONGOVTCN(-1)))=((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH\r&#39;, normalized=&#39;AGONECONGOVTCN = (AGONECONGOVTCN_A+ (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH) +AGONECONGOVTCN(-1)) * (1-AGONECONGOVTCN_D)+ AGONECONGOVTCN_X*AGONECONGOVTCN_D &#39;, calc_add_factor=&#39;AGONECONGOVTCN_A = AGONECONGOVTCN- ((((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH)) -AGONECONGOVTCN(-1)&#39;, un_normalized=&#39;&#39;, fitted=&#39;AGONECONGOVTCN_FITTED =  (((AGOGGEXPGNFSCN+AGOGGEXPWAGECN)-(AGOGGEXPGNFSCN(-1)+AGOGGEXPWAGECN(-1)))*AGONECONGOVTCOV_/100+14591.8357729705*DUMH) +AGONECONGOVTCN(-1)&#39;, eviews=&#39;D(AGONECONGOVTCN) = D(AGOGGEXPGNFSCN + AGOGGEXPWAGECN)*AGONECONGOVTCOV_/100 + 14591.8357729705*DUMH\r&#39;)
 </pre></div>
 </div>
 </div>
