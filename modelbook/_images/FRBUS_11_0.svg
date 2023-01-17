@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="996pt" height="607pt" viewBox="0.00 0.00 996.00 607.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 603)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-603 992,-603 992,4 -4,4"/>
+<text text-anchor="middle" x="494" y="-7.8" font-family="Times New Roman,serif" font-size="14.00">RFFGEN</text>
+<!-- PICXFE -->
+<g id="node1" class="node">
+<title>PICXFE</title>
+<g id="a_node1"><a xlink:title="Inflation rate, personal consumption expenditures, ex. food and energy, cw
+FRML &lt;Z&gt; PICXFE=(0.671147437396*PICXFE(-1)+0.98*ZPICXFE+(1-0.98)*(1-0.671147437396)*PTR(-1)+0.00191485982247*400*LOG(QPCNIA(-1)/PCNIA(-1)))/(1+0.671147437396*0.98)+PICXFE_AERR   $">
+<polygon fill="#63b8ff" stroke="black" points="477.5,-599 5.5,-599 5.5,-563 477.5,-563 477.5,-599"/>
+<text text-anchor="start" x="11.5" y="-576.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PICXFE:Inflation rate, personal consumption expenditures, ex. food and energy, cw</text>
+</a>
+</g>
+</g>
+<!-- RFFGEN -->
+<g id="node11" class="node">
+<title>RFFGEN</title>
+<g id="a_node11"><a xlink:title="Value of eff. federal funds rate given by the generalized reaction function
+FRML &lt;Z&gt; RFFGEN=0.000000000000000000E+00+(0.000000000000000000E+00*RFF(-1)+0.000000000000000000E+00*RFF(-2)+0.000000000000000000E+00*RFF(-3)+0.000000000000000000E+00*RFF(-4))+(3.750000000000000000E-01*PICNIA+3.750000000000000000E-01*PICNIA(-1)+3.750000000000000000E-01*PICNIA(-2)+3.750000000000000000E-01*PICNIA(-3)+0.000000000000000000E+00*PICNIA(-4))+(5.000000000000000000E-01*XGAP2+0.000000000000000000E+00*XGAP2(-1)+0.000000000000000000E+00*XGAP2(-2)+0.000000000000000000E+00*XGAP2(-3)+0.000000000000000000E+00*XGAP2(-4))+(0.000000000000000000E+00*LUR+0.000000000000000000E+00*LUR(-1)+0.000000000000000000E+00*LUR(-2)+0.000000000000000000E+00*LUR(-3)+0.000000000000000000E+00*LUR(-4))+(0.000000000000000000E+00*PCNIA+0.000000000000000000E+00*PCNIA(-1)+0.000000000000000000E+00*PCNIA(-2)+0.000000000000000000E+00*PCNIA(-3)+0.000000000000000000E+00*PCNIA(-4))+(1.000000000000000000E+00*RSTAR+0.000000000000000000E+00*RSTAR(-1)+0.000000000000000000E+00*RSTAR(-2)+0.000000000000000000E+00*RSTAR(-3)+0.000000000000000000E+00*RSTAR(-4))+(-5.000000000000000000E-01*PITARG+0.000000000000000000E+00*PITARG(-1)+0.000000000000000000E+00*PITARG(-2)+0.000000000000000000E+00*PITARG(-3)+0.000000000000000000E+00*PITARG(-4))+(0.000000000000000000E+00*LURNAT+0.000000000000000000E+00*LURNAT(-1)+0.000000000000000000E+00*LURNAT(-2)+0.000000000000000000E+00*LURNAT(-3)+0.000000000000000000E+00*LURNAT(-4))+(0.000000000000000000E+00*PCSTAR+0.000000000000000000E+00*PCSTAR(-1)+0.000000000000000000E+00*PCSTAR(-2)+0.000000000000000000E+00*PCSTAR(-3)+0.000000000000000000E+00*PCSTAR(-4))+(0.000000000000000000E+00*PICXFE+0.000000000000000000E+00*PICXFE(-1)+0.000000000000000000E+00*PICXFE(-2)+0.000000000000000000E+00*PICXFE(-3)+0.000000000000000000E+00*PICXFE(-4))+RFFGEN_AERR   $">
+<polygon fill="red" stroke="black" points="988,-329 519,-329 519,-293 988,-293 988,-329"/>
+<text text-anchor="start" x="525.5" y="-306.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">RFFGEN:Value of eff. federal funds rate given by the generalized reaction function</text>
+</a>
+</g>
+</g>
+<!-- PICXFE&#45;&gt;RFFGEN -->
+<g id="edge2" class="edge">
+<title>PICXFE-&gt;RFFGEN</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title=" PICXFE -&gt; RFFGEN Min. att. -0%  max: 3%">
+<path fill="none" stroke="black" d="M460.2,-562.95C468,-560.29 475.62,-557.32 483,-554 595.11,-503.56 692.9,-388.83 733.05,-337.12"/>
+<polygon fill="black" stroke="black" points="735.9,-339.16 739.22,-329.09 730.35,-334.89 735.9,-339.16"/>
+</a>
+</g>
+</g>
+<!-- XGAP2 -->
+<g id="node2" class="node">
+<title>XGAP2</title>
+<g id="a_node2"><a xlink:title="Output gap for GDP (100*log(actual/potential)
+FRML  &lt;&gt; XGAP2=100*LOG(XGDO/XGDPT)+XGAP2_AERR  $">
+<polygon fill="#63b8ff" stroke="black" points="399.5,-545 83.5,-545 83.5,-509 399.5,-509 399.5,-545"/>
+<text text-anchor="start" x="89.5" y="-522.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">XGAP2:Output gap for GDP (100*log(actual/potential)</text>
+</a>
+</g>
+</g>
+<!-- XGAP2&#45;&gt;RFFGEN -->
+<g id="edge10" class="edge">
+<title>XGAP2-&gt;RFFGEN</title>
+<g id="a_edge10"><a xlink:href="bogus" xlink:title=" XGAP2 -&gt; RFFGEN Min. att. 56%  max: 96%">
+<path fill="none" stroke="black" stroke-width="8" d="M399.79,-520.77C428.08,-516.46 456.87,-509.89 483,-500 583.3,-462.05 681.35,-378.19 726.57,-336.11"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="731.38,-341.2 733.88,-329.25 721.8,-330.99 731.38,-341.2"/>
+</a>
+</g>
+</g>
+<!-- RFFGEN_AERR -->
+<g id="node3" class="node">
+<title>RFFGEN_AERR</title>
+<g id="a_node3"><a xlink:title="RFFGEN_AERR
+Exogen">
+<polygon fill="yellow" stroke="black" points="297,-491 186,-491 186,-455 297,-455 297,-491"/>
+<text text-anchor="start" x="192.5" y="-468.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">RFFGEN_AERR:</text>
+</a>
+</g>
+</g>
+<!-- RFFGEN_AERR&#45;&gt;RFFGEN -->
+<g id="edge1" class="edge">
+<title>RFFGEN_AERR-&gt;RFFGEN</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title=" RFFGEN_AERR -&gt; RFFGEN Min. att. -0%  max: 1%">
+<path fill="none" stroke="black" d="M297.07,-472.31C346.53,-470.42 420.96,-464.38 483,-446 571.51,-419.77 666.01,-365.59 716.21,-334.43"/>
+<polygon fill="black" stroke="black" points="718.15,-337.35 724.77,-329.08 714.43,-331.41 718.15,-337.35"/>
+</a>
+</g>
+</g>
+<!-- PCNIA -->
+<g id="node4" class="node">
+<title>PCNIA</title>
+<g id="a_node4"><a xlink:title="Price index for personal consumption expenditures, cw (NIPA definition)
+FRML  &lt;&gt; PCNIA = PCNIA(-1)*EXP(PCNIA_AERR + PICNIA/400)  $">
+<polygon fill="#63b8ff" stroke="black" points="470,-437 13,-437 13,-401 470,-401 470,-437"/>
+<text text-anchor="start" x="19.5" y="-414.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PCNIA:Price index for personal consumption expenditures, cw (NIPA definition)</text>
+</a>
+</g>
+</g>
+<!-- PCNIA&#45;&gt;RFFGEN -->
+<g id="edge6" class="edge">
+<title>PCNIA-&gt;RFFGEN</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title=" PCNIA -&gt; RFFGEN Min. att. -0%  max: 3%">
+<path fill="none" stroke="black" d="M432.06,-400.97C449.34,-398.35 466.54,-395.37 483,-392 556.22,-377.01 638.17,-351.01 692.27,-332.51"/>
+<polygon fill="black" stroke="black" points="693.72,-335.72 702.04,-329.15 691.44,-329.1 693.72,-335.72"/>
+</a>
+</g>
+</g>
+<!-- PICNIA -->
+<g id="node5" class="node">
+<title>PICNIA</title>
+<g id="a_node5"><a xlink:title="Inflation rate, personal consumption expenditures, cw
+FRML &lt;Z&gt; PICNIA=PICXFE+0.0399*400*(LOG(PCER)-LOG(PCER(-1)))+0.0726*400*(LOG(PCFR)-LOG(PCFR(-1)))+PICNIA_AERR   $">
+<polygon fill="#63b8ff" stroke="black" points="419,-383 64,-383 64,-347 419,-347 419,-383"/>
+<text text-anchor="start" x="70.5" y="-360.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PICNIA:Inflation rate, personal consumption expenditures, cw</text>
+</a>
+</g>
+</g>
+<!-- PICNIA&#45;&gt;RFFGEN -->
+<g id="edge9" class="edge">
+<title>PICNIA-&gt;RFFGEN</title>
+<g id="a_edge9"><a xlink:href="bogus" xlink:title=" PICNIA -&gt; RFFGEN Min. att. 4%  max: 49%">
+<path fill="none" stroke="black" stroke-width="4.86" d="M412.68,-346.98C463.97,-341.55 520.44,-335.57 572.36,-330.07"/>
+<polygon fill="black" stroke="black" stroke-width="4.86" points="572.84,-334.3 582.34,-329.02 571.95,-325.84 572.84,-334.3"/>
+</a>
+</g>
+</g>
+<!-- LUR -->
+<g id="node6" class="node">
+<title>LUR</title>
+<g id="a_node6"><a xlink:title="Civilian unemployment rate (break adjusted)
+FRML &lt;Z&gt; LUR=100*(1-LEH/LF)+LUR_AERR   $">
+<polygon fill="#63b8ff" stroke="black" points="386,-329 97,-329 97,-293 386,-293 386,-329"/>
+<text text-anchor="start" x="103.5" y="-306.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">LUR:Civilian unemployment rate (break adjusted)</text>
+</a>
+</g>
+</g>
+<!-- LUR&#45;&gt;RFFGEN -->
+<g id="edge8" class="edge">
+<title>LUR-&gt;RFFGEN</title>
+<g id="a_edge8"><a xlink:href="bogus" xlink:title=" LUR -&gt; RFFGEN Min. att. -0%  max: 3%">
+<path fill="none" stroke="black" d="M386.26,-311C424.44,-311 466.76,-311 508.68,-311"/>
+<polygon fill="black" stroke="black" points="508.75,-314.5 518.75,-311 508.75,-307.5 508.75,-314.5"/>
+</a>
+</g>
+</g>
+<!-- PCSTAR -->
+<g id="node7" class="node">
+<title>PCSTAR</title>
+<g id="a_node7"><a xlink:title="Target consumption price level (used in RFFGEN policy rule)
+Exogen">
+<polygon fill="yellow" stroke="black" points="444.5,-275 38.5,-275 38.5,-239 444.5,-239 444.5,-275"/>
+<text text-anchor="start" x="44.5" y="-252.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PCSTAR:Target consumption price level (used in RFFGEN policy rule)</text>
+</a>
+</g>
+</g>
+<!-- PCSTAR&#45;&gt;RFFGEN -->
+<g id="edge11" class="edge">
+<title>PCSTAR-&gt;RFFGEN</title>
+<g id="a_edge11"><a xlink:href="bogus" xlink:title=" PCSTAR -&gt; RFFGEN Min. att. -0%  max: 3%">
+<path fill="none" stroke="black" d="M412.68,-275.02C463.97,-280.45 520.44,-286.43 572.36,-291.93"/>
+<polygon fill="black" stroke="black" points="572.03,-295.41 582.34,-292.98 572.76,-288.45 572.03,-295.41"/>
+</a>
+</g>
+</g>
+<!-- LURNAT -->
+<g id="node8" class="node">
+<title>LURNAT</title>
+<g id="a_node8"><a xlink:title="Natural rate of unemployment
+FRML &lt;Z&gt; LURNAT=LURNAT(-1)+LURNAT_AERR   $">
+<polygon fill="#63b8ff" stroke="black" points="359,-221 124,-221 124,-185 359,-185 359,-221"/>
+<text text-anchor="start" x="130.5" y="-198.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">LURNAT:Natural rate of unemployment</text>
+</a>
+</g>
+</g>
+<!-- LURNAT&#45;&gt;RFFGEN -->
+<g id="edge4" class="edge">
+<title>LURNAT-&gt;RFFGEN</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title=" LURNAT -&gt; RFFGEN Min. att. -0%  max: 3%">
+<path fill="none" stroke="black" d="M359.07,-211.82C398.65,-215.94 442.97,-221.81 483,-230 556.22,-244.99 638.17,-270.99 692.27,-289.49"/>
+<polygon fill="black" stroke="black" points="691.44,-292.9 702.04,-292.85 693.72,-286.28 691.44,-292.9"/>
+</a>
+</g>
+</g>
+<!-- RFF -->
+<g id="node9" class="node">
+<title>RFF</title>
+<g id="a_node9"><a xlink:title="Federal funds rate
+FRML &lt;Z&gt; RFF=(1-DMPTRSH)*(RECODE((RFFRULE)&gt;(RFFMIN),RFFRULE,RFFMIN))+DMPTRSH*(RECODE(((DMPTR(-1)*RFFRULE+(1-DMPTR(-1))*RFFMIN))&gt;(RFFMIN),(DMPTR(-1)*RFFRULE+(1-DMPTR(-1))*RFFMIN),RFFMIN))+RFF_AERR   $">
+<polygon fill="#63b8ff" stroke="black" points="311,-167 172,-167 172,-131 311,-131 311,-167"/>
+<text text-anchor="start" x="178.5" y="-144.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">RFF:Federal funds rate</text>
+</a>
+</g>
+</g>
+<!-- RFF&#45;&gt;RFFGEN -->
+<g id="edge7" class="edge">
+<title>RFF-&gt;RFFGEN</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title=" RFF -&gt; RFFGEN Min. att. -0%  max: 2%">
+<path fill="none" stroke="black" d="M311.15,-150.31C359.96,-152.78 426.6,-159.29 483,-176 571.51,-202.23 666.01,-256.41 716.21,-287.57"/>
+<polygon fill="black" stroke="black" points="714.43,-290.59 724.77,-292.92 718.15,-284.65 714.43,-290.59"/>
+</a>
+</g>
+</g>
+<!-- PITARG -->
+<g id="node10" class="node">
+<title>PITARG</title>
+<g id="a_node10"><a xlink:title="Target rate of consumption price inflation (used in policy reaction functions)
+Exogen">
+<polygon fill="yellow" stroke="black" points="483,-113 0,-113 0,-77 483,-77 483,-113"/>
+<text text-anchor="start" x="6.5" y="-90.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PITARG:Target rate of consumption price inflation (used in policy reaction functions)</text>
+</a>
+</g>
+</g>
+<!-- PITARG&#45;&gt;RFFGEN -->
+<g id="edge3" class="edge">
+<title>PITARG-&gt;RFFGEN</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title=" PITARG -&gt; RFFGEN Min. att. -0%  max: 3%">
+<path fill="none" stroke="black" d="M455.69,-113.06C465.01,-115.69 474.16,-118.65 483,-122 583.3,-159.95 681.35,-243.81 726.57,-285.89"/>
+<polygon fill="black" stroke="black" points="724.19,-288.46 733.88,-292.75 728.99,-283.36 724.19,-288.46"/>
+</a>
+</g>
+</g>
+<!-- RSTAR -->
+<g id="node12" class="node">
+<title>RSTAR</title>
+<g id="a_node12"><a xlink:title="Equilibrium real federal funds rate (for monetary policy reaction functions)
+FRML &lt;Z&gt; RSTAR=RSTAR(-1)+.05*((RRFF-RSTAR(-1))*DRSTAR)+RSTAR_AERR   $">
+<polygon fill="#63b8ff" stroke="black" points="477,-59 6,-59 6,-23 477,-23 477,-59"/>
+<text text-anchor="start" x="12.5" y="-36.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">RSTAR:Equilibrium real federal funds rate (for monetary policy reaction functions)</text>
+</a>
+</g>
+</g>
+<!-- RSTAR&#45;&gt;RFFGEN -->
+<g id="edge5" class="edge">
+<title>RSTAR-&gt;RFFGEN</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title=" RSTAR -&gt; RFFGEN Min. att. -0%  max: 3%">
+<path fill="none" stroke="black" d="M460.2,-59.05C468,-61.71 475.62,-64.68 483,-68 595.11,-118.44 692.9,-233.17 733.05,-284.88"/>
+<polygon fill="black" stroke="black" points="730.35,-287.11 739.22,-292.91 735.9,-282.84 730.35,-287.11"/>
+</a>
+</g>
+</g>
+</g>
+</svg>
