@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="59pt" viewBox="0.00 0.00 432.00 59.31">
+<g id="graph0" class="graph" transform="scale(0.885246 0.885246) rotate(0) translate(4 63)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-63 484,-63 484,4 -4,4"/>
+<text text-anchor="middle" x="240" y="-7.8" font-family="Times New Roman,serif" font-size="14.00">XGDP</text>
+<!-- XGDP -->
+<g id="node1" class="node">
+<title>XGDP</title>
+<g id="a_node1"><a xlink:title="GDP, cw 2012$
+FRML &lt;Z&gt; XGDP = EXP(-1.2513*(-0.799168864381044*XGDP_AERR - 0.500599376648286*LOG(KI) - 0.797970111084472*LOG(XFS/XFS(-1)) - 0.499400623351714*LOG(KI(-2)) + 1.0*LOG(KI(-1)) - 0.799168864381044*LOG(XGDP(-1))))   $">
+<polygon fill="red" stroke="black" points="480,-59 341,-59 341,-23 480,-23 480,-59"/>
+<text text-anchor="start" x="347.5" y="-36.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">XGDP:GDP, cw 2012$</text>
+</a>
+</g>
+</g>
+<!-- XFS -->
+<g id="node2" class="node">
+<title>XFS</title>
+<g id="a_node2"><a xlink:title="Final sales of gross domestic product, cw 2012$
+FRML &lt;Z&gt; XFS = EXP(1.0*(1.0*XFS_AERR + 0.1324*LOG(EBFI/EBFI(-1)) + 0.6849*LOG(ECNIA/ECNIA(-1)) + 0.0429*LOG(EGFE/EGFE(-1)) + 0.0223*LOG(EGFL/EGFL(-1)) + 0.0395*LOG(EGSE/EGSE(-1)) + 0.0691*LOG(EGSL/EGSL(-1)) + 0.0386*LOG(EH/EH(-1)) - 0.1399*LOG(EMO/EMO(-1)) - 0.0101*LOG(EMP/EMP(-1)) + 0.1203*LOG(EX/EX(-1)) + 1.0*LOG(XFS(-1))))   $">
+<polygon fill="#63b8ff" stroke="black" points="305,-59 0,-59 0,-23 305,-23 305,-59"/>
+<text text-anchor="start" x="6.5" y="-36.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">XFS:Final sales of gross domestic product, cw 2012$</text>
+</a>
+</g>
+</g>
+<!-- XFS&#45;&gt;XGDP -->
+<g id="edge1" class="edge">
+<title>XFS-&gt;XGDP</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title=" XFS -&gt; XGDP Min. att. 1%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M305.01,-41C313.74,-41 322.31,-41 330.57,-41"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="330.85,-48 340.85,-41 330.85,-34 330.85,-48"/>
+</a>
+</g>
+</g>
+</g>
+</svg>

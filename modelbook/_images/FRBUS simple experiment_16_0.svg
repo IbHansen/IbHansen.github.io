@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="147pt" viewBox="0.00 0.00 432.00 146.84">
+<g id="graph0" class="graph" transform="scale(0.294278 0.294278) rotate(0) translate(4 495)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-495 1464,-495 1464,4 -4,4"/>
+<text text-anchor="middle" x="730" y="-7.8" font-family="Times New Roman,serif" font-size="14.00">XGDP</text>
+<!-- DDOCKM -->
+<g id="node1" class="node">
+<title>DDOCKM</title>
+<g id="a_node1"><a xlink:title="Dock strike dummy, import equation
+Exogen">
+<polygon fill="yellow" stroke="black" points="388.5,-437 108.5,-437 108.5,-401 388.5,-401 388.5,-437"/>
+<text text-anchor="start" x="114.5" y="-414.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DDOCKM:Dock strike dummy, import equation</text>
+</a>
+</g>
+</g>
+<!-- EMO -->
+<g id="node6" class="node">
+<title>EMO</title>
+<g id="a_node6"><a xlink:title="Imports of goods and services ex. petroleum, cw 2012$
+FRML &lt;Z&gt; EMO = (2.335925273182563*DDOCKM**0.3188307105827468*(DDOCKM/DDOCKM(-1))**0.4046942138546456*(EMO(-1)*PMO(-1)/(UEMOT(-1)*XGDPN(-1)))**(-0.1807104996815989)*EXP(1.0*EMO_AERR + 0.01358186927724613*XGAP2 - 0.01637077186962015*XGAP2(-2) + 0.00278890259237402*XGAP2(-1)))*EMO(-1)   $">
+<polygon fill="#63b8ff" stroke="black" points="914.5,-302 562.5,-302 562.5,-266 914.5,-266 914.5,-302"/>
+<text text-anchor="start" x="568.5" y="-279.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">EMO:Imports of goods and services ex. petroleum, cw 2012$</text>
+</a>
+</g>
+</g>
+<!-- DDOCKM&#45;&gt;EMO -->
+<g id="edge13" class="edge">
+<title>DDOCKM-&gt;EMO</title>
+<g id="a_edge13"><a xlink:href="bogus" xlink:title=" DDOCKM -&gt; EMO Min. att. -111%  max: 1%">
+<path fill="none" stroke="black" stroke-width="8" d="M388.71,-411.53C424.42,-407.52 462.48,-401.38 497,-392 516.68,-386.65 625.54,-336.4 689.85,-306.36"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="692.91,-312.66 699,-302.09 686.98,-299.98 692.91,-312.66"/>
+</a>
+</g>
+</g>
+<!-- PMO -->
+<g id="node2" class="node">
+<title>PMO</title>
+<g id="a_node2"><a xlink:title="Price index for imports ex. petroleum, cw
+FRML &lt;Z&gt; PMO = (1.000267337598601*QPMO**0.3776815983707077*(PXB/PXB(-1))**0.7656033396670571*(FPC(-1)/FPX(-1))**0.2417162229572529*(FPC*FPX(-1)/(FPX*FPC(-1)))**0.2343966603329429*PMO(-1)**(-0.3776815983707077)*PXB(-1)**0.1359653754134548*EXP(1.0*PMO_AERR))*PMO(-1)   $">
+<polygon fill="#63b8ff" stroke="black" points="386.5,-383 110.5,-383 110.5,-347 386.5,-347 386.5,-383"/>
+<text text-anchor="start" x="116.5" y="-360.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PMO:Price index for imports ex. petroleum, cw</text>
+</a>
+</g>
+</g>
+<!-- PMO&#45;&gt;EMO -->
+<g id="edge1" class="edge">
+<title>PMO-&gt;EMO</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title=" PMO -&gt; EMO Min. att. -56%  max: -17%">
+<path fill="none" stroke="black" stroke-width="5.56" d="M386.69,-352.81C422.69,-348.85 461.4,-343.92 497,-338 550.79,-329.06 610.63,-315.63 657.16,-304.41"/>
+<polygon fill="black" stroke="black" stroke-width="5.56" points="658.31,-309.14 666.88,-302.05 656.01,-299.68 658.31,-309.14"/>
+</a>
+</g>
+</g>
+<!-- RME -->
+<g id="node3" class="node">
+<title>RME</title>
+<g id="a_node3"><a xlink:title="Interest rate on conventional mortgages
+FRML &lt;Z&gt; RME = 0.2555601487902845*D87*RG10 - 0.2048446838944344*D87*RG10(-1) - 0.05071546489585005*D87*RME(-1) + 0.6286405556840244*RG10 + RME_AERR - 0.3396629816163902*RG10(-1) + 0.7110224259323658*RME(-1) + 0.515870426113512   $">
+<polygon fill="#63b8ff" stroke="black" points="379.5,-491 117.5,-491 117.5,-455 379.5,-455 379.5,-491"/>
+<text text-anchor="start" x="123.5" y="-468.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">RME:Interest rate on conventional mortgages</text>
+</a>
+</g>
+</g>
+<!-- EH -->
+<g id="node8" class="node">
+<title>EH</title>
+<g id="a_node8"><a xlink:title="Residential investment expenditures, cw 2012$
+FRML &lt;Z&gt; EH = ((EH(-2)/EH(-3))**0.206060944066708*(EH(-1)/EH(-2))**0.370727139760127*(QEH(-1)/EH(-1))**0.01309931436163227*EXP(-0.02793327971442171*D83*RME(-2) + 0.02793327971442171*D83*RME(-1) + 1.0*EH_AERR + 1.0*ZEH + 0.05620618046332654*RME(-2) - 0.05620618046332654*RME(-1)))*EH(-1)   $">
+<polygon fill="#63b8ff" stroke="black" points="884.5,-423 592.5,-423 592.5,-387 884.5,-387 884.5,-423"/>
+<text text-anchor="start" x="598.5" y="-400.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">EH:Residential investment expenditures, cw 2012$</text>
+</a>
+</g>
+</g>
+<!-- RME&#45;&gt;EH -->
+<g id="edge3" class="edge">
+<title>RME-&gt;EH</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title=" RME -&gt; EH Min. att. -2%  max: 99%">
+<path fill="none" stroke="black" stroke-width="8" d="M379.74,-460.28C417.61,-456.18 459.01,-451.31 497,-446 540.5,-439.92 588.22,-432.04 629.61,-424.82"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="631.07,-431.67 639.71,-423.04 628.65,-417.88 631.07,-431.67"/>
+</a>
+</g>
+</g>
+<!-- XGDPN -->
+<g id="node4" class="node">
+<title>XGDPN</title>
+<g id="a_node4"><a xlink:title="GDP, current $
+FRML  &lt;&gt; XGDPN=XPN+EIN-EMN+EGFLN+EGSLN+XGDPN_AERR  $">
+<polygon fill="#63b8ff" stroke="black" points="321,-329 176,-329 176,-293 321,-293 321,-329"/>
+<text text-anchor="start" x="182.5" y="-306.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">XGDPN:GDP, current $</text>
+</a>
+</g>
+</g>
+<!-- XGDPN&#45;&gt;EMO -->
+<g id="edge11" class="edge">
+<title>XGDPN-&gt;EMO</title>
+<g id="a_edge11"><a xlink:href="bogus" xlink:title=" XGDPN -&gt; EMO Min. att. -56%  max: 66%">
+<path fill="none" stroke="black" stroke-width="6.63" d="M321.24,-307.03C381.9,-303.67 471.55,-298.71 552.13,-294.26"/>
+<polygon fill="black" stroke="black" stroke-width="6.63" points="552.75,-300.03 562.42,-293.69 552.11,-288.45 552.75,-300.03"/>
+</a>
+</g>
+</g>
+<!-- ECO -->
+<g id="node5" class="node">
+<title>ECO</title>
+<g id="a_node5"><a xlink:title="Consumer expenditures on non-durable goods and non-housing services, cw 2012$
+FRML &lt;Z&gt; ECO = ((ECO(-1)/ECO(-2))**0.2851707243658198*(QECO(-1)/ECO(-1))**0.1097031696942651*(YHL/(YHL(-1) + YHT(-1)) + YHT/(YHL(-1) + YHT(-1)))**0.3075237404993435*EXP(1.0*ECO_AERR + 0.6924762595006565*ZECO))*ECO(-1)   $">
+<polygon fill="#63b8ff" stroke="black" points="497,-113 0,-113 0,-77 497,-77 497,-113"/>
+<text text-anchor="start" x="6.5" y="-90.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">ECO:Consumer expenditures on non-durable goods and non-housing services, cw 2012$</text>
+</a>
+</g>
+</g>
+<!-- ECNIA -->
+<g id="node10" class="node">
+<title>ECNIA</title>
+<g id="a_node10"><a xlink:title="Personal consumption expenditures, cw 2012$ (NIPA definition)
+FRML &lt;Z&gt; ECNIA = EXP(1.0*(1.0*ECNIA_AERR + 0.1055*LOG(ECD/ECD(-1)) + 0.1595*LOG(ECH/ECH(-1)) + 0.735*LOG(ECO/ECO(-1)) + 1.0*LOG(ECNIA(-1))))   $">
+<polygon fill="#63b8ff" stroke="black" points="944,-113 533,-113 533,-77 944,-77 944,-113"/>
+<text text-anchor="start" x="539.5" y="-90.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">ECNIA:Personal consumption expenditures, cw 2012$ (NIPA definition)</text>
+</a>
+</g>
+</g>
+<!-- ECO&#45;&gt;ECNIA -->
+<g id="edge4" class="edge">
+<title>ECO-&gt;ECNIA</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title=" ECO -&gt; ECNIA Min. att. -0%  max: 98%">
+<path fill="none" stroke="black" stroke-width="8" d="M497.07,-95C505.54,-95 514.01,-95 522.43,-95"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="522.67,-102 532.67,-95 522.67,-88 522.67,-102"/>
+</a>
+</g>
+</g>
+<!-- XFS -->
+<g id="node7" class="node">
+<title>XFS</title>
+<g id="a_node7"><a xlink:title="Final sales of gross domestic product, cw 2012$
+FRML &lt;Z&gt; XFS = EXP(1.0*(1.0*XFS_AERR + 0.1324*LOG(EBFI/EBFI(-1)) + 0.6849*LOG(ECNIA/ECNIA(-1)) + 0.0429*LOG(EGFE/EGFE(-1)) + 0.0223*LOG(EGFL/EGFL(-1)) + 0.0395*LOG(EGSE/EGSE(-1)) + 0.0691*LOG(EGSL/EGSL(-1)) + 0.0386*LOG(EH/EH(-1)) - 0.1399*LOG(EMO/EMO(-1)) - 0.0101*LOG(EMP/EMP(-1)) + 0.1203*LOG(EX/EX(-1)) + 1.0*LOG(XFS(-1))))   $">
+<polygon fill="#63b8ff" stroke="black" points="1285,-302 980,-302 980,-266 1285,-266 1285,-302"/>
+<text text-anchor="start" x="986.5" y="-279.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">XFS:Final sales of gross domestic product, cw 2012$</text>
+</a>
+</g>
+</g>
+<!-- EMO&#45;&gt;XFS -->
+<g id="edge2" class="edge">
+<title>EMO-&gt;XFS</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title=" EMO -&gt; XFS Min. att. -38%  max: 1%">
+<path fill="none" stroke="black" stroke-width="3.82" d="M914.58,-284C932.91,-284 951.49,-284 969.66,-284"/>
+<polygon fill="black" stroke="black" stroke-width="3.82" points="969.71,-287.5 979.71,-284 969.71,-280.5 969.71,-287.5"/>
+</a>
+</g>
+</g>
+<!-- XGDP -->
+<g id="node11" class="node">
+<title>XGDP</title>
+<g id="a_node11"><a xlink:title="GDP, cw 2012$
+FRML &lt;Z&gt; XGDP = EXP(-1.2513*(-0.799168864381044*XGDP_AERR - 0.500599376648286*LOG(KI) - 0.797970111084472*LOG(XFS/XFS(-1)) - 0.499400623351714*LOG(KI(-2)) + 1.0*LOG(KI(-1)) - 0.799168864381044*LOG(XGDP(-1))))   $">
+<polygon fill="red" stroke="black" points="1460,-302 1321,-302 1321,-266 1460,-266 1460,-302"/>
+<text text-anchor="start" x="1327.5" y="-279.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">XGDP:GDP, cw 2012$</text>
+</a>
+</g>
+</g>
+<!-- XFS&#45;&gt;XGDP -->
+<g id="edge6" class="edge">
+<title>XFS-&gt;XGDP</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title=" XFS -&gt; XGDP Min. att. 1%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1285.01,-284C1293.74,-284 1302.31,-284 1310.57,-284"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1310.85,-291 1320.85,-284 1310.85,-277 1310.85,-291"/>
+</a>
+</g>
+</g>
+<!-- EH&#45;&gt;XFS -->
+<g id="edge8" class="edge">
+<title>EH-&gt;XFS</title>
+<g id="a_edge8"><a xlink:href="bogus" xlink:title=" EH -&gt; XFS Min. att. -0%  max: 20%">
+<path fill="none" stroke="black" stroke-width="2.01" d="M798.19,-386.89C869.12,-364.99 988.26,-328.21 1063.23,-305.07"/>
+<polygon fill="black" stroke="black" stroke-width="2.01" points="1064.53,-308.33 1073.05,-302.04 1062.47,-301.65 1064.53,-308.33"/>
+</a>
+</g>
+</g>
+<!-- UEMOT -->
+<g id="node9" class="node">
+<title>UEMOT</title>
+<g id="a_node9"><a xlink:title="Trend in ratio of EMON to XGDEN
+Exogen">
+<polygon fill="yellow" stroke="black" points="380.5,-275 116.5,-275 116.5,-239 380.5,-239 380.5,-275"/>
+<text text-anchor="start" x="122.5" y="-252.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">UEMOT:Trend in ratio of EMON to XGDEN</text>
+</a>
+</g>
+</g>
+<!-- UEMOT&#45;&gt;EMO -->
+<g id="edge5" class="edge">
+<title>UEMOT-&gt;EMO</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title=" UEMOT -&gt; EMO Min. att. -56%  max: 0%">
+<path fill="none" stroke="black" stroke-width="5.56" d="M380.6,-264.25C433.19,-267.16 494.77,-270.57 551.83,-273.73"/>
+<polygon fill="black" stroke="black" stroke-width="5.56" points="551.8,-278.6 562.06,-274.29 552.34,-268.88 551.8,-278.6"/>
+</a>
+</g>
+</g>
+<!-- ECNIA&#45;&gt;XFS -->
+<g id="edge9" class="edge">
+<title>ECNIA-&gt;XFS</title>
+<g id="a_edge9"><a xlink:href="bogus" xlink:title=" ECNIA -&gt; XFS Min. att. 0%  max: 144%">
+<path fill="none" stroke="black" stroke-width="8" d="M777.09,-113.12C849.09,-147.84 1006.27,-223.62 1084.85,-261.51"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1081.98,-267.9 1094.03,-265.93 1088.06,-255.28 1081.98,-267.9"/>
+</a>
+</g>
+</g>
+<!-- XGAP2 -->
+<g id="node12" class="node">
+<title>XGAP2</title>
+<g id="a_node12"><a xlink:title="Output gap for GDP (100*log(actual/potential)
+FRML  &lt;&gt; XGAP2=100*LOG(XGDO/XGDPT)+XGAP2_AERR  $">
+<polygon fill="#63b8ff" stroke="black" points="406.5,-221 90.5,-221 90.5,-185 406.5,-185 406.5,-221"/>
+<text text-anchor="start" x="96.5" y="-198.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">XGAP2:Output gap for GDP (100*log(actual/potential)</text>
+</a>
+</g>
+</g>
+<!-- XGAP2&#45;&gt;EMO -->
+<g id="edge12" class="edge">
+<title>XGAP2-&gt;EMO</title>
+<g id="a_edge12"><a xlink:href="bogus" xlink:title=" XGAP2 -&gt; EMO Min. att. -11%  max: 133%">
+<path fill="none" stroke="black" stroke-width="8" d="M406.65,-217.46C436.72,-220.98 467.9,-225.16 497,-230 550.79,-238.94 610.63,-252.37 657.16,-263.59"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="655.51,-270.39 666.88,-265.95 658.81,-256.79 655.51,-270.39"/>
+</a>
+</g>
+</g>
+<!-- EMO_AERR -->
+<g id="node13" class="node">
+<title>EMO_AERR</title>
+<g id="a_node13"><a xlink:title="EMO_AERR
+Exogen">
+<polygon fill="yellow" stroke="black" points="293.5,-167 203.5,-167 203.5,-131 293.5,-131 293.5,-167"/>
+<text text-anchor="start" x="209.5" y="-144.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">EMO_AERR:</text>
+</a>
+</g>
+</g>
+<!-- EMO_AERR&#45;&gt;EMO -->
+<g id="edge10" class="edge">
+<title>EMO_AERR-&gt;EMO</title>
+<g id="a_edge10"><a xlink:href="bogus" xlink:title=" EMO_AERR -&gt; EMO Min. att. -56%  max: 0%">
+<path fill="none" stroke="black" stroke-width="5.56" d="M293.64,-149.67C343.75,-151.38 427.55,-157.13 497,-176 570.71,-196.03 650.51,-235.84 697.15,-261.13"/>
+<polygon fill="black" stroke="black" stroke-width="5.56" points="694.91,-265.45 706.02,-265.98 699.58,-256.91 694.91,-265.45"/>
+</a>
+</g>
+</g>
+<!-- ECD -->
+<g id="node14" class="node">
+<title>ECD</title>
+<g id="a_node14"><a xlink:title="Consumer expenditures on durable goods, cw 2012$
+FRML &lt;Z&gt; ECD = ((ECD(-1)/ECD(-2))**(-0.05999277989382532)*(QECD(-1)/ECD(-1))**0.1561499403562654*EXP(1.0*ECD_AERR + 1.0*ZECD + 0.02967964600689853*ZGAPC2))*ECD(-1)   $">
+<polygon fill="#63b8ff" stroke="black" points="414,-59 83,-59 83,-23 414,-23 414,-59"/>
+<text text-anchor="start" x="89.5" y="-36.8" font-family="Times New Roman,serif" font-size="14.00" fill="blue">ECD:Consumer expenditures on durable goods, cw 2012$</text>
+</a>
+</g>
+</g>
+<!-- ECD&#45;&gt;ECNIA -->
+<g id="edge7" class="edge">
+<title>ECD-&gt;ECNIA</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title=" ECD -&gt; ECNIA Min. att. -4%  max: 27%">
+<path fill="none" stroke="black" stroke-width="2.75" d="M414.26,-58.9C441.88,-61.92 470.26,-65.04 497,-68 519.84,-70.53 543.89,-73.21 567.6,-75.86"/>
+<polygon fill="black" stroke="black" stroke-width="2.75" points="567.41,-79.36 577.74,-76.99 568.19,-72.4 567.41,-79.36"/>
+</a>
+</g>
+</g>
+</g>
+</svg>
