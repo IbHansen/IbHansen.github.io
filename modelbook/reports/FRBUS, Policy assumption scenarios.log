@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+newbasedf = basedf.copy()                     # make a new datafram
+
+# Define the experiment
+experiments = [
+  ['Inertial Taylor rule', 'DMPINTAY'],
+  ['Taylor rule', 'DMPTAY'],
+  ['Taylor rule with unemployment gap', 'DMPTLR'],
+  ['Estimated rule', 'DMPALT'],
+  ['Generalized rule', 'DMPGEN'],
+  ['Exogenous nominal funds rate', 'DMPEX'],
+  ['Exogenous real funds rate', 'DMPRR']
+   ]
+
+# create a list of the dummies 
+policy_dummies = [v for e,v in experiments]  
+
+# Set all policy dummies to 0
+newbasedf.loc[:,policy_dymmies]=0 
+
+# loop over the policy options and update
+for experiment,var in experiments:             
+    altdf=newbasedf.upd(f'''\
+          rffintay_aerr + -2.0       
+          rffmin        = -1.0               
+          {var} = 1                           
+    ''')   
+    # Now run the model
+    # the result is stored in the dict mfrbus.keep_solutions
+    print(f'simulating:Monetary policy rule:{experiment}' )
+    result = mfrbus(altdf,'2020q1','2037q4',keep=f'Monetary policy rule:{experiment}')
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Input [1;32mIn [5][0m, in [0;36m<cell line: 18>[1;34m()[0m
+[0;32m     15[0m policy_dummies [38;5;241m=[39m [v [38;5;28;01mfor[39;00m e,v [38;5;129;01min[39;00m experiments]  
+[0;32m     17[0m [38;5;66;03m# Set all policy dummies to 0[39;00m
+[1;32m---> 18[0m newbasedf[38;5;241m.[39mloc[:,[43mpolicy_dymmies[49m][38;5;241m=[39m[38;5;241m0[39m 
+[0;32m     20[0m [38;5;66;03m# loop over the policy options and update[39;00m
+[0;32m     21[0m [38;5;28;01mfor[39;00m experiment,var [38;5;129;01min[39;00m experiments:             
+
+[1;31mNameError[0m: name 'policy_dymmies' is not defined
+NameError: name 'policy_dymmies' is not defined
+
