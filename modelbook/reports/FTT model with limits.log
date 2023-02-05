@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\ibhan\miniconda3\envs\mf\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+mftt.ccost_t2
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mKeyError[0m                                  Traceback (most recent call last)
+File [1;32mC:\modelflow2\modelflow\modelclass.py:1238[0m, in [0;36mOrg_model_Mixin.__getattr__[1;34m(self, name)[0m
+[0;32m   1237[0m [38;5;28;01mtry[39;00m:
+[1;32m-> 1238[0m     [38;5;28;01mreturn[39;00m [43mmv[49m[38;5;241;43m.[39;49m[43mvarvis[49m[43m([49m[43mmodel[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mvar[49m[38;5;241;43m=[39;49m[43mname[49m[38;5;241;43m.[39;49m[43mupper[49m[43m([49m[43m)[49m[43m)[49m
+[0;32m   1239[0m [38;5;28;01mexcept[39;00m:
+[0;32m   1240[0m     [38;5;66;03m#            print(name)[39;00m
+
+File [1;32mC:\modelflow2\modelflow\modelvis.py:308[0m, in [0;36mvarvis.__init__[1;34m(self, model, var)[0m
+[0;32m    307[0m [38;5;28mself[39m[38;5;241m.[39mvar [38;5;241m=[39m var
+[1;32m--> 308[0m [38;5;28mself[39m[38;5;241m.[39mendo [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmodel[49m[38;5;241;43m.[39;49m[43mallvar[49m[43m[[49m[43mvar[49m[43m][49m[[38;5;124m'[39m[38;5;124mendo[39m[38;5;124m'[39m]
+
+[1;31mKeyError[0m: 'CCOST_T2'
+
+During handling of the above exception, another exception occurred:
+
+[1;31mAttributeError[0m                            Traceback (most recent call last)
+Input [1;32mIn [15][0m, in [0;36m<cell line: 1>[1;34m()[0m
+[1;32m----> 1[0m [43mmftt[49m[38;5;241;43m.[39;49m[43mccost_t2[49m
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:1241[0m, in [0;36mOrg_model_Mixin.__getattr__[1;34m(self, name)[0m
+[0;32m   1238[0m     [38;5;28;01mreturn[39;00m mv[38;5;241m.[39mvarvis(model[38;5;241m=[39m[38;5;28mself[39m, var[38;5;241m=[39mname[38;5;241m.[39mupper())
+[0;32m   1239[0m [38;5;28;01mexcept[39;00m:
+[0;32m   1240[0m     [38;5;66;03m#            print(name)[39;00m
+[1;32m-> 1241[0m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m
+[0;32m   1242[0m     [38;5;28;01mpass[39;00m
+
+[1;31mAttributeError[0m: 
+AttributeError: 
+
