@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="7. FTT model - Some experiments" href="FTT%20targets%20instruments.html" />
+    <link rel="prev" title="7. FTT model - goal seeking" href="FTT%20targets%20instruments.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -138,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="FTT%20targets%20instruments.html">
-   7. FTT model - Some experiments
+   7. FTT model - goal seeking
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -582,39 +582,39 @@ Share<span class="k">\_</span>total  = <span class="k">\sum</span><span class="n
 <p>Two lists of technology  are defined:</p>
 <p>List <span class="math notranslate nohighlight">\(i =\{t1, t2, t3, t4\}\)</span></p>
 <p>List <span class="math notranslate nohighlight">\(j = \{t1, t2, t3, t4\}\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-50b33115-a9ee-4b17-91c5-f4c3f882b208">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-50b33115-a9ee-4b17-91c5-f4c3f882b208" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f9467283-cdf8-4672-9e68-f39de98b1837">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-f9467283-cdf8-4672-9e68-f39de98b1837" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:SHARES2}
 \Delta Share^{i} = \sum_{j}(Share^{i} \times Share^{j} \times
                             (\underbrace{F^{i,j}}_{Preferences}/\underbrace{\tau^{j}}_{Life expectancy}
                              - F^{j,i}/\tau^{i}))
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-dd42d345-a356-439e-8470-e4516e6a65f2">
-<span class="eqno">(8.2)<a class="headerlink" href="#equation-dd42d345-a356-439e-8470-e4516e6a65f2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fb235bf2-95ec-4745-a723-9d988af0ba0e">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-fb235bf2-95ec-4745-a723-9d988af0ba0e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:preferences}
 \underbrace{F^{i,j}}_{Preferences} = \frac{1}{
 1+exp(
     \frac{(C^{i}-C^{j})}{\sigma^{i,j}} )}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-85000bcc-86dd-4daa-825e-4e54886b1b5f">
-<span class="eqno">(8.3)<a class="headerlink" href="#equation-85000bcc-86dd-4daa-825e-4e54886b1b5f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6724d58a-f698-4f9e-a1fb-1d54b653a578">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-6724d58a-f698-4f9e-a1fb-1d54b653a578" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:sigma}
 \sigma^{i,j} = \sqrt{\sigma^{i}**2 \times \sigma^{j}**2}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-6d71ef6e-170a-41fb-aa78-12010cd423eb">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-6d71ef6e-170a-41fb-aa78-12010cd423eb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fad0ae05-295d-471d-b40a-5d23dac505d1">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-fad0ae05-295d-471d-b40a-5d23dac505d1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:UD}
 UsefulDemand^{i} = Share^{i} \times UsefulDemand\_total 
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-6212e5bd-0bab-490c-a0f9-d6fc4f575bdb">
-<span class="eqno">(8.5)<a class="headerlink" href="#equation-6212e5bd-0bab-490c-a0f9-d6fc4f575bdb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d581f2ed-1214-4216-b4c9-a857720aa2f1">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-d581f2ed-1214-4216-b4c9-a857720aa2f1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:UD_total}
 UsefulDemand\_total  = UsefulDemand\_total_{t-1} \times 
 (1+\frac{UsefulDemand\_total\_growth}{100})
 \end{equation}\]</div>
 <p>To check, that the shares add up to one.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-062a3da1-4080-444b-a79e-a86106a3b863">
-<span class="eqno">(8.6)<a class="headerlink" href="#equation-062a3da1-4080-444b-a79e-a86106a3b863" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ccc1e39d-797b-46cc-b742-63aae9785a79">
+<span class="eqno">(8.6)<a class="headerlink" href="#equation-ccc1e39d-797b-46cc-b742-63aae9785a79" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:check_shares}
 Share\_total  = \sum_{i}(Share\_{i})
 \end{equation}\]</div>
@@ -1081,7 +1081,7 @@ C_T1 C_T2 C_T3  C_T4 TAU_T1 TAU_T2 TAU_T3 TAU_T4  USEFULDEMAND_TOTAL_GROWTH SIGM
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">7. </span>FTT model - Some experiments</p>
+            <p class="prev-next-title"><span class="section-number">7. </span>FTT model - goal seeking</p>
         </div>
     </a>
 </div>
