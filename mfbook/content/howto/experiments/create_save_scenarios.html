@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>12. Create many scenarios, simulate them and access results &#8212; MFMod models in Python with ModelFlow</title>
+    <title>12. Create many scenarios, simulate them and access results &#8212; Some models in Python with ModelFlow</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -94,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">MFMod models in Python with ModelFlow</h1>
+      <h1 class="site-logo" id="site-title">Some models in Python with ModelFlow</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -393,7 +395,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/IbHansen/modelflow-manual/reorganisation?urlpath=tree/papers/mfbook/content/howto/experiments/create_save_scenarios.ipynb"
+        <a href="https://mybinder.org/v2/gh/IbHansen/modelflow-manual/main?urlpath=tree/papers/mfbook/content/howto/experiments/create_save_scenarios.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -411,7 +413,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/reorganisation/papers/mfbook/content/howto/experiments/create_save_scenarios.ipynb"
+        <a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/main/papers/mfbook/content/howto/experiments/create_save_scenarios.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -445,19 +447,6 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<a href="https://github.com/IbHansen/modelflow-manual"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -1004,7 +993,7 @@ item in the dictionary. The key is the variable name in the plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a folder</span>
-<span class="o">!</span>md graph
+<span class="o">!</span>md<span class="w"> </span>graph
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1104,7 @@ Coal, Oil and Gastax : 25 nominal
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dir ..<span class="se">\.</span>.<span class="se">\m</span>odels
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dir<span class="w"> </span>..<span class="se">\.</span>.<span class="se">\m</span>odels
 </pre></div>
 </div>
 </div>
@@ -1125,13 +1114,13 @@ Coal, Oil and Gastax : 25 nominal
 
  Directory of c:\modelflow manual\papers\mfbook\content\models
 
-10-01-2023  14:59    &lt;DIR&gt;          .
-17-01-2023  13:21    &lt;DIR&gt;          ..
-17-01-2023  22:20        22.999.561 pak scenarios.pcim
-02-03-2022  10:12         3.388.012 pak.pcim
-17-01-2023  13:26         3.391.454 pak_exogenized.pcim
-               3 File(s)     29.779.027 bytes
-               2 Dir(s)  729.130.663.936 bytes free
+18-01-2023  09:52    &lt;DIR&gt;          .
+18-01-2023  09:52    &lt;DIR&gt;          ..
+07-02-2023  20:36        22.999.579 pak scenarios.pcim
+18-01-2023  09:52         3.388.012 pak.pcim
+07-02-2023  17:12         3.391.472 pak_exogenized.pcim
+               3 File(s)     29.779.063 bytes
+               2 Dir(s)  760.632.483.840 bytes free
 </pre></div>
 </div>
 </div>
