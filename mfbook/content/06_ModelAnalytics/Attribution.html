@@ -135,7 +135,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="../Introduction.html">
+<a class="navbar-brand logo" href="../introduction.html">
   
   
   
@@ -149,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../Introduction.html">
+                <a class="reference internal" href="../introduction.html">
                     Introduction
                 </a>
             </li>
@@ -509,8 +509,8 @@ document.write(`
 <p>Take a variable y that is a function of two other variables a and b.  In the model the relationship might be written as:</p>
 <p><span class="math notranslate nohighlight">\(y = f(a,b)\)</span></p>
 <p>If there are two observations</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d704f437-36a8-4771-9c7d-deb693d4baca">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-d704f437-36a8-4771-9c7d-deb693d4baca" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-44aec61c-856b-4268-8fbb-64a252ca297b">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-44aec61c-856b-4268-8fbb-64a252ca297b" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_0 = f(a_0,b_0)\\
 y_1 = f(a_1,b_1)
 \end{eqnarray}\]</div>
@@ -519,20 +519,20 @@ y_1 = f(a_1,b_1)
 \underbrace{\Delta b \dfrac{\partial {f}}{\partial{b}}(a,b)}_{\Omega b}+Residual\)</span></p>
 <p>The first expresion can be called <span class="math notranslate nohighlight">\(\Omega_a\)</span> or the contribution of changes in a to changes in y, and the second <span class="math notranslate nohighlight">\(\Omega_b\)</span>,  or the contribution of changes in b to changes in y.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> performs a numerical approximation of <span class="math notranslate nohighlight">\(\Omega_a\)</span> and <span class="math notranslate nohighlight">\(\Omega_b\)</span> by performing two runs of the <span class="math notranslate nohighlight">\(f()\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-675e70b5-c8ce-4a2f-ba07-1d815e73907d">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-675e70b5-c8ce-4a2f-ba07-1d815e73907d" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}  
+<div class="amsmath math notranslate nohighlight" id="equation-1139e1b4-a6de-4a94-84da-cfe3f35a03a6">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-1139e1b4-a6de-4a94-84da-cfe3f35a03a6" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}  
 y_0&amp;=&amp;f(a_{0},b_{0}) \\
 y_1&amp;=&amp;f(a_0+\Delta a,b_{0}+ \Delta b)
 \end{eqnarray}\]</div>
 <p>and calculates <span class="math notranslate nohighlight">\(\Omega_a\)</span> and <span class="math notranslate nohighlight">\(\Omega_b\)</span> as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f732d6f2-2e26-4d9d-9e61-ff51d60c34ef">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-f732d6f2-2e26-4d9d-9e61-ff51d60c34ef" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}  
+<div class="amsmath math notranslate nohighlight" id="equation-6c4b88f1-095d-4f63-82eb-162ff1323458">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-6c4b88f1-095d-4f63-82eb-162ff1323458" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}  
 \Omega a&amp;=&amp;f(a_1,b_1 )-f(a_1-\Delta a,b_1) \\
 \Omega b&amp;=&amp;f(a_1,b_1 )-f(a_1,b_1-\Delta  b)
 \end{eqnarray}\]</div>
 <p>And:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c88de322-9fdb-4e40-bc5e-043ffe657777">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-c88de322-9fdb-4e40-bc5e-043ffe657777" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-4a40ba58-9556-40d9-ac77-bd9edb2b4b8c">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-4a40ba58-9556-40d9-ac77-bd9edb2b4b8c" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 residual = \Omega a + \Omega b -(y_1 - y_0) 
 \end{eqnarray}\]</div>
 <p>If the model is fairly linear, the residual will be small.</p>
