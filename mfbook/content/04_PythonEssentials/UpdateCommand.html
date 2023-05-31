@@ -132,7 +132,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="../introduction.html">
+<a class="navbar-brand logo" href="../Introduction.html">
   
   
   
@@ -146,28 +146,24 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../introduction.html">
-                    Foreword
+                <a class="reference internal" href="../Introduction.html">
+                    Introduction
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">1.4. Macrostructural models</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">1. Macrostructural models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">2. Modelflow and the MFMod models of the World Bank</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_Installation/InstallingPython.html">3. Installation of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_Installation/TestingModelFlow.html">5. Testing your installation of modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Installation/Installing.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Installation/TestingModelFlow.html">4. Testing your installation of modelflow</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some python essentials for using WorldBank models with modelflow</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PythonPandasDataframes.html">2. Some Python basics</a></li>
 
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Modelflow extensions to pandas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Modelflow extensions to pandas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="mfcalc.html">4.2. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
 </ul>
 </li>
@@ -186,13 +182,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
 
 
-
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/Attribution.html">5. Decomposing/attributing the impact of a shock</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/EigenValues.html">6. Model eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/Attribution.html">4. Decomposing/attributing the impact of a shock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/EigenValues.html">5. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Features</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/modelflow_features.html">1. Useful model instance properties and methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Target and instruments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../howto/targetinstruments/One%20target%20one%20instrument%20with%203%20instrument%20variables.html">1. One target one instrument with 3 instrument variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
@@ -450,6 +453,10 @@ document.write(`
 <section id="upd-method-operators">
 <h3><span class="section-number">4.1.1. </span><code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method operators<a class="headerlink" href="#upd-method-operators" title="Permalink to this headline">#</a></h3>
 <p>Below are some of the operators that can be used in the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>IB: typos reworked</p>
+</div>
 <p><strong>Types of update:</strong></p>
 <table class="colwidths-auto table">
 <thead>
@@ -496,11 +503,9 @@ document.write(`
 <p>In order to use <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> all of the necessary libraries must be <strong>imported</strong> into the python session.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
-<span class="o">%</span><span class="k">autoreload</span> 2
-
-<span class="c1"># First import pandas and the model into the  workspace</span>
-<span class="c1"># There is no problem importing multiple times, though it is not very efficient.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First import pandas and the model into the  workspace</span>
+<span class="c1"># There is no problem importing the same library multiple times. </span>
+<span class="c1"># After the first import there is not any significant penalty for additional mports </span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span> 
@@ -1536,18 +1541,19 @@ Growth:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
-</pre></div>
-</div>
 <img alt="../../_images/c02b4af773579f433eace4f785e543742d5ef841906e6b994877f90732f66fd1.png" src="../../_images/c02b4af773579f433eace4f785e543742d5ef841906e6b994877f90732f66fd1.png" />
 </div>
 </div>
-<p>Now lets modify each by adding 5 to the level in 2022 and 2023.  For B we will do setting the keep_growth option as False and for ‘B’ keep_growth positive.  While the keep_growth is a global variable it can be set at the line level also using the –kg option (<code class="docutils literal notranslate"><span class="pre">keep_growth=True</span></code>) and –nkg option (<code class="docutils literal notranslate"><span class="pre">keep_growth=False</span></code>).</p>
+<p>Now lets modify each by adding 5 to the level in 2022 and 2023.</p>
+<ul class="simple">
+<li><p>For ‘B’ we set the keep_growth option as False</p></li>
+<li><p>for ‘A’ we set the keep_growth True.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -1555,15 +1561,12 @@ Growth:
 <span class="s2">            &lt;2022 2023&gt; B + 5 --nkg</span>
 <span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
 
-<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;A_ORIG&#39;</span><span class="p">,</span><span class="s1">&#39;B_ORIG&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;A_ORIG&#39;</span><span class="p">,</span><span class="s1">&#39;B_ORIG&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
     
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
-</pre></div>
-</div>
 <img alt="../../_images/b190fe24d2cb993f17006d33ba0fb9966a5860917c21cee0cbc7a3ba4322c9df.png" src="../../_images/b190fe24d2cb993f17006d33ba0fb9966a5860917c21cee0cbc7a3ba4322c9df.png" />
 </div>
 </div>
@@ -1574,14 +1577,11 @@ Growth:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfg</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span>
-<span class="n">dfg</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dfg</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
-</pre></div>
-</div>
 <img alt="../../_images/93fc87a8e8ede996fa596d14d140f87c73411dfd2bd0aa8433f137f2597a0b85.png" src="../../_images/93fc87a8e8ede996fa596d14d140f87c73411dfd2bd0aa8433f137f2597a0b85.png" />
 </div>
 </div>
@@ -1594,13 +1594,13 @@ Growth:
 <h3><span class="section-number">4.1.16. </span>Initialize a new dataframe First make a dataframe with some growth rate<a class="headerlink" href="#initialize-a-new-dataframe-first-make-a-dataframe-with-some-growth-rate" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># instantiate a new dataframe with one column &#39;A&#39; with avlue 100 everywhere and index 2020-2025</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># instantiate a new dataframe with one column &#39;A&#39; with value 100 everywhere and index 2020-2025</span>
 <span class="n">dftest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span>
        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">2020</span><span class="o">+</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_rows</span><span class="p">)],</span> <span class="c1"># create row index</span>
        <span class="c1"># equivalent to index=[2020,2021,2022,2023,2024,2025] </span>
        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>                                 <span class="c1"># create column name </span>
 
-<span class="c1"># Update a to have growth rate accelerationg linearly by 1 from 1 oercent to 5 percent</span>
+<span class="c1"># Update a to have growth rate accelerationg linearly by 1 from 1 percent to 5 percent</span>
 <span class="n">original</span> <span class="o">=</span> <span class="n">dftest</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&lt;2021 2025&gt; a =growth 1 2 3 4 5&#39;</span><span class="p">)</span>  
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Levels:</span><span class="se">\n</span><span class="si">{</span><span class="n">original</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">Growth:</span><span class="se">\n</span><span class="si">{</span><span class="n">original</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
