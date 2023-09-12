@@ -144,24 +144,29 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="content/introduction.html">
-                    Introduction
+                    Foreword
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/02_MacrostructuralModels/MacroStructuralModels.html">1. Macrostructural models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/02_MacrostructuralModels/MFModAndModelFlow.html">2. Modelflow and the MFMod models of the World Bank</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/03_Installation/Installing.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/03_Installation/TestingModelFlow.html">4. Testing your installation of modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/01_Introduction/Introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/02_MacrostructuralModels/MFModAndModelFlow.html">2.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some python essentials for using WorldBank models with modelflow</span></p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/03_Installation/InstallingPython.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/03_Installation/InstallingModelFlow.html">3.3. Installation of Modelflow</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some python essentials for using World Bank models with modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PythonPandasDataframes.html">2. Some Python basics</a></li>
-
-<li class="toctree-l1 has-children"><a class="reference internal" href="content/04_PythonEssentials/UpdateCommand.html">4. Modelflow extensions to pandas</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/mfcalc.html">4.2. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/04_PythonEssentials/UpdateCommand.html">4. Modelflow extensions to pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/mfcalc.html">4.6. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
 </ul>
 </li>
 </ul>
@@ -169,34 +174,33 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/LoadingWBModel.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/Attribution.html">4. Decomposing/attributing the impact of a shock</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/EigenValues.html">5. Model eigenvalues</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/AttributionSomeFeatures.html">5. Analyzing the impact of a shock</a></li>
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/ModelFlowCommandReference.html">3. Modelflow methods reference</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Features</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/notebooks/modelflow_features.html">1. Useful model instance properties and methods</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Target and instruments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/howto/targetinstruments/One%20target%20one%20instrument%20with%203%20instrument%20variables.html">1. One target one instrument with 3 instrument variables</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/99_BackMatter/References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference.html">Reference</a></li>
 </ul>
 
     </div>

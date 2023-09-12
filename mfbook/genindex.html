@@ -142,24 +142,29 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="content/introduction.html">
-                    Introduction
+                    Foreword
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/02_MacrostructuralModels/MacroStructuralModels.html">1. Macrostructural models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/02_MacrostructuralModels/MFModAndModelFlow.html">2. Modelflow and the MFMod models of the World Bank</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/03_Installation/Installing.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/03_Installation/TestingModelFlow.html">4. Testing your installation of modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/01_Introduction/Introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/02_MacrostructuralModels/MFModAndModelFlow.html">2.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some python essentials for using WorldBank models with modelflow</span></p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/03_Installation/InstallingPython.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/03_Installation/InstallingModelFlow.html">3.3. Installation of Modelflow</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some python essentials for using World Bank models with modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PythonPandasDataframes.html">2. Some Python basics</a></li>
-
-<li class="toctree-l1 has-children"><a class="reference internal" href="content/04_PythonEssentials/UpdateCommand.html">4. Modelflow extensions to pandas</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/mfcalc.html">4.2. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/04_PythonEssentials/UpdateCommand.html">4. Modelflow extensions to pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/mfcalc.html">4.6. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
 </ul>
 </li>
 </ul>
@@ -167,34 +172,33 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/LoadingWBModel.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/Attribution.html">4. Decomposing/attributing the impact of a shock</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/EigenValues.html">5. Model eigenvalues</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/AttributionSomeFeatures.html">5. Analyzing the impact of a shock</a></li>
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/ModelFlowCommandReference.html">3. Modelflow methods reference</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Features</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/notebooks/modelflow_features.html">1. Useful model instance properties and methods</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Target and instruments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/howto/targetinstruments/One%20target%20one%20instrument%20with%203%20instrument%20variables.html">1. One target one instrument with 3 instrument variables</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/99_BackMatter/References.html">References</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference.html">Reference</a></li>
 </ul>
 
     </div>
@@ -296,7 +300,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>Index</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -314,29 +318,922 @@ document.write(`
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#C"><strong>C</strong></a>
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
  
 </div>
-<h2 id="C">C</h2>
+<h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
-    citations
+    Add-factors
 
       <ul>
-        <li>
-    see also bibliographies
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-45">Use in simulations</a>
 </li>
       </ul></li>
+      <li>
+    Anaconda
+
+      <ul>
+        <li><a href="content/03_Installation/InstallingPython.html#index-1">Installation</a>
+</li>
+        <li><a href="content/03_Installation/InstallingModelFlow.html#index-2">Installation of model flow</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PythonBasics.html#index-2">start session</a>
+</li>
+        <li><a href="content/03_Installation/InstallingModelFlow.html#index-4">Updating  model flow</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-0">Carbon tax example(s)</a>
+</li>
+      <li>
+    Carbon tax simulation
+
+      <ul>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-13">Complex changing equations</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Compare solutions
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-68">- keep_plot options - Percent change from baseline:  diffpct=1,showtype=&#39;level&#39;</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-72">keep_plot options -- keep_switch -- specify the kept scenarios to be displayed</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    DadtaFrames
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-40">.upd(): example of the KG (KEEP_GROWTH) in an exogenous simulation</a>
+</li>
+      </ul></li>
+      <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-5">DataFrame</a>
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-11">.columns.size (# of cols)</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-12">.eval() method</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-13">.loc[] method</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-16">.loc[] method specific dates, specific series</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-18">.loc[] set specific cells</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-17">.loc[] specific range</a>
+</li>
+        <li><a href="content/04_PythonEssentials/mfcalc.html#index-1">.mfcalc() create series</a>
+</li>
+        <li><a href="content/04_PythonEssentials/mfcalc.html#index-5">.mfcalc() diff operator</a>
+</li>
+        <li><a href="content/04_PythonEssentials/mfcalc.html#index-2">.mfcalc() grow at specific growth rate</a>
+</li>
+        <li><a href="content/04_PythonEssentials/mfcalc.html#index-0">.mfcalc() Modelflow extension to DataFrames</a>
+</li>
+        <li><a href="content/04_PythonEssentials/mfcalc.html#index-6">.mfcalc() several equations</a>
+</li>
+        <li><a href="content/04_PythonEssentials/mfcalc.html#index-7">.mfcalc() specify timeframe</a>
+</li>
+        <li><a href="content/04_PythonEssentials/mfcalc.html#index-4">.mfcalc()showeq option</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-18">.upd() % operator</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-17">.upd() + operator</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-20">.upd() +GROWTH operator</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-16">.upd() = operator</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-21">.upd() =diff operator</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-19">.upd() =GROWTH operator</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-24">.upd() keep_growth KG, NKG  option</a>, <a href="content/04_PythonEssentials/UpdateCommand.html#index-26">[1]</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-28">.upd() lprint option</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-0">.upd() modelflow extension to pandas</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-9">.upd() modelflow method</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-13">.upd() multiple lines</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-25">.upd() options</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-27">.upd() scale option</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-14">.upd() specific time periods</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-15">.upd() Time scope of commands</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-22">.upd() update several variables simultaneously</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-8">Add a column</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-6">leads and lags in Modelflow</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-10">List columns</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-11">Modelflow .upd() Method</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-2">Modelflow naming conventions</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-1">Modelflow specific features</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-5">Modelflow time index</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-10">operators</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-9">Revise existing series or column</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-19">Set one or more cells to a specific value</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-23">upd() options</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-12">use upd to create new variable</a>
+</li>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-3">Variable descriptions - set or change</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Dataframe
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-16">.difpct operator</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-15">.mul100 operator</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-37">DataFrames: .upd() method KG Option</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-36">DataFrames: .upd() method the Keep_Growth option</a>
+</li>
+      <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-7">Dated Indexes</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="content/03_Installation/TestingModelFlow.html#index-1">Entry name</a>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-4">Equation dependencies</a>
 </li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-30">Formatting data display</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/04_PythonEssentials/PythonBasics.html#index-9">from package import function</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Help
+
+      <ul>
+        <li><a href="content/07_MoreFeatures/GettingHelp.html#index-0">The ? operator</a>
+</li>
+        <li><a href="content/07_MoreFeatures/GettingHelp.html#index-1">The ?? operator</a>
+</li>
+        <li><a href="content/07_MoreFeatures/GettingHelp.html#index-2">The help() method operator</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Impact Decomposition
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-53">.dekomp() option Lag=True</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-23">.dekomp_plot()</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-37">.exodif() method</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-42">.explain_all() method Total differential graph</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-51">.explain_last() of the last year</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-45">.explain_per()</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-48">.get_att_gui() interactive widget</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-36">.totdif() method</a>, <a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-39">[1]</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-30">.tracedep() Add data table</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-31">.tracepre() Add data table</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-32">.tracepre() advanced examples</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-33">Graph over time</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-44">Total differential for specific period</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-43">Total differential graph .explain_all() method</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-54">Total differential grouping variables</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Impact decomposition
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-19">examples</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-21">graphs</a>
+</li>
+      </ul></li>
+      <li><a href="content/04_PythonEssentials/PythonBasics.html#index-7">importing packages, libraries and modules</a>
+</li>
+      <li>
+    Information
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-46">variables - wildcard search on variable description (the ! operator)</a>
+</li>
+      </ul></li>
+      <li><a href="content/03_Installation/InstallingModelFlow.html#index-0">Installation of model flow</a>
+
+      <ul>
+        <li><a href="content/03_Installation/InstallingModelFlow.html#index-1">Anaconda</a>
+</li>
+        <li><a href="content/03_Installation/InstallingModelFlow.html#index-5">Miniconda</a>
+</li>
+      </ul></li>
+      <li><a href="content/03_Installation/InstallingPython.html#index-0">Installation of python</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Keep
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-53">the Keep option to retain scenario results</a>
+</li>
+      </ul></li>
+      <li>
+    Keep_plot
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-66">examples - showtype=diffpct</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-64">examples - showtype=growth</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-62">examples - the diff option</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-59">Keep_plot options</a>
+</li>
+      <li>
+    keep_plot options
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-73">keep_switch -- specify the kept scenarios to be displayed</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-69">Percent change from baseline:  diffpct=1,showtype=&#39;level&#39;</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    keep_plot_multi
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-82">- comparison of scenario results impacts on multiple series</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-56">Keep_solution dictionary</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-70">keep_solutions.keys()</a>
+</li>
+      <li>
+    keep_switch
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-74">selection using wildcard</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-3">Kinds of simulation</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-8">Lags in modelflow</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-7">Leads in modelflow</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Mathplotlib
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-83">plots - Delete figure from grid of charts</a>
+</li>
+      </ul></li>
+      <li><a href="content/04_PythonEssentials/mfcalc.html#index-3">mfcalc() grow at specific growth rate</a>
+</li>
+      <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-12">mfcalc() to initialize shocked dataframe</a>
+</li>
+      <li>
+    Minconda
+
+      <ul>
+        <li><a href="content/03_Installation/InstallingModelFlow.html#index-6">Installation of model flow</a>
+</li>
+        <li><a href="content/03_Installation/InstallingModelFlow.html#index-8">Updating  model flow</a>
+</li>
+      </ul></li>
+      <li>
+    Miniconda
+
+      <ul>
+        <li><a href="content/03_Installation/InstallingPython.html#index-2">Installation</a>
+</li>
+      </ul></li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-26">Model Adjacency matrix</a>
+</li>
+      <li>
+    Model Analytics
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-6">.dekomp()</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-7">.dekomp() outputs</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-35">.tracedep() Causal tree at the variable level</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-32">.tracepre() method</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-39">Modeldash method - an interactive display of linkages within a model.</a>
+</li>
+      </ul></li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-19">Model currently active sample period</a>
+</li>
+      <li>
+    Model equations
+
+      <ul>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-19">Revise equations with .equupdate()</a>
+</li>
+      </ul></li>
+      <li>
+    Model Information
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-21">Current active sample period</a>
+</li>
+      </ul></li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-6">Model information</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-7">Model Information: Model Name</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-9">Model Information: Model Structure</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-15">Model Information: Number of endogenous variables</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-11">Model Information: Number of equations</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-17">Model Information: Number of exogenous variables</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-13">Model Information: Number of variables</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-8">Model Name</a>
+</li>
+      <li>
+    Model Object
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-24">.current_per - active sample period</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-23">current active sample period</a>
+</li>
+      </ul></li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-0">Model Structure</a>, <a href="content/06_ModelAnalytics/ModelStructure.html#index-10">[1]</a>, <a href="content/06_ModelAnalytics/ModelStructure.html#index-25">[2]</a>
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-29">Model Adjacency matrix</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-2">Recursive Block</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-30">Recursive equation block</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-1">Simultaneous block</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-31">Simultaneous equation block</a>
+</li>
+      </ul></li>
+      <li>
+    ModelFlow
+
+      <ul>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-17">.equupdate() - revising model equations</a>
+</li>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-7">.set_smpl(begin,end) method</a>
+</li>
+      </ul></li>
+      <li>
+    Modelflow
+
+      <ul>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-5">.upd() used to initialize shock dataframe</a>
+</li>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-2">Dataframe - variable descriptions</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-3">DataFrame naming conventions</a>
+</li>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-4">time index</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-2">types of simulation</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-1">More complex scenarios  - carbon tax</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-16">Number of endogenous variables in model</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-12">Number of equations in model</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-18">Number of exogenous variables in model</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-14">Number of variables in model</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Pandas
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-4">DataFrame</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-14">DataFrame .loc[] method</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-0">Series</a>
+</li>
+      </ul></li>
+      <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-2">Pandas Series</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-12">Plotting scenario results</a>
+</li>
+      <li>
+    Python
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/PythonBasics.html#index-5">classes</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PythonBasics.html#index-8">from package import function</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PythonBasics.html#index-6">importing packages, libraries and modules</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PythonBasics.html#index-4">libraries</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PythonBasics.html#index-3">packages</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PythonBasics.html#index-0">start session</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PythonBasics.html#index-1">start session with anaconda</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-3">Recursive block</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-27">Recursive equation block</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-48">Report writing</a>
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-88">interactively compare results across kept solutions</a>
+</li>
+      </ul></li>
+      <li>
+    Report-writing
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-81">.keep_plot_multi - comparison of scenario results impacts on multiple series</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-84">Delete figure from grid of charts (mathplotlib functionality)</a>
+</li>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-8">difpctlevel</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-10">Restricting the amount of data displayed</a>
+</li>
+      <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-16">Revising model equations</a>
+
+      <ul>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-18">.equupdate()</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-20">Sample period</a>
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-22">current active sample period in model object</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-1">Scenario analysis</a>
+</li>
+      <li>
+    Scenario results
+
+      <ul>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-9">difpctlevel</a>
+</li>
+      </ul></li>
+      <li>
+    Scenario set up
+
+      <ul>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-4">use .upd() to initialize shock dataframe</a>
+</li>
+      </ul></li>
+      <li>
+    Scenarios
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-3">.dekomp() - calculate total differential of equation</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-22">.dekomp_plot()</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-40">.explain_all() method Total differential graph</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-50">.explain_last()</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-28">.fix() Exogenizing an endogenous variable</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-47">.get_att_gui() method</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-4">.totdif() - calculate model&#39;s total differential</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-38">.totdif() method</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-2">.tracedep()</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-1">.tracepre()</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-34">Advanced .tracepre() with graphs over time</a>
+</li>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-15">changing equations</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-80">Compare solutions - comparison of scenario results impacts on multiple series</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-76">Compare solutions - keep_switch with wildcard</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-86">Compare solutions: Results widget</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-5">Equation impact decomposition</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-20">Exogenous shocks</a>, <a href="content/05_WBModels/ScenarioAnalysis.html#index-7">[1]</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-0">Impact decomposition</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-35">Impact decomposition - total differential of model</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-18">Impact decomposition examples</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-20">Impact decomposition graphs</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-46">Impact decomposition interactive widget</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-49">Impact decomposition of the last year</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-50">Report writing</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-57">report-writing - keep_plot options</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-55">Report-writing - the Keep_plot method</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-79">Report-writing keep_plot_multi - comparison of scenario results impacts on multiple series</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-22">Results - display results as percent change from baseline</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-21">Results - shock-control display</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-19">Simulating a shock to an exogenous variable</a>, <a href="content/05_WBModels/ScenarioAnalysis.html#index-6">[1]</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-8">Simulation execution</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-42">temporarily exogenize endogenous variable</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-52">the Keep option</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-52">Total differential grouping variables</a>
+</li>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-10">use .mfcalc() to initialize shocked dataframe</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-39">Using the .upd() KG (KEEP_GROWTH) in an exogenous simulation</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-14">Scenarios - print results</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-26">Scenarios: Exogenizing an endogenous variable</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-60">Scenarios: Keep_plot examples - the diff option</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-13">Scenarios: Print scenario results</a>
+</li>
+      <li>
+    Searching
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-47">The ! operator in a variable search</a>
+</li>
+      </ul></li>
+      <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-1">Series</a>
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-3">Create Series from dictionary</a>
+</li>
+        <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-6">Dated Indexes</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-0">Simulating WBG models in Modelflow</a>
+</li>
+      <li>
+    Simulation
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-5">Exogenous shocks</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-18">Results - display results as percent change from baseline</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-17">Results - shock-control display</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-4">Simulating a shock to an exogenous variable</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Simulations
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-27">.fix() method</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-34">.tracedep() Causal tree at the variable level</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-44">Add-factor based endogenous simulation</a>
+</li>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-14">changing equations</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-78">Compare solutions - comparison of scenario results impacts on multiple series</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-75">Compare solutions - keep_switch with wildcard</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-87">Compare solutions: Results widget</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-43">Endogenous simulation</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-24">Exogenous shocks</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-49">Report writing</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-58">report-writing - keep_plot options</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-54">Report-writing - the Keep_plot method</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-77">Report-writing keep_plot_multi - comparison of scenario results impacts on multiple series</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-23">Simulating a shock to an exogenous variable</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-41">temporarily exogenize endogenous variable</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-51">the Keep option</a>
+</li>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-11">use .mfcalc() to initialize shocked dataframe</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-38">Using the .upd() KG (KEEP_GROWTH) in an exogenous simulation</a>
+</li>
+      </ul></li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-65">Simulations: Keep_plot examples - showtype=diffpct</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-63">Simulations: Keep_plot examples - showtype=growth</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-61">Simulations: Keep_plot examples - the diff option</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-71">Simulations: keep_plot options -- keep_switch -- specify the kept scenarios to be displayed</a>
+</li>
+      <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-67">Simulations: Report-writing keep_plot options - Percent change from baseline:  diffpct=1,showtype=&#39;level&#39;</a>
+</li>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-28">Simultaneous equation block</a>
+</li>
+      <li>
+    single
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-17">dekomp(); option bare=&#34;True/False&#34;</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-11">dekomp(); option Lag=True</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-15">dekomp(); option Threshold=xx</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-13">dekomp(); option Type=growth/pct/Level</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-29">Impact Decomposition: .get_att() option time_att</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-27">Impact Decomposition:.dekompPlot() option lag=True/False</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-26">Impact Decomposition:.dekompPlot() option threshold=xx</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-24">Impact Decomposition;.dekompPlot() option pct=True/False</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-25">Impact Decomposition;:.dekompPlot() option rename=True/False</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-85">Mathplotlib; revise charts after built</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-16">Model Analytics: .dekomp() option bare=&#34;True/False&#34;</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-10">Model Analytics: .dekomp() option Lag=True</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-14">Model Analytics: .dekomp() option Threshold=xx</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-12">Model Analytics: .dekomp() option Type=growth/pct/Level</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-9">Model Analytics: Impact decomposition sum lags</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-8">Model Analytics; .get_attr()</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-28">Scenarios: .get_att() option time_att</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-34">Scenarios: Exogenous shock over a limited time period</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-33">Scenarios; Temporarily exognization of a behavioural equation</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-29">Scenarios; using .upd() to create an input dataframe for a simulation</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-25">Simulation types; Exogenizing an endogenous variable</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-35">Simulations: Exogenous shock over a limited time period</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-32">Simulations; Temporarily exognization of a behavioural equation</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-31">with clause; data display</a>
+</li>
+      </ul></li>
+      <li>
+    Single Scenarios
+
+      <ul>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-11">results - plots</a>
+</li>
+      </ul></li>
+      <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-15">Slicing a DataFrame</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-41">Total differential graph .explain_all() method</a>
+</li>
+      <li>
+    tracepre()
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-36">filter option restricts output to variables that had a large impact</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-38">fokus2 option adds a table of impacts to the causal flow graph</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-33">method trace influnce of causal variables</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-37">up option extends the causal tree beyond the initial set of RHS variables to include their RHS variables</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Updating  model flow
+
+      <ul>
+        <li><a href="content/03_Installation/InstallingModelFlow.html#index-7">Miniconda</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Updating modelflow
+
+      <ul>
+        <li><a href="content/03_Installation/InstallingModelFlow.html#index-3">Anaconda</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-5">Variable dependencies</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    with clause
+
+      <ul>
+        <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-6">.set_smpl(begin,end) method to temporarily alter the active rows in the the model object</a>
+</li>
+        <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-9">limiting the display time frame</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
