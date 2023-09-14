@@ -173,24 +173,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">5. Analyzing the impact of a shock</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
@@ -415,19 +408,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installation-of-modelflow">
-<span id="index-0"></span><h1><span class="section-number">3.3. </span>Installation of Modelflow<a class="headerlink" href="#installation-of-modelflow" title="Permalink to this headline">#</a></h1>
-<div class="highlight-{index}Installation notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> is a python package that defines the modelflow class <code class="docutils literal notranslate"><span class="pre">model</span></code> among others.  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> has many dependencies. Installing the class the first time can take some time depending on your internet connection and computer speed.  It is essential that you follow all of the steps outlined below to ensure that your version of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> operates as expected.</p>
+<h1><span class="section-number">3.3. </span>Installation of Modelflow<a class="headerlink" href="#installation-of-modelflow" title="Permalink to this headline">#</a></h1>
+<p id="index-0"><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> is a python package that defines the modelflow class <code class="docutils literal notranslate"><span class="pre">model</span></code> among others.  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> has many dependencies. Installing the class the first time can take some time depending on your internet connection and computer speed.  It is essential that you follow all of the steps outlined below to ensure that your version of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> operates as expected.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The following instructions concern the installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> within an Anaconda and a minconda installation of python.  Different flavors of Python may require slight changes to this recipe, but are not covered here.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> is built and tested using the anaconda python environment.  It is strongly recommended to use Anaconda or miniconda with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
 <p>If you have not already installed Anaconda following the instructions in the preceding section, please do so <strong>Now</strong>.</p>
 </div>
-<span class="target" id="index-1"></span><section id="installation-of-modelflow-under-anaconda">
-<span id="index-2"></span><h2><span class="section-number">3.3.1. </span>Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> under Anaconda<a class="headerlink" href="#installation-of-modelflow-under-anaconda" title="Permalink to this headline">#</a></h2>
+<section id="installation-of-modelflow-under-anaconda">
+<h2><span class="section-number">3.3.1. </span>Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> under Anaconda<a class="headerlink" href="#installation-of-modelflow-under-anaconda" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Open the anaconda command prompt</p></li>
 <li><p>Execute the following commands by copying and pasting them – either line by line or as a single mult-line step</p></li>
@@ -445,16 +435,16 @@ document.write(`
 </pre></div>
 </div>
 <p>Depending on the speed of your computer and of your internet connection installation could take as little as 10 minutes or more than 1/2 an hour.</p>
-<span class="target" id="index-3"></span><section id="updating-modelflow-under-anaconda">
-<span id="index-4"></span><h3><span class="section-number">3.3.1.1. </span>Updating Modelflow under Anaconda<a class="headerlink" href="#updating-modelflow-under-anaconda" title="Permalink to this headline">#</a></h3>
+<span class="target" id="index-1"></span><section id="updating-modelflow-under-anaconda">
+<span id="index-2"></span><h3><span class="section-number">3.3.1.1. </span>Updating Modelflow under Anaconda<a class="headerlink" href="#updating-modelflow-under-anaconda" title="Permalink to this headline">#</a></h3>
 <p>Once installed, a <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment can be updated. This is done first by activating the <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment created above.</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">modelflow</span></code></p>
 <p>And then executing the command:</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">modelflow</span> <span class="pre">-c</span> <span class="pre">ibh</span> <span class="pre">--no-deps</span></code></p>
-<span class="target" id="index-5"></span></section>
+<span class="target" id="index-3"></span></section>
 </section>
 <section id="installation-of-modelflow-using-miniconda">
-<span id="index-6"></span><h2><span class="section-number">3.3.2. </span>Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> using Miniconda<a class="headerlink" href="#installation-of-modelflow-using-miniconda" title="Permalink to this headline">#</a></h2>
+<span id="index-4"></span><h2><span class="section-number">3.3.2. </span>Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> using Miniconda<a class="headerlink" href="#installation-of-modelflow-using-miniconda" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Open the a command prompt or continue in the command prompt used to install python.</p></li>
 <li><p>Copy/paste these lines to the command prompt</p></li>
@@ -474,8 +464,8 @@ document.write(`
 </pre></div>
 </div>
 <p>Depending on the speed of your computer and of your internet connection installation could take as little as 10 minutes or more than 1/2 an hour.</p>
-<span class="target" id="index-7"></span><section id="updating-modelflow-under-miniconda">
-<span id="index-8"></span><h3><span class="section-number">3.3.2.1. </span>Updating Modelflow under miniconda<a class="headerlink" href="#updating-modelflow-under-miniconda" title="Permalink to this headline">#</a></h3>
+<span class="target" id="index-5"></span><section id="updating-modelflow-under-miniconda">
+<span id="index-6"></span><h3><span class="section-number">3.3.2.1. </span>Updating Modelflow under miniconda<a class="headerlink" href="#updating-modelflow-under-miniconda" title="Permalink to this headline">#</a></h3>
 <p>Once installed, a <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment can be updated. This is done first by activating the <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment created above.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">miniconda3</span>\<span class="n">Scripts</span>\<span class="n">activate</span><span class="o">.</span><span class="n">bat</span> <span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">miniconda3</span> 
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">modelflow</span>

@@ -175,24 +175,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">5. Analyzing the impact of a shock</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
@@ -435,19 +428,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-jupyter-notebook">
 <h1><span class="section-number">1. </span>Introduction to  Jupyter Notebook<a class="headerlink" href="#introduction-to-jupyter-notebook" title="Permalink to this headline">#</a></h1>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Jupyter Notebook is a web application for creating, annotating, simulating and working with computational documents.  Originally developed for python, the latest versions of EViews also support Jupyter Notebooks. Jupyter Notebook offers a simple, streamlined, document-centric experience and can be a great environment for documenting the work you are doing, and trying alternative methods of achieving desired results.  Many of the methods in <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> have been developed to work well with Jupyter Notebook. Indeed this documentation was written as a series of Jupyter Notebooks bound together with <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>.</p>
+<p id="index-0">Jupyter Notebook is a web application for creating, annotating, simulating and working with computational documents.  Originally developed for python, the latest versions of EViews also support Jupyter Notebooks. Jupyter Notebook offers a simple, streamlined, document-centric experience and can be a great environment for documenting the work you are doing, and trying alternative methods of achieving desired results.  Many of the methods in <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> have been developed to work well with Jupyter Notebook. Indeed this documentation was written as a series of Jupyter Notebooks bound together with <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>.</p>
 <p>Jupyter Notebook is not the only way to work with modelflow or Python.  As users become more advanced they are likely to migrate to a more program-centric IDE (Interactive Development Environment) like Spyder or Microsoft Visual Code.</p>
 <p>However, to start, Jupyter Notebooks are a great way to learn, follow work done by others, and tweak them to fit your own needs.</p>
 <p>There are many fine tutorials on Jupyter Notebook on the web, and <a class="reference external" href="https://docs.jupyter.org/en/latest/">The official Jupyter site</a> is a good starting point. Another good reference is <a class="reference external" href="https://jupyter.brynmawr.edu/services/public/dblank/Jupyter%20Notebook%20Users%20Manual.ipynb">here.</a></p>
 <p>The following aims to provide enough information to get a user started.</p>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <section id="starting-jupyter-notebook">
-<h2><span class="section-number">1.1. </span>Starting Jupyter Notebook<a class="headerlink" href="#starting-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<span id="index-1"></span><h2><span class="section-number">1.1. </span>Starting Jupyter Notebook<a class="headerlink" href="#starting-jupyter-notebook" title="Permalink to this headline">#</a></h2>
 <p>Each time, a user wants to work with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>, they will need to activate the <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment by</p>
 <ol class="arabic simple">
 <li><p>Opening the Anaconda command prompt window</p></li>
@@ -463,12 +450,9 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></p>
 <p>This will launch the Jupyter environment in your default web browser, which should look something like the image below, where the directory structure presented is that of the directory from the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> command was executed.</p>
 <p><img alt="image.png" src="../../_images/NewJNSession.png" /></p>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </section>
 <section id="creating-a-notebook">
-<h2><span class="section-number">1.2. </span>Creating a notebook<a class="headerlink" href="#creating-a-notebook" title="Permalink to this headline">#</a></h2>
+<span id="index-2"></span><h2><span class="section-number">1.2. </span>Creating a notebook<a class="headerlink" href="#creating-a-notebook" title="Permalink to this headline">#</a></h2>
 <p>The idea behind jupyter notebook is to create an interactive version of the notebooks that scientists use(d) to:</p>
 <ul class="simple">
 <li><p>record what they have done</p></li>
@@ -496,20 +480,17 @@ document.write(`
 <p class="admonition-title">Warning</p>
 <p>Each notebook has associated with it a “Kernel”, which is an instance of the computing environment in which code will be executed. For Jupyter Notebooks that work with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> this will be a Python Kernel. If your computer has more than one “kernel” installed on it, you may be prompted when creating a new notebook for the kernel with which to associate it.  Typically this should be the Python Kernel under which your modelflow was built – currently python 3.9 in September 2023.</p>
 </div>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </section>
 <section id="jupter-notebook-cells">
-<h2><span class="section-number">1.3. </span>Jupter Notebook cells<a class="headerlink" href="#jupter-notebook-cells" title="Permalink to this headline">#</a></h2>
+<span id="index-3"></span><h2><span class="section-number">1.3. </span>Jupter Notebook cells<a class="headerlink" href="#jupter-notebook-cells" title="Permalink to this headline">#</a></h2>
 <p>A Jupyter Notebook is comprised of a series of cells.</p>
-<p><em><strong>Jupyter Notebook cells can contain:</strong></em></p>
+<span class="target" id="index-4"></span><p id="index-5"><em><strong>Jupyter Notebook cells can contain:</strong></em></p>
 <ul class="simple">
 <li><p><strong>computer code</strong> (typically python code, but as noted other kernels – like Eviews – can be used with jupyter).</p></li>
 <li><p><strong>markdown text</strong>: plain text that can include special characters that make some text appear as bold, or indicate the text is a header, or instruct Jupyter Notebook to render the text as a mathematical formula.  All of the text in this document was entered using Jupyter Notebook’s markdown language (more on this below).</p></li>
 <li><p>Results (in the form of tables or graphs) from the execution of computer code specified in a code cell.</p></li>
 </ul>
-<p><strong>Every cell has two modes:</strong></p>
+<p id="index-6"><strong>Every cell has two modes:</strong></p>
 <ol class="arabic simple">
 <li><p>Edit mode – indicated by a green vertical bar. In edit mode, the user can change the code, or the markdown.</p></li>
 <li><p>Select/Copy mode – indicated by a blue vertical bar.  This will be the state of the cell when its content has been executed.  For markdown cells this means that the text and special characters have been rendered into formatted text.  For code cells, this means the code has been executed and its output (if any)is displayed in an output cell that will be generated in the space immediately below the code cell that generated the output.</p></li>
@@ -519,11 +500,8 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Jupyter Notebooks were designed to facilitate <em>replicability</em>: the idea that a scientific analysis should contain - in addition to the final output (text, graphs, tables) - all the computational steps needed to get from raw input data to the results.</p>
 </div>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <section id="how-to-add-delete-and-move-cells">
-<h3><span class="section-number">1.3.1. </span>How to add, delete and move cells<a class="headerlink" href="#how-to-add-delete-and-move-cells" title="Permalink to this headline">#</a></h3>
+<span id="index-7"></span><h3><span class="section-number">1.3.1. </span>How to add, delete and move cells<a class="headerlink" href="#how-to-add-delete-and-move-cells" title="Permalink to this headline">#</a></h3>
 <p>The newly created Jupyter Notebook will have a code cell by default.  Cells can be added, deleted and moved either via mouse using the toolbar or by keyboard shortcut.</p>
 <p><strong>Using the Toolbar</strong></p>
 <ul class="simple">
@@ -539,12 +517,9 @@ document.write(`
 <li><p><strong>esc + b</strong>: add a cell below the current cell</p></li>
 <li><p><strong>esc + d+d</strong>: delete the current cell</p></li>
 </ul>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </section>
 <section id="change-the-type-of-a-cell">
-<h3><span class="section-number">1.3.2. </span>Change the type of a cell<a class="headerlink" href="#change-the-type-of-a-cell" title="Permalink to this headline">#</a></h3>
+<span id="index-8"></span><h3><span class="section-number">1.3.2. </span>Change the type of a cell<a class="headerlink" href="#change-the-type-of-a-cell" title="Permalink to this headline">#</a></h3>
 <p>You can also change the type of a cell. New cells are by default “code” cells.</p>
 <p><strong>Using the Toolbar</strong></p>
 <ul class="simple">
@@ -568,24 +543,18 @@ document.write(`
 <li><p><strong>tab</strong>: autocomplete and  method selection</p></li>
 <li><p><strong>double tab</strong>: documention (double tab for full doc)</p></li>
 </ul>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </section>
 </section>
 <section id="execution-of-cells">
-<h2><span class="section-number">1.4. </span>Execution of cells<a class="headerlink" href="#execution-of-cells" title="Permalink to this headline">#</a></h2>
+<span id="index-9"></span><h2><span class="section-number">1.4. </span>Execution of cells<a class="headerlink" href="#execution-of-cells" title="Permalink to this headline">#</a></h2>
 <p>Every cell in a Jupyter Notebook can be executed. Executing a markdown cell will cause the cell’s content to be rendered as html.  Executing a python code cell, will cause its content to be executed. Cells can be executed either by using the Run button on the Jupyter Notebook menu, or by using one of <strong>two keyboard shortcuts</strong>:</p>
 <ul class="simple">
 <li><p><strong>ctrl + Enter</strong>: Executes the code in the cell or formats the markdown of a cell.  The current cell retains the focus.  The cursor will stay on the cell that was executed.</p></li>
 <li><p><strong>shift + enter</strong>: Executes the code in the cell or formats the markdown of a cell. The focus (cursor) jumps to the next cell.</p></li>
 </ul>
 <p>For other useful shortcuts see “Help” =&gt; “Keyboard Shortcuts” or simply press the keyboard icon in the toolbar.</p>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <section id="executing-python-code">
-<h3><span class="section-number">1.4.1. </span>Executing python code<a class="headerlink" href="#executing-python-code" title="Permalink to this headline">#</a></h3>
+<span id="index-10"></span><h3><span class="section-number">1.4.1. </span>Executing python code<a class="headerlink" href="#executing-python-code" title="Permalink to this headline">#</a></h3>
 <p>Below is a code cell with some standard python that declares a variable “x”, assigns it the value 10, declares a second variable “y” and assigns it the value 45.  The final line of y alone, instructs python to display the value of the variable y.  The results of the operation appear in Jupyter Notebook as an output cell Out[#].  By pressing <strong>Ctrl-Enter</strong> the code will be executed and the output displayed below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -601,7 +570,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>The semi-colon “;” suppresses output in Jupyter Notebook</strong></p>
+<p id="index-11"><strong>The semi-colon “;” suppresses output in Jupyter Notebook</strong></p>
 <p>In the example below, a semi-colon “;” has been appended to the final line.  This suppresses the display of the value contained by y;  As a result there is no output cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -645,24 +614,15 @@ document.write(`
 <p>Cells can be executed in any order. The natural order is to execute them sequentially in the order they appear in the Jupyter notebook.  However, when debugging or developing code it may be useful to execute cells out of their natural order.<br />
 The persistence of data (the fact that a variable <code class="docutils literal notranslate"><span class="pre">y</span></code> defined in one cell can be used in another cell) depends on the order in which cells were executed, not the order they appear in the notebook.</p>
 </div>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </section>
 <section id="markdown-cells-and-the-markdown-scripting-language-in-jupyter-notebook">
-<h3><span class="section-number">1.4.2. </span>Markdown cells and the markdown scripting language in Jupyter Notebook<a class="headerlink" href="#markdown-cells-and-the-markdown-scripting-language-in-jupyter-notebook" title="Permalink to this headline">#</a></h3>
+<span id="index-12"></span><h3><span class="section-number">1.4.2. </span>Markdown cells and the markdown scripting language in Jupyter Notebook<a class="headerlink" href="#markdown-cells-and-the-markdown-scripting-language-in-jupyter-notebook" title="Permalink to this headline">#</a></h3>
 <p>Text cells in a notebook can be made more interesting by using markdown.</p>
 <p>Cells designated as markdown cells when executed are rendered in a rich text format (html).</p>
 <p>Markdown is a lightweight markup language for creating formatted text using a plain-text editor.  Used in a markdown cell of Jupyter Notebook it can be used to produce nicely formatted text that mixes text, mathematical formulae, code and outputs from executed python code.</p>
 <p>Rather than the relatively complex commands of html &lt;h1&gt;&lt;/h1&gt;, markdown uses a simplified set of commands to control how text elements should be rendered.</p>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-{index}Markdown notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<section id="common-markdown-commands">
-<h4><span class="section-number">1.4.2.1. </span>Common markdown commands<a class="headerlink" href="#common-markdown-commands" title="Permalink to this headline">#</a></h4>
+<span class="target" id="index-13"></span><section id="common-markdown-commands">
+<span id="index-14"></span><h4><span class="section-number">1.4.2.1. </span>Common markdown commands<a class="headerlink" href="#common-markdown-commands" title="Permalink to this headline">#</a></h4>
 <p>Some of the most common of these include:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -694,15 +654,9 @@ The persistence of data (the fact that a variable <code class="docutils literal 
 </tr>
 </tbody>
 </table>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-{index}Markfdown notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
+<span class="target" id="index-15"></span></section>
 <section id="tables-in-markdown">
-<h4><span class="section-number">1.4.2.2. </span>Tables in markdown<a class="headerlink" href="#tables-in-markdown" title="Permalink to this headline">#</a></h4>
+<span id="index-16"></span><h4><span class="section-number">1.4.2.2. </span>Tables in markdown<a class="headerlink" href="#tables-in-markdown" title="Permalink to this headline">#</a></h4>
 <p>Tables like the one above can be constructed using | as separators.</p>
 <p>Below is the markdown code that generated the above table:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">symbol</span>           <span class="o">|</span> <span class="n">Effect</span>          <span class="o">|</span>
@@ -735,16 +689,10 @@ The persistence of data (the fact that a variable <code class="docutils literal 
 </tr>
 </tbody>
 </table>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-{index}Markdown notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
+<span class="target" id="index-17"></span></section>
 </section>
 <section id="displaying-code">
-<h3><span class="section-number">1.4.3. </span>Displaying code<a class="headerlink" href="#displaying-code" title="Permalink to this headline">#</a></h3>
+<span id="index-18"></span><h3><span class="section-number">1.4.3. </span>Displaying code<a class="headerlink" href="#displaying-code" title="Permalink to this headline">#</a></h3>
 <p>To display a  block of (unexecutable) code within a markdown cell, encapsulate it (surround it) with backticks `.</p>
 <section id="inine-code-blocks">
 <h4><span class="section-number">1.4.3.1. </span>Inine code blocks<a class="headerlink" href="#inine-code-blocks" title="Permalink to this headline">#</a></h4>
@@ -765,16 +713,10 @@ The persistence of data (the fact that a variable <code class="docutils literal 
 <span class="n">text</span> <span class="n">to</span> <span class="n">be</span> <span class="n">rendered</span> <span class="k">as</span> <span class="n">code</span> 
 </pre></div>
 </div>
-<div class="highlight-{index}Jupyter notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-{index}Markdown notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
+<span class="target" id="index-19"></span></section>
 </section>
 <section id="rendering-mathematics-in-markdown">
-<h3><span class="section-number">1.4.4. </span>Rendering mathematics in markdown<a class="headerlink" href="#rendering-mathematics-in-markdown" title="Permalink to this headline">#</a></h3>
+<span id="index-20"></span><h3><span class="section-number">1.4.4. </span>Rendering mathematics in markdown<a class="headerlink" href="#rendering-mathematics-in-markdown" title="Permalink to this headline">#</a></h3>
 <p>Jupyter Notebook’s implementation of Markdown supports <code class="docutils literal notranslate"><span class="pre">latex</span></code> mathematical notation.<br></p>
 <p>Inline enclose the <code class="docutils literal notranslate"><span class="pre">latex</span></code> code in <code class="docutils literal notranslate"><span class="pre">$</span></code>:</p>
 <p>An Equation: <code class="docutils literal notranslate"><span class="pre">$y_t</span> <span class="pre">=</span> <span class="pre">\beta_0</span> <span class="pre">+</span> <span class="pre">\beta_1</span> <span class="pre">x_t</span> <span class="pre">+</span> <span class="pre">u_t\$</span></code> will renders as: <span class="math notranslate nohighlight">\(y_t = \beta_0 + \beta_1 x_t + u_t\)</span></p>
@@ -785,15 +727,15 @@ The persistence of data (the fact that a variable <code class="docutils literal 
 <p>it will be rendered centered on its own line – as here.</p>
 <div class="math notranslate nohighlight">
 \[y_t = \beta_0 + \beta_1 x_t + u_t\]</div>
-<section id="complex-and-multi-line-math">
-<h4><span class="section-number">1.4.4.1. </span>Complex and multi-line math<a class="headerlink" href="#complex-and-multi-line-math" title="Permalink to this headline">#</a></h4>
+<span class="target" id="index-21"></span><section id="complex-and-multi-line-math">
+<span id="index-22"></span><h4><span class="section-number">1.4.4.1. </span>Complex and multi-line math<a class="headerlink" href="#complex-and-multi-line-math" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">align</span><span class="o">*</span><span class="p">}</span>
 <span class="n">Y_t</span>  <span class="o">&amp;=</span>  <span class="n">C_t</span><span class="o">+</span><span class="n">I_t</span><span class="o">+</span><span class="n">G</span><span class="o">+</span><span class="n">t</span><span class="o">+</span> <span class="p">(</span><span class="n">X_t</span><span class="o">-</span><span class="n">M_t</span><span class="p">)</span> \\
-<span class="n">C_t</span> <span class="o">&amp;=</span> <span class="n">c_t</span><span class="p">(</span><span class="n">C_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">C_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">I_t</span><span class="p">,</span><span class="n">G_t</span><span class="p">,</span><span class="n">X_t</span><span class="p">,</span><span class="n">M_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">)</span>\\
-<span class="n">I_t</span> <span class="o">&amp;=</span> <span class="n">c_t</span><span class="p">(</span><span class="n">I_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">I_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">C_t</span><span class="p">,</span><span class="n">G_t</span><span class="p">,</span><span class="n">X_t</span><span class="p">,</span><span class="n">M_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">)</span>\\
-<span class="n">G_t</span> <span class="o">&amp;=</span> <span class="n">c_t</span><span class="p">(</span><span class="n">G_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">G_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">C_t</span><span class="p">,</span><span class="n">I_t</span><span class="p">,</span><span class="n">X_t</span><span class="p">,</span><span class="n">M_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">)</span>\\
-<span class="n">X_t</span> <span class="o">&amp;=</span> <span class="n">c_t</span><span class="p">(</span><span class="n">X_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">X_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">C_t</span><span class="p">,</span><span class="n">I_t</span><span class="p">,</span><span class="n">G_t</span><span class="p">,</span><span class="n">M_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">,</span><span class="n">P</span><span class="o">^</span><span class="n">f_t</span><span class="p">)</span>\\
-<span class="n">M_t</span> <span class="o">&amp;=</span> <span class="n">c_t</span><span class="p">(</span><span class="n">M_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">M_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">C_t</span><span class="p">,</span><span class="n">I_t</span><span class="p">,</span><span class="n">G_t</span><span class="p">,</span><span class="n">X_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">,</span><span class="n">P</span><span class="o">^</span><span class="n">f_t</span><span class="p">)</span>
+<span class="n">C_t</span> <span class="o">&amp;=</span> <span class="n">c</span><span class="p">(</span><span class="n">C_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">C_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">I_t</span><span class="p">,</span><span class="n">G_t</span><span class="p">,</span><span class="n">X_t</span><span class="p">,</span><span class="n">M_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">)</span>\\
+<span class="n">I_t</span> <span class="o">&amp;=</span> <span class="n">i</span><span class="p">(</span><span class="n">I_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">I_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">C_t</span><span class="p">,</span><span class="n">G_t</span><span class="p">,</span><span class="n">X_t</span><span class="p">,</span><span class="n">M_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">)</span>\\
+<span class="n">G_t</span> <span class="o">&amp;=</span> <span class="n">g</span><span class="p">(</span><span class="n">G_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">G_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">C_t</span><span class="p">,</span><span class="n">I_t</span><span class="p">,</span><span class="n">X_t</span><span class="p">,</span><span class="n">M_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">)</span>\\
+<span class="n">X_t</span> <span class="o">&amp;=</span> <span class="n">x</span><span class="p">(</span><span class="n">X_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">X_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">C_t</span><span class="p">,</span><span class="n">I_t</span><span class="p">,</span><span class="n">G_t</span><span class="p">,</span><span class="n">M_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">,</span><span class="n">P</span><span class="o">^</span><span class="n">f_t</span><span class="p">)</span>\\
+<span class="n">M_t</span> <span class="o">&amp;=</span> <span class="n">m</span><span class="p">(</span><span class="n">M_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">M_</span><span class="p">{</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span><span class="n">C_t</span><span class="p">,</span><span class="n">I_t</span><span class="p">,</span><span class="n">G_t</span><span class="p">,</span><span class="n">X_t</span><span class="p">,</span><span class="n">P_t</span><span class="p">,</span><span class="n">P</span><span class="o">^</span><span class="n">f_t</span><span class="p">)</span>
 \<span class="n">end</span><span class="p">{</span><span class="n">align</span><span class="o">*</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -801,11 +743,11 @@ The persistence of data (the fact that a variable <code class="docutils literal 
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 Y_t  &amp;=  C_t+I_t+G+t+ (X_t-M_t) \\
-C_t &amp;= c_t(C_{t-1},C_{t-2},I_t,G_t,X_t,M_t,P_t)\\
-I_t &amp;= c_t(I_{t-1},I_{t-2},C_t,G_t,X_t,M_t,P_t)\\
-G_t &amp;= c_t(G_{t-1},G_{t-2},C_t,I_t,X_t,M_t,P_t)\\
-X_t &amp;= c_t(X_{t-1},X_{t-2},C_t,I_t,G_t,M_t,P_t,P^f_t)\\
-M_t &amp;= c_t(M_{t-1},M_{t-2},C_t,I_t,G_t,X_t,P_t,P^f_t)
+C_t &amp;= c(C_{t-1},C_{t-2},I_t,G_t,X_t,M_t,P_t)\\
+I_t &amp;= i(I_{t-1},I_{t-2},C_t,G_t,X_t,M_t,P_t)\\
+G_t &amp;= g(G_{t-1},G_{t-2},C_t,I_t,X_t,M_t,P_t)\\
+X_t &amp;= x(X_{t-1},X_{t-2},C_t,I_t,G_t,M_t,P_t,P^f_t)\\
+M_t &amp;= m(M_{t-1},M_{t-2},C_t,I_t,G_t,X_t,P_t,P^f_t)
 \end{align*}\]</div>
 </section>
 </section>

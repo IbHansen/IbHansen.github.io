@@ -173,24 +173,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">5. Analyzing the impact of a shock</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
@@ -424,14 +417,11 @@ document.write(`
 <p>Modelflow is a python package that defines the <code class="docutils literal notranslate"><span class="pre">model</span></code> class, its methods and a number of other functions that extend and combine pre-existing python functions to allow the easy solution of complex systems of equations including macro-structural models like MFMod.  To work with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>, a user needs to first install python (preferably the Anaconda or miniconda variants), several supporting packages, and of course the <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> package itself.  While <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> can be run directly from the python command-line or IDEs (Interactive Development Environments) like <code class="docutils literal notranslate"><span class="pre">Spyder</span></code> or Microsoft’s <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Code</span></code>, it is suggested that users also install the Jupyter notebook system. Jupyter Notebook facilitates an interactive approach to building python programs, annotating them and ultimately doing simulations using <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> under <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>. This entire manual and the examples in it were all written and executed in the Jupyter Notebook environment.</p>
 <section id="installation-of-python">
 <span id="index-0"></span><h2><span class="section-number">3.1. </span>Installation of Python<a class="headerlink" href="#installation-of-python" title="Permalink to this headline">#</a></h2>
-<div class="highlight-{index}Installation notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> is a powerful, versatile and extensible open-source language. It is widely used for artificial intelligence applications, interactive web sites, and scientific processing. As of 14 November 2022, the <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Package</span> <span class="pre">Index</span></code> (PyPI), the official repository for third-party Python software, contained over 415,000 packages that extend its functionality <a class="footnote-reference brackets" href="#pythonlibrary" id="id1">1</a>. Modelflow is one of these packages.</p>
 <p>Python comes in many flavors and <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> will work with any of them.</p>
 <p><strong>Users are strongly advised</strong> to use either the <strong>Anaconda</strong> version of Python or the closely related <strong>Miniconda</strong> version.</p>
-<section id="choosing-between-anaconda-and-miniconda">
-<h3><span class="section-number">3.1.1. </span>Choosing  between Anaconda and Miniconda<a class="headerlink" href="#choosing-between-anaconda-and-miniconda" title="Permalink to this headline">#</a></h3>
+<span class="target" id="index-1"></span><section id="choosing-between-anaconda-and-miniconda">
+<span id="index-2"></span><h3><span class="section-number">3.1.1. </span>Choosing  between Anaconda and Miniconda<a class="headerlink" href="#choosing-between-anaconda-and-miniconda" title="Permalink to this headline">#</a></h3>
 <p><strong>Anaconda</strong> is a full-featured distribution of python that comes with a comprehensive set of pre-installed packages and tools for scientific computing and data analysis. It is best suited for users who want a ready-to-use platform with a wide range of packages and don’t mind the larger installation size.</p>
 <p><strong>MiniConda</strong> is a lightweight version of Anaconda, focusing on minimalism and providing only the essential components. It offers faster installation and a smaller footprint, making it suitable for users who prefer a more streamlined environment and want more control over package selection.</p>
 <section id="which-is-better-for-me">
@@ -441,12 +431,9 @@ document.write(`
 <p>A final sub-section describes the steps necessary to create an anaconda or miniconda environment with all the necessary packages to run <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
 </section>
 <section id="anaconda-installation-instructions">
-<span id="index-1"></span><h4><span class="section-number">3.1.1.2. </span>Anaconda installation instructions<a class="headerlink" href="#anaconda-installation-instructions" title="Permalink to this headline">#</a></h4>
-<div class="highlight-{index}Installation notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<section id="windows">
-<h5><span class="section-number">3.1.1.2.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">#</a></h5>
+<h4><span class="section-number">3.1.1.2. </span>Anaconda installation instructions<a class="headerlink" href="#anaconda-installation-instructions" title="Permalink to this headline">#</a></h4>
+<span class="target" id="index-3"></span><section id="windows">
+<span id="index-4"></span><h5><span class="section-number">3.1.1.2.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">#</a></h5>
 <p>The definitive source for installing <strong>Anaconda under windows</strong> can be found <a class="reference external" href="https://docs.anaconda.com/anaconda/install/windows/">here</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -465,11 +452,8 @@ document.write(`
 </section>
 </section>
 <section id="installation-of-miniconda-under-windows">
-<span id="index-2"></span><h2><span class="section-number">3.2. </span>Installation of Miniconda under Windows:<a class="headerlink" href="#installation-of-miniconda-under-windows" title="Permalink to this headline">#</a></h2>
-<div class="highlight-{index}Installation notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>The easiest way to install <strong>Miniconda</strong>is to install its package manager from Anaconda. You can find a link <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">here</a>. The latest version can be downloaded and installed by execution the following commands in a Windows command window.</p>
+<h2><span class="section-number">3.2. </span>Installation of Miniconda under Windows:<a class="headerlink" href="#installation-of-miniconda-under-windows" title="Permalink to this headline">#</a></h2>
+<span class="target" id="index-5"></span><p id="index-6">The easiest way to install <strong>Miniconda</strong>is to install its package manager from Anaconda. You can find a link <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">here</a>. The latest version can be downloaded and installed by execution the following commands in a Windows command window.</p>
 <p>Open the a command prompt.</p>
 <p><strong>First</strong> copy/paste these lines to the command prompt</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="s2">&quot;https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe&quot;</span> <span class="o">--</span><span class="n">output</span> <span class="o">%</span><span class="n">TEMP</span><span class="o">%</span>\<span class="n">miniconda</span><span class="o">.</span><span class="n">exe</span>
