@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.3. Installation of Modelflow &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
+    <title>4.5. Installation of Modelflow &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Introduction to Jupyter Notebook" href="../04_PythonEssentials/Intro_Jupyter_notebook.html" />
-    <link rel="prev" title="3. Installation of Modelflow" href="InstallingPython.html" />
+    <link rel="prev" title="4. Installation of Modelflow" href="InstallingPython.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -151,13 +151,14 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">2.2. Modelflow and the MFMod models of the World Bank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Jupyter%20book%20tests%20and%20tips.html">1. Some jupyter book examples and tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">2. Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="InstallingPython.html">3. Installation of Modelflow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Installation of Modelflow</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="InstallingPython.html">4. Installation of Modelflow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.5. Installation of Modelflow</a></li>
 </ul>
 </li>
 </ul>
@@ -177,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">2. Working with PakMod under modelflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
@@ -188,8 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">3. Modelflow methods reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -387,15 +387,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-modelflow-under-anaconda">3.3.1. Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> under Anaconda</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-modelflow-under-anaconda">3.3.1.1. Updating Modelflow under Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-modelflow-under-anaconda-miniconda">4.5.1. Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> under Anaconda/Miniconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-modelflow-under-anaconda-miniconda">4.5.1.1. Updating Modelflow under Anaconda/Miniconda</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-modelflow-using-miniconda">3.3.2. Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> using Miniconda</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-modelflow-under-miniconda">3.3.2.1. Updating Modelflow under miniconda</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">3.3.3. Next steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-modelflow-using-from-windows-prompt">4.5.2. Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> using from windows prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">4.5.3. Next steps</a></li>
 </ul>
             </nav>
         </div>
@@ -408,52 +405,67 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installation-of-modelflow">
-<h1><span class="section-number">3.3. </span>Installation of Modelflow<a class="headerlink" href="#installation-of-modelflow" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4.5. </span>Installation of Modelflow<a class="headerlink" href="#installation-of-modelflow" title="Permalink to this headline">#</a></h1>
 <p id="index-0"><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> is a python package that defines the modelflow class <code class="docutils literal notranslate"><span class="pre">model</span></code> among others.  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> has many dependencies. Installing the class the first time can take some time depending on your internet connection and computer speed.  It is essential that you follow all of the steps outlined below to ensure that your version of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> operates as expected.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The following instructions concern the installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> within an Anaconda and a minconda installation of python.  Different flavors of Python may require slight changes to this recipe, but are not covered here.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> is built and tested using the anaconda python environment.  It is strongly recommended to use Anaconda or miniconda with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
-<p>If you have not already installed Anaconda following the instructions in the preceding section, please do so <strong>Now</strong>.</p>
+<p>If you have not already installed Anaconda/miniconda  following the instructions in the preceding chapter, please do so <strong>Now</strong>.</p>
 </div>
-<section id="installation-of-modelflow-under-anaconda">
-<h2><span class="section-number">3.3.1. </span>Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> under Anaconda<a class="headerlink" href="#installation-of-modelflow-under-anaconda" title="Permalink to this headline">#</a></h2>
+<span class="target" id="index-1"></span><span class="target" id="index-2"></span><span class="target" id="index-3"></span><section id="installation-of-modelflow-under-anaconda-miniconda">
+<span id="index-4"></span><h2><span class="section-number">4.5.1. </span>Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> under Anaconda/Miniconda<a class="headerlink" href="#installation-of-modelflow-under-anaconda-miniconda" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
-<li><p>Open the anaconda command prompt</p></li>
+<li><p>Open the anaconda/miniconda command prompt</p></li>
 <li><p>Execute the following commands by copying and pasting them – either line by line or as a single mult-line step</p></li>
 <li><p>Press enter</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">ModelFlow</span> <span class="o">-</span><span class="n">c</span> <span class="n">ibh</span> <span class="o">-</span><span class="n">c</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">modelflow_pinned_developement_test</span> <span class="o">-</span><span class="n">y</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">ModelFlow</span> <span class="o">-</span><span class="n">c</span> <span class="n">ibh</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">modelflow_stable</span> <span class="o">-</span><span class="n">y</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">ModelFlow</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">dash_interactive_graphviz</span>
-<span class="n">conda</span> <span class="n">install</span> <span class="n">pyeviews</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">-</span><span class="n">y</span>
-<span class="n">jupyter</span> <span class="n">contrib</span> <span class="n">nbextension</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">pyeviews</span> <span class="o">-</span><span class="n">c</span> <span class="n">condser</span>
 <span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="n">hide_input_all</span><span class="o">/</span><span class="n">main</span>
 <span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="n">splitcell</span><span class="o">/</span><span class="n">splitcellcd</span>
 <span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="n">toc2</span><span class="o">/</span><span class="n">main</span>
 
 </pre></div>
 </div>
-<p>Depending on the speed of your computer and of your internet connection installation could take as little as 10 minutes or more than 1/2 an hour.</p>
-<span class="target" id="index-1"></span><section id="updating-modelflow-under-anaconda">
-<span id="index-2"></span><h3><span class="section-number">3.3.1.1. </span>Updating Modelflow under Anaconda<a class="headerlink" href="#updating-modelflow-under-anaconda" title="Permalink to this headline">#</a></h3>
+<p>Depending on the speed of your computer and of your internet connection installation could take as little as 5 minutes or more than 1/2 an hour.</p>
+<span class="target" id="index-5"></span><section id="updating-modelflow-under-anaconda-miniconda">
+<span id="index-6"></span><h3><span class="section-number">4.5.1.1. </span>Updating Modelflow under Anaconda/Miniconda<a class="headerlink" href="#updating-modelflow-under-anaconda-miniconda" title="Permalink to this headline">#</a></h3>
 <p>Once installed, a <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment can be updated. This is done first by activating the <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment created above.</p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">modelflow</span></code></p>
-<p>And then executing the command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">modelflow</span> <span class="pre">-c</span> <span class="pre">ibh</span> <span class="pre">--no-deps</span></code></p>
-<span class="target" id="index-3"></span></section>
+<ol class="arabic simple">
+<li><p>Open the anaconda/miniconda command prompt</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">modelflow</span></code></p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">modelflow</span> <span class="pre">-c</span> <span class="pre">ibh</span> <span class="pre">--no-deps</span></code></p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">How to start Miniconda/Anaconda prompt</p>
+<p>One way is just to search for anaconda, this should display the prompt apps. Another way is to start a command prompt and the run one of these lines:</p>
+<p>If you have installed Miniconda: <br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">miniconda3</span>\<span class="n">Scripts</span>\<span class="n">activate</span><span class="o">.</span><span class="n">bat</span> <span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">miniconda3</span>
+</pre></div>
+</div>
+<p>If you have installed Anaconda: <br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">anaconda3</span>\<span class="n">Scripts</span>\<span class="n">activate</span><span class="o">.</span><span class="n">bat</span> <span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">anaconda3</span>
+</pre></div>
+</div>
+</div>
+<span class="target" id="index-7"></span></section>
 </section>
-<section id="installation-of-modelflow-using-miniconda">
-<span id="index-4"></span><h2><span class="section-number">3.3.2. </span>Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> using Miniconda<a class="headerlink" href="#installation-of-modelflow-using-miniconda" title="Permalink to this headline">#</a></h2>
+<section id="installation-of-modelflow-using-from-windows-prompt">
+<span id="index-8"></span><h2><span class="section-number">4.5.2. </span>Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> using from windows prompt<a class="headerlink" href="#installation-of-modelflow-using-from-windows-prompt" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Open the a command prompt or continue in the command prompt used to install python.</p></li>
 <li><p>Copy/paste these lines to the command prompt</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">miniconda3</span>\<span class="n">Scripts</span>\<span class="n">activate</span><span class="o">.</span><span class="n">bat</span> <span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">miniconda3</span> 
+<span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">anaconda3</span>\<span class="n">Scripts</span>\<span class="n">activate</span><span class="o">.</span><span class="n">bat</span> <span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">anaconda3</span> 
 
-<span class="n">mamba</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">modelflow</span> <span class="o">-</span><span class="n">c</span> <span class="n">ibh</span> <span class="o">-</span><span class="n">c</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">modelflow_stable</span> <span class="o">-</span><span class="n">y</span>
 
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">modelflow</span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">ModelFlow</span> <span class="o">-</span><span class="n">c</span> <span class="n">ibh</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">modelflow_stable</span> <span class="o">-</span><span class="n">y</span>
+
 <span class="n">pip</span> <span class="n">install</span> <span class="n">dash_interactive_graphviz</span>
 <span class="n">jupyter</span> <span class="n">contrib</span> <span class="n">nbextension</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span>
 <span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="n">hide_input_all</span><span class="o">/</span><span class="n">main</span>
@@ -463,22 +475,10 @@ document.write(`
 
 </pre></div>
 </div>
-<p>Depending on the speed of your computer and of your internet connection installation could take as little as 10 minutes or more than 1/2 an hour.</p>
-<span class="target" id="index-5"></span><section id="updating-modelflow-under-miniconda">
-<span id="index-6"></span><h3><span class="section-number">3.3.2.1. </span>Updating Modelflow under miniconda<a class="headerlink" href="#updating-modelflow-under-miniconda" title="Permalink to this headline">#</a></h3>
-<p>Once installed, a <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment can be updated. This is done first by activating the <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment created above.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">miniconda3</span>\<span class="n">Scripts</span>\<span class="n">activate</span><span class="o">.</span><span class="n">bat</span> <span class="o">%</span><span class="n">USERPROFILE</span><span class="o">%</span>\<span class="n">miniconda3</span> 
-<span class="n">conda</span> <span class="n">activate</span> <span class="n">modelflow</span>
-</pre></div>
-</div>
-<p>And then executing the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">install</span> <span class="n">modelflow</span> <span class="o">-</span><span class="n">c</span> <span class="n">ibh</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span>
-</pre></div>
-</div>
-</section>
-</section>
+<p>Depending on the speed of your computer and of your internet connection installation could take as little as 5 minutes or more than 1/2 an hour.</p>
+<span class="target" id="index-9"></span></section>
 <section id="next-steps">
-<h2><span class="section-number">3.3.3. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<span id="index-10"></span><h2><span class="section-number">4.5.3. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
 <p>At the end of the process you will have a new conda environment called <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>, and this will have been activated. The computer set up is complete and the user is ready to work with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
 <p>The following sections give a brief introduction to Jupyter notebook, which is a flexible tool that allows us to execute python code, interact with the modelflow class and World Bank Models and annotate what we have done for future replication.</p>
 </section>
@@ -521,7 +521,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Installation of Modelflow</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Installation of Modelflow</p>
       </div>
     </a>
     <a class="right-next"
@@ -551,15 +551,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-modelflow-under-anaconda">3.3.1. Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> under Anaconda</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-modelflow-under-anaconda">3.3.1.1. Updating Modelflow under Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-modelflow-under-anaconda-miniconda">4.5.1. Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> under Anaconda/Miniconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-modelflow-under-anaconda-miniconda">4.5.1.1. Updating Modelflow under Anaconda/Miniconda</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-modelflow-using-miniconda">3.3.2. Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> using Miniconda</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-modelflow-under-miniconda">3.3.2.1. Updating Modelflow under miniconda</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">3.3.3. Next steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-modelflow-using-from-windows-prompt">4.5.2. Installation of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> using from windows prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">4.5.3. Next steps</a></li>
 </ul>
   </nav></div>
 
