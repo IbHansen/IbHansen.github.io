@@ -160,8 +160,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingPython.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4.5. Installation of Modelflow</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">4.2. Installation of the <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
 </ul>
 </li>
 </ul>
@@ -183,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Targeting.html">7. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -471,69 +474,91 @@ document.write(`
 </section>
 <section id="boxes">
 <h2><span class="section-number">1.3. </span>boxes<a class="headerlink" href="#boxes" title="Permalink to this headline">#</a></h2>
-<div class="tip admonition">
-<p class="admonition-title">Tip</p>
-<p>Below are some boxes. Boxes can be renumbered automathly. in the renumbering the boxes are also included in the index.</p>
-<p>After the renumbering <strong>don’t touch the index lines</strong>, they will be remade automathicly</p>
-<p>Also the boxes should be defines exactly as below. The python regular expression pattern which is used are not forgiving.</p>
-<p>Else remember rule #1 Don’t despair <strong>Ask Ib</strong></p>
+<div class="admonition-tip-class-tip admonition">
+<p class="admonition-title">Tip :class: tip</p>
+<p>Jupyter Book support for Boxes is q bit quirky.  For the purposes of this project some tools have been built to assist.</p>
+<p>Using this methodology Boxes that are defined as below will be automatically numbered and indexed.</p>
+<p>Rules:</p>
+<ol class="arabic simple">
+<li><p>A box is declared as an admonition followed by Box 1. A text title of the box</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>************************  NO Colons in box name ****************************</p></li>
+<li><p>The Box routine will change the 1. to the appropriate numbering for the specific box depending on where it fits in in the table of contents.</p></li>
+<li><p>If you call it box 1.3 that is OK to, if it is the first box it will come out as box 1</p></li>
+<li><p>The Box routine will automatically create an index for the Box using the text in the title.</p></li>
+<li><p>The index for Boxes will appear under Boxes.</p></li>
+<li><p>The inserted index for the above box will have the form</p></li>
+</ol>
 </div>
+<ol class="arabic simple" id="index-0" start="7">
+<li><p>Any pre-existing Boxes indices will be deleted and re-generated each time the box routine is run</p></li>
+</ol>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>The text included in the code examples are also renumbered. So box number in code example and rendering are different.</p>
+<p>I am not sure I understand this</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">index</span><span class="p">}</span> <span class="n">single</span><span class="p">:</span> <span class="n">Boxes</span><span class="p">;</span> <span class="mf">1.1</span>   <span class="n">a</span> <span class="n">good</span> <span class="n">explanation</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">index</span><span class="p">}</span> <span class="n">single</span><span class="p">:</span> <span class="n">Boxes</span><span class="p">;</span> <span class="n">Box</span>   <span class="mf">1.</span>   <span class="n">a</span> <span class="n">good</span> <span class="n">explanation</span>
 <span class="p">:::</span>
 
-<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Box</span> <span class="mf">1.1</span>   <span class="n">a</span> <span class="n">good</span> <span class="n">explanation</span>
+<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Box</span> <span class="mf">1.</span>   <span class="n">a</span> <span class="n">good</span> <span class="n">explanation</span>
 <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>  <span class="o">=</span> <span class="mi">4</span>
 <span class="p">:::</span>
 </pre></div>
 </div>
-<div class="admonition-box-1-2-a-good-explanation admonition" id="index-0">
-<p class="admonition-title">Box 1.2   a good explanation</p>
+<div class="admonition-box-2-a-good-explanation admonition" id="index-1">
+<p class="admonition-title">Box 2.   a good explanation</p>
 <p>2 + 2  = 4</p>
 </div>
+<div class="admonition-box-3-a-new-box admonition" id="index-2">
+<p class="admonition-title">Box 3. A new box</p>
+<p>blah blah</p>
+</div>
+<div class="admonition-box-4-a-new-box admonition" id="index-3">
+<p class="admonition-title">Box 4. A new box</p>
+<p>blah blah</p>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="p">:::{</span><span class="n">index</span><span class="p">}</span> <span class="n">single</span><span class="p">:</span> <span class="n">Boxes</span><span class="p">;</span> <span class="mf">1.3</span>   <span class="n">Another</span> <span class="n">good</span> <span class="n">explanation</span>
+<span class="p">:::{</span><span class="n">index</span><span class="p">}</span> <span class="n">single</span><span class="p">:</span> <span class="n">Boxes</span><span class="p">;</span> <span class="n">Box</span>   <span class="mf">5.</span>   <span class="n">Another</span> <span class="n">good</span> <span class="n">explanation</span>
 <span class="p">:::</span>
 
-<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Box</span> <span class="mf">1.3</span>   <span class="n">Another</span> <span class="n">good</span> <span class="n">explanation</span>
+<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Box</span> <span class="mf">5.</span>   <span class="n">Another</span> <span class="n">good</span> <span class="n">explanation</span>
 <span class="mi">6</span> <span class="o">+</span> <span class="mi">6</span>  <span class="o">=</span> <span class="mi">12</span>
 <span class="p">:::</span>
 </pre></div>
 </div>
-<div class="admonition-box-1-4-another-good-explanation admonition" id="index-1">
-<p class="admonition-title">Box 1.4   Another good explanation</p>
+<div class="admonition-box-6-another-good-explanation admonition" id="index-4">
+<p class="admonition-title">Box 6.   Another good explanation</p>
 <p>6 + 6  = 12</p>
 </div>
 <p>Now with a tip symbol</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">index</span><span class="p">}</span> <span class="n">single</span><span class="p">:</span> <span class="n">Boxes</span><span class="p">;</span> <span class="mf">1.5</span>   <span class="n">The</span> <span class="n">answer</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">index</span><span class="p">}</span> <span class="n">single</span><span class="p">:</span> <span class="n">Boxes</span><span class="p">;</span> <span class="n">Box</span>   <span class="mf">7.</span>   <span class="n">The</span> <span class="n">answer</span> 
 <span class="p">:::</span>
 
-<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Box</span> <span class="mf">1.5</span>   <span class="n">The</span> <span class="n">answer</span> 
+<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Box</span> <span class="mf">7.</span>   <span class="n">The</span> <span class="n">answer</span> 
 <span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">tip</span>
 <span class="mi">42</span> 
 <span class="p">:::</span>
 </pre></div>
 </div>
-<div class="tip admonition" id="index-2">
-<p class="admonition-title">Box 1.6   The answer </p>
+<div class="tip admonition" id="index-5">
+<p class="admonition-title">Box 8.   The answer </p>
 <p>42</p>
 </div>
 <p>Now with a tip symbol</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="p">:::{</span><span class="n">index</span><span class="p">}</span> <span class="n">single</span><span class="p">:</span> <span class="n">Boxes</span><span class="p">;</span> <span class="mf">1.7</span>   <span class="n">The</span> <span class="n">answer</span> 
+<span class="p">:::{</span><span class="n">index</span><span class="p">}</span> <span class="n">single</span><span class="p">:</span> <span class="n">Boxes</span><span class="p">;</span> <span class="n">Box</span>   <span class="mf">9.</span>   <span class="n">The</span> <span class="n">answer</span> 
 <span class="p">:::</span>
 
-<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Box</span> <span class="mf">1.7</span>   <span class="n">The</span> <span class="n">answer</span> 
+<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Box</span> <span class="mf">9.</span>   <span class="n">The</span> <span class="n">answer</span> 
 <span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">tip</span>
 <span class="mi">42</span> 
 <span class="p">:::</span>
 </pre></div>
 </div>
-<div class="tip admonition" id="index-3">
-<p class="admonition-title">Box 1.8   The answer </p>
+<div class="tip admonition" id="index-6">
+<p class="admonition-title">Box 10.   The answer </p>
 <p>42</p>
 </div>
 </section>
@@ -606,8 +631,7 @@ I wonder how many I’ll stop here.</p>
 </section>
 <section id="index">
 <h2><span class="section-number">1.6. </span>index<a class="headerlink" href="#index" title="Permalink to this headline">#</a></h2>
-<p id="index-4">The answer  <span id="id1">Adams [<a class="reference internal" href="../../Reference.html#id28" title="Douglas Adams. The Hitchhiker's Guide to the Galaxy. Pan Books, London, UK, 1981.">1981</a>]</span></p>
-<p>42</p>
+<p id="index-7">The answer  <span id="id1">Adams [<a class="reference internal" href="../../Reference.html#id28" title="Douglas Adams. The Hitchhiker's Guide to the Galaxy. Pan Books, London, UK, 1981.">1981</a>]</span> is 42</p>
 </section>
 </section>
 

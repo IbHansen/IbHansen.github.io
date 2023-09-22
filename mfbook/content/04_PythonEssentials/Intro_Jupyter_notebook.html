@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Some Python basics" href="PythonBasics.html" />
-    <link rel="prev" title="4.5. Installation of Modelflow" href="../03_Installation/InstallingModelFlow.html" />
+    <link rel="prev" title="3.3. Updating Modelflow" href="../03_Installation/UpdateModelFlow.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -153,14 +153,15 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Jupyter%20book%20tests%20and%20tips.html">1. Some jupyter book examples and tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">2. Introduction</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">2.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingPython.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4.5. Installation of Modelflow</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of the <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
 </ul>
 </li>
 </ul>
@@ -182,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">7. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -437,23 +439,23 @@ document.write(`
 <span id="index-1"></span><h2><span class="section-number">1.1. </span>Starting Jupyter Notebook<a class="headerlink" href="#starting-jupyter-notebook" title="Permalink to this headline">#</a></h2>
 <p>Each time, a user wants to work with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>, they will need to activate the <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> environment by</p>
 <ol class="arabic simple">
-<li><p>Opening the Anaconda command prompt window</p></li>
+<li><p>Opening the Anaconda command prompt window (Windows Start-&gt;Type Annaconda-&gt;Select Annaconda Command Prompt)</p></li>
 <li><p>Activate the ModelFlow environment we just created by executing the following command: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">modelflow</span></code></p></li>
-<li><p>Navigate to a position on his/her computer’s directory structure where they want to store their jupyter notebooks.</p></li>
+<li><p>Navigate to a position on his/her computer’s directory structure where they want to store their jupyter notebooks. (e.g. cd c:\users\MyUserName\MyJupyterNotebookDirectory)</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Note the directory from which you execute the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> <strong>mfbook</strong> in the example above will be the <strong>root</strong> directory for the jupyter session.  <strong>Only directories and files below this root directory will be accessible by jupyter</strong>.</p>
 </div>
 <p>From here, any number of mechanisms can be used to interact with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> and World Bank models.</p>
-<p><strong>To use Jupyter Notebook</strong> the Jupyter notebook, must be first started.  Following steps 1-3 above, a user would need to execute from the conda command line:</p>
+<p><strong>To use Jupyter Notebook</strong> the Jupyter Notebook, must be first started.  Following steps 1-3 above, a user would need to execute from the conda command line:</p>
 <p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></p>
 <p>This will launch the Jupyter environment in your default web browser, which should look something like the image below, where the directory structure presented is that of the directory from the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> command was executed.</p>
 <p><img alt="image.png" src="../../_images/NewJNSession.png" /></p>
 </section>
 <section id="creating-a-notebook">
 <span id="index-2"></span><h2><span class="section-number">1.2. </span>Creating a notebook<a class="headerlink" href="#creating-a-notebook" title="Permalink to this headline">#</a></h2>
-<p>The idea behind jupyter notebook is to create an interactive version of the notebooks that scientists use(d) to:</p>
+<p>The idea behind Jupyter Notebook is to create an interactive version of the notebooks that scientists use(d) to:</p>
 <ul class="simple">
 <li><p>record what they have done</p></li>
 <li><p>perhaps explain why</p></li>
@@ -478,7 +480,7 @@ document.write(`
 </figure>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Each notebook has associated with it a “Kernel”, which is an instance of the computing environment in which code will be executed. For Jupyter Notebooks that work with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> this will be a Python Kernel. If your computer has more than one “kernel” installed on it, you may be prompted when creating a new notebook for the kernel with which to associate it.  Typically this should be the Python Kernel under which your modelflow was built – currently python 3.9 in September 2023.</p>
+<p>Each notebook has associated with it a “Kernel”, which is an instance of the computing environment in which code will be executed. For Jupyter Notebooks that work with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> this will be a Python Kernel. If your computer has more than one “kernel” installed on it, you may be prompted when creating a new notebook for the kernel with which to associate it.  Typically this should be the Python Kernel under which your modelflow was built – currently python 3.9 in September 2023. :::</p>
 </div>
 </section>
 <section id="jupter-notebook-cells">
@@ -790,12 +792,12 @@ M_t &amp;= m(M_{t-1},M_{t-2},C_t,I_t,G_t,X_t,P_t,P^f_t)
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../03_Installation/InstallingModelFlow.html"
+       href="../03_Installation/UpdateModelFlow.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.5. </span>Installation of Modelflow</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Updating Modelflow</p>
       </div>
     </a>
     <a class="right-next"
