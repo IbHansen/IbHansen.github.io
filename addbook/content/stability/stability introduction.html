@@ -356,10 +356,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-companion-matrix">1.3. The companion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-and-the-eignvalues-of-the-companion-matrix">1.4. Stability and the eignvalues of the companion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-eigenvalues-and-eigenvectors-using-modelflow">1.5. Calculating Eigenvalues and eigenvectors using modelflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lvert-textbf-e-t-lvert-1-no-gain">1.6. <span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert &lt; 1\)</span> No gain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lvert-textbf-e-t-lvert-1-and-imaginary-parts-oscillate-with-increasing-amplitude">1.7. <span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert &gt; 1\)</span> and imaginary parts. Oscillate with increasing amplitude</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lvert-textbf-e-t-lvert-1-and-imaginary-parts-oscillate-perputual">1.8. <span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert = 1\)</span> and imaginary parts. Oscillate perputual</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jackknife-identify-impact-from-each-equation">1.9. Jackknife identify impact from each equation.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-create-a-model-a-samuleson-multiplier-accelerator-model">1.6. First create a model (A Samuleson multiplier accelerator model)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-which-generates-a-dataframe-with-values">1.7. A function which generates a dataframe with values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-which-simulate-the-model-and-calculates-eigenvalues">1.8. A function which simulate the model and calculates eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explosion">1.9. Explosion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploding-oscillations">1.10. Exploding oscillations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perpetual-oscillations">1.11. Perpetual oscillations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dampened-oscillations">1.12. Dampened oscillations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jackknife-experiments-to-identify-identify-impact-from-each-equation">1.13. Jackknife experiments  to identify identify impact from each equation.</a></li>
 </ul>
             </nav>
         </div>
@@ -388,7 +392,6 @@ document.write(`
 
 
 <span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span> 
-<span class="kn">import</span> <span class="nn">modelmf</span>
 </pre></div>
 </div>
 </div>
@@ -406,16 +409,16 @@ document.write(`
 <p>can be written in two ways, normalized or un-normalized form</p>
 <section id="normalized-form">
 <h3><span class="section-number">1.1.1. </span>normalized form<a class="headerlink" href="#normalized-form" title="Permalink to this headline">#</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-e68cc748-df71-4b18-bb86-39c62d332ffd">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-e68cc748-df71-4b18-bb86-39c62d332ffd" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-be5c6a3a-b15a-434c-90e6-491dc7b6642f">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-be5c6a3a-b15a-434c-90e6-491dc7b6642f" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_t^1 &amp; = &amp; y_t^2...,y_{t}^n...y_{t-r}^1...,y_{t-r}^n,x_t^1...x_{t}^k,...x_{t-s}^1...,x_{t-s}^k) \\
 y_t^2 &amp; = &amp; y_t^1...,y_{t}^n...y_{t-r}^1...,y_{t-r}^n,x_t^1...x_{t}^k,...x_{t-s}^1...,x_{t-s}^k) \\
 \vdots \\
 y_t^n &amp; = &amp; y_t^1...,y_{t}^{n-1}...y_{t-r}^1...,y_{t-r}^n,x_t^1...x_{t}^r,x..._{t-s}^1...,x_{t-s}^k)
 \end{eqnarray}\]</div>
 <p>Written in matrix notation where  <span class="math notranslate nohighlight">\(\textbf{y}_t\)</span> and <span class="math notranslate nohighlight">\(\textbf{x}_t\)</span> are vectors of endogenous/exogenous  variables for time t</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42fd159e-53b1-476f-a470-3d7ee6d2174a">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-42fd159e-53b1-476f-a470-3d7ee6d2174a" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}  
+<div class="amsmath math notranslate nohighlight" id="equation-5f562a4b-8f93-473e-8e8f-849fd2a0b46d">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-5f562a4b-8f93-473e-8e8f-849fd2a0b46d" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}  
 \textbf{y}_t &amp; = &amp; \textbf{F}( \textbf{y}_t \cdots \textbf{y}_{t-r},\textbf{x}_t \cdots \textbf{x}_{t-s})
 \end{eqnarray}\]</div>
 <p>The functions are normalized, meaning:</p>
@@ -442,27 +445,28 @@ F_j &amp; = &amp; \frac{\partial F}{\partial x_{t-j} ^T} \hspace{5 mm} j=0, \cdo
 <p><span class="math notranslate nohighlight">\(\Delta \textbf{y}_t = \textbf{A}\Delta  \textbf{y}_{t} + \Delta E_1 \textbf{y}_{t-1} + \Delta E_2 \textbf{y}_{t-2} +  E_3 \Delta  \textbf{y}_{t-3} + F_0 \Delta x_t + F_1 \Delta x_{t-1}\)</span></p>
 <p>Rearranging the equation to isolate <span class="math notranslate nohighlight">\(\Delta \textbf{y}_{t}\)</span> on the left side:</p>
 <p><span class="math notranslate nohighlight">\(
-(\textbf{A} - \textbf{I}) \Delta \textbf{y}_{t} = E_1 \Delta \textbf{y}_{t-1} + \Delta E_2 \textbf{y}_{t-2} + \Delta E_3 \textbf{y}_{t-3} + F_0 \Delta x_t + F_1 \Delta x_{t-1}
+(  \mathbb{I}-\textbf{A}) \Delta \textbf{y}_{t} = E_1 \Delta \textbf{y}_{t-1} + \Delta E_2 \textbf{y}_{t-2} + \Delta E_3 \textbf{y}_{t-3} + F_0 \Delta x_t + F_1 \Delta x_{t-1}
 \)</span></p>
 <p><span class="math notranslate nohighlight">\(
-\Delta \textbf{y}_{t} = (\textbf{A} - \textbf{I})^{-1} E_1 \Delta \textbf{y}_{t-1} + (\textbf{A} - \textbf{I})^{-1} \Delta E_2 \textbf{y}_{t-2} + (\textbf{A} - \textbf{I})^{-1} \Delta E_3 \textbf{y}_{t-3} + (\textbf{A} - \textbf{I})^{-1} F_0 \Delta x_t +  (\textbf{A} - \textbf{I})^{-1} F_1 \Delta x_{t-1}
+\Delta \textbf{y}_{t} = (\mathbb{I}-\textbf{A})^{-1} E_1 \Delta \textbf{y}_{t-1} + (\mathbb{I}-\textbf{A})^{-1} \Delta E_2 \textbf{y}_{t-2} + (\mathbb{I}-\textbf{A})^{-1} \Delta E_3 \textbf{y}_{t-3} + (\mathbb{I}-\textbf{A})^{-1} F_0 \Delta x_t +  (\mathbb{I}-\textbf{A})^{-1} F_1 \Delta x_{t-1}
 \)</span></p>
 <p>This is a 3th order system of difference equations. In order to be able to find the gain stability of the system it has to be rewritten as 1st order system of difference equations. That is a system with only one lag. Fortunately there is
 a standard way to do this. It runs as follow:</p>
 <p>Using the state vector:
 <span class="math notranslate nohighlight">\(
-\textbf{z}_t = \begin{bmatrix} \textbf{y}_t \\ \textbf{y}_{t-1} \\ \textbf{y}_{t-2} \end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\textbf{w}_t = \begin{bmatrix} \textbf{x}_t \\ \textbf{x}_{t-1} \\ 0 \end{bmatrix}
+\textbf{z}_t = \begin{bmatrix} \textbf{y}_t \\ \textbf{y}_{t-1} \\ \textbf{y}_{t-2} \end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\textbf{w}_t = \begin{bmatrix} \textbf{x}_t \\ \textbf{x}_{t-1} \end{bmatrix}
 \)</span></p>
 <p>The system can be expressed as:</p>
 <p><span class="math notranslate nohighlight">\(
-\Delta \textbf{z}_{t} = \underbrace{\begin{bmatrix} (\textbf{A}-\mathbb{I})^{-1}E_1 &amp; (\textbf{A}-\mathbb{I})^{-1}E_2 &amp; (\textbf{A}-\mathbb{I})^{-1}E_3 \\ \textbf{I} &amp; \textbf{0} &amp; \textbf{0} \\ \textbf{0} &amp; \textbf{I} &amp; \textbf{0} \end{bmatrix}}_{\textbf{C}} \Delta \textbf{z}_{t-1} +
-\left[\begin{matrix}(\textbf{A}-\mathbb{I})^{-1} F_{0} &amp; (\textbf{A}-\mathbb{I})^{-1} F_{1} &amp; 0 \\{0} &amp; {0}  &amp; {0}\\{0} &amp; {0} &amp; {0} \\\end{matrix}\right]
+\Delta \textbf{z}_{t} = \underbrace{\begin{bmatrix} (\mathbb{I}-\textbf{A})^{-1}E_1 &amp; (\mathbb{I}-\textbf{A})^{-1}E_2 &amp; (\mathbb{I}-\textbf{A})^{-1}E_3 \\ \textbf{I} &amp; \textbf{0} &amp; \textbf{0} \\ \textbf{0} &amp; \textbf{I} &amp; \textbf{0} \end{bmatrix}}_{\textbf{C}} \Delta \textbf{z}_{t-1} +
+\left[\begin{matrix}(\mathbb{I}-\textbf{A})^{-1} F_{0} &amp; (\mathbb{I}-\textbf{A})^{-1} F_{1}  \\{0} &amp; {0}  \\{0} &amp; {0} \\\end{matrix}\right]
 \Delta \textbf{w}_t\)</span></p>
 <p>This system is a first order system - and the stability can be evaluated using the matrix:</p>
 <p><span class="math notranslate nohighlight">\(
-\textbf{C} = \begin{bmatrix} (\textbf{A}-\mathbb{I})^{-1}E_1 &amp; (\textbf{A}-\mathbb{I})^{-1}E_2 &amp; (\textbf{A}-\mathbb{I})^{-1}E_3 \\ \textbf{I} &amp; \textbf{0} &amp; \textbf{0} \\ \textbf{0} &amp; \textbf{I} &amp; \textbf{0} \end{bmatrix}
+\textbf{C} = \begin{bmatrix} (\mathbb{I}-\textbf{A})^{-1}E_1 &amp; (\mathbb{I}-\textbf{A})^{-1}E_2 &amp; (\mathbb{I}-\textbf{A})^{-1}E_3 \\ \textbf{I} &amp; \textbf{0} &amp; \textbf{0} \\ \textbf{0} &amp; \textbf{I} &amp; \textbf{0} \end{bmatrix}
 \)</span></p>
-<p>is also known as <strong>the companion matrix</strong></p>
+<p>also known as <strong>the companion matrix</strong></p>
+<p>If the systematic in construction the companion matrix with max lag endogenous variable of 2 can be extended to any numbers of lags.</p>
 </section>
 <section id="stability-and-the-eignvalues-of-the-companion-matrix">
 <h2><span class="section-number">1.4. </span>Stability and the eignvalues of the companion matrix<a class="headerlink" href="#stability-and-the-eignvalues-of-the-companion-matrix" title="Permalink to this headline">#</a></h2>
@@ -481,141 +485,620 @@ evaluated by looking at the eigenvalues <span class="math notranslate nohighligh
 <p>The eigenvalues and associated eigenvectors can be found by the function <code class="docutils literal notranslate"><span class="pre">\&lt;modelclass&gt;.get_df_eigen_dict()</span></code> which will be used below.</p>
 <p>‘.get_df_eigen_dict()’ returns a dictionary where the key is the year and the value is a dataframe where first row is the eigenvalues
 and the folowing rows are the eigenvectors.</p>
-<p>The function below a small model Solow model and a dataframe, it the display the eigenvalues in a polar coordinate where imaginary values are at the y-axis.</p>
 <p>The function also displays the result of the model. The result do not nessary give economic meaning. But shows how the system’s stability reflects the
 eigenvalues of the companion matrix.</p>
 </section>
 <section id="calculating-eigenvalues-and-eigenvectors-using-modelflow">
 <h2><span class="section-number">1.5. </span>Calculating Eigenvalues and eigenvectors using modelflow<a class="headerlink" href="#calculating-eigenvalues-and-eigenvectors-using-modelflow" title="Permalink to this headline">#</a></h2>
 <p>Modelflow has a can calculate the derivative matrices <span class="math notranslate nohighlight">\(A, E_i\)</span> and <span class="math notranslate nohighlight">\(F_j\)</span> and create the companion matrix and the associate eigenvalues and eigenvectors.</p>
-<p>Below a function is</p>
+<p>Below</p>
+<ul class="simple">
+<li><p>a simple Samuelson multiplier accelerator model is created.</p></li>
+<li><p>a function <code class="docutils literal notranslate"><span class="pre">get_df</span></code> is defined it:</p>
+<ul>
+<li><p>generates a test dataframe with model parameters and variables is defined</p></li>
+</ul>
+</li>
+<li><p>a function <code class="docutils literal notranslate"><span class="pre">geteigen</span></code> is defined it:</p>
+<ul>
+<li><p>use the model ro simulate a generated dataframe.</p></li>
+<li><p>calculates the eigenvalues</p></li>
+<li><p>display the eigenvalues in a polar coordinate where imaginary values are at the y-axis.</p></li>
+<li><p>The function also displays the result of the model</p></li>
+<li><p>optional displays the companion matrix and the non-zero eigenvalues and associate eigenvectors.</p></li>
+</ul>
+</li>
+</ul>
+<p>Note that the result do not necessary give economic meaning. But shows how the system’s stability reflects the
+eigenvalues of the companion matrix.</p>
+</section>
+<section id="first-create-a-model-a-samuleson-multiplier-accelerator-model">
+<h2><span class="section-number">1.6. </span>First create a model (A Samuleson multiplier accelerator model)<a class="headerlink" href="#first-create-a-model-a-samuleson-multiplier-accelerator-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_eigen</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span><span class="n">acc</span><span class="p">,</span><span class="n">years</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">latexprint</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Function which creates a Samuelson Multiplier accelerator model, runs it</span>
-<span class="sd">    and alculates the eigenvalues for the compaignion matrix in order to </span>
-<span class="sd">    evaluate stability. </span>
-<span class="sd">    </span>
-<span class="sd">    A polar plot of the compex eigenvalues and graphs of the endogenous variables can </span>
-<span class="sd">    be displayes &#39;&#39;&#39;</span>
-    
-    <span class="n">fam</span>   <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span><span class="se">\</span>
-<span class="s1">    frml &lt;&gt;  y = c+i $ </span>
-<span class="s1">    frml &lt;I&gt; c = </span><span class="si">{</span><span class="n">mul</span><span class="si">}</span><span class="s1"> * y(-1) $</span>
-<span class="s1">    frml &lt;&gt;  i = </span><span class="si">{</span><span class="n">acc</span><span class="si">}</span><span class="s1"> * ((c-c(-1))+ 0.3 * (c(-2)-c(-1))  )$&#39;&#39;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fma</span>   <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">gdp = consumption+investment  </span>
+<span class="s1">consumption = mul * gdp(-1)</span>
+<span class="s1">investment = acc * (consumption-consumption(-1))  + exo_investment&#39;&#39;&#39;</span>
+<span class="n">mma</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">from_eq</span><span class="p">(</span><span class="n">fma</span><span class="p">,</span><span class="n">modelname</span> <span class="o">=</span> <span class="s1">&#39;Accelerator multiplicator model&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mma</span><span class="o">.</span><span class="n">drawmodel</span><span class="p">(</span><span class="n">png</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">svg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/521ec4fdd4115414af9891fbbd47f6dfea67b7169654402e07c989c1b30f1703.svg" src="../../_images/521ec4fdd4115414af9891fbbd47f6dfea67b7169654402e07c989c1b30f1703.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mma</span><span class="o">.</span><span class="n">gdp</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="n">png</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f3c92fd32d673c268a8d9622ff95e3bf0f01a176203e91b549a995378de12aa6.svg" src="../../_images/f3c92fd32d673c268a8d9622ff95e3bf0f01a176203e91b549a995378de12aa6.svg" /></div>
+</div>
+</section>
+<section id="a-function-which-generates-a-dataframe-with-values">
+<h2><span class="section-number">1.7. </span>A function which generates a dataframe with values<a class="headerlink" href="#a-function-which-generates-a-dataframe-with-values" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_df</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">gdp</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">im</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">years</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="s1">&#39;Creates imput dataframe to accelerator multiplier model &#39;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="n">gdp</span><span class="p">]]</span><span class="o">*</span><span class="n">years</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">2018</span><span class="o">+</span><span class="n">years</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;MUL&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">mul</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;ACC&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">acc</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;CONSUMPTION&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">gdp</span><span class="o">*</span><span class="n">mul</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;EXO_INVESTMENT&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">im</span>
+    <span class="k">return</span> <span class="n">df</span>
 
-    <span class="n">mma</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">fam</span><span class="p">,</span><span class="n">modelname</span> <span class="o">=</span> <span class="s1">&#39;Accelerator multiplicator model&#39;</span><span class="p">)</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">()</span>
+<span class="n">base</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP</th>
+      <th>MUL</th>
+      <th>ACC</th>
+      <th>CONSUMPTION</th>
+      <th>EXO_INVESTMENT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018</th>
+      <td>1000</td>
+      <td>0.9</td>
+      <td>0.5</td>
+      <td>900.0</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>1000</td>
+      <td>0.9</td>
+      <td>0.5</td>
+      <td>900.0</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>1000</td>
+      <td>0.9</td>
+      <td>0.5</td>
+      <td>900.0</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>1000</td>
+      <td>0.9</td>
+      <td>0.5</td>
+      <td>900.0</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>1000</td>
+      <td>0.9</td>
+      <td>0.5</td>
+      <td>900.0</td>
+      <td>200</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="a-function-which-simulate-the-model-and-calculates-eigenvalues">
+<h2><span class="section-number">1.8. </span>A function which simulate the model and calculates eigenvalues<a class="headerlink" href="#a-function-which-simulate-the-model-and-calculates-eigenvalues" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">geteigen</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span><span class="n">acc</span><span class="p">,</span><span class="n">years</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">showmore</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Function which creates a Samuelson Multiplier accelerator model, runs it and </span>
+<span class="sd">    calculates the eigenvalues for the compaignion matrix in order to evaluate stability&#39;&#39;&#39;</span>
     
-    <span class="c1"># Generate data</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">200</span><span class="p">]]</span><span class="o">*</span><span class="n">years</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">2018</span><span class="o">+</span><span class="n">years</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;IM&#39;</span><span class="p">])</span>
-    
-    <span class="c1"># Generate lagged variables for c</span>
-    <span class="n">baseline</span>  <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">mfcalc</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">mul</span><span class="si">}</span><span class="s1"> * y(-1)&#39;</span><span class="p">)</span> 
-    
-    <span class="c1"># Solve the model </span>
-    <span class="n">_</span>  <span class="o">=</span> <span class="n">mma</span><span class="p">(</span><span class="n">baseline</span><span class="p">,</span><span class="mi">2021</span><span class="p">,</span><span class="mi">2050</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>     <span class="c1"># Solve the model </span>
+    <span class="n">baseline_not_solved</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span><span class="n">acc</span><span class="p">,</span><span class="n">years</span><span class="o">=</span><span class="n">years</span><span class="p">)</span>
+    <span class="n">baseline</span>  <span class="o">=</span> <span class="n">mma</span><span class="p">(</span><span class="n">baseline_not_solved</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>     <span class="c1"># Solve the model </span>
     
     <span class="c1"># Retrieve a dictionary with a dataframe with eigenvalues and eigenvectors for each year </span>
     <span class="n">eig_dict</span> <span class="o">=</span> <span class="n">mma</span><span class="o">.</span><span class="n">get_df_eigen_dict</span><span class="p">()</span>
     
-    <span class="c1"># In this example we only want the values for one year. The model is linear and time independent </span>
-    <span class="n">eig21</span> <span class="o">=</span> <span class="n">eig_dict</span><span class="p">[</span><span class="mi">2021</span><span class="p">]</span>
-    
-    <span class="c1"># Define a function which calculates a list of absolute values when served a dataframe column of complex numbers</span>
-    <span class="n">compabs</span> <span class="o">=</span> <span class="k">lambda</span> <span class="nb">complex</span><span class="p">:</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="nb">complex</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-    
-    <span class="c1"># now only retain the columns where the length of the eigenvalues are above 0.0001 </span>
-    <span class="n">eig21out</span> <span class="o">=</span> <span class="p">(</span><span class="n">eig21</span><span class="o">.</span>   
-                <span class="n">T</span><span class="o">.</span>        <span class="c1"># Trtanspose as we query and eval on columns </span>
-                <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;absolute_value=@compabs(Eigenvalues)&#39;</span><span class="p">)</span><span class="o">.</span> <span class="c1"># calculate the absolute value of the eigenvalue </span>
-                <span class="n">query</span><span class="p">(</span><span class="s1">&#39;absolute_value&gt;=0.0001&#39;</span><span class="p">)</span><span class="o">.</span>              <span class="c1"># Select the rows where the abs value is above 0+.0001</span>
-                <span class="n">drop</span><span class="p">(</span><span class="s1">&#39;absolute_value&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span>                <span class="c1"># We dont need the absolute value anymore, so the column is dropped. </span>
-                <span class="n">T</span><span class="p">)</span>   <span class="c1"># Trtanspose again. </span>
-    
     <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;**Model where multiplier = </span><span class="si">{</span><span class="n">mul</span><span class="si">}</span><span class="s1"> and accelerator = </span><span class="si">{</span><span class="n">acc</span><span class="si">}</span><span class="s1">**&#39;</span><span class="p">))</span>
     <span class="n">display</span><span class="p">(</span><span class="n">mma</span><span class="o">.</span><span class="n">stability_newton</span><span class="o">.</span><span class="n">eigenvector_plot</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">per</span><span class="o">=</span><span class="mi">2023</span><span class="p">));</span>       <span class="c1"># show the eigenvalues </span>
-    <span class="n">display</span> <span class="p">(</span><span class="n">mma</span><span class="p">[[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;values for multiplier = </span><span class="si">{</span><span class="n">mul</span><span class="si">}</span><span class="s1"> and accelerator = </span><span class="si">{</span><span class="n">acc</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">))</span>  <span class="c1"># Show the solution</span>
-    
+
+    <span class="n">display</span><span class="p">(</span><span class="n">mma</span><span class="p">[</span><span class="s1">&#39;gdp consumption investment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Values&#39;</span><span class="p">,</span><span class="n">colrow</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>  <span class="c1"># Show the solution</span>
+        
     <span class="k">if</span> <span class="n">show</span><span class="p">:</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="n">mma</span><span class="o">.</span><span class="n">equations</span><span class="p">)</span>
+            <span class="c1"># In this example we only want the values for one year. The model is linear and time independent </span>
+        <span class="n">eig21</span> <span class="o">=</span> <span class="n">eig_dict</span><span class="p">[</span><span class="mi">2021</span><span class="p">]</span>
+
+        <span class="c1"># Define a function which calculates a list of absolute values when served a dataframe column of complex numbers</span>
+        <span class="n">compabs</span> <span class="o">=</span> <span class="k">lambda</span> <span class="nb">complex</span><span class="p">:</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="nb">complex</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+
+        <span class="c1"># now only retain the columns where the length of the eigenvalues are above 0.0001 </span>
+        <span class="n">eig21out</span> <span class="o">=</span> <span class="p">(</span><span class="n">eig21</span><span class="o">.</span>   
+                    <span class="n">T</span><span class="o">.</span>        <span class="c1"># Transpose as we query and eval on columns </span>
+                    <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;absolute_value=@compabs(Eigenvalues)&#39;</span><span class="p">)</span><span class="o">.</span> <span class="c1"># calculate the absolute value of the eigenvalue </span>
+                    <span class="n">query</span><span class="p">(</span><span class="s1">&#39;absolute_value&gt;=0.0001&#39;</span><span class="p">)</span><span class="o">.</span>              <span class="c1"># Select the rows where the abs value is above 0+.0001</span>
+                    <span class="n">drop</span><span class="p">(</span><span class="s1">&#39;absolute_value&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span>                <span class="c1"># We dont need the absolute value anymore, so the column is dropped. </span>
+                    <span class="n">T</span><span class="p">)</span>   <span class="c1"># Transpose again. </span>
+
 
         <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;**Compagnion matrix**&#39;</span><span class="p">))</span>
 
         <span class="n">display</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">compstyle</span><span class="p">(</span> <span class="n">mma</span><span class="o">.</span><span class="n">stability_newton</span><span class="o">.</span><span class="n">get_df_comp_dict</span><span class="p">()[</span><span class="mi">2021</span><span class="p">]))</span> 
 
 
-        <span class="n">display</span><span class="p">(</span><span class="n">eig21</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;&lt;b&gt;Original eigenvalues and -vectors&#39;</span><span class="p">))</span>
+        <span class="c1">#   display(eig21.style.set_caption(&#39;&lt;b&gt;Original eigenvalues and -vectors&#39;))</span>
         <span class="n">display</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">compstyle</span><span class="p">(</span><span class="n">eig21out</span><span class="p">)</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;&lt;b&gt;Non zero eigenvalues and -vectors&#39;</span><span class="p">))</span>
-       <span class="c1">#display(mma.stability_newton.eigenvector_plot(size=(4,4),per=2023));       # show the eigenvalues </span>
 
-        <span class="k">if</span> <span class="n">latexprint</span><span class="p">:</span> 
-            <span class="n">jacobi</span><span class="o">=</span> <span class="n">mma</span><span class="o">.</span><span class="n">stability_newton</span><span class="o">.</span><span class="n">A_dic</span><span class="p">[</span><span class="mi">2021</span><span class="p">]</span>
-            <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="n">jacobi</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> 
-                <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;A = &#39;</span> <span class="k">if</span> <span class="n">l</span><span class="o">==</span><span class="s1">&#39;lag=0&#39;</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;E_</span><span class="si">{</span><span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> = &#39;</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">to_latex</span><span class="p">())</span>
-    <span class="k">return</span> <span class="n">mma</span><span class="o">.</span><span class="n">stability_newton</span>
+        
+    <span class="k">return</span>  <span class="n">mma</span><span class="o">.</span><span class="n">stability_newton</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-</section>
-<section id="lvert-textbf-e-t-lvert-1-no-gain">
-<h2><span class="section-number">1.6. </span><span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert &lt; 1\)</span> No gain<a class="headerlink" href="#lvert-textbf-e-t-lvert-1-no-gain" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span> <span class="o">=</span> <span class="n">calculate_eigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">years</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geteigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* Take care. Lags or leads in the equations, mfcalc run for 2019 to 2047
-</pre></div>
-</div>
-<p><strong>Model where multiplier = 0.5 and accelerator = 0.1</strong></p>
-<img alt="../../_images/60a0dbbde4c59ff9bfa8782f44fe1468d12474286765391d282dc4a3bf4457da.png" src="../../_images/60a0dbbde4c59ff9bfa8782f44fe1468d12474286765391d282dc4a3bf4457da.png" />
-<img alt="../../_images/59160854af2f6fdd918db862a7253ee95049c7c3310fb40f116a55467f5d2e50.png" src="../../_images/59160854af2f6fdd918db862a7253ee95049c7c3310fb40f116a55467f5d2e50.png" />
-</div>
+<p><strong>Model where multiplier = 0.8 and accelerator = 0</strong></p>
+<img alt="../../_images/bb095888cca2e951e5fc4db7147247b6932c4f3a2d53582fe37efeab7c2390b9.png" src="../../_images/bb095888cca2e951e5fc4db7147247b6932c4f3a2d53582fe37efeab7c2390b9.png" />
+<img alt="../../_images/7157a96e147db193d2f4f1b8546e8b54140ed01f8b41e5e4795abcd2c45b3ac2.png" src="../../_images/7157a96e147db193d2f4f1b8546e8b54140ed01f8b41e5e4795abcd2c45b3ac2.png" />
+<p><strong>Compagnion matrix</strong></p>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_1c0cc">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_1c0cc_level0_col0" class="col_heading level0 col0" >CONSUMPTION(-1)</th>
+      <th id="T_1c0cc_level0_col1" class="col_heading level0 col1" >GDP(-1)</th>
+      <th id="T_1c0cc_level0_col2" class="col_heading level0 col2" >INVESTMENT(-1)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_1c0cc_level0_row0" class="row_heading level0 row0" >CONSUMPTION(-1)</th>
+      <td id="T_1c0cc_row0_col0" class="data row0 col0" > </td>
+      <td id="T_1c0cc_row0_col1" class="data row0 col1" >0.80</td>
+      <td id="T_1c0cc_row0_col2" class="data row0 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_1c0cc_level0_row1" class="row_heading level0 row1" >GDP(-1)</th>
+      <td id="T_1c0cc_row1_col0" class="data row1 col0" > </td>
+      <td id="T_1c0cc_row1_col1" class="data row1 col1" >0.80</td>
+      <td id="T_1c0cc_row1_col2" class="data row1 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_1c0cc_level0_row2" class="row_heading level0 row2" >INVESTMENT(-1)</th>
+      <td id="T_1c0cc_row2_col0" class="data row2 col0" > </td>
+      <td id="T_1c0cc_row2_col1" class="data row2 col1" > </td>
+      <td id="T_1c0cc_row2_col2" class="data row2 col2" > </td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output text_html"><style type="text/css">
+</style>
+<table id="T_e3424">
+  <caption><b>Non zero eigenvalues and -vectors</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_e3424_level0_col0" class="col_heading level0 col0" >1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_e3424_level0_row0" class="row_heading level0 row0" >Eigenvalues</th>
+      <td id="T_e3424_row0_col0" class="data row0 col0" >0.80</td>
+    </tr>
+    <tr>
+      <th id="T_e3424_level0_row1" class="row_heading level0 row1" >CONSUMPTION(-1)</th>
+      <td id="T_e3424_row1_col0" class="data row1 col0" >0.71</td>
+    </tr>
+    <tr>
+      <th id="T_e3424_level0_row2" class="row_heading level0 row2" >GDP(-1)</th>
+      <td id="T_e3424_row2_col0" class="data row2 col0" >0.71</td>
+    </tr>
+    <tr>
+      <th id="T_e3424_level0_row3" class="row_heading level0 row3" >INVESTMENT(-1)</th>
+      <td id="T_e3424_row3_col0" class="data row3 col0" > </td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
-<section id="lvert-textbf-e-t-lvert-1-and-imaginary-parts-oscillate-with-increasing-amplitude">
-<h2><span class="section-number">1.7. </span><span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert &gt; 1\)</span> and imaginary parts. Oscillate with increasing amplitude<a class="headerlink" href="#lvert-textbf-e-t-lvert-1-and-imaginary-parts-oscillate-with-increasing-amplitude" title="Permalink to this headline">#</a></h2>
+<section id="explosion">
+<h2><span class="section-number">1.9. </span>Explosion<a class="headerlink" href="#explosion" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calculate_eigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">years</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geteigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* Take care. Lags or leads in the equations, mfcalc run for 2019 to 2047
-</pre></div>
-</div>
-<p><strong>Model where multiplier = 0.8 and accelerator = 2</strong></p>
-<img alt="../../_images/c2fe65b64028475b1ba2f68ae7fa1a46d26a2ee7ce032b315d9dbe6d60e512dc.png" src="../../_images/c2fe65b64028475b1ba2f68ae7fa1a46d26a2ee7ce032b315d9dbe6d60e512dc.png" />
-<img alt="../../_images/5522e12f3bba2e81521364a2d00b0c97e601028a86cab915d0daba48311918c3.png" src="../../_images/5522e12f3bba2e81521364a2d00b0c97e601028a86cab915d0daba48311918c3.png" />
-</div>
+<p><strong>Model where multiplier = 0.9 and accelerator = 2</strong></p>
+<img alt="../../_images/0893345379a22e3e403bc530375fab60493a40f1fc9426a1d6d4492f2cae8a51.png" src="../../_images/0893345379a22e3e403bc530375fab60493a40f1fc9426a1d6d4492f2cae8a51.png" />
+<img alt="../../_images/e1004a3045df032ee011e40f1d225fad76776cdad692f01c282936cff1074a0b.png" src="../../_images/e1004a3045df032ee011e40f1d225fad76776cdad692f01c282936cff1074a0b.png" />
+<p><strong>Compagnion matrix</strong></p>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_02eae">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_02eae_level0_col0" class="col_heading level0 col0" >CONSUMPTION(-1)</th>
+      <th id="T_02eae_level0_col1" class="col_heading level0 col1" >GDP(-1)</th>
+      <th id="T_02eae_level0_col2" class="col_heading level0 col2" >INVESTMENT(-1)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_02eae_level0_row0" class="row_heading level0 row0" >CONSUMPTION(-1)</th>
+      <td id="T_02eae_row0_col0" class="data row0 col0" > </td>
+      <td id="T_02eae_row0_col1" class="data row0 col1" >0.90</td>
+      <td id="T_02eae_row0_col2" class="data row0 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_02eae_level0_row1" class="row_heading level0 row1" >GDP(-1)</th>
+      <td id="T_02eae_row1_col0" class="data row1 col0" >-2.00</td>
+      <td id="T_02eae_row1_col1" class="data row1 col1" >2.70</td>
+      <td id="T_02eae_row1_col2" class="data row1 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_02eae_level0_row2" class="row_heading level0 row2" >INVESTMENT(-1)</th>
+      <td id="T_02eae_row2_col0" class="data row2 col0" >-2.00</td>
+      <td id="T_02eae_row2_col1" class="data row2 col1" >1.80</td>
+      <td id="T_02eae_row2_col2" class="data row2 col2" > </td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output text_html"><style type="text/css">
+</style>
+<table id="T_38d43">
+  <caption><b>Non zero eigenvalues and -vectors</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_38d43_level0_col0" class="col_heading level0 col0" >1</th>
+      <th id="T_38d43_level0_col1" class="col_heading level0 col1" >2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_38d43_level0_row0" class="row_heading level0 row0" >Eigenvalues</th>
+      <td id="T_38d43_row0_col0" class="data row0 col0" >1.50</td>
+      <td id="T_38d43_row0_col1" class="data row0 col1" >1.20</td>
+    </tr>
+    <tr>
+      <th id="T_38d43_level0_row1" class="row_heading level0 row1" >CONSUMPTION(-1)</th>
+      <td id="T_38d43_row1_col0" class="data row1 col0" >0.49</td>
+      <td id="T_38d43_row1_col1" class="data row1 col1" >0.59</td>
+    </tr>
+    <tr>
+      <th id="T_38d43_level0_row2" class="row_heading level0 row2" >GDP(-1)</th>
+      <td id="T_38d43_row2_col0" class="data row2 col0" >0.81</td>
+      <td id="T_38d43_row2_col1" class="data row2 col1" >0.78</td>
+    </tr>
+    <tr>
+      <th id="T_38d43_level0_row3" class="row_heading level0 row3" >INVESTMENT(-1)</th>
+      <td id="T_38d43_row3_col0" class="data row3 col0" >0.32</td>
+      <td id="T_38d43_row3_col1" class="data row3 col1" >0.20</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
-<section id="lvert-textbf-e-t-lvert-1-and-imaginary-parts-oscillate-perputual">
-<h2><span class="section-number">1.8. </span><span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert = 1\)</span> and imaginary parts. Oscillate perputual<a class="headerlink" href="#lvert-textbf-e-t-lvert-1-and-imaginary-parts-oscillate-perputual" title="Permalink to this headline">#</a></h2>
+<section id="exploding-oscillations">
+<h2><span class="section-number">1.10. </span>Exploding oscillations<a class="headerlink" href="#exploding-oscillations" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span> <span class="o">=</span>  <span class="n">calculate_eigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.5500</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">years</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geteigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* Take care. Lags or leads in the equations, mfcalc run for 2019 to 2047
+<p><strong>Model where multiplier = 0.6 and accelerator = 2</strong></p>
+<img alt="../../_images/4bb5b819bd1a45c5e3d7e95892e99619cdb43ad2a901098add5a6690eaae5eb1.png" src="../../_images/4bb5b819bd1a45c5e3d7e95892e99619cdb43ad2a901098add5a6690eaae5eb1.png" />
+<img alt="../../_images/01a57702f3e3e18b07270d31f8d7e0d9f3f0eeb5bc8789eee91864327058de9b.png" src="../../_images/01a57702f3e3e18b07270d31f8d7e0d9f3f0eeb5bc8789eee91864327058de9b.png" />
+<p><strong>Compagnion matrix</strong></p>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_6cd1e">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_6cd1e_level0_col0" class="col_heading level0 col0" >CONSUMPTION(-1)</th>
+      <th id="T_6cd1e_level0_col1" class="col_heading level0 col1" >GDP(-1)</th>
+      <th id="T_6cd1e_level0_col2" class="col_heading level0 col2" >INVESTMENT(-1)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_6cd1e_level0_row0" class="row_heading level0 row0" >CONSUMPTION(-1)</th>
+      <td id="T_6cd1e_row0_col0" class="data row0 col0" > </td>
+      <td id="T_6cd1e_row0_col1" class="data row0 col1" >0.60</td>
+      <td id="T_6cd1e_row0_col2" class="data row0 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_6cd1e_level0_row1" class="row_heading level0 row1" >GDP(-1)</th>
+      <td id="T_6cd1e_row1_col0" class="data row1 col0" >-2.00</td>
+      <td id="T_6cd1e_row1_col1" class="data row1 col1" >1.80</td>
+      <td id="T_6cd1e_row1_col2" class="data row1 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_6cd1e_level0_row2" class="row_heading level0 row2" >INVESTMENT(-1)</th>
+      <td id="T_6cd1e_row2_col0" class="data row2 col0" >-2.00</td>
+      <td id="T_6cd1e_row2_col1" class="data row2 col1" >1.20</td>
+      <td id="T_6cd1e_row2_col2" class="data row2 col2" > </td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output text_html"><style type="text/css">
+</style>
+<table id="T_ad1dc">
+  <caption><b>Non zero eigenvalues and -vectors</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_ad1dc_level0_col0" class="col_heading level0 col0" >1</th>
+      <th id="T_ad1dc_level0_col1" class="col_heading level0 col1" >2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_ad1dc_level0_row0" class="row_heading level0 row0" >Eigenvalues</th>
+      <td id="T_ad1dc_row0_col0" class="data row0 col0" >1.10 ~ 0.90+0.62j</td>
+      <td id="T_ad1dc_row0_col1" class="data row0 col1" >1.10 ~ 0.90-0.62j</td>
+    </tr>
+    <tr>
+      <th id="T_ad1dc_level0_row1" class="row_heading level0 row1" >CONSUMPTION(-1)</th>
+      <td id="T_ad1dc_row1_col0" class="data row1 col0" >0.42 ~ -0.35+0.24j</td>
+      <td id="T_ad1dc_row1_col1" class="data row1 col1" >0.42 ~ -0.35-0.24j</td>
+    </tr>
+    <tr>
+      <th id="T_ad1dc_level0_row2" class="row_heading level0 row2" >GDP(-1)</th>
+      <td id="T_ad1dc_row2_col0" class="data row2 col0" >-0.77</td>
+      <td id="T_ad1dc_row2_col1" class="data row2 col1" >-0.77</td>
+    </tr>
+    <tr>
+      <th id="T_ad1dc_level0_row3" class="row_heading level0 row3" >INVESTMENT(-1)</th>
+      <td id="T_ad1dc_row3_col0" class="data row3 col0" >0.49 ~ -0.42-0.24j</td>
+      <td id="T_ad1dc_row3_col1" class="data row3 col1" >0.49 ~ -0.42+0.24j</td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;modelnewton.newton_diff at 0x17a49fb6f20&gt;
 </pre></div>
 </div>
-<p><strong>Model where multiplier = 0.55 and accelerator = 2</strong></p>
-<img alt="../../_images/4bc655931be7f61f9ee68bc2db49597f322d17be41c256dbfe18c06ed9a65c6a.png" src="../../_images/4bc655931be7f61f9ee68bc2db49597f322d17be41c256dbfe18c06ed9a65c6a.png" />
-<img alt="../../_images/62393e6afc0de3e046edfd9e1d19f36d936817fd1927713c60ced7693276ae1c.png" src="../../_images/62393e6afc0de3e046edfd9e1d19f36d936817fd1927713c60ced7693276ae1c.png" />
 </div>
 </div>
 </section>
-<section id="jackknife-identify-impact-from-each-equation">
-<h2><span class="section-number">1.9. </span>Jackknife identify impact from each equation.<a class="headerlink" href="#jackknife-identify-impact-from-each-equation" title="Permalink to this headline">#</a></h2>
+<section id="perpetual-oscillations">
+<h2><span class="section-number">1.11. </span>Perpetual oscillations<a class="headerlink" href="#perpetual-oscillations" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geteigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Model where multiplier = 0.5 and accelerator = 2</strong></p>
+<img alt="../../_images/148760fe45fe66f4b438e00f1e2dd7786f596a2c1d0225bcb9e6ec6be7197ce0.png" src="../../_images/148760fe45fe66f4b438e00f1e2dd7786f596a2c1d0225bcb9e6ec6be7197ce0.png" />
+<img alt="../../_images/c00832d7ff046b04c00dbef9561dac8724e71e9d16c9cfd96326c39fea32a7a3.png" src="../../_images/c00832d7ff046b04c00dbef9561dac8724e71e9d16c9cfd96326c39fea32a7a3.png" />
+<p><strong>Compagnion matrix</strong></p>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_da788">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_da788_level0_col0" class="col_heading level0 col0" >CONSUMPTION(-1)</th>
+      <th id="T_da788_level0_col1" class="col_heading level0 col1" >GDP(-1)</th>
+      <th id="T_da788_level0_col2" class="col_heading level0 col2" >INVESTMENT(-1)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_da788_level0_row0" class="row_heading level0 row0" >CONSUMPTION(-1)</th>
+      <td id="T_da788_row0_col0" class="data row0 col0" > </td>
+      <td id="T_da788_row0_col1" class="data row0 col1" >0.50</td>
+      <td id="T_da788_row0_col2" class="data row0 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_da788_level0_row1" class="row_heading level0 row1" >GDP(-1)</th>
+      <td id="T_da788_row1_col0" class="data row1 col0" >-2.00</td>
+      <td id="T_da788_row1_col1" class="data row1 col1" >1.50</td>
+      <td id="T_da788_row1_col2" class="data row1 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_da788_level0_row2" class="row_heading level0 row2" >INVESTMENT(-1)</th>
+      <td id="T_da788_row2_col0" class="data row2 col0" >-2.00</td>
+      <td id="T_da788_row2_col1" class="data row2 col1" >1.00</td>
+      <td id="T_da788_row2_col2" class="data row2 col2" > </td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output text_html"><style type="text/css">
+</style>
+<table id="T_97644">
+  <caption><b>Non zero eigenvalues and -vectors</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_97644_level0_col0" class="col_heading level0 col0" >1</th>
+      <th id="T_97644_level0_col1" class="col_heading level0 col1" >2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_97644_level0_row0" class="row_heading level0 row0" >Eigenvalues</th>
+      <td id="T_97644_row0_col0" class="data row0 col0" >1.00 ~ 0.75+0.66j</td>
+      <td id="T_97644_row0_col1" class="data row0 col1" >1.00 ~ 0.75-0.66j</td>
+    </tr>
+    <tr>
+      <th id="T_97644_level0_row1" class="row_heading level0 row1" >CONSUMPTION(-1)</th>
+      <td id="T_97644_row1_col0" class="data row1 col0" >0.38 ~ -0.28+0.25j</td>
+      <td id="T_97644_row1_col1" class="data row1 col1" >0.38 ~ -0.28-0.25j</td>
+    </tr>
+    <tr>
+      <th id="T_97644_level0_row2" class="row_heading level0 row2" >GDP(-1)</th>
+      <td id="T_97644_row2_col0" class="data row2 col0" >-0.76</td>
+      <td id="T_97644_row2_col1" class="data row2 col1" >-0.76</td>
+    </tr>
+    <tr>
+      <th id="T_97644_level0_row3" class="row_heading level0 row3" >INVESTMENT(-1)</th>
+      <td id="T_97644_row3_col0" class="data row3 col0" >0.53 ~ -0.47-0.25j</td>
+      <td id="T_97644_row3_col1" class="data row3 col1" >0.53 ~ -0.47+0.25j</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="dampened-oscillations">
+<h2><span class="section-number">1.12. </span>Dampened oscillations<a class="headerlink" href="#dampened-oscillations" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geteigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Model where multiplier = 0.7 and accelerator = 1</strong></p>
+<img alt="../../_images/0fea8b096e470d3d4a09be1c0f73c440228d14e8cd77ca9598b88091c299653a.png" src="../../_images/0fea8b096e470d3d4a09be1c0f73c440228d14e8cd77ca9598b88091c299653a.png" />
+<img alt="../../_images/3ce6482486c95231fd2a9b5a77c850dae70bb7cb769eb4510ee2838d013f865f.png" src="../../_images/3ce6482486c95231fd2a9b5a77c850dae70bb7cb769eb4510ee2838d013f865f.png" />
+<p><strong>Compagnion matrix</strong></p>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_3a257">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_3a257_level0_col0" class="col_heading level0 col0" >CONSUMPTION(-1)</th>
+      <th id="T_3a257_level0_col1" class="col_heading level0 col1" >GDP(-1)</th>
+      <th id="T_3a257_level0_col2" class="col_heading level0 col2" >INVESTMENT(-1)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_3a257_level0_row0" class="row_heading level0 row0" >CONSUMPTION(-1)</th>
+      <td id="T_3a257_row0_col0" class="data row0 col0" > </td>
+      <td id="T_3a257_row0_col1" class="data row0 col1" >0.70</td>
+      <td id="T_3a257_row0_col2" class="data row0 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_3a257_level0_row1" class="row_heading level0 row1" >GDP(-1)</th>
+      <td id="T_3a257_row1_col0" class="data row1 col0" >-1.00</td>
+      <td id="T_3a257_row1_col1" class="data row1 col1" >1.40</td>
+      <td id="T_3a257_row1_col2" class="data row1 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_3a257_level0_row2" class="row_heading level0 row2" >INVESTMENT(-1)</th>
+      <td id="T_3a257_row2_col0" class="data row2 col0" >-1.00</td>
+      <td id="T_3a257_row2_col1" class="data row2 col1" >0.70</td>
+      <td id="T_3a257_row2_col2" class="data row2 col2" > </td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output text_html"><style type="text/css">
+</style>
+<table id="T_566a1">
+  <caption><b>Non zero eigenvalues and -vectors</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_566a1_level0_col0" class="col_heading level0 col0" >1</th>
+      <th id="T_566a1_level0_col1" class="col_heading level0 col1" >2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_566a1_level0_row0" class="row_heading level0 row0" >Eigenvalues</th>
+      <td id="T_566a1_row0_col0" class="data row0 col0" >0.84 ~ 0.70+0.46j</td>
+      <td id="T_566a1_row0_col1" class="data row0 col1" >0.84 ~ 0.70-0.46j</td>
+    </tr>
+    <tr>
+      <th id="T_566a1_level0_row1" class="row_heading level0 row1" >CONSUMPTION(-1)</th>
+      <td id="T_566a1_row1_col0" class="data row1 col0" >0.59 ~ 0.49-0.32j</td>
+      <td id="T_566a1_row1_col1" class="data row1 col1" >0.59 ~ 0.49+0.32j</td>
+    </tr>
+    <tr>
+      <th id="T_566a1_level0_row2" class="row_heading level0 row2" >GDP(-1)</th>
+      <td id="T_566a1_row2_col0" class="data row2 col0" >0.71</td>
+      <td id="T_566a1_row2_col1" class="data row2 col1" >0.71</td>
+    </tr>
+    <tr>
+      <th id="T_566a1_level0_row3" class="row_heading level0 row3" >INVESTMENT(-1)</th>
+      <td id="T_566a1_row3_col0" class="data row3 col0" >0.39 ~ 0.21+0.32j</td>
+      <td id="T_566a1_row3_col1" class="data row3 col1" >0.39 ~ 0.21-0.32j</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="jackknife-experiments-to-identify-identify-impact-from-each-equation">
+<h2><span class="section-number">1.13. </span>Jackknife experiments  to identify identify impact from each equation.<a class="headerlink" href="#jackknife-experiments-to-identify-identify-impact-from-each-equation" title="Permalink to this headline">#</a></h2>
 <p>To understand the impact of each equation a jackknife can be made. This is done by deleting  the rows and columns for each equation and record the new eigenvalues.</p>
 <p>The idea is to try to identify the equations which contributes most to the total eigenvalues.</p>
 <p>The newton object returned above will also contains this operation. The <code class="docutils literal notranslate"><span class="pre">newton.get_eigen_jackknife_abs_select(year)</span></code> function will return the max absolute eigenvalue when for each equations is deleted. It also returns the eigenvalues when no equation is deleted.</p>
@@ -626,24 +1109,99 @@ eigenvalues of the companion matrix.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span><span class="o">.</span><span class="n">get_eigen_jackknife_abs_select</span><span class="p">(</span><span class="mi">2025</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span> <span class="o">=</span> <span class="n">geteigen</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">acc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">newton</span><span class="o">.</span><span class="n">get_eigen_jackknife_abs_select</span><span class="p">(</span><span class="mi">2025</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 C
-1 I
-2 Y
+<p><strong>Model where multiplier = 0.6 and accelerator = 2</strong></p>
+<img alt="../../_images/4bb5b819bd1a45c5e3d7e95892e99619cdb43ad2a901098add5a6690eaae5eb1.png" src="../../_images/4bb5b819bd1a45c5e3d7e95892e99619cdb43ad2a901098add5a6690eaae5eb1.png" />
+<img alt="../../_images/01a57702f3e3e18b07270d31f8d7e0d9f3f0eeb5bc8789eee91864327058de9b.png" src="../../_images/01a57702f3e3e18b07270d31f8d7e0d9f3f0eeb5bc8789eee91864327058de9b.png" />
+<p><strong>Compagnion matrix</strong></p>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_02074">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_02074_level0_col0" class="col_heading level0 col0" >CONSUMPTION(-1)</th>
+      <th id="T_02074_level0_col1" class="col_heading level0 col1" >GDP(-1)</th>
+      <th id="T_02074_level0_col2" class="col_heading level0 col2" >INVESTMENT(-1)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_02074_level0_row0" class="row_heading level0 row0" >CONSUMPTION(-1)</th>
+      <td id="T_02074_row0_col0" class="data row0 col0" > </td>
+      <td id="T_02074_row0_col1" class="data row0 col1" >0.60</td>
+      <td id="T_02074_row0_col2" class="data row0 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_02074_level0_row1" class="row_heading level0 row1" >GDP(-1)</th>
+      <td id="T_02074_row1_col0" class="data row1 col0" >-2.00</td>
+      <td id="T_02074_row1_col1" class="data row1 col1" >1.80</td>
+      <td id="T_02074_row1_col2" class="data row1 col2" > </td>
+    </tr>
+    <tr>
+      <th id="T_02074_level0_row2" class="row_heading level0 row2" >INVESTMENT(-1)</th>
+      <td id="T_02074_row2_col0" class="data row2 col0" >-2.00</td>
+      <td id="T_02074_row2_col1" class="data row2 col1" >1.20</td>
+      <td id="T_02074_row2_col2" class="data row2 col2" > </td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output text_html"><style type="text/css">
+</style>
+<table id="T_100db">
+  <caption><b>Non zero eigenvalues and -vectors</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_100db_level0_col0" class="col_heading level0 col0" >1</th>
+      <th id="T_100db_level0_col1" class="col_heading level0 col1" >2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_100db_level0_row0" class="row_heading level0 row0" >Eigenvalues</th>
+      <td id="T_100db_row0_col0" class="data row0 col0" >1.10 ~ 0.90+0.62j</td>
+      <td id="T_100db_row0_col1" class="data row0 col1" >1.10 ~ 0.90-0.62j</td>
+    </tr>
+    <tr>
+      <th id="T_100db_level0_row1" class="row_heading level0 row1" >CONSUMPTION(-1)</th>
+      <td id="T_100db_row1_col0" class="data row1 col0" >0.42 ~ -0.35+0.24j</td>
+      <td id="T_100db_row1_col1" class="data row1 col1" >0.42 ~ -0.35-0.24j</td>
+    </tr>
+    <tr>
+      <th id="T_100db_level0_row2" class="row_heading level0 row2" >GDP(-1)</th>
+      <td id="T_100db_row2_col0" class="data row2 col0" >-0.77</td>
+      <td id="T_100db_row2_col1" class="data row2 col1" >-0.77</td>
+    </tr>
+    <tr>
+      <th id="T_100db_level0_row3" class="row_heading level0 row3" >INVESTMENT(-1)</th>
+      <td id="T_100db_row3_col0" class="data row3 col0" >0.49 ~ -0.42-0.24j</td>
+      <td id="T_100db_row3_col1" class="data row3 col1" >0.49 ~ -0.42+0.24j</td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 CONSUMPTION
+1 GDP
+2 INVESTMENT
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ALL&#39;: 0.9958213512988556,
- &#39;C_excluded&#39;: 0.0,
- &#39;I_excluded&#39;: 0.55,
- &#39;Y_excluded&#39;: 0.0}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ALL&#39;: 1.0954451150103321,
+ &#39;CONSUMPTION_excluded&#39;: 0.0,
+ &#39;GDP_excluded&#39;: 0.0,
+ &#39;INVESTMENT_excluded&#39;: 0.6}
 </pre></div>
 </div>
 </div>
 </div>
+<p>The output above shows that the largest eigenvalue of the system is 1.1. so the system is unstable. If either the consumption or  GDP equation is deleted the largest abs(eigenvalue)  will
+be 0. So the system will not be unstable. The same goes in the Investment equation is excluded. However in this case the largest abs(eigenvalue) will be 0.6.</p>
+<p>And what can we learn from that?</p>
+<p>Please share good answers to this question.</p>
 </section>
 </section>
 
@@ -722,10 +1280,14 @@ eigenvalues of the companion matrix.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-companion-matrix">1.3. The companion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-and-the-eignvalues-of-the-companion-matrix">1.4. Stability and the eignvalues of the companion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-eigenvalues-and-eigenvectors-using-modelflow">1.5. Calculating Eigenvalues and eigenvectors using modelflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lvert-textbf-e-t-lvert-1-no-gain">1.6. <span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert &lt; 1\)</span> No gain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lvert-textbf-e-t-lvert-1-and-imaginary-parts-oscillate-with-increasing-amplitude">1.7. <span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert &gt; 1\)</span> and imaginary parts. Oscillate with increasing amplitude</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lvert-textbf-e-t-lvert-1-and-imaginary-parts-oscillate-perputual">1.8. <span class="math notranslate nohighlight">\(\lvert \textbf{e}_{t} \lvert = 1\)</span> and imaginary parts. Oscillate perputual</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jackknife-identify-impact-from-each-equation">1.9. Jackknife identify impact from each equation.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-create-a-model-a-samuleson-multiplier-accelerator-model">1.6. First create a model (A Samuleson multiplier accelerator model)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-which-generates-a-dataframe-with-values">1.7. A function which generates a dataframe with values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-which-simulate-the-model-and-calculates-eigenvalues">1.8. A function which simulate the model and calculates eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explosion">1.9. Explosion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploding-oscillations">1.10. Exploding oscillations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perpetual-oscillations">1.11. Perpetual oscillations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dampened-oscillations">1.12. Dampened oscillations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jackknife-experiments-to-identify-identify-impact-from-each-equation">1.13. Jackknife experiments  to identify identify impact from each equation.</a></li>
 </ul>
   </nav></div>
 

@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="133pt" viewBox="0.00 0.00 432.00 133.16">
+<g id="graph0" class="graph" transform="scale(0.51867 0.51867) rotate(0) translate(4 252.73)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-252.73 828.9,-252.73 828.9,4 -4,4"/>
+<text text-anchor="middle" x="412.45" y="-7.2" font-family="Times New Roman,serif" font-size="14.00">A_model_graph</text>
+<!-- MUL -->
+<g id="node1" class="node">
+<title>MUL</title>
+<g id="a_node1"><a xlink:title="MUL
+Exogen">
+<polygon fill="yellow" stroke="black" points="54,-227.24 0,-227.24 0,-191.24 54,-191.24 54,-227.24"/>
+<text text-anchor="start" x="9.75" y="-204.19" font-family="Times New Roman,serif" font-size="14.00" fill="blue">MUL:</text>
+</a>
+</g>
+</g>
+<!-- CONSUMPTION -->
+<g id="node8" class="node">
+<title>CONSUMPTION</title>
+<g id="a_node8"><a xlink:title="CONSUMPTION
+FRML &lt;&gt; CONSUMPTION = MUL * GDP(-1) $">
+<polygon fill="#63b8ff" stroke="black" points="203.6,-227.24 90,-227.24 90,-191.24 203.6,-191.24 203.6,-227.24"/>
+<text text-anchor="start" x="95.8" y="-204.19" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CONSUMPTION:</text>
+</a>
+</g>
+</g>
+<!-- MUL&#45;&gt;CONSUMPTION -->
+<g id="edge10" class="edge">
+<title>MUL-&gt;CONSUMPTION</title>
+<g id="a_edge10"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M54.44,-209.24C62.11,-209.24 70.85,-209.24 79.81,-209.24"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="79.58,-212.74 89.58,-209.24 79.58,-205.74 79.58,-212.74"/>
+</a>
+</g>
+</g>
+<!-- ACC -->
+<g id="node2" class="node">
+<title>ACC</title>
+<g id="a_node2"><a xlink:title="ACC
+Exogen">
+<polygon fill="yellow" stroke="black" points="382.65,-150.24 328.65,-150.24 328.65,-114.24 382.65,-114.24 382.65,-150.24"/>
+<text text-anchor="start" x="339.9" y="-127.19" font-family="Times New Roman,serif" font-size="14.00" fill="blue">ACC:</text>
+</a>
+</g>
+</g>
+<!-- INVESTMENT -->
+<g id="node3" class="node">
+<title>INVESTMENT</title>
+<g id="a_node3"><a xlink:title="INVESTMENT
+FRML &lt;&gt; INVESTMENT = ACC * (CONSUMPTION-CONSUMPTION(-1))  + EXO_INVESTMENT $">
+<polygon fill="#63b8ff" stroke="black" points="609.3,-177.24 507.7,-177.24 507.7,-141.24 609.3,-141.24 609.3,-177.24"/>
+<text text-anchor="start" x="513.5" y="-154.19" font-family="Times New Roman,serif" font-size="14.00" fill="blue">INVESTMENT:</text>
+</a>
+</g>
+</g>
+<!-- ACC&#45;&gt;INVESTMENT -->
+<g id="edge7" class="edge">
+<title>ACC-&gt;INVESTMENT</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M382.91,-135.77C411.92,-139.67 459.6,-146.08 497.81,-151.22"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="496.93,-154.63 507.3,-152.5 497.86,-147.69 496.93,-154.63"/>
+</a>
+</g>
+</g>
+<!-- GDP -->
+<g id="node7" class="node">
+<title>GDP</title>
+<g id="a_node7"><a xlink:title="GDP
+FRML &lt;&gt; GDP = CONSUMPTION+INVESTMENT   $">
+<polygon fill="#63b8ff" stroke="black" points="699.3,-177.24 645.3,-177.24 645.3,-141.24 699.3,-141.24 699.3,-177.24"/>
+<text text-anchor="start" x="656.92" y="-154.19" font-family="Times New Roman,serif" font-size="14.00" fill="blue">GDP:</text>
+</a>
+</g>
+</g>
+<!-- INVESTMENT&#45;&gt;GDP -->
+<g id="edge8" class="edge">
+<title>INVESTMENT-&gt;GDP</title>
+<g id="a_edge8"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M609.51,-159.24C618.1,-159.24 626.87,-159.24 635.01,-159.24"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="634.91,-162.74 644.91,-159.24 634.91,-155.74 634.91,-162.74"/>
+</a>
+</g>
+</g>
+<!-- CONSUMPTION(&#45;1) -->
+<g id="node4" class="node">
+<title>CONSUMPTION(-1)</title>
+<g id="a_node4"><a xlink:title="CONSUMPTION
+FRML &lt;&gt; CONSUMPTION = MUL * GDP(-1) $">
+<polygon fill="springgreen" stroke="black" points="471.7,-204.24 239.6,-204.24 239.6,-168.24 471.7,-168.24 471.7,-204.24"/>
+<text text-anchor="start" x="245.4" y="-181.19" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CONSUMPTION(-1):CONSUMPTION</text>
+</a>
+</g>
+</g>
+<!-- CONSUMPTION(&#45;1)&#45;&gt;INVESTMENT -->
+<g id="edge4" class="edge">
+<title>CONSUMPTION(-1)-&gt;INVESTMENT</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M472.03,-170.73C480.86,-169.55 489.52,-168.38 497.75,-167.28"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="498.11,-170.76 507.56,-165.96 497.18,-163.82 498.11,-170.76"/>
+</a>
+</g>
+</g>
+<!-- GDP(&#45;1) -->
+<g id="node5" class="node">
+<title>GDP(-1)</title>
+<g id="a_node5"><a xlink:title="GDP
+FRML &lt;&gt; GDP = CONSUMPTION+INVESTMENT   $">
+<polygon fill="springgreen" stroke="black" points="824.9,-246.24 735.3,-246.24 735.3,-210.24 824.9,-210.24 824.9,-246.24"/>
+<text text-anchor="start" x="741.1" y="-223.19" font-family="Times New Roman,serif" font-size="14.00" fill="blue">GDP(-1):GDP</text>
+</a>
+</g>
+</g>
+<!-- GDP(&#45;1)&#45;&gt;CONSUMPTION -->
+<g id="edge5" class="edge">
+<title>GDP(-1)-&gt;CONSUMPTION</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M735.11,-233.27C642.77,-242.84 422.15,-260.6 239.6,-235.24 230.92,-234.04 221.92,-232.22 213.08,-230.1"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="214.15,-226.76 203.59,-227.69 212.42,-233.54 214.15,-226.76"/>
+</a>
+</g>
+</g>
+<!-- EXO_INVESTMENT -->
+<g id="node6" class="node">
+<title>EXO_INVESTMENT</title>
+<g id="a_node6"><a xlink:title="EXO_INVESTMENT
+Exogen">
+<polygon fill="yellow" stroke="black" points="423.7,-96.24 287.6,-96.24 287.6,-60.24 423.7,-60.24 423.7,-96.24"/>
+<text text-anchor="start" x="293.4" y="-73.19" font-family="Times New Roman,serif" font-size="14.00" fill="blue">EXO_INVESTMENT:</text>
+</a>
+</g>
+</g>
+<!-- EXO_INVESTMENT&#45;&gt;INVESTMENT -->
+<g id="edge3" class="edge">
+<title>EXO_INVESTMENT-&gt;INVESTMENT</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M424.15,-90.15C440.07,-94.02 456.75,-98.99 471.7,-105.24 490.33,-113.04 509.5,-124.69 524.98,-135.18"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="522.96,-138.04 533.17,-140.86 526.95,-132.29 522.96,-138.04"/>
+</a>
+</g>
+</g>
+<!-- GDP&#45;&gt;GDP(&#45;1) -->
+<g id="edge6" class="edge">
+<title>GDP-&gt;GDP(-1)</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M699.72,-176.48C712.72,-184.95 728.59,-195.3 742.71,-204.51"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="740.5,-207.25 750.79,-209.78 744.33,-201.39 740.5,-207.25"/>
+</a>
+</g>
+</g>
+<!-- CONSUMPTION&#45;&gt;INVESTMENT -->
+<g id="edge1" class="edge">
+<title>CONSUMPTION-&gt;INVESTMENT</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M203.83,-219.58C269.47,-229.5 380.79,-239.47 471.7,-213.24 492.15,-207.34 512.42,-194.97 528.12,-183.55"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="530.01,-186.52 535.9,-177.71 525.8,-180.92 530.01,-186.52"/>
+</a>
+</g>
+</g>
+<!-- CONSUMPTION&#45;&gt;CONSUMPTION(&#45;1) -->
+<g id="edge2" class="edge">
+<title>CONSUMPTION-&gt;CONSUMPTION(-1)</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M204.05,-202.99C212.05,-202.1 220.52,-201.16 229.21,-200.19"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="229.56,-203.67 239.11,-199.09 228.78,-196.72 229.56,-203.67"/>
+</a>
+</g>
+</g>
+<!-- CONSUMPTION&#45;&gt;GDP -->
+<g id="edge9" class="edge">
+<title>CONSUMPTION-&gt;GDP</title>
+<g id="a_edge9"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M152.1,-190.8C161.3,-156.08 186.53,-81.79 239.6,-51.24 373.98,26.1 562.97,-84.2 638.37,-135.47"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="635.93,-138.03 646.15,-140.82 639.9,-132.27 635.93,-138.03"/>
+</a>
+</g>
+</g>
+</g>
+</svg>
