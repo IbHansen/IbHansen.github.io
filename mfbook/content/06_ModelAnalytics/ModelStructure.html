@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Analyzing the impact of a shock" href="AttributionSomeFeatures.html" />
-    <link rel="prev" title="7. A simulation that targets a specific outcome" href="../07_MoreFeatures/Targeting.html" />
+    <link rel="prev" title="6. More complex scenarios" href="../05_WBModels/MoreComplexScenarios.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -184,7 +184,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">7. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="current nav bd-sidenav">
@@ -418,7 +417,7 @@ document.write(`
                   
   <span class="target" id="index-0"></span><span class="target" id="index-1"></span><span class="target" id="index-2"></span><span class="target" id="index-3"></span><span class="target" id="index-4"></span><section class="tex2jax_ignore mathjax_ignore" id="model-analytics">
 <span id="index-5"></span><h1><span class="section-number">1. </span>Model analytics<a class="headerlink" href="#model-analytics" title="Permalink to this headline">#</a></h1>
-<p>A model has a well defined logical and causal structure.<span id="id1"><a class="reference internal" href="../../Reference.html#id4" title="K.C. Kogiku. An Introduction to Macroeconomic Models. McGwaw-Hill, 1968. URL: https://books.google.de/books?id=jp4LzQEACAAJ.">Kogiku</a></span>provides an introduction to causal analysis of models, while <span id="id2"><a class="reference internal" href="../../Reference.html#id2" title="Ron Berndsen. Causal ordering in economic models. Decision Support Systems, 1995. ISBN: 0167-9236. doi:10.1016/0167-9236(94)00034-P.">Berndsen</a></span> provides a more elaborate discussion.</p>
+<p>A model has a well defined logical and causal structure. <span id="id1"><a class="reference internal" href="../../Reference.html#id4" title="K.C. Kogiku. An Introduction to Macroeconomic Models. McGwaw-Hill, 1968. URL: https://books.google.de/books?id=jp4LzQEACAAJ.">Kogiku</a></span> provides an introduction to causal analysis of models, while <span id="id2"><a class="reference internal" href="../../Reference.html#id2" title="Ron Berndsen. Causal ordering in economic models. Decision Support Systems, 1995. ISBN: 0167-9236. doi:10.1016/0167-9236(94)00034-P.">Berndsen</a></span> gives a more elaborate discussion.</p>
 <p>At the simplest level, the equations of a model can be organized into blocks.</p>
 <ul class="simple">
 <li><p><strong>Simultaneous block</strong> include equations that have are co-determined simultaneously. They contain feedback loops that may require several iterations before a solution that satisfies them all is found. A classic simultaneous block would include GDP, Income and Consumption. Consumption depends on income. Income depends on GDP, but Consumption determines GDP.</p></li>
@@ -470,9 +469,9 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 </div>
-<span class="target" id="index-19"></span><p id="index-20">The model work space also has a time dimension, its sample period. This can be retrieved and changed.</p>
+<span class="target" id="index-19"></span><span class="target" id="index-20"></span><p id="index-21">The model work space also has a time dimension, its sample period. This can be retrieved and changed.</p>
 <p>`mpak.per_current’</p>
-<span class="target" id="index-21"></span><span class="target" id="index-22"></span><span class="target" id="index-23"></span><div class="cell docutils container" id="index-24">
+<span class="target" id="index-22"></span><span class="target" id="index-23"></span><span class="target" id="index-24"></span><div class="cell docutils container" id="index-25">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">current_per</span>
 </pre></div>
@@ -492,19 +491,19 @@ Number of endogeneous variables         :                  378
 <p>A quick way to visualize the structure of a model is to plot its <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_matrix">adjacency matrix</a>.</p>
 <p>The adjacency matrix plots the relationships between endogenous variables in the model, dividing them into one or more simultaneous blocks and one or more recursive blocks.</p>
 <p>Below is the adjacency matrix for the Pakistan model. Variables in the red square block (simultaneous block) depend on one or more variables that in turn depends upon them, requiring the mode to solve for their values simultaneously.  The variables in the green triangles (iterative blocks)  do not enter directly or indirectly as an argument in the variables that determine them and therefore can be solved in one iteration once the values for the simultaneous variables are determined.</p>
-<span class="target" id="index-25"></span><span class="target" id="index-26"></span><span class="target" id="index-27"></span><span class="target" id="index-28"></span><span class="target" id="index-29"></span><span class="target" id="index-30"></span><div class="cell docutils container" id="index-31">
+<span class="target" id="index-26"></span><span class="target" id="index-27"></span><span class="target" id="index-28"></span><span class="target" id="index-29"></span><span class="target" id="index-30"></span><span class="target" id="index-31"></span><div class="cell docutils container" id="index-32">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">plotadjacency</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">nolag</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6e6b460a5922dc2b966888882c40d2c85248a1fc07bbbc934232f8c6ef69bb05.png" src="../../_images/6e6b460a5922dc2b966888882c40d2c85248a1fc07bbbc934232f8c6ef69bb05.png" />
+<img alt="../../_images/42744a6f567943ebb45fe30856f6a0753162e6db47546eddf96b8394c96a0ca6.png" src="../../_images/42744a6f567943ebb45fe30856f6a0753162e6db47546eddf96b8394c96a0ca6.png" />
 </div>
 </div>
-<span class="target" id="index-32"></span></section>
+<span class="target" id="index-33"></span><span class="target" id="index-34"></span><span class="target" id="index-35"></span></section>
 <section id="the-dependencies-of-individual-endogenous-variables-the-tracepre-method">
-<span id="index-33"></span><h2><span class="section-number">1.4. </span>The dependencies of individual endogenous variables (the <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> method)<a class="headerlink" href="#the-dependencies-of-individual-endogenous-variables-the-tracepre-method" title="Permalink to this headline">#</a></h2>
+<span id="index-36"></span><h2><span class="section-number">1.4. </span>The dependencies of individual endogenous variables (the <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> method)<a class="headerlink" href="#the-dependencies-of-individual-endogenous-variables-the-tracepre-method" title="Permalink to this headline">#</a></h2>
 <p>As noted above, every endogenous variables is directly dependent on the variables that occur on its right hand side, but us also indirectly dependent on the variables that determine its RHS variables and in turn those that determine the variables to the right of them <em>ad infinitum</em>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> includes several methods and properties that allow these dependencies to be explored.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> property returns the normalized formula of an equation, from which the right hand variables for the equation can be discerned.</p>
@@ -544,7 +543,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/664537af0824e04354430ca5ef12e1bc215319c2aec2cdf41b8618da4c4fc103.svg" src="../../_images/664537af0824e04354430ca5ef12e1bc215319c2aec2cdf41b8618da4c4fc103.svg" /></div>
+<img alt="../../_images/c1650c2e24d31433d2f3b09f9080d20368c20261872c32e10a4e5c8e4259b701.svg" src="../../_images/c1650c2e24d31433d2f3b09f9080d20368c20261872c32e10a4e5c8e4259b701.svg" /></div>
 </div>
 <p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and reveals the relative importance of each variable in the change of the dependent variable.</p>
 </section>
@@ -562,14 +561,17 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 <p>As a result GDP, consumption investment and most all variables in the model change, as illustrated in the below graphs that show the percent deviation of the main components of GDP from their baseline values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTKN PAKNEGDIFTOTKN PAKNEEXPGNFSKN PAKNEIMPGNFSKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTKN PAKNEGDIFTOTKN PAKNEEXPGNFSKN PAKNEIMPGNFSKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" src="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" />
 </div>
-<span class="target" id="index-34"></span></section>
+</div>
+<span class="target" id="index-37"></span><span class="target" id="index-38"></span></section>
 <section id="following-a-shock-tracepre-indicates-the-relative-importance-of-different-variables-in-explaining-the-change-in-the-dependent-variable">
-<span id="index-35"></span><h2><span class="section-number">1.6. </span>Following a shock <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> indicates the relative importance of different variables in explaining the change in the dependent variable<a class="headerlink" href="#following-a-shock-tracepre-indicates-the-relative-importance-of-different-variables-in-explaining-the-change-in-the-dependent-variable" title="Permalink to this headline">#</a></h2>
+<span id="index-39"></span><h2><span class="section-number">1.6. </span>Following a shock <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> indicates the relative importance of different variables in explaining the change in the dependent variable<a class="headerlink" href="#following-a-shock-tracepre-indicates-the-relative-importance-of-different-variables-in-explaining-the-change-in-the-dependent-variable" title="Permalink to this headline">#</a></h2>
 <p>Below the same <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> command is executed, but because of the shock, the width of the lines indicating representing the causal links between variables is thicker the more important the change  in a given variable was in the previous simulation in explaining the change in the level of the dependent variable (GDP).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,7 +581,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fa7323ff5a50ab2762f30fa3c168735a7e22a8cc35394ede55dd7dd0fb87725a.png" src="../../_images/fa7323ff5a50ab2762f30fa3c168735a7e22a8cc35394ede55dd7dd0fb87725a.png" />
+<img alt="../../_images/93ff637d91b69c740573dc450a46dced7aab0d4a3abfd5a6097b0ed782dce9e4.png" src="../../_images/93ff637d91b69c740573dc450a46dced7aab0d4a3abfd5a6097b0ed782dce9e4.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -592,7 +594,7 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 </section>
 <section id="the-filter-option-restricting-the-output-of-tracepre">
-<span id="index-36"></span><h2><span class="section-number">1.7. </span>The filter option, restricting the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code><a class="headerlink" href="#the-filter-option-restricting-the-output-of-tracepre" title="Permalink to this headline">#</a></h2>
+<span id="index-40"></span><h2><span class="section-number">1.7. </span>The filter option, restricting the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code><a class="headerlink" href="#the-filter-option-restricting-the-output-of-tracepre" title="Permalink to this headline">#</a></h2>
 <p>Using the filter option, the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> can be restricted to RHS variables that have had large impacts on the dependent variable.v</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -602,12 +604,12 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e684d7e1e71775c8a35110153d737123efcf674889603fa3590d9179f30c790d.png" src="../../_images/e684d7e1e71775c8a35110153d737123efcf674889603fa3590d9179f30c790d.png" />
+<img alt="../../_images/ab708436238dbc800f4b643bd36bd808764947c00a69f7738b56a63470be9757.png" src="../../_images/ab708436238dbc800f4b643bd36bd808764947c00a69f7738b56a63470be9757.png" />
 </div>
 </div>
 </section>
 <section id="the-up-option-extending-the-tracepre-beyond-the-first-level-causal-variables">
-<span id="index-37"></span><h2><span class="section-number">1.8. </span>The up option, extending the <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> beyond the first level causal variables<a class="headerlink" href="#the-up-option-extending-the-tracepre-beyond-the-first-level-causal-variables" title="Permalink to this headline">#</a></h2>
+<span id="index-41"></span><h2><span class="section-number">1.8. </span>The up option, extending the <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> beyond the first level causal variables<a class="headerlink" href="#the-up-option-extending-the-tracepre-beyond-the-first-level-causal-variables" title="Permalink to this headline">#</a></h2>
 <p>The up option allows <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> dependencies to be followed through beyond the first level of causal variables.  Below it is extended to variables as much as three levels back, and restricted to those whose variation explains at least 20 percent of the change in the variable of which they are a right-hand-side variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -616,25 +618,29 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b6848970a8a66e769e7ed4a11bc1e7031ce2323f5546adb4c53959994bb6ca7e.png" src="../../_images/b6848970a8a66e769e7ed4a11bc1e7031ce2323f5546adb4c53959994bb6ca7e.png" />
+<img alt="../../_images/f04ad7307084fefa75bd547000eba67a9e5f344db584313101fc4c204bcad0ef.png" src="../../_images/f04ad7307084fefa75bd547000eba67a9e5f344db584313101fc4c204bcad0ef.png" />
 </div>
 </div>
 <section id="the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output">
-<span id="index-38"></span><h3><span class="section-number">1.8.1. </span>The Fokus2 option with the showtable option adds a table to the output<a class="headerlink" href="#the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output" title="Permalink to this headline">#</a></h3>
+<span id="index-42"></span><h3><span class="section-number">1.8.1. </span>The Fokus2 option with the showtable option adds a table to the output<a class="headerlink" href="#the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span><span class="mi">2027</span><span class="p">):</span>
-    <span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">fokus2</span><span class="o">=</span><span class="s1">&#39;PAKNEGDIFTOTKN PAKNECONPRVTKN PAKNECONGOVTKN PAKNYGDPMKTPKN PAKNEIMPGNFSKN&#39;</span><span class="p">,</span><span class="n">growthshow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">fokus2</span><span class="o">=</span><span class="s1">&#39;PAKNEGDIFTOTKN PAKNECONPRVTKN PAKNECONGOVTKN PAKNYGDPMKTPKN PAKNEIMPGNFSKN&#39;</span><span class="p">,</span><span class="n">growthshow</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5e55b1311d5b1b4457450f34bd1cb8781f50da200c66b1db1484c62cdaa2a825.svg" src="../../_images/5e55b1311d5b1b4457450f34bd1cb8781f50da200c66b1db1484c62cdaa2a825.svg" /></div>
+<img alt="../../_images/745abcd816026baa104a2c514436fe819dccf7eeb80e25afddedd5b8aa4371c1.svg" src="../../_images/745abcd816026baa104a2c514436fe819dccf7eeb80e25afddedd5b8aa4371c1.svg" /><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
 </div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">{index}</span> <span class="pre">single:</span> <span class="pre">Model</span> <span class="pre">Analytics;</span> <span class="pre">.tracedep()</span> <span class="pre">method</span>&#160; </code></p>
 </section>
 </section>
 <section id="tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables">
-<h2><span class="section-number">1.9. </span><code class="docutils literal notranslate"><span class="pre">.tracedep(down=xx)</span></code> traces the impact of a variable on other variables<a class="headerlink" href="#tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables" title="Permalink to this headline">#</a></h2>
+<span id="index-43"></span><h2><span class="section-number">1.9. </span><code class="docutils literal notranslate"><span class="pre">.tracedep(down=xx)</span></code> traces the impact of a variable on other variables<a class="headerlink" href="#tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables" title="Permalink to this headline">#</a></h2>
 <p>By specifying the option down=xx, the direction of the dependency graph is reversed and the chart shows the impact that the changes in the selected variable had on those which depend upon it.  Below is the impact of change in consumption on all of the variables up to 3 levels below the consumption equation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,11 +649,11 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f0a2192402c1181a20a926c00c2e6f77852c55636e470ff5c0eeb836d6c6f093.svg" src="../../_images/f0a2192402c1181a20a926c00c2e6f77852c55636e470ff5c0eeb836d6c6f093.svg" /></div>
+<img alt="../../_images/e234290fd966c30228ccf7d9b5b170d187c2cc3a8a694e40c7ddddfa5b3fab2d.svg" src="../../_images/e234290fd966c30228ccf7d9b5b170d187c2cc3a8a694e40c7ddddfa5b3fab2d.svg" /></div>
 </div>
 </section>
 <section id="modeldash-an-interactive-way-to-explore-dependencies">
-<span id="index-39"></span><h2><span class="section-number">1.10. </span><code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> An interactive way to explore dependencies<a class="headerlink" href="#modeldash-an-interactive-way-to-explore-dependencies" title="Permalink to this headline">#</a></h2>
+<span id="index-44"></span><h2><span class="section-number">1.10. </span><code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> An interactive way to explore dependencies<a class="headerlink" href="#modeldash-an-interactive-way-to-explore-dependencies" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> method (when executed in a Jupyter Notebook) generates a widget that allows you to dynamicaly adjust the arguments to the <code class="docutils literal notranslate"><span class="pre">tracepre()</span></code> and <code class="docutils literal notranslate"><span class="pre">tracedep</span></code> functions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">2026</span><span class="p">):</span>
         <span class="n">mpak</span><span class="o">.</span><span class="n">modeldash</span><span class="p">(</span><span class="s1">&#39;PAKNYGDPMKTPKN&#39;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -707,12 +713,12 @@ Dash is running on http://127.0.0.1:5001/
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../07_MoreFeatures/Targeting.html"
+       href="../05_WBModels/MoreComplexScenarios.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>A simulation that targets a specific outcome</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>More complex scenarios</p>
       </div>
     </a>
     <a class="right-next"
