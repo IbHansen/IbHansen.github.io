@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/05_WBModels/MoreComplexScenarios';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Model analytics" href="../06_ModelAnalytics/ModelStructure.html" />
+    <link rel="next" title="7. A simulation that targets a specific outcome" href="../07_MoreFeatures/Targeting.html" />
     <link rel="prev" title="5. Report writing and scenario results" href="ReportWriting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -184,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ReportWriting.html">5. Report writing and scenario results</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">6. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">7. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -632,6 +633,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/34e14977fb5369f8e881ba18f47e2b8853f07c037e8f0b61abb6e8ecf41ce3b6.png" src="../../_images/34e14977fb5369f8e881ba18f47e2b8853f07c037e8f0b61abb6e8ecf41ce3b6.png" />
+<img alt="../../_images/34e14977fb5369f8e881ba18f47e2b8853f07c037e8f0b61abb6e8ecf41ce3b6.png" src="../../_images/34e14977fb5369f8e881ba18f47e2b8853f07c037e8f0b61abb6e8ecf41ce3b6.png" />
 </div>
 </div>
 <p>Abstracting from the fact that the impact is occurring too quickly (it would take time for the substitution towards alternative sources of power to occur), the fact that impacts are fading with time suggests an error in the specification of the shock.  High domestic inflation means that the relative price change of a given Carbon price is declining over time.</p>
@@ -694,6 +696,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../../_images/c206757ff83f15977d28f5270afb33eae08b2d6c477cee847f9368913bd0546e.png" src="../../_images/c206757ff83f15977d28f5270afb33eae08b2d6c477cee847f9368913bd0546e.png" />
 <img alt="../../_images/c206757ff83f15977d28f5270afb33eae08b2d6c477cee847f9368913bd0546e.png" src="../../_images/c206757ff83f15977d28f5270afb33eae08b2d6c477cee847f9368913bd0546e.png" />
 </div>
 </div>
@@ -1185,9 +1188,9 @@ PAKGGREVCO2OER
     </tr>
     <tr>
       <th>2100</th>
-      <td>5.446008</td>
-      <td>5.446008</td>
-      <td>5.446008</td>
+      <td>5.446007</td>
+      <td>5.446007</td>
+      <td>5.446007</td>
       <td>5.694171</td>
       <td>-0.201607</td>
     </tr>
@@ -1262,10 +1265,10 @@ PAKGGREVCO2OER
     </tr>
     <tr>
       <th>2025</th>
-      <td>-41.186183</td>
-      <td>-26.992934</td>
-      <td>-10.929827</td>
-      <td>-22.167103</td>
+      <td>-41.186182</td>
+      <td>-26.992932</td>
+      <td>-10.929825</td>
+      <td>-22.167101</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1276,38 +1279,38 @@ PAKGGREVCO2OER
     </tr>
     <tr>
       <th>2096</th>
-      <td>-24.685900</td>
+      <td>-24.685909</td>
       <td>-11.690039</td>
-      <td>-5.325693</td>
-      <td>-11.352748</td>
+      <td>-5.325705</td>
+      <td>-11.352756</td>
     </tr>
     <tr>
       <th>2097</th>
-      <td>-24.542459</td>
+      <td>-24.542468</td>
       <td>-11.608037</td>
-      <td>-5.276450</td>
-      <td>-11.273056</td>
+      <td>-5.276462</td>
+      <td>-11.273065</td>
     </tr>
     <tr>
       <th>2098</th>
-      <td>-24.399557</td>
+      <td>-24.399566</td>
       <td>-11.526499</td>
-      <td>-5.227599</td>
-      <td>-11.193820</td>
+      <td>-5.227612</td>
+      <td>-11.193829</td>
     </tr>
     <tr>
       <th>2099</th>
-      <td>-24.257180</td>
+      <td>-24.257190</td>
       <td>-11.445417</td>
-      <td>-5.179132</td>
-      <td>-11.115029</td>
+      <td>-5.179145</td>
+      <td>-11.115038</td>
     </tr>
     <tr>
       <th>2100</th>
-      <td>-24.115316</td>
+      <td>-24.115326</td>
       <td>-11.364782</td>
-      <td>-5.131038</td>
-      <td>-11.036673</td>
+      <td>-5.131051</td>
+      <td>-11.036681</td>
     </tr>
   </tbody>
 </table>
@@ -1321,7 +1324,8 @@ PAKGGREVCO2OER
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/14ea26eedda92c2016f884fe517fd4d844dce8109f0039e5ae4b2e9d4c202d68.png" src="../../_images/14ea26eedda92c2016f884fe517fd4d844dce8109f0039e5ae4b2e9d4c202d68.png" />
+<img alt="../../_images/b1e56c6968f6ceb70bdf8b49f31bd332115100a08b659947899aa6afcc72e4d6.png" src="../../_images/b1e56c6968f6ceb70bdf8b49f31bd332115100a08b659947899aa6afcc72e4d6.png" />
+<img alt="../../_images/b1e56c6968f6ceb70bdf8b49f31bd332115100a08b659947899aa6afcc72e4d6.png" src="../../_images/b1e56c6968f6ceb70bdf8b49f31bd332115100a08b659947899aa6afcc72e4d6.png" />
 </div>
 </div>
 <p>The modified model, which preserves the real value of the carbon tax has a permanent and substantive negative effect on emissions. The impact is not at an unchanging level, reflecting in part adaptation within the economy. Of particular import is what is being done with the revenues from the Carbon tax. As the structure of GDP (shifts to less carbon intensive activities) carbon tax revenues fall even as the Carbon Tax rate rises. Note, the percent deviation of emissions tends to decrease over time in this scenario principally because the level of activity (GDP) is higher with the Carbon Tax than without it. As a result,  emissions are higher than they would have been had GDP remained unchanged. For the Pakistan model, the positive impact of the Carbon tax is mainly explained by co-benefits, notably reduced reliance on more distortive taxes such as payroll taxes and because of reductions in informality (see <span id="id3">Burns <em>et al.</em> [<a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">2021</a>]</span> for more details how these effects operate in the Pakistan model).</p>
@@ -1370,11 +1374,11 @@ PAKGGREVCO2OER
       </div>
     </a>
     <a class="right-next"
-       href="../06_ModelAnalytics/ModelStructure.html"
+       href="../07_MoreFeatures/Targeting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Model analytics</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>A simulation that targets a specific outcome</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

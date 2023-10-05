@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Analyzing the impact of a shock" href="AttributionSomeFeatures.html" />
-    <link rel="prev" title="6. More complex scenarios" href="../05_WBModels/MoreComplexScenarios.html" />
+    <link rel="prev" title="7. A simulation that targets a specific outcome" href="../07_MoreFeatures/Targeting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -184,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">7. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="current nav bd-sidenav">
@@ -487,7 +488,7 @@ Number of endogeneous variables         :                  378
 </div>
 </section>
 <section id="model-structure">
-<h2><span class="section-number">1.3. </span>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">#</a></h2>
+<span id="id3"></span><h2><span class="section-number">1.3. </span>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">#</a></h2>
 <p>A quick way to visualize the structure of a model is to plot its <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_matrix">adjacency matrix</a>.</p>
 <p>The adjacency matrix plots the relationships between endogenous variables in the model, dividing them into one or more simultaneous blocks and one or more recursive blocks.</p>
 <p>Below is the adjacency matrix for the Pakistan model. Variables in the red square block (simultaneous block) depend on one or more variables that in turn depends upon them, requiring the mode to solve for their values simultaneously.  The variables in the green triangles (iterative blocks)  do not enter directly or indirectly as an argument in the variables that determine them and therefore can be solved in one iteration once the values for the simultaneous variables are determined.</p>
@@ -498,7 +499,7 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/42744a6f567943ebb45fe30856f6a0753162e6db47546eddf96b8394c96a0ca6.png" src="../../_images/42744a6f567943ebb45fe30856f6a0753162e6db47546eddf96b8394c96a0ca6.png" />
+<img alt="../../_images/d1d3e937a8fabac3ce8bdeb92557ea7233bde566f3efe0c2b5de3f86cba6b6c4.png" src="../../_images/d1d3e937a8fabac3ce8bdeb92557ea7233bde566f3efe0c2b5de3f86cba6b6c4.png" />
 </div>
 </div>
 <span class="target" id="index-33"></span><span class="target" id="index-34"></span><span class="target" id="index-35"></span></section>
@@ -543,7 +544,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c1650c2e24d31433d2f3b09f9080d20368c20261872c32e10a4e5c8e4259b701.svg" src="../../_images/c1650c2e24d31433d2f3b09f9080d20368c20261872c32e10a4e5c8e4259b701.svg" /></div>
+<img alt="../../_images/f0bf209024ed95d62970d6eee753f9889f112a024476a18533eae17bd210fa86.svg" src="../../_images/f0bf209024ed95d62970d6eee753f9889f112a024476a18533eae17bd210fa86.svg" /></div>
 </div>
 <p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and reveals the relative importance of each variable in the change of the dependent variable.</p>
 </section>
@@ -567,6 +568,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" src="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" />
+<img alt="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" src="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" />
 </div>
 </div>
 <span class="target" id="index-37"></span><span class="target" id="index-38"></span></section>
@@ -581,7 +583,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/93ff637d91b69c740573dc450a46dced7aab0d4a3abfd5a6097b0ed782dce9e4.png" src="../../_images/93ff637d91b69c740573dc450a46dced7aab0d4a3abfd5a6097b0ed782dce9e4.png" />
+<img alt="../../_images/6aa7ed3e0ec6fad79ca3376da58fd5d590c867e68dbce89141fa52fd062a2b74.png" src="../../_images/6aa7ed3e0ec6fad79ca3376da58fd5d590c867e68dbce89141fa52fd062a2b74.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -604,7 +606,7 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ab708436238dbc800f4b643bd36bd808764947c00a69f7738b56a63470be9757.png" src="../../_images/ab708436238dbc800f4b643bd36bd808764947c00a69f7738b56a63470be9757.png" />
+<img alt="../../_images/80a1eff225a1eec9584a9f0c0e41732817100f83148ef4fab5633121e0b72efa.png" src="../../_images/80a1eff225a1eec9584a9f0c0e41732817100f83148ef4fab5633121e0b72efa.png" />
 </div>
 </div>
 </section>
@@ -618,7 +620,7 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f04ad7307084fefa75bd547000eba67a9e5f344db584313101fc4c204bcad0ef.png" src="../../_images/f04ad7307084fefa75bd547000eba67a9e5f344db584313101fc4c204bcad0ef.png" />
+<img alt="../../_images/a947316cca883870c274782dc2c3c2025f02eaee8fad22b5b2daf8ba088d5a5a.png" src="../../_images/a947316cca883870c274782dc2c3c2025f02eaee8fad22b5b2daf8ba088d5a5a.png" />
 </div>
 </div>
 <section id="the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output">
@@ -631,7 +633,7 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/745abcd816026baa104a2c514436fe819dccf7eeb80e25afddedd5b8aa4371c1.svg" src="../../_images/745abcd816026baa104a2c514436fe819dccf7eeb80e25afddedd5b8aa4371c1.svg" /><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+<img alt="../../_images/07e11b43ea327e2d577d1db6ec40f1bb07fd5dd47633e711a4bafb828aa19742.svg" src="../../_images/07e11b43ea327e2d577d1db6ec40f1bb07fd5dd47633e711a4bafb828aa19742.svg" /><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
 </div>
@@ -649,7 +651,7 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e234290fd966c30228ccf7d9b5b170d187c2cc3a8a694e40c7ddddfa5b3fab2d.svg" src="../../_images/e234290fd966c30228ccf7d9b5b170d187c2cc3a8a694e40c7ddddfa5b3fab2d.svg" /></div>
+<img alt="../../_images/dc6774d72f5ab382a153642a8dbe0f9bf908af0e62519c4313a830848b43606d.svg" src="../../_images/dc6774d72f5ab382a153642a8dbe0f9bf908af0e62519c4313a830848b43606d.svg" /></div>
 </div>
 </section>
 <section id="modeldash-an-interactive-way-to-explore-dependencies">
@@ -673,7 +675,8 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 Dash is running on http://127.0.0.1:5001/
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dash app running on http://127.0.0.1:5001/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No Dash, Address &#39;http://127.0.0.1:5001&#39; already in use.
+    Try passing a different port to run_server.
 </pre></div>
 </div>
 </div>
@@ -713,12 +716,12 @@ Dash is running on http://127.0.0.1:5001/
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../05_WBModels/MoreComplexScenarios.html"
+       href="../07_MoreFeatures/Targeting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>More complex scenarios</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>A simulation that targets a specific outcome</p>
       </div>
     </a>
     <a class="right-next"
