@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="212pt" height="123pt" viewBox="0.00 0.00 211.60 122.50">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 118.5)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-118.5 207.6,-118.5 207.6,4 -4,4"/>
+<text text-anchor="middle" x="101.8" y="-7.2" font-family="Times New Roman,serif" font-size="14.00">GDP</text>
+<!-- GDP -->
+<g id="node1" class="node">
+<title>GDP</title>
+<g id="a_node1"><a xlink:title="GDP
+FRML &lt;&gt; GDP = CONSUMPTION+INVESTMENT   $">
+<polygon fill="red" stroke="black" points="203.6,-87.5 149.6,-87.5 149.6,-51.5 203.6,-51.5 203.6,-87.5"/>
+<text text-anchor="start" x="161.23" y="-64.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">GDP:</text>
+</a>
+</g>
+</g>
+<!-- CONSUMPTION -->
+<g id="node2" class="node">
+<title>CONSUMPTION</title>
+<g id="a_node2"><a xlink:title="CONSUMPTION
+FRML &lt;&gt; CONSUMPTION = MUL * GDP(-1) $">
+<polygon fill="#63b8ff" stroke="black" points="113.6,-114.5 0,-114.5 0,-78.5 113.6,-78.5 113.6,-114.5"/>
+<text text-anchor="start" x="5.8" y="-91.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">CONSUMPTION:</text>
+</a>
+</g>
+</g>
+<!-- CONSUMPTION&#45;&gt;GDP -->
+<g id="edge1" class="edge">
+<title>CONSUMPTION-&gt;GDP</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M113.94,-83.63C122.7,-81.62 131.55,-79.6 139.7,-77.73"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="140.27,-81.19 149.24,-75.54 138.71,-74.37 140.27,-81.19"/>
+</a>
+</g>
+</g>
+<!-- INVESTMENT -->
+<g id="node3" class="node">
+<title>INVESTMENT</title>
+<g id="a_node3"><a xlink:title="INVESTMENT
+FRML &lt;&gt; INVESTMENT = ACC * (CONSUMPTION-CONSUMPTION(-1))  + EXO_INVESTMENT $">
+<polygon fill="#63b8ff" stroke="black" points="107.6,-60.5 6,-60.5 6,-24.5 107.6,-24.5 107.6,-60.5"/>
+<text text-anchor="start" x="11.8" y="-37.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">INVESTMENT:</text>
+</a>
+</g>
+</g>
+<!-- INVESTMENT&#45;&gt;GDP -->
+<g id="edge2" class="edge">
+<title>INVESTMENT-&gt;GDP</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M108.1,-54.03C118.7,-56.46 129.68,-58.97 139.62,-61.25"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="138.64,-64.62 149.17,-63.44 140.21,-57.8 138.64,-64.62"/>
+</a>
+</g>
+</g>
+</g>
+</svg>
