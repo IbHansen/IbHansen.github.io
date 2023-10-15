@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of the <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
 </ul>
 </li>
@@ -2020,15 +2020,15 @@ Growth
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the below .upd() command</p>
-<div class="highlight-dfres notranslate"><div class="highlight"><pre><span></span>&lt;2022 2023&gt; c = 200 
-&lt;2022 2023&gt; d = 300  
-&lt;2022 2023&gt; e = 400  --no_keep_growth 
-&#39;&#39;&#39;,keep_growth=True)  # &lt;=  Set keep_growth to True for the entirety of the command, 
-                       # except for e where it is overridden by the --no_keep_growth flag```
-
-There are two keep_growth commands.  The final one is the global option (global to the execution of this update).  It is passed as an argument to the .upd() method &quot;,keep_growth=True&quot; and applies to every line in the command string (unless overridden).  In contrast, the single line command --no_keep_growth is inside the string passed to .upd() and applies only to the line on which it occurs.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dfres</span> <span class="o">=</span> <span class="n">dftest</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;2022 2023&gt; c = 200 </span>
+<span class="s1">&lt;2022 2023&gt; d = 300  </span>
+<span class="s1">&lt;2022 2023&gt; e = 400  --no_keep_growth </span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">,</span><span class="n">keep_growth</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># &lt;=  Set keep_growth to True for the entirety of the command, </span>
+                       <span class="c1"># except for e where it is overridden by the --no_keep_growth flag</span>
 </pre></div>
 </div>
+<p>There are two keep_growth commands.  The final one is the global option (global to the execution of this update).  It is passed as an argument to the .upd() method “,keep_growth=True” and applies to every line in the command string (unless overridden).  In contrast, the single line command –no_keep_growth is inside the string passed to .upd() and applies only to the line on which it occurs.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

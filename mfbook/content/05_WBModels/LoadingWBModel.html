@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of the <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
 </ul>
 </li>
@@ -437,11 +437,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="highlight-{index}single: notranslate" id="index-0"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="working-with-pakmod-under-modelflow">
-<h1><span class="section-number">2. </span>Working with PakMod under modelflow<a class="headerlink" href="#working-with-pakmod-under-modelflow" title="Permalink to this headline">#</a></h1>
+  <span class="target" id="index-0"></span><section class="tex2jax_ignore mathjax_ignore" id="working-with-pakmod-under-modelflow">
+<span id="index-1"></span><h1><span class="section-number">2. </span>Working with PakMod under modelflow<a class="headerlink" href="#working-with-pakmod-under-modelflow" title="Permalink to this headline">#</a></h1>
 <p>The basic method for working with any model is the same. Indeed the initial steps followed here are the same as were followed during the simple model discussion.</p>
 <p>Process:</p>
 <ol class="arabic simple">
@@ -493,9 +490,9 @@ document.write(`
         </style>
         </div></div>
 </div>
-<span class="target" id="index-1"></span><span class="target" id="index-2"></span></section>
+<span class="target" id="index-2"></span><span class="target" id="index-3"></span></section>
 <section id="load-the-model-load-a-pre-existing-model-data-and-descriptions">
-<span id="index-3"></span><h2><span class="section-number">2.3. </span>Load the model: Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-the-model-load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
+<span id="index-4"></span><h2><span class="section-number">2.3. </span>Load the model: Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-the-model-load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
 <p>A pre-existing World Bank model can be loaded into python using the the <code class="docutils literal notranslate"><span class="pre">model.modelload()</span></code> method.</p>
 <section id="the-modelload-method">
 <h3><span class="section-number">2.3.1. </span>The <code class="docutils literal notranslate"><span class="pre">.modelload()</span></code> method<a class="headerlink" href="#the-modelload-method" title="Permalink to this headline">#</a></h3>
@@ -528,7 +525,7 @@ document.write(`
 </section>
 </section>
 <section id="extracting-information-about-the-model">
-<span id="index-4"></span><h2><span class="section-number">2.4. </span>Extracting information about the model<a class="headerlink" href="#extracting-information-about-the-model" title="Permalink to this headline">#</a></h2>
+<span id="index-5"></span><h2><span class="section-number">2.4. </span>Extracting information about the model<a class="headerlink" href="#extracting-information-about-the-model" title="Permalink to this headline">#</a></h2>
 <p>The newly loaded python object  <code class="docutils literal notranslate"><span class="pre">mpak</span></code> is an instance of the model class and as such inherits the <code class="docutils literal notranslate"><span class="pre">methods</span></code> (functions) and <code class="docutils literal notranslate"><span class="pre">properties</span></code> (data) of that class. To learn about the model there are a variety of methods that can be used to extract information about the model and its data.</p>
 <p>A World Bank model in <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> will contain a wide range of objects.</p>
 <ul class="simple">
@@ -573,9 +570,9 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 </div>
-<span class="target" id="index-5"></span></section>
+<span class="target" id="index-6"></span></section>
 <section id="information-about-variables">
-<span id="index-6"></span><h2><span class="section-number">2.5. </span>Information about variables<a class="headerlink" href="#information-about-variables" title="Permalink to this headline">#</a></h2>
+<span id="index-7"></span><h2><span class="section-number">2.5. </span>Information about variables<a class="headerlink" href="#information-about-variables" title="Permalink to this headline">#</a></h2>
 <p>The model object <code class="docutils literal notranslate"><span class="pre">mpak</span></code> contains lists of all the variables that form part of the model, and these lists can be interrogated to garner information about the model.  The Table below indicates some of the most important of these.  The variables for which information is sought can be specified directly or through a wildcard specification (see note).</p>
 <table class="colwidths-auto table">
 <thead>
@@ -627,7 +624,7 @@ PAKNYGDPPOTLKN : Potential Output, constant LCU
 </div>
 </div>
 </div>
-<span class="target" id="index-7"></span><div class="admonition-box-3-world-bank-mnemonics admonition" id="index-8">
+<span class="target" id="index-8"></span><div class="admonition-box-3-world-bank-mnemonics admonition" id="index-9">
 <p class="admonition-title">Box 3. World Bank Mnemonics</p>
 <p>A typical World Bank model will have in excess of 300 variables.  Each has a mnemonic that is structured in a specific way, The root for almost all are 14 characters long (some special variables have additional characters appended to this root) (see discussion in section).</p>
 <div class="math notranslate nohighlight">
@@ -723,8 +720,8 @@ PAKNYGDPPOTLKN : Potential Output, constant LCU
 </table>
 </div>
 <p>If executed, the command <code class="docutils literal notranslate"><span class="pre">mpak['*'].des</span></code> would return a dictionary of all the mnemonics and descriptions of all the variables in the <code class="docutils literal notranslate"><span class="pre">mpak</span></code> model object.</p>
-<span class="target" id="index-9"></span><span class="target" id="index-10"></span><section id="the-operator-searching-on-the-variable-description">
-<span id="index-11"></span><h3><span class="section-number">2.5.1. </span>The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator – searching on the variable description<a class="headerlink" href="#the-operator-searching-on-the-variable-description" title="Permalink to this headline">#</a></h3>
+<span class="target" id="index-10"></span><span class="target" id="index-11"></span><section id="the-operator-searching-on-the-variable-description">
+<span id="index-12"></span><h3><span class="section-number">2.5.1. </span>The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator – searching on the variable description<a class="headerlink" href="#the-operator-searching-on-the-variable-description" title="Permalink to this headline">#</a></h3>
 <p>The same methods can be used to retrieve information about variables, based on their descriptions (vs mnemonic), by pre-pending the search string with the  <code class="docutils literal notranslate"><span class="pre">!</span></code> operator.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -746,10 +743,10 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 </div>
-<span class="target" id="index-12"></span></section>
+<span class="target" id="index-13"></span></section>
 </section>
 <section id="groups">
-<span id="index-13"></span><h2><span class="section-number">2.6. </span>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">#</a></h2>
+<span id="index-14"></span><h2><span class="section-number">2.6. </span>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> incorporates a variant of the idea of groups from <code class="docutils literal notranslate"><span class="pre">EViews</span></code>.  In <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> the groups defined in an imported EViews workfile are converted into entries in a dictionary called <code class="docutils literal notranslate"><span class="pre">var_groups</span></code> which can be interrogated, added to and amended like any dictionary in python.</p>
 <p>The command
 <code class="docutils literal notranslate"><span class="pre">mpak.var_groups</span></code> will return all of the groups already defined in mpak.</p>
@@ -774,7 +771,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 </div>
-<span class="target" id="index-14"></span><p id="index-15">A group can be added to the dictionary by giving it a unique identifier (key) and associating with it a string defining the group, using a wildcard specification or just a space de-limited list of mnemonics.</p>
+<span class="target" id="index-15"></span><p id="index-16">A group can be added to the dictionary by giving it a unique identifier (key) and associating with it a string defining the group, using a wildcard specification or just a space de-limited list of mnemonics.</p>
 <p>Thus the command</p>
 <p><code class="docutils literal notranslate"><span class="pre">mpak.var_groups['Mygroup]='PAKGGREV*CN</span> <span class="pre">PAKGGEBALOVRLCN'</span></code></p>
 <div class="cell docutils container">
@@ -785,8 +782,8 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 </div>
-<span class="target" id="index-16"></span><section id="the-operator">
-<span id="index-17"></span><h3><span class="section-number">2.6.1. </span>The # operator<a class="headerlink" href="#the-operator" title="Permalink to this headline">#</a></h3>
+<span class="target" id="index-17"></span><section id="the-operator">
+<span id="index-18"></span><h3><span class="section-number">2.6.1. </span>The # operator<a class="headerlink" href="#the-operator" title="Permalink to this headline">#</a></h3>
 <p>The model object can also be interrogated to determine the contents of a group using the # operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -824,10 +821,10 @@ PAKGGREVTRDECN : Trade Traxes
 </div>
 </div>
 </div>
-<span class="target" id="index-18"></span></section>
+<span class="target" id="index-19"></span></section>
 </section>
 <section id="information-about-data">
-<span id="index-19"></span><h2><span class="section-number">2.7. </span>Information about data<a class="headerlink" href="#information-about-data" title="Permalink to this headline">#</a></h2>
+<span id="index-20"></span><h2><span class="section-number">2.7. </span>Information about data<a class="headerlink" href="#information-about-data" title="Permalink to this headline">#</a></h2>
 <p>The command <code class="docutils literal notranslate"><span class="pre">mpak[#MyGroups]</span></code> invokes a widget that shows all of the data in the group and various representations (level and growth rates) both as tables and charts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -839,7 +836,7 @@ PAKGGREVTRDECN : Trade Traxes
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "15ae8ef3580e4e97bbf219a389650e78", "version_major": 2, "version_minor": 0}</script><div class="output text_html"></div></div>
 </div>
 <p>Alternatively just the graphs and or tables can be returned, by appending the <code class="docutils literal notranslate"><span class="pre">.df</span></code> method(tables) or <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> methods (charts).  Modifying the command further by including the <code class="docutils literal notranslate"><span class="pre">.pct</span></code> command (to show growth rates) and <code class="docutils literal notranslate"><span class="pre">mul100</span></code> to multiply them by 100 would display the data as growth rates.</p>
-<span class="target" id="index-20"></span><div class="cell docutils container" id="index-21">
+<span class="target" id="index-21"></span><div class="cell docutils container" id="index-22">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;#Mygroup&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">df</span>
 </pre></div>
@@ -1028,7 +1025,7 @@ PAKGGREVTRDECN : Trade Traxes
 </table>
 </div></div></div>
 </div>
-<span class="target" id="index-22"></span><div class="cell docutils container" id="index-23">
+<span class="target" id="index-23"></span><div class="cell docutils container" id="index-24">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;#Mygroup&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">df</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># round restricts the display to 2 decimal points</span>
 </pre></div>
@@ -1217,7 +1214,7 @@ PAKGGREVTRDECN : Trade Traxes
 </table>
 </div></div></div>
 </div>
-<span class="target" id="index-24"></span><div class="cell docutils container" id="index-25">
+<span class="target" id="index-25"></span><div class="cell docutils container" id="index-26">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;#Mygroup&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Plot of Mygroup</span><span class="se">\n</span><span class="s2">growth rates&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1233,7 +1230,7 @@ PAKGGREVTRDECN : Trade Traxes
 <p class="admonition-title">Note</p>
 <p>When using a <code class="docutils literal notranslate"><span class="pre">with</span></code> clause, an explicit print statement is required.</p>
 </div>
-<span class="target" id="index-26"></span><div class="cell docutils container" id="index-27">
+<span class="target" id="index-27"></span><div class="cell docutils container" id="index-28">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2030</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;#Mygroup&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">df</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
@@ -1422,8 +1419,8 @@ PAKGGREVTRDECN : Trade Traxes
 <p>101 rows × 7 columns</p>
 </div></div></div>
 </div>
-<span class="target" id="index-28"></span><section id="names-property">
-<span id="index-29"></span><h3><span class="section-number">2.7.1. </span><code class="docutils literal notranslate"><span class="pre">.names</span></code> property<a class="headerlink" href="#names-property" title="Permalink to this headline">#</a></h3>
+<span class="target" id="index-29"></span><section id="names-property">
+<span id="index-30"></span><h3><span class="section-number">2.7.1. </span><code class="docutils literal notranslate"><span class="pre">.names</span></code> property<a class="headerlink" href="#names-property" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">mpak['PAKNECON*XN'].names</span></code></p>
 <p>Return the names (mnemonmics) of all variables that begin <code class="docutils literal notranslate"><span class="pre">PAKNECON</span></code> and end <code class="docutils literal notranslate"><span class="pre">XN</span></code> – i.e. Price deflators for various types of consumption demand.</p>
 <div class="cell docutils container">
@@ -1438,9 +1435,9 @@ PAKGGREVTRDECN : Trade Traxes
 </div>
 </div>
 </div>
-<span class="target" id="index-30"></span></section>
+<span class="target" id="index-31"></span></section>
 <section id="the-des-property">
-<span id="index-31"></span><h3><span class="section-number">2.7.2. </span>The <code class="docutils literal notranslate"><span class="pre">.des</span></code> property<a class="headerlink" href="#the-des-property" title="Permalink to this headline">#</a></h3>
+<span id="index-32"></span><h3><span class="section-number">2.7.2. </span>The <code class="docutils literal notranslate"><span class="pre">.des</span></code> property<a class="headerlink" href="#the-des-property" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">mpak['PAKNECONPRVT?N'].des</span></code></p>
 <p>Returns a dictionary comprised of the mnemonics and the descriptions of all the variables that begin <code class="docutils literal notranslate"><span class="pre">PAKNECONPRVT</span></code> and end <code class="docutils literal notranslate"><span class="pre">N</span></code>, but have only one character between the T and the N.</p>
 <div class="cell docutils container">
@@ -1457,9 +1454,9 @@ PAKNECONPRVTXN : Implicit LCU defl., Pvt. Cons., 2000 = 1
 </div>
 </div>
 </div>
-<span class="target" id="index-32"></span><span class="target" id="index-33"></span></section>
+<span class="target" id="index-33"></span><span class="target" id="index-34"></span></section>
 <section id="var-description-method">
-<span id="index-34"></span><h3><span class="section-number">2.7.3. </span><code class="docutils literal notranslate"><span class="pre">.var_description</span></code> method<a class="headerlink" href="#var-description-method" title="Permalink to this headline">#</a></h3>
+<span id="index-35"></span><h3><span class="section-number">2.7.3. </span><code class="docutils literal notranslate"><span class="pre">.var_description</span></code> method<a class="headerlink" href="#var-description-method" title="Permalink to this headline">#</a></h3>
 <p>The property <code class="docutils literal notranslate"><span class="pre">.var_description</span></code> returns the descriptor of all variables.  Modified to a specific variable it returns the description of that one variable.  <strong>This method does not accept wildcards</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1474,7 +1471,7 @@ PAKNECONPRVTXN : Implicit LCU defl., Pvt. Cons., 2000 = 1
 </div>
 </div>
 </div>
-<span class="target" id="index-35"></span><div class="cell docutils container" id="index-36">
+<span class="target" id="index-36"></span><div class="cell docutils container" id="index-37">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNECONPRVTKN</span><span class="o">.</span><span class="n">frml</span>
 </pre></div>
@@ -1504,9 +1501,9 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </section>
 </section>
 <section id="information-about-equations">
-<span id="index-37"></span><h2><span class="section-number">2.8. </span>Information about equations<a class="headerlink" href="#information-about-equations" title="Permalink to this headline">#</a></h2>
-<span class="target" id="index-38"></span><span class="target" id="index-39"></span><span class="target" id="index-40"></span><section id="the-endogene-property">
-<span id="index-41"></span><h3><span class="section-number">2.8.1. </span>The <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property<a class="headerlink" href="#the-endogene-property" title="Permalink to this headline">#</a></h3>
+<span id="index-38"></span><h2><span class="section-number">2.8. </span>Information about equations<a class="headerlink" href="#information-about-equations" title="Permalink to this headline">#</a></h2>
+<span class="target" id="index-39"></span><span class="target" id="index-40"></span><span class="target" id="index-41"></span><section id="the-endogene-property">
+<span id="index-42"></span><h3><span class="section-number">2.8.1. </span>The <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property<a class="headerlink" href="#the-endogene-property" title="Permalink to this headline">#</a></h3>
 <p>The  <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property returns a set of all variables in the model that are endogenous (have an equation). It can also be used to test whether a specific mnemonic has an equation associated with it. The Pakistan model has a large number of endogenous variables so the results here have been truncated to the first 20 by converting the set into a list and then using the slice operator <code class="docutils literal notranslate"><span class="pre">:</span></code> to show just the first 20.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -1543,7 +1540,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 </div>
-<span class="target" id="index-42"></span><p id="index-43">The expression <code class="docutils literal notranslate"><span class="pre">'PAKNECONPRVTKN'</span> <span class="pre">in</span> <span class="pre">mpak.endogene</span></code> returns True if the passed mnemonic is in the list returned by <code class="docutils literal notranslate"><span class="pre">mpak.endogene</span></code>.</p>
+<span class="target" id="index-43"></span><p id="index-44">The expression <code class="docutils literal notranslate"><span class="pre">'PAKNECONPRVTKN'</span> <span class="pre">in</span> <span class="pre">mpak.endogene</span></code> returns True if the passed mnemonic is in the list returned by <code class="docutils literal notranslate"><span class="pre">mpak.endogene</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;PAKNECONPRVTKN&#39;</span> <span class="ow">in</span> <span class="n">mpak</span><span class="o">.</span><span class="n">endogene</span>
@@ -1556,10 +1553,10 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 </div>
-<span class="target" id="index-44"></span></section>
+<span class="target" id="index-45"></span></section>
 </section>
 <section id="retrieving-info-on-equations">
-<span id="index-45"></span><h2><span class="section-number">2.9. </span>Retrieving info on equations<a class="headerlink" href="#retrieving-info-on-equations" title="Permalink to this headline">#</a></h2>
+<span id="index-46"></span><h2><span class="section-number">2.9. </span>Retrieving info on equations<a class="headerlink" href="#retrieving-info-on-equations" title="Permalink to this headline">#</a></h2>
 <p>There are three functions to extract the equations from a model.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1580,8 +1577,8 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </tbody>
 </table>
 <p>The equation for consumption in <code class="docutils literal notranslate"><span class="pre">mpak</span></code> we see that it follows something very close to this formulation.</p>
-<span class="target" id="index-46"></span><span class="target" id="index-47"></span><section id="the-eviews-method">
-<span id="index-48"></span><h3><span class="section-number">2.9.1. </span>The <code class="docutils literal notranslate"><span class="pre">.eviews</span></code> method<a class="headerlink" href="#the-eviews-method" title="Permalink to this headline">#</a></h3>
+<span class="target" id="index-47"></span><span class="target" id="index-48"></span><section id="the-eviews-method">
+<span id="index-49"></span><h3><span class="section-number">2.9.1. </span>The <code class="docutils literal notranslate"><span class="pre">.eviews</span></code> method<a class="headerlink" href="#the-eviews-method" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">mpak['PAKNECONPRVTKN'].eviews</span></code> command returns the equations before they were normalized. In most cases this is a slightly more legible form. Here following the EViews syntax, <span class="math notranslate nohighlight">\(\Delta ln()\)</span> is written as dlog().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1595,9 +1592,9 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 </div>
-<span class="target" id="index-49"></span><span class="target" id="index-50"></span><span class="target" id="index-51"></span></section>
+<span class="target" id="index-50"></span><span class="target" id="index-51"></span><span class="target" id="index-52"></span></section>
 <section id="the-frml-method">
-<span id="index-52"></span><h3><span class="section-number">2.9.2. </span>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method<a class="headerlink" href="#the-frml-method" title="Permalink to this headline">#</a></h3>
+<span id="index-53"></span><h3><span class="section-number">2.9.2. </span>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method<a class="headerlink" href="#the-frml-method" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method returns the normalized equation that is actually used in modelflow.  In this instance it is not called for the results of a search operation but by referencing directly the equation (which is itself a property of the mpak model).</p>
 <p>Note that following the normalized equation is a listing of all the dependent variables of the equation.</p>
 <div class="cell docutils container">
@@ -1627,9 +1624,9 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 </div>
-<span class="target" id="index-53"></span></section>
+<span class="target" id="index-54"></span></section>
 <section id="the-show-method">
-<span id="index-54"></span><h3><span class="section-number">2.9.3. </span>The <code class="docutils literal notranslate"><span class="pre">.show</span></code> method<a class="headerlink" href="#the-show-method" title="Permalink to this headline">#</a></h3>
+<span id="index-55"></span><h3><span class="section-number">2.9.3. </span>The <code class="docutils literal notranslate"><span class="pre">.show</span></code> method<a class="headerlink" href="#the-show-method" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">.show</span></code> method returns:</p>
 <ol class="arabic simple">
 <li><p>The description of the variable</p></li>
@@ -4690,10 +4687,10 @@ Values :
 </div>
 </div>
 </div>
-<span class="target" id="index-55"></span></section>
+<span class="target" id="index-56"></span></section>
 </section>
 <section id="behavioural-equations-in-the-mfmod-framework">
-<span id="index-56"></span><h2><span class="section-number">2.10. </span>Behavioural equations in the MFMod framework<a class="headerlink" href="#behavioural-equations-in-the-mfmod-framework" title="Permalink to this headline">#</a></h2>
+<span id="index-57"></span><h2><span class="section-number">2.10. </span>Behavioural equations in the MFMod framework<a class="headerlink" href="#behavioural-equations-in-the-mfmod-framework" title="Permalink to this headline">#</a></h2>
 <p>Recall a behavioural equation determines the value of an endogenous variable. For many of the variables in Wold Bank models, behavioural functions are estimated using an Error Correction Framework that splits the equation into a theoretically determined long run component and a more idiosyncratic short-run component.</p>
 <p>Sometimes these equations can be difficult to read. However, with a bit of experience they become easier to read  (notably as concerns the of reading WBG mnemonics).</p>
 <p>Looking at the EViews representation of the consumption function:</p>
@@ -4754,73 +4751,48 @@ Values :
 &amp;+0.030 + 0.016*D^{2010}_t-0.3*\bigg(r^{policy}_t/100-\Delta log(CON^{XN}_{t})\bigg) -CON^{KN_AF}_t
 \end{align*}\]</div>
 <p>Where in this instance the short-run elasticity of consumption to disposable income is .76 , and the short run elasticity of consumption to the real interest rate is -0.3.</p>
-<div class="highlight-{Admonition}Box notranslate" id="index-57"><div class="highlight"><pre><span></span>
-The ECM approach used in World Bank models is described in {cite:p}`wickens_dynamic_1988`, and addresses the above challenge by modelling both the long-run relationship and the short-run behaviour and brings them together into one equation.
-
-The ECM specification is therefore a single equation comprised of two parts (the long-run relationship, and the short-run relationship).
-
-Consider as an example two variables say consumption and disposable income.  Both have an underlying trend or in the parlance are co-integrated to degree 1.  For simplicity we call them y and x.
-
-**The short run relationship**
-
-In its simplest form we might have a short run relationship between the growth rates of our two variables such that:
-
-$$\Delta ln(Y_t) = \alpha + \beta \Delta ln(X_t) +\epsilon_t$$
-
-or substituting lower case letters for the logged values.
-
-$$\Delta y_t = \alpha + \beta \Delta x_t +\epsilon_t$$
-
-
-
-**The long run equation**
-
-
-The long run relates the level of the two (or more) variables.  A simplified version of that equation can be written as, which for $\beta=1$ simplifies to x is some ratio ($\alpha$) of y:
-
-$$Y_t=αX_t^β+ \eta_t$$
-
-
-Rewriting this (in logarithms) it can be expressed as:
-
-$$y_t = ln⁡(α) + βx_t + \eta_t$$
-
-
-**The long run equation in the steady state**
-
-Note that in the steady state the expected value of the error term in the long run equation is zero ($\eta_t=0 $) so in those conditions the long run relationship can be simplified to:
-
-$$y_t=ln⁡(α)+\beta x_t$$
-
-
-or equivalently (substituting A for the log of $\alpha$).
-
-$$y_t-A-βx_t=0$$
-
-Moreover if this expression is multiplied by some arbitrary constant, say $-\lambda$, it would still equal zero.
-
-$$-\lambda(y_t -A-βx_t)$$ 
-
-and in the steady state this will also be true for the lagged variables 
-
-$$-\lambda(y_{t-1}- A - βx_{t-1})$$ 
-
-
-
-**Putting it together**
-
-From before we have the short run equation:
-
-$$\Delta y_t = \alpha + \beta \Delta x_t +\epsilon_t$$
-
-Inserting the steady state expression for the long-run into the short run equation makes no difference (in the long run) because in the long run it is equal to zero.
-
-$$\Delta y_t = -\lambda(y_{t-1}-A-βx_{t-1})  + \alpha + \beta \Delta x_t +\epsilon_t$$
-
-When the model is not in the steady state the expression $y_{t-1}-A-βx_{t-1}$ is of course the error term from the long run equation (a measure of how far the dependent variable is from equilibrium).  
-</pre></div>
+<div class="admonition-box-1-1-the-ecm-specification admonition" id="index-58">
+<p class="admonition-title">Box 1.1  The ECM specification</p>
+<p>The ECM approach used in World Bank models is described in <span id="id1">[<a class="reference internal" href="../../Reference.html#id16" title="M. R. Wickens and T. S. Breusch. Dynamic Specification, the Long-Run and the Estimation of Transformed Regression Models. The Economic Journal, 98:189–205, April 1988.">Wickens and Breusch, 1988</a>]</span>, and addresses the above challenge by modelling both the long-run relationship and the short-run behaviour and brings them together into one equation.</p>
+<p>The ECM specification is therefore a single equation comprised of two parts (the long-run relationship, and the short-run relationship).</p>
+<p>Consider as an example two variables say consumption and disposable income.  Both have an underlying trend or in the parlance are co-integrated to degree 1.  For simplicity we call them y and x.</p>
+<p><strong>The short run relationship</strong></p>
+<p>In its simplest form we might have a short run relationship between the growth rates of our two variables such that:</p>
+<div class="math notranslate nohighlight">
+\[\Delta ln(Y_t) = \alpha + \beta \Delta ln(X_t) +\epsilon_t\]</div>
+<p>or substituting lower case letters for the logged values.</p>
+<div class="math notranslate nohighlight">
+\[\Delta y_t = \alpha + \beta \Delta x_t +\epsilon_t\]</div>
+<p><strong>The long run equation</strong></p>
+<p>The long run relates the level of the two (or more) variables.  A simplified version of that equation can be written as, which for <span class="math notranslate nohighlight">\(\beta=1\)</span> simplifies to x is some ratio (<span class="math notranslate nohighlight">\(\alpha\)</span>) of y:</p>
+<div class="math notranslate nohighlight">
+\[Y_t=αX_t^β+ \eta_t\]</div>
+<p>Rewriting this (in logarithms) it can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[y_t = ln⁡(α) + βx_t + \eta_t\]</div>
+<p><strong>The long run equation in the steady state</strong></p>
+<p>Note that in the steady state the expected value of the error term in the long run equation is zero (<span class="math notranslate nohighlight">\(\eta_t=0 \)</span>) so in those conditions the long run relationship can be simplified to:</p>
+<div class="math notranslate nohighlight">
+\[y_t=ln⁡(α)+\beta x_t\]</div>
+<p>or equivalently (substituting A for the log of <span class="math notranslate nohighlight">\(\alpha\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[y_t-A-βx_t=0\]</div>
+<p>Moreover if this expression is multiplied by some arbitrary constant, say <span class="math notranslate nohighlight">\(-\lambda\)</span>, it would still equal zero.</p>
+<div class="math notranslate nohighlight">
+\[-\lambda(y_t -A-βx_t)\]</div>
+<p>and in the steady state this will also be true for the lagged variables</p>
+<div class="math notranslate nohighlight">
+\[-\lambda(y_{t-1}- A - βx_{t-1})\]</div>
+<p><strong>Putting it together</strong></p>
+<p>From before we have the short run equation:</p>
+<div class="math notranslate nohighlight">
+\[\Delta y_t = \alpha + \beta \Delta x_t +\epsilon_t\]</div>
+<p>Inserting the steady state expression for the long-run into the short run equation makes no difference (in the long run) because in the long run it is equal to zero.</p>
+<div class="math notranslate nohighlight">
+\[\Delta y_t = -\lambda(y_{t-1}-A-βx_{t-1})  + \alpha + \beta \Delta x_t +\epsilon_t\]</div>
+<p>When the model is not in the steady state the expression <span class="math notranslate nohighlight">\(y_{t-1}-A-βx_{t-1}\)</span> is of course the error term from the long run equation (a measure of how far the dependent variable is from equilibrium).</p>
 </div>
-<span class="target" id="index-58"></span><p id="index-59"><strong>Lambda, the speed of adjustment</strong>
+<span class="target" id="index-59"></span><p id="index-60"><strong>Lambda, the speed of adjustment</strong>
 The parameter <span class="math notranslate nohighlight">\(\lambda\)</span> in an ECM can be interpreted as the speed of adjustment.  As long as <span class="math notranslate nohighlight">\(\lambda\)</span> is greater than zero and less or equal to one if there are no further disturbances ( <span class="math notranslate nohighlight">\(\epsilon_t=0\)</span>) the expression multiplied by lambda will slowly decline toward zero. How fast depends on how large or small is <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 <p>To be convergent <span class="math notranslate nohighlight">\(\lambda\)</span> must be between 0 and 1, if its is negative or greater than one, then the long run portion of the equation will cause the disequilibrium to grow each period (<span class="math notranslate nohighlight">\(\lambda\)</span> &gt;1) not diminish or  output will oscillate from positive to negative (-1&gt;<span class="math notranslate nohighlight">\(\lambda &lt;0\)</span>) but will slowly converge.</p>
 <p><mark>Intuitively, the lagged long-run error-term measures how far the model was from equilibrium one period earlier (at t-1). The ECM term (multiplied by <span class="math notranslate nohighlight">\(\lambda\)</span> ensures the model will slowly converge to equilibrium – the point at which the long run equation holds exactly – if <span class="math notranslate nohighlight">\(\lambda\)</span> is greater than zero but less than or equal to one. In these conditions during each each time period some portion <span class="math notranslate nohighlight">\(\lambda\)</span> of the previous period year’s disequilibrium will be absorbed each year. How much is absorbed depends on the size of estimated speed of the adjustment coefficient <span class="math notranslate nohighlight">\(\lambda\)</span>. </mark></p>

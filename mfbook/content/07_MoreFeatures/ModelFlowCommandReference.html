@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of the <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
 </ul>
 </li>
@@ -511,7 +511,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-filter-minimal-impact">2.13.2. .draw(filter =&lt;minimal impact&gt;)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dekomp-attrribution-of-right-hand-side-variables-to-change-in-result">2.14. dekomp() Attrribution of right hand side variables to change in result.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dekomp-attribution-of-right-hand-side-variables-to">2.14. dekomp() Attribution of right hand side variables to</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bespoken-plots-using-matplotlib-or-plotly-later-should-go-to-a-separate-plot-book">2.15. Bespoken plots using matplotlib  (or plotly -later) (should go to a separate plot book</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-four-separate-plots-of-multiple-series-in-grid">2.16. Plot four separate plots of multiple series in grid</a></li>
 </ul>
@@ -2360,7 +2360,7 @@ To make it really useful it should be expanded.</p>
 <h3><span class="section-number">2.13.1. </span>.draw(up = level, down = level)<a class="headerlink" href="#draw-up-level-down-level" title="Permalink to this headline">#</a></h3>
 <p>You can specify how many levels up and down you want in your graphical presentation (Needs more explanation).</p>
 <p>In this example all variables that depend directly upon GDP and consumption as well as those that are determined by them, are displayed. This means one step upstream in the model logic and one step downstream.</p>
-<p>More on the how to visualize the logic structure <span class="xref myst">here</span></p>
+<p>More on the how to visualize the logic structure <a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html"><span class="doc std std-doc">here</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">up</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">down</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># diagram of all direct dependencies </span>
@@ -2385,9 +2385,10 @@ To make it really useful it should be expanded.</p>
 </div>
 </section>
 </section>
-<section id="dekomp-attrribution-of-right-hand-side-variables-to-change-in-result">
-<h2><span class="section-number">2.14. </span>dekomp() Attrribution of right hand side variables to change in result.<a class="headerlink" href="#dekomp-attrribution-of-right-hand-side-variables-to-change-in-result" title="Permalink to this headline">#</a></h2>
-<p>For more information on attribution look <span class="xref myst">here</span></p>
+<section id="dekomp-attribution-of-right-hand-side-variables-to">
+<h2><span class="section-number">2.14. </span>dekomp() Attribution of right hand side variables to<a class="headerlink" href="#dekomp-attribution-of-right-hand-side-variables-to" title="Permalink to this headline">#</a></h2>
+<p>change in result.
+For more information on attribution look <a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html"><span class="doc std std-doc">here</span></a></p>
 <p>The dekomp command decomposes the contributions of the right hand side variables to the observed change in the left hand side variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2794,7 +2795,7 @@ constructed directly in python scripts. The two main libraries are matplotlib, p
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-filter-minimal-impact">2.13.2. .draw(filter =&lt;minimal impact&gt;)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dekomp-attrribution-of-right-hand-side-variables-to-change-in-result">2.14. dekomp() Attrribution of right hand side variables to change in result.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dekomp-attribution-of-right-hand-side-variables-to">2.14. dekomp() Attribution of right hand side variables to</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bespoken-plots-using-matplotlib-or-plotly-later-should-go-to-a-separate-plot-book">2.15. Bespoken plots using matplotlib  (or plotly -later) (should go to a separate plot book</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-four-separate-plots-of-multiple-series-in-grid">2.16. Plot four separate plots of multiple series in grid</a></li>
 </ul>

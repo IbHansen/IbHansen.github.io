@@ -1,0 +1,2445 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="419pt" viewBox="0.00 0.00 432.00 419.34">
+<g id="graph0" class="graph" transform="scale(0.140506 0.140506) rotate(0) translate(4 2980.5)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2980.5 3070.6,-2980.5 3070.6,4 -4,4"/>
+<text text-anchor="middle" x="1533.3" y="-7.2" font-family="Times New Roman,serif" font-size="14.00">PAKNECONPRVTKN</text>
+<!-- PAKNYGDPMKTPXN -->
+<g id="node1" class="node">
+<title>PAKNYGDPMKTPXN</title>
+<g id="a_node1"><a xlink:title="GDP, Marker Prices, LCU Price defl., 2000 = 1
+FRML &lt;IDENT&gt; PAKNYGDPMKTPXN = PAKNYGDPMKTPCN/PAKNYGDPMKTPKN $">
+<polygon fill="#63b8ff" stroke="black" points="2293,-2841.5 1885.4,-2841.5 1885.4,-2805.5 2293,-2805.5 2293,-2841.5"/>
+<text text-anchor="start" x="1891.2" y="-2818.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPMKTPXN:GDP, Marker Prices, LCU Price defl., 2000 = 1</text>
+</a>
+</g>
+</g>
+<!-- PAKGGEXPOTHRCN_FITTED -->
+<g id="node52" class="node">
+<title>PAKGGEXPOTHRCN_FITTED</title>
+<g id="a_node52"><a xlink:title="Fitted  value:General government expenditures, other (includes transfers), (millions LCU)
+FRML &lt;FIT&gt; PAKGGEXPOTHRCN_FITTED = PAKNYGDPMKTPXN*PAKNYGDPPOTLKN* (-0.00369060695899124)  $">
+<polygon fill="#63b8ff" stroke="black" points="3066.6,-2976.5 2379.25,-2976.5 2379.25,-2940.5 3066.6,-2940.5 3066.6,-2976.5"/>
+<text text-anchor="start" x="2385.05" y="-2953.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGEXPOTHRCN_FITTED:Fitted  value:General government expenditures, other (includes transfers), (millions LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPXN&#45;&gt;PAKGGEXPOTHRCN_FITTED -->
+<g id="edge77" class="edge">
+<title>PAKNYGDPMKTPXN-&gt;PAKGGEXPOTHRCN_FITTED</title>
+<g id="a_edge77"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPXN -&gt; PAKGGEXPOTHRCN_FITTED Min. att. 70%  max: 105%">
+<path fill="none" stroke="black" stroke-width="8" d="M2128.88,-2841.93C2183.36,-2866.96 2286.41,-2910.93 2379.25,-2931.5 2388.71,-2933.6 2398.35,-2935.54 2408.11,-2937.33"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2406.48,-2944.2 2417.54,-2939.03 2408.9,-2930.41 2406.48,-2944.2"/>
+</a>
+</g>
+</g>
+<!-- PAKGGEXPOTHRCN -->
+<g id="node62" class="node">
+<title>PAKGGEXPOTHRCN</title>
+<g id="a_node62"><a xlink:title="General government expenditures, other (includes transfers), (millions LCU)
+FRML &lt;DAMP,STOC&gt; PAKGGEXPOTHRCN = (PAKGGEXPOTHRCN_A*PAKNYGDPMKTPXN*PAKNYGDPPOTLKN+PAKNYGDPMKTPXN*PAKNYGDPPOTLKN* (-0.00369060695899124) ) * (1-PAKGGEXPOTHRCN_D)+ PAKGGEXPOTHRCN_X*PAKGGEXPOTHRCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="3003.97,-2922.5 2441.87,-2922.5 2441.87,-2886.5 3003.97,-2886.5 3003.97,-2922.5"/>
+<text text-anchor="start" x="2447.67" y="-2899.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGEXPOTHRCN:General government expenditures, other (includes transfers), (millions LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPXN&#45;&gt;PAKGGEXPOTHRCN -->
+<g id="edge90" class="edge">
+<title>PAKNYGDPMKTPXN-&gt;PAKGGEXPOTHRCN</title>
+<g id="a_edge90"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPXN -&gt; PAKGGEXPOTHRCN Min. att. 70%  max: 105%">
+<path fill="none" stroke="black" stroke-width="8" d="M2175.82,-2841.96C2233.15,-2853.71 2310.42,-2868.39 2379.25,-2877.5 2398.04,-2879.99 2417.44,-2882.27 2437.01,-2884.37"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2436.07,-2891.94 2446.74,-2886.01 2437.52,-2878.01 2436.07,-2891.94"/>
+</a>
+</g>
+</g>
+<!-- PAKCO2EM_FITTED -->
+<g id="node95" class="node">
+<title>PAKCO2EM_FITTED</title>
+<g id="a_node95"><a xlink:title="Fitted  value:PAKCO2EM
+FRML &lt;FIT&gt; PAKCO2EM_FITTED = PAKCO2EM(-1)*EXP( (0.0531107212037099-0.00318877837741837*(LOG(PAKCO2EM(-1))+LOG((1+PAKCO2TAX)*WLDFCRUDE_PETRO(-1)*PAKPANUSATLS(-1))-LOG(PAKNEENGTOTCN_)-LOG(PAKNYGDPMKTPXN(-1)*PAKNYGDPPOTLKN(-1)))+0.036761790898703*((LOG((1+PAKCO2TAX)*WLDFCRUDE_PETRO*PAKPANUSATLS))-(LOG((1+PAKCO2TAX(-1))*WLDFCRUDE_PETRO(-1)*PAKPANUSATLS(-1))))-+0.0816930657473563*((LOG(PAKNYGDPMKTPXN*PAKNYGDPPOTLKN))-(LOG(PAKNYGDPMKTPXN(-1)*PAKNYGDPPOTLKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2865.97,-2868.5 2579.87,-2868.5 2579.87,-2832.5 2865.97,-2832.5 2865.97,-2868.5"/>
+<text text-anchor="start" x="2585.67" y="-2845.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKCO2EM_FITTED:Fitted  value:PAKCO2EM</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPXN&#45;&gt;PAKCO2EM_FITTED -->
+<g id="edge2" class="edge">
+<title>PAKNYGDPMKTPXN-&gt;PAKCO2EM_FITTED</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPXN -&gt; PAKCO2EM_FITTED Min. att. -188%  max: 211%">
+<path fill="none" stroke="black" stroke-width="8" d="M2293.12,-2832.17C2380.82,-2835.92 2481.89,-2840.24 2563.88,-2843.74"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2563.45,-2850.99 2573.74,-2844.42 2564.05,-2837 2563.45,-2850.99"/>
+</a>
+</g>
+</g>
+<!-- PAKCO2EM -->
+<g id="node103" class="node">
+<title>PAKCO2EM</title>
+<g id="a_node103"><a xlink:title="PAKCO2EM
+FRML &lt;DAMP,STOC&gt; PAKCO2EM = (PAKCO2EM(-1)*EXP(PAKCO2EM_A+ (0.0531107212037099-0.00318877837741837*(LOG(PAKCO2EM(-1))+LOG((1+PAKCO2TAX)*WLDFCRUDE_PETRO(-1)*PAKPANUSATLS(-1))-LOG(PAKNEENGTOTCN_)-LOG(PAKNYGDPMKTPXN(-1)*PAKNYGDPPOTLKN(-1)))+0.036761790898703*((LOG((1+PAKCO2TAX)*WLDFCRUDE_PETRO*PAKPANUSATLS))-(LOG((1+PAKCO2TAX(-1))*WLDFCRUDE_PETRO(-1)*PAKPANUSATLS(-1))))-+0.0816930657473563*((LOG(PAKNYGDPMKTPXN*PAKNYGDPPOTLKN))-(LOG(PAKNYGDPMKTPXN(-1)*PAKNYGDPPOTLKN(-1))))) )) * (1-PAKCO2EM_D)+ PAKCO2EM_X*PAKCO2EM_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2766.97,-2814.5 2678.87,-2814.5 2678.87,-2778.5 2766.97,-2778.5 2766.97,-2814.5"/>
+<text text-anchor="start" x="2684.67" y="-2791.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKCO2EM:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPXN&#45;&gt;PAKCO2EM -->
+<g id="edge98" class="edge">
+<title>PAKNYGDPMKTPXN-&gt;PAKCO2EM</title>
+<g id="a_edge98"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPXN -&gt; PAKCO2EM Min. att. -188%  max: 211%">
+<path fill="none" stroke="black" stroke-width="8" d="M2293.12,-2814.83C2421.66,-2809.33 2578.92,-2802.61 2662.71,-2799.03"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2662.76,-2805.78 2672.46,-2798.36 2662.17,-2791.79 2662.76,-2805.78"/>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRCRPSKN -->
+<g id="node2" class="node">
+<title>PAKSMAGRCRPSKN</title>
+<g id="a_node2"><a xlink:title="PAKSMAGRCRPSKN
+FRML &lt;IDENT&gt; PAKSMAGRCRPSKN = ((1+2.09928590574241)*(0.144287620838506*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0*PAKNEGDIFTOTKN+0.0572678299039023*PAKNEEXPGNFSKN+0.267381669083985*PAKNEGDISTKBKN)-0.0736247088197363*PAKNEIMPGNFSKN-0.0407034395686347*PAKNYTAXNINDKN-906311)/(1+0.396041694659877) $">
+<polygon fill="#63b8ff" stroke="black" points="1525.77,-1703.5 1382.92,-1703.5 1382.92,-1667.5 1525.77,-1667.5 1525.77,-1703.5"/>
+<text text-anchor="start" x="1388.72" y="-1680.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMAGRCRPSKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRCRPSKN -->
+<g id="node25" class="node">
+<title>PAKNVAGRCRPSKN</title>
+<g id="a_node25"><a xlink:title="Agriculture Crops and livestock (Constant)
+FRML &lt;DAMP,STOC&gt; PAKNVAGRCRPSKN = (PAKNVAGRCRPSKN(-1)*EXP(PAKNVAGRCRPSKN_A+ (-0.0106149452683137-0.2*(LOG(PAKNVAGRCRPSKN(-1))-LOG(PAKSMAGRCRPSKN(-1)))+1*((LOG(PAKSMAGRCRPSKN))-(LOG(PAKSMAGRCRPSKN(-1))))) )) * (1-PAKNVAGRCRPSKN_D)+ PAKNVAGRCRPSKN_X*PAKNVAGRCRPSKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2276.88,-1788.5 1901.52,-1788.5 1901.52,-1752.5 2276.88,-1752.5 2276.88,-1788.5"/>
+<text text-anchor="start" x="1907.32" y="-1765.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRCRPSKN:Agriculture Crops and livestock (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRCRPSKN&#45;&gt;PAKNVAGRCRPSKN -->
+<g id="edge55" class="edge">
+<title>PAKSMAGRCRPSKN-&gt;PAKNVAGRCRPSKN</title>
+<g id="a_edge55"><a xlink:href="bogus" xlink:title=" PAKSMAGRCRPSKN -&gt; PAKNVAGRCRPSKN Min. att. -160%  max: 175%">
+<path fill="none" stroke="black" stroke-width="8" d="M1526.1,-1695C1624.43,-1708.21 1804.95,-1732.46 1934.92,-1749.91"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1933.66,-1757.61 1944.51,-1752.01 1935.53,-1743.74 1933.66,-1757.61"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRCRPSKN_FITTED -->
+<g id="node99" class="node">
+<title>PAKNVAGRCRPSKN_FITTED</title>
+<g id="a_node99"><a xlink:title="Fitted  value:Agriculture Crops and livestock (Constant)
+FRML &lt;FIT&gt; PAKNVAGRCRPSKN_FITTED = PAKNVAGRCRPSKN(-1)*EXP( (-0.0106149452683137-0.2*(LOG(PAKNVAGRCRPSKN(-1))-LOG(PAKSMAGRCRPSKN(-1)))+1*((LOG(PAKSMAGRCRPSKN))-(LOG(PAKSMAGRCRPSKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2973.22,-1896.5 2472.62,-1896.5 2472.62,-1860.5 2973.22,-1860.5 2973.22,-1896.5"/>
+<text text-anchor="start" x="2478.42" y="-1873.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRCRPSKN_FITTED:Fitted  value:Agriculture Crops and livestock (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRCRPSKN&#45;&gt;PAKNVAGRCRPSKN_FITTED -->
+<g id="edge87" class="edge">
+<title>PAKSMAGRCRPSKN-&gt;PAKNVAGRCRPSKN_FITTED</title>
+<g id="a_edge87"><a xlink:href="bogus" xlink:title=" PAKSMAGRCRPSKN -&gt; PAKNVAGRCRPSKN_FITTED Min. att. -160%  max: 175%">
+<path fill="none" stroke="black" stroke-width="8" d="M1506.5,-1703.93C1578.73,-1729.19 1715.22,-1774.08 1835.15,-1797.5 2073.66,-1844.07 2137.2,-1829.95 2379.25,-1851.5 2406.58,-1853.93 2435.15,-1856.36 2463.64,-1858.71"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2462.9,-1866.17 2473.44,-1860.01 2464.05,-1852.22 2462.9,-1866.17"/>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTFORMCN_FITTED -->
+<g id="node3" class="node">
+<title>PAKNYWRTFORMCN_FITTED</title>
+<g id="a_node3"><a xlink:title="Fitted  value:PAKNYWRTFORMCN
+FRML &lt;FIT&gt; PAKNYWRTFORMCN_FITTED = PAKNYWRTFORMCN(-1)*EXP( (-0.132832689997107-0.3*(LOG(PAKNYWRTFORMCN(-1))-LOG(PAKNYGDPFCSTXN(-1))-LOG(PAKNYGDPPOTLKN(-1)/PAKLMEMPSTRLCN(-1)))+0.2*((LOG(PAKNYWRTFORMCN(-1)))-(LOG(PAKNYWRTFORMCN(-2))))+(1-0.2)*(0.5*((LOG(PAKNYGDPFCSTXN(-1)))-(LOG(PAKNYGDPFCSTXN(-2))))+0.5*(PAKINFLEXPT/100)+((LOG(PAKNYGDPMKTPKN/PAKLMEMPSTRLCN))-(LOG(PAKNYGDPMKTPKN(-1)/PAKLMEMPSTRLCN(-1)))))-0.2*(PAKLMUNRTOTLCN-PAKLMUNRSTRLCN)/100) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2926.72,-2436.5 2519.12,-2436.5 2519.12,-2400.5 2926.72,-2400.5 2926.72,-2436.5"/>
+<text text-anchor="start" x="2524.92" y="-2413.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYWRTFORMCN_FITTED:Fitted  value:PAKNYWRTFORMCN</text>
+</a>
+</g>
+</g>
+<!-- PAKFMLBLMTWOKN -->
+<g id="node4" class="node">
+<title>PAKFMLBLMTWOKN</title>
+<g id="a_node4"><a xlink:title="Real Base Money (Mil. Real LCU)
+FRML &lt;DAMP,STOC&gt; PAKFMLBLMTWOKN = (PAKFMLBLMTWOKN(-1)*EXP(PAKFMLBLMTWOKN_A+ (-0.2*(LOG(PAKFMLBLMTWOKN(-1))-LOG(PAKNYGDPMKTPKN(-1))+0.1*PAKFMLBLPOLYXN(-1)/100-LOG(PAKVELOCITY(-1)))-0.32628131688075+0.7*((LOG(PAKNYGDPMKTPKN))-(LOG(PAKNYGDPMKTPKN(-1))))-1*((PAKFMLBLPOLYXN/100)-(PAKFMLBLPOLYXN(-1)/100))-((LOG(PAKVELOCITY))-(LOG(PAKVELOCITY(-1))))) )) * (1-PAKFMLBLMTWOKN_D)+ PAKFMLBLMTWOKN_X*PAKFMLBLMTWOKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2261.5,-2204.5 1916.9,-2204.5 1916.9,-2168.5 2261.5,-2168.5 2261.5,-2204.5"/>
+<text text-anchor="start" x="1922.7" y="-2181.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKFMLBLMTWOKN:Real Base Money (Mil. Real LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKFMLBLMTWOCN -->
+<g id="node11" class="node">
+<title>PAKFMLBLMTWOCN</title>
+<g id="a_node11"><a xlink:title="Base money
+FRML &lt;IDENT&gt; PAKFMLBLMTWOCN = PAKFMLBLMTWOKN*PAKNECONPRVTXN $">
+<polygon fill="#63b8ff" stroke="black" points="2831.85,-2220.5 2614,-2220.5 2614,-2184.5 2831.85,-2184.5 2831.85,-2220.5"/>
+<text text-anchor="start" x="2619.8" y="-2197.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKFMLBLMTWOCN:Base money</text>
+</a>
+</g>
+</g>
+<!-- PAKFMLBLMTWOKN&#45;&gt;PAKFMLBLMTWOCN -->
+<g id="edge67" class="edge">
+<title>PAKFMLBLMTWOKN-&gt;PAKFMLBLMTWOCN</title>
+<g id="a_edge67"><a xlink:href="bogus" xlink:title=" PAKFMLBLMTWOKN -&gt; PAKFMLBLMTWOCN Min. att. -3%  max: 61%">
+<path fill="none" stroke="black" stroke-width="6.06" d="M2261.99,-2190.85C2368.13,-2193.54 2501.9,-2196.93 2597.77,-2199.36"/>
+<polygon fill="black" stroke="black" stroke-width="6.06" points="2597.58,-2204.81 2607.71,-2199.76 2597.85,-2194.2 2597.58,-2204.81"/>
+</a>
+</g>
+</g>
+<!-- PAKFMLBLMTWOKN_FITTED -->
+<g id="node67" class="node">
+<title>PAKFMLBLMTWOKN_FITTED</title>
+<g id="a_node67"><a xlink:title="Fitted  value:Real Base Money (Mil. Real LCU)
+FRML &lt;FIT&gt; PAKFMLBLMTWOKN_FITTED = PAKFMLBLMTWOKN(-1)*EXP( (-0.2*(LOG(PAKFMLBLMTWOKN(-1))-LOG(PAKNYGDPMKTPKN(-1))+0.1*PAKFMLBLPOLYXN(-1)/100-LOG(PAKVELOCITY(-1)))-0.32628131688075+0.7*((LOG(PAKNYGDPMKTPKN))-(LOG(PAKNYGDPMKTPKN(-1))))-1*((PAKFMLBLPOLYXN/100)-(PAKFMLBLPOLYXN(-1)/100))-((LOG(PAKVELOCITY))-(LOG(PAKVELOCITY(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2957.85,-2166.5 2488,-2166.5 2488,-2130.5 2957.85,-2130.5 2957.85,-2166.5"/>
+<text text-anchor="start" x="2493.8" y="-2143.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKFMLBLMTWOKN_FITTED:Fitted  value:Real Base Money (Mil. Real LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKFMLBLMTWOKN&#45;&gt;PAKFMLBLMTWOKN_FITTED -->
+<g id="edge27" class="edge">
+<title>PAKFMLBLMTWOKN-&gt;PAKFMLBLMTWOKN_FITTED</title>
+<g id="a_edge27"><a xlink:href="bogus" xlink:title=" PAKFMLBLMTWOKN -&gt; PAKFMLBLMTWOKN_FITTED Min. att. -192%  max: 421%">
+<path fill="none" stroke="black" stroke-width="8" d="M2261.99,-2176.17C2326.61,-2172.28 2401.47,-2167.78 2471.79,-2163.55"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2472.1,-2170.18 2481.66,-2162.59 2471.26,-2156.2 2472.1,-2170.18"/>
+</a>
+</g>
+</g>
+<!-- PAKGGREVOTHRCN_FITTED -->
+<g id="node5" class="node">
+<title>PAKGGREVOTHRCN_FITTED</title>
+<g id="a_node5"><a xlink:title="Fitted  value:General government revenues, other (includes privatization), (millions LCU)
+FRML &lt;FIT&gt; PAKGGREVOTHRCN_FITTED = PAKNYGDPMKTPCN* (0.0942732188264739)  $">
+<polygon fill="#63b8ff" stroke="black" points="1799.15,-2778.5 1109.55,-2778.5 1109.55,-2742.5 1799.15,-2742.5 1799.15,-2778.5"/>
+<text text-anchor="start" x="1115.35" y="-2755.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGREVOTHRCN_FITTED:Fitted  value:General government revenues, other (includes privatization), (millions LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVTRNSKN -->
+<g id="node6" class="node">
+<title>PAKSMSRVTRNSKN</title>
+<g id="a_node6"><a xlink:title="PAKSMSRVTRNSKN
+FRML &lt;IDENT&gt; PAKSMSRVTRNSKN = ((1+0.301074862860981)*(0.204687752761289*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0*PAKNEGDIFTOTKN+0.0551862611209703*PAKNEEXPGNFSKN+0*PAKNEGDISTKBKN)--0.0392641863572605*PAKNEIMPGNFSKN-0.0174996684619017*PAKNYTAXNINDKN-0)/(1+1.11680986862739) $">
+<polygon fill="#63b8ff" stroke="black" points="1525.02,-1425.5 1383.67,-1425.5 1383.67,-1389.5 1525.02,-1389.5 1525.02,-1425.5"/>
+<text text-anchor="start" x="1389.47" y="-1402.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMSRVTRNSKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTRNSKN_FITTED -->
+<g id="node26" class="node">
+<title>PAKNVSRVTRNSKN_FITTED</title>
+<g id="a_node26"><a xlink:title="Fitted  value:Services Transport (Constant)
+FRML &lt;FIT&gt; PAKNVSRVTRNSKN_FITTED = PAKNVSRVTRNSKN(-1)*EXP( (-0.0112164647278338-0.2*(LOG(PAKNVSRVTRNSKN(-1))-LOG(PAKSMSRVTRNSKN(-1)))+1*((LOG(PAKSMSRVTRNSKN))-(LOG(PAKSMSRVTRNSKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2936.85,-1464.5 2509,-1464.5 2509,-1428.5 2936.85,-1428.5 2936.85,-1464.5"/>
+<text text-anchor="start" x="2514.8" y="-1441.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVTRNSKN_FITTED:Fitted  value:Services Transport (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVTRNSKN&#45;&gt;PAKNVSRVTRNSKN_FITTED -->
+<g id="edge82" class="edge">
+<title>PAKSMSRVTRNSKN-&gt;PAKNVSRVTRNSKN_FITTED</title>
+<g id="a_edge82"><a xlink:href="bogus" xlink:title=" PAKSMSRVTRNSKN -&gt; PAKNVSRVTRNSKN_FITTED Min. att. -71%  max: 1611%">
+<path fill="none" stroke="black" stroke-width="8" d="M1525.25,-1409.65C1706.82,-1415.24 2199.63,-1430.42 2493.12,-1439.45"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2492.47,-1446.62 2502.68,-1439.93 2492.9,-1432.63 2492.47,-1446.62"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTRNSKN -->
+<g id="node46" class="node">
+<title>PAKNVSRVTRNSKN</title>
+<g id="a_node46"><a xlink:title="Services Transport (Constant)
+FRML &lt;DAMP,STOC&gt; PAKNVSRVTRNSKN = (PAKNVSRVTRNSKN(-1)*EXP(PAKNVSRVTRNSKN_A+ (-0.0112164647278338-0.2*(LOG(PAKNVSRVTRNSKN(-1))-LOG(PAKSMSRVTRNSKN(-1)))+1*((LOG(PAKSMSRVTRNSKN))-(LOG(PAKSMSRVTRNSKN(-1))))) )) * (1-PAKNVSRVTRNSKN_D)+ PAKNVSRVTRNSKN_X*PAKNVSRVTRNSKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2240.5,-1501.5 1937.9,-1501.5 1937.9,-1465.5 2240.5,-1465.5 2240.5,-1501.5"/>
+<text text-anchor="start" x="1943.7" y="-1478.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVTRNSKN:Services Transport (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVTRNSKN&#45;&gt;PAKNVSRVTRNSKN -->
+<g id="edge32" class="edge">
+<title>PAKSMSRVTRNSKN-&gt;PAKNVSRVTRNSKN</title>
+<g id="a_edge32"><a xlink:href="bogus" xlink:title=" PAKSMSRVTRNSKN -&gt; PAKNVSRVTRNSKN Min. att. -71%  max: 1611%">
+<path fill="none" stroke="black" stroke-width="8" d="M1525.49,-1415.92C1620.51,-1427.33 1793.06,-1448.06 1922.13,-1463.56"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1920.88,-1471.18 1931.65,-1465.42 1922.55,-1457.28 1920.88,-1471.18"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN -->
+<g id="node7" class="node">
+<title>PAKNYGDPMKTPCN</title>
+<g id="a_node7"><a xlink:title="GDP, Market Prices, LCU mn
+FRML &lt;IDENT&gt; PAKNYGDPMKTPCN = PAKNECONPRVTCN+PAKNECONGOVTCN+PAKNEGDIFTOTCN+PAKNEGDISTKBCN+PAKNEEXPGNFSCN-PAKNEIMPGNFSCN+PAKNYGDPDISCCN+PAKADAP*PAKDISPREPCN $">
+<polygon fill="#63b8ff" stroke="black" points="1015.42,-2508.5 704.58,-2508.5 704.58,-2472.5 1015.42,-2472.5 1015.42,-2508.5"/>
+<text text-anchor="start" x="710.38" y="-2485.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPMKTPCN:GDP, Market Prices, LCU mn</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKNYGDPMKTPXN -->
+<g id="edge94" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKNYGDPMKTPXN</title>
+<g id="a_edge94"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKNYGDPMKTPXN Min. att. 0%  max: 142%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.89,-2486.01C1037.47,-2491.84 1057.65,-2501.7 1073.55,-2517.5 1159.42,-2602.84 1019.95,-2706.09 1109.55,-2787.5 1137.23,-2812.65 1589.34,-2820.23 1869.26,-2822.52"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1868.89,-2829.56 1878.95,-2822.64 1869,-2815.56 1868.89,-2829.56"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGREVOTHRCN_FITTED -->
+<g id="edge57" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGREVOTHRCN_FITTED</title>
+<g id="a_edge57"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGREVOTHRCN_FITTED Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.71,-2486.54C1037.24,-2492.32 1057.47,-2502.03 1073.55,-2517.5 1143.69,-2584.97 1037.81,-2667.73 1109.55,-2733.5 1176.13,-2794.54 1283.62,-2793.01 1360.7,-2781.47"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1361.42,-2788.47 1370.17,-2779.95 1359.18,-2774.65 1361.42,-2788.47"/>
+</a>
+</g>
+</g>
+<!-- PAKNYTAXNINDCN -->
+<g id="node15" class="node">
+<title>PAKNYTAXNINDCN</title>
+<g id="a_node15"><a xlink:title="Net Indirect Taxes Local Currency units Values
+FRML &lt;IDENT&gt; PAKNYTAXNINDCN = PAKNYGDPMKTPCN-PAKNYGDPFCSTCN $">
+<polygon fill="#63b8ff" stroke="black" points="1653.27,-2724.5 1255.42,-2724.5 1255.42,-2688.5 1653.27,-2688.5 1653.27,-2724.5"/>
+<text text-anchor="start" x="1261.22" y="-2701.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYTAXNINDCN:Net Indirect Taxes Local Currency units Values</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKNYTAXNINDCN -->
+<g id="edge114" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKNYTAXNINDCN</title>
+<g id="a_edge114"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKNYTAXNINDCN Min. att. 122%  max: 924%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.8,-2487.52C1037.13,-2493.23 1057.26,-2502.65 1073.55,-2517.5 1128.05,-2567.19 1053.87,-2631.13 1109.55,-2679.5 1176.12,-2737.33 1279.88,-2737.55 1356.01,-2727.32"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1356.93,-2734.37 1365.81,-2725.99 1354.89,-2720.52 1356.93,-2734.37"/>
+</a>
+</g>
+</g>
+<!-- PAKNYYWBINFMCN_ -->
+<g id="node22" class="node">
+<title>PAKNYYWBINFMCN_</title>
+<g id="a_node22"><a xlink:title="PAKNYYWBINFMCN_
+FRML &lt;IDENT&gt; PAKNYYWBINFMCN_ = PAKNYYWBINFMCN/PAKNYGDPMKTPCN $">
+<polygon fill="#63b8ff" stroke="black" points="1531.02,-2670.5 1377.67,-2670.5 1377.67,-2634.5 1531.02,-2634.5 1531.02,-2670.5"/>
+<text text-anchor="start" x="1383.47" y="-2647.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYYWBINFMCN_:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKNYYWBINFMCN_ -->
+<g id="edge42" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKNYYWBINFMCN_</title>
+<g id="a_edge42"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKNYYWBINFMCN_ Min. att. 0%  max: 526%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.84,-2489.39C1036.85,-2494.93 1056.88,-2503.81 1073.55,-2517.5 1112.65,-2549.62 1069.69,-2594.33 1109.55,-2625.5 1180.33,-2680.85 1286.27,-2680.59 1361.83,-2670.89"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1362.54,-2677.01 1371.47,-2668.69 1360.59,-2663.15 1362.54,-2677.01"/>
+</a>
+</g>
+</g>
+<!-- PAKGGBALOVRLCN_ -->
+<g id="node23" class="node">
+<title>PAKGGBALOVRLCN_</title>
+<g id="a_node23"><a xlink:title="PAKGGBALOVRLCN_
+FRML &lt;IDENT&gt; PAKGGBALOVRLCN_ = (PAKGGBALOVRLCN/PAKNYGDPMKTPCN)*100 $">
+<polygon fill="#63b8ff" stroke="black" points="1529.52,-2616.5 1379.17,-2616.5 1379.17,-2580.5 1529.52,-2580.5 1529.52,-2616.5"/>
+<text text-anchor="start" x="1384.97" y="-2593.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGBALOVRLCN_:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGBALOVRLCN_ -->
+<g id="edge117" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGBALOVRLCN_</title>
+<g id="a_edge117"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGBALOVRLCN_ Min. att. -901%  max: 1249%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.89,-2494.31C1036.25,-2499.27 1056.08,-2506.68 1073.55,-2517.5 1098.07,-2532.69 1084.67,-2556.9 1109.55,-2571.5 1186.28,-2616.52 1289.77,-2618.37 1363.1,-2612"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1363.46,-2618.42 1372.74,-2610.48 1362.1,-2604.48 1363.46,-2618.42"/>
+</a>
+</g>
+</g>
+<!-- PAKGGDBTTOTLCN_ -->
+<g id="node42" class="node">
+<title>PAKGGDBTTOTLCN_</title>
+<g id="a_node42"><a xlink:title="PAKGGDBTTOTLCN_
+FRML &lt;IDENT&gt; PAKGGDBTTOTLCN_ = (PAKGGDBTTOTLCN/PAKNYGDPMKTPCN)*100 $">
+<polygon fill="#63b8ff" stroke="black" points="1528.4,-2562.5 1380.3,-2562.5 1380.3,-2526.5 1528.4,-2526.5 1528.4,-2562.5"/>
+<text text-anchor="start" x="1386.1" y="-2539.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGDBTTOTLCN_:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGDBTTOTLCN_ -->
+<g id="edge83" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGDBTTOTLCN_</title>
+<g id="a_edge83"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGDBTTOTLCN_ Min. att. -579%  max: 9616%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.72,-2508.03C1046.78,-2511.34 1079.19,-2514.66 1109.55,-2517.5 1195.96,-2525.58 1294.75,-2533.17 1364.19,-2538.23"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1363.38,-2545.62 1373.86,-2539.37 1364.39,-2531.66 1363.38,-2545.62"/>
+</a>
+</g>
+</g>
+<!-- PAKGGDBTVALTCN_FITTED -->
+<g id="node51" class="node">
+<title>PAKGGDBTVALTCN_FITTED</title>
+<g id="a_node51"><a xlink:title="Fitted  value:Government debt revaluation (LCU)
+FRML &lt;FIT&gt; PAKGGDBTVALTCN_FITTED = PAKNYGDPMKTPCN* (0.0263756862533802)  $">
+<polygon fill="#63b8ff" stroke="black" points="1687.02,-2508.5 1221.67,-2508.5 1221.67,-2472.5 1687.02,-2472.5 1687.02,-2508.5"/>
+<text text-anchor="start" x="1227.47" y="-2485.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGDBTVALTCN_FITTED:Fitted  value:Government debt revaluation (LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGDBTVALTCN_FITTED -->
+<g id="edge64" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGDBTVALTCN_FITTED</title>
+<g id="a_edge64"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGDBTVALTCN_FITTED Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.86,-2490.5C1073.81,-2490.5 1141.19,-2490.5 1205.46,-2490.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1205.28,-2497.5 1215.28,-2490.5 1205.28,-2483.5 1205.28,-2497.5"/>
+</a>
+</g>
+</g>
+<!-- PAKGGREVGRNTCN_FITTED -->
+<g id="node76" class="node">
+<title>PAKGGREVGRNTCN_FITTED</title>
+<g id="a_node76"><a xlink:title="Fitted  value:Grants, LCU
+FRML &lt;FIT&gt; PAKGGREVGRNTCN_FITTED = PAKNYGDPMKTPCN* (0.00492338673059987)  $">
+<polygon fill="#63b8ff" stroke="black" points="1624.02,-2454.5 1284.67,-2454.5 1284.67,-2418.5 1624.02,-2418.5 1624.02,-2454.5"/>
+<text text-anchor="start" x="1290.47" y="-2431.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGREVGRNTCN_FITTED:Fitted  value:Grants, LCU</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGREVGRNTCN_FITTED -->
+<g id="edge54" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGREVGRNTCN_FITTED</title>
+<g id="a_edge54"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGREVGRNTCN_FITTED Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.72,-2472.97C1046.78,-2469.66 1079.19,-2466.34 1109.55,-2463.5 1161.14,-2458.67 1217.14,-2454.02 1268.68,-2449.98"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1269.09,-2456.51 1278.52,-2448.75 1268,-2442.55 1269.09,-2456.51"/>
+</a>
+</g>
+</g>
+<!-- PAKGGREVGRNTCN -->
+<g id="node90" class="node">
+<title>PAKGGREVGRNTCN</title>
+<g id="a_node90"><a xlink:title="Grants, LCU
+FRML &lt;DAMP,STOC&gt; PAKGGREVGRNTCN = (PAKGGREVGRNTCN_A*PAKNYGDPMKTPCN+PAKNYGDPMKTPCN* (0.00492338673059987) ) * (1-PAKGGREVGRNTCN_D)+ PAKGGREVGRNTCN_X*PAKGGREVGRNTCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="1561.4,-2400.5 1347.3,-2400.5 1347.3,-2364.5 1561.4,-2364.5 1561.4,-2400.5"/>
+<text text-anchor="start" x="1353.1" y="-2377.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGREVGRNTCN:Grants, LCU</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGREVGRNTCN -->
+<g id="edge11" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGREVGRNTCN</title>
+<g id="a_edge11"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGREVGRNTCN Min. att. 88%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M906.4,-2472.1C955.58,-2453.02 1036.78,-2424 1109.55,-2409.5 1182.39,-2394.98 1265.37,-2388.2 1331.56,-2385.06"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1331.45,-2391.8 1341.14,-2384.37 1330.84,-2377.82 1331.45,-2391.8"/>
+</a>
+</g>
+</g>
+<!-- PAKGGREVDRCTCN_FITTED -->
+<g id="node96" class="node">
+<title>PAKGGREVDRCTCN_FITTED</title>
+<g id="a_node96"><a xlink:title="Fitted  value:General government revenues, direct taxes (millions LCU)
+FRML &lt;FIT&gt; PAKGGREVDRCTCN_FITTED = (PAKGGREVDRCTXN/100*PAKNYGDPMKTPCN)-3.0867698969263E-12 $">
+<polygon fill="#63b8ff" stroke="black" points="1749.27,-2346.5 1159.42,-2346.5 1159.42,-2310.5 1749.27,-2310.5 1749.27,-2346.5"/>
+<text text-anchor="start" x="1165.22" y="-2323.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGREVDRCTCN_FITTED:Fitted  value:General government revenues, direct taxes (millions LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGREVDRCTCN_FITTED -->
+<g id="edge69" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGREVDRCTCN_FITTED</title>
+<g id="a_edge69"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGREVDRCTCN_FITTED Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M886.25,-2472.05C929.47,-2441.59 1021.5,-2381.58 1109.55,-2355.5 1120.73,-2352.19 1132.19,-2349.23 1143.84,-2346.58"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1144.93,-2353.21 1153.24,-2344.27 1141.99,-2339.53 1144.93,-2353.21"/>
+</a>
+</g>
+</g>
+<!-- PAKGGDBTVALTCN -->
+<g id="node100" class="node">
+<title>PAKGGDBTVALTCN</title>
+<g id="a_node100"><a xlink:title="Government debt revaluation (LCU)
+FRML &lt;DAMP,STOC&gt; PAKGGDBTVALTCN = (PAKGGDBTVALTCN_A*PAKNYGDPMKTPCN+PAKNYGDPMKTPCN* (0.0263756862533802) ) * (1-PAKGGDBTVALTCN_D)+ PAKGGDBTVALTCN_X*PAKGGDBTVALTCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="1624.4,-2292.5 1284.3,-2292.5 1284.3,-2256.5 1624.4,-2256.5 1624.4,-2292.5"/>
+<text text-anchor="start" x="1290.1" y="-2269.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGDBTVALTCN:Government debt revaluation (LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGDBTVALTCN -->
+<g id="edge80" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGDBTVALTCN</title>
+<g id="a_edge80"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGDBTVALTCN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M877.49,-2472.28C914.47,-2432.82 1008.75,-2339.93 1109.55,-2301.5 1159.09,-2282.61 1215.49,-2273.56 1268.08,-2269.8"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1268.35,-2276.43 1277.9,-2268.82 1267.48,-2262.45 1268.35,-2276.43"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCD -->
+<g id="node108" class="node">
+<title>PAKNYGDPMKTPCD</title>
+<g id="a_node108"><a xlink:title="GDP, Market Prices, US$ mn
+FRML &lt;IDENT&gt; PAKNYGDPMKTPCD = PAKNYGDPMKTPCN/PAKPANUSATLS $">
+<polygon fill="#63b8ff" stroke="black" points="1608.27,-2238.5 1300.42,-2238.5 1300.42,-2202.5 1608.27,-2202.5 1608.27,-2238.5"/>
+<text text-anchor="start" x="1306.22" y="-2215.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPMKTPCD:GDP, Market Prices, US$ mn</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKNYGDPMKTPCD -->
+<g id="edge63" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKNYGDPMKTPCD</title>
+<g id="a_edge63"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKNYGDPMKTPCD Min. att. 76%  max: 93%">
+<path fill="none" stroke="black" stroke-width="8" d="M872.79,-2472.19C904.39,-2424.93 996.36,-2298.9 1109.55,-2247.5 1163.36,-2223.07 1226.78,-2213.46 1284.4,-2210.88"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1284.34,-2217.68 1294.09,-2210.34 1283.86,-2203.69 1284.34,-2217.68"/>
+</a>
+</g>
+</g>
+<!-- PAKGGREVDRCTCN -->
+<g id="node109" class="node">
+<title>PAKGGREVDRCTCN</title>
+<g id="a_node109"><a xlink:title="General government revenues, direct taxes (millions LCU)
+FRML &lt;DAMP,STOC&gt; PAKGGREVDRCTCN = ((PAKGGREVDRCTXN/100*PAKNYGDPMKTPCN)-3.0867698969263E-12 + PAKGGREVDRCTCN_A)* (1-PAKGGREVDRCTCN_D)+ PAKGGREVDRCTCN_X*PAKGGREVDRCTCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="1686.65,-2184.5 1222.05,-2184.5 1222.05,-2148.5 1686.65,-2148.5 1686.65,-2184.5"/>
+<text text-anchor="start" x="1227.85" y="-2161.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGREVDRCTCN:General government revenues, direct taxes (millions LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGREVDRCTCN -->
+<g id="edge101" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGREVDRCTCN</title>
+<g id="a_edge101"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGREVDRCTCN Min. att. 88%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M869.65,-2472.22C896.37,-2418.13 983.46,-2258.53 1109.55,-2193.5 1139.31,-2178.15 1172.48,-2168.22 1206.15,-2162.07"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1206.92,-2169.05 1215.64,-2160.51 1204.63,-2155.23 1206.92,-2169.05"/>
+</a>
+</g>
+</g>
+<!-- PAKGGREVOTHRCN -->
+<g id="node116" class="node">
+<title>PAKGGREVOTHRCN</title>
+<g id="a_node116"><a xlink:title="General government revenues, other (includes privatization), (millions LCU)
+FRML &lt;DAMP,STOC&gt; PAKGGREVOTHRCN = (PAKGGREVOTHRCN_A*PAKNYGDPMKTPCN+PAKNYGDPMKTPCN* (0.0942732188264739) ) * (1-PAKGGREVOTHRCN_D)+ PAKGGREVOTHRCN_X*PAKGGREVOTHRCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="1736.52,-2870.5 1172.17,-2870.5 1172.17,-2834.5 1736.52,-2834.5 1736.52,-2870.5"/>
+<text text-anchor="start" x="1177.97" y="-2847.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGREVOTHRCN:General government revenues, other (includes privatization), (millions LCU)</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPCN&#45;&gt;PAKGGREVOTHRCN -->
+<g id="edge50" class="edge">
+<title>PAKNYGDPMKTPCN-&gt;PAKGGREVOTHRCN</title>
+<g id="a_edge50"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPCN -&gt; PAKGGREVOTHRCN Min. att. 88%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1015.82,-2485.74C1037.47,-2491.59 1057.7,-2501.52 1073.55,-2517.5 1169.05,-2613.78 1012.44,-2725.83 1109.55,-2820.5 1173.2,-2882.55 1278.46,-2883.45 1355.78,-2873.23"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1356.44,-2880.33 1365.33,-2871.97 1354.43,-2866.48 1356.44,-2880.33"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVFINSKN_FITTED -->
+<g id="node8" class="node">
+<title>PAKNVSRVFINSKN_FITTED</title>
+<g id="a_node8"><a xlink:title="Fitted  value:Services Finance (Constant)
+FRML &lt;FIT&gt; PAKNVSRVFINSKN_FITTED = PAKNVSRVFINSKN(-1)*EXP( (-0.153823262831285-0.2*(LOG(PAKNVSRVFINSKN(-1))-LOG(PAKSMSRVFINSKN(-1)))+1*((LOG(PAKSMSRVFINSKN))-(LOG(PAKSMSRVFINSKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2929.72,-924.5 2516.12,-924.5 2516.12,-888.5 2929.72,-888.5 2929.72,-924.5"/>
+<text text-anchor="start" x="2521.92" y="-901.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVFINSKN_FITTED:Fitted  value:Services Finance (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVCOLPRODKN -->
+<g id="node9" class="node">
+<title>PAKNVCOLPRODKN</title>
+<g id="a_node9"><a xlink:title="PAKNVCOLPRODKN
+FRML &lt;IDENT&gt; PAKNVCOLPRODKN = PAKNVCOLPRODSH**(PAKCESENGYPROD)*(PAKNVENGTOTLKN*(PAKNVENGTOTLXN/PAKNVCOLPRODXN)**(PAKCESENGYPROD)) $">
+<polygon fill="#63b8ff" stroke="black" points="2794.72,-492.5 2651.12,-492.5 2651.12,-456.5 2794.72,-456.5 2794.72,-492.5"/>
+<text text-anchor="start" x="2656.92" y="-469.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVCOLPRODKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDMNGSCN -->
+<g id="node10" class="node">
+<title>PAKNVINDMNGSCN</title>
+<g id="a_node10"><a xlink:title="Industry Mining (Current Prices)
+FRML &lt;IDENT&gt; PAKNVINDMNGSCN = PAKNVINDMNGSXN*PAKNVINDMNGSKN $">
+<polygon fill="#63b8ff" stroke="black" points="2884.72,-762.5 2561.12,-762.5 2561.12,-726.5 2884.72,-726.5 2884.72,-762.5"/>
+<text text-anchor="start" x="2566.92" y="-739.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVINDMNGSCN:Industry Mining (Current Prices)</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN -->
+<g id="node12" class="node">
+<title>PAKNECONPRVTKN</title>
+<g id="a_node12"><a xlink:title="HH. Cons Real
+FRML &lt;DAMP,STOC&gt; PAKNECONPRVTKN = (PAKNECONPRVTKN(-1)*EXP(PAKNECONPRVTKN_A+ (-0.2*(LOG(PAKNECONPRVTKN(-1))-LOG(1.21203101101442)-LOG((((PAKBXFSTREMTCD(-1)-PAKBMFSTREMTCD(-1))*PAKPANUSATLS(-1))+PAKGGEXPTRNSCN(-1)+PAKNYYWBTOTLCN(-1)*(1-PAKGGREVDRCTXN(-1)/100))/PAKNECONPRVTXN(-1)))+0.763938860758873*((LOG((((PAKBXFSTREMTCD-PAKBMFSTREMTCD)*PAKPANUSATLS)+PAKGGEXPTRNSCN+PAKNYYWBTOTLCN*(1-PAKGGREVDRCTXN/100))/PAKNECONPRVTXN))-(LOG((((PAKBXFSTREMTCD(-1)-PAKBMFSTREMTCD(-1))*PAKPANUSATLS(-1))+PAKGGEXPTRNSCN(-1)+PAKNYYWBTOTLCN(-1)*(1-PAKGGREVDRCTXN(-1)/100))/PAKNECONPRVTXN(-1))))-0.0634474791568939*DURING_2009-0.3*(PAKFMLBLPOLYXN/100-((LOG(PAKNECONPRVTXN))-(LOG(PAKNECONPRVTXN(-1)))))) )) * (1-PAKNECONPRVTKN_D)+ PAKNECONPRVTKN_X*PAKNECONPRVTKN_D  $">
+<polygon fill="red" stroke="black" points="224.6,-1086.5 0,-1086.5 0,-1050.5 224.6,-1050.5 224.6,-1086.5"/>
+<text text-anchor="start" x="5.8" y="-1063.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONPRVTKN:HH. Cons Real</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMAGRCRPSKN -->
+<g id="edge102" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMAGRCRPSKN</title>
+<g id="a_edge102"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMAGRCRPSKN Min. att. -76%  max: 284%">
+<path fill="none" stroke="black" stroke-width="8" d="M118.55,-1086.95C132.96,-1134.21 177.67,-1260.5 260.6,-1326.5 604.85,-1600.47 1155.26,-1665.72 1366.72,-1680.96"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1366.09,-1688.35 1376.55,-1682.05 1367.06,-1674.38 1366.09,-1688.35"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMSRVTRNSKN -->
+<g id="edge138" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMSRVTRNSKN</title>
+<g id="a_edge138"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMSRVTRNSKN Min. att. 66%  max: 556%">
+<path fill="none" stroke="black" stroke-width="8" d="M122.22,-1086.97C141.55,-1124.74 191.19,-1210.51 260.6,-1249.5 629.61,-1456.76 1161.67,-1434.91 1367.52,-1416.79"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1367.91,-1423.24 1377.23,-1415.36 1366.64,-1409.3 1367.91,-1423.24"/>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRFSNGKN -->
+<g id="node14" class="node">
+<title>PAKSMAGRFSNGKN</title>
+<g id="a_node14"><a xlink:title="PAKSMAGRFSNGKN
+FRML &lt;IDENT&gt; PAKSMAGRFSNGKN = ((1+1.92407325889309)*(0.00246195499563977*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0*PAKNEGDIFTOTKN+0.00130433854799597*PAKNEEXPGNFSKN+0.00497657560072267*PAKNEGDISTKBKN)-1.14989260682794E-05*PAKNEIMPGNFSKN-2.46467171367829E-07*PAKNYTAXNINDKN-26993)/(1+0.506095544048804) $">
+<polygon fill="#63b8ff" stroke="black" points="507.7,-924.5 363.35,-924.5 363.35,-888.5 507.7,-888.5 507.7,-924.5"/>
+<text text-anchor="start" x="369.15" y="-901.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMAGRFSNGKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMAGRFSNGKN -->
+<g id="edge65" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMAGRFSNGKN</title>
+<g id="a_edge65"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMAGRFSNGKN Min. att. -69%  max: 251%">
+<path fill="none" stroke="black" stroke-width="8" d="M127.91,-1050.41C152.2,-1021.69 203.85,-966.09 260.6,-938.5 287.39,-925.47 318.86,-917.73 347.61,-913.13"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="348.35,-919.23 357.26,-910.88 346.37,-905.37 348.35,-919.23"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONOTHRKN -->
+<g id="node43" class="node">
+<title>PAKNECONOTHRKN</title>
+<g id="a_node43"><a xlink:title="PAKNECONOTHRKN
+FRML &lt;IDENT&gt; PAKNECONOTHRKN = PAKNECONOTHRSH**(PAKCESENGYCON)*(PAKNECONPRVTKN*(PAKNECONPRVTXN/PAKNECONOTHRXN)**(PAKCESENGYCON)) $">
+<polygon fill="#63b8ff" stroke="black" points="507.7,-870.5 363.35,-870.5 363.35,-834.5 507.7,-834.5 507.7,-870.5"/>
+<text text-anchor="start" x="369.15" y="-847.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONOTHRKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKNECONOTHRKN -->
+<g id="edge100" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKNECONOTHRKN</title>
+<g id="a_edge100"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKNECONOTHRKN Min. att. -499%  max: 3878%">
+<path fill="none" stroke="black" stroke-width="8" d="M121.62,-1050.22C140.31,-1011.47 189.59,-921.24 260.6,-879.5 286.49,-864.28 318.15,-856.77 347.32,-853.29"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="347.94,-859.68 357.21,-851.74 346.58,-845.74 347.94,-859.68"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONENGYKN -->
+<g id="node45" class="node">
+<title>PAKNECONENGYKN</title>
+<g id="a_node45"><a xlink:title="PAKNECONENGYKN
+FRML &lt;IDENT&gt; PAKNECONENGYKN = PAKNECONENGYSH**(PAKCESENGYCON)*(PAKNECONPRVTKN*(PAKNECONPRVTXN/PAKNECONENGYXN)**(PAKCESENGYCON)) $">
+<polygon fill="#63b8ff" stroke="black" points="508.08,-816.5 362.98,-816.5 362.98,-780.5 508.08,-780.5 508.08,-816.5"/>
+<text text-anchor="start" x="368.78" y="-793.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONENGYKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKNECONENGYKN -->
+<g id="edge125" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKNECONENGYKN</title>
+<g id="a_edge125"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKNECONENGYKN Min. att. -353%  max: 5846%">
+<path fill="none" stroke="black" stroke-width="8" d="M118.5,-1050.11C132.66,-1003.74 176.56,-881.76 260.6,-825.5 285.78,-808.64 317.56,-800.79 347.04,-797.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="347.3,-803.99 356.66,-796.15 346.09,-790.04 347.3,-803.99"/>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRFSTYKN -->
+<g id="node53" class="node">
+<title>PAKSMAGRFSTYKN</title>
+<g id="a_node53"><a xlink:title="PAKSMAGRFSTYKN
+FRML &lt;IDENT&gt; PAKSMAGRFSTYKN = ((1+0.195965019358753)*(0.010131919293849*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0*PAKNEGDIFTOTKN+0.000136733767007103*PAKNEEXPGNFSKN+0.0199955288980741*PAKNEGDISTKBKN)-0.00076829563200478*PAKNEIMPGNFSKN-0.00172030587371022*PAKNYTAXNINDKN-65421)/(1+0.319587584852584) $">
+<polygon fill="#63b8ff" stroke="black" points="1525.77,-1140.5 1382.92,-1140.5 1382.92,-1104.5 1525.77,-1104.5 1525.77,-1140.5"/>
+<text text-anchor="start" x="1388.72" y="-1117.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMAGRFSTYKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMAGRFSTYKN -->
+<g id="edge140" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMAGRFSTYKN</title>
+<g id="a_edge140"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMAGRFSTYKN Min. att. 95%  max: 133%">
+<path fill="none" stroke="black" stroke-width="8" d="M225.04,-1079.84C237.03,-1080.85 249.06,-1081.76 260.6,-1082.5 674.39,-1109.08 1170.13,-1118.55 1366.83,-1121.41"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1366.6,-1128.5 1376.7,-1121.64 1366.8,-1114.5 1366.6,-1128.5"/>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVFINSKN -->
+<g id="node60" class="node">
+<title>PAKSMSRVFINSKN</title>
+<g id="a_node60"><a xlink:title="PAKSMSRVFINSKN
+FRML &lt;IDENT&gt; PAKSMSRVFINSKN = ((1+1.04148314760779)*(0.0520379651885469*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0*PAKNEGDIFTOTKN+0.00879145012359898*PAKNEEXPGNFSKN+0*PAKNEGDISTKBKN)-0.00594416979264236*PAKNEIMPGNFSKN-0.000103762679145856*PAKNYTAXNINDKN-0)/(1+0.24687745523084) $">
+<polygon fill="#63b8ff" stroke="black" points="1522.4,-1086.5 1386.3,-1086.5 1386.3,-1050.5 1522.4,-1050.5 1522.4,-1086.5"/>
+<text text-anchor="start" x="1392.1" y="-1063.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMSRVFINSKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMSRVFINSKN -->
+<g id="edge132" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMSRVFINSKN</title>
+<g id="a_edge132"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMSRVFINSKN Min. att. 72%  max: 1806%">
+<path fill="none" stroke="black" stroke-width="8" d="M224.96,-1068.5C487.37,-1068.5 1138.56,-1068.5 1370.04,-1068.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1369.97,-1075.5 1379.97,-1068.5 1369.97,-1061.5 1369.97,-1075.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTCN -->
+<g id="node64" class="node">
+<title>PAKNECONPRVTCN</title>
+<g id="a_node64"><a xlink:title="Pvt. Cons., LCU mn
+FRML &lt;IDENT&gt; PAKNECONPRVTCN = PAKNECONPRVTKN*PAKNECONPRVTXN $">
+<polygon fill="#63b8ff" stroke="black" points="562.45,-2562.5 308.6,-2562.5 308.6,-2526.5 562.45,-2526.5 562.45,-2562.5"/>
+<text text-anchor="start" x="314.4" y="-2539.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONPRVTCN:Pvt. Cons., LCU mn</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKNECONPRVTCN -->
+<g id="edge62" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKNECONPRVTCN</title>
+<g id="a_edge62"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKNECONPRVTCN Min. att. -126%  max: 59%">
+<path fill="none" stroke="black" stroke-width="8" d="M116.1,-1086.9C129.67,-1175.29 190.78,-1565.05 260.6,-1880.5 314.59,-2124.42 396.79,-2414.13 424.79,-2511.06"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="418.65,-2512.49 428.16,-2520.14 432.1,-2508.59 418.65,-2512.49"/>
+</a>
+</g>
+</g>
+<!-- PAKSMINDMNGSKN -->
+<g id="node68" class="node">
+<title>PAKSMINDMNGSKN</title>
+<g id="a_node68"><a xlink:title="PAKSMINDMNGSKN
+FRML &lt;IDENT&gt; PAKSMINDMNGSKN = ((1+6.96158341862144)*(0.0132800565666619*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0*PAKNEGDIFTOTKN+0.00704674623894759*PAKNEEXPGNFSKN+0.024122890632682*PAKNEGDISTKBKN)-0.134221966110302*PAKNEIMPGNFSKN-0.500981557895139*PAKNYTAXNINDKN-123652.869264758)/(1+0.200800622280983) $">
+<polygon fill="#63b8ff" stroke="black" points="1526.9,-1032.5 1381.8,-1032.5 1381.8,-996.5 1526.9,-996.5 1526.9,-1032.5"/>
+<text text-anchor="start" x="1387.6" y="-1009.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMINDMNGSKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMINDMNGSKN -->
+<g id="edge59" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMINDMNGSKN</title>
+<g id="a_edge59"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMINDMNGSKN Min. att. -4083%  max: 762%">
+<path fill="none" stroke="black" stroke-width="8" d="M224.96,-1064C485.66,-1053.5 1130.08,-1027.53 1365.46,-1018.04"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1365.65,-1024.8 1375.36,-1017.4 1365.09,-1010.81 1365.65,-1024.8"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN_FITTED -->
+<g id="node71" class="node">
+<title>PAKNECONPRVTKN_FITTED</title>
+<g id="a_node71"><a xlink:title="Fitted  value:HH. Cons Real
+FRML &lt;FIT&gt; PAKNECONPRVTKN_FITTED = PAKNECONPRVTKN(-1)*EXP( (-0.2*(LOG(PAKNECONPRVTKN(-1))-LOG(1.21203101101442)-LOG((((PAKBXFSTREMTCD(-1)-PAKBMFSTREMTCD(-1))*PAKPANUSATLS(-1))+PAKGGEXPTRNSCN(-1)+PAKNYYWBTOTLCN(-1)*(1-PAKGGREVDRCTXN(-1)/100))/PAKNECONPRVTXN(-1)))+0.763938860758873*((LOG((((PAKBXFSTREMTCD-PAKBMFSTREMTCD)*PAKPANUSATLS)+PAKGGEXPTRNSCN+PAKNYYWBTOTLCN*(1-PAKGGREVDRCTXN/100))/PAKNECONPRVTXN))-(LOG((((PAKBXFSTREMTCD(-1)-PAKBMFSTREMTCD(-1))*PAKPANUSATLS(-1))+PAKGGEXPTRNSCN(-1)+PAKNYYWBTOTLCN(-1)*(1-PAKGGREVDRCTXN(-1)/100))/PAKNECONPRVTXN(-1))))-0.0634474791568939*DURING_2009-0.3*(PAKFMLBLPOLYXN/100-((LOG(PAKNECONPRVTXN))-(LOG(PAKNECONPRVTXN(-1)))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="610.45,-762.5 260.6,-762.5 260.6,-726.5 610.45,-726.5 610.45,-762.5"/>
+<text text-anchor="start" x="266.4" y="-739.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONPRVTKN_FITTED:Fitted  value:HH. Cons Real</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKNECONPRVTKN_FITTED -->
+<g id="edge23" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKNECONPRVTKN_FITTED</title>
+<g id="a_edge23"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKNECONPRVTKN_FITTED Min. att. -179%  max: 206%">
+<path fill="none" stroke="black" stroke-width="8" d="M116.41,-1050.1C126.44,-997.02 163.09,-842.92 260.6,-771.5 260.73,-771.4 260.87,-771.3 261.01,-771.2"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="264.43,-777.17 269.16,-765.91 256.97,-765.32 264.43,-777.17"/>
+</a>
+</g>
+</g>
+<!-- PAKSMENGTOTLKN -->
+<g id="node81" class="node">
+<title>PAKSMENGTOTLKN</title>
+<g id="a_node81"><a xlink:title="PAKSMENGTOTLKN
+FRML &lt;IDENT&gt; PAKSMENGTOTLKN = ((1+1.65868473220397)*(0.0775261497897936*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0*PAKNEGDIFTOTKN+0.0217448978257548*PAKNEEXPGNFSKN+0.0458991644104248*PAKNEGDISTKBKN)-0.11894699850705*PAKNEIMPGNFSKN--0.50579180838529*PAKNYTAXNINDKN-0)/(1+5.65663938581514) $">
+<polygon fill="#63b8ff" stroke="black" points="1526.15,-978.5 1382.55,-978.5 1382.55,-942.5 1526.15,-942.5 1526.15,-978.5"/>
+<text text-anchor="start" x="1388.35" y="-955.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMENGTOTLKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMENGTOTLKN -->
+<g id="edge35" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMENGTOTLKN</title>
+<g id="a_edge35"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMENGTOTLKN Min. att. -7361%  max: 397%">
+<path fill="none" stroke="black" stroke-width="8" d="M219.34,-1050.04C233.19,-1047.97 247.22,-1046.06 260.6,-1044.5 672.99,-996.48 1169.03,-972.22 1366.3,-963.91"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1366.52,-970.65 1376.22,-963.24 1365.94,-956.67 1366.52,-970.65"/>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVHSNGKN -->
+<g id="node84" class="node">
+<title>PAKSMSRVHSNGKN</title>
+<g id="a_node84"><a xlink:title="PAKSMSRVHSNGKN
+FRML &lt;IDENT&gt; PAKSMSRVHSNGKN = ((1+0.782809577554843)*(0.0647364660896117*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0.00605333595533851*PAKNEGDIFTOTKN+0.03048358523237*PAKNEEXPGNFSKN+0*PAKNEGDISTKBKN)-0.0244768173208691*PAKNEIMPGNFSKN-0.0684093628903126*PAKNYTAXNINDKN-0)/(1+0.150771193398883) $">
+<polygon fill="#63b8ff" stroke="black" points="1526.15,-1194.5 1382.55,-1194.5 1382.55,-1158.5 1526.15,-1158.5 1526.15,-1194.5"/>
+<text text-anchor="start" x="1388.35" y="-1171.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMSRVHSNGKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMSRVHSNGKN -->
+<g id="edge6" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMSRVHSNGKN</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMSRVHSNGKN Min. att. 36%  max: 1888%">
+<path fill="none" stroke="black" stroke-width="8" d="M178.06,-1086.99C203.58,-1093.57 233.27,-1100.37 260.6,-1104.5 671.1,-1166.54 1168.7,-1175.58 1366.36,-1176.57"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1366.28,-1183.6 1376.31,-1176.64 1366.34,-1169.6 1366.28,-1183.6"/>
+</a>
+</g>
+</g>
+<!-- PAKSMINDOTHRTKN -->
+<g id="node94" class="node">
+<title>PAKSMINDOTHRTKN</title>
+<g id="a_node94"><a xlink:title="PAKSMINDOTHRTKN
+FRML &lt;IDENT&gt; PAKSMINDOTHRTKN = ((1+0.483473985412524)*(0.40172973397176*PAKNECONPRVTKN+0*PAKNECONGOVTKN+0.560459287907094*PAKNEGDIFTOTKN+0.719299486591763*PAKNEEXPGNFSKN+0.620970563578771*PAKNEGDISTKBKN)-0.606734386430279*PAKNEIMPGNFSKN-0.866045585295928*PAKNYTAXNINDKN-2983275.63714814)/(1+2.46379868577176) $">
+<polygon fill="#63b8ff" stroke="black" points="1529.15,-924.5 1379.55,-924.5 1379.55,-888.5 1529.15,-888.5 1529.15,-924.5"/>
+<text text-anchor="start" x="1385.35" y="-901.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKSMINDOTHRTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKSMINDOTHRTKN -->
+<g id="edge112" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKSMINDOTHRTKN</title>
+<g id="a_edge112"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKSMINDOTHRTKN Min. att. -3772%  max: 14353%">
+<path fill="none" stroke="black" stroke-width="8" d="M148.88,-1050.14C178.08,-1035.97 220.94,-1017.2 260.6,-1007.5 628.51,-917.55 732.1,-964.77 1109.55,-933.5 1195.77,-926.36 1294.18,-918.68 1363.56,-913.34"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1363.79,-919.88 1373.23,-912.14 1362.72,-905.92 1363.79,-919.88"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN -->
+<g id="node112" class="node">
+<title>PAKNYGDPMKTPKN</title>
+<g id="a_node112"><a xlink:title="Real GDP
+FRML &lt;IDENT&gt; PAKNYGDPMKTPKN = PAKNECONPRVTKN+PAKNECONGOVTKN+PAKNEGDIFTOTKN+PAKNEGDISTKBKN+PAKNEEXPGNFSKN-PAKNEIMPGNFSKN+PAKNYGDPDISCKN+PAKADAP*PAKDISPREPKN $">
+<polygon fill="#63b8ff" stroke="black" points="1555.02,-2112.5 1353.67,-2112.5 1353.67,-2076.5 1555.02,-2076.5 1555.02,-2112.5"/>
+<text text-anchor="start" x="1359.47" y="-2089.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPMKTPKN:Real GDP</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge7" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKNYGDPMKTPKN Min. att. -3110%  max: 3215%">
+<path fill="none" stroke="black" stroke-width="8" d="M116.19,-1086.76C126.16,-1144.41 163.96,-1325.2 260.6,-1434.5 584.82,-1801.19 1163.69,-2006.17 1374.11,-2071.39"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1371.6,-2077.78 1383.21,-2074.02 1375.7,-2064.4 1371.6,-2077.78"/>
+</a>
+</g>
+</g>
+<!-- PAKNEGDETTOTKN -->
+<g id="node115" class="node">
+<title>PAKNEGDETTOTKN</title>
+<g id="a_node115"><a xlink:title="Total demand, constant LCU
+FRML &lt;IDENT&gt; PAKNEGDETTOTKN = (PAKNECONPRVTKN+PAKNECONGOVTKN+PAKNEGDIFTOTKN+PAKNEGDISTKBKN+PAKNYGDPDISCKN) $">
+<polygon fill="#63b8ff" stroke="black" points="585.33,-1240.5 285.73,-1240.5 285.73,-1204.5 585.33,-1204.5 585.33,-1240.5"/>
+<text text-anchor="start" x="291.53" y="-1217.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEGDETTOTKN:Total demand, constant LCU</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKNEGDETTOTKN -->
+<g id="edge12" class="edge">
+<title>PAKNECONPRVTKN-&gt;PAKNEGDETTOTKN</title>
+<g id="a_edge12"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN -&gt; PAKNEGDETTOTKN Min. att. -2164%  max: 2627%">
+<path fill="none" stroke="black" stroke-width="8" d="M131.5,-1086.94C157.69,-1112.37 208.58,-1157.86 260.6,-1182.5 275.03,-1189.33 290.7,-1195.04 306.52,-1199.79"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="304.18,-1207.09 315.7,-1203.06 307.97,-1193.61 304.18,-1207.09"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVFINSCN -->
+<g id="node13" class="node">
+<title>PAKNVSRVFINSCN</title>
+<g id="a_node13"><a xlink:title="Services Finance (Current)
+FRML &lt;IDENT&gt; PAKNVSRVFINSCN = PAKNVSRVFINSXN*PAKNVSRVFINSKN $">
+<polygon fill="#63b8ff" stroke="black" points="2863.35,-1032.5 2582.5,-1032.5 2582.5,-996.5 2863.35,-996.5 2863.35,-1032.5"/>
+<text text-anchor="start" x="2588.3" y="-1009.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVFINSCN:Services Finance (Current)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSNGKN -->
+<g id="node38" class="node">
+<title>PAKNVAGRFSNGKN</title>
+<g id="a_node38"><a xlink:title="Agriculture Fishing
+FRML &lt;DAMP,STOC&gt; PAKNVAGRFSNGKN = (PAKNVAGRFSNGKN(-1)*EXP(PAKNVAGRFSNGKN_A+ (-0.0111719934001335-0.2*(LOG(PAKNVAGRFSNGKN(-1))-LOG(PAKSMAGRFSNGKN(-1)))+1*((LOG(PAKSMAGRFSNGKN))-(LOG(PAKSMAGRFSNGKN(-1))))) )) * (1-PAKNVAGRFSNGKN_D)+ PAKNVAGRFSNGKN_X*PAKNVAGRFSNGKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="984.3,-875.5 735.7,-875.5 735.7,-839.5 984.3,-839.5 984.3,-875.5"/>
+<text text-anchor="start" x="741.5" y="-852.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRFSNGKN:Agriculture Fishing</text>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRFSNGKN&#45;&gt;PAKNVAGRFSNGKN -->
+<g id="edge84" class="edge">
+<title>PAKSMAGRFSNGKN-&gt;PAKNVAGRFSNGKN</title>
+<g id="a_edge84"><a xlink:href="bogus" xlink:title=" PAKSMAGRFSNGKN -&gt; PAKNVAGRFSNGKN Min. att. -162%  max: 174%">
+<path fill="none" stroke="black" stroke-width="8" d="M508.19,-898.19C565.97,-891.49 648.97,-881.86 719.73,-873.65"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="720.43,-879.92 729.56,-871.82 718.82,-866.02 720.43,-879.92"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSNGKN_FITTED -->
+<g id="node93" class="node">
+<title>PAKNVAGRFSNGKN_FITTED</title>
+<g id="a_node93"><a xlink:title="Fitted  value:Agriculture Fishing
+FRML &lt;FIT&gt; PAKNVAGRFSNGKN_FITTED = PAKNVAGRFSNGKN(-1)*EXP( (-0.0111719934001335-0.2*(LOG(PAKNVAGRFSNGKN(-1))-LOG(PAKSMAGRFSNGKN(-1)))+1*((LOG(PAKSMAGRFSNGKN))-(LOG(PAKSMAGRFSNGKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="1641.27,-870.5 1267.42,-870.5 1267.42,-834.5 1641.27,-834.5 1641.27,-870.5"/>
+<text text-anchor="start" x="1273.22" y="-847.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRFSNGKN_FITTED:Fitted  value:Agriculture Fishing</text>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRFSNGKN&#45;&gt;PAKNVAGRFSNGKN_FITTED -->
+<g id="edge33" class="edge">
+<title>PAKSMAGRFSNGKN-&gt;PAKNVAGRFSNGKN_FITTED</title>
+<g id="a_edge33"><a xlink:href="bogus" xlink:title=" PAKSMAGRFSNGKN -&gt; PAKNVAGRFSNGKN_FITTED Min. att. -162%  max: 174%">
+<path fill="none" stroke="black" stroke-width="8" d="M507.84,-906.44C625.78,-905.8 868.76,-902.21 1073.55,-884.5 1089.64,-883.11 1093.49,-881.24 1109.55,-879.5 1155.41,-874.52 1204.8,-870.09 1251.45,-866.33"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1251.74,-872.86 1261.15,-865.09 1250.63,-858.9 1251.74,-872.86"/>
+</a>
+</g>
+</g>
+<!-- PAKFSTYINTKN -->
+<g id="node16" class="node">
+<title>PAKFSTYINTKN</title>
+<g id="a_node16"><a xlink:title="PAKFSTYINTKN
+FRML &lt;IDENT&gt; PAKFSTYINTKN = PAKBETAENGYFSTY*PAKNVAGRFSTYKN*(1+((PAKBETAFSTY+PAKBETAENGYFSTY)/(1-(PAKBETAFSTY+PAKBETAENGYFSTY)))) $">
+<polygon fill="#63b8ff" stroke="black" points="2781.22,-1194.5 2664.62,-1194.5 2664.62,-1158.5 2781.22,-1158.5 2781.22,-1194.5"/>
+<text text-anchor="start" x="2670.42" y="-1171.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKFSTYINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRTOTLKN -->
+<g id="node17" class="node">
+<title>PAKNVAGRTOTLKN</title>
+<g id="a_node17"><a xlink:title="Value Added Agriculture Local Currency units Volumes National base year
+FRML &lt;IDENT&gt; PAKNVAGRTOTLKN = PAKNVAGRCRPSKN+PAKNVAGRFSTYKN+PAKNVAGRFSNGKN $">
+<polygon fill="#63b8ff" stroke="black" points="2998.35,-1734.5 2447.5,-1734.5 2447.5,-1698.5 2998.35,-1698.5 2998.35,-1734.5"/>
+<text text-anchor="start" x="2453.3" y="-1711.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRTOTLKN:Value Added Agriculture Local Currency units Volumes National base year</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKD -->
+<g id="node18" class="node">
+<title>PAKNYGDPMKTPKD</title>
+<g id="a_node18"><a xlink:title="GDP, Market Prices, 2000 US$ mn
+FRML &lt;IDENT&gt; PAKNYGDPMKTPKD = (PAKNYGDPMKTPKN*((PAKNYGDPMKTPCN_VALUE_2010)/((PAKNYGDPMKTPKN_VALUE_2010))))/(PAKPANUSATLS_VALUE_2010) $">
+<polygon fill="#63b8ff" stroke="black" points="2258.88,-2112.5 1919.52,-2112.5 1919.52,-2076.5 2258.88,-2076.5 2258.88,-2112.5"/>
+<text text-anchor="start" x="1925.32" y="-2089.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPMKTPKD:GDP, Market Prices, 2000 US$ mn</text>
+</a>
+</g>
+</g>
+<!-- PAKGDPPCKD -->
+<g id="node39" class="node">
+<title>PAKGDPPCKD</title>
+<g id="a_node39"><a xlink:title="GDP per capita, 2000 US$ mn
+FRML &lt;IDENT&gt; PAKGDPPCKD = (PAKNYGDPMKTPKD/PAKSPPOPTOTL) $">
+<polygon fill="#63b8ff" stroke="black" points="2859.22,-2112.5 2586.62,-2112.5 2586.62,-2076.5 2859.22,-2076.5 2859.22,-2112.5"/>
+<text text-anchor="start" x="2592.42" y="-2089.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGDPPCKD:GDP per capita, 2000 US$ mn</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKD&#45;&gt;PAKGDPPCKD -->
+<g id="edge31" class="edge">
+<title>PAKNYGDPMKTPKD-&gt;PAKGDPPCKD</title>
+<g id="a_edge31"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKD -&gt; PAKGDPPCKD Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2259.08,-2094.5C2355.9,-2094.5 2476.45,-2094.5 2570.24,-2094.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2570.24,-2101.5 2580.24,-2094.5 2570.24,-2087.5 2570.24,-2101.5"/>
+</a>
+</g>
+</g>
+<!-- PAKTOTLINTKN -->
+<g id="node19" class="node">
+<title>PAKTOTLINTKN</title>
+<g id="a_node19"><a xlink:title="PAKTOTLINTKN
+FRML &lt;IDENT&gt; PAKTOTLINTKN = PAKBETAENGYTOTL*PAKNVENGTOTLKN*(1+((PAKBETATOTL+PAKBETAENGYTOTL)/(1-(PAKBETATOTL+PAKBETAENGYTOTL)))) $">
+<polygon fill="#63b8ff" stroke="black" points="2781.97,-438.5 2663.87,-438.5 2663.87,-402.5 2781.97,-402.5 2781.97,-438.5"/>
+<text text-anchor="start" x="2669.67" y="-415.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKTOTLINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDMNGSKN -->
+<g id="node20" class="node">
+<title>PAKNVINDMNGSKN</title>
+<g id="a_node20"><a xlink:title="Industry Mining (Constant Prices)
+FRML &lt;DAMP,STOC&gt; PAKNVINDMNGSKN = (PAKNVINDMNGSKN(-1)*EXP(PAKNVINDMNGSKN_A+ (-0.0289198908322469-0.2*(LOG(PAKNVINDMNGSKN(-1))-LOG(PAKSMINDMNGSKN(-1)))+1*((LOG(PAKSMINDMNGSKN))-(LOG(PAKSMINDMNGSKN(-1))))) )) * (1-PAKNVINDMNGSKN_D)+ PAKNVINDMNGSKN_X*PAKNVINDMNGSKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2254.75,-816.5 1923.65,-816.5 1923.65,-780.5 2254.75,-780.5 2254.75,-816.5"/>
+<text text-anchor="start" x="1929.45" y="-793.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVINDMNGSKN:Industry Mining (Constant Prices)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDMNGSKN&#45;&gt;PAKNVINDMNGSCN -->
+<g id="edge110" class="edge">
+<title>PAKNVINDMNGSKN-&gt;PAKNVINDMNGSCN</title>
+<g id="a_edge110"><a xlink:href="bogus" xlink:title=" PAKNVINDMNGSKN -&gt; PAKNVINDMNGSCN Min. att. -589%  max: 422%">
+<path fill="none" stroke="black" stroke-width="8" d="M2255.25,-782.67C2295.79,-778.89 2339.08,-774.96 2379.25,-771.5 2433.09,-766.86 2491.73,-762.13 2545.02,-757.95"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2545.21,-764.48 2554.64,-756.72 2544.12,-750.53 2545.21,-764.48"/>
+</a>
+</g>
+</g>
+<!-- PAKMNGSINTKN -->
+<g id="node35" class="node">
+<title>PAKMNGSINTKN</title>
+<g id="a_node35"><a xlink:title="PAKMNGSINTKN
+FRML &lt;IDENT&gt; PAKMNGSINTKN = PAKBETAENGYMNGS*PAKNVINDMNGSKN*(1+((PAKBETAMNGS+PAKBETAENGYMNGS)/(1-(PAKBETAMNGS+PAKBETAENGYMNGS)))) $">
+<polygon fill="#63b8ff" stroke="black" points="2784.6,-708.5 2661.25,-708.5 2661.25,-672.5 2784.6,-672.5 2784.6,-708.5"/>
+<text text-anchor="start" x="2667.05" y="-685.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKMNGSINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDMNGSKN&#45;&gt;PAKMNGSINTKN -->
+<g id="edge118" class="edge">
+<title>PAKNVINDMNGSKN-&gt;PAKMNGSINTKN</title>
+<g id="a_edge118"><a xlink:href="bogus" xlink:title=" PAKNVINDMNGSKN -&gt; PAKMNGSINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2143.81,-780.08C2201.3,-761.14 2295.61,-732.37 2379.25,-717.5 2469.74,-701.42 2575.37,-694.91 2645.17,-692.28"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2645.06,-699.08 2654.81,-691.74 2644.57,-685.09 2645.06,-699.08"/>
+</a>
+</g>
+</g>
+<!-- PAKNVINDTOTLKN -->
+<g id="node37" class="node">
+<title>PAKNVINDTOTLKN</title>
+<g id="a_node37"><a xlink:title="Value Added Industry Local Currency units Volumes National base year
+FRML &lt;IDENT&gt; PAKNVINDTOTLKN = PAKNVINDMNGSKN+PAKNVINDMNFSKN+PAKNVINDELECKN+PAKNVINDCNSTKN $">
+<polygon fill="#63b8ff" stroke="black" points="2988.97,-816.5 2456.87,-816.5 2456.87,-780.5 2988.97,-780.5 2988.97,-816.5"/>
+<text text-anchor="start" x="2462.67" y="-793.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVINDTOTLKN:Value Added Industry Local Currency units Volumes National base year</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDMNGSKN&#45;&gt;PAKNVINDTOTLKN -->
+<g id="edge61" class="edge">
+<title>PAKNVINDMNGSKN-&gt;PAKNVINDTOTLKN</title>
+<g id="a_edge61"><a xlink:href="bogus" xlink:title=" PAKNVINDMNGSKN -&gt; PAKNVINDTOTLKN Min. att. -3814%  max: 415%">
+<path fill="none" stroke="black" stroke-width="8" d="M2254.94,-798.5C2311.85,-798.5 2377.32,-798.5 2440.89,-798.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2440.56,-805.5 2450.56,-798.5 2440.56,-791.5 2440.56,-805.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNVINDMNGSKN_FITTED -->
+<g id="node61" class="node">
+<title>PAKNVINDMNGSKN_FITTED</title>
+<g id="a_node61"><a xlink:title="Fitted  value:Industry Mining (Constant Prices)
+FRML &lt;FIT&gt; PAKNVINDMNGSKN_FITTED = PAKNVINDMNGSKN(-1)*EXP( (-0.0289198908322469-0.2*(LOG(PAKNVINDMNGSKN(-1))-LOG(PAKSMINDMNGSKN(-1)))+1*((LOG(PAKSMINDMNGSKN))-(LOG(PAKSMINDMNGSKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2951.1,-870.5 2494.75,-870.5 2494.75,-834.5 2951.1,-834.5 2951.1,-870.5"/>
+<text text-anchor="start" x="2500.55" y="-847.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVINDMNGSKN_FITTED:Fitted  value:Industry Mining (Constant Prices)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDMNGSKN&#45;&gt;PAKNVINDMNGSKN_FITTED -->
+<g id="edge40" class="edge">
+<title>PAKNVINDMNGSKN-&gt;PAKNVINDMNGSKN_FITTED</title>
+<g id="a_edge40"><a xlink:href="bogus" xlink:title=" PAKNVINDMNGSKN -&gt; PAKNVINDMNGSKN_FITTED Min. att. -61%  max: 241%">
+<path fill="none" stroke="black" stroke-width="8" d="M2255.25,-814.33C2295.79,-818.11 2339.08,-822.04 2379.25,-825.5 2411.46,-828.27 2445.38,-831.08 2478.85,-833.79"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2478.17,-841.24 2488.7,-835.06 2479.3,-827.28 2478.17,-841.24"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONOTHRCN -->
+<g id="node21" class="node">
+<title>PAKNECONOTHRCN</title>
+<g id="a_node21"><a xlink:title="PAKNECONOTHRCN
+FRML &lt;IDENT&gt; PAKNECONOTHRCN = PAKNECONOTHRKN*PAKNECONOTHRXN $">
+<polygon fill="#63b8ff" stroke="black" points="931.8,-821.5 788.2,-821.5 788.2,-785.5 931.8,-785.5 931.8,-821.5"/>
+<text text-anchor="start" x="794" y="-798.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONOTHRCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVPRVSKN -->
+<g id="node24" class="node">
+<title>PAKNVSRVPRVSKN</title>
+<g id="a_node24"><a xlink:title="Services Private (Constant)
+FRML &lt;IDENT&gt; PAKNVSRVPRVSKN = PAKNYGDPFCSTKN-(PAKNVAGRTOTLKN+PAKNVINDTOTLKN+PAKNVSRVWHSLKN+PAKNVSRVTRNSKN+PAKNVSRVFINSKN+PAKNVSRVHSNGKN+PAKNVSRVGOVSKN) $">
+<polygon fill="#63b8ff" stroke="black" points="2866.72,-1518.5 2579.12,-1518.5 2579.12,-1482.5 2866.72,-1482.5 2866.72,-1518.5"/>
+<text text-anchor="start" x="2584.92" y="-1495.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVPRVSKN:Services Private (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRCRPSKN&#45;&gt;PAKNVAGRTOTLKN -->
+<g id="edge46" class="edge">
+<title>PAKNVAGRCRPSKN-&gt;PAKNVAGRTOTLKN</title>
+<g id="a_edge46"><a xlink:href="bogus" xlink:title=" PAKNVAGRCRPSKN -&gt; PAKNVAGRTOTLKN Min. att. 92%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2277.14,-1752.64C2311.11,-1749.51 2346.23,-1746.34 2379.25,-1743.5 2407.35,-1741.08 2436.75,-1738.63 2466.01,-1736.25"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2466.37,-1742.76 2475.77,-1734.98 2465.24,-1728.81 2466.37,-1742.76"/>
+</a>
+</g>
+</g>
+<!-- PAKCRPSINTKN -->
+<g id="node27" class="node">
+<title>PAKCRPSINTKN</title>
+<g id="a_node27"><a xlink:title="PAKCRPSINTKN
+FRML &lt;IDENT&gt; PAKCRPSINTKN = PAKBETAENGYCRPS*PAKNVAGRCRPSKN*(1+((PAKBETACRPS+PAKBETAENGYCRPS)/(1-(PAKBETACRPS+PAKBETAENGYCRPS)))) $">
+<polygon fill="#63b8ff" stroke="black" points="2781.22,-1842.5 2664.62,-1842.5 2664.62,-1806.5 2781.22,-1806.5 2781.22,-1842.5"/>
+<text text-anchor="start" x="2670.42" y="-1819.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKCRPSINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRCRPSKN&#45;&gt;PAKCRPSINTKN -->
+<g id="edge134" class="edge">
+<title>PAKNVAGRCRPSKN-&gt;PAKCRPSINTKN</title>
+<g id="a_edge134"><a xlink:href="bogus" xlink:title=" PAKNVAGRCRPSKN -&gt; PAKCRPSINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2277.14,-1788.36C2311.11,-1791.49 2346.23,-1794.66 2379.25,-1797.5 2472,-1805.49 2578.95,-1813.76 2648.36,-1819.01"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2647.81,-1826.44 2658.3,-1820.22 2648.86,-1812.48 2647.81,-1826.44"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRCRPSCN -->
+<g id="node77" class="node">
+<title>PAKNVAGRCRPSCN</title>
+<g id="a_node77"><a xlink:title="Agriculture Crops and livestock (Current)
+FRML &lt;IDENT&gt; PAKNVAGRCRPSCN = PAKNVAGRCRPSXN*PAKNVAGRCRPSKN $">
+<polygon fill="#63b8ff" stroke="black" points="2906.85,-1788.5 2539,-1788.5 2539,-1752.5 2906.85,-1752.5 2906.85,-1788.5"/>
+<text text-anchor="start" x="2544.8" y="-1765.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRCRPSCN:Agriculture Crops and livestock (Current)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRCRPSKN&#45;&gt;PAKNVAGRCRPSCN -->
+<g id="edge20" class="edge">
+<title>PAKNVAGRCRPSKN-&gt;PAKNVAGRCRPSCN</title>
+<g id="a_edge20"><a xlink:href="bogus" xlink:title=" PAKNVAGRCRPSKN -&gt; PAKNVAGRCRPSCN Min. att. -113%  max: 74%">
+<path fill="none" stroke="black" stroke-width="8" d="M2277.17,-1770.5C2354.6,-1770.5 2444.5,-1770.5 2523.13,-1770.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2522.7,-1777.5 2532.7,-1770.5 2522.7,-1763.5 2522.7,-1777.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRCRPSKN&#45;&gt;PAKNVAGRCRPSKN_FITTED -->
+<g id="edge15" class="edge">
+<title>PAKNVAGRCRPSKN-&gt;PAKNVAGRCRPSKN_FITTED</title>
+<g id="a_edge15"><a xlink:href="bogus" xlink:title=" PAKNVAGRCRPSKN -&gt; PAKNVAGRCRPSKN_FITTED Min. att. -75%  max: 260%">
+<path fill="none" stroke="black" stroke-width="8" d="M2258.87,-1788.96C2287.94,-1795.9 2317.17,-1805.42 2343.25,-1818.5 2362.65,-1828.23 2359.35,-1842.84 2379.25,-1851.5 2403.72,-1862.15 2430.1,-1869.9 2456.98,-1875.44"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2455.26,-1882.38 2466.4,-1877.37 2457.88,-1868.62 2455.26,-1882.38"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTRNSCN -->
+<g id="node28" class="node">
+<title>PAKNVSRVTRNSCN</title>
+<g id="a_node28"><a xlink:title="Services Transport (Current)
+FRML &lt;IDENT&gt; PAKNVSRVTRNSCN = PAKNVSRVTRNSXN*PAKNVSRVTRNSKN $">
+<polygon fill="#63b8ff" stroke="black" points="2870.47,-1572.5 2575.37,-1572.5 2575.37,-1536.5 2870.47,-1536.5 2870.47,-1572.5"/>
+<text text-anchor="start" x="2581.17" y="-1549.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVTRNSCN:Services Transport (Current)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSTYCN -->
+<g id="node29" class="node">
+<title>PAKNVAGRFSTYCN</title>
+<g id="a_node29"><a xlink:title="Agriculture Forestry
+FRML &lt;IDENT&gt; PAKNVAGRFSTYCN = PAKNVAGRFSTYXN*PAKNVAGRFSTYKN $">
+<polygon fill="#63b8ff" stroke="black" points="2848.35,-1140.5 2597.5,-1140.5 2597.5,-1104.5 2848.35,-1104.5 2848.35,-1140.5"/>
+<text text-anchor="start" x="2603.3" y="-1117.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRFSTYCN:Agriculture Forestry</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPPOTLKN -->
+<g id="node30" class="node">
+<title>PAKNYGDPPOTLKN</title>
+<g id="a_node30"><a xlink:title="Potential Output, constant LCU
+FRML &lt;IDENT&gt; PAKNYGDPPOTLKN = PAKNYGDPTFP*(PAKLMEMPSTRLCN**PAKNYYWBTOTLCN_)*(PAKNEGDIKSTKKN(-1)**(1-PAKNYYWBTOTLCN_-0.1))*(PAKNVENGTOTLKN**0.1) $">
+<polygon fill="#63b8ff" stroke="black" points="2879.85,-384.5 2566,-384.5 2566,-348.5 2879.85,-348.5 2879.85,-384.5"/>
+<text text-anchor="start" x="2571.8" y="-361.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPPOTLKN:Potential Output, constant LCU</text>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTOTLKN -->
+<g id="node31" class="node">
+<title>PAKNVSRVTOTLKN</title>
+<g id="a_node31"><a xlink:title="Value Added Services Local Currency units Volumes National base year
+FRML &lt;IDENT&gt; PAKNVSRVTOTLKN = PAKNVSRVWHSLKN+PAKNVSRVTRNSKN+PAKNVSRVFINSKN+PAKNVSRVHSNGKN+PAKNVSRVGOVSKN+PAKNVSRVPRVSKN $">
+<polygon fill="#63b8ff" stroke="black" points="2990.1,-1410.5 2455.75,-1410.5 2455.75,-1374.5 2990.1,-1374.5 2990.1,-1410.5"/>
+<text text-anchor="start" x="2461.55" y="-1387.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVTOTLKN:Value Added Services Local Currency units Volumes National base year</text>
+</a>
+</g>
+</g>
+<!-- PAKNVENGNIMPKN -->
+<g id="node32" class="node">
+<title>PAKNVENGNIMPKN</title>
+<g id="a_node32"><a xlink:title="PAKNVENGNIMPKN
+FRML &lt;IDENT&gt; PAKNVENGNIMPKN = (PAKNEIMPENGYSH**(PAKCESENGYIMPT))*(PAKNEIMPGNFSXN/PAKNVENGNIMPXN)**(PAKCESENGYIMPT)*PAKNEIMPGNFSKN $">
+<polygon fill="#63b8ff" stroke="black" points="1525.77,-1302.5 1382.92,-1302.5 1382.92,-1266.5 1525.77,-1266.5 1525.77,-1302.5"/>
+<text text-anchor="start" x="1388.72" y="-1279.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVENGNIMPKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKGGREVGNFSCN -->
+<g id="node33" class="node">
+<title>PAKGGREVGNFSCN</title>
+<g id="a_node33"><a xlink:title="Taxes on Goods and Services
+FRML &lt;DAMP,STOC&gt; PAKGGREVGNFSCN = ((PAKGGREVGNFSXN/100*(PAKNECONPRVTCN+PAKNECONGOVTCN))+5.34672642860449E-12 + PAKGGREVGNFSCN_A)* (1-PAKGGREVGNFSCN_D)+ PAKGGREVGNFSCN_X*PAKGGREVGNFSCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="1010.92,-2562.5 709.08,-2562.5 709.08,-2526.5 1010.92,-2526.5 1010.92,-2562.5"/>
+<text text-anchor="start" x="714.88" y="-2539.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGREVGNFSCN:Taxes on Goods and Services</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTINFMCN -->
+<g id="node34" class="node">
+<title>PAKNYWRTINFMCN</title>
+<g id="a_node34"><a xlink:title="PAKNYWRTINFMCN
+FRML &lt;DAMP,STOC&gt; PAKNYWRTINFMCN = (PAKNYWRTINFMCN(-1)*EXP(PAKNYWRTINFMCN_A+ (-0.13526463206061-0.3*(LOG(PAKNYWRTINFMCN(-1))-LOG(PAKNYGDPFCSTXN(-1))-LOG(PAKNYGDPPOTLKN(-1)/PAKLMEMPSTRLCN(-1)))+0.2*((LOG(PAKNYWRTINFMCN(-1)))-(LOG(PAKNYWRTINFMCN(-2))))+(1-0.2)*(0.5*((LOG(PAKNYGDPFCSTXN(-1)))-(LOG(PAKNYGDPFCSTXN(-2))))+0.5*(PAKINFLEXPT/100)+((LOG(PAKNYGDPMKTPKN/PAKLMEMPSTRLCN))-(LOG(PAKNYGDPMKTPKN(-1)/PAKLMEMPSTRLCN(-1)))))-0.2*(PAKLMUNRTOTLCN-PAKLMUNRSTRLCN)/100) )) * (1-PAKNYWRTINFMCN_D)+ PAKNYWRTINFMCN_X*PAKNYWRTINFMCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2161.38,-2058.5 2017.02,-2058.5 2017.02,-2022.5 2161.38,-2022.5 2161.38,-2058.5"/>
+<text text-anchor="start" x="2022.82" y="-2035.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYWRTINFMCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTINFMCN_FITTED -->
+<g id="node48" class="node">
+<title>PAKNYWRTINFMCN_FITTED</title>
+<g id="a_node48"><a xlink:title="Fitted  value:PAKNYWRTINFMCN
+FRML &lt;FIT&gt; PAKNYWRTINFMCN_FITTED = PAKNYWRTINFMCN(-1)*EXP( (-0.13526463206061-0.3*(LOG(PAKNYWRTINFMCN(-1))-LOG(PAKNYGDPFCSTXN(-1))-LOG(PAKNYGDPPOTLKN(-1)/PAKLMEMPSTRLCN(-1)))+0.2*((LOG(PAKNYWRTINFMCN(-1)))-(LOG(PAKNYWRTINFMCN(-2))))+(1-0.2)*(0.5*((LOG(PAKNYGDPFCSTXN(-1)))-(LOG(PAKNYGDPFCSTXN(-2))))+0.5*(PAKINFLEXPT/100)+((LOG(PAKNYGDPMKTPKN/PAKLMEMPSTRLCN))-(LOG(PAKNYGDPMKTPKN(-1)/PAKLMEMPSTRLCN(-1)))))-0.2*(PAKLMUNRTOTLCN-PAKLMUNRSTRLCN)/100) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2922.22,-1950.5 2523.62,-1950.5 2523.62,-1914.5 2922.22,-1914.5 2922.22,-1950.5"/>
+<text text-anchor="start" x="2529.42" y="-1927.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYWRTINFMCN_FITTED:Fitted  value:PAKNYWRTINFMCN</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTINFMCN&#45;&gt;PAKNYWRTINFMCN_FITTED -->
+<g id="edge72" class="edge">
+<title>PAKNYWRTINFMCN-&gt;PAKNYWRTINFMCN_FITTED</title>
+<g id="a_edge72"><a xlink:href="bogus" xlink:title=" PAKNYWRTINFMCN -&gt; PAKNYWRTINFMCN_FITTED Min. att. 0%  max: 135%">
+<path fill="none" stroke="black" stroke-width="8" d="M2161.84,-2046.05C2215.34,-2046.88 2288.38,-2040.76 2343.25,-2008.5 2366.55,-1994.8 2355.64,-1972.64 2379.25,-1959.5 2417.96,-1937.95 2463.05,-1926.63 2507.55,-1921.42"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2508.01,-1927.8 2517.25,-1919.82 2506.59,-1913.87 2508.01,-1927.8"/>
+</a>
+</g>
+</g>
+<!-- PAKLMEMPINFMCN -->
+<g id="node72" class="node">
+<title>PAKLMEMPINFMCN</title>
+<g id="a_node72"><a xlink:title="PAKLMEMPINFMCN
+FRML &lt;IDENT&gt; PAKLMEMPINFMCN = (PAKNYWBINFMSH**PAKINFCES)*((PAKNYWRTTOTLCN/PAKNYWRTINFMCN)**PAKINFCES)*PAKLMEMPTOTLCN $">
+<polygon fill="#63b8ff" stroke="black" points="2795.1,-2004.5 2650.75,-2004.5 2650.75,-1968.5 2795.1,-1968.5 2795.1,-2004.5"/>
+<text text-anchor="start" x="2656.55" y="-1981.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKLMEMPINFMCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTINFMCN&#45;&gt;PAKLMEMPINFMCN -->
+<g id="edge133" class="edge">
+<title>PAKNYWRTINFMCN-&gt;PAKLMEMPINFMCN</title>
+<g id="a_edge133"><a xlink:href="bogus" xlink:title=" PAKNYWRTINFMCN -&gt; PAKLMEMPINFMCN Min. att. -214018%  max: 514935%">
+<path fill="none" stroke="black" stroke-width="8" d="M2161.74,-2033.53C2220.22,-2027.9 2305.06,-2019.89 2379.25,-2013.5 2466.13,-2006.02 2565.47,-1998.28 2634.74,-1993.02"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2634.92,-1999.57 2644.36,-1991.83 2633.86,-1985.61 2634.92,-1999.57"/>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTTOTLCN -->
+<g id="node73" class="node">
+<title>PAKNYWRTTOTLCN</title>
+<g id="a_node73"><a xlink:title="PAKNYWRTTOTLCN
+FRML &lt;IDENT&gt; PAKNYWRTTOTLCN = (PAKNYWBINFMSH**PAKINFCES*(PAKNYWRTINFMCN)**(1-PAKINFCES)+PAKNYWBFORMSH**PAKINFCES*(PAKNYWRTFORMCN*(1+PAKGGREVDRCTXN/100))**(1-PAKINFCES))**(1/(1-PAKINFCES)) $">
+<polygon fill="#63b8ff" stroke="black" points="2795.1,-2274.5 2650.75,-2274.5 2650.75,-2238.5 2795.1,-2238.5 2795.1,-2274.5"/>
+<text text-anchor="start" x="2656.55" y="-2251.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYWRTTOTLCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTINFMCN&#45;&gt;PAKNYWRTTOTLCN -->
+<g id="edge26" class="edge">
+<title>PAKNYWRTINFMCN-&gt;PAKNYWRTTOTLCN</title>
+<g id="a_edge26"><a xlink:href="bogus" xlink:title=" PAKNYWRTINFMCN -&gt; PAKNYWRTTOTLCN Min. att. 61%  max: 79%">
+<path fill="none" stroke="black" stroke-width="7.94" d="M2161.85,-2027.54C2218.05,-2021.73 2294.65,-2024.08 2343.25,-2067.5 2398.25,-2116.64 2323.58,-2181.12 2379.25,-2229.5 2448.58,-2289.74 2558.39,-2287.31 2634.96,-2275.79"/>
+<polygon fill="black" stroke="black" stroke-width="7.94" points="2635.53,-2282.76 2644.29,-2274.29 2633.3,-2269.04 2635.53,-2282.76"/>
+</a>
+</g>
+</g>
+<!-- PAKNYYWBINFMCN -->
+<g id="node97" class="node">
+<title>PAKNYYWBINFMCN</title>
+<g id="a_node97"><a xlink:title="PAKNYYWBINFMCN
+FRML &lt;IDENT&gt; PAKNYYWBINFMCN = PAKNYWRTINFMCN*PAKLMEMPINFMCN $">
+<polygon fill="#63b8ff" stroke="black" points="2796.22,-2058.5 2649.62,-2058.5 2649.62,-2022.5 2796.22,-2022.5 2796.22,-2058.5"/>
+<text text-anchor="start" x="2655.42" y="-2035.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYYWBINFMCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTINFMCN&#45;&gt;PAKNYYWBINFMCN -->
+<g id="edge29" class="edge">
+<title>PAKNYWRTINFMCN-&gt;PAKNYYWBINFMCN</title>
+<g id="a_edge29"><a xlink:href="bogus" xlink:title=" PAKNYWRTINFMCN -&gt; PAKNYYWBINFMCN Min. att. 65%  max: 111%">
+<path fill="none" stroke="black" stroke-width="8" d="M2161.75,-2040.5C2277.95,-2040.5 2507.4,-2040.5 2633.59,-2040.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2633.57,-2047.5 2643.57,-2040.5 2633.57,-2033.5 2633.57,-2047.5"/>
+</a>
+</g>
+</g>
+<!-- PAKHSNGINTKN -->
+<g id="node36" class="node">
+<title>PAKHSNGINTKN</title>
+<g id="a_node36"><a xlink:title="PAKHSNGINTKN
+FRML &lt;IDENT&gt; PAKHSNGINTKN = PAKBETAENGYHSNG*PAKNVSRVHSNGKN*(1+((PAKBETAHSNG+PAKBETAENGYHSNG)/(1-(PAKBETAHSNG+PAKBETAENGYHSNG)))) $">
+<polygon fill="#63b8ff" stroke="black" points="2783.1,-1356.5 2662.75,-1356.5 2662.75,-1320.5 2783.1,-1320.5 2783.1,-1356.5"/>
+<text text-anchor="start" x="2668.55" y="-1333.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKHSNGINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSNGCN -->
+<g id="node74" class="node">
+<title>PAKNVAGRFSNGCN</title>
+<g id="a_node74"><a xlink:title="Agriculture Fishing
+FRML &lt;IDENT&gt; PAKNVAGRFSNGCN = PAKNVAGRFSNGXN*PAKNVAGRFSNGKN $">
+<polygon fill="#63b8ff" stroke="black" points="1578.27,-762.5 1330.42,-762.5 1330.42,-726.5 1578.27,-726.5 1578.27,-762.5"/>
+<text text-anchor="start" x="1336.22" y="-739.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRFSNGCN:Agriculture Fishing</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSNGKN&#45;&gt;PAKNVAGRFSNGCN -->
+<g id="edge99" class="edge">
+<title>PAKNVAGRFSNGKN-&gt;PAKNVAGRFSNGCN</title>
+<g id="a_edge99"><a xlink:href="bogus" xlink:title=" PAKNVAGRFSNGKN -&gt; PAKNVAGRFSNGCN Min. att. -267%  max: 83%">
+<path fill="none" stroke="black" stroke-width="8" d="M984.67,-860.28C1015.61,-856.18 1047.4,-847.43 1073.55,-830.5 1099.33,-813.8 1083.37,-787.57 1109.55,-771.5 1169.89,-734.45 1247.86,-725.87 1314.28,-727.36"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1313.79,-734.56 1324.02,-727.91 1314.27,-720.57 1313.79,-734.56"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSNGKN&#45;&gt;PAKNVAGRFSNGKN_FITTED -->
+<g id="edge8" class="edge">
+<title>PAKNVAGRFSNGKN-&gt;PAKNVAGRFSNGKN_FITTED</title>
+<g id="a_edge8"><a xlink:href="bogus" xlink:title=" PAKNVAGRFSNGKN -&gt; PAKNVAGRFSNGKN_FITTED Min. att. -74%  max: 262%">
+<path fill="none" stroke="black" stroke-width="8" d="M984.45,-856.46C1061.54,-855.81 1162.62,-854.95 1251.19,-854.21"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1251.06,-861.16 1261,-854.07 1250.94,-847.16 1251.06,-861.16"/>
+</a>
+</g>
+</g>
+<!-- PAKFSNGINTKN -->
+<g id="node114" class="node">
+<title>PAKFSNGINTKN</title>
+<g id="a_node114"><a xlink:title="PAKFSNGINTKN
+FRML &lt;IDENT&gt; PAKFSNGINTKN = PAKBETAENGYFSNG*PAKNVAGRFSNGKN*(1+((PAKBETAFSNG+PAKBETAENGYFSNG)/(1-(PAKBETAFSNG+PAKBETAENGYFSNG)))) $">
+<polygon fill="#63b8ff" stroke="black" points="1513.4,-816.5 1395.3,-816.5 1395.3,-780.5 1513.4,-780.5 1513.4,-816.5"/>
+<text text-anchor="start" x="1401.1" y="-793.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKFSNGINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSNGKN&#45;&gt;PAKFSNGINTKN -->
+<g id="edge106" class="edge">
+<title>PAKNVAGRFSNGKN-&gt;PAKFSNGINTKN</title>
+<g id="a_edge106"><a xlink:href="bogus" xlink:title=" PAKNVAGRFSNGKN -&gt; PAKFSNGINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M984.66,-842.04C1013.82,-838.32 1044.79,-834.32 1073.55,-830.5 1089.56,-828.37 1093.49,-827.24 1109.55,-825.5 1202.32,-815.42 1309.56,-807.61 1379.27,-803.04"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1379.33,-809.66 1388.85,-802.03 1378.42,-795.69 1379.33,-809.66"/>
+</a>
+</g>
+</g>
+<!-- PAKOTHRTINTKN -->
+<g id="node40" class="node">
+<title>PAKOTHRTINTKN</title>
+<g id="a_node40"><a xlink:title="PAKOTHRTINTKN
+FRML &lt;IDENT&gt; PAKOTHRTINTKN = PAKBETAENGYOTHRT*PAKNVINDOTHRTKN*(1+((PAKBETAOTHRT+PAKBETAENGYOTHRT)/(1-(PAKBETAOTHRT+PAKBETAENGYOTHRT)))) $">
+<polygon fill="#63b8ff" stroke="black" points="2786.85,-114.5 2659,-114.5 2659,-78.5 2786.85,-78.5 2786.85,-114.5"/>
+<text text-anchor="start" x="2664.8" y="-91.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKOTHRTINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNEADPKMAXKN -->
+<g id="node41" class="node">
+<title>PAKNEADPKMAXKN</title>
+<g id="a_node41"><a xlink:title="PAKNEADPKMAXKN
+FRML &lt;DAMP,STOC&gt; PAKNEADPKMAXKN = (0*DUMH+((1+0.01)/(0.01+PAKDEPR))*(PAKAVDAMAGE/100)*PAKNYGDPMKTPKN + PAKNEADPKMAXKN_A)* (1-PAKNEADPKMAXKN_D)+ PAKNEADPKMAXKN_X*PAKNEADPKMAXKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2163.25,-1966.5 2015.15,-1966.5 2015.15,-1930.5 2163.25,-1930.5 2163.25,-1966.5"/>
+<text text-anchor="start" x="2020.95" y="-1943.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEADPKMAXKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONOTHRKN&#45;&gt;PAKNECONOTHRCN -->
+<g id="edge129" class="edge">
+<title>PAKNECONOTHRKN-&gt;PAKNECONOTHRCN</title>
+<g id="a_edge129"><a xlink:href="bogus" xlink:title=" PAKNECONOTHRKN -&gt; PAKNECONOTHRCN Min. att. -97%  max: 74%">
+<path fill="none" stroke="black" stroke-width="8" d="M508.19,-844.19C581.2,-835.72 694.48,-822.58 772.45,-813.54"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="772.91,-819.84 782.04,-811.73 771.3,-805.93 772.91,-819.84"/>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTFORMCN -->
+<g id="node44" class="node">
+<title>PAKNYWRTFORMCN</title>
+<g id="a_node44"><a xlink:title="PAKNYWRTFORMCN
+FRML &lt;DAMP,STOC&gt; PAKNYWRTFORMCN = (PAKNYWRTFORMCN(-1)*EXP(PAKNYWRTFORMCN_A+ (-0.132832689997107-0.3*(LOG(PAKNYWRTFORMCN(-1))-LOG(PAKNYGDPFCSTXN(-1))-LOG(PAKNYGDPPOTLKN(-1)/PAKLMEMPSTRLCN(-1)))+0.2*((LOG(PAKNYWRTFORMCN(-1)))-(LOG(PAKNYWRTFORMCN(-2))))+(1-0.2)*(0.5*((LOG(PAKNYGDPFCSTXN(-1)))-(LOG(PAKNYGDPFCSTXN(-2))))+0.5*(PAKINFLEXPT/100)+((LOG(PAKNYGDPMKTPKN/PAKLMEMPSTRLCN))-(LOG(PAKNYGDPMKTPKN(-1)/PAKLMEMPSTRLCN(-1)))))-0.2*(PAKLMUNRTOTLCN-PAKLMUNRSTRLCN)/100) )) * (1-PAKNYWRTFORMCN_D)+ PAKNYWRTFORMCN_X*PAKNYWRTFORMCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2163.62,-2301.5 2014.77,-2301.5 2014.77,-2265.5 2163.62,-2265.5 2163.62,-2301.5"/>
+<text text-anchor="start" x="2020.57" y="-2278.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYWRTFORMCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTFORMCN&#45;&gt;PAKNYWRTFORMCN_FITTED -->
+<g id="edge111" class="edge">
+<title>PAKNYWRTFORMCN-&gt;PAKNYWRTFORMCN_FITTED</title>
+<g id="a_edge111"><a xlink:href="bogus" xlink:title=" PAKNYWRTFORMCN -&gt; PAKNYWRTFORMCN_FITTED Min. att. 0%  max: 135%">
+<path fill="none" stroke="black" stroke-width="8" d="M2164.04,-2275C2218.52,-2272.67 2291.8,-2278.21 2343.25,-2315.5 2373.51,-2337.43 2348.48,-2370.29 2379.25,-2391.5 2439.88,-2433.29 2521.67,-2441.07 2590.14,-2437.91"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2590.31,-2444.56 2599.88,-2436.99 2589.49,-2430.59 2590.31,-2444.56"/>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTFORMCN&#45;&gt;PAKNYWRTTOTLCN -->
+<g id="edge4" class="edge">
+<title>PAKNYWRTFORMCN-&gt;PAKNYWRTTOTLCN</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title=" PAKNYWRTFORMCN -&gt; PAKNYWRTTOTLCN Min. att. 12%  max: 21%">
+<path fill="none" stroke="black" stroke-width="2.11" d="M2163.9,-2280.35C2282.1,-2275.3 2513.35,-2265.41 2637.82,-2260.09"/>
+<polygon fill="black" stroke="black" stroke-width="2.11" points="2637.79,-2263.47 2647.63,-2259.55 2637.49,-2256.48 2637.79,-2263.47"/>
+</a>
+</g>
+</g>
+<!-- PAKLMEMPFORMCN -->
+<g id="node89" class="node">
+<title>PAKLMEMPFORMCN</title>
+<g id="a_node89"><a xlink:title="PAKLMEMPFORMCN
+FRML &lt;IDENT&gt; PAKLMEMPFORMCN = (PAKNYWBFORMSH**PAKINFCES)*((PAKNYWRTTOTLCN/(PAKNYWRTFORMCN*(1+PAKGGREVDRCTXN/100)))**PAKINFCES)*PAKLMEMPTOTLCN $">
+<polygon fill="#63b8ff" stroke="black" points="2797.35,-2328.5 2648.5,-2328.5 2648.5,-2292.5 2797.35,-2292.5 2797.35,-2328.5"/>
+<text text-anchor="start" x="2654.3" y="-2305.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKLMEMPFORMCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTFORMCN&#45;&gt;PAKLMEMPFORMCN -->
+<g id="edge88" class="edge">
+<title>PAKNYWRTFORMCN-&gt;PAKLMEMPFORMCN</title>
+<g id="a_edge88"><a xlink:href="bogus" xlink:title=" PAKNYWRTFORMCN -&gt; PAKLMEMPFORMCN Min. att. -214024%  max: 514929%">
+<path fill="none" stroke="black" stroke-width="8" d="M2163.9,-2286.65C2280.36,-2291.63 2506.58,-2301.3 2632.27,-2306.67"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2631.91,-2313.92 2642.2,-2307.35 2632.51,-2299.93 2631.91,-2313.92"/>
+</a>
+</g>
+</g>
+<!-- PAKNYYWBFORMCN -->
+<g id="node104" class="node">
+<title>PAKNYYWBFORMCN</title>
+<g id="a_node104"><a xlink:title="PAKNYYWBFORMCN
+FRML &lt;IDENT&gt; PAKNYYWBFORMCN = PAKNYWRTFORMCN*(1+PAKGGREVDRCTXN/100)*PAKLMEMPFORMCN $">
+<polygon fill="#63b8ff" stroke="black" points="2798.47,-2382.5 2647.37,-2382.5 2647.37,-2346.5 2798.47,-2346.5 2798.47,-2382.5"/>
+<text text-anchor="start" x="2653.17" y="-2359.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYYWBFORMCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNYWRTFORMCN&#45;&gt;PAKNYYWBFORMCN -->
+<g id="edge119" class="edge">
+<title>PAKNYWRTFORMCN-&gt;PAKNYYWBFORMCN</title>
+<g id="a_edge119"><a xlink:href="bogus" xlink:title=" PAKNYWRTFORMCN -&gt; PAKNYYWBFORMCN Min. att. 65%  max: 111%">
+<path fill="none" stroke="black" stroke-width="8" d="M2164.06,-2284.68C2215.55,-2287.45 2285.16,-2295.14 2343.25,-2315.5 2360.95,-2321.7 2361.41,-2331.72 2379.25,-2337.5 2461.67,-2364.23 2560.82,-2369.32 2631.22,-2368.73"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2631.23,-2375.64 2641.13,-2368.49 2631.03,-2361.64 2631.23,-2375.64"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONENGYCN -->
+<g id="node59" class="node">
+<title>PAKNECONENGYCN</title>
+<g id="a_node59"><a xlink:title="PAKNECONENGYCN
+FRML &lt;IDENT&gt; PAKNECONENGYCN = PAKNECONENGYXN*PAKNECONENGYKN $">
+<polygon fill="#63b8ff" stroke="black" points="932.17,-767.5 787.83,-767.5 787.83,-731.5 932.17,-731.5 932.17,-767.5"/>
+<text text-anchor="start" x="793.62" y="-744.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONENGYCN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONENGYKN&#45;&gt;PAKNECONENGYCN -->
+<g id="edge93" class="edge">
+<title>PAKNECONENGYKN-&gt;PAKNECONENGYCN</title>
+<g id="a_edge93"><a xlink:href="bogus" xlink:title=" PAKNECONENGYKN -&gt; PAKNECONENGYCN Min. att. -3129%  max: 113%">
+<path fill="none" stroke="black" stroke-width="8" d="M508.19,-790.19C580.98,-781.75 693.8,-768.66 771.75,-759.62"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="772.21,-765.92 781.33,-757.81 770.59,-752.01 772.21,-765.92"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTRNSKN&#45;&gt;PAKNVSRVPRVSKN -->
+<g id="edge24" class="edge">
+<title>PAKNVSRVTRNSKN-&gt;PAKNVSRVPRVSKN</title>
+<g id="a_edge24"><a xlink:href="bogus" xlink:title=" PAKNVSRVTRNSKN -&gt; PAKNVSRVPRVSKN Min. att. -33%  max: 55%">
+<path fill="none" stroke="black" stroke-width="5.45" d="M2240.71,-1487.55C2337.87,-1490.16 2464.09,-1493.56 2562.88,-1496.22"/>
+<polygon fill="black" stroke="black" stroke-width="5.45" points="2562.68,-1501.15 2572.81,-1496.65 2562.94,-1491.61 2562.68,-1501.15"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTRNSKN&#45;&gt;PAKNVSRVTRNSKN_FITTED -->
+<g id="edge13" class="edge">
+<title>PAKNVSRVTRNSKN-&gt;PAKNVSRVTRNSKN_FITTED</title>
+<g id="a_edge13"><a xlink:href="bogus" xlink:title=" PAKNVSRVTRNSKN -&gt; PAKNVSRVTRNSKN_FITTED Min. att. -1511%  max: 171%">
+<path fill="none" stroke="black" stroke-width="8" d="M2240.71,-1474.68C2316.04,-1470.27 2408.85,-1464.84 2492.8,-1459.92"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2493.07,-1466.56 2502.64,-1458.99 2492.25,-1452.59 2493.07,-1466.56"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTRNSKN&#45;&gt;PAKNVSRVTRNSCN -->
+<g id="edge124" class="edge">
+<title>PAKNVSRVTRNSKN-&gt;PAKNVSRVTRNSCN</title>
+<g id="a_edge124"><a xlink:href="bogus" xlink:title=" PAKNVSRVTRNSKN -&gt; PAKNVSRVTRNSCN Min. att. -125%  max: 71%">
+<path fill="none" stroke="black" stroke-width="8" d="M2199.07,-1501.98C2253.13,-1510.67 2319.5,-1520.61 2379.25,-1527.5 2437.77,-1534.25 2502.12,-1539.81 2559.09,-1544.09"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2558.47,-1551.51 2568.96,-1545.27 2559.5,-1537.55 2558.47,-1551.51"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTRNSKN&#45;&gt;PAKNVSRVTOTLKN -->
+<g id="edge79" class="edge">
+<title>PAKNVSRVTRNSKN-&gt;PAKNVSRVTOTLKN</title>
+<g id="a_edge79"><a xlink:href="bogus" xlink:title=" PAKNVSRVTRNSKN -&gt; PAKNVSRVTOTLKN Min. att. -55%  max: 17%">
+<path fill="none" stroke="black" stroke-width="5.48" d="M2160.66,-1465.01C2218.88,-1450.44 2303.89,-1430.76 2379.25,-1419.5 2398.89,-1416.57 2419.21,-1413.94 2439.7,-1411.59"/>
+<polygon fill="black" stroke="black" stroke-width="5.48" points="2439.99,-1415.72 2449.4,-1409.85 2438.93,-1406.18 2439.99,-1415.72"/>
+</a>
+</g>
+</g>
+<!-- PAKTRNSINTKN -->
+<g id="node83" class="node">
+<title>PAKTRNSINTKN</title>
+<g id="a_node83"><a xlink:title="PAKTRNSINTKN
+FRML &lt;IDENT&gt; PAKTRNSINTKN = PAKBETAENGYTRNS*PAKNVSRVTRNSKN*(1+((PAKBETATRNS+PAKBETAENGYTRNS)/(1-(PAKBETATRNS+PAKBETAENGYTRNS)))) $">
+<polygon fill="#63b8ff" stroke="black" points="2781.97,-1626.5 2663.87,-1626.5 2663.87,-1590.5 2781.97,-1590.5 2781.97,-1626.5"/>
+<text text-anchor="start" x="2669.67" y="-1603.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKTRNSINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVTRNSKN&#45;&gt;PAKTRNSINTKN -->
+<g id="edge37" class="edge">
+<title>PAKNVSRVTRNSKN-&gt;PAKTRNSINTKN</title>
+<g id="a_edge37"><a xlink:href="bogus" xlink:title=" PAKNVSRVTRNSKN -&gt; PAKTRNSINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2133.33,-1501.9C2189.02,-1524.78 2289.46,-1563.04 2379.25,-1581.5 2470.49,-1600.26 2577.86,-1606.18 2647.78,-1607.94"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2647.26,-1615.06 2657.41,-1608.28 2647.56,-1601.07 2647.26,-1615.06"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPFCSTKN -->
+<g id="node47" class="node">
+<title>PAKNYGDPFCSTKN</title>
+<g id="a_node47"><a xlink:title="GDP Factor Cost Local Currency units Volumes National base year
+FRML &lt;IDENT&gt; PAKNYGDPFCSTKN = PAKNYGDPMKTPKN-PAKNYTAXNINDKN $">
+<polygon fill="#63b8ff" stroke="black" points="2343.25,-1680.5 1835.15,-1680.5 1835.15,-1644.5 2343.25,-1644.5 2343.25,-1680.5"/>
+<text text-anchor="start" x="1840.95" y="-1657.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPFCSTKN:GDP Factor Cost Local Currency units Volumes National base year</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPFCSTKN&#45;&gt;PAKNVSRVPRVSKN -->
+<g id="edge113" class="edge">
+<title>PAKNYGDPFCSTKN-&gt;PAKNVSRVPRVSKN</title>
+<g id="a_edge113"><a xlink:href="bogus" xlink:title=" PAKNYGDPFCSTKN -&gt; PAKNVSRVPRVSKN Min. att. -79%  max: 354%">
+<path fill="none" stroke="black" stroke-width="8" d="M2120.05,-1644.12C2171.03,-1613.77 2279.1,-1553.9 2379.25,-1527.5 2438.05,-1512 2504.34,-1504.56 2562.84,-1501.22"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2563.09,-1507.91 2572.72,-1500.4 2562.37,-1493.92 2563.09,-1507.91"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPFCSTCN -->
+<g id="node110" class="node">
+<title>PAKNYGDPFCSTCN</title>
+<g id="a_node110"><a xlink:title="GDP Factor Cost Local Currency units Volumes National base year
+FRML &lt;IDENT&gt; PAKNYGDPFCSTCN = PAKNYGDPFCSTXN*PAKNYGDPFCSTKN $">
+<polygon fill="#63b8ff" stroke="black" points="2976.6,-1680.5 2469.25,-1680.5 2469.25,-1644.5 2976.6,-1644.5 2976.6,-1680.5"/>
+<text text-anchor="start" x="2475.05" y="-1657.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPFCSTCN:GDP Factor Cost Local Currency units Volumes National base year</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPFCSTKN&#45;&gt;PAKNYGDPFCSTCN -->
+<g id="edge121" class="edge">
+<title>PAKNYGDPFCSTKN-&gt;PAKNYGDPFCSTCN</title>
+<g id="a_edge121"><a xlink:href="bogus" xlink:title=" PAKNYGDPFCSTKN -&gt; PAKNYGDPFCSTCN Min. att. -20%  max: 91%">
+<path fill="none" stroke="black" stroke-width="8" d="M2343.51,-1662.5C2379.62,-1662.5 2416.88,-1662.5 2453.28,-1662.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2452.82,-1669.5 2462.82,-1662.5 2452.82,-1655.5 2452.82,-1669.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNVGASPRODKN -->
+<g id="node49" class="node">
+<title>PAKNVGASPRODKN</title>
+<g id="a_node49"><a xlink:title="PAKNVGASPRODKN
+FRML &lt;IDENT&gt; PAKNVGASPRODKN = PAKNVGASPRODSH**(PAKCESENGYPROD)*(PAKNVENGTOTLKN*(PAKNVENGTOTLXN/PAKNVGASPRODXN)**(PAKCESENGYPROD)) $">
+<polygon fill="#63b8ff" stroke="black" points="2794.72,-330.5 2651.12,-330.5 2651.12,-294.5 2794.72,-294.5 2794.72,-330.5"/>
+<text text-anchor="start" x="2656.92" y="-307.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVGASPRODKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN_FITTED -->
+<g id="node50" class="node">
+<title>PAKNEIMPGNFSKN_FITTED</title>
+<g id="a_node50"><a xlink:title="Fitted  value:Imports real
+FRML &lt;FIT&gt; PAKNEIMPGNFSKN_FITTED = PAKNEIMPGNFSKN(-1)*EXP( (-0.324143718656754*(LOG(PAKNEIMPGNFSKN(-1))-LOG(PAKNEGDETTOTKN(-1))+0.8*LOG(PAKNEIMPGNFSXN(-1)/PAKNYGDPFCSTXN(-1)))-0.583459272245018+1*((LOG(PAKNEGDETTOTKN))-(LOG(PAKNEGDETTOTKN(-1))))-0.0921874580409631*((LOG(PAKNEIMPGNFSXN/PAKNYGDPFCSTXN))-(LOG(PAKNEIMPGNFSXN(-1)/PAKNYGDPFCSTXN(-1))))-0.0361746331863615*DURING_2012) ) $">
+<polygon fill="#63b8ff" stroke="black" points="1619.52,-1356.5 1289.17,-1356.5 1289.17,-1320.5 1619.52,-1320.5 1619.52,-1356.5"/>
+<text text-anchor="start" x="1294.97" y="-1333.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEIMPGNFSKN_FITTED:Fitted  value:Imports real</text>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSTYKN_FITTED -->
+<g id="node57" class="node">
+<title>PAKNVAGRFSTYKN_FITTED</title>
+<g id="a_node57"><a xlink:title="Fitted  value:Agriculture Forestry
+FRML &lt;FIT&gt; PAKNVAGRFSTYKN_FITTED = PAKNVAGRFSTYKN(-1)*EXP( (-0.0258273459325449-0.2*(LOG(PAKNVAGRFSTYKN(-1))-LOG(PAKSMAGRFSTYKN(-1)))+1*((LOG(PAKSMAGRFSTYKN))-(LOG(PAKSMAGRFSTYKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2911.35,-1086.5 2534.5,-1086.5 2534.5,-1050.5 2911.35,-1050.5 2911.35,-1086.5"/>
+<text text-anchor="start" x="2540.3" y="-1063.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRFSTYKN_FITTED:Fitted  value:Agriculture Forestry</text>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRFSTYKN&#45;&gt;PAKNVAGRFSTYKN_FITTED -->
+<g id="edge95" class="edge">
+<title>PAKSMAGRFSTYKN-&gt;PAKNVAGRFSTYKN_FITTED</title>
+<g id="a_edge95"><a xlink:href="bogus" xlink:title=" PAKSMAGRFSTYKN -&gt; PAKNVAGRFSTYKN_FITTED Min. att. -95%  max: 351%">
+<path fill="none" stroke="black" stroke-width="8" d="M1526,-1116.62C1602.22,-1110.47 1727.21,-1100.98 1835.15,-1095.5 2069.33,-1083.62 2338.58,-1076.32 2518.38,-1072.35"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2518.29,-1079.23 2528.14,-1072.01 2517.99,-1065.23 2518.29,-1079.23"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSTYKN -->
+<g id="node87" class="node">
+<title>PAKNVAGRFSTYKN</title>
+<g id="a_node87"><a xlink:title="Agriculture Forestry
+FRML &lt;DAMP,STOC&gt; PAKNVAGRFSTYKN = (PAKNVAGRFSTYKN(-1)*EXP(PAKNVAGRFSTYKN_A+ (-0.0258273459325449-0.2*(LOG(PAKNVAGRFSTYKN(-1))-LOG(PAKSMAGRFSTYKN(-1)))+1*((LOG(PAKSMAGRFSTYKN))-(LOG(PAKSMAGRFSTYKN(-1))))) )) * (1-PAKNVAGRFSTYKN_D)+ PAKNVAGRFSTYKN_X*PAKNVAGRFSTYKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2215,-1140.5 1963.4,-1140.5 1963.4,-1104.5 2215,-1104.5 2215,-1140.5"/>
+<text text-anchor="start" x="1969.2" y="-1117.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVAGRFSTYKN:Agriculture Forestry</text>
+</a>
+</g>
+</g>
+<!-- PAKSMAGRFSTYKN&#45;&gt;PAKNVAGRFSTYKN -->
+<g id="edge16" class="edge">
+<title>PAKSMAGRFSTYKN-&gt;PAKNVAGRFSTYKN</title>
+<g id="a_edge16"><a xlink:href="bogus" xlink:title=" PAKSMAGRFSTYKN -&gt; PAKNVAGRFSTYKN Min. att. -95%  max: 351%">
+<path fill="none" stroke="black" stroke-width="8" d="M1526.1,-1122.5C1627.61,-1122.5 1816.7,-1122.5 1947.35,-1122.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1946.98,-1129.5 1956.98,-1122.5 1946.98,-1115.5 1946.98,-1129.5"/>
+</a>
+</g>
+</g>
+<!-- PAKLMEMPTOTLCN -->
+<g id="node54" class="node">
+<title>PAKLMEMPTOTLCN</title>
+<g id="a_node54"><a xlink:title="Employment
+FRML &lt;DAMP,STOC&gt; PAKLMEMPTOTLCN = (PAKLMEMPTOTLCN(-1)*EXP(PAKLMEMPTOTLCN_A+ (-0.296841405458903*(LOG(PAKLMEMPTOTLCN(-1))-LOG(PAKLMEMPSTRLCN(-1)))-0.1*(((LOG(PAKNYWRTTOTLCN/PAKNYGDPFCSTXN))-(LOG(PAKNYWRTTOTLCN(-1)/PAKNYGDPFCSTXN(-1))))-((LOG(PAKNYGDPPOTLKN/PAKLMEMPSTRLCN))-(LOG(PAKNYGDPPOTLKN(-1)/PAKLMEMPSTRLCN(-1)))))-0.0020242483763438+((LOG(PAKLMEMPSTRLCN))-(LOG(PAKLMEMPSTRLCN(-1))))+0.1312391923391*PAKNYGDPGAP_/100+0.0362130876248861*DURING_2010) )) * (1-PAKLMEMPTOTLCN_D)+ PAKLMEMPTOTLCN_X*PAKLMEMPTOTLCN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2830.72,-2544.5 2615.12,-2544.5 2615.12,-2508.5 2830.72,-2508.5 2830.72,-2544.5"/>
+<text text-anchor="start" x="2620.92" y="-2521.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKLMEMPTOTLCN:Employment</text>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGSNEKN -->
+<g id="node55" class="node">
+<title>PAKNEIMPGSNEKN</title>
+<g id="a_node55"><a xlink:title="PAKNEIMPGSNEKN
+FRML &lt;IDENT&gt; PAKNEIMPGSNEKN = (PAKNEIMPOTHRSH**(PAKCESENGYIMPT))*(PAKNEIMPGNFSXN/PAKNEIMPGSNEXN)**(PAKCESENGYIMPT)*PAKNEIMPGNFSKN $">
+<polygon fill="#63b8ff" stroke="black" points="1523.9,-1248.5 1384.8,-1248.5 1384.8,-1212.5 1523.9,-1212.5 1523.9,-1248.5"/>
+<text text-anchor="start" x="1390.6" y="-1225.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEIMPGSNEKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVRENPRODKN -->
+<g id="node56" class="node">
+<title>PAKNVRENPRODKN</title>
+<g id="a_node56"><a xlink:title="PAKNVRENPRODKN
+FRML &lt;IDENT&gt; PAKNVRENPRODKN = PAKNVRENPRODSH**(PAKCESENGYPROD)*(PAKNVENGTOTLKN*(PAKNVENGTOTLXN/PAKNVRENPRODXN)**(PAKCESENGYPROD)) $">
+<polygon fill="#63b8ff" stroke="black" points="2794.72,-276.5 2651.12,-276.5 2651.12,-240.5 2794.72,-240.5 2794.72,-276.5"/>
+<text text-anchor="start" x="2656.92" y="-253.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVRENPRODKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKLMEMPTOTLCN_FITTED -->
+<g id="node58" class="node">
+<title>PAKLMEMPTOTLCN_FITTED</title>
+<g id="a_node58"><a xlink:title="Fitted  value:Employment
+FRML &lt;FIT&gt; PAKLMEMPTOTLCN_FITTED = PAKLMEMPTOTLCN(-1)*EXP( (-0.296841405458903*(LOG(PAKLMEMPTOTLCN(-1))-LOG(PAKLMEMPSTRLCN(-1)))-0.1*(((LOG(PAKNYWRTTOTLCN/PAKNYGDPFCSTXN))-(LOG(PAKNYWRTTOTLCN(-1)/PAKNYGDPFCSTXN(-1))))-((LOG(PAKNYGDPPOTLKN/PAKLMEMPSTRLCN))-(LOG(PAKNYGDPPOTLKN(-1)/PAKLMEMPSTRLCN(-1)))))-0.0020242483763438+((LOG(PAKLMEMPSTRLCN))-(LOG(PAKLMEMPSTRLCN(-1))))+0.1312391923391*PAKNYGDPGAP_/100+0.0362130876248861*DURING_2010) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2893.35,-2490.5 2552.5,-2490.5 2552.5,-2454.5 2893.35,-2454.5 2893.35,-2490.5"/>
+<text text-anchor="start" x="2558.3" y="-2467.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKLMEMPTOTLCN_FITTED:Fitted  value:Employment</text>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVFINSKN&#45;&gt;PAKNVSRVFINSKN_FITTED -->
+<g id="edge36" class="edge">
+<title>PAKSMSRVFINSKN-&gt;PAKNVSRVFINSKN_FITTED</title>
+<g id="a_edge36"><a xlink:href="bogus" xlink:title=" PAKSMSRVFINSKN -&gt; PAKNVSRVFINSKN_FITTED Min. att. -69%  max: 4572%">
+<path fill="none" stroke="black" stroke-width="8" d="M1522.9,-1080.8C1596.78,-1090.51 1715.77,-1094.76 1799.15,-1041.5 1826.65,-1023.93 1807.67,-995.1 1835.15,-977.5 2039.46,-846.67 2137.41,-952.81 2379.25,-933.5 2418.24,-930.39 2459.73,-927.1 2499.89,-923.93"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2500.38,-930.44 2509.8,-922.67 2499.28,-916.48 2500.38,-930.44"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVFINSKN -->
+<g id="node92" class="node">
+<title>PAKNVSRVFINSKN</title>
+<g id="a_node92"><a xlink:title="Services Finance (Constant)
+FRML &lt;DAMP,STOC&gt; PAKNVSRVFINSKN = (PAKNVSRVFINSKN(-1)*EXP(PAKNVSRVFINSKN_A+ (-0.153823262831285-0.2*(LOG(PAKNVSRVFINSKN(-1))-LOG(PAKSMSRVFINSKN(-1)))+1*((LOG(PAKSMSRVFINSKN))-(LOG(PAKSMSRVFINSKN(-1))))) )) * (1-PAKNVSRVFINSKN_D)+ PAKNVSRVFINSKN_X*PAKNVSRVFINSKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2233.38,-1022.5 1945.02,-1022.5 1945.02,-986.5 2233.38,-986.5 2233.38,-1022.5"/>
+<text text-anchor="start" x="1950.82" y="-999.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVFINSKN:Services Finance (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVFINSKN&#45;&gt;PAKNVSRVFINSKN -->
+<g id="edge76" class="edge">
+<title>PAKSMSRVFINSKN-&gt;PAKNVSRVFINSKN</title>
+<g id="a_edge76"><a xlink:href="bogus" xlink:title=" PAKSMSRVFINSKN -&gt; PAKNVSRVFINSKN Min. att. -69%  max: 4572%">
+<path fill="none" stroke="black" stroke-width="8" d="M1522.63,-1064.19C1592.01,-1059.52 1703.27,-1051.4 1799.15,-1041.5 1844.62,-1036.81 1893.99,-1030.82 1938.86,-1025.03"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1939.51,-1031.23 1948.52,-1023 1937.71,-1017.34 1939.51,-1031.23"/>
+</a>
+</g>
+</g>
+<!-- PAKFMLBLPOLYXN -->
+<g id="node63" class="node">
+<title>PAKFMLBLPOLYXN</title>
+<g id="a_node63"><a xlink:title="Key Policy Interest Rate
+FRML &lt;DAMP,STOC&gt; PAKFMLBLPOLYXN = (100*PAKFMLBLPOLYXN_A+100* (0.900155952396245*PAKFMLBLPOLYXN(-1)/100+(1-0.900155952396245)*(PAKMPPOLNATRXN/100+1.2*(((LOG(PAKNECONPRVTXN))-(LOG(PAKNECONPRVTXN(-1))))-PAKINFLEXPT/100)+0.5*PAKNYGDPGAP_/100)) ) * (1-PAKFMLBLPOLYXN_D)+ PAKFMLBLPOLYXN_X*PAKFMLBLPOLYXN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2860.35,-2760.5 2585.5,-2760.5 2585.5,-2724.5 2860.35,-2724.5 2860.35,-2760.5"/>
+<text text-anchor="start" x="2591.3" y="-2737.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKFMLBLPOLYXN:Key Policy Interest Rate</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTCN&#45;&gt;PAKNYGDPMKTPCN -->
+<g id="edge103" class="edge">
+<title>PAKNECONPRVTCN-&gt;PAKNYGDPMKTPCN</title>
+<g id="a_edge103"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTCN -&gt; PAKNYGDPMKTPCN Min. att. 38%  max: 83%">
+<path fill="none" stroke="black" stroke-width="8" d="M562.79,-2528.23C590.36,-2524.68 619.39,-2520.96 646.45,-2517.5 662.98,-2515.39 680.23,-2513.19 697.44,-2511"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="698.18,-2517.19 707.22,-2508.99 696.41,-2503.31 698.18,-2517.19"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTCN&#45;&gt;PAKGGREVGNFSCN -->
+<g id="edge68" class="edge">
+<title>PAKNECONPRVTCN-&gt;PAKGGREVGNFSCN</title>
+<g id="a_edge68"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTCN -&gt; PAKGGREVGNFSCN Min. att. 48%  max: 82%">
+<path fill="none" stroke="black" stroke-width="8" d="M562.71,-2544.5C603.64,-2544.5 649.68,-2544.5 693.05,-2544.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="692.89,-2551.5 702.89,-2544.5 692.89,-2537.5 692.89,-2551.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNEGDETTOTCN -->
+<g id="node102" class="node">
+<title>PAKNEGDETTOTCN</title>
+<g id="a_node102"><a xlink:title="Total demand, current LCU
+FRML &lt;IDENT&gt; PAKNEGDETTOTCN = (PAKNECONPRVTCN+PAKNECONGOVTCN+PAKNEGDIFTOTCN+PAKNEGDISTKBCN+PAKNYGDPDISCCN) $">
+<polygon fill="#63b8ff" stroke="black" points="1006.05,-2670.5 713.95,-2670.5 713.95,-2634.5 1006.05,-2634.5 1006.05,-2670.5"/>
+<text text-anchor="start" x="719.75" y="-2647.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEGDETTOTCN:Total demand, current LCU</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTCN&#45;&gt;PAKNEGDETTOTCN -->
+<g id="edge96" class="edge">
+<title>PAKNECONPRVTCN-&gt;PAKNEGDETTOTCN</title>
+<g id="a_edge96"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTCN -&gt; PAKNEGDETTOTCN Min. att. 36%  max: 71%">
+<path fill="none" stroke="black" stroke-width="7.14" d="M475.83,-2562.98C517.32,-2581.69 585.09,-2610.01 646.45,-2625.5 662.96,-2629.67 680.37,-2633.21 697.82,-2636.22"/>
+<polygon fill="black" stroke="black" stroke-width="7.14" points="696.61,-2642.32 707.49,-2637.77 698.62,-2630 696.61,-2642.32"/>
+</a>
+</g>
+</g>
+<!-- PAKGGREVGNFSCN_FITTED -->
+<g id="node113" class="node">
+<title>PAKGGREVGNFSCN_FITTED</title>
+<g id="a_node113"><a xlink:title="Fitted  value:Taxes on Goods and Services
+FRML &lt;FIT&gt; PAKGGREVGNFSCN_FITTED = (PAKGGREVGNFSXN/100*(PAKNECONPRVTCN+PAKNECONGOVTCN))+5.34672642860449E-12 $">
+<polygon fill="#63b8ff" stroke="black" points="1073.55,-2616.5 646.45,-2616.5 646.45,-2580.5 1073.55,-2580.5 1073.55,-2616.5"/>
+<text text-anchor="start" x="652.25" y="-2593.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGGREVGNFSCN_FITTED:Fitted  value:Taxes on Goods and Services</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTCN&#45;&gt;PAKGGREVGNFSCN_FITTED -->
+<g id="edge21" class="edge">
+<title>PAKNECONPRVTCN-&gt;PAKGGREVGNFSCN_FITTED</title>
+<g id="a_edge21"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTCN -&gt; PAKGGREVGNFSCN_FITTED Min. att. 48%  max: 86%">
+<path fill="none" stroke="black" stroke-width="8" d="M562.79,-2560.77C590.36,-2564.32 619.39,-2568.04 646.45,-2571.5 662.98,-2573.61 680.23,-2575.81 697.44,-2578"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="696.41,-2585.69 707.22,-2580.01 698.18,-2571.81 696.41,-2585.69"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPFCSTXN -->
+<g id="node65" class="node">
+<title>PAKNYGDPFCSTXN</title>
+<g id="a_node65"><a xlink:title="GDP Factor Cost Local Currency units Implicit Price deflator
+FRML &lt;DAMP,STOC&gt; PAKNYGDPFCSTXN = (PAKNYGDPFCSTXN(-1)*EXP(PAKNYGDPFCSTXN_A+ (0.6*((LOG(PAKNYGDPFCSTXN(-1)))-(LOG(PAKNYGDPFCSTXN(-2))))+(1-0.6)*(0.7*PAKINFLEXPT/100+(1-0.7)*((LOG(PAKPSTAR(-1)))-(LOG(PAKPSTAR(-2)))))+0.0935726784287011*PAKNYGDPGAP_/100) )) * (1-PAKNYGDPFCSTXN_D)+ PAKNYGDPFCSTXN_X*PAKNYGDPFCSTXN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2961.22,-2706.5 2484.62,-2706.5 2484.62,-2670.5 2961.22,-2670.5 2961.22,-2706.5"/>
+<text text-anchor="start" x="2490.42" y="-2683.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPFCSTXN:GDP Factor Cost Local Currency units Implicit Price deflator</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDOTHRTKN -->
+<g id="node66" class="node">
+<title>PAKNVINDOTHRTKN</title>
+<g id="a_node66"><a xlink:title="Industry Manufacturing Other(Constant Prices)
+FRML &lt;DAMP,STOC&gt; PAKNVINDOTHRTKN = (PAKNVINDOTHRTKN(-1)*EXP(PAKNVINDOTHRTKN_A+ (0.0153573747691629-0.2*(LOG(PAKNVINDOTHRTKN(-1))-LOG(PAKSMINDOTHRTKN(-1)))+1*((LOG(PAKSMINDOTHRTKN))-(LOG(PAKSMINDOTHRTKN(-1))))) )) * (1-PAKNVINDOTHRTKN_D)+ PAKNVINDOTHRTKN_X*PAKNVINDOTHRTKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2292.62,-168.5 1885.77,-168.5 1885.77,-132.5 2292.62,-132.5 2292.62,-168.5"/>
+<text text-anchor="start" x="1891.57" y="-145.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVINDOTHRTKN:Industry Manufacturing Other(Constant Prices)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDOTHRTKN&#45;&gt;PAKOTHRTINTKN -->
+<g id="edge130" class="edge">
+<title>PAKNVINDOTHRTKN-&gt;PAKOTHRTINTKN</title>
+<g id="a_edge130"><a xlink:href="bogus" xlink:title=" PAKNVINDOTHRTKN -&gt; PAKOTHRTINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2283.74,-132.03C2315.64,-129.1 2348.37,-126.16 2379.25,-123.5 2469.71,-115.71 2573.69,-107.64 2643.16,-102.38"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2643.3,-108.94 2652.74,-101.2 2642.25,-94.98 2643.3,-108.94"/>
+</a>
+</g>
+</g>
+<!-- PAKNVINDMNFSKN -->
+<g id="node69" class="node">
+<title>PAKNVINDMNFSKN</title>
+<g id="a_node69"><a xlink:title="Industry Manufacturing (Constant Prices)
+FRML &lt;IDENT&gt; PAKNVINDMNFSKN = PAKNVINDOTHRTKN+PAKNVINDENGYSKN $">
+<polygon fill="#63b8ff" stroke="black" points="2907.6,-60.5 2538.25,-60.5 2538.25,-24.5 2907.6,-24.5 2907.6,-60.5"/>
+<text text-anchor="start" x="2544.05" y="-37.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVINDMNFSKN:Industry Manufacturing (Constant Prices)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDOTHRTKN&#45;&gt;PAKNVINDMNFSKN -->
+<g id="edge104" class="edge">
+<title>PAKNVINDOTHRTKN-&gt;PAKNVINDMNFSKN</title>
+<g id="a_edge104"><a xlink:href="bogus" xlink:title=" PAKNVINDOTHRTKN -&gt; PAKNVINDMNFSKN Min. att. -2276%  max: 587%">
+<path fill="none" stroke="black" stroke-width="8" d="M2143.81,-132.08C2201.3,-113.14 2295.61,-84.37 2379.25,-69.5 2425.18,-61.34 2475,-55.64 2522.07,-51.67"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2522.51,-58.17 2531.91,-50.38 2521.38,-44.21 2522.51,-58.17"/>
+</a>
+</g>
+</g>
+<!-- PAKNVINDOTHRTCN -->
+<g id="node70" class="node">
+<title>PAKNVINDOTHRTCN</title>
+<g id="a_node70"><a xlink:title="Industry Manufacturing Other(Current Prices)
+FRML &lt;IDENT&gt; PAKNVINDOTHRTCN = PAKNVINDOTHRTXN*PAKNVINDOTHRTKN $">
+<polygon fill="#63b8ff" stroke="black" points="2922.6,-168.5 2523.25,-168.5 2523.25,-132.5 2922.6,-132.5 2922.6,-168.5"/>
+<text text-anchor="start" x="2529.05" y="-145.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVINDOTHRTCN:Industry Manufacturing Other(Current Prices)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDOTHRTKN&#45;&gt;PAKNVINDOTHRTCN -->
+<g id="edge5" class="edge">
+<title>PAKNVINDOTHRTKN-&gt;PAKNVINDOTHRTCN</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title=" PAKNVINDOTHRTKN -&gt; PAKNVINDOTHRTCN Min. att. -45%  max: 79%">
+<path fill="none" stroke="black" stroke-width="7.91" d="M2293.12,-150.5C2361.55,-150.5 2438.12,-150.5 2507.41,-150.5"/>
+<polygon fill="black" stroke="black" stroke-width="7.91" points="2507,-157.42 2517,-150.5 2507,-143.58 2507,-157.42"/>
+</a>
+</g>
+</g>
+<!-- PAKNVINDOTHRTKN_FITTED -->
+<g id="node88" class="node">
+<title>PAKNVINDOTHRTKN_FITTED</title>
+<g id="a_node88"><a xlink:title="Fitted  value:Industry Manufacturing Other(Constant Prices)
+FRML &lt;FIT&gt; PAKNVINDOTHRTKN_FITTED = PAKNVINDOTHRTKN(-1)*EXP( (0.0153573747691629-0.2*(LOG(PAKNVINDOTHRTKN(-1))-LOG(PAKSMINDOTHRTKN(-1)))+1*((LOG(PAKSMINDOTHRTKN))-(LOG(PAKSMINDOTHRTKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2988.97,-222.5 2456.87,-222.5 2456.87,-186.5 2988.97,-186.5 2988.97,-222.5"/>
+<text text-anchor="start" x="2462.67" y="-199.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVINDOTHRTKN_FITTED:Fitted  value:Industry Manufacturing Other(Constant Prices)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVINDOTHRTKN&#45;&gt;PAKNVINDOTHRTKN_FITTED -->
+<g id="edge107" class="edge">
+<title>PAKNVINDOTHRTKN-&gt;PAKNVINDOTHRTKN_FITTED</title>
+<g id="a_edge107"><a xlink:href="bogus" xlink:title=" PAKNVINDOTHRTKN -&gt; PAKNVINDOTHRTKN_FITTED Min. att. -700%  max: 236%">
+<path fill="none" stroke="black" stroke-width="8" d="M2283.74,-168.97C2315.64,-171.9 2348.37,-174.84 2379.25,-177.5 2407.35,-179.92 2436.75,-182.37 2466.01,-184.75"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2465.24,-192.19 2475.77,-186.02 2466.37,-178.24 2465.24,-192.19"/>
+</a>
+</g>
+</g>
+<!-- PAKSMINDMNGSKN&#45;&gt;PAKNVINDMNGSKN -->
+<g id="edge47" class="edge">
+<title>PAKSMINDMNGSKN-&gt;PAKNVINDMNGSKN</title>
+<g id="a_edge47"><a xlink:href="bogus" xlink:title=" PAKSMINDMNGSKN -&gt; PAKNVINDMNGSKN Min. att. -141%  max: 161%">
+<path fill="none" stroke="black" stroke-width="8" d="M1527.14,-1030.93C1603.61,-1043.91 1723.8,-1050.69 1799.15,-987.5 1848.05,-946.49 1788.73,-892.29 1835.15,-848.5 1855.56,-829.25 1881.13,-816.43 1908.12,-808.04"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1909.49,-814.25 1917.24,-804.82 1905.72,-800.77 1909.49,-814.25"/>
+</a>
+</g>
+</g>
+<!-- PAKSMINDMNGSKN&#45;&gt;PAKNVINDMNGSKN_FITTED -->
+<g id="edge41" class="edge">
+<title>PAKSMINDMNGSKN-&gt;PAKNVINDMNGSKN_FITTED</title>
+<g id="a_edge41"><a xlink:href="bogus" xlink:title=" PAKSMINDMNGSKN -&gt; PAKNVINDMNGSKN_FITTED Min. att. -141%  max: 161%">
+<path fill="none" stroke="black" stroke-width="8" d="M1527.3,-1028.76C1602.24,-1039.4 1719.59,-1043.76 1799.15,-987.5 1831.32,-964.76 1802.79,-928.96 1835.15,-906.5 1935.7,-836.72 2252.41,-832.7 2478.61,-839.73"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2478.17,-846.92 2488.4,-840.25 2478.63,-832.92 2478.17,-846.92"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVHSNGKN_FITTED -->
+<g id="node75" class="node">
+<title>PAKNVSRVHSNGKN_FITTED</title>
+<g id="a_node75"><a xlink:title="Fitted  value:Services Housing (Constant)
+FRML &lt;FIT&gt; PAKNVSRVHSNGKN_FITTED = PAKNVSRVHSNGKN(-1)*EXP( (-0.109421428635736-0.2*(LOG(PAKNVSRVHSNGKN(-1))-LOG(PAKSMSRVHSNGKN(-1)))+1*((LOG(PAKSMSRVHSNGKN))-(LOG(PAKSMSRVHSNGKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2934.97,-1248.5 2510.87,-1248.5 2510.87,-1212.5 2934.97,-1212.5 2934.97,-1248.5"/>
+<text text-anchor="start" x="2516.67" y="-1225.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVHSNGKN_FITTED:Fitted  value:Services Housing (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN -->
+<g id="node78" class="node">
+<title>PAKNVENGTOTLKN</title>
+<g id="a_node78"><a xlink:title="Energy VA (Constant)
+FRML &lt;DAMP,STOC&gt; PAKNVENGTOTLKN = (PAKNVENGTOTLKN(-1)*EXP(PAKNVENGTOTLKN_A+ (-0.0673653265193484-0.2*(LOG(PAKNVENGTOTLKN(-1))-LOG(PAKSMENGTOTLKN(-1)))+1*((LOG(PAKSMENGTOTLKN))-(LOG(PAKSMENGTOTLKN(-1))))) )) * (1-PAKNVENGTOTLKN_D)+ PAKNVENGTOTLKN_X*PAKNVENGTOTLKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2220.62,-492.5 1957.77,-492.5 1957.77,-456.5 2220.62,-456.5 2220.62,-492.5"/>
+<text text-anchor="start" x="1963.57" y="-469.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVENGTOTLKN:Energy VA (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN&#45;&gt;PAKNVCOLPRODKN -->
+<g id="edge74" class="edge">
+<title>PAKNVENGTOTLKN-&gt;PAKNVCOLPRODKN</title>
+<g id="a_edge74"><a xlink:href="bogus" xlink:title=" PAKNVENGTOTLKN -&gt; PAKNVCOLPRODKN Min. att. -11%  max: 111%">
+<path fill="none" stroke="black" stroke-width="8" d="M2221.09,-474.5C2345.19,-474.5 2528.09,-474.5 2635.11,-474.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2634.98,-481.5 2644.98,-474.5 2634.98,-467.5 2634.98,-481.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN&#45;&gt;PAKTOTLINTKN -->
+<g id="edge14" class="edge">
+<title>PAKNVENGTOTLKN-&gt;PAKTOTLINTKN</title>
+<g id="a_edge14"><a xlink:href="bogus" xlink:title=" PAKNVENGTOTLKN -&gt; PAKTOTLINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2221.1,-461.87C2270.64,-457.19 2327.53,-451.95 2379.25,-447.5 2471.78,-439.53 2578.45,-431.27 2647.87,-426.02"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2647.95,-432.58 2657.39,-424.85 2646.89,-418.62 2647.95,-432.58"/>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN&#45;&gt;PAKNYGDPPOTLKN -->
+<g id="edge18" class="edge">
+<title>PAKNVENGTOTLKN-&gt;PAKNYGDPPOTLKN</title>
+<g id="a_edge18"><a xlink:href="bogus" xlink:title=" PAKNVENGTOTLKN -&gt; PAKNYGDPPOTLKN Min. att. -413%  max: 266%">
+<path fill="none" stroke="black" stroke-width="8" d="M2143.81,-456.08C2201.3,-437.14 2295.61,-408.37 2379.25,-393.5 2434.45,-383.69 2495.28,-377.44 2550.18,-373.46"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2550.39,-380.05 2559.88,-372.38 2549.42,-366.08 2550.39,-380.05"/>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN&#45;&gt;PAKNVGASPRODKN -->
+<g id="edge92" class="edge">
+<title>PAKNVENGTOTLKN-&gt;PAKNVGASPRODKN</title>
+<g id="a_edge92"><a xlink:href="bogus" xlink:title=" PAKNVENGTOTLKN -&gt; PAKNVGASPRODKN Min. att. -30%  max: 111%">
+<path fill="none" stroke="black" stroke-width="8" d="M2120.05,-456.12C2171.03,-425.77 2279.1,-365.9 2379.25,-339.5 2464.24,-317.09 2564.85,-311.53 2634.99,-310.85"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2634.83,-317.82 2644.8,-310.77 2634.77,-303.82 2634.83,-317.82"/>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN&#45;&gt;PAKNVRENPRODKN -->
+<g id="edge75" class="edge">
+<title>PAKNVENGTOTLKN-&gt;PAKNVRENPRODKN</title>
+<g id="a_edge75"><a xlink:href="bogus" xlink:title=" PAKNVENGTOTLKN -&gt; PAKNVRENPRODKN Min. att. -11%  max: 105%">
+<path fill="none" stroke="black" stroke-width="8" d="M2133.16,-456.19C2186.16,-432.29 2277.32,-386.79 2343.25,-330.5 2362.73,-313.87 2356.62,-297.49 2379.25,-285.5 2458.3,-243.61 2562.28,-241.52 2634.88,-246.98"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2634.23,-254.47 2644.79,-248.34 2635.42,-240.52 2634.23,-254.47"/>
+</a>
+</g>
+</g>
+<!-- PAKNVENGOUTPKN -->
+<g id="node85" class="node">
+<title>PAKNVENGOUTPKN</title>
+<g id="a_node85"><a xlink:title="PAKNVENGOUTPKN
+FRML &lt;IDENT&gt; PAKNVENGOUTPKN = PAKNVENGTOTLKN+PAKCRPSINTKN+PAKFSTYINTKN+PAKFSNGINTKN+PAKMNGSINTKN+PAKTOTLINTKN+PAKOTHRTINTKN+PAKCNSTINTKN+PAKWHSLINTKN+PAKTRNSINTKN+PAKFINSINTKN+PAKHSNGINTKN+PAKGOVSINTKN+PAKPRVSINTKN $">
+<polygon fill="#63b8ff" stroke="black" points="2794.72,-600.5 2651.12,-600.5 2651.12,-564.5 2794.72,-564.5 2794.72,-600.5"/>
+<text text-anchor="start" x="2656.92" y="-577.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVENGOUTPKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN&#45;&gt;PAKNVENGOUTPKN -->
+<g id="edge115" class="edge">
+<title>PAKNVENGTOTLKN-&gt;PAKNVENGOUTPKN</title>
+<g id="a_edge115"><a xlink:href="bogus" xlink:title=" PAKNVENGTOTLKN -&gt; PAKNVENGOUTPKN Min. att. -211%  max: 310%">
+<path fill="none" stroke="black" stroke-width="8" d="M2143.81,-492.92C2201.3,-511.86 2295.61,-540.63 2379.25,-555.5 2465.51,-570.83 2565.54,-577.46 2635.17,-580.32"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2634.6,-587.54 2644.86,-580.93 2635.14,-573.55 2634.6,-587.54"/>
+</a>
+</g>
+</g>
+<!-- PAKNVOILPRODKN -->
+<g id="node98" class="node">
+<title>PAKNVOILPRODKN</title>
+<g id="a_node98"><a xlink:title="Oil Production
+FRML &lt;IDENT&gt; PAKNVOILPRODKN = PAKNVOILPRODSH**(PAKCESENGYPROD)*(PAKNVENGTOTLKN*(PAKNVENGTOTLXN/PAKNVOILPRODXN)**(PAKCESENGYPROD)) $">
+<polygon fill="#63b8ff" stroke="black" points="2832.6,-546.5 2613.25,-546.5 2613.25,-510.5 2832.6,-510.5 2832.6,-546.5"/>
+<text text-anchor="start" x="2619.05" y="-523.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVOILPRODKN:Oil Production</text>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN&#45;&gt;PAKNVOILPRODKN -->
+<g id="edge141" class="edge">
+<title>PAKNVENGTOTLKN-&gt;PAKNVOILPRODKN</title>
+<g id="a_edge141"><a xlink:href="bogus" xlink:title=" PAKNVENGTOTLKN -&gt; PAKNVOILPRODKN Min. att. -1228%  max: 111%">
+<path fill="none" stroke="black" stroke-width="8" d="M2221.1,-487.13C2270.64,-491.81 2327.53,-497.05 2379.25,-501.5 2451.48,-507.72 2532.33,-514.12 2597.34,-519.12"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2596.58,-526.54 2607.09,-520.33 2597.65,-512.58 2596.58,-526.54"/>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN_FITTED -->
+<g id="node107" class="node">
+<title>PAKNVENGTOTLKN_FITTED</title>
+<g id="a_node107"><a xlink:title="Fitted  value:Energy VA (Constant)
+FRML &lt;FIT&gt; PAKNVENGTOTLKN_FITTED = PAKNVENGTOTLKN(-1)*EXP( (-0.0673653265193484-0.2*(LOG(PAKNVENGTOTLKN(-1))-LOG(PAKSMENGTOTLKN(-1)))+1*((LOG(PAKSMENGTOTLKN))-(LOG(PAKSMENGTOTLKN(-1))))) ) $">
+<polygon fill="#63b8ff" stroke="black" points="2916.97,-654.5 2528.87,-654.5 2528.87,-618.5 2916.97,-618.5 2916.97,-654.5"/>
+<text text-anchor="start" x="2534.67" y="-631.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVENGTOTLKN_FITTED:Fitted  value:Energy VA (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKNVENGTOTLKN&#45;&gt;PAKNVENGTOTLKN_FITTED -->
+<g id="edge105" class="edge">
+<title>PAKNVENGTOTLKN-&gt;PAKNVENGTOTLKN_FITTED</title>
+<g id="a_edge105"><a xlink:href="bogus" xlink:title=" PAKNVENGTOTLKN -&gt; PAKNVENGTOTLKN_FITTED Min. att. -3%  max: 2922%">
+<path fill="none" stroke="black" stroke-width="8" d="M2120.05,-492.88C2171.03,-523.23 2279.1,-583.1 2379.25,-609.5 2421.84,-620.73 2468.35,-627.73 2512.98,-632"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2512.1,-639.48 2522.68,-633.4 2513.34,-625.54 2512.1,-639.48"/>
+</a>
+</g>
+</g>
+<!-- PAKGDPPCKN -->
+<g id="node79" class="node">
+<title>PAKGDPPCKN</title>
+<g id="a_node79"><a xlink:title="GDP per capita, 2005 LCU mn
+FRML &lt;IDENT&gt; PAKGDPPCKN = (PAKNYGDPMKTPKN/PAKSPPOPTOTL) $">
+<polygon fill="#63b8ff" stroke="black" points="2227,-1912.5 1951.4,-1912.5 1951.4,-1876.5 2227,-1876.5 2227,-1912.5"/>
+<text text-anchor="start" x="1957.2" y="-1889.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKGDPPCKN:GDP per capita, 2005 LCU mn</text>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVHSNGCN -->
+<g id="node80" class="node">
+<title>PAKNVSRVHSNGCN</title>
+<g id="a_node80"><a xlink:title="Services Housing (Current)
+FRML &lt;IDENT&gt; PAKNVSRVHSNGCN = PAKNVSRVHSNGXN*PAKNVSRVHSNGKN $">
+<polygon fill="#63b8ff" stroke="black" points="2868.6,-1302.5 2577.25,-1302.5 2577.25,-1266.5 2868.6,-1266.5 2868.6,-1302.5"/>
+<text text-anchor="start" x="2583.05" y="-1279.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVHSNGCN:Services Housing (Current)</text>
+</a>
+</g>
+</g>
+<!-- PAKSMENGTOTLKN&#45;&gt;PAKNVENGTOTLKN -->
+<g id="edge60" class="edge">
+<title>PAKSMENGTOTLKN-&gt;PAKNVENGTOTLKN</title>
+<g id="a_edge60"><a xlink:href="bogus" xlink:title=" PAKSMENGTOTLKN -&gt; PAKNVENGTOTLKN Min. att. -2821%  max: 103%">
+<path fill="none" stroke="black" stroke-width="8" d="M1526.5,-964.92C1615.58,-968.81 1761.12,-969.21 1799.15,-933.5 1881.95,-855.76 1779.26,-779.38 1835.15,-680.5 1882.4,-596.9 1978.04,-533.69 2037.26,-500.52"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2039.7,-506.88 2045.12,-495.93 2032.98,-494.59 2039.7,-506.88"/>
+</a>
+</g>
+</g>
+<!-- PAKSMENGTOTLKN&#45;&gt;PAKNVENGTOTLKN_FITTED -->
+<g id="edge19" class="edge">
+<title>PAKSMENGTOTLKN-&gt;PAKNVENGTOTLKN_FITTED</title>
+<g id="a_edge19"><a xlink:href="bogus" xlink:title=" PAKSMENGTOTLKN -&gt; PAKNVENGTOTLKN_FITTED Min. att. -2822%  max: 103%">
+<path fill="none" stroke="black" stroke-width="8" d="M1526.52,-977.25C1603.31,-990.77 1724.57,-998.29 1799.15,-933.5 1854.83,-885.13 1782.41,-823.06 1835.15,-771.5 2011.45,-599.16 2135.03,-697.24 2379.25,-663.5 2422.25,-657.56 2468.49,-652.81 2512.64,-649.07"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2513.1,-655.56 2522.49,-647.75 2511.94,-641.6 2513.1,-655.56"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPGAP_ -->
+<g id="node82" class="node">
+<title>PAKNYGDPGAP_</title>
+<g id="a_node82"><a xlink:title="Output Gap (% of Potential GDP)
+FRML &lt;IDENT&gt; PAKNYGDPGAP_ = ((PAKNYGDPMKTPKN/PAKNYGDPPOTLKN-1)*100) $">
+<polygon fill="#63b8ff" stroke="black" points="2243.12,-2598.5 1935.27,-2598.5 1935.27,-2562.5 2243.12,-2562.5 2243.12,-2598.5"/>
+<text text-anchor="start" x="1941.07" y="-2575.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPGAP_:Output Gap (% of Potential GDP)</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPGAP_&#45;&gt;PAKLMEMPTOTLCN -->
+<g id="edge52" class="edge">
+<title>PAKNYGDPGAP_-&gt;PAKLMEMPTOTLCN</title>
+<g id="a_edge52"><a xlink:href="bogus" xlink:title=" PAKNYGDPGAP_ -&gt; PAKLMEMPTOTLCN Min. att. -500%  max: 253%">
+<path fill="none" stroke="black" stroke-width="8" d="M2243.55,-2565.76C2287.37,-2561.66 2335.19,-2557.29 2379.25,-2553.5 2452.17,-2547.22 2533.86,-2540.76 2599.19,-2535.74"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2599.57,-2542.27 2609,-2534.52 2598.5,-2528.31 2599.57,-2542.27"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPGAP_&#45;&gt;PAKLMEMPTOTLCN_FITTED -->
+<g id="edge10" class="edge">
+<title>PAKNYGDPGAP_-&gt;PAKLMEMPTOTLCN_FITTED</title>
+<g id="a_edge10"><a xlink:href="bogus" xlink:title=" PAKNYGDPGAP_ -&gt; PAKLMEMPTOTLCN_FITTED Min. att. -500%  max: 253%">
+<path fill="none" stroke="black" stroke-width="8" d="M2143.81,-2562.08C2201.3,-2543.14 2295.61,-2514.37 2379.25,-2499.5 2429.83,-2490.51 2485.15,-2484.51 2536.3,-2480.51"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2536.58,-2487.06 2546.03,-2479.33 2535.53,-2473.1 2536.58,-2487.06"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPGAP_&#45;&gt;PAKFMLBLPOLYXN -->
+<g id="edge66" class="edge">
+<title>PAKNYGDPGAP_-&gt;PAKFMLBLPOLYXN</title>
+<g id="a_edge66"><a xlink:href="bogus" xlink:title=" PAKNYGDPGAP_ -&gt; PAKFMLBLPOLYXN Min. att. -226%  max: 44%">
+<path fill="none" stroke="black" stroke-width="8" d="M2120.05,-2598.88C2171.03,-2629.23 2279.1,-2689.1 2379.25,-2715.5 2440.3,-2731.6 2509.41,-2739 2569.5,-2742.15"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2569.07,-2749.41 2579.38,-2742.89 2569.72,-2735.43 2569.07,-2749.41"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPGAP_&#45;&gt;PAKNYGDPFCSTXN -->
+<g id="edge3" class="edge">
+<title>PAKNYGDPGAP_-&gt;PAKNYGDPFCSTXN</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title=" PAKNYGDPGAP_ -&gt; PAKNYGDPFCSTXN Min. att. -2%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2143.81,-2598.92C2201.3,-2617.86 2295.61,-2646.63 2379.25,-2661.5 2408.02,-2666.61 2438.32,-2670.76 2468.51,-2674.12"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2467.6,-2681.7 2478.28,-2675.81 2469.09,-2667.78 2467.6,-2681.7"/>
+</a>
+</g>
+</g>
+<!-- PAKFMLBLPOLYXN_FITTED -->
+<g id="node105" class="node">
+<title>PAKFMLBLPOLYXN_FITTED</title>
+<g id="a_node105"><a xlink:title="Fitted  value:Key Policy Interest Rate
+FRML &lt;FIT&gt; PAKFMLBLPOLYXN_FITTED = 100* (0.900155952396245*PAKFMLBLPOLYXN(-1)/100+(1-0.900155952396245)*(PAKMPPOLNATRXN/100+1.2*(((LOG(PAKNECONPRVTXN))-(LOG(PAKNECONPRVTXN(-1))))-PAKINFLEXPT/100)+0.5*PAKNYGDPGAP_/100))  $">
+<polygon fill="#63b8ff" stroke="black" points="2922.97,-2652.5 2522.87,-2652.5 2522.87,-2616.5 2922.97,-2616.5 2922.97,-2652.5"/>
+<text text-anchor="start" x="2528.67" y="-2629.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKFMLBLPOLYXN_FITTED:Fitted  value:Key Policy Interest Rate</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPGAP_&#45;&gt;PAKFMLBLPOLYXN_FITTED -->
+<g id="edge136" class="edge">
+<title>PAKNYGDPGAP_-&gt;PAKFMLBLPOLYXN_FITTED</title>
+<g id="a_edge136"><a xlink:href="bogus" xlink:title=" PAKNYGDPGAP_ -&gt; PAKFMLBLPOLYXN_FITTED Min. att. -226%  max: 44%">
+<path fill="none" stroke="black" stroke-width="8" d="M2243.55,-2595.24C2287.37,-2599.34 2335.19,-2603.71 2379.25,-2607.5 2420.46,-2611.05 2464.48,-2614.65 2506.76,-2618.03"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2506.04,-2625.47 2516.56,-2619.28 2507.15,-2611.51 2506.04,-2625.47"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPFCSTXN_FITTED -->
+<g id="node111" class="node">
+<title>PAKNYGDPFCSTXN_FITTED</title>
+<g id="a_node111"><a xlink:title="Fitted  value:GDP Factor Cost Local Currency units Implicit Price deflator
+FRML &lt;FIT&gt; PAKNYGDPFCSTXN_FITTED = PAKNYGDPFCSTXN(-1)*EXP( (0.6*((LOG(PAKNYGDPFCSTXN(-1)))-(LOG(PAKNYGDPFCSTXN(-2))))+(1-0.6)*(0.7*PAKINFLEXPT/100+(1-0.7)*((LOG(PAKPSTAR(-1)))-(LOG(PAKPSTAR(-2)))))+0.0935726784287011*PAKNYGDPGAP_/100) ) $">
+<polygon fill="#63b8ff" stroke="black" points="3023.85,-2598.5 2422,-2598.5 2422,-2562.5 3023.85,-2562.5 3023.85,-2598.5"/>
+<text text-anchor="start" x="2427.8" y="-2575.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPFCSTXN_FITTED:Fitted  value:GDP Factor Cost Local Currency units Implicit Price deflator</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPGAP_&#45;&gt;PAKNYGDPFCSTXN_FITTED -->
+<g id="edge38" class="edge">
+<title>PAKNYGDPGAP_-&gt;PAKNYGDPFCSTXN_FITTED</title>
+<g id="a_edge38"><a xlink:href="bogus" xlink:title=" PAKNYGDPGAP_ -&gt; PAKNYGDPFCSTXN_FITTED Min. att. -2%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2243.53,-2580.5C2292.76,-2580.5 2349.24,-2580.5 2405.73,-2580.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2405.66,-2587.5 2415.66,-2580.5 2405.66,-2573.5 2405.66,-2587.5"/>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVHSNGKN&#45;&gt;PAKNVSRVHSNGKN_FITTED -->
+<g id="edge123" class="edge">
+<title>PAKSMSRVHSNGKN-&gt;PAKNVSRVHSNGKN_FITTED</title>
+<g id="a_edge123"><a xlink:href="bogus" xlink:title=" PAKSMSRVHSNGKN -&gt; PAKNVSRVHSNGKN_FITTED Min. att. -2091%  max: 103%">
+<path fill="none" stroke="black" stroke-width="8" d="M1526.62,-1179.54C1709.59,-1187.34 2202.03,-1208.33 2494.61,-1220.81"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2494.27,-1228.06 2504.56,-1221.49 2494.86,-1214.07 2494.27,-1228.06"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVHSNGKN -->
+<g id="node86" class="node">
+<title>PAKNVSRVHSNGKN</title>
+<g id="a_node86"><a xlink:title="Services Housing (Constant)
+FRML &lt;DAMP,STOC&gt; PAKNVSRVHSNGKN = (PAKNVSRVHSNGKN(-1)*EXP(PAKNVSRVHSNGKN_A+ (-0.109421428635736-0.2*(LOG(PAKNVSRVHSNGKN(-1))-LOG(PAKSMSRVHSNGKN(-1)))+1*((LOG(PAKSMSRVHSNGKN))-(LOG(PAKSMSRVHSNGKN(-1))))) )) * (1-PAKNVSRVHSNGKN_D)+ PAKNVSRVHSNGKN_X*PAKNVSRVHSNGKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="2238.62,-1329.5 1939.77,-1329.5 1939.77,-1293.5 2238.62,-1293.5 2238.62,-1329.5"/>
+<text text-anchor="start" x="1945.57" y="-1306.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNVSRVHSNGKN:Services Housing (Constant)</text>
+</a>
+</g>
+</g>
+<!-- PAKSMSRVHSNGKN&#45;&gt;PAKNVSRVHSNGKN -->
+<g id="edge56" class="edge">
+<title>PAKSMSRVHSNGKN-&gt;PAKNVSRVHSNGKN</title>
+<g id="a_edge56"><a xlink:href="bogus" xlink:title=" PAKSMSRVHSNGKN -&gt; PAKNVSRVHSNGKN Min. att. -2091%  max: 103%">
+<path fill="none" stroke="black" stroke-width="8" d="M1526.38,-1176.06C1596.55,-1177.03 1706.49,-1182.33 1799.15,-1203.5 1815.89,-1207.32 1819.1,-1211.4 1835.15,-1217.5 1899.01,-1241.77 1972.19,-1268.88 2023.37,-1287.73"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2020.38,-1294.29 2032.18,-1291.17 2025.21,-1281.15 2020.38,-1294.29"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVHSNGKN&#45;&gt;PAKNVSRVPRVSKN -->
+<g id="edge34" class="edge">
+<title>PAKNVSRVHSNGKN-&gt;PAKNVSRVPRVSKN</title>
+<g id="a_edge34"><a xlink:href="bogus" xlink:title=" PAKNVSRVHSNGKN -&gt; PAKNVSRVPRVSKN Min. att. -14%  max: 24%">
+<path fill="none" stroke="black" stroke-width="2.35" d="M2122.31,-1329.98C2194.69,-1371.59 2365.4,-1469.3 2379.25,-1473.5 2438.7,-1491.55 2506.47,-1499.38 2565.96,-1502.32"/>
+<polygon fill="black" stroke="black" stroke-width="2.35" points="2565.77,-1505.95 2575.92,-1502.9 2566.08,-1498.96 2565.77,-1505.95"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVHSNGKN&#45;&gt;PAKNVSRVTOTLKN -->
+<g id="edge85" class="edge">
+<title>PAKNVSRVHSNGKN-&gt;PAKNVSRVTOTLKN</title>
+<g id="a_edge85"><a xlink:href="bogus" xlink:title=" PAKNVSRVHSNGKN -&gt; PAKNVSRVTOTLKN Min. att. -24%  max: 7%">
+<path fill="none" stroke="black" stroke-width="2.37" d="M2175.82,-1329.96C2233.15,-1341.71 2310.42,-1356.39 2379.25,-1365.5 2399.9,-1368.23 2421.28,-1370.72 2442.82,-1372.99"/>
+<polygon fill="black" stroke="black" stroke-width="2.37" points="2442.21,-1376.75 2452.52,-1374.29 2442.93,-1369.79 2442.21,-1376.75"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVHSNGKN&#45;&gt;PAKHSNGINTKN -->
+<g id="edge58" class="edge">
+<title>PAKNVSRVHSNGKN-&gt;PAKHSNGINTKN</title>
+<g id="a_edge58"><a xlink:href="bogus" xlink:title=" PAKNVSRVHSNGKN -&gt; PAKHSNGINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2239.11,-1317.86C2367.09,-1323.33 2546.39,-1331 2646.58,-1335.28"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2645.97,-1342.52 2656.26,-1335.95 2646.56,-1328.53 2645.97,-1342.52"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVHSNGKN&#45;&gt;PAKNVSRVHSNGKN_FITTED -->
+<g id="edge108" class="edge">
+<title>PAKNVSRVHSNGKN-&gt;PAKNVSRVHSNGKN_FITTED</title>
+<g id="a_edge108"><a xlink:href="bogus" xlink:title=" PAKNVSRVHSNGKN -&gt; PAKNVSRVHSNGKN_FITTED Min. att. -3%  max: 2191%">
+<path fill="none" stroke="black" stroke-width="8" d="M2175.82,-1293.04C2233.15,-1281.29 2310.42,-1266.61 2379.25,-1257.5 2416.43,-1252.58 2456,-1248.44 2494.56,-1245.01"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2495.07,-1251.47 2504.42,-1243.63 2493.85,-1237.52 2495.07,-1251.47"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVHSNGKN&#45;&gt;PAKNVSRVHSNGCN -->
+<g id="edge78" class="edge">
+<title>PAKNVSRVHSNGKN-&gt;PAKNVSRVHSNGCN</title>
+<g id="a_edge78"><a xlink:href="bogus" xlink:title=" PAKNVSRVHSNGKN -&gt; PAKNVSRVHSNGCN Min. att. -3144%  max: 87%">
+<path fill="none" stroke="black" stroke-width="8" d="M2239.11,-1305.14C2335.87,-1301 2461.97,-1295.61 2561.04,-1291.38"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2561.32,-1298.11 2571.01,-1290.69 2560.72,-1284.13 2561.32,-1298.11"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSTYKN&#45;&gt;PAKFSTYINTKN -->
+<g id="edge25" class="edge">
+<title>PAKNVAGRFSTYKN-&gt;PAKFSTYINTKN</title>
+<g id="a_edge25"><a xlink:href="bogus" xlink:title=" PAKNVAGRFSTYKN -&gt; PAKFSTYINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2215.37,-1134.59C2266.21,-1139.4 2325.52,-1144.87 2379.25,-1149.5 2472,-1157.49 2578.95,-1165.76 2648.36,-1171.01"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2647.81,-1178.44 2658.3,-1172.22 2648.86,-1164.48 2647.81,-1178.44"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSTYKN&#45;&gt;PAKNVAGRFSTYCN -->
+<g id="edge39" class="edge">
+<title>PAKNVAGRFSTYKN-&gt;PAKNVAGRFSTYCN</title>
+<g id="a_edge39"><a xlink:href="bogus" xlink:title=" PAKNVAGRFSTYKN -&gt; PAKNVAGRFSTYCN Min. att. -215%  max: 696%">
+<path fill="none" stroke="black" stroke-width="8" d="M2215.39,-1122.5C2320.9,-1122.5 2471.77,-1122.5 2581.39,-1122.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2581.26,-1129.5 2591.26,-1122.5 2581.26,-1115.5 2581.26,-1129.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNVAGRFSTYKN&#45;&gt;PAKNVAGRFSTYKN_FITTED -->
+<g id="edge43" class="edge">
+<title>PAKNVAGRFSTYKN-&gt;PAKNVAGRFSTYKN_FITTED</title>
+<g id="a_edge43"><a xlink:href="bogus" xlink:title=" PAKNVAGRFSTYKN -&gt; PAKNVAGRFSTYKN_FITTED Min. att. -251%  max: 195%">
+<path fill="none" stroke="black" stroke-width="8" d="M2215.37,-1110.41C2266.21,-1105.6 2325.52,-1100.13 2379.25,-1095.5 2424.29,-1091.62 2472.68,-1087.68 2518.49,-1084.04"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2518.83,-1090.56 2528.25,-1082.79 2517.73,-1076.6 2518.83,-1090.56"/>
+</a>
+</g>
+</g>
+<!-- PAKFINSINTKN -->
+<g id="node91" class="node">
+<title>PAKFINSINTKN</title>
+<g id="a_node91"><a xlink:title="PAKFINSINTKN
+FRML &lt;IDENT&gt; PAKFINSINTKN = PAKBETAENGYFINS*PAKNVSRVFINSKN*(1+((PAKBETAFINS+PAKBETAENGYFINS)/(1-(PAKBETAFINS+PAKBETAENGYFINS)))) $">
+<polygon fill="#63b8ff" stroke="black" points="2779.35,-978.5 2666.5,-978.5 2666.5,-942.5 2779.35,-942.5 2779.35,-978.5"/>
+<text text-anchor="start" x="2672.3" y="-955.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKFINSINTKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVFINSKN&#45;&gt;PAKNVSRVFINSKN_FITTED -->
+<g id="edge120" class="edge">
+<title>PAKNVSRVFINSKN-&gt;PAKNVSRVFINSKN_FITTED</title>
+<g id="a_edge120"><a xlink:href="bogus" xlink:title=" PAKNVSRVFINSKN -&gt; PAKNVSRVFINSKN_FITTED Min. att. -4472%  max: 169%">
+<path fill="none" stroke="black" stroke-width="8" d="M2221.39,-986.01C2261.24,-978.29 2304.67,-967.71 2343.25,-953.5 2360.42,-947.17 2361.73,-938.78 2379.25,-933.5 2417.54,-921.95 2459.27,-914.6 2500.01,-910.04"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2500.65,-916.39 2509.87,-908.4 2499.21,-902.47 2500.65,-916.39"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVFINSKN&#45;&gt;PAKNVSRVFINSCN -->
+<g id="edge135" class="edge">
+<title>PAKNVSRVFINSKN-&gt;PAKNVSRVFINSCN</title>
+<g id="a_edge135"><a xlink:href="bogus" xlink:title=" PAKNVSRVFINSKN -&gt; PAKNVSRVFINSCN Min. att. -118%  max: 71%">
+<path fill="none" stroke="black" stroke-width="8" d="M2233.55,-1006.77C2332.74,-1008.34 2464.66,-1010.43 2566.39,-1012.04"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2566.02,-1019.13 2576.13,-1012.29 2566.25,-1005.13 2566.02,-1019.13"/>
+</a>
+</g>
+</g>
+<!-- PAKNVSRVFINSKN&#45;&gt;PAKFINSINTKN -->
+<g id="edge1" class="edge">
+<title>PAKNVSRVFINSKN-&gt;PAKFINSINTKN</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title=" PAKNVSRVFINSKN -&gt; PAKFINSINTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M2233.55,-994.52C2363.51,-985.46 2549.69,-972.5 2650.49,-965.48"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2650.72,-972.06 2660.21,-964.38 2649.75,-958.09 2650.72,-972.06"/>
+</a>
+</g>
+</g>
+<!-- PAKSMINDOTHRTKN&#45;&gt;PAKNVINDOTHRTKN -->
+<g id="edge127" class="edge">
+<title>PAKSMINDOTHRTKN-&gt;PAKNVINDOTHRTKN</title>
+<g id="a_edge127"><a xlink:href="bogus" xlink:title=" PAKSMINDOTHRTKN -&gt; PAKNVINDOTHRTKN Min. att. -136%  max: 801%">
+<path fill="none" stroke="black" stroke-width="8" d="M1529.27,-911.49C1619.01,-915.77 1762.88,-916.36 1799.15,-879.5 1889.26,-787.93 1768.43,-412.29 1835.15,-302.5 1874.39,-237.94 1952.35,-197.33 2011.42,-174.49"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2013.45,-180.98 2020.38,-170.93 2008.57,-167.86 2013.45,-180.98"/>
+</a>
+</g>
+</g>
+<!-- PAKSMINDOTHRTKN&#45;&gt;PAKNVINDOTHRTKN_FITTED -->
+<g id="edge89" class="edge">
+<title>PAKSMINDOTHRTKN-&gt;PAKNVINDOTHRTKN_FITTED</title>
+<g id="a_edge89"><a xlink:href="bogus" xlink:title=" PAKSMINDOTHRTKN -&gt; PAKNVINDOTHRTKN_FITTED Min. att. -136%  max: 801%">
+<path fill="none" stroke="black" stroke-width="8" d="M1529.54,-911.38C1619.17,-915.52 1762.55,-915.93 1799.15,-879.5 1867.43,-811.55 1777.77,-524.88 1835.15,-447.5 1972.23,-262.62 2236.19,-208.91 2440.63,-197.27"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2440.86,-203.95 2450.48,-196.44 2440.13,-189.97 2440.86,-203.95"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN -->
+<g id="node101" class="node">
+<title>PAKNEIMPGNFSKN</title>
+<g id="a_node101"><a xlink:title="Imports real
+FRML &lt;DAMP,STOC&gt; PAKNEIMPGNFSKN = (PAKNEIMPGNFSKN(-1)*EXP(PAKNEIMPGNFSKN_A+ (-0.324143718656754*(LOG(PAKNEIMPGNFSKN(-1))-LOG(PAKNEGDETTOTKN(-1))+0.8*LOG(PAKNEIMPGNFSXN(-1)/PAKNYGDPFCSTXN(-1)))-0.583459272245018+1*((LOG(PAKNEGDETTOTKN))-(LOG(PAKNEGDETTOTKN(-1))))-0.0921874580409631*((LOG(PAKNEIMPGNFSXN/PAKNYGDPFCSTXN))-(LOG(PAKNEIMPGNFSXN(-1)/PAKNYGDPFCSTXN(-1))))-0.0361746331863615*DURING_2012) )) * (1-PAKNEIMPGNFSKN_D)+ PAKNEIMPGNFSKN_X*PAKNEIMPGNFSKN_D  $">
+<polygon fill="#63b8ff" stroke="black" points="962.55,-1240.5 757.45,-1240.5 757.45,-1204.5 962.55,-1204.5 962.55,-1240.5"/>
+<text text-anchor="start" x="763.25" y="-1217.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEIMPGNFSKN:Imports real</text>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKSMAGRCRPSKN -->
+<g id="edge142" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKSMAGRCRPSKN</title>
+<g id="a_edge142"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKSMAGRCRPSKN Min. att. -56%  max: 36%">
+<path fill="none" stroke="black" stroke-width="5.64" d="M881.5,-1240.91C923.47,-1278.38 1022.53,-1365.78 1109.55,-1434.5 1217.08,-1519.41 1349.17,-1612.98 1413.86,-1658.13"/>
+<polygon fill="black" stroke="black" stroke-width="5.64" points="1410.95,-1662.6 1421.97,-1664.27 1416.59,-1654.5 1410.95,-1662.6"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKSMSRVTRNSKN -->
+<g id="edge28" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKSMSRVTRNSKN</title>
+<g id="a_edge28"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKSMSRVTRNSKN Min. att. -4%  max: 238%">
+<path fill="none" stroke="black" stroke-width="8" d="M885.16,-1240.89C927.85,-1272.32 1020.53,-1335.82 1109.55,-1365.5 1194.36,-1393.78 1296.61,-1403.37 1367.45,-1406.45"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1367.15,-1413.67 1377.41,-1407.06 1367.68,-1399.69 1367.15,-1413.67"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKNVENGNIMPKN -->
+<g id="edge91" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKNVENGNIMPKN</title>
+<g id="a_edge91"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKNVENGNIMPKN Min. att. -1535%  max: 5547%">
+<path fill="none" stroke="black" stroke-width="8" d="M963.01,-1238.31C1007.87,-1244.89 1061.25,-1252.21 1109.55,-1257.5 1196.93,-1267.07 1297.16,-1274.55 1366.76,-1279.18"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1366.01,-1286.54 1376.45,-1280.21 1366.93,-1272.57 1366.01,-1286.54"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKNEIMPGNFSKN_FITTED -->
+<g id="edge128" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKNEIMPGNFSKN_FITTED</title>
+<g id="a_edge128"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKNEIMPGNFSKN_FITTED Min. att. -99%  max: 189%">
+<path fill="none" stroke="black" stroke-width="8" d="M934.45,-1240.89C976.16,-1252.5 1028.82,-1269.15 1073.55,-1289.5 1090.62,-1297.26 1091.71,-1305.72 1109.55,-1311.5 1161.26,-1328.26 1219.53,-1336.53 1273.21,-1340.22"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1272.55,-1347.56 1282.96,-1341.18 1273.4,-1333.59 1272.55,-1347.56"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKSMAGRFSTYKN -->
+<g id="edge139" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKSMAGRFSTYKN</title>
+<g id="a_edge139"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKSMAGRFSTYKN Min. att. -24%  max: 2%">
+<path fill="none" stroke="black" stroke-width="2.44" d="M912.13,-1204.09C961.86,-1187 1039.89,-1162.32 1109.55,-1149.5 1197.55,-1133.3 1299.97,-1126.82 1369.99,-1124.22"/>
+<polygon fill="black" stroke="black" stroke-width="2.44" points="1369.8,-1127.63 1379.67,-1123.78 1369.56,-1120.63 1369.8,-1127.63"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKNEIMPGSNEKN -->
+<g id="edge48" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKNEIMPGSNEKN</title>
+<g id="a_edge48"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKNEIMPGSNEKN Min. att. -265%  max: 92%">
+<path fill="none" stroke="black" stroke-width="8" d="M962.83,-1223.88C1077.51,-1225.42 1261.8,-1227.91 1368.84,-1229.36"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1368.6,-1236.44 1378.7,-1229.57 1368.79,-1222.44 1368.6,-1236.44"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKSMSRVFINSKN -->
+<g id="edge22" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKSMSRVFINSKN</title>
+<g id="a_edge22"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKSMSRVFINSKN Min. att. -293%  max: 2%">
+<path fill="none" stroke="black" stroke-width="8" d="M888.2,-1204C932.39,-1175.04 1023.51,-1119.81 1109.55,-1095.5 1196.14,-1071.03 1299.56,-1065.99 1370.2,-1065.99"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1370.05,-1073.03 1380.08,-1066.08 1370.12,-1059.03 1370.05,-1073.03"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKSMINDMNGSKN -->
+<g id="edge97" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKSMINDMNGSKN</title>
+<g id="a_edge97"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKSMINDMNGSKN Min. att. -653%  max: 4044%">
+<path fill="none" stroke="black" stroke-width="8" d="M878.51,-1204.19C916.42,-1165.93 1010.66,-1078.04 1109.55,-1041.5 1192.7,-1010.78 1294.66,-1006.56 1365.87,-1008.47"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1365.24,-1015.65 1375.47,-1009 1365.72,-1001.66 1365.24,-1015.65"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKSMENGTOTLKN -->
+<g id="edge70" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKSMENGTOTLKN</title>
+<g id="a_edge70"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKSMENGTOTLKN Min. att. -224%  max: 5125%">
+<path fill="none" stroke="black" stroke-width="8" d="M873.42,-1204.12C905.84,-1157.88 998.29,-1036.9 1109.55,-987.5 1191.2,-951.25 1294.47,-948.08 1366.42,-951.75"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1365.78,-959.08 1376.18,-952.69 1366.61,-945.11 1365.78,-959.08"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKSMSRVHSNGKN -->
+<g id="edge44" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKSMSRVHSNGKN</title>
+<g id="a_edge44"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKSMSRVHSNGKN Min. att. -23%  max: 157%">
+<path fill="none" stroke="black" stroke-width="8" d="M962.83,-1214.59C1076.57,-1205.76 1258.77,-1191.61 1366.18,-1183.27"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1366.69,-1189.79 1376.11,-1182.03 1365.6,-1175.83 1366.69,-1189.79"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKSMINDOTHRTKN -->
+<g id="edge9" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKSMINDOTHRTKN</title>
+<g id="a_edge9"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKSMINDOTHRTKN Min. att. -6733%  max: 2093%">
+<path fill="none" stroke="black" stroke-width="8" d="M876.14,-1204.13C927.62,-1141.77 1093.62,-941.58 1109.55,-933.5 1188.48,-893.46 1290.89,-890.66 1363.34,-895.44"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1362.74,-902.87 1373.24,-896.64 1363.8,-888.91 1362.74,-902.87"/>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge45" class="edge">
+<title>PAKNEIMPGNFSKN-&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge45"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN -&gt; PAKNYGDPMKTPKN Min. att. -1249%  max: 1255%">
+<path fill="none" stroke="black" stroke-width="8" d="M868.21,-1240.8C894.84,-1307.34 992.21,-1541.4 1109.55,-1712.5 1208.63,-1856.98 1357.97,-2004.55 1422.19,-2065.47"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1416.43,-2070.38 1428.5,-2072.15 1426.03,-2060.2 1416.43,-2070.38"/>
+</a>
+</g>
+</g>
+<!-- PAKNEADPKMAXKN_FITTED -->
+<g id="node106" class="node">
+<title>PAKNEADPKMAXKN_FITTED</title>
+<g id="a_node106"><a xlink:title="Fitted  value:PAKNEADPKMAXKN
+FRML &lt;FIT&gt; PAKNEADPKMAXKN_FITTED = 0*DUMH+((1+0.01)/(0.01+PAKDEPR))*(PAKAVDAMAGE/100)*PAKNYGDPMKTPKN $">
+<polygon fill="#63b8ff" stroke="black" points="2292.25,-2393.5 1886.15,-2393.5 1886.15,-2357.5 2292.25,-2357.5 2292.25,-2393.5"/>
+<text text-anchor="start" x="1891.95" y="-2370.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEADPKMAXKN_FITTED:Fitted  value:PAKNEADPKMAXKN</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNYGDPMKTPXN -->
+<g id="edge109" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNYGDPMKTPXN</title>
+<g id="a_edge109"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNYGDPMKTPXN Min. att. -42%  max: 9%">
+<path fill="none" stroke="black" stroke-width="4.21" d="M1555.35,-2077.17C1633.24,-2069.94 1738.06,-2075.06 1799.15,-2139.5 1870.91,-2215.2 1787.86,-2514.53 1835.15,-2607.5 1880.12,-2695.92 1978.63,-2762.91 2038.61,-2797.44"/>
+<polygon fill="black" stroke="black" stroke-width="4.21" points="2036.73,-2801.41 2047.25,-2803.11 2040.34,-2794.99 2036.73,-2801.41"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNYWRTFORMCN_FITTED -->
+<g id="edge30" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNYWRTFORMCN_FITTED</title>
+<g id="a_edge30"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNYWRTFORMCN_FITTED Min. att. -60%  max: 99%">
+<path fill="none" stroke="black" stroke-width="8" d="M1555.5,-2079.22C1631.9,-2073.56 1734.65,-2079.8 1799.15,-2139.5 1856.15,-2192.25 1776.71,-2259.35 1835.15,-2310.5 1920.35,-2385.07 2242.52,-2296.8 2343.25,-2348.5 2365.42,-2359.88 2357.1,-2380.07 2379.25,-2391.5 2417.04,-2410.99 2460.34,-2421.72 2503.15,-2427.06"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2502.19,-2434.66 2512.89,-2428.79 2503.72,-2420.74 2502.19,-2434.66"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKFMLBLMTWOKN -->
+<g id="edge137" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKFMLBLMTWOKN</title>
+<g id="a_edge137"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKFMLBLMTWOKN Min. att. -406%  max: 513%">
+<path fill="none" stroke="black" stroke-width="8" d="M1555.26,-2100.57C1624.61,-2106.47 1718.63,-2117.87 1799.15,-2139.5 1815.89,-2144 1818.4,-2150.04 1835.15,-2154.5 1856.27,-2160.13 1878.65,-2164.77 1901.03,-2168.61"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1899.5,-2175.43 1910.5,-2170.13 1901.76,-2161.61 1899.5,-2175.43"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNYGDPMKTPKD -->
+<g id="edge131" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNYGDPMKTPKD</title>
+<g id="a_edge131"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNYGDPMKTPKD Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1555.28,-2094.5C1648.42,-2094.5 1789.65,-2094.5 1903.32,-2094.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1903.17,-2101.5 1913.17,-2094.5 1903.17,-2087.5 1903.17,-2101.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNYWRTINFMCN -->
+<g id="edge81" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNYWRTINFMCN</title>
+<g id="a_edge81"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNYWRTINFMCN Min. att. -63%  max: 99%">
+<path fill="none" stroke="black" stroke-width="8" d="M1555.28,-2085.97C1678.03,-2075.5 1884.29,-2057.9 2000.94,-2047.95"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2001.42,-2054.42 2010.78,-2046.59 2000.23,-2040.47 2001.42,-2054.42"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNEADPKMAXKN -->
+<g id="edge73" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNEADPKMAXKN</title>
+<g id="a_edge73"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNEADPKMAXKN Min. att. 87%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1506.86,-2076.06C1579.25,-2050.83 1715.6,-2005.82 1835.15,-1980.5 1889.08,-1969.08 1950.39,-1961.2 1999.16,-1956.12"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1999.61,-1962.5 2008.85,-1954.53 1998.2,-1948.57 1999.61,-1962.5"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNYWRTFORMCN -->
+<g id="edge86" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNYWRTFORMCN</title>
+<g id="a_edge86"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNYWRTFORMCN Min. att. -63%  max: 99%">
+<path fill="none" stroke="black" stroke-width="8" d="M1555.18,-2083.7C1629.17,-2080.97 1728.93,-2088.93 1799.15,-2139.5 1828.83,-2160.87 1807.03,-2190.11 1835.15,-2213.5 1881.06,-2251.69 1946.25,-2269.13 1998.96,-2277.05"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1997.68,-2284.76 2008.53,-2279.17 1999.57,-2270.88 1997.68,-2284.76"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNYGDPFCSTKN -->
+<g id="edge53" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNYGDPFCSTKN</title>
+<g id="a_edge53"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNYGDPFCSTKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1469.91,-2076.27C1516.72,-2018.85 1669.94,-1839.83 1835.15,-1743.5 1880.72,-1716.93 1936.06,-1697.94 1983.36,-1685.05"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1984.86,-1691.31 1992.74,-1682 1981.29,-1677.78 1984.86,-1691.31"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNYWRTINFMCN_FITTED -->
+<g id="edge71" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNYWRTINFMCN_FITTED</title>
+<g id="a_edge71"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNYWRTINFMCN_FITTED Min. att. -60%  max: 99%">
+<path fill="none" stroke="black" stroke-width="8" d="M1527.64,-2076.03C1603.66,-2057.32 1727.03,-2029 1835.15,-2013.5 2059.31,-1981.37 2123.64,-2030.74 2343.25,-1975.5 2360.23,-1971.23 2362.28,-1963.81 2379.25,-1959.5 2420.21,-1949.11 2464.72,-1942.4 2507.69,-1938.13"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2508.14,-1944.57 2517.44,-1936.67 2506.84,-1930.63 2508.14,-1944.57"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKFMLBLMTWOKN_FITTED -->
+<g id="edge116" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKFMLBLMTWOKN_FITTED</title>
+<g id="a_edge116"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKFMLBLMTWOKN_FITTED Min. att. -406%  max: 513%">
+<path fill="none" stroke="black" stroke-width="8" d="M1555.24,-2102.71C1631.8,-2108.74 1740.08,-2116.68 1835.15,-2121.5 2049.8,-2132.39 2293.91,-2139.43 2471.6,-2143.58"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2471.34,-2150.72 2481.5,-2143.95 2471.67,-2136.72 2471.34,-2150.72"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKGDPPCKN -->
+<g id="edge49" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKGDPPCKN</title>
+<g id="a_edge49"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKGDPPCKN Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1486.55,-2076.06C1549.83,-2039.63 1698.86,-1958.76 1835.15,-1921.5 1867.07,-1912.77 1901.96,-1906.84 1935.37,-1902.82"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1935.96,-1909.12 1945.11,-1901.05 1934.39,-1895.21 1935.96,-1909.12"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNYGDPGAP_ -->
+<g id="edge51" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNYGDPGAP_</title>
+<g id="a_edge51"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNYGDPGAP_ Min. att. -7018%  max: 22248%">
+<path fill="none" stroke="black" stroke-width="8" d="M1555.52,-2078.06C1632.7,-2071.56 1736.5,-2077.22 1799.15,-2139.5 1882.82,-2222.68 1773.8,-2301.73 1835.15,-2402.5 1880.02,-2476.2 1968.22,-2527.49 2027.7,-2555.48"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="2024.15,-2562.3 2036.16,-2560.09 2029.97,-2549.57 2024.15,-2562.3"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN&#45;&gt;PAKNEADPKMAXKN_FITTED -->
+<g id="edge17" class="edge">
+<title>PAKNYGDPMKTPKN-&gt;PAKNEADPKMAXKN_FITTED</title>
+<g id="a_edge17"><a xlink:href="bogus" xlink:title=" PAKNYGDPMKTPKN -&gt; PAKNEADPKMAXKN_FITTED Min. att. 100%  max: 100%">
+<path fill="none" stroke="black" stroke-width="8" d="M1555.26,-2078.7C1632.04,-2072.62 1735.42,-2078.55 1799.15,-2139.5 1865.68,-2203.14 1768.48,-2280.01 1835.15,-2343.5 1845.87,-2353.7 1858.09,-2361.79 1871.26,-2368.14"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1867.94,-2374.88 1879.89,-2372.36 1873.42,-2362 1867.94,-2374.88"/>
+</a>
+</g>
+</g>
+<!-- PAKNEGDETTOTKN&#45;&gt;PAKNEIMPGNFSKN_FITTED -->
+<g id="edge126" class="edge">
+<title>PAKNEGDETTOTKN-&gt;PAKNEIMPGNFSKN_FITTED</title>
+<g id="a_edge126"><a xlink:href="bogus" xlink:title=" PAKNEGDETTOTKN -&gt; PAKNEIMPGNFSKN_FITTED Min. att. -407%  max: 607%">
+<path fill="none" stroke="black" stroke-width="8" d="M560.95,-1240.97C695.85,-1260.52 917.61,-1291.29 1109.55,-1311.5 1162.54,-1317.08 1220.25,-1322.04 1272.98,-1326.15"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="1272.3,-1333.58 1282.8,-1327.36 1273.37,-1319.62 1272.3,-1333.58"/>
+</a>
+</g>
+</g>
+<!-- PAKNEGDETTOTKN&#45;&gt;PAKNEIMPGNFSKN -->
+<g id="edge122" class="edge">
+<title>PAKNEGDETTOTKN-&gt;PAKNEIMPGNFSKN</title>
+<g id="a_edge122"><a xlink:href="bogus" xlink:title=" PAKNEGDETTOTKN -&gt; PAKNEIMPGNFSKN Min. att. -407%  max: 607%">
+<path fill="none" stroke="black" stroke-width="8" d="M585.77,-1222.5C636.87,-1222.5 693.28,-1222.5 741.52,-1222.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="741.2,-1229.5 751.2,-1222.5 741.2,-1215.5 741.2,-1229.5"/>
+</a>
+</g>
+</g>
+</g>
+</svg>
