@@ -179,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LoadingWBModel.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LoadingWBModel.html">2. Working with PakMod under modelflow (i think this is duplicating the next chapter)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ReportWriting.html">5. Report writing and scenario results</a></li>
@@ -436,11 +436,10 @@ document.write(`
 <p>As always the modelflow and other python libraries that are to be used must be imported into the current session.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span> 
 <span class="n">model</span><span class="o">.</span><span class="n">widescreen</span><span class="p">()</span>
 <span class="n">model</span><span class="o">.</span><span class="n">scroll_off</span><span class="p">()</span>
-<span class="o">%</span><span class="k">load_ext</span> autoreload
-<span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
@@ -451,7 +450,20 @@ document.write(`
             div#menubar-container     { width: 65%; }
             div#maintoolbar-container { width: 99%; }
         </style>
-        </div></div>
+        </div><script type="application/javascript">
+                    IPython.OutputArea.prototype._should_scroll = function(lines){
+                        return false;
+                    }
+                </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pandas options ot make output more eligeble: </span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.width&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="load-a-pre-existing-model-data-and-descriptions">
@@ -527,9 +539,9 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <span class="target" id="index-4"></span></section>
 <section id="add-variable-descriptions">
 <span id="index-5"></span><h2><span class="section-number">6.4. </span>Add variable descriptions<a class="headerlink" href="#add-variable-descriptions" title="Permalink to this headline">#</a></h2>
-<p>A modelflow model imported from EViews will inherit the variable descriptors coming from Eviews.  Not all EViews variables will necessarily have a description so such descriptions can be added to the existing using the <code class="docutils literal notranslate"><span class="pre">.set_var_descri[tion()</span></code> method as below.</p>
+<p>A modelflow model imported from EViews will inherit the variable descriptors coming from Eviews.  The variable descriptors are stored in a dictionary named: <code class="docutils literal notranslate"><span class="pre">.var_description</span></code>. Not all EViews variables will necessarily have a description so such descriptions can be added to the existing as shown below.</p>
 <p>As coded, the call</p>
-<p><code class="docutils literal notranslate"><span class="pre">mpak.set_var_description({**mpak.var_description,**extra_description})</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">mpak.var_description</span> <span class="pre">=</span> <span class="pre">{**mpak.var_description,**extra_description}</span></code></p>
 <p>adds the extra_description dictionary to the pre-existing mpak,var_description dictionary.</p>
 <p>Several <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> methods include a <code class="docutils literal notranslate"><span class="pre">rename</span></code> option, which if set to True will substitute the description for the variable name in any outputs.  Variables can also be selected for by using the <code class="docutils literal notranslate"><span class="pre">mpak['!*subtext*']</span></code> syntax, where subtext is some text that appears in the variable descriptor.</p>
 <div class="cell docutils container">
@@ -547,7 +559,8 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
  <span class="s1">&#39;PAKGGDBTTOTLCN_&#39;</span><span class="p">:</span> <span class="s1">&#39;Debt (</span><span class="si">%G</span><span class="s1">DP)&#39;</span><span class="p">,</span>
  <span class="s1">&#39;PAKGGREVTOTLCN&#39;</span><span class="p">:</span> <span class="s1">&#39;Fiscal revenues&#39;</span><span class="p">,</span>
  <span class="s1">&#39;PAKWDL&#39;</span><span class="p">:</span> <span class="s1">&#39;Working days lost due to pollution&#39;</span><span class="p">}</span>
-<span class="n">mpak</span><span class="o">.</span><span class="n">set_var_description</span><span class="p">({</span><span class="o">**</span><span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span><span class="p">,</span><span class="o">**</span><span class="n">extra_description</span><span class="p">})</span>
+
+<span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span><span class="p">,</span><span class="o">**</span><span class="n">extra_description</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -572,7 +585,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 <p>The above used the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> to change the Carbon Tax rate variables.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> method <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> could be used to perform the same change.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> method <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> could be used to perform the same change. <a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html#upd"><span class="std std-ref">Here</span></a> is a description of the method.</p>
 <span class="target" id="index-6"></span><div class="cell docutils container" id="index-7">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This modelflow command is equivalent to the previous standard pandas command abive that used the .loc[] syntax</span>
@@ -607,33 +620,42 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <span class="target" id="index-11"></span><div class="cell docutils container" id="index-12">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">2030</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">df</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">df</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      PAKCCEMISCO2CKN  PAKCCEMISCO2GKN  PAKCCEMISCO2OKN  PAKCCEMISCO2TKN
-2023             0.00             0.00             0.00             0.00
-2024             0.00             0.00             0.00             0.00
-2025           -41.19           -26.99           -10.93           -22.17
-2026           -40.06           -25.72           -10.98           -21.56
-2027           -38.85           -24.48           -10.89           -20.89
-2028           -37.59           -23.30           -10.68           -20.17
-2029           -36.26           -22.14           -10.35           -19.38
-2030           -34.89           -21.01            -9.95           -18.55
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Coal emissions, tCO2e  Natural Gas emissions, tCO2e  \
+2023                   0.00                          0.00   
+2024                   0.00                          0.00   
+2025                 -41.19                        -26.99   
+2026                 -40.06                        -25.72   
+2027                 -38.85                        -24.48   
+2028                 -37.59                        -23.30   
+2029                 -36.26                        -22.14   
+2030                 -34.89                        -21.01   
+
+      Crude Oil emissions, tCO2e  Total emissions, tCO2e  
+2023                        0.00                    0.00  
+2024                        0.00                    0.00  
+2025                      -10.93                  -22.17  
+2026                      -10.98                  -21.56  
+2027                      -10.89                  -20.89  
+2028                      -10.68                  -20.17  
+2029                      -10.35                  -19.38  
+2030                       -9.95                  -18.55  
 </pre></div>
 </div>
 </div>
 </div>
 <span class="target" id="index-13"></span><div class="cell docutils container" id="index-14">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2?KN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Emissions impact of a $30 USD Carbon tax&quot;</span><span class="p">,</span><span class="n">showfig</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2?KN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Emissions impact of a $30 USD Carbon tax&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/34e14977fb5369f8e881ba18f47e2b8853f07c037e8f0b61abb6e8ecf41ce3b6.png" src="../../_images/34e14977fb5369f8e881ba18f47e2b8853f07c037e8f0b61abb6e8ecf41ce3b6.png" />
-<img alt="../../_images/34e14977fb5369f8e881ba18f47e2b8853f07c037e8f0b61abb6e8ecf41ce3b6.png" src="../../_images/34e14977fb5369f8e881ba18f47e2b8853f07c037e8f0b61abb6e8ecf41ce3b6.png" />
+<img alt="../../_images/be10a8b0a0bc3437657b244c7a1a62ee98bb485d030b53b7ee6a5f03993555c1.png" src="../../_images/be10a8b0a0bc3437657b244c7a1a62ee98bb485d030b53b7ee6a5f03993555c1.png" />
 </div>
 </div>
 <p>Abstracting from the fact that the impact is occurring too quickly (it would take time for the substitution towards alternative sources of power to occur), the fact that impacts are fading with time suggests an error in the specification of the shock.  High domestic inflation means that the relative price change of a given Carbon price is declining over time.</p>
@@ -671,33 +693,42 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">2030</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKGG*ER&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">df</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKGG*ER&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      PAKGGREVCO2CER  PAKGGREVCO2GER  PAKGGREVCO2OER
-2023       -5.549839      -41.000884       -8.710650
-2024       -5.549839      -41.000884       -8.710650
-2025       30.000000       30.000000       30.000000
-2026       31.827691       31.827691       31.827691
-2027       33.642459       33.642459       33.642459
-2028       35.451255       35.451255       35.451255
-2029       37.263353       37.263353       37.263353
-2030       39.091481       39.091481       39.091481
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Carbon tax on coal (USD/t)  Carbon tax on gas (USD/t)  \
+2023                       -5.55                     -41.00   
+2024                       -5.55                     -41.00   
+2025                       30.00                      30.00   
+2026                       31.83                      31.83   
+2027                       33.64                      33.64   
+2028                       35.45                      35.45   
+2029                       37.26                      37.26   
+2030                       39.09                      39.09   
+
+      Carbon tax on oil (USD/t)  
+2023                      -8.71  
+2024                      -8.71  
+2025                      30.00  
+2026                      31.83  
+2027                      33.64  
+2028                      35.45  
+2029                      37.26  
+2030                      39.09  
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2?KN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Emissions impact of a $30 USD Carbon tax&quot;</span><span class="p">,</span><span class="n">showfig</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2?KN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Emissions impact of a $30 USD Carbon tax&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c206757ff83f15977d28f5270afb33eae08b2d6c477cee847f9368913bd0546e.png" src="../../_images/c206757ff83f15977d28f5270afb33eae08b2d6c477cee847f9368913bd0546e.png" />
-<img alt="../../_images/c206757ff83f15977d28f5270afb33eae08b2d6c477cee847f9368913bd0546e.png" src="../../_images/c206757ff83f15977d28f5270afb33eae08b2d6c477cee847f9368913bd0546e.png" />
+<img alt="../../_images/7f30030b361a0be9abdccc1b5337719919249d5db27c2976415a5f54ac9a61d1.png" src="../../_images/7f30030b361a0be9abdccc1b5337719919249d5db27c2976415a5f54ac9a61d1.png" />
 </div>
 </div>
 <p>These results are better, but still there is an erosion of the effect of the tax.</p>
@@ -750,6 +781,14 @@ New equation for For PAKGGREVCO2GER
 Old frml   :new endogeneous variable 
 New frml   :FRML &lt;fixable&gt; PAKGGREVCO2GER = (PAKGGREVCO2GER(-1)*(PAKNYGDPMKTPXN*PAKPANUSATLS)/(PAKNYGDPMKTPXN(-1)*PAKPANUSATLS(-1)))* (1-PAKGGREVCO2GER_D)+ PAKGGREVCO2GER_X*PAKGGREVCO2GER_D$
 Adjust calc:No frml for adjustment calc  
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with the mpak model the variable description is updated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpakreal</span><span class="o">.</span><span class="n">var_description</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">mpakreal</span><span class="o">.</span><span class="n">var_description</span><span class="p">,</span><span class="o">**</span><span class="n">extra_description</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -809,7 +848,7 @@ PAKGGREVCO2OER
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Solve the model for the new baseline</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">mpakreal</span><span class="p">(</span><span class="n">baseline_real</span><span class="p">,</span><span class="mi">2021</span><span class="p">,</span><span class="mi">2100</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;Baseline - adjusted model&#39;</span><span class="p">)</span> 
 
-<span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTXN PAKGGBALOVRL PAKGGREVCO2CER PAKCCEMISCO2TKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">df</span>
+<span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTXN PAKGGBALOVRL PAKGGREVCO2CER PAKCCEMISCO2TKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -832,47 +871,47 @@ PAKGGREVCO2OER
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PAKNYGDPMKTPKN</th>
-      <th>PAKNECONPRVTXN</th>
-      <th>PAKGGREVCO2CER</th>
-      <th>PAKCCEMISCO2TKN</th>
+      <th>GDP</th>
+      <th>Implicit LCU defl., Pvt. Cons., 2000 = 1</th>
+      <th>Carbon tax on coal (USD/t)</th>
+      <th>Total emissions, tCO2e</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>2021</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>...</th>
@@ -883,38 +922,38 @@ PAKGGREVCO2OER
     </tr>
     <tr>
       <th>2096</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2097</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2098</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2099</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2100</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
     </tr>
   </tbody>
 </table>
@@ -947,7 +986,7 @@ PAKGGREVCO2OER
 <p>Initially the Carbon tax comes in at 30 but gradually its rate in USD rises in line with inflation such that it reaches $1500 by 2100.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKGGREVCO2?ER PAKNECONPRVTXN PAKPANUSATLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">df</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKGGREVCO2?ER PAKNECONPRVTXN PAKPANUSATLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -970,53 +1009,53 @@ PAKGGREVCO2OER
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PAKGGREVCO2CER</th>
-      <th>PAKGGREVCO2GER</th>
-      <th>PAKGGREVCO2OER</th>
-      <th>PAKNECONPRVTXN</th>
-      <th>PAKPANUSATLS</th>
+      <th>Carbon tax on coal (USD/t)</th>
+      <th>Carbon tax on gas (USD/t)</th>
+      <th>Carbon tax on oil (USD/t)</th>
+      <th>Implicit LCU defl., Pvt. Cons., 2000 = 1</th>
+      <th>Exchange rate LCU / US$ - Pakistan</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>2021</th>
-      <td>-5.5</td>
-      <td>-41.0</td>
-      <td>-8.7</td>
-      <td>1.8</td>
-      <td>107.0</td>
+      <td>-5.55</td>
+      <td>-41.00</td>
+      <td>-8.71</td>
+      <td>1.82</td>
+      <td>107.01</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>-5.5</td>
-      <td>-41.0</td>
-      <td>-8.7</td>
-      <td>2.0</td>
-      <td>106.8</td>
+      <td>-5.55</td>
+      <td>-41.00</td>
+      <td>-8.71</td>
+      <td>1.98</td>
+      <td>106.84</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>-5.5</td>
-      <td>-41.0</td>
-      <td>-8.7</td>
-      <td>2.1</td>
-      <td>106.7</td>
+      <td>-5.55</td>
+      <td>-41.00</td>
+      <td>-8.71</td>
+      <td>2.14</td>
+      <td>106.69</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>-5.5</td>
-      <td>-41.0</td>
-      <td>-8.7</td>
-      <td>2.3</td>
-      <td>106.6</td>
+      <td>-5.55</td>
+      <td>-41.00</td>
+      <td>-8.71</td>
+      <td>2.30</td>
+      <td>106.57</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>30.0</td>
-      <td>30.0</td>
-      <td>30.0</td>
-      <td>2.5</td>
-      <td>106.2</td>
+      <td>30.00</td>
+      <td>30.00</td>
+      <td>30.00</td>
+      <td>2.51</td>
+      <td>106.24</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1028,43 +1067,43 @@ PAKGGREVCO2OER
     </tr>
     <tr>
       <th>2096</th>
-      <td>1098.5</td>
-      <td>1098.5</td>
-      <td>1098.5</td>
-      <td>106.6</td>
-      <td>94.3</td>
+      <td>1098.50</td>
+      <td>1098.50</td>
+      <td>1098.50</td>
+      <td>106.62</td>
+      <td>94.30</td>
     </tr>
     <tr>
       <th>2097</th>
-      <td>1158.3</td>
-      <td>1158.3</td>
-      <td>1158.3</td>
-      <td>112.7</td>
-      <td>94.1</td>
+      <td>1158.34</td>
+      <td>1158.34</td>
+      <td>1158.34</td>
+      <td>112.69</td>
+      <td>94.11</td>
     </tr>
     <tr>
       <th>2098</th>
-      <td>1221.4</td>
-      <td>1221.4</td>
-      <td>1221.4</td>
-      <td>119.1</td>
-      <td>93.9</td>
+      <td>1221.44</td>
+      <td>1221.44</td>
+      <td>1221.44</td>
+      <td>119.11</td>
+      <td>93.92</td>
     </tr>
     <tr>
       <th>2099</th>
-      <td>1288.0</td>
-      <td>1288.0</td>
-      <td>1288.0</td>
-      <td>125.9</td>
-      <td>93.7</td>
+      <td>1287.97</td>
+      <td>1287.97</td>
+      <td>1287.97</td>
+      <td>125.89</td>
+      <td>93.73</td>
     </tr>
     <tr>
       <th>2100</th>
-      <td>1358.1</td>
-      <td>1358.1</td>
-      <td>1358.1</td>
-      <td>133.1</td>
-      <td>93.5</td>
+      <td>1358.11</td>
+      <td>1358.11</td>
+      <td>1358.11</td>
+      <td>133.06</td>
+      <td>93.54</td>
     </tr>
   </tbody>
 </table>
@@ -1075,7 +1114,7 @@ PAKGGREVCO2OER
 <p>The table below shows the same data but in growth rate terms – indicating that the Carbon tax effective rate is gradually rising each year in line domestic inflation adjusted for the exchange rate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKGGREVCO2?ER PAKNECONPRVTXN PAKPANUSATLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKGGREVCO2?ER PAKNECONPRVTXN PAKPANUSATLS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -1098,53 +1137,53 @@ PAKGGREVCO2OER
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PAKGGREVCO2CER</th>
-      <th>PAKGGREVCO2GER</th>
-      <th>PAKGGREVCO2OER</th>
-      <th>PAKNECONPRVTXN</th>
-      <th>PAKPANUSATLS</th>
+      <th>Carbon tax on coal (USD/t)</th>
+      <th>Carbon tax on gas (USD/t)</th>
+      <th>Carbon tax on oil (USD/t)</th>
+      <th>Implicit LCU defl., Pvt. Cons., 2000 = 1</th>
+      <th>Exchange rate LCU / US$ - Pakistan</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>2021</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>9.476828</td>
-      <td>-0.158806</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>9.48</td>
+      <td>-0.16</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>8.776453</td>
-      <td>-0.155332</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>8.78</td>
+      <td>-0.16</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>7.978008</td>
-      <td>-0.137261</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>7.98</td>
+      <td>-0.14</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>7.263911</td>
-      <td>-0.119262</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>7.26</td>
+      <td>-0.12</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>-640.556268</td>
-      <td>-173.169155</td>
-      <td>-444.405991</td>
-      <td>9.314719</td>
-      <td>-0.301653</td>
+      <td>-640.56</td>
+      <td>-173.17</td>
+      <td>-444.41</td>
+      <td>9.31</td>
+      <td>-0.30</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1156,43 +1195,43 @@ PAKGGREVCO2OER
     </tr>
     <tr>
       <th>2096</th>
-      <td>5.448291</td>
-      <td>5.448291</td>
-      <td>5.448291</td>
-      <td>5.695556</td>
-      <td>-0.201709</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.70</td>
+      <td>-0.20</td>
     </tr>
     <tr>
       <th>2097</th>
-      <td>5.447813</td>
-      <td>5.447813</td>
-      <td>5.447813</td>
-      <td>5.695309</td>
-      <td>-0.201691</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.70</td>
+      <td>-0.20</td>
     </tr>
     <tr>
       <th>2098</th>
-      <td>5.447267</td>
-      <td>5.447267</td>
-      <td>5.447267</td>
-      <td>5.694990</td>
-      <td>-0.201668</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.69</td>
+      <td>-0.20</td>
     </tr>
     <tr>
       <th>2099</th>
-      <td>5.446663</td>
-      <td>5.446663</td>
-      <td>5.446663</td>
-      <td>5.694608</td>
-      <td>-0.201640</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.69</td>
+      <td>-0.20</td>
     </tr>
     <tr>
       <th>2100</th>
-      <td>5.446007</td>
-      <td>5.446007</td>
-      <td>5.446007</td>
-      <td>5.694171</td>
-      <td>-0.201607</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.45</td>
+      <td>5.69</td>
+      <td>-0.20</td>
     </tr>
   </tbody>
 </table>
@@ -1205,7 +1244,7 @@ PAKGGREVCO2OER
 <p>The results from the simulation with the Carbon Tax rate endogenized so as to maintain its real value over time, are broadly consistent with the results from the ex ante real scenario performed above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2?KN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2?KN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -1228,47 +1267,47 @@ PAKGGREVCO2OER
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PAKCCEMISCO2CKN</th>
-      <th>PAKCCEMISCO2GKN</th>
-      <th>PAKCCEMISCO2OKN</th>
-      <th>PAKCCEMISCO2TKN</th>
+      <th>Coal emissions, tCO2e</th>
+      <th>Natural Gas emissions, tCO2e</th>
+      <th>Crude Oil emissions, tCO2e</th>
+      <th>Total emissions, tCO2e</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>2021</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>-41.186182</td>
-      <td>-26.992932</td>
-      <td>-10.929825</td>
-      <td>-22.167101</td>
+      <td>-41.19</td>
+      <td>-26.99</td>
+      <td>-10.93</td>
+      <td>-22.17</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1279,38 +1318,38 @@ PAKGGREVCO2OER
     </tr>
     <tr>
       <th>2096</th>
-      <td>-24.685909</td>
-      <td>-11.690039</td>
-      <td>-5.325705</td>
-      <td>-11.352756</td>
+      <td>-24.69</td>
+      <td>-11.69</td>
+      <td>-5.33</td>
+      <td>-11.35</td>
     </tr>
     <tr>
       <th>2097</th>
-      <td>-24.542468</td>
-      <td>-11.608037</td>
-      <td>-5.276462</td>
-      <td>-11.273065</td>
+      <td>-24.54</td>
+      <td>-11.61</td>
+      <td>-5.28</td>
+      <td>-11.27</td>
     </tr>
     <tr>
       <th>2098</th>
-      <td>-24.399566</td>
-      <td>-11.526499</td>
-      <td>-5.227612</td>
-      <td>-11.193829</td>
+      <td>-24.40</td>
+      <td>-11.53</td>
+      <td>-5.23</td>
+      <td>-11.19</td>
     </tr>
     <tr>
       <th>2099</th>
-      <td>-24.257190</td>
-      <td>-11.445417</td>
-      <td>-5.179145</td>
-      <td>-11.115038</td>
+      <td>-24.26</td>
+      <td>-11.45</td>
+      <td>-5.18</td>
+      <td>-11.12</td>
     </tr>
     <tr>
       <th>2100</th>
-      <td>-24.115326</td>
-      <td>-11.364782</td>
-      <td>-5.131051</td>
-      <td>-11.036681</td>
+      <td>-24.12</td>
+      <td>-11.36</td>
+      <td>-5.13</td>
+      <td>-11.04</td>
     </tr>
   </tbody>
 </table>
@@ -1319,13 +1358,13 @@ PAKGGREVCO2OER
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2?KN PAKNYGDPMKTPKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Emissions impact of a $30 USD Carbon tax&quot;</span><span class="p">,</span><span class="n">showfig</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2?KN PAKNYGDPMKTPKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span>
+ <span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Emissions impact of a $30 USD Carbon tax&quot;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b1e56c6968f6ceb70bdf8b49f31bd332115100a08b659947899aa6afcc72e4d6.png" src="../../_images/b1e56c6968f6ceb70bdf8b49f31bd332115100a08b659947899aa6afcc72e4d6.png" />
-<img alt="../../_images/b1e56c6968f6ceb70bdf8b49f31bd332115100a08b659947899aa6afcc72e4d6.png" src="../../_images/b1e56c6968f6ceb70bdf8b49f31bd332115100a08b659947899aa6afcc72e4d6.png" />
+<img alt="../../_images/77f6e939c49de95ffc8ca7d08052aca501a7d8ecb80525388398012bb0751897.png" src="../../_images/77f6e939c49de95ffc8ca7d08052aca501a7d8ecb80525388398012bb0751897.png" />
 </div>
 </div>
 <p>The modified model, which preserves the real value of the carbon tax has a permanent and substantive negative effect on emissions. The impact is not at an unchanging level, reflecting in part adaptation within the economy. Of particular import is what is being done with the revenues from the Carbon tax. As the structure of GDP (shifts to less carbon intensive activities) carbon tax revenues fall even as the Carbon Tax rate rises. Note, the percent deviation of emissions tends to decrease over time in this scenario principally because the level of activity (GDP) is higher with the Carbon Tax than without it. As a result,  emissions are higher than they would have been had GDP remained unchanged. For the Pakistan model, the positive impact of the Carbon tax is mainly explained by co-benefits, notably reduced reliance on more distortive taxes such as payroll taxes and because of reductions in informality (see <span id="id3">Burns <em>et al.</em> [<a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">2021</a>]</span> for more details how these effects operate in the Pakistan model).</p>
