@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Analyzing the impact of a shock" href="AttributionSomeFeatures.html" />
-    <link rel="prev" title="7. A simulation that targets a specific outcome" href="../07_MoreFeatures/Targeting.html" />
+    <link rel="prev" title="6. A simulation that targets a specific outcome" href="../07_MoreFeatures/Targeting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -179,12 +179,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">2. Working with PakMod under modelflow (i think this is duplicating the next chapter)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">7. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">6. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="current nav bd-sidenav">
@@ -195,6 +194,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/stability%20introduction.html">1. Model stability, some background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -254,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/AndrewEdits/papers/mfbook/content/06_ModelAnalytics/ModelStructure.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/main/papers/mfbook/content/06_ModelAnalytics/ModelStructure.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -431,14 +435,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span>
-<span class="o">%</span><span class="k">load_ext</span> autoreload
-<span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="n">mpak</span><span class="p">,</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">mpak</span><span class="o">.</span><span class="n">model_description</span><span class="o">=</span><span class="s2">&quot;World Bank climate aware model of Pakistan as described in Burns et al. (2019)&quot;</span>
-<span class="n">mpak</span><span class="o">.</span><span class="n">model_description</span>
-<span class="n">mpak</span><span class="o">.</span><span class="n">periode</span><span class="o">=</span><span class="mi">2100</span>
 </pre></div>
 </div>
 </div>
@@ -448,9 +448,24 @@ document.write(`
 </div>
 </div>
 </div>
-<span class="target" id="index-6"></span><span class="target" id="index-7"></span><span class="target" id="index-8"></span><span class="target" id="index-9"></span><span class="target" id="index-10"></span><span class="target" id="index-11"></span><span class="target" id="index-12"></span><span class="target" id="index-13"></span><span class="target" id="index-14"></span><span class="target" id="index-15"></span><span class="target" id="index-16"></span><span class="target" id="index-17"></span></section>
+<span class="target" id="index-6"></span><span class="target" id="index-7"></span><span class="target" id="index-8"></span><span class="target" id="index-9"></span><span class="target" id="index-10"></span><span class="target" id="index-11"></span><span class="target" id="index-12"></span><span class="target" id="index-13"></span><span class="target" id="index-14"></span><span class="target" id="index-15"></span><span class="target" id="index-16"></span><span class="target" id="index-17"></span><div class="cell docutils container" id="index-18">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latex</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Enables the charts in latex </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>png=latex</strong></p>
+<p>The default behavior when displaying graphs in a <em>jupyter notebook</em> is to produce images in .svg format.
+These images scale well and the mouseover feature can be used. That is: On mouseover of a node, the variable and the equation are displayed.  On mouseover on an joining line, the extent to which the variable contributed to the change in the dependent variable is displayed.</p>
+<p>Unfortunately this <em>jupyter book</em> (that is not a notebook) requires images be in he jpg or PNG format so this functionality has been disabled, by specifying that the png format be used instead of svg.</p>
+<p>For other purposes, the variable latex could be set equal to False in which case the same code will generate SVGs.</p>
+</div>
+</section>
 <section id="model-information">
-<span id="index-18"></span><h2><span class="section-number">1.2. </span>Model information<a class="headerlink" href="#model-information" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2. </span>Model information<a class="headerlink" href="#model-information" title="Permalink to this headline">#</a></h2>
 <p>The model object contains information about the model itself, its name, its structure (does it contain simultaneous equations or is it recursive), the number of variables it contains and the number that are exogenous and endogenous (have associated equations).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -479,9 +494,9 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027,
-       2028, 2029, 2030],
-      dtype=&#39;int64&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026,
+            2027, 2028, 2029, 2030],
+           dtype=&#39;int64&#39;)
 </pre></div>
 </div>
 </div>
@@ -499,7 +514,7 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d1d3e937a8fabac3ce8bdeb92557ea7233bde566f3efe0c2b5de3f86cba6b6c4.png" src="../../_images/d1d3e937a8fabac3ce8bdeb92557ea7233bde566f3efe0c2b5de3f86cba6b6c4.png" />
+<img alt="../../_images/bc98a26300dcead40343b8daae94ce827848fbebee2ea2625c0a5cb367d05fd3.png" src="../../_images/bc98a26300dcead40343b8daae94ce827848fbebee2ea2625c0a5cb367d05fd3.png" />
 </div>
 </div>
 <span class="target" id="index-33"></span><span class="target" id="index-34"></span><span class="target" id="index-35"></span></section>
@@ -538,13 +553,13 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 <p>The method <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> provides a graphical representation of this relationship, showing all the variables that directly determine an endogenous variable (in this example real GDP), distinguishing between RHS variables that are endogenous (in blue) and those that are exogenous (yellow).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latex</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="n">png</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f0bf209024ed95d62970d6eee753f9889f112a024476a18533eae17bd210fa86.svg" src="../../_images/f0bf209024ed95d62970d6eee753f9889f112a024476a18533eae17bd210fa86.svg" /></div>
+<img alt="../../_images/6b25c5c419e671d84bf9b27946eb04ab7cbdaef322248b3a5129f6de51416179.png" src="../../_images/6b25c5c419e671d84bf9b27946eb04ab7cbdaef322248b3a5129f6de51416179.png" />
+</div>
 </div>
 <p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and reveals the relative importance of each variable in the change of the dependent variable.</p>
 </section>
@@ -562,13 +577,12 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 <p>As a result GDP, consumption investment and most all variables in the model change, as illustrated in the below graphs that show the percent deviation of the main components of GDP from their baseline values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTKN PAKNEGDIFTOTKN PAKNEEXPGNFSKN PAKNEIMPGNFSKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTKN PAKNEGDIFTOTKN PAKNEEXPGNFSKN PAKNEIMPGNFSKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" src="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" />
-<img alt="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" src="../../_images/a35b482a7143a0987867437dbbc645004bc3b5e3102c4d23b2d870353134723b.png" />
+<img alt="../../_images/d181499adb4c6baeff5aa3687647f58ef8ccca4b337bb030f538b8ca5d10b91b.png" src="../../_images/d181499adb4c6baeff5aa3687647f58ef8ccca4b337bb030f538b8ca5d10b91b.png" />
 </div>
 </div>
 <span class="target" id="index-37"></span><span class="target" id="index-38"></span></section>
@@ -583,16 +597,8 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6aa7ed3e0ec6fad79ca3376da58fd5d590c867e68dbce89141fa52fd062a2b74.png" src="../../_images/6aa7ed3e0ec6fad79ca3376da58fd5d590c867e68dbce89141fa52fd062a2b74.png" />
+<img alt="../../_images/42f1190f5795fcc0239f277a16d2bd6d638df751dc6e83bd37f5b7d48365e40c.png" src="../../_images/42f1190f5795fcc0239f277a16d2bd6d638df751dc6e83bd37f5b7d48365e40c.png" />
 </div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>png=latex</strong></p>
-<p>The default behavior when displaying graphs in a <em>jupyter notebook</em> is to produce images in .svg format.
-These images scale well and the mouseover feature can be used. That is: On mouseover of a node, the variable and the equation are displayed.  On mouseover on an joining line, the extent to which the variable contributed to the change in the dependent variable is displayed.</p>
-<p>Unfortunately this <em>jupyter book</em> (that is not a notebook) requires images be in he jpg or PNG format so this functionality has been disabled, by specifying that the png format be used instead of svg.</p>
-<p>For other purposes, the variable latex could be set equal to False in which case the same code will generate SVGs.</p>
 </div>
 </section>
 <section id="the-filter-option-restricting-the-output-of-tracepre">
@@ -600,13 +606,12 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 <p>Using the filter option, the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> can be restricted to RHS variables that have had large impacts on the dependent variable.v</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gg</span><span class="o">=</span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
-<span class="n">gg</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/80a1eff225a1eec9584a9f0c0e41732817100f83148ef4fab5633121e0b72efa.png" src="../../_images/80a1eff225a1eec9584a9f0c0e41732817100f83148ef4fab5633121e0b72efa.png" />
+<img alt="../../_images/78b3a127bc39967e504292ee4382b8e91521169bef03005e4ce1222e200cd7b1.png" src="../../_images/78b3a127bc39967e504292ee4382b8e91521169bef03005e4ce1222e200cd7b1.png" />
 </div>
 </div>
 </section>
@@ -615,12 +620,12 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 <p>The up option allows <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> dependencies to be followed through beyond the first level of causal variables.  Below it is extended to variables as much as three levels back, and restricted to those whose variation explains at least 20 percent of the change in the variable of which they are a right-hand-side variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">up</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">,)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">up</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a947316cca883870c274782dc2c3c2025f02eaee8fad22b5b2daf8ba088d5a5a.png" src="../../_images/a947316cca883870c274782dc2c3c2025f02eaee8fad22b5b2daf8ba088d5a5a.png" />
+<img alt="../../_images/e8915a59e01abac1fba0d9c03c61dc2e1c17f38546dfd47088d8e365f4828f7a.png" src="../../_images/e8915a59e01abac1fba0d9c03c61dc2e1c17f38546dfd47088d8e365f4828f7a.png" />
 </div>
 </div>
 <section id="the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output">
@@ -628,34 +633,35 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span><span class="mi">2027</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">fokus2</span><span class="o">=</span><span class="s1">&#39;PAKNEGDIFTOTKN PAKNECONPRVTKN PAKNECONGOVTKN PAKNYGDPMKTPKN PAKNEIMPGNFSKN&#39;</span><span class="p">,</span><span class="n">growthshow</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">fokus2</span><span class="o">=</span><span class="s1">&#39;PAKNEGDIFTOTKN PAKNECONPRVTKN PAKNECONGOVTKN PAKNYGDPMKTPKN PAKNEIMPGNFSKN&#39;</span><span class="p">,</span><span class="n">growthshow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07e11b43ea327e2d577d1db6ec40f1bb07fd5dd47633e711a4bafb828aa19742.svg" src="../../_images/07e11b43ea327e2d577d1db6ec40f1bb07fd5dd47633e711a4bafb828aa19742.svg" /><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+<img alt="../../_images/0756327522d315334ab6546795f5f8fd26c39949d42708b7855c20ff35ebc76d.png" src="../../_images/0756327522d315334ab6546795f5f8fd26c39949d42708b7855c20ff35ebc76d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">{index}</span> <span class="pre">single:</span> <span class="pre">Model</span> <span class="pre">Analytics;</span> <span class="pre">.tracedep()</span> <span class="pre">method</span>&#160; </code></p>
-</section>
+<span class="target" id="index-43"></span></section>
 </section>
 <section id="tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables">
-<span id="index-43"></span><h2><span class="section-number">1.9. </span><code class="docutils literal notranslate"><span class="pre">.tracedep(down=xx)</span></code> traces the impact of a variable on other variables<a class="headerlink" href="#tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables" title="Permalink to this headline">#</a></h2>
+<span id="index-44"></span><h2><span class="section-number">1.9. </span><code class="docutils literal notranslate"><span class="pre">.tracedep(down=xx)</span></code> traces the impact of a variable on other variables<a class="headerlink" href="#tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables" title="Permalink to this headline">#</a></h2>
 <p>By specifying the option down=xx, the direction of the dependency graph is reversed and the chart shows the impact that the changes in the selected variable had on those which depend upon it.  Below is the impact of change in consumption on all of the variables up to 3 levels below the consumption equation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNECONPRVTKN</span><span class="o">.</span><span class="n">tracedep</span><span class="p">(</span><span class="n">down</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="nb">filter</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNECONPRVTKN</span><span class="o">.</span><span class="n">tracedep</span><span class="p">(</span><span class="n">down</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="nb">filter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dc6774d72f5ab382a153642a8dbe0f9bf908af0e62519c4313a830848b43606d.svg" src="../../_images/dc6774d72f5ab382a153642a8dbe0f9bf908af0e62519c4313a830848b43606d.svg" /></div>
+<img alt="../../_images/f8057e5a510c9801b0ceb0bfad78d8a1e69b9b9570eec68d7374c8c9b4ad80f3.png" src="../../_images/f8057e5a510c9801b0ceb0bfad78d8a1e69b9b9570eec68d7374c8c9b4ad80f3.png" />
+</div>
 </div>
 </section>
 <section id="modeldash-an-interactive-way-to-explore-dependencies">
-<span id="index-44"></span><h2><span class="section-number">1.10. </span><code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> An interactive way to explore dependencies<a class="headerlink" href="#modeldash-an-interactive-way-to-explore-dependencies" title="Permalink to this headline">#</a></h2>
+<span id="index-45"></span><h2><span class="section-number">1.10. </span><code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> An interactive way to explore dependencies<a class="headerlink" href="#modeldash-an-interactive-way-to-explore-dependencies" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> method (when executed in a Jupyter Notebook) generates a widget that allows you to dynamicaly adjust the arguments to the <code class="docutils literal notranslate"><span class="pre">tracepre()</span></code> and <code class="docutils literal notranslate"><span class="pre">tracedep</span></code> functions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">2026</span><span class="p">):</span>
         <span class="n">mpak</span><span class="o">.</span><span class="n">modeldash</span><span class="p">(</span><span class="s1">&#39;PAKNYGDPMKTPKN&#39;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -663,7 +669,12 @@ These images scale well and the mouseover feature can be used. That is: On mouse
 </div>
 <p>The above commands generate a dashboard that looks a like the below, where the panel to the left allows the user to change options including the filter, the depth of the trace among other things.</p>
 <p><img alt="dash.png" src="../../_images/dash.png" /></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">2026</span><span class="p">):</span>
         <span class="n">mpak</span><span class="o">.</span><span class="n">modeldash</span><span class="p">(</span><span class="s1">&#39;PAKNYGDPMKTPKN&#39;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -680,6 +691,7 @@ Dash is running on http://127.0.0.1:5001/
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 </section>
@@ -721,7 +733,7 @@ Dash is running on http://127.0.0.1:5001/
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>A simulation that targets a specific outcome</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>A simulation that targets a specific outcome</p>
       </div>
     </a>
     <a class="right-next"

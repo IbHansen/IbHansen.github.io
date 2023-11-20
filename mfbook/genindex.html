@@ -173,12 +173,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/LoadingWBModel.html">2. Working with PakMod under modelflow (i think this is duplicating the next chapter)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/Targeting.html">7. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/Targeting.html">6. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -189,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/stability%20introduction.html">1. Model stability, some background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="current nav bd-sidenav">
@@ -313,8 +317,7 @@ document.write(`
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#Symbols"><strong>Symbols</strong></a>
- | <a href="#A"><strong>A</strong></a>
+ <a href="#A"><strong>A</strong></a>
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
@@ -337,18 +340,6 @@ document.write(`
  | <a href="#W"><strong>W</strong></a>
  
 </div>
-<h2 id="Symbols">Symbols</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="content/05_WBModels/ReportWriting.html#index-23">;Compare solutions; keep_plot options -- keep_switch -- specify the kept scenarios to be displayed</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="content/05_WBModels/ReportWriting.html#index-24">;keep_plot options; keep_switch -- specify the kept scenarios to be displayed</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -388,7 +379,7 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/02_MacrostructuralModels/MacroStructuralModels.html#index-0">Behavioural Equations</a>, <a href="content/02_MacrostructuralModels/MacroStructuralModels.html#index-3">[1]</a>
 </li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-56">Behavioural equations in Modelflow</a>, <a href="content/05_WBModels/WorkingwWBModels.html#index-2">[1]</a>
+      <li><a href="content/05_WBModels/WorkingwWBModels.html#index-2">Behavioural equations in Modelflow</a>
 </li>
       <li>
     block
@@ -405,8 +396,6 @@ document.write(`
       <ul>
         <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-18">Box   2. Time scope of .upd() commands</a>
 </li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-9">Box   3. World Bank Mnemonics</a>
-</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -416,13 +405,20 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-0">Carbon tax example(s)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     Carbon tax simulation
 
       <ul>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-18">Complex changing equations</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Compare solutions
+
+      <ul>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-23">keep_plot options -- keep_switch -- specify the kept scenarios to be displayed</a>
 </li>
       </ul></li>
   </ul></td>
@@ -555,35 +551,15 @@ document.write(`
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    ECM
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-59">lambda - the speed of adjustment parameter in ECMs</a>
-</li>
-      </ul></li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-58">ECM - the Error Correction specification</a>
-</li>
       <li><a href="content/05_WBModels/WorkingwWBModels.html#index-4">ECMs</a>
 </li>
-      <li>
-    Equation
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-36">.frml</a>, <a href="content/05_WBModels/LoadingWBModel.html#index-52">[1]</a>
+      <li><a href="content/07_MoreFeatures/EigenValues.html#index-2">eigenvalues</a>
 </li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-54">.show method</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-48">return the eviews representation of an equation (prior to normalization)</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-51">return the normalized representation of an equation</a>
-</li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-4">Equation dependencies</a>
 </li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-57">Error Correction models and specification</a>, <a href="content/05_WBModels/WorkingwWBModels.html#index-3">[1]</a>
+      <li><a href="content/05_WBModels/WorkingwWBModels.html#index-3">Error Correction models and specification</a>
 </li>
       <li><a href="content/02_MacrostructuralModels/MacroStructuralModels.html#index-1">Exogenous variables</a>, <a href="content/02_MacrostructuralModels/MacroStructuralModels.html#index-4">[1]</a>
 </li>
@@ -614,17 +590,6 @@ document.write(`
         <li><a href="content/07_MoreFeatures/Targeting.html#index-4">Defining Targets</a>
 </li>
         <li><a href="content/07_MoreFeatures/Targeting.html#index-8">solve for instruments</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    Groups
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-15">Add a group</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-18">list variables in group</a>
 </li>
       </ul></li>
   </ul></td>
@@ -715,10 +680,6 @@ document.write(`
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-48">variables - wildcard search on variable description (the ! operator)</a>
 </li>
       </ul></li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-46">information about equations</a>
-</li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-7">Information about model variables</a>
-</li>
       <li>
     Installation
 
@@ -811,6 +772,13 @@ document.write(`
       </ul></li>
       <li><a href="content/05_WBModels/ReportWriting.html#index-11">Keep_plot options</a>
 </li>
+      <li>
+    keep_plot options
+
+      <ul>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-24">keep_switch -- specify the kept scenarios to be displayed</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
@@ -841,17 +809,10 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-9">Lags in modelflow</a>
 </li>
-      <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-8">Leads in modelflow</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    List
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-42">generate from set</a>
+      <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-8">Leads in modelflow</a>
 </li>
-      </ul></li>
       <li><a href="content/07_MoreFeatures/Targeting.html#index-2">ljit option</a>
 </li>
   </ul></td>
@@ -901,10 +862,6 @@ document.write(`
         <li><a href="content/03_Installation/InstallingPython.html#index-9">Installation of model flow</a>
 </li>
       </ul></li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-8">Mnemonics</a>
-</li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-30">mnemonics from  wildcard search</a>
-</li>
       <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-27">Model Adjacency matrix</a>
 </li>
       <li>
@@ -917,12 +874,16 @@ document.write(`
 </li>
         <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-38">.tracedep() Causal tree at the variable level</a>
 </li>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-43">.tracedep() method</a>
+</li>
         <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-33">.tracepre() method</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-44">Modeldash method - an interactive display of linkages within a model.</a>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-45">Modeldash method - an interactive display of linkages within a model.</a>
 </li>
       </ul></li>
       <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-19">Model currently active sample period</a>
+</li>
+      <li><a href="content/07_MoreFeatures/EigenValues.html#index-1">model derivatives</a>
 </li>
       <li>
     Model equations
@@ -956,93 +917,37 @@ document.write(`
         <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-21">Sample period</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-8">Model Name</a>
 </li>
-      <li>
-    Model obbject
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-38">information about equations</a>
-</li>
-      </ul></li>
       <li>
     Model Object
 
       <ul>
         <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-25">.current_per - active sample period</a>
 </li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-44">.endogene</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-16">Add a group</a>
-</li>
         <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-24">current active sample period</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-43">test if mnemonic is endogenous</a>
 </li>
       </ul></li>
       <li>
     Model object
 
       <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-39">.endogene property</a>, <a href="content/05_WBModels/WorkingwWBModels.html#index-1">[1]</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-49">.eviews method</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-53">.frml</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-3">.modelload() method</a>
+        <li><a href="content/05_WBModels/WorkingwWBModels.html#index-1">.endogene property</a>
 </li>
         <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-39">.tracedep() Causal tree at the variable level</a>
 </li>
         <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-36">.tracepre() method - trace influence of causal variables</a>
 </li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-34">.var_description property</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-55">display RHS variables and values from .based and .lastdf</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-5">Extract information about the model</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-6">information about model variables</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-17">list variables in group</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-22">return dataframe</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-45">return information on equations</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-37">return normalized formula of equation</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-47">return the eviews representation of an equation (prior to normalization)</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-50">return the normalized  representation of an equation</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-33">return variable description of single variable</a>
-</li>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-2">Wildcard search on variable descriptions the ! operator</a>
 </li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-29">wildcard selection - return mnemonics</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-31">wildcard selection - return variable description</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-19">Wildcard selection of data</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-21">wildcard selection of data - return dataframe</a>
-</li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     model object
 
       <ul>
         <li><a href="content/07_MoreFeatures/Targeting.html#index-3">compilation</a>
-</li>
-      </ul></li>
-      <li>
-    Model Objectl Wildcard searches
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-10">the ! operator</a>
 </li>
       </ul></li>
       <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-0">Model Structure</a>, <a href="content/06_ModelAnalytics/ModelStructure.html#index-10">[1]</a>, <a href="content/06_ModelAnalytics/ModelStructure.html#index-26">[2]</a>
@@ -1082,10 +987,6 @@ document.write(`
 </li>
         <li><a href="content/05_WBModels/WorkingwWBModels.html#index-0">information about equations</a>
 </li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-2">Load model from pre-existing file</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-0">Prepare your workspace</a>
-</li>
         <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-5">time index</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-2">types of simulation</a>
@@ -1095,9 +996,15 @@ document.write(`
     modelflow
 
       <ul>
+        <li><a href="content/07_MoreFeatures/EigenValues.html#index-4">.get_eigplot_all()</a>
+</li>
+        <li><a href="content/07_MoreFeatures/EigenValues.html#index-0">.newtondiff() method</a>
+</li>
         <li><a href="content/03_Installation/InstallingModelFlowpackage.html#index-0">modelflow environment</a>
 </li>
       </ul></li>
+      <li><a href="content/07_MoreFeatures/EigenValues.html#index-3">modelflow eigenvalues</a>
+</li>
       <li><a href="content/02_MacrostructuralModels/MFModAndModelFlow.html#index-0">Modelflow History</a>
 </li>
       <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-1">More complex scenarios  - carbon tax</a>
@@ -1136,8 +1043,6 @@ document.write(`
       </ul></li>
       <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-4">Pandas Series</a>
 </li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-26">plot data from  wildcard search of data</a>
-</li>
       <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-12">Plotting scenario results</a>
 </li>
       <li><a href="content/07_MoreFeatures/GettingHelp.html#index-7">Python</a>
@@ -1158,10 +1063,6 @@ document.write(`
         <li><a href="content/04_PythonEssentials/PythonBasics.html#index-1">start session with anaconda</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-1">Python: Preparing your workspace</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -1187,13 +1088,7 @@ document.write(`
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-28">restrict the time period of displayed output</a>
-</li>
       <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-10">Restricting the amount of data displayed</a>
-</li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-32">return variable description from  wildcard search</a>
-</li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-35">return variable description of single variable</a>
 </li>
       <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-21">Revising model equations</a>
 
@@ -1325,15 +1220,6 @@ document.write(`
       <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-13">Scenarios: Print scenario results</a>
 </li>
       <li>
-    search
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-11">wildcard searches (the ! operator)</a>
-</li>
-      </ul></li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-12">search on variable description (the ! operator)</a>
-</li>
-      <li>
     Searching
 
       <ul>
@@ -1348,13 +1234,6 @@ document.write(`
         <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-3">Declare with specific index</a>
 </li>
         <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-6">instantiate index and values from a dictionary</a>
-</li>
-      </ul></li>
-      <li>
-    Set
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-41">convert set into list</a>
 </li>
       </ul></li>
       <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-15">Shock-control display of results</a>
@@ -1439,8 +1318,6 @@ document.write(`
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-13">dekomp(); option Type=growth/pct/Level</a>
 </li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-14">Groups</a>
-</li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-27">Impact Decomposition: .dekompPlot() option lag=True/False</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-26">Impact Decomposition: .dekompPlot() option threshold=xx</a>
@@ -1462,14 +1339,6 @@ document.write(`
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-9">Model Analytics: Impact decomposition sum lags</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-8">Model Analytics; .get_attr()</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-23">Model object;  wildcard selection of data - return plot</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-25">Model object; Data display - format output</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-13">Model Object; Groups</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-24">Model object; plot data</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-36">Scenarios: Exogenous shock over a limited time period</a>
 </li>
@@ -1495,13 +1364,6 @@ document.write(`
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-11">results - plots</a>
 </li>
       </ul></li>
-      <li>
-    Slice
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-40"># operator</a>
-</li>
-      </ul></li>
       <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-21">Slicing a DataFrame</a>
 </li>
       <li>
@@ -1513,8 +1375,15 @@ document.write(`
       </ul></li>
       <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-9">Solve the model</a>
 </li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-60">Speed of adjustment in ECMs</a>
+      <li>
+    Stability
+
+      <ul>
+        <li><a href="content/07_MoreFeatures/stability%20introduction.html#index-0">introduction</a>
 </li>
+        <li><a href="content/07_MoreFeatures/stability%20introduction.html#index-1">The companion matrix</a>
+</li>
+      </ul></li>
       <li>
     string block
 
@@ -1566,7 +1435,7 @@ document.write(`
     tracedep()
 
       <ul>
-        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-43">down option displays the causal tree of variables that are impacted by the referenced variable</a>
+        <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-44">down option displays the causal tree of variables that are impacted by the referenced variable</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1636,8 +1505,6 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-3">Wildcard searches| The ! operator: search on variable descriptions</a>
 </li>
-      <li><a href="content/05_WBModels/LoadingWBModel.html#index-20">Wildcard selection of data</a>
-</li>
       <li>
     with clause
 
@@ -1645,17 +1512,6 @@ document.write(`
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-11">.set_smpl(begin,end) method to temporarily alter the active rows in the the model object</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-9">limiting the display time frame</a>
-</li>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-27">Restrict the time period of output</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    World Bank models
-
-      <ul>
-        <li><a href="content/05_WBModels/LoadingWBModel.html#index-4">loading a model with the .modelload() method</a>
 </li>
       </ul></li>
   </ul></td>

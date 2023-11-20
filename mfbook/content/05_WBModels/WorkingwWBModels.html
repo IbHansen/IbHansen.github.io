@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Working with PakMod under modelflow &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
+    <title>2. Working with PakMod under modelflow &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
   
   
   
@@ -68,8 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/05_WBModels/WorkingwWBModels';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Scenario analysis" href="ScenarioAnalysis.html" />
-    <link rel="prev" title="2. Working with PakMod under modelflow (i think this is duplicating the next chapter)" href="LoadingWBModel.html" />
+    <link rel="next" title="3. Scenario analysis" href="ScenarioAnalysis.html" />
+    <link rel="prev" title="1. Using modelflow with World Bank models" href="UsingWBModels.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -181,12 +181,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LoadingWBModel.html">2. Working with PakMod under modelflow (i think this is duplicating the next chapter)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ReportWriting.html">5. Report writing and scenario results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreComplexScenarios.html">6. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">7. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">6. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -197,6 +196,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/stability%20introduction.html">1. Model stability, some background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -256,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/AndrewEdits/papers/mfbook/content/05_WBModels/WorkingwWBModels.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/main/papers/mfbook/content/05_WBModels/WorkingwWBModels.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,44 +398,44 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-workspace">3.1. Prepare the workspace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-model-load-a-pre-existing-model-data-and-descriptions">3.2. Load the model: Load a pre-existing model, data and descriptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-modelload-method">3.2.1. The <code class="docutils literal notranslate"><span class="pre">.modelload()</span></code> method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-information-about-the-model">3.2.2. Extracting information about the model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-variables">3.2.3. Information about variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operator-searching-on-the-variable-description">3.2.3.1. The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator – searching on the variable description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-workspace">2.1. Prepare the workspace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-model-load-a-pre-existing-model-data-and-descriptions">2.2. Load the model: Load a pre-existing model, data and descriptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-modelload-method">2.2.1. The <code class="docutils literal notranslate"><span class="pre">.modelload()</span></code> method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-information-about-the-model">2.2.2. Extracting information about the model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-variables">2.2.3. Information about variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operator-searching-on-the-variable-description">2.2.3.1. The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator – searching on the variable description</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">3.3. Groups</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-data">3.4. Information about data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-examples">3.4.1. Some examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#names-property">3.4.1.1. <code class="docutils literal notranslate"><span class="pre">.names</span></code> property</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-des-property">3.4.1.2. The <code class="docutils literal notranslate"><span class="pre">.des</span></code> property</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#var-description-method">3.4.1.3. <code class="docutils literal notranslate"><span class="pre">.var_description</span></code> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">2.3. Groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-data">2.4. Information about data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-examples">2.4.1. Some examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#names-property">2.4.1.1. <code class="docutils literal notranslate"><span class="pre">.names</span></code> property</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-des-property">2.4.1.2. The <code class="docutils literal notranslate"><span class="pre">.des</span></code> property</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#var-description-method">2.4.1.3. <code class="docutils literal notranslate"><span class="pre">.var_description</span></code> method</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-equations">3.4.2. Information about equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-endogene-property">3.4.2.1. The <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-info-on-equations">3.4.2.2. Retrieving info on equations</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eviews-method">3.4.2.3. The <code class="docutils literal notranslate"><span class="pre">.eviews</span></code> method</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-frml-method">3.4.2.4. The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-equations">2.4.2. Information about equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-endogene-property">2.4.2.1. The <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-info-on-equations">2.4.2.2. Retrieving info on equations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eviews-method">2.4.2.3. The <code class="docutils literal notranslate"><span class="pre">.eviews</span></code> method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-frml-method">2.4.2.4. The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavioural-equations-in-the-mfmod-framework">3.5. Behavioural equations in the MFMod framework</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ecm-specification">3.5.1. The ECM specification</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-short-run-relationship">3.5.1.1. The short run relationship</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-long-run-equation">3.5.1.2. The long run equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavioural-equations-in-the-mfmod-framework">2.5. Behavioural equations in the MFMod framework</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ecm-specification">2.5.1. The ECM specification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-short-run-relationship">2.5.1.1. The short run relationship</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-long-run-equation">2.5.1.2. The long run equation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-long-run-equation-in-the-steady-state">3.5.2. The long run equation in the steady state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-long-run-equation-in-the-steady-state">2.5.2. The long run equation in the steady state</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-together">3.6. Putting it together</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-the-speed-of-adjustment">3.6.1. Lambda, the speed of adjustment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-together">2.6. Putting it together</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-the-speed-of-adjustment">2.6.1. Lambda, the speed of adjustment</a></li>
 </ul>
 </li>
 </ul>
@@ -446,7 +450,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-pakmod-under-modelflow">
-<h1><span class="section-number">3. </span>Working with PakMod under modelflow<a class="headerlink" href="#working-with-pakmod-under-modelflow" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2. </span>Working with PakMod under modelflow<a class="headerlink" href="#working-with-pakmod-under-modelflow" title="Permalink to this headline">#</a></h1>
 <p>The basic method for working with any model is the same. Indeed the initial steps followed here are the same as were followed during the simple model discussion.</p>
 <p>Process:</p>
 <ol class="arabic simple">
@@ -457,7 +461,7 @@ document.write(`
 <li><p>Visualize the results</p></li>
 </ol>
 <section id="prepare-the-workspace">
-<h2><span class="section-number">3.1. </span>Prepare the workspace<a class="headerlink" href="#prepare-the-workspace" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1. </span>Prepare the workspace<a class="headerlink" href="#prepare-the-workspace" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the model class from modelflow package</span>
@@ -475,10 +479,10 @@ document.write(`
 </div>
 </section>
 <section id="load-the-model-load-a-pre-existing-model-data-and-descriptions">
-<h2><span class="section-number">3.2. </span>Load the model: Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-the-model-load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2. </span>Load the model: Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-the-model-load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
 <p>To load a model use the <code class="docutils literal notranslate"><span class="pre">model.modelload()</span></code> method of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
 <section id="the-modelload-method">
-<h3><span class="section-number">3.2.1. </span>The <code class="docutils literal notranslate"><span class="pre">.modelload()</span></code> method<a class="headerlink" href="#the-modelload-method" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.1. </span>The <code class="docutils literal notranslate"><span class="pre">.modelload()</span></code> method<a class="headerlink" href="#the-modelload-method" title="Permalink to this headline">#</a></h3>
 <p>The command below</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">,</span><span class="n">bline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;..\models\pak.pcim&#39;</span><span class="p">,</span> <span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span> <span class="s1">&#39;Baseline&#39;</span><span class="p">)</span>
 </pre></div>
@@ -507,7 +511,7 @@ document.write(`
 </div>
 </section>
 <section id="extracting-information-about-the-model">
-<h3><span class="section-number">3.2.2. </span>Extracting information about the model<a class="headerlink" href="#extracting-information-about-the-model" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2. </span>Extracting information about the model<a class="headerlink" href="#extracting-information-about-the-model" title="Permalink to this headline">#</a></h3>
 <p>The newly loaded python object  <code class="docutils literal notranslate"><span class="pre">mpak</span></code> is an instance of the model class and as such inherits the <code class="docutils literal notranslate"><span class="pre">methods</span></code> (functions) and <code class="docutils literal notranslate"><span class="pre">properties</span></code> (data) of that class. To learn about the model there are a variety of methods that can be used to extract information about the model and its data.</p>
 <p>A World Bank model in <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> will contain a wide range of objects.</p>
 <ul class="simple">
@@ -554,7 +558,7 @@ Number of endogeneous variables         :                  378
 </div>
 </section>
 <section id="information-about-variables">
-<h3><span class="section-number">3.2.3. </span>Information about variables<a class="headerlink" href="#information-about-variables" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.3. </span>Information about variables<a class="headerlink" href="#information-about-variables" title="Permalink to this headline">#</a></h3>
 <p>The model object <code class="docutils literal notranslate"><span class="pre">mpak</span></code> contains lists of all the variables that form part of the model, and these lists can be interrogated to garner information about the model.  The Table below indicates some of the most important of these.  The variables for which information is sought can be specified directly or through a wildcard specification (see note).</p>
 <table class="colwidths-auto table">
 <thead>
@@ -703,7 +707,7 @@ PAKNYGDPPOTLKN : Potential Output, constant LCU
 </div>
 <p>If executed, the command <code class="docutils literal notranslate"><span class="pre">mpak['*'].des</span></code> would return a dictionary of all the mnemonics and descriptions of all the variables in the <code class="docutils literal notranslate"><span class="pre">mpak</span></code> model object.</p>
 <section id="the-operator-searching-on-the-variable-description">
-<h4><span class="section-number">3.2.3.1. </span>The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator – searching on the variable description<a class="headerlink" href="#the-operator-searching-on-the-variable-description" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.2.3.1. </span>The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator – searching on the variable description<a class="headerlink" href="#the-operator-searching-on-the-variable-description" title="Permalink to this headline">#</a></h4>
 <p>The same methods can be used to retrieve information about variables, based on their descriptions (vs mnemonic), by pre-pending the search string with the  <code class="docutils literal notranslate"><span class="pre">!</span></code> operator.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -729,7 +733,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </section>
 </section>
 <section id="groups">
-<h2><span class="section-number">3.3. </span>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3. </span>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> incorporates a variant of the idea of groups from <code class="docutils literal notranslate"><span class="pre">EViews</span></code>.  In <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> the groups defined in an imported EViews workfile are converted into entries in a dictionary called <code class="docutils literal notranslate"><span class="pre">var_groups</span></code> which can be interrogated, added to and amended like any dictionary in python.</p>
 <p>The command
 <code class="docutils literal notranslate"><span class="pre">mpak.var_groups</span></code> will return all of the groups already defined in mpak.</p>
@@ -785,7 +789,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </section>
 <section id="information-about-data">
-<h2><span class="section-number">3.4. </span>Information about data<a class="headerlink" href="#information-about-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4. </span>Information about data<a class="headerlink" href="#information-about-data" title="Permalink to this headline">#</a></h2>
 <p>The command <code class="docutils literal notranslate"><span class="pre">mpak[#MyGroups]</span></code> invokes a widget that shows all of the data in the group and various representations (level and growth rates) both as tables and charts.</p>
 <div class="cell tag_remove-output tag_latex-remove-output docutils container">
 <div class="cell_input docutils container">
@@ -1379,9 +1383,9 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div></div></div>
 </div>
 <section id="some-examples">
-<h3><span class="section-number">3.4.1. </span>Some examples<a class="headerlink" href="#some-examples" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.4.1. </span>Some examples<a class="headerlink" href="#some-examples" title="Permalink to this headline">#</a></h3>
 <section id="names-property">
-<h4><span class="section-number">3.4.1.1. </span><code class="docutils literal notranslate"><span class="pre">.names</span></code> property<a class="headerlink" href="#names-property" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.4.1.1. </span><code class="docutils literal notranslate"><span class="pre">.names</span></code> property<a class="headerlink" href="#names-property" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">mpak['PAKNECON*XN'].names</span></code></p>
 <p>Return the names (mnemonmics) of all variables that begin <code class="docutils literal notranslate"><span class="pre">PAKNECON</span></code> and end <code class="docutils literal notranslate"><span class="pre">XN</span></code> – i.e. Price deflators for various types of consumption demand.</p>
 <div class="cell docutils container">
@@ -1398,7 +1402,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </section>
 <section id="the-des-property">
-<h4><span class="section-number">3.4.1.2. </span>The <code class="docutils literal notranslate"><span class="pre">.des</span></code> property<a class="headerlink" href="#the-des-property" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.4.1.2. </span>The <code class="docutils literal notranslate"><span class="pre">.des</span></code> property<a class="headerlink" href="#the-des-property" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">mpak['PAKNECONPRVT?N'].des</span></code></p>
 <p>Returns a dictionary comprised of the mnemonics and the descriptions of all the variables that begin <code class="docutils literal notranslate"><span class="pre">PAKNECONPRVT</span></code> and end <code class="docutils literal notranslate"><span class="pre">N</span></code>, but have only one character between the T and the N.</p>
 <div class="cell docutils container">
@@ -1417,7 +1421,7 @@ PAKNECONPRVTXN : Implicit LCU defl., Pvt. Cons., 2000 = 1
 </div>
 </section>
 <section id="var-description-method">
-<h4><span class="section-number">3.4.1.3. </span><code class="docutils literal notranslate"><span class="pre">.var_description</span></code> method<a class="headerlink" href="#var-description-method" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.4.1.3. </span><code class="docutils literal notranslate"><span class="pre">.var_description</span></code> method<a class="headerlink" href="#var-description-method" title="Permalink to this headline">#</a></h4>
 <p>The property <code class="docutils literal notranslate"><span class="pre">.var_description</span></code>returns the descriptor of all variables.  Modified to a psecifc variable it returns the description of that one variable.  <strong>This method does not accept wildcards</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1462,9 +1466,9 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </section>
 </section>
 <section id="information-about-equations">
-<span id="index-0"></span><h3><span class="section-number">3.4.2. </span>Information about equations<a class="headerlink" href="#information-about-equations" title="Permalink to this headline">#</a></h3>
+<span id="index-0"></span><h3><span class="section-number">2.4.2. </span>Information about equations<a class="headerlink" href="#information-about-equations" title="Permalink to this headline">#</a></h3>
 <section id="the-endogene-property">
-<span id="index-1"></span><h4><span class="section-number">3.4.2.1. </span>The <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property<a class="headerlink" href="#the-endogene-property" title="Permalink to this headline">#</a></h4>
+<span id="index-1"></span><h4><span class="section-number">2.4.2.1. </span>The <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property<a class="headerlink" href="#the-endogene-property" title="Permalink to this headline">#</a></h4>
 <p>The  <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property returns a list of all variables in the model that are endogenous (have an equation). It can also be used to test whether a specific mnemonic has an equation associated with it.</p>
 <p>The  <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property returns a <code class="docutils literal notranslate"><span class="pre">set</span></code>. For brevity only the first 5 elements are show below.</p>
 <div class="cell tag_output_scroll docutils container">
@@ -1494,7 +1498,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </section>
 <section id="retrieving-info-on-equations">
-<h4><span class="section-number">3.4.2.2. </span>Retrieving info on equations<a class="headerlink" href="#retrieving-info-on-equations" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.4.2.2. </span>Retrieving info on equations<a class="headerlink" href="#retrieving-info-on-equations" title="Permalink to this headline">#</a></h4>
 <p>There are three functions to extract the equations from a model.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1517,7 +1521,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 <p>The equation for consumption in <code class="docutils literal notranslate"><span class="pre">mpak</span></code> we see that it follows something very close to this formulation.</p>
 </section>
 <section id="the-eviews-method">
-<h4><span class="section-number">3.4.2.3. </span>The <code class="docutils literal notranslate"><span class="pre">.eviews</span></code> method<a class="headerlink" href="#the-eviews-method" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.4.2.3. </span>The <code class="docutils literal notranslate"><span class="pre">.eviews</span></code> method<a class="headerlink" href="#the-eviews-method" title="Permalink to this headline">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">mpak['PAKNECONPRVTKN'].eviews</span></code> command returns the equations before they were normalized. In most cases this is a slightly more legible form. Here following the EViews syntax, <span class="math notranslate nohighlight">\(\Delta ln()\)</span> is written as dlog().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1533,7 +1537,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </section>
 <section id="the-frml-method">
-<h4><span class="section-number">3.4.2.4. </span>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method<a class="headerlink" href="#the-frml-method" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.4.2.4. </span>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method<a class="headerlink" href="#the-frml-method" title="Permalink to this headline">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method returns the normalized equation that is actually used in modelflow.  In this instance it is not called for the results of a search operation but by referencing directly the equation (which is itself a property of the mpak model).</p>
 <p>Note that following the normalized equation is a listing of all the dependent variables of the equation.</p>
 <div class="cell docutils container">
@@ -1587,7 +1591,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </section>
 </section>
 <section id="behavioural-equations-in-the-mfmod-framework">
-<span id="index-4"></span><h2><span class="section-number">3.5. </span>Behavioural equations in the MFMod framework<a class="headerlink" href="#behavioural-equations-in-the-mfmod-framework" title="Permalink to this headline">#</a></h2>
+<span id="index-4"></span><h2><span class="section-number">2.5. </span>Behavioural equations in the MFMod framework<a class="headerlink" href="#behavioural-equations-in-the-mfmod-framework" title="Permalink to this headline">#</a></h2>
 <p>Recall a behavioural equation determines the value of an endogenous variable. For many of the variables in Wold Bank models, behavioural functions are estimated using an Error Correction Framework that splits the equation into a theoretically determined long run component and a more idiosyncratic short-run component.</p>
 <p>Sometimes these equations can be difficult to read. However, with a bit of experience they becom e (notably in reading WBG mnemonics) easier to read</p>
 <p>Looking at the eviews representation of the consumption function:</p>
@@ -1649,13 +1653,13 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 \end{align*}\]</div>
 <p>Where in this instance the short-run elasticity of consumption to disposable income is .76 , and the short run elasticity of consumption to the real interest rate is 0.3.</p>
 <section id="the-ecm-specification">
-<h3><span class="section-number">3.5.1. </span>The ECM specification<a class="headerlink" href="#the-ecm-specification" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.5.1. </span>The ECM specification<a class="headerlink" href="#the-ecm-specification" title="Permalink to this headline">#</a></h3>
 <p><span style="Color:blue"> Pretty sure this repeats and earlier section.  Delete one </span></p>
 <p>The ECM approach used in World Bank models is described in <span id="id1">[<a class="reference internal" href="../../Reference.html#id16" title="M. R. Wickens and T. S. Breusch. Dynamic Specification, the Long-Run and the Estimation of Transformed Regression Models. The Economic Journal, 98:189–205, April 1988.">Wickens and Breusch, 1988</a>]</span>, and addresses the above challenge by modelling both the long run relationship and the short run short run behaviour and brings them together into one equation.</p>
 <p>The ECM specification is therefore a single equation comprised of two parts (the long run relationship, and the short-run relationship).</p>
 <p>Consider as an example two variables say consumption and disposable income.  Both have an underlying trend or in the parlance are co-integrated to degree 1.  For simplicity we call them y an x.</p>
 <section id="the-short-run-relationship">
-<h4><span class="section-number">3.5.1.1. </span>The short run relationship<a class="headerlink" href="#the-short-run-relationship" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.5.1.1. </span>The short run relationship<a class="headerlink" href="#the-short-run-relationship" title="Permalink to this headline">#</a></h4>
 <p>In its simplest form we might have a short run relationship between the growth rates of our two variables such that:</p>
 <div class="math notranslate nohighlight">
 \[\Delta ln(Y_t) = \alpha + \beta \Delta ln(X_t) +\epsilon_t\]</div>
@@ -1664,7 +1668,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 \[\Delta y_t = \alpha + \beta \Delta x_t +\epsilon_t\]</div>
 </section>
 <section id="the-long-run-equation">
-<h4><span class="section-number">3.5.1.2. </span>The long run equation<a class="headerlink" href="#the-long-run-equation" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">2.5.1.2. </span>The long run equation<a class="headerlink" href="#the-long-run-equation" title="Permalink to this headline">#</a></h4>
 <p>The long run relates the level of the two (or more) variables.  A simplified version of that equation can be written as:</p>
 <div class="math notranslate nohighlight">
 \[Y_t=αX_t^β+ \eta_t\]</div>
@@ -1674,7 +1678,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </section>
 </section>
 <section id="the-long-run-equation-in-the-steady-state">
-<h3><span class="section-number">3.5.2. </span>The long run equation in the steady state<a class="headerlink" href="#the-long-run-equation-in-the-steady-state" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.5.2. </span>The long run equation in the steady state<a class="headerlink" href="#the-long-run-equation-in-the-steady-state" title="Permalink to this headline">#</a></h3>
 <p>Note that in the steady state the expected value of the error term in the long run equation is zero (<span class="math notranslate nohighlight">\(\eta_t=0 \)</span>) so in those conditions the long run relationship can be simplified to:</p>
 <div class="math notranslate nohighlight">
 \[y_t=ln⁡(α)+\beta x_t\]</div>
@@ -1690,7 +1694,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </section>
 </section>
 <section id="putting-it-together">
-<h2><span class="section-number">3.6. </span>Putting it together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.6. </span>Putting it together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">#</a></h2>
 <p>From before we have the short run equation:</p>
 <div class="math notranslate nohighlight">
 \[\Delta y_t = \alpha + \beta \Delta x_t +\epsilon_t\]</div>
@@ -1699,7 +1703,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 \[\Delta y_t = -\lambda(y_{t-1}-A-βx_{t-1})  + \alpha + \beta \Delta x_t +\epsilon_t\]</div>
 <p>When the model is not in the steady state the expression <span class="math notranslate nohighlight">\(y_{t-1}-A-βx_{t-1}\)</span> is of course the error term from the long run equation (a measure of how far the dependent variable is from equilibrium).</p>
 <section id="lambda-the-speed-of-adjustment">
-<h3><span class="section-number">3.6.1. </span>Lambda, the speed of adjustment<a class="headerlink" href="#lambda-the-speed-of-adjustment" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.6.1. </span>Lambda, the speed of adjustment<a class="headerlink" href="#lambda-the-speed-of-adjustment" title="Permalink to this headline">#</a></h3>
 <p>The parameter <span class="math notranslate nohighlight">\(\lambda\)</span> can be interpreted as the speed of adjustment.  As long as <span class="math notranslate nohighlight">\(\lambda\)</span> is greater than zero and less or equal to one if there are no further disturbances ( <span class="math notranslate nohighlight">\(\epsilon_t=0\)</span>) the expression multiplied by lambda will slowly decline toward zero. How fast depends on how large or small is <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 <p>To be convergent <span class="math notranslate nohighlight">\(\lambda\)</span> must be between 0 and 2, if its is negative or greater than one, then the long run portion of the equation will cause the disequilibrium to grow each period (<span class="math notranslate nohighlight">\(\lambda\)</span> &gt;1) not diminish. If Lambda is greater than 1 but less than 2 (1&lt;<span class="math notranslate nohighlight">\(\lambda\)</span>&lt;2) output will oscillate from positive to negative (<span class="math notranslate nohighlight">\(\lambda &lt;0\)</span>) but will slowly converge.</p>
 <p><mark>Intuitively, the lagged long-run error-term measures how far the model was from equilibrium one period earlier (at t-1). The ECM term (multiplied by <span class="math notranslate nohighlight">\(\lambda\)</span> ensures the model will slowly converge to equilibrium – the point at which the long run equation holds exactly – if <span class="math notranslate nohighlight">\(\lambda\)</span> is greater than zero but less than or equal to one. In these conditions during each each time period some portion <span class="math notranslate nohighlight">\(\lambda\)</span> of the previous period year’s disequilibrium will be absorbed each year. How much is absorbed depends on the size of estimated speed of the adjustment coefficient <span class="math notranslate nohighlight">\(\lambda\)</span>. </mark></p>
@@ -1800,12 +1804,12 @@ The above example introduces some advanced formatting routines, using the Pandas
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="LoadingWBModel.html"
+       href="UsingWBModels.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Working with PakMod under modelflow (i think this is duplicating the next chapter)</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</p>
       </div>
     </a>
     <a class="right-next"
@@ -1813,7 +1817,7 @@ The above example introduces some advanced formatting routines, using the Pandas
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Scenario analysis</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Scenario analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1835,44 +1839,44 @@ The above example introduces some advanced formatting routines, using the Pandas
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-workspace">3.1. Prepare the workspace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-model-load-a-pre-existing-model-data-and-descriptions">3.2. Load the model: Load a pre-existing model, data and descriptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-modelload-method">3.2.1. The <code class="docutils literal notranslate"><span class="pre">.modelload()</span></code> method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-information-about-the-model">3.2.2. Extracting information about the model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-variables">3.2.3. Information about variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operator-searching-on-the-variable-description">3.2.3.1. The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator – searching on the variable description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-workspace">2.1. Prepare the workspace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-model-load-a-pre-existing-model-data-and-descriptions">2.2. Load the model: Load a pre-existing model, data and descriptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-modelload-method">2.2.1. The <code class="docutils literal notranslate"><span class="pre">.modelload()</span></code> method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-information-about-the-model">2.2.2. Extracting information about the model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-variables">2.2.3. Information about variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operator-searching-on-the-variable-description">2.2.3.1. The <code class="docutils literal notranslate"><span class="pre">!</span></code> operator – searching on the variable description</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">3.3. Groups</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-data">3.4. Information about data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-examples">3.4.1. Some examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#names-property">3.4.1.1. <code class="docutils literal notranslate"><span class="pre">.names</span></code> property</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-des-property">3.4.1.2. The <code class="docutils literal notranslate"><span class="pre">.des</span></code> property</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#var-description-method">3.4.1.3. <code class="docutils literal notranslate"><span class="pre">.var_description</span></code> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">2.3. Groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-data">2.4. Information about data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-examples">2.4.1. Some examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#names-property">2.4.1.1. <code class="docutils literal notranslate"><span class="pre">.names</span></code> property</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-des-property">2.4.1.2. The <code class="docutils literal notranslate"><span class="pre">.des</span></code> property</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#var-description-method">2.4.1.3. <code class="docutils literal notranslate"><span class="pre">.var_description</span></code> method</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-equations">3.4.2. Information about equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-endogene-property">3.4.2.1. The <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-info-on-equations">3.4.2.2. Retrieving info on equations</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eviews-method">3.4.2.3. The <code class="docutils literal notranslate"><span class="pre">.eviews</span></code> method</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-frml-method">3.4.2.4. The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-equations">2.4.2. Information about equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-endogene-property">2.4.2.1. The <code class="docutils literal notranslate"><span class="pre">endogene</span></code> property</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-info-on-equations">2.4.2.2. Retrieving info on equations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eviews-method">2.4.2.3. The <code class="docutils literal notranslate"><span class="pre">.eviews</span></code> method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-frml-method">2.4.2.4. The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> method</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavioural-equations-in-the-mfmod-framework">3.5. Behavioural equations in the MFMod framework</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ecm-specification">3.5.1. The ECM specification</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-short-run-relationship">3.5.1.1. The short run relationship</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-long-run-equation">3.5.1.2. The long run equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavioural-equations-in-the-mfmod-framework">2.5. Behavioural equations in the MFMod framework</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ecm-specification">2.5.1. The ECM specification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-short-run-relationship">2.5.1.1. The short run relationship</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-long-run-equation">2.5.1.2. The long run equation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-long-run-equation-in-the-steady-state">3.5.2. The long run equation in the steady state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-long-run-equation-in-the-steady-state">2.5.2. The long run equation in the steady state</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-together">3.6. Putting it together</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-the-speed-of-adjustment">3.6.1. Lambda, the speed of adjustment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-together">2.6. Putting it together</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-the-speed-of-adjustment">2.6.1. Lambda, the speed of adjustment</a></li>
 </ul>
 </li>
 </ul>

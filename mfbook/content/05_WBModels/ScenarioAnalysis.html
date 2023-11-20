@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Scenario analysis &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
+    <title>3. Scenario analysis &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
   
   
   
@@ -68,8 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/05_WBModels/ScenarioAnalysis';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Report writing and scenario results" href="ReportWriting.html" />
-    <link rel="prev" title="3. Working with PakMod under modelflow" href="WorkingwWBModels.html" />
+    <link rel="next" title="4. Report writing and scenario results" href="ReportWriting.html" />
+    <link rel="prev" title="2. Working with PakMod under modelflow" href="WorkingwWBModels.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -181,12 +181,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LoadingWBModel.html">2. Working with PakMod under modelflow (i think this is duplicating the next chapter)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ReportWriting.html">5. Report writing and scenario results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreComplexScenarios.html">6. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">7. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">6. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -197,6 +196,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/stability%20introduction.html">1. Model stability, some background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -256,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/AndrewEdits/papers/mfbook/content/05_WBModels/ScenarioAnalysis.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/main/papers/mfbook/content/05_WBModels/ScenarioAnalysis.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,36 +398,36 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-kinds-of-simulations">4.1. Different kinds of simulations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-shock-to-an-exogenous-variable">4.1.1. A shock to an exogenous variable</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data-for-simulation">4.1.1.1. Preparing the data for simulation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-simulation">4.1.1.2. Running the simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#results">4.1.1.2.1. Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-kinds-of-simulations">3.1. Different kinds of simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-shock-to-an-exogenous-variable">3.1.1. A shock to an exogenous variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data-for-simulation">3.1.1.1. Preparing the data for simulation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-simulation">3.1.1.2. Running the simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#results">3.1.1.2.1. Results</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-exogenous-shock-to-a-behavioural-variable">4.1.2. An exogenous shock to a Behavioural variable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exogenize-a-behavioural-variable-and-temporarily-shock-it">4.1.3. Exogenize a behavioural variable and temporarily shock it</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#temporary-shock-exogenized-for-the-whole-period">4.1.3.1. Temporary shock exogenized for the whole period</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-exogenous-shock-to-a-behavioural-variable">3.1.2. An exogenous shock to a Behavioural variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exogenize-a-behavioural-variable-and-temporarily-shock-it">3.1.3. Exogenize a behavioural variable and temporarily shock it</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#temporary-shock-exogenized-for-the-whole-period">3.1.3.1. Temporary shock exogenized for the whole period</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exogenize-the-variable-only-for-the-period-during-which-it-is-shocked">4.1.4. Exogenize the variable only for the period during which it is shocked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-with-add-factors">4.1.5. Simulation with Add factors</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-impact-of-a-planned-investment">4.1.5.1. Simulating the impact of a planned investment</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-translate-the-economic-shock-into-a-model-shock">4.1.5.1.1. How to translate the economic shock into a model shock</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-size-of-shock">4.1.5.1.2. Determine the size of shock</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-functional-form-s">4.1.5.1.3. Identify the functional form(s)</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-size-of-the-required-add-factor-shock">4.1.5.1.4. Calculate the size of the required add factor shock</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-shock">4.1.5.1.5. Run the shock</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exogenize-the-variable-only-for-the-period-during-which-it-is-shocked">3.1.4. Exogenize the variable only for the period during which it is shocked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-with-add-factors">3.1.5. Simulation with Add factors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-impact-of-a-planned-investment">3.1.5.1. Simulating the impact of a planned investment</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-translate-the-economic-shock-into-a-model-shock">3.1.5.1.1. How to translate the economic shock into a model shock</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-size-of-shock">3.1.5.1.2. Determine the size of shock</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-functional-form-s">3.1.5.1.3. Identify the functional form(s)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-size-of-the-required-add-factor-shock">3.1.5.1.4. Calculate the size of the required add factor shock</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-shock">3.1.5.1.5. Run the shock</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-results-visualization-widget-view">4.2. The results visualization widget view</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-simulation-results-to-a-pcim-file-for-later-exploration">4.3. Save simulation results to a pcim file for later exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-results-visualization-widget-view">3.2. The results visualization widget view</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-simulation-results-to-a-pcim-file-for-later-exploration">3.3. Save simulation results to a pcim file for later exploration</a></li>
 </ul>
             </nav>
         </div>
@@ -450,7 +454,7 @@ document.write(`
 </details>
 </div>
 <span class="target" id="index-0"></span><section class="tex2jax_ignore mathjax_ignore" id="scenario-analysis">
-<span id="index-1"></span><h1><span class="section-number">4. </span>Scenario analysis<a class="headerlink" href="#scenario-analysis" title="Permalink to this headline">#</a></h1>
+<span id="index-1"></span><h1><span class="section-number">3. </span>Scenario analysis<a class="headerlink" href="#scenario-analysis" title="Permalink to this headline">#</a></h1>
 <p>An essential feature of a model is that when given a specific set of inputs (the exogenous variables to the model) it will always return the same results.</p>
 <p>Below a new <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> session is prepared, initializing a pandas session and importing and solving a saved WBG model (NB: these are precisely the same commands used to start the previous chapter) and form the essential initialization commands of any python session using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>.</p>
 <div class="cell tag_remove-output docutils container">
@@ -592,7 +596,7 @@ document.write(`
 </div></div></div>
 </div>
 <span class="target" id="index-2"></span><section id="different-kinds-of-simulations">
-<span id="index-3"></span><h2><span class="section-number">4.1. </span>Different kinds of simulations<a class="headerlink" href="#different-kinds-of-simulations" title="Permalink to this headline">#</a></h2>
+<span id="index-3"></span><h2><span class="section-number">3.1. </span>Different kinds of simulations<a class="headerlink" href="#different-kinds-of-simulations" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> package performs 4 different kinds of simulation:</p>
 <ol class="arabic simple">
 <li><p>A shock to an exogenous variable in the model</p></li>
@@ -603,10 +607,10 @@ document.write(`
 <p>Although technically modelflow would allow us to shock identities, that would violate their nature as accounting rules. <strong>Effectively such a shock would break the economic sense of the model.</strong></p>
 <p>As a result, this possibility is not discussed.</p>
 <span class="target" id="index-4"></span><span class="target" id="index-5"></span><span class="target" id="index-6"></span><section id="a-shock-to-an-exogenous-variable">
-<span id="index-7"></span><h3><span class="section-number">4.1.1. </span>A shock to an exogenous variable<a class="headerlink" href="#a-shock-to-an-exogenous-variable" title="Permalink to this headline">#</a></h3>
+<span id="index-7"></span><h3><span class="section-number">3.1.1. </span>A shock to an exogenous variable<a class="headerlink" href="#a-shock-to-an-exogenous-variable" title="Permalink to this headline">#</a></h3>
 <p>A World Bank model will reproduce the same values if inputs (exogenous variables) are not changed.  In the simulation below, the oil price is changed – increasing by $25 for the three years between 2025 and 2027 inclusive.</p>
 <section id="preparing-the-data-for-simulation">
-<h4><span class="section-number">4.1.1.1. </span>Preparing the data for simulation<a class="headerlink" href="#preparing-the-data-for-simulation" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.1.1.1. </span>Preparing the data for simulation<a class="headerlink" href="#preparing-the-data-for-simulation" title="Permalink to this headline">#</a></h4>
 <p>The following steps are performed to prepare the simulation:</p>
 <ol class="arabic simple">
 <li><p>Using the <a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html#upd"><span class="std std-ref">upd</span></a> method a new input dataframe is created where the oil price is increased by $25 in the three years in question.</p></li>
@@ -706,7 +710,7 @@ document.write(`
 </div>
 </section>
 <section id="running-the-simulation">
-<span id="index-8"></span><h4><span class="section-number">4.1.1.2. </span>Running the simulation<a class="headerlink" href="#running-the-simulation" title="Permalink to this headline">#</a></h4>
+<span id="index-8"></span><h4><span class="section-number">3.1.1.2. </span>Running the simulation<a class="headerlink" href="#running-the-simulation" title="Permalink to this headline">#</a></h4>
 <p>Having created a new dataframe comprised of all the old data plus the changed data for the oil price, a simulation can now be run.</p>
 <p>In the command below, the simulation is run from 2020 to 2040, using the <code class="docutils literal notranslate"><span class="pre">oilshockdf</span></code> as the input <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  The results of the simulation are assigned to a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>  named <code class="docutils literal notranslate"><span class="pre">ExogOilSimul</span></code>.  The <code class="docutils literal notranslate"><span class="pre">Keep</span></code> command ensures that the mpak model object stores (keeps) a copy of the results identified by the text name <em>‘$25 increase in oil prices 2025-27’</em>.</p>
 <div class="cell docutils container">
@@ -718,7 +722,7 @@ document.write(`
 </div>
 </div>
 <section id="results">
-<h5><span class="section-number">4.1.1.2.1. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h5>
+<h5><span class="section-number">3.1.1.2.1. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h5>
 <p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> tools can be used to visualize the impacts of the shock; as a print out; as charts and within Jupyter notebook as an interactive widget.</p>
 <p>The display below confirms that the shock was executed as desired. The <code class="docutils literal notranslate"><span class="pre">dif.df</span></code> method returns the difference between the <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code> and <code class="docutils literal notranslate"><span class="pre">.basedf</span></code> values of the selected variable(s) as a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. The <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">mpak.set_smpl(2020,2030):</span></code> clause temporarily restricts the sample period over which the following <strong>indented</strong> commands are executed.</p>
 <p>Alternatively the <code class="docutils literal notranslate"><span class="pre">mpak.smpl(2020,2030)</span></code>could be used. This would restricts the time period of over which <strong>all</strong> subsequent commands are executed.</p>
@@ -815,7 +819,7 @@ document.write(`
 </section>
 </section>
 <section id="an-exogenous-shock-to-a-behavioural-variable">
-<span id="index-29"></span><h3><span class="section-number">4.1.2. </span>An exogenous shock to a Behavioural variable<a class="headerlink" href="#an-exogenous-shock-to-a-behavioural-variable" title="Permalink to this headline">#</a></h3>
+<span id="index-29"></span><h3><span class="section-number">3.1.2. </span>An exogenous shock to a Behavioural variable<a class="headerlink" href="#an-exogenous-shock-to-a-behavioural-variable" title="Permalink to this headline">#</a></h3>
 <p>Behavioural equations can be de-activated by exogenizing them, either for the entire simulation period, or for a selected sub-period.  In this example, consumption is exogenized for the entire simulation period.</p>
 <p>To motivate the simulation, it is assumed that a change in weather patterns has increased the number of sunny days by 10 percent. This increases households happiness and causes them to permanently increase their spending by 2.5% beginning in 2025.</p>
 <p>Such a shock can be specified either manually or by using the<code class="docutils literal notranslate"><span class="pre">.fix()</span></code> method. Below the simpler <code class="docutils literal notranslate"><span class="pre">.fix()</span></code> method is used, but the equivalent manual steps performed by <code class="docutils literal notranslate"><span class="pre">.fix()</span></code> are also explained.</p>
@@ -923,7 +927,7 @@ PAKNECONPRVTKN
 <p>The permanent rise in consumption by 2.5 percent causes a temporary increase in GDP of close to 2% (1.86). Higher imports tend to diminish the effect on GDP. Over time higher prices due to the inflationary pressures caused by the additional demand cause the GDP impact to diminish to less than 1 percent by 2038.</p>
 <span class="target" id="index-34"></span><span class="target" id="index-35"></span><span class="target" id="index-36"></span></section>
 <section id="exogenize-a-behavioural-variable-and-temporarily-shock-it">
-<span id="index-37"></span><h3><span class="section-number">4.1.3. </span>Exogenize a behavioural variable and temporarily shock it<a class="headerlink" href="#exogenize-a-behavioural-variable-and-temporarily-shock-it" title="Permalink to this headline">#</a></h3>
+<span id="index-37"></span><h3><span class="section-number">3.1.3. </span>Exogenize a behavioural variable and temporarily shock it<a class="headerlink" href="#exogenize-a-behavioural-variable-and-temporarily-shock-it" title="Permalink to this headline">#</a></h3>
 <p>The third method of formulating a scenario involves exogenizing an endogenous variable and shocking its value for a defined period of time. The methodology is the same except the period for which the variable is exogenized is different.</p>
 <p>Here the set up is basically the same as before.</p>
 <div class="cell docutils container">
@@ -953,7 +957,7 @@ PAKNECONPRVTKN
 <p>The results are quite different.  GDP is boosted initially as before but when consumption drops back to its pre-shock level, GDP and imports decline sharply.</p>
 <p>Prices (and inflation) are higher initially but when the economy starts to slow after 2025 prices actually fall (deflation). While prices are falling, the level of prices remains higher at the end of the simulation.</p>
 <span class="target" id="index-38"></span><span class="target" id="index-39"></span><span class="target" id="index-40"></span><span class="target" id="index-41"></span><section id="temporary-shock-exogenized-for-the-whole-period">
-<span id="index-42"></span><h4><span class="section-number">4.1.3.1. </span>Temporary shock exogenized for the whole period<a class="headerlink" href="#temporary-shock-exogenized-for-the-whole-period" title="Permalink to this headline">#</a></h4>
+<span id="index-42"></span><h4><span class="section-number">3.1.3.1. </span>Temporary shock exogenized for the whole period<a class="headerlink" href="#temporary-shock-exogenized-for-the-whole-period" title="Permalink to this headline">#</a></h4>
 <p>This scenario is the same as the previous, but this time the <code class="docutils literal notranslate"><span class="pre">--KG</span></code> (keep_growth) option is used to maintain the pre-shock growth rates of consumption in the post-shock period.  Effectively this is the same as a permanent increase in the level of consumption by 2.5% because the final shocked value of consumption (which was 2.5% higher then its pre-shock level) is grown at the same pre-shock rate – ensuring that all post-shock variables are also up by 2.5%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -981,7 +985,7 @@ PAKNECONPRVTKN
 <span class="target" id="index-43"></span></section>
 </section>
 <section id="exogenize-the-variable-only-for-the-period-during-which-it-is-shocked">
-<span id="index-44"></span><h3><span class="section-number">4.1.4. </span>Exogenize the variable only for the period during which it is shocked<a class="headerlink" href="#exogenize-the-variable-only-for-the-period-during-which-it-is-shocked" title="Permalink to this headline">#</a></h3>
+<span id="index-44"></span><h3><span class="section-number">3.1.4. </span>Exogenize the variable only for the period during which it is shocked<a class="headerlink" href="#exogenize-the-variable-only-for-the-period-during-which-it-is-shocked" title="Permalink to this headline">#</a></h3>
 <p>This scenario introduces a subtle but import difference.  Here the variable is again exogenized using the fix syntax. <strong>But this time it is exogonized only for the period where the variable is shocked.</strong></p>
 <p>This means that the consumption equation will only be de-activated for  three years (instead of the whole period as in the previous examples).  As a result, the values that consumption takes in 2028, 2029, … 2040 depend on the model, not the level it was set to when exogenized (which was the case in the 3 previous versions).</p>
 <p>Looking at the maths of the model the consumption equation is effectively split into two.</p>
@@ -1050,7 +1054,7 @@ Percent difference: 0.04
 </div>
 <span class="target" id="index-45"></span><span class="target" id="index-46"></span></section>
 <section id="simulation-with-add-factors">
-<span id="index-47"></span><h3><span class="section-number">4.1.5. </span>Simulation with Add factors<a class="headerlink" href="#simulation-with-add-factors" title="Permalink to this headline">#</a></h3>
+<span id="index-47"></span><h3><span class="section-number">3.1.5. </span>Simulation with Add factors<a class="headerlink" href="#simulation-with-add-factors" title="Permalink to this headline">#</a></h3>
 <p>Add factors are a crucial element of the macromodels of the World Bank and serve multiple purposes.</p>
 <p>In simulation, add-factors allow simulations to be conducted <strong>without</strong> de-activating behavioural equations.  Such shocks are often referred to as <strong>endogenous</strong> shocks because the equation of the behavioural variable that is shocked remains  active throughout.</p>
 <p>In some ways they are very similar to a temporary exogenous shock. Both ways of producing the shock allow the shocked variable to respond endogenously in the period after the shock.  The main difference between the two approaches is that:</p>
@@ -1070,10 +1074,10 @@ Percent difference: 0.04
 </li>
 </ul>
 <section id="simulating-the-impact-of-a-planned-investment">
-<h4><span class="section-number">4.1.5.1. </span>Simulating the impact of a planned investment<a class="headerlink" href="#simulating-the-impact-of-a-planned-investment" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.1.5.1. </span>Simulating the impact of a planned investment<a class="headerlink" href="#simulating-the-impact-of-a-planned-investment" title="Permalink to this headline">#</a></h4>
 <p>The below simulation uses the add-factor to simulate the impact of a 3 year investment  program beginning in 2025 of 1 percent of GDP per year, that is financed through an increase in foreign direct investment. This might reflect a specific large scale plant that is being constructed due to a deal reached by the government with a foreign manufacturer.  The add-factor approach is chosen because the additional investment is likely to increase demand for the products of other firms, which is likely to incite them to add to their investments as well – both after the shock as in previous examples <strong>but also during the period that investment is being shocked</strong>.</p>
 <section id="how-to-translate-the-economic-shock-into-a-model-shock">
-<h5><span class="section-number">4.1.5.1.1. </span>How to translate the economic shock into a model shock<a class="headerlink" href="#how-to-translate-the-economic-shock-into-a-model-shock" title="Permalink to this headline">#</a></h5>
+<h5><span class="section-number">3.1.5.1.1. </span>How to translate the economic shock into a model shock<a class="headerlink" href="#how-to-translate-the-economic-shock-into-a-model-shock" title="Permalink to this headline">#</a></h5>
 <p>Add-factors in the <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> framework are applied to the intercept of an equation (not the level of the dependent variable).  This preserves the estimated elasticities of the equation, but makes introduction of an add-factor shock somewhat more complicated than the exogenous approach.  Below a step-by-step how-to guide:</p>
 <ol class="arabic simple">
 <li><p>Identify numerical size of the shock</p></li>
@@ -1093,7 +1097,7 @@ Percent difference: 0.04
 </ol>
 </section>
 <section id="determine-the-size-of-shock">
-<h5><span class="section-number">4.1.5.1.2. </span>Determine the size of shock<a class="headerlink" href="#determine-the-size-of-shock" title="Permalink to this headline">#</a></h5>
+<h5><span class="section-number">3.1.5.1.2. </span>Determine the size of shock<a class="headerlink" href="#determine-the-size-of-shock" title="Permalink to this headline">#</a></h5>
 <p>Above the shock was identified as a 1 percent of GDP increase in FDI that flows directly into private-sector investment.  A first step would be to determine the variables that need to be shocked (FDI) and private investment. To do this we can query the variable dictionary.</p>
 <span class="target" id="index-48"></span><div class="cell docutils container" id="index-49">
 <div class="cell_input docutils container">
@@ -1116,7 +1120,7 @@ PAKNEGDIFTOTKN        : Investment real
 <p>Querying for all variables that “invest” in their descriptor gives us the private investment variable.</p>
 </section>
 <section id="identify-the-functional-form-s">
-<h5><span class="section-number">4.1.5.1.3. </span>Identify the functional form(s)<a class="headerlink" href="#identify-the-functional-form-s" title="Permalink to this headline">#</a></h5>
+<h5><span class="section-number">3.1.5.1.3. </span>Identify the functional form(s)<a class="headerlink" href="#identify-the-functional-form-s" title="Permalink to this headline">#</a></h5>
 <p>To understand how to shock using the add factor, it is essential to understand how the add-factor enters into the equation.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1152,7 +1156,7 @@ PAKNEGDIFTOTKN        : Investment real
 <p>In this case the equation is written as a share of the capital stock in the preceding period <strong>PAKNEGDIKSTKKN(-1)</strong>.</p>
 </section>
 <section id="calculate-the-size-of-the-required-add-factor-shock">
-<h5><span class="section-number">4.1.5.1.4. </span>Calculate the size of the required add factor shock<a class="headerlink" href="#calculate-the-size-of-the-required-add-factor-shock" title="Permalink to this headline">#</a></h5>
+<h5><span class="section-number">3.1.5.1.4. </span>Calculate the size of the required add factor shock<a class="headerlink" href="#calculate-the-size-of-the-required-add-factor-shock" title="Permalink to this headline">#</a></h5>
 <p>The shock to be executed is 1.0 percent of GDP.</p>
 <p>It is assumed that the financing will come from FDI and that all the money will be spent in one year on private investment.</p>
 <p>The private investment equation is written as a share of the capital stock.  Therefore, the add-factor needs to be shocked by adding 1 percent of GDP to private investment in 2028 divided by the capital stock in 2028.</p>
@@ -1264,7 +1268,7 @@ Name: PAKNEGDIFPRVKN_A, dtype: float64
 </div>
 </section>
 <section id="run-the-shock">
-<h5><span class="section-number">4.1.5.1.5. </span>Run the shock<a class="headerlink" href="#run-the-shock" title="Permalink to this headline">#</a></h5>
+<h5><span class="section-number">3.1.5.1.5. </span>Run the shock<a class="headerlink" href="#run-the-shock" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AFShockRes</span> <span class="o">=</span> <span class="n">mpak</span><span class="p">(</span><span class="n">AFShock</span><span class="p">,</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2040</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;1</span><span class="si">% o</span><span class="s1">f GDP increase in FDI and private investment (AF shock)&#39;</span><span class="p">)</span>
@@ -1303,7 +1307,7 @@ Name: PAKNEGDIFPRVKN_A, dtype: float64
 </section>
 </section>
 <section id="the-results-visualization-widget-view">
-<h2><span class="section-number">4.2. </span>The results visualization widget view<a class="headerlink" href="#the-results-visualization-widget-view" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2. </span>The results visualization widget view<a class="headerlink" href="#the-results-visualization-widget-view" title="Permalink to this headline">#</a></h2>
 <p>When working in Jupyter Notebook, referencing a selection of series will cause a data visualization widget to be generated that allows you to look at results (<code class="docutils literal notranslate"><span class="pre">basesdf</span></code> vs <code class="docutils literal notranslate"><span class="pre">latestdf</span></code>) for the selected variables as tables or charts, as levels, as growth rates and as percent differences from baseline.</p>
 <div class="cell tag_remove-output tag_latex-remove-output docutils container">
 <div class="cell_input docutils container">
@@ -1315,7 +1319,7 @@ Name: PAKNEGDIFPRVKN_A, dtype: float64
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/ScenarioAnalysis_display.PNG"><img alt="Scenario analyses" class="bg-primary mb-1 align-center" src="../../_images/ScenarioAnalysis_display.PNG" style="width: 100%;" /></a>
 </section>
 <section id="save-simulation-results-to-a-pcim-file-for-later-exploration">
-<h2><span class="section-number">4.3. </span>Save simulation results to a pcim file for later exploration<a class="headerlink" href="#save-simulation-results-to-a-pcim-file-for-later-exploration" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3. </span>Save simulation results to a pcim file for later exploration<a class="headerlink" href="#save-simulation-results-to-a-pcim-file-for-later-exploration" title="Permalink to this headline">#</a></h2>
 <p>The next chapter explores the different results generated during these simulations.  Rather than re-run them, the model object <code class="docutils literal notranslate"><span class="pre">mpak</span></code> (and the simulation results that are stored by the keep command used above) is file for retrieval in the next chapter.</p>
 <p>NB: The keep=True indicates to save the results from any kept solutions as well.</p>
 <div class="cell docutils container">
@@ -1371,7 +1375,7 @@ Name: PAKNEGDIFPRVKN_A, dtype: float64
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Working with PakMod under modelflow</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Working with PakMod under modelflow</p>
       </div>
     </a>
     <a class="right-next"
@@ -1379,7 +1383,7 @@ Name: PAKNEGDIFPRVKN_A, dtype: float64
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Report writing and scenario results</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Report writing and scenario results</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1401,36 +1405,36 @@ Name: PAKNEGDIFPRVKN_A, dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-kinds-of-simulations">4.1. Different kinds of simulations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-shock-to-an-exogenous-variable">4.1.1. A shock to an exogenous variable</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data-for-simulation">4.1.1.1. Preparing the data for simulation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-simulation">4.1.1.2. Running the simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#results">4.1.1.2.1. Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-kinds-of-simulations">3.1. Different kinds of simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-shock-to-an-exogenous-variable">3.1.1. A shock to an exogenous variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data-for-simulation">3.1.1.1. Preparing the data for simulation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-simulation">3.1.1.2. Running the simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#results">3.1.1.2.1. Results</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-exogenous-shock-to-a-behavioural-variable">4.1.2. An exogenous shock to a Behavioural variable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exogenize-a-behavioural-variable-and-temporarily-shock-it">4.1.3. Exogenize a behavioural variable and temporarily shock it</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#temporary-shock-exogenized-for-the-whole-period">4.1.3.1. Temporary shock exogenized for the whole period</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-exogenous-shock-to-a-behavioural-variable">3.1.2. An exogenous shock to a Behavioural variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exogenize-a-behavioural-variable-and-temporarily-shock-it">3.1.3. Exogenize a behavioural variable and temporarily shock it</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#temporary-shock-exogenized-for-the-whole-period">3.1.3.1. Temporary shock exogenized for the whole period</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exogenize-the-variable-only-for-the-period-during-which-it-is-shocked">4.1.4. Exogenize the variable only for the period during which it is shocked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-with-add-factors">4.1.5. Simulation with Add factors</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-impact-of-a-planned-investment">4.1.5.1. Simulating the impact of a planned investment</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-translate-the-economic-shock-into-a-model-shock">4.1.5.1.1. How to translate the economic shock into a model shock</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-size-of-shock">4.1.5.1.2. Determine the size of shock</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-functional-form-s">4.1.5.1.3. Identify the functional form(s)</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-size-of-the-required-add-factor-shock">4.1.5.1.4. Calculate the size of the required add factor shock</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-shock">4.1.5.1.5. Run the shock</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exogenize-the-variable-only-for-the-period-during-which-it-is-shocked">3.1.4. Exogenize the variable only for the period during which it is shocked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-with-add-factors">3.1.5. Simulation with Add factors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-impact-of-a-planned-investment">3.1.5.1. Simulating the impact of a planned investment</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-translate-the-economic-shock-into-a-model-shock">3.1.5.1.1. How to translate the economic shock into a model shock</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-size-of-shock">3.1.5.1.2. Determine the size of shock</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-functional-form-s">3.1.5.1.3. Identify the functional form(s)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-size-of-the-required-add-factor-shock">3.1.5.1.4. Calculate the size of the required add factor shock</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-shock">3.1.5.1.5. Run the shock</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-results-visualization-widget-view">4.2. The results visualization widget view</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-simulation-results-to-a-pcim-file-for-later-exploration">4.3. Save simulation results to a pcim file for later exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-results-visualization-widget-view">3.2. The results visualization widget view</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-simulation-results-to-a-pcim-file-for-later-exploration">3.3. Save simulation results to a pcim file for later exploration</a></li>
 </ul>
   </nav></div>
 

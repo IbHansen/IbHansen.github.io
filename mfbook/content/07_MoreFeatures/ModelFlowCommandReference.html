@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/07_MoreFeatures/ModelFlowCommandReference';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Index" href="../../genindex.html" />
+    <link rel="next" title="1. Model stability, some background" href="stability%20introduction.html" />
     <link rel="prev" title="1. Getting Help" href="GettingHelp.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -181,12 +181,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">2. Working with PakMod under modelflow (i think this is duplicating the next chapter)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Targeting.html">7. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Targeting.html">6. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -197,6 +196,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Modelflow methods reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="stability%20introduction.html">1. Model stability, some background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -256,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/AndrewEdits/papers/mfbook/content/07_MoreFeatures/ModelFlowCommandReference.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/main/papers/mfbook/content/07_MoreFeatures/ModelFlowCommandReference.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -441,7 +445,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-extensions-for-updating-and-transformation">2.6. Dataframe extensions for updating and transformation.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upd-updates-a-dataframe-and-returns-a-dataframe">2.6.1. <code class="docutils literal notranslate"><span class="pre">.upd</span></code> Updates a dataframe and returns a dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upd-updates-a-dataframe-and-returns-a-dataframe">2.6.1. <code class="docutils literal notranslate"><span class="pre">.upd</span></code> <span class="xref myst">Updates</span> a dataframe and returns a dataframe</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfcalc-updates-a-dataframe-and-returns-a-dataframe">2.6.2. <code class="docutils literal notranslate"><span class="pre">.mfcalc</span></code> Updates a dataframe and returns a dataframe</a></li>
 </ul>
 </li>
@@ -454,6 +458,7 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-pattern-select-variables-where-search-pattern-with-wildcards-is-matching-description">2.7.3. ‘&lt;!search pattern&gt;’ , select variables where search pattern with  wildcards is matching description</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#var-descriptions-a-dictionary-of-variable-descriptions">2.7.3.1. .var_descriptions, a dictionary of variable descriptions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.7.3.2. Example</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endo-select-all-edogenous-variables">2.7.4. ‘#ENDO’ , select all edogenous variables</a></li>
@@ -466,7 +471,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-solutions-resetting-the-keep-solution">2.8.2.2. .keep_solutions = {}, resetting the .keep_solution</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.8.3. Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.8.3. Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keepswitch-select-scenarios-for-plotting">2.8.3.1. .keepswitch(), select scenarios for plotting</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-plot-plot-the-scenarios">2.8.3.2. .keep_plot(), plot the scenarios</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">2.8.3.3. Parameters</a></li>
@@ -1330,7 +1335,7 @@ extend dataframes with two new capabilities.</p>
 <li><p><strong>.mfcalc</strong> which enables transformations using lags and straight expressions.</p></li>
 </ul>
 <section id="upd-updates-a-dataframe-and-returns-a-dataframe">
-<h3><span class="section-number">2.6.1. </span><code class="docutils literal notranslate"><span class="pre">.upd</span></code> Updates a dataframe and returns a dataframe<a class="headerlink" href="#upd-updates-a-dataframe-and-returns-a-dataframe" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.6.1. </span><code class="docutils literal notranslate"><span class="pre">.upd</span></code> <a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html#upd"><span class="std std-ref">Updates</span></a> a dataframe and returns a dataframe<a class="headerlink" href="#upd-updates-a-dataframe-and-returns-a-dataframe" title="Permalink to this headline">#</a></h3>
 <p>Parameters:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1515,7 +1520,10 @@ PAKBXGSRNFSVCD        : Exp., NF SERV (BOP), US$ mn
 <h3><span class="section-number">2.7.3. </span>‘&lt;!search pattern&gt;’ , select variables where search pattern with  wildcards is matching description<a class="headerlink" href="#search-pattern-select-variables-where-search-pattern-with-wildcards-is-matching-description" title="Permalink to this headline">#</a></h3>
 <section id="var-descriptions-a-dictionary-of-variable-descriptions">
 <h4><span class="section-number">2.7.3.1. </span>.var_descriptions, a dictionary of variable descriptions<a class="headerlink" href="#var-descriptions-a-dictionary-of-variable-descriptions" title="Permalink to this headline">#</a></h4>
-<p>The property <code class="docutils literal notranslate"><span class="pre">.var_groups</span></code> can contain a dictionary with variable names as key and a description as value.</p>
+<p>The property <code class="docutils literal notranslate"><span class="pre">.var_description</span></code> contains a dictionary with variable names as key and a description as value.</p>
+</section>
+<section id="id2">
+<h4><span class="section-number">2.7.3.2. </span>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;!*import*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">des</span>
@@ -1581,8 +1589,8 @@ If new scenarios are simulated the data in .lastdf will then be replaced with th
 <p>Sometime it can be useful to reset the <code class="docutils literal notranslate"><span class="pre">.keep_solutions</span></code>, so that a new set of solutions can be inspected. This is done by replacing it with an empty dictionary.</p>
 </section>
 </section>
-<section id="id2">
-<h3><span class="section-number">2.8.3. </span>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="id3">
+<h3><span class="section-number">2.8.3. </span>Example<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">keep_description</span> <span class="o">=</span> <span class="p">{}</span>
@@ -2652,11 +2660,11 @@ constructed directly in python scripts. The two main libraries are matplotlib, p
       </div>
     </a>
     <a class="right-next"
-       href="../../genindex.html"
+       href="stability%20introduction.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Index</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Model stability, some background</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2725,7 +2733,7 @@ constructed directly in python scripts. The two main libraries are matplotlib, p
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-extensions-for-updating-and-transformation">2.6. Dataframe extensions for updating and transformation.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upd-updates-a-dataframe-and-returns-a-dataframe">2.6.1. <code class="docutils literal notranslate"><span class="pre">.upd</span></code> Updates a dataframe and returns a dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upd-updates-a-dataframe-and-returns-a-dataframe">2.6.1. <code class="docutils literal notranslate"><span class="pre">.upd</span></code> <span class="xref myst">Updates</span> a dataframe and returns a dataframe</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mfcalc-updates-a-dataframe-and-returns-a-dataframe">2.6.2. <code class="docutils literal notranslate"><span class="pre">.mfcalc</span></code> Updates a dataframe and returns a dataframe</a></li>
 </ul>
 </li>
@@ -2738,6 +2746,7 @@ constructed directly in python scripts. The two main libraries are matplotlib, p
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-pattern-select-variables-where-search-pattern-with-wildcards-is-matching-description">2.7.3. ‘&lt;!search pattern&gt;’ , select variables where search pattern with  wildcards is matching description</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#var-descriptions-a-dictionary-of-variable-descriptions">2.7.3.1. .var_descriptions, a dictionary of variable descriptions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.7.3.2. Example</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endo-select-all-edogenous-variables">2.7.4. ‘#ENDO’ , select all edogenous variables</a></li>
@@ -2750,7 +2759,7 @@ constructed directly in python scripts. The two main libraries are matplotlib, p
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-solutions-resetting-the-keep-solution">2.8.2.2. .keep_solutions = {}, resetting the .keep_solution</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.8.3. Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.8.3. Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keepswitch-select-scenarios-for-plotting">2.8.3.1. .keepswitch(), select scenarios for plotting</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-plot-plot-the-scenarios">2.8.3.2. .keep_plot(), plot the scenarios</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">2.8.3.3. Parameters</a></li>

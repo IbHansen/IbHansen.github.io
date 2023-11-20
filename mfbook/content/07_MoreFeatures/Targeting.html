@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7. A simulation that targets a specific outcome &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
+    <title>6. A simulation that targets a specific outcome &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
   
   
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Model analytics" href="../06_ModelAnalytics/ModelStructure.html" />
-    <link rel="prev" title="6. More complex scenarios" href="../05_WBModels/MoreComplexScenarios.html" />
+    <link rel="prev" title="5. More complex scenarios" href="../05_WBModels/MoreComplexScenarios.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -181,12 +181,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/LoadingWBModel.html">2. Working with PakMod under modelflow (i think this is duplicating the next chapter)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">5. Report writing and scenario results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">6. More complex scenarios</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. A simulation that targets a specific outcome</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -197,6 +196,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="stability%20introduction.html">1. Model stability, some background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -256,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/AndrewEdits/papers/mfbook/content/07_MoreFeatures/Targeting.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/main/papers/mfbook/content/07_MoreFeatures/Targeting.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,47 +398,47 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-work-space">7.1. Preparing the work space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-model-data-and-descriptions">7.2. Load a  model, data and descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-model-to-create-a-baseline">7.3. Solve the model to create a baseline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-co2-emission-a-very-simple-example">7.4. Target CO2 emission - a  very simple example</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-targets">7.4.1. Define targets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-instruments">7.4.2. Define instruments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-instruments">7.4.3. Find the instruments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-result">7.4.4. Display result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-work-space">6.1. Preparing the work space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-model-data-and-descriptions">6.2. Load a  model, data and descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-model-to-create-a-baseline">6.3. Solve the model to create a baseline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-co2-emission-a-very-simple-example">6.4. Target CO2 emission - a  very simple example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-targets">6.4.1. Define targets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-instruments">6.4.2. Define instruments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-instruments">6.4.3. Find the instruments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-result">6.4.4. Display result</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-carbon-emissions-in-a-budget-neutral-manner">7.5. Targeting carbon emissions in a budget neutral manner</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-co2-emission-and-government-deficit-by-adjusting-carbon-tax-and-government-expenditure">7.6. Target CO2 emission and government deficit by adjusting carbon tax and government expenditure.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-target-trajectory-for-co2-emission">7.6.1. Define target trajectory for CO2 emission.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataframe-with-the-target-emission">7.6.2. Create a dataframe with the target emission</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-target-for-government-deficit">7.6.3. Create target for government deficit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-carbon-emissions-in-a-budget-neutral-manner">6.5. Targeting carbon emissions in a budget neutral manner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-co2-emission-and-government-deficit-by-adjusting-carbon-tax-and-government-expenditure">6.6. Target CO2 emission and government deficit by adjusting carbon tax and government expenditure.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-target-trajectory-for-co2-emission">6.6.1. Define target trajectory for CO2 emission.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataframe-with-the-target-emission">6.6.2. Create a dataframe with the target emission</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-target-for-government-deficit">6.6.3. Create target for government deficit</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.7. Define instruments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-solve-the-problem">7.8. Now solve the problem:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-charts-of-emission-deficit-and-target-variables">7.8.1. Make charts of emission, deficit and target variables.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.7. Define instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-solve-the-problem">6.8. Now solve the problem:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-charts-of-emission-deficit-and-target-variables">6.8.1. Make charts of emission, deficit and target variables.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighting-the-instruments">7.9. Weighting the instruments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-background">7.10. Targeting background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-target-input-to-get-a-result">7.11. Tuning the target input to get a result</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">7.11.1. impulse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinearity">7.11.2. Nonlinearity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">7.11.3. Convergence</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-number-of-iterations">7.11.4. Maximum number of iterations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighting-the-instruments">6.9. Weighting the instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-background">6.10. Targeting background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-target-input-to-get-a-result">6.11. Tuning the target input to get a result</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">6.11.1. impulse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinearity">6.11.2. Nonlinearity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">6.11.3. Convergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-number-of-iterations">6.11.4. Maximum number of iterations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-instruments">7.12. Defining Instruments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-information-targeting-class-instance">7.13. Advanced information -  targeting class instance</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instruments-a-list-if-instruments">7.13.1. <code class="docutils literal notranslate"><span class="pre">.instruments</span></code> a list if instruments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jac-the-jacobi-matrix">7.13.2. <code class="docutils literal notranslate"><span class="pre">.jac</span></code> The Jacobi matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inv-the-inverted-jacobi-matrix">7.13.3. <code class="docutils literal notranslate"><span class="pre">.inv</span></code> The inverted Jacobi matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-convergence-criteria">7.13.4. <code class="docutils literal notranslate"><span class="pre">.convergence</span></code> Convergence criteria</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#targets-the-targets">7.13.5. <code class="docutils literal notranslate"><span class="pre">.targets</span></code> The targets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-instruments">6.12. Defining Instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-information-targeting-class-instance">6.13. Advanced information -  targeting class instance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instruments-a-list-if-instruments">6.13.1. <code class="docutils literal notranslate"><span class="pre">.instruments</span></code> a list if instruments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jac-the-jacobi-matrix">6.13.2. <code class="docutils literal notranslate"><span class="pre">.jac</span></code> The Jacobi matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inv-the-inverted-jacobi-matrix">6.13.3. <code class="docutils literal notranslate"><span class="pre">.inv</span></code> The inverted Jacobi matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-convergence-criteria">6.13.4. <code class="docutils literal notranslate"><span class="pre">.convergence</span></code> Convergence criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#targets-the-targets">6.13.5. <code class="docutils literal notranslate"><span class="pre">.targets</span></code> The targets</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jacob-caculate-the-jacobi-matrix">7.14. .jacob() Caculate the jacobi matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jacob-caculate-the-jacobi-matrix">6.14. .jacob() Caculate the jacobi matrix</a></li>
 </ul>
             </nav>
         </div>
@@ -447,7 +451,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-simulation-that-targets-a-specific-outcome">
-<h1><span class="section-number">7. </span>A simulation that targets a specific outcome<a class="headerlink" href="#a-simulation-that-targets-a-specific-outcome" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">6. </span>A simulation that targets a specific outcome<a class="headerlink" href="#a-simulation-that-targets-a-specific-outcome" title="Permalink to this headline">#</a></h1>
 <p>In normal model use, the trajectory of the exogenous variables determine the trajectory of the endogenous (left hand side) variables. However, sometimes  it can be useful to target a trajectory of some endogenous variables by calculating a trajectory of exogenous variables. That is the exogenous variables are a function of the endogenous variables.</p>
 <p>A simple example might be where a policy maker wanted to know what level of Carbon Tax implemented in a budget neutral fashion would be needed to achieve a specific level of emissions.  As specified, the analytical question is to achieve two targets:</p>
 <ol class="arabic simple">
@@ -467,7 +471,7 @@ document.write(`
 <li><p>Visualize the results</p></li>
 </ol>
 <section id="preparing-the-work-space">
-<span id="index-0"></span><h2><span class="section-number">7.1. </span>Preparing the work space<a class="headerlink" href="#preparing-the-work-space" title="Permalink to this headline">#</a></h2>
+<span id="index-0"></span><h2><span class="section-number">6.1. </span>Preparing the work space<a class="headerlink" href="#preparing-the-work-space" title="Permalink to this headline">#</a></h2>
 <p>As always before running a simulation, the various python classes that will be used must be imported.</p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
@@ -520,7 +524,7 @@ document.write(`
 </div>
 </section>
 <section id="load-a-model-data-and-descriptions">
-<h2><span class="section-number">7.2. </span>Load a  model, data and descriptions<a class="headerlink" href="#load-a-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.2. </span>Load a  model, data and descriptions<a class="headerlink" href="#load-a-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
 <p>The file <code class="docutils literal notranslate"><span class="pre">pak.pcim</span></code> contains a dump of model equations, dataframe, simulation options and variable descriptions. The file has been created when onboarding the model. The onboarding process is described <span class="xref myst">here.</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,7 +540,7 @@ document.write(`
 </div>
 </section>
 <section id="solve-the-model-to-create-a-baseline">
-<h2><span class="section-number">7.3. </span>Solve the model to create a baseline<a class="headerlink" href="#solve-the-model-to-create-a-baseline" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.3. </span>Solve the model to create a baseline<a class="headerlink" href="#solve-the-model-to-create-a-baseline" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baseline</span> <span class="o">=</span> <span class="n">mpak</span><span class="p">(</span><span class="n">initial</span><span class="p">,</span><span class="mi">2022</span><span class="p">,</span><span class="mi">2100</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ljit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -548,11 +552,11 @@ document.write(`
 <span class="target" id="index-1"></span><span class="target" id="index-2"></span><p id="index-3">Note in this example the <code class="docutils literal notranslate"><span class="pre">ljit</span></code> option is set to True. This instructs the solver to <em>compile</em> the model. Model compilation takes time. When a model will be solved multuiple times, the additional time cost of compiling model, can be made up because the compiled model almost always solves much more quickly than the  uncompiled model.</p>
 </section>
 <section id="target-co2-emission-a-very-simple-example">
-<h2><span class="section-number">7.4. </span>Target CO2 emission - a  very simple example<a class="headerlink" href="#target-co2-emission-a-very-simple-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.4. </span>Target CO2 emission - a  very simple example<a class="headerlink" href="#target-co2-emission-a-very-simple-example" title="Permalink to this headline">#</a></h2>
 <p>The first and very simple example only the emission is targeted - in this case - an just to keep the example simple - the
 target is to keep the a yearly growth of emission rate at 1 percent.</p>
 <section id="define-targets">
-<h3><span class="section-number">7.4.1. </span>Define targets<a class="headerlink" href="#define-targets" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.4.1. </span>Define targets<a class="headerlink" href="#define-targets" title="Permalink to this headline">#</a></h3>
 <span class="target" id="index-4"></span><div class="cell docutils container" id="index-5">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create dataframe with only the target variable </span>
@@ -566,7 +570,7 @@ target is to keep the a yearly growth of emission rate at 1 percent.</p>
 </div>
 <span class="target" id="index-6"></span></section>
 <section id="define-instruments">
-<span id="index-7"></span><h3><span class="section-number">7.4.2. </span>Define instruments<a class="headerlink" href="#define-instruments" title="Permalink to this headline">#</a></h3>
+<span id="index-7"></span><h3><span class="section-number">6.4.2. </span>Define instruments<a class="headerlink" href="#define-instruments" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instruments_simple</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;PAKGGREVCO2CER&#39;</span><span class="p">,</span><span class="s1">&#39;PAKGGREVCO2GER&#39;</span><span class="p">,</span> <span class="s1">&#39;PAKGGREVCO2OER&#39;</span><span class="p">]]</span>
@@ -576,7 +580,7 @@ target is to keep the a yearly growth of emission rate at 1 percent.</p>
 </div>
 <span class="target" id="index-8"></span></section>
 <section id="find-the-instruments">
-<span id="index-9"></span><h3><span class="section-number">7.4.3. </span>Find the instruments<a class="headerlink" href="#find-the-instruments" title="Permalink to this headline">#</a></h3>
+<span id="index-9"></span><h3><span class="section-number">6.4.3. </span>Find the instruments<a class="headerlink" href="#find-the-instruments" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">mpak</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">baseline</span><span class="p">,</span>                  <span class="c1"># Invert calls the target instrument device                   </span>
@@ -596,7 +600,7 @@ target is to keep the a yearly growth of emission rate at 1 percent.</p>
 </div>
 </section>
 <section id="display-result">
-<h3><span class="section-number">7.4.4. </span>Display result<a class="headerlink" href="#display-result" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.4.4. </span>Display result<a class="headerlink" href="#display-result" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2100</span><span class="p">):</span>    <span class="c1"># change if you want another  timeframe </span>
@@ -617,7 +621,7 @@ target is to keep the a yearly growth of emission rate at 1 percent.</p>
 </section>
 </section>
 <section id="targeting-carbon-emissions-in-a-budget-neutral-manner">
-<h2><span class="section-number">7.5. </span>Targeting carbon emissions in a budget neutral manner<a class="headerlink" href="#targeting-carbon-emissions-in-a-budget-neutral-manner" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.5. </span>Targeting carbon emissions in a budget neutral manner<a class="headerlink" href="#targeting-carbon-emissions-in-a-budget-neutral-manner" title="Permalink to this headline">#</a></h2>
 <p>In the example below the two instruments are the:</p>
 <ol class="arabic simple">
 <li><p>Carbon emission tax, which is covered by 3 variables</p></li>
@@ -625,7 +629,7 @@ target is to keep the a yearly growth of emission rate at 1 percent.</p>
 </ol>
 </section>
 <section id="target-co2-emission-and-government-deficit-by-adjusting-carbon-tax-and-government-expenditure">
-<h2><span class="section-number">7.6. </span>Target CO2 emission and government deficit by adjusting carbon tax and government expenditure.<a class="headerlink" href="#target-co2-emission-and-government-deficit-by-adjusting-carbon-tax-and-government-expenditure" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.6. </span>Target CO2 emission and government deficit by adjusting carbon tax and government expenditure.<a class="headerlink" href="#target-co2-emission-and-government-deficit-by-adjusting-carbon-tax-and-government-expenditure" title="Permalink to this headline">#</a></h2>
 <p>This example  has two targets.</p>
 <ol class="arabic simple">
 <li><p>To reduce carbon emissions by 40% by 2050 and then hold them at that level. The instrument to be employed will be a Carbon tax.</p></li>
@@ -639,7 +643,7 @@ target is to keep the a yearly growth of emission rate at 1 percent.</p>
 <p>Both instruments impact both targets.</p>
 <p><span id="id2"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span> using the same model explores the macroeconomic consequences implications of alternative uses of the revenues from the Carbon Tax.</p>
 <section id="define-target-trajectory-for-co2-emission">
-<h3><span class="section-number">7.6.1. </span>Define target trajectory for CO2 emission.<a class="headerlink" href="#define-target-trajectory-for-co2-emission" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.6.1. </span>Define target trajectory for CO2 emission.<a class="headerlink" href="#define-target-trajectory-for-co2-emission" title="Permalink to this headline">#</a></h3>
 <p>The objective is to reduce Carbon emissions by 75% (as compared with the baseline) by the year 2050 and hold them constant in level terms afterwards.</p>
 <div class="tip admonition">
 <p class="admonition-title">Experiment with the result </p>
@@ -690,7 +694,7 @@ Target growth rate in percent            :          0.5%
 </div>
 </section>
 <section id="create-a-dataframe-with-the-target-emission">
-<h3><span class="section-number">7.6.2. </span>Create a dataframe with the target emission<a class="headerlink" href="#create-a-dataframe-with-the-target-emission" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.6.2. </span>Create a dataframe with the target emission<a class="headerlink" href="#create-a-dataframe-with-the-target-emission" title="Permalink to this headline">#</a></h3>
 <p>Now a dataframe can be created using the growth rate for the target variable calculated above.</p>
 <p>The dataframe should only contain columns for the target variables, at this stage just one.</p>
 <div class="cell docutils container">
@@ -706,7 +710,7 @@ Target growth rate in percent            :          0.5%
 </div>
 </section>
 <section id="create-target-for-government-deficit">
-<h3><span class="section-number">7.6.3. </span>Create target for government deficit<a class="headerlink" href="#create-target-for-government-deficit" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.6.3. </span>Create target for government deficit<a class="headerlink" href="#create-target-for-government-deficit" title="Permalink to this headline">#</a></h3>
 <p>This is done simply by taking the values in the baseline for the relevant years.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -728,7 +732,7 @@ Target growth rate in percent            :          0.5%
 </section>
 </section>
 <section id="id3">
-<h2><span class="section-number">7.7. </span>Define instruments<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.7. </span>Define instruments<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>The instruments to be used are the <strong>carbon tax</strong> and <strong>government spending on goods and services</strong>.  To find the mnemonics for these variables a search is done over the descriptions of the variables, first over the carbon tax:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -773,7 +777,7 @@ PAKGGEXPCAPTCN_X      : Fix value:General government expenditure on capital expe
 <p>In total there are two instruments and two targets, which satisfies the constraint that there must be <strong>exactly  as many instruments as targets</strong>.</p>
 </section>
 <section id="now-solve-the-problem">
-<h2><span class="section-number">7.8. </span>Now solve the problem:<a class="headerlink" href="#now-solve-the-problem" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.8. </span>Now solve the problem:<a class="headerlink" href="#now-solve-the-problem" title="Permalink to this headline">#</a></h2>
 <p>Now we have a dataframe with target values and a list of instrument variables. We are ready to solve the problem.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -794,7 +798,7 @@ PAKGGEXPCAPTCN_X      : Fix value:General government expenditure on capital expe
 </div>
 </div>
 <section id="make-charts-of-emission-deficit-and-target-variables">
-<h3><span class="section-number">7.8.1. </span>Make charts of emission, deficit and target variables.<a class="headerlink" href="#make-charts-of-emission-deficit-and-target-variables" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.8.1. </span>Make charts of emission, deficit and target variables.<a class="headerlink" href="#make-charts-of-emission-deficit-and-target-variables" title="Permalink to this headline">#</a></h3>
 <p>Decorate the emission chart with a line showing the target.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -828,7 +832,7 @@ PAKGGEXPCAPTCN_X      : Fix value:General government expenditure on capital expe
 </section>
 </section>
 <section id="weighting-the-instruments">
-<h2><span class="section-number">7.9. </span>Weighting the instruments<a class="headerlink" href="#weighting-the-instruments" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.9. </span>Weighting the instruments<a class="headerlink" href="#weighting-the-instruments" title="Permalink to this headline">#</a></h2>
 <p>When using multiple instruments for a single target, the modeler may  want to privilege changes in one instrument over another by specifying weights to attach to each.  In the example below, specific weights are attached to the instruments instructing the solver to place twice as much emphasis on adjusting the carbon tax on coal emissions (as compared with the other two carbon taxes).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -976,7 +980,7 @@ PAKGGEXPCAPTCN_X      : Fix value:General government expenditure on capital expe
 </div>
 </section>
 <section id="targeting-background">
-<h2><span class="section-number">7.10. </span>Targeting background<a class="headerlink" href="#targeting-background" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.10. </span>Targeting background<a class="headerlink" href="#targeting-background" title="Permalink to this headline">#</a></h2>
 <p>The concept of targets and instruments in economic modeling was introduced by <span id="id4">Tinbergen [<a class="reference internal" href="../../Reference.html#id9" title="J. Tinbergen. Economic Policy: Principles and Design. Contributions to economic analysis. North-Holland Publishing Company, 1967. URL: https://books.google.de/books?id=hA5gAAAAIAAJ.">1967</a>]</span></p>
 <p>When solving a targeting problem it can be thought as follows: From the generic description of a model: <span class="math notranslate nohighlight">\(\textbf{y}_t= \textbf{F}(\textbf{x}_{t})\)</span>. Here <span class="math notranslate nohighlight">\(\textbf{x}_{t}\)</span> are all predetermined variables - lagged endogenous and all exogenous variables.</p>
 <p>Think of a condensed model (<span class="math notranslate nohighlight">\(\textbf{G}\)</span>) with a few endogenous variables (<span class="math notranslate nohighlight">\(\bar{\textbf{y}}_t\)</span>):
@@ -1008,8 +1012,8 @@ impact  on each of the targets from the , <span class="math notranslate nohighli
 <p>In order for <span class="math notranslate nohighlight">\(\textbf{J}_t\)</span> to be invertible there has to be <strong>the same number of targets and instruments</strong>.</p>
 <p>However, each instrument can be a basket of exogenous variable an they can have different impulse <span class="math notranslate nohighlight">\(\Delta\)</span>
 .</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7729a3c0-bc97-4038-bb12-a160ead88f18">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-7729a3c0-bc97-4038-bb12-a160ead88f18" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-77211062-cd50-4870-b748-4d7928303129">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-77211062-cd50-4870-b748-4d7928303129" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta x^{instrument=i} = 
 \begin{bmatrix}
 \Delta x^{instrument=i,variable=1} \\
@@ -1024,12 +1028,12 @@ impact  on each of the targets from the , <span class="math notranslate nohighli
 \bar{\textbf{y}_{t}}^{k-1})\)</span>) in all periods from <span class="math notranslate nohighlight">\(t-delay\)</span> to <span class="math notranslate nohighlight">\(end\)</span>, where <span class="math notranslate nohighlight">\(end\)</span> is the last timeframe in the dataframe. This is useful for many applications, where the instruments are level variable (i.e. not change variables). This is the default behavior. It can be changed.</p>
 </section>
 <section id="tuning-the-target-input-to-get-a-result">
-<span id="index-10"></span><h2><span class="section-number">7.11. </span>Tuning the target input to get a result<a class="headerlink" href="#tuning-the-target-input-to-get-a-result" title="Permalink to this headline">#</a></h2>
+<span id="index-10"></span><h2><span class="section-number">6.11. </span>Tuning the target input to get a result<a class="headerlink" href="#tuning-the-target-input-to-get-a-result" title="Permalink to this headline">#</a></h2>
 <p>Models implemented in <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> can be very different, and the targeting routine <code class="docutils literal notranslate"><span class="pre">.invert</span></code> is pretty general.
 The user can’t expect that targeting works out of the box. In most cases - as in this notebook - the options has to be set
 to values which fits the problem at hand.</p>
 <section id="impulse">
-<span id="index-11"></span><h3><span class="section-number">7.11.1. </span>impulse<a class="headerlink" href="#impulse" title="Permalink to this headline">#</a></h3>
+<span id="index-11"></span><h3><span class="section-number">6.11.1. </span>impulse<a class="headerlink" href="#impulse" title="Permalink to this headline">#</a></h3>
 <p>The impulse has to be right. Else the jacobi matrix <span class="math notranslate nohighlight">\(\textbf{J}_t\)</span> will be useless. As discussed above - and forgetting the bar and the delay - the term  <span class="math notranslate nohighlight">\({\Delta \bar{\textbf{x}}_{t-delay}}\)</span>
 is used when calculating the approximate</p>
 <p>The size of impulse should not impact the result of the targeting function. However it can have major impact of the speed to convergence and the feasibility of the endeavor.</p>
@@ -1042,7 +1046,7 @@ the problem becomes il conditioned (in other word the condition number  <span cl
 <p>As mentioned the impulse can set either when defining the instruments, or as a default impulse when the <code class="docutils literal notranslate"><span class="pre">.invert</span></code> routine is called (DefaultImpuls=).</p>
 </section>
 <section id="nonlinearity">
-<span id="index-12"></span><h3><span class="section-number">7.11.2. </span>Nonlinearity<a class="headerlink" href="#nonlinearity" title="Permalink to this headline">#</a></h3>
+<span id="index-12"></span><h3><span class="section-number">6.11.2. </span>Nonlinearity<a class="headerlink" href="#nonlinearity" title="Permalink to this headline">#</a></h3>
 <p>If the model is nonlinear it makes sense to update the jacobi matrix <span class="math notranslate nohighlight">\(\textbf{J}_t\)</span> frequently. Using <code class="docutils literal notranslate"><span class="pre">nonlin=a</span> <span class="pre">number</span></code> the user determines how many iterations the same jacobi matrix could be used before
 a new one has to be calculated.</p>
 <p>If:</p>
@@ -1053,14 +1057,14 @@ a new one has to be calculated.</p>
 </ul>
 </section>
 <section id="convergence">
-<span id="index-13"></span><h3><span class="section-number">7.11.3. </span>Convergence<a class="headerlink" href="#convergence" title="Permalink to this headline">#</a></h3>
+<span id="index-13"></span><h3><span class="section-number">6.11.3. </span>Convergence<a class="headerlink" href="#convergence" title="Permalink to this headline">#</a></h3>
 <p>The targeting is stopped when all target variables converge. If the values of the target variables are large. The convergence criteria should reflect that. Else targeting will take really long time.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">defaultconv=&lt;a</span> <span class="pre">number&gt;</span></code></p></li>
 </ul>
 </section>
 <section id="maximum-number-of-iterations">
-<span id="index-14"></span><h3><span class="section-number">7.11.4. </span>Maximum number of iterations<a class="headerlink" href="#maximum-number-of-iterations" title="Permalink to this headline">#</a></h3>
+<span id="index-14"></span><h3><span class="section-number">6.11.4. </span>Maximum number of iterations<a class="headerlink" href="#maximum-number-of-iterations" title="Permalink to this headline">#</a></h3>
 <p>The max number of iterations are managed with</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">maxiter=&lt;a</span> <span class="pre">number&gt;</span></code></p></li>
@@ -1070,7 +1074,7 @@ a new one has to be calculated.</p>
 </section>
 </section>
 <section id="defining-instruments">
-<h2><span class="section-number">7.12. </span>Defining Instruments<a class="headerlink" href="#defining-instruments" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.12. </span>Defining Instruments<a class="headerlink" href="#defining-instruments" title="Permalink to this headline">#</a></h2>
 <p>Then we have to provide the instruments. This is <strong>a list</strong>. This list has elements.</p>
 <ul class="simple">
 <li><p>Each element in the list is an instrument.</p></li>
@@ -1112,7 +1116,7 @@ a new one has to be calculated.</p>
 </table>
 </section>
 <section id="advanced-information-targeting-class-instance">
-<h2><span class="section-number">7.13. </span>Advanced information -  targeting class instance<a class="headerlink" href="#advanced-information-targeting-class-instance" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.13. </span>Advanced information -  targeting class instance<a class="headerlink" href="#advanced-information-targeting-class-instance" title="Permalink to this headline">#</a></h2>
 <p>When a model calls the <code class="docutils literal notranslate"><span class="pre">.invert</span></code> method a the modelinstance  will receive an object <code class="docutils literal notranslate"><span class="pre">.t_i</span></code>. This object has been doing the
 underlying calculations. The very advanced/curious user can be interested in some of its properties.</p>
 <div class="cell docutils container">
@@ -1123,7 +1127,7 @@ underlying calculations. The very advanced/curious user can be interested in som
 </div>
 </div>
 <section id="instruments-a-list-if-instruments">
-<h3><span class="section-number">7.13.1. </span><code class="docutils literal notranslate"><span class="pre">.instruments</span></code> a list if instruments<a class="headerlink" href="#instruments-a-list-if-instruments" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.13.1. </span><code class="docutils literal notranslate"><span class="pre">.instruments</span></code> a list if instruments<a class="headerlink" href="#instruments-a-list-if-instruments" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ti</span><span class="o">.</span><span class="n">instruments</span>
@@ -1142,7 +1146,7 @@ underlying calculations. The very advanced/curious user can be interested in som
 </div>
 </section>
 <section id="jac-the-jacobi-matrix">
-<h3><span class="section-number">7.13.2. </span><code class="docutils literal notranslate"><span class="pre">.jac</span></code> The Jacobi matrix<a class="headerlink" href="#jac-the-jacobi-matrix" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.13.2. </span><code class="docutils literal notranslate"><span class="pre">.jac</span></code> The Jacobi matrix<a class="headerlink" href="#jac-the-jacobi-matrix" title="Permalink to this headline">#</a></h3>
 <p>This property will contain the last calculated jacobi matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1190,7 +1194,7 @@ underlying calculations. The very advanced/curious user can be interested in som
 </div>
 </section>
 <section id="inv-the-inverted-jacobi-matrix">
-<h3><span class="section-number">7.13.3. </span><code class="docutils literal notranslate"><span class="pre">.inv</span></code> The inverted Jacobi matrix<a class="headerlink" href="#inv-the-inverted-jacobi-matrix" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.13.3. </span><code class="docutils literal notranslate"><span class="pre">.inv</span></code> The inverted Jacobi matrix<a class="headerlink" href="#inv-the-inverted-jacobi-matrix" title="Permalink to this headline">#</a></h3>
 <p>This property will contain the last calculated jacobi matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1283,7 +1287,7 @@ underlying calculations. The very advanced/curious user can be interested in som
 </div>
 </section>
 <section id="convergence-convergence-criteria">
-<h3><span class="section-number">7.13.4. </span><code class="docutils literal notranslate"><span class="pre">.convergence</span></code> Convergence criteria<a class="headerlink" href="#convergence-convergence-criteria" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.13.4. </span><code class="docutils literal notranslate"><span class="pre">.convergence</span></code> Convergence criteria<a class="headerlink" href="#convergence-convergence-criteria" title="Permalink to this headline">#</a></h3>
 <p>This property will contain the last calculated jacobi matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1299,7 +1303,7 @@ underlying calculations. The very advanced/curious user can be interested in som
 </div>
 </section>
 <section id="targets-the-targets">
-<h3><span class="section-number">7.13.5. </span><code class="docutils literal notranslate"><span class="pre">.targets</span></code> The targets<a class="headerlink" href="#targets-the-targets" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.13.5. </span><code class="docutils literal notranslate"><span class="pre">.targets</span></code> The targets<a class="headerlink" href="#targets-the-targets" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ti</span><span class="o">.</span><span class="n">targets</span>
@@ -1393,7 +1397,7 @@ underlying calculations. The very advanced/curious user can be interested in som
 </section>
 </section>
 <section id="jacob-caculate-the-jacobi-matrix">
-<h2><span class="section-number">7.14. </span>.jacob() Caculate the jacobi matrix<a class="headerlink" href="#jacob-caculate-the-jacobi-matrix" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.14. </span>.jacob() Caculate the jacobi matrix<a class="headerlink" href="#jacob-caculate-the-jacobi-matrix" title="Permalink to this headline">#</a></h2>
 <p>This method can calculate the Jacobi matrix in any year. below find the Jacobi in the start and the end of the simulation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1467,7 +1471,7 @@ targeting to converge in the later years.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>More complex scenarios</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>More complex scenarios</p>
       </div>
     </a>
     <a class="right-next"
@@ -1497,47 +1501,47 @@ targeting to converge in the later years.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-work-space">7.1. Preparing the work space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-model-data-and-descriptions">7.2. Load a  model, data and descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-model-to-create-a-baseline">7.3. Solve the model to create a baseline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-co2-emission-a-very-simple-example">7.4. Target CO2 emission - a  very simple example</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-targets">7.4.1. Define targets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-instruments">7.4.2. Define instruments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-instruments">7.4.3. Find the instruments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-result">7.4.4. Display result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-work-space">6.1. Preparing the work space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-model-data-and-descriptions">6.2. Load a  model, data and descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-model-to-create-a-baseline">6.3. Solve the model to create a baseline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-co2-emission-a-very-simple-example">6.4. Target CO2 emission - a  very simple example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-targets">6.4.1. Define targets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-instruments">6.4.2. Define instruments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-instruments">6.4.3. Find the instruments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-result">6.4.4. Display result</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-carbon-emissions-in-a-budget-neutral-manner">7.5. Targeting carbon emissions in a budget neutral manner</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-co2-emission-and-government-deficit-by-adjusting-carbon-tax-and-government-expenditure">7.6. Target CO2 emission and government deficit by adjusting carbon tax and government expenditure.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-target-trajectory-for-co2-emission">7.6.1. Define target trajectory for CO2 emission.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataframe-with-the-target-emission">7.6.2. Create a dataframe with the target emission</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-target-for-government-deficit">7.6.3. Create target for government deficit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-carbon-emissions-in-a-budget-neutral-manner">6.5. Targeting carbon emissions in a budget neutral manner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-co2-emission-and-government-deficit-by-adjusting-carbon-tax-and-government-expenditure">6.6. Target CO2 emission and government deficit by adjusting carbon tax and government expenditure.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-target-trajectory-for-co2-emission">6.6.1. Define target trajectory for CO2 emission.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataframe-with-the-target-emission">6.6.2. Create a dataframe with the target emission</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-target-for-government-deficit">6.6.3. Create target for government deficit</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.7. Define instruments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-solve-the-problem">7.8. Now solve the problem:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-charts-of-emission-deficit-and-target-variables">7.8.1. Make charts of emission, deficit and target variables.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.7. Define instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-solve-the-problem">6.8. Now solve the problem:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-charts-of-emission-deficit-and-target-variables">6.8.1. Make charts of emission, deficit and target variables.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighting-the-instruments">7.9. Weighting the instruments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-background">7.10. Targeting background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-target-input-to-get-a-result">7.11. Tuning the target input to get a result</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">7.11.1. impulse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinearity">7.11.2. Nonlinearity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">7.11.3. Convergence</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-number-of-iterations">7.11.4. Maximum number of iterations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighting-the-instruments">6.9. Weighting the instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-background">6.10. Targeting background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-target-input-to-get-a-result">6.11. Tuning the target input to get a result</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">6.11.1. impulse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinearity">6.11.2. Nonlinearity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">6.11.3. Convergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-number-of-iterations">6.11.4. Maximum number of iterations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-instruments">7.12. Defining Instruments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-information-targeting-class-instance">7.13. Advanced information -  targeting class instance</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instruments-a-list-if-instruments">7.13.1. <code class="docutils literal notranslate"><span class="pre">.instruments</span></code> a list if instruments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jac-the-jacobi-matrix">7.13.2. <code class="docutils literal notranslate"><span class="pre">.jac</span></code> The Jacobi matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inv-the-inverted-jacobi-matrix">7.13.3. <code class="docutils literal notranslate"><span class="pre">.inv</span></code> The inverted Jacobi matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-convergence-criteria">7.13.4. <code class="docutils literal notranslate"><span class="pre">.convergence</span></code> Convergence criteria</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#targets-the-targets">7.13.5. <code class="docutils literal notranslate"><span class="pre">.targets</span></code> The targets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-instruments">6.12. Defining Instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-information-targeting-class-instance">6.13. Advanced information -  targeting class instance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instruments-a-list-if-instruments">6.13.1. <code class="docutils literal notranslate"><span class="pre">.instruments</span></code> a list if instruments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jac-the-jacobi-matrix">6.13.2. <code class="docutils literal notranslate"><span class="pre">.jac</span></code> The Jacobi matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inv-the-inverted-jacobi-matrix">6.13.3. <code class="docutils literal notranslate"><span class="pre">.inv</span></code> The inverted Jacobi matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-convergence-criteria">6.13.4. <code class="docutils literal notranslate"><span class="pre">.convergence</span></code> Convergence criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#targets-the-targets">6.13.5. <code class="docutils literal notranslate"><span class="pre">.targets</span></code> The targets</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jacob-caculate-the-jacobi-matrix">7.14. .jacob() Caculate the jacobi matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jacob-caculate-the-jacobi-matrix">6.14. .jacob() Caculate the jacobi matrix</a></li>
 </ul>
   </nav></div>
 
