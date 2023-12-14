@@ -1,0 +1,444 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="384pt" viewBox="0.00 0.00 432.00 383.76">
+<g id="graph0" class="graph" transform="scale(0.465442 0.465442) rotate(0) translate(4 820.5)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-820.5 924.15,-820.5 924.15,4 -4,4"/>
+<text text-anchor="middle" x="460.07" y="-7.2" font-family="Times New Roman,serif" font-size="14.00">FY</text>
+<!-- PAE -->
+<g id="node1" class="node">
+<title>PAE</title>
+<g id="a_node1"><a xlink:title="Pris på samlet endelig anvendelse
+FRML &lt;_D&gt; PAE           = AE/FAE $">
+<polygon fill="#63b8ff" stroke="black" points="541.83,-60.5 317.22,-60.5 317.22,-24.5 541.83,-24.5 541.83,-60.5"/>
+<text text-anchor="start" x="323.02" y="-37.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAE:Pris på samlet endelig anvendelse</text>
+</a>
+</g>
+</g>
+<!-- FY -->
+<g id="node6" class="node">
+<title>FY</title>
+<g id="a_node6"><a xlink:title="BNP
+FRML &lt;_I&gt; FY            = (FAE*PAE(-1)-FM*PM(-1))/PY(-1)$">
+<polygon fill="red" stroke="black" points="920.15,-330.5 862.05,-330.5 862.05,-294.5 920.15,-294.5 920.15,-330.5"/>
+<text text-anchor="start" x="867.85" y="-307.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FY:BNP</text>
+</a>
+</g>
+</g>
+<!-- PAE&#45;&gt;FY -->
+<g id="edge23" class="edge">
+<title>PAE-&gt;FY</title>
+<g id="a_edge23"><a xlink:href="bogus" xlink:title=" PAE -&gt; FY Min. att. -17849%  max: 2179%">
+<path fill="none" stroke="black" stroke-width="8" d="M542.14,-35.45C630.37,-36.17 750.81,-52.08 826.05,-123.5 869.35,-164.6 883.38,-236.01 887.92,-278.3"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="881.48,-278.87 889.33,-288.21 895.42,-277.63 881.48,-278.87"/>
+</a>
+</g>
+</g>
+<!-- FAE -->
+<g id="node17" class="node">
+<title>FAE</title>
+<g id="a_node17"><a xlink:title="Endelig efterspørgsel
+FRML &lt;_I&gt; FAE           = (FAI*PAI(-1) + FE*PE(-1))/PAE(-1)$">
+<polygon fill="#63b8ff" stroke="black" points="826.05,-168.5 670.45,-168.5 670.45,-132.5 826.05,-132.5 826.05,-168.5"/>
+<text text-anchor="start" x="676.25" y="-145.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FAE:Endelig efterspørgsel</text>
+</a>
+</g>
+</g>
+<!-- PAE&#45;&gt;FAE -->
+<g id="edge8" class="edge">
+<title>PAE-&gt;FAE</title>
+<g id="a_edge8"><a xlink:href="bogus" xlink:title=" PAE -&gt; FAE Min. att. -18326%  max: 10102%">
+<path fill="none" stroke="black" stroke-width="8" d="M542.3,-38.69C572.95,-42.31 605.65,-49.09 634.45,-60.5 668.52,-74 701.9,-100.03 723.4,-120.83"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="718.33,-125.76 730.32,-128.04 728.36,-115.99 718.33,-125.76"/>
+</a>
+</g>
+</g>
+<!-- FME -->
+<g id="node2" class="node">
+<title>FME</title>
+<g id="a_node2"><a xlink:title="Import af energi
+FRML &lt;_D&gt; FME           = AMEE*FXE + AMES*FXS + AMEEE*FEE + FILME$">
+<polygon fill="#63b8ff" stroke="black" points="496.07,-816.5 362.97,-816.5 362.97,-780.5 496.07,-780.5 496.07,-816.5"/>
+<text text-anchor="start" x="368.77" y="-793.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FME:Import af energi</text>
+</a>
+</g>
+</g>
+<!-- FM -->
+<g id="node15" class="node">
+<title>FM</title>
+<g id="a_node15"><a xlink:title="Import
+FRML &lt;_I&gt; FM            = (FMX*PMX(-1) + FME*PME(-1) + FMS*PMS(-1) + FMT*PMT(-1))/PM(-1) $">
+<polygon fill="#63b8ff" stroke="black" points="784.8,-546.5 711.7,-546.5 711.7,-510.5 784.8,-510.5 784.8,-546.5"/>
+<text text-anchor="start" x="717.5" y="-523.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FM:Import</text>
+</a>
+</g>
+</g>
+<!-- FME&#45;&gt;FM -->
+<g id="edge4" class="edge">
+<title>FME-&gt;FM</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title=" FME -&gt; FM Min. att. -1%  max: 3%">
+<path fill="none" stroke="black" d="M496.2,-805.21C539.4,-806.17 595.03,-800.48 634.45,-771.5 705.87,-719 733.47,-609.99 742.91,-557.71"/>
+<polygon fill="black" stroke="black" points="746.53,-558.31 744.75,-547.87 739.62,-557.14 746.53,-558.31"/>
+</a>
+</g>
+</g>
+<!-- FE -->
+<g id="node3" class="node">
+<title>FE</title>
+<g id="a_node3"><a xlink:title="Eksport
+FRML &lt;_I&gt; FE            = (FEX*PEX(-1) + FEE*PEE(-1) + FES*PES(-1) + FET*PET(-1))/PE(-1) $">
+<polygon fill="#63b8ff" stroke="black" points="466.07,-276.5 392.97,-276.5 392.97,-240.5 466.07,-240.5 466.07,-276.5"/>
+<text text-anchor="start" x="398.77" y="-253.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FE:Eksport</text>
+</a>
+</g>
+</g>
+<!-- FE&#45;&gt;FAE -->
+<g id="edge7" class="edge">
+<title>FE-&gt;FAE</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title=" FE -&gt; FAE Min. att. -8761%  max: 4728%">
+<path fill="none" stroke="black" stroke-width="8" d="M466.48,-258.96C508.28,-258.32 578.67,-253.6 634.45,-231.5 665.04,-219.38 695.06,-197.17 716.44,-179.07"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="720.34,-184.58 723.26,-172.72 711.12,-174.04 720.34,-184.58"/>
+</a>
+</g>
+</g>
+<!-- PM -->
+<g id="node4" class="node">
+<title>PM</title>
+<g id="a_node4"><a xlink:title="Pris på import
+FRML &lt;_D&gt; PM            = M/FM $">
+<polygon fill="#63b8ff" stroke="black" points="486.32,-384.5 372.72,-384.5 372.72,-348.5 486.32,-348.5 486.32,-384.5"/>
+<text text-anchor="start" x="378.52" y="-361.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PM:Pris på import</text>
+</a>
+</g>
+</g>
+<!-- PM&#45;&gt;FY -->
+<g id="edge20" class="edge">
+<title>PM-&gt;FY</title>
+<g id="a_edge20"><a xlink:href="bogus" xlink:title=" PM -&gt; FY Min. att. -0%  max: 0%">
+<path fill="none" stroke="black" d="M486.74,-368.43C564.23,-369.8 707.7,-367.65 826.05,-339.5 834.55,-337.48 843.37,-334.44 851.64,-331.12"/>
+<polygon fill="black" stroke="black" points="852.93,-333.95 860.77,-326.82 850.2,-327.51 852.93,-333.95"/>
+</a>
+</g>
+</g>
+<!-- PM&#45;&gt;FM -->
+<g id="edge24" class="edge">
+<title>PM-&gt;FM</title>
+<g id="a_edge24"><a xlink:href="bogus" xlink:title=" PM -&gt; FM Min. att. -0%  max: -0%">
+<path fill="none" stroke="black" d="M486.71,-355.88C529.69,-354.18 589.09,-359.53 634.45,-384.5 682.22,-410.79 718.22,-466.07 735.64,-500.17"/>
+<polygon fill="black" stroke="black" points="732.91,-501.56 740.44,-509.02 739.2,-498.5 732.91,-501.56"/>
+</a>
+</g>
+</g>
+<!-- AE -->
+<g id="node5" class="node">
+<title>AE</title>
+<g id="a_node5"><a xlink:title="Endelig samlet efterspørgsel
+FRML &lt;_I&gt; AE            = CP + CO + I + E $">
+<polygon fill="#63b8ff" stroke="black" points="188.6,-60.5 0,-60.5 0,-24.5 188.6,-24.5 188.6,-60.5"/>
+<text text-anchor="start" x="5.8" y="-37.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">AE:Endelig samlet efterspørgsel</text>
+</a>
+</g>
+</g>
+<!-- AE&#45;&gt;PAE -->
+<g id="edge10" class="edge">
+<title>AE-&gt;PAE</title>
+<g id="a_edge10"><a xlink:href="bogus" xlink:title=" AE -&gt; PAE Min. att. 96%  max: 528%">
+<path fill="none" stroke="black" stroke-width="8" d="M189.01,-42.5C223.79,-42.5 263.85,-42.5 301.14,-42.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="300.92,-49.5 310.92,-42.5 300.92,-35.5 300.92,-49.5"/>
+</a>
+</g>
+</g>
+<!-- PY -->
+<g id="node12" class="node">
+<title>PY</title>
+<g id="a_node12"><a xlink:title="BNP-deflator
+FRML &lt;_D&gt; PY            = Y/FY $">
+<polygon fill="#63b8ff" stroke="black" points="800.55,-330.5 695.95,-330.5 695.95,-294.5 800.55,-294.5 800.55,-330.5"/>
+<text text-anchor="start" x="701.75" y="-307.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PY:BNP-deflator</text>
+</a>
+</g>
+</g>
+<!-- FY&#45;&gt;PY -->
+<g id="edge17" class="edge">
+<title>FY-&gt;PY</title>
+<g id="a_edge17"><a xlink:href="bogus" xlink:title=" FY -&gt; PY Min. att. -300%  max: 8%">
+<path fill="none" stroke="black" stroke-width="8" d="M861.78,-318.04C848.7,-318.9 832.57,-319.3 816.64,-319.24"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="816.99,-312.17 806.9,-319.03 816.8,-326.17 816.99,-312.17"/>
+</a>
+</g>
+</g>
+<!-- PME -->
+<g id="node7" class="node">
+<title>PME</title>
+<g id="a_node7"><a xlink:title="Pris på import af energi
+FRML &lt;_SJRD,JR,EXO,DAMP&gt; PME=( (( (EXP(LOG(PME(-1))+(0.72533)*((LOG(PWOIL*VUSA))-(LOG(PWOIL(-1)*VUSA(-1))))
+                               + GPME
+                               + (-0.38198)*(LOG(PME(-1)/(PWOIL(-1)*VUSA(-1)))-LOG(BPMEW(-1)))))*(1+JRPME ))*(1-DPME)+ZPME*DPME)*(1+PME_JR ))*(1-PME_D)+PME_X*PME_D$">
+<polygon fill="#63b8ff" stroke="black" points="516.32,-762.5 342.72,-762.5 342.72,-726.5 516.32,-726.5 516.32,-762.5"/>
+<text text-anchor="start" x="348.52" y="-739.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PME:Pris på import af energi</text>
+</a>
+</g>
+</g>
+<!-- PME&#45;&gt;FM -->
+<g id="edge18" class="edge">
+<title>PME-&gt;FM</title>
+<g id="a_edge18"><a xlink:href="bogus" xlink:title=" PME -&gt; FM Min. att. -0%  max: 0%">
+<path fill="none" stroke="black" d="M516.75,-749.5C555.51,-747.82 600.15,-740.08 634.45,-717.5 692.59,-679.23 725.1,-599.74 739.02,-557.06"/>
+<polygon fill="black" stroke="black" points="742.58,-558.39 742.24,-547.8 735.9,-556.3 742.58,-558.39"/>
+</a>
+</g>
+</g>
+<!-- M -->
+<g id="node8" class="node">
+<title>M</title>
+<g id="a_node8"><a xlink:title="Import
+FRML &lt;_I&gt; M             = MX + ME + MS + MT $">
+<polygon fill="#63b8ff" stroke="black" points="127.1,-384.5 61.5,-384.5 61.5,-348.5 127.1,-348.5 127.1,-384.5"/>
+<text text-anchor="start" x="67.3" y="-361.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">M:Import</text>
+</a>
+</g>
+</g>
+<!-- M&#45;&gt;PM -->
+<g id="edge9" class="edge">
+<title>M-&gt;PM</title>
+<g id="a_edge9"><a xlink:href="bogus" xlink:title=" M -&gt; PM Min. att. 0%  max: 0%">
+<path fill="none" stroke="black" d="M127.55,-366.5C181.39,-366.5 290.63,-366.5 361.63,-366.5"/>
+<polygon fill="black" stroke="black" points="361.25,-370 371.25,-366.5 361.25,-363 361.25,-370"/>
+</a>
+</g>
+</g>
+<!-- PAI -->
+<g id="node9" class="node">
+<title>PAI</title>
+<g id="a_node9"><a xlink:title="Pris på endelig, indenlandsk anvendelse
+FRML &lt;_D&gt; PAI           = AI/FAI $">
+<polygon fill="#63b8ff" stroke="black" points="556.45,-222.5 302.6,-222.5 302.6,-186.5 556.45,-186.5 556.45,-222.5"/>
+<text text-anchor="start" x="308.4" y="-199.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAI:Pris på endelig, indenlandsk anvendelse</text>
+</a>
+</g>
+</g>
+<!-- PAI&#45;&gt;FAE -->
+<g id="edge11" class="edge">
+<title>PAI-&gt;FAE</title>
+<g id="a_edge11"><a xlink:href="bogus" xlink:title=" PAI -&gt; FAE Min. att. -7665%  max: 13929%">
+<path fill="none" stroke="black" stroke-width="8" d="M556.76,-189.86C582.54,-186.29 609.43,-182.14 634.45,-177.5 642.58,-175.99 651,-174.28 659.41,-172.45"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="660.74,-178.98 668.97,-169.97 657.69,-165.32 660.74,-178.98"/>
+</a>
+</g>
+</g>
+<!-- FMX -->
+<g id="node10" class="node">
+<title>FMX</title>
+<g id="a_node10"><a xlink:title="Import (ekskl. energi+søfart+turisme)
+FRML &lt;_D&gt; FMX           = FMZX + AMXO*FXO + AMXCB*FCB + FILMX $">
+<polygon fill="#63b8ff" stroke="black" points="556.45,-708.5 302.6,-708.5 302.6,-672.5 556.45,-672.5 556.45,-708.5"/>
+<text text-anchor="start" x="308.4" y="-685.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FMX:Import (ekskl. energi+søfart+turisme)</text>
+</a>
+</g>
+</g>
+<!-- FMX&#45;&gt;FM -->
+<g id="edge14" class="edge">
+<title>FMX-&gt;FM</title>
+<g id="a_edge14"><a xlink:href="bogus" xlink:title=" FMX -&gt; FM Min. att. 74%  max: 94%">
+<path fill="none" stroke="black" stroke-width="8" d="M556.74,-688.51C583.59,-684.13 610.91,-676.46 634.45,-663.5 677.64,-639.72 711.22,-592.25 730.13,-560.42"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="736.12,-564.79 734.99,-552.63 723.95,-557.85 736.12,-564.79"/>
+</a>
+</g>
+</g>
+<!-- FAI -->
+<g id="node11" class="node">
+<title>FAI</title>
+<g id="a_node11"><a xlink:title="Endelig indenlandsk efterspørgsel
+FRML &lt;_I&gt; FAI           = (FCP*PCP(-1) + FCO*PCO(-1) + FI*PI(-1))/PAI(-1)$">
+<polygon fill="#63b8ff" stroke="black" points="539.95,-168.5 319.1,-168.5 319.1,-132.5 539.95,-132.5 539.95,-168.5"/>
+<text text-anchor="start" x="324.9" y="-145.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FAI:Endelig indenlandsk efterspørgsel</text>
+</a>
+</g>
+</g>
+<!-- FAI&#45;&gt;FAE -->
+<g id="edge16" class="edge">
+<title>FAI-&gt;FAE</title>
+<g id="a_edge16"><a xlink:href="bogus" xlink:title=" FAI -&gt; FAE Min. att. -4605%  max: 8813%">
+<path fill="none" stroke="black" stroke-width="8" d="M540.41,-150.5C577.44,-150.5 618.39,-150.5 654.01,-150.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="653.97,-157.5 663.97,-150.5 653.96,-143.5 653.97,-157.5"/>
+</a>
+</g>
+</g>
+<!-- PY&#45;&gt;FY -->
+<g id="edge12" class="edge">
+<title>PY-&gt;FY</title>
+<g id="a_edge12"><a xlink:href="bogus" xlink:title=" PY -&gt; FY Min. att. -2178%  max: 17831%">
+<path fill="none" stroke="black" stroke-width="8" d="M800.9,-305.97C815.68,-305.62 831.66,-305.69 845.95,-306.19"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="845.45,-313.46 855.78,-306.96 846.13,-299.48 845.45,-313.46"/>
+</a>
+</g>
+</g>
+<!-- PMX -->
+<g id="node13" class="node">
+<title>PMX</title>
+<g id="a_node13"><a xlink:title="Pris på import af varer og tjenester ekskl. energi, søfart og turisme
+Exogen">
+<polygon fill="yellow" stroke="black" points="634.45,-654.5 224.6,-654.5 224.6,-618.5 634.45,-618.5 634.45,-654.5"/>
+<text text-anchor="start" x="230.4" y="-631.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PMX:Pris på import af varer og tjenester ekskl. energi, søfart og turisme</text>
+</a>
+</g>
+</g>
+<!-- PMX&#45;&gt;FM -->
+<g id="edge3" class="edge">
+<title>PMX-&gt;FM</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title=" PMX -&gt; FM Min. att. -0%  max: 0%">
+<path fill="none" stroke="black" d="M609.51,-618.02C618.04,-615.52 626.4,-612.69 634.45,-609.5 666.9,-596.64 698.73,-572.42 720.25,-553.8"/>
+<polygon fill="black" stroke="black" points="722.09,-556.97 727.26,-547.72 717.45,-551.72 722.09,-556.97"/>
+</a>
+</g>
+</g>
+<!-- FMS -->
+<g id="node14" class="node">
+<title>FMS</title>
+<g id="a_node14"><a xlink:title="Import af søfart
+FRML &lt;_D&gt; FMS           = AMSS*FXS + AMSES*FES$">
+<polygon fill="#63b8ff" stroke="black" points="494.2,-600.5 364.85,-600.5 364.85,-564.5 494.2,-564.5 494.2,-600.5"/>
+<text text-anchor="start" x="370.65" y="-577.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FMS:Import af søfart</text>
+</a>
+</g>
+</g>
+<!-- FMS&#45;&gt;FM -->
+<g id="edge25" class="edge">
+<title>FMS-&gt;FM</title>
+<g id="a_edge25"><a xlink:href="bogus" xlink:title=" FMS -&gt; FM Min. att. -0%  max: 0%">
+<path fill="none" stroke="black" d="M494.63,-575.73C534.93,-571.05 587.92,-564.12 634.45,-555.5 656.44,-551.42 680.57,-545.8 700.86,-540.75"/>
+<polygon fill="black" stroke="black" points="701.55,-543.93 710.38,-538.09 699.83,-537.14 701.55,-543.93"/>
+</a>
+</g>
+</g>
+<!-- FM&#45;&gt;PM -->
+<g id="edge5" class="edge">
+<title>FM-&gt;PM</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title=" FM -&gt; PM Min. att. 0%  max: 0%">
+<path fill="none" stroke="black" d="M734.58,-510.37C716.79,-481.9 681.27,-428.27 634.45,-402.5 592.81,-379.58 539.34,-373.19 497.6,-371.08"/>
+<polygon fill="black" stroke="black" points="497.85,-367.54 487.71,-370.61 497.55,-374.54 497.85,-367.54"/>
+</a>
+</g>
+</g>
+<!-- FM&#45;&gt;FY -->
+<g id="edge1" class="edge">
+<title>FM-&gt;FY</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title=" FM -&gt; FY Min. att. -125%  max: 1808%">
+<path fill="none" stroke="black" stroke-width="8" d="M761.26,-510.08C785.32,-473.18 839.69,-389.8 869.54,-344.04"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="875.52,-348.07 875.12,-335.87 863.8,-340.42 875.52,-348.07"/>
+</a>
+</g>
+</g>
+<!-- PMT -->
+<g id="node16" class="node">
+<title>PMT</title>
+<g id="a_node16"><a xlink:title="Pris på import af turisme (=PCT)
+Exogen">
+<polygon fill="yellow" stroke="black" points="542.57,-546.5 316.47,-546.5 316.47,-510.5 542.57,-510.5 542.57,-546.5"/>
+<text text-anchor="start" x="322.27" y="-523.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PMT:Pris på import af turisme (=PCT)</text>
+</a>
+</g>
+</g>
+<!-- PMT&#45;&gt;FM -->
+<g id="edge15" class="edge">
+<title>PMT-&gt;FM</title>
+<g id="a_edge15"><a xlink:href="bogus" xlink:title=" PMT -&gt; FM Min. att. -0%  max: 0%">
+<path fill="none" stroke="black" d="M542.64,-528.5C596.92,-528.5 659.15,-528.5 700.59,-528.5"/>
+<polygon fill="black" stroke="black" points="700.44,-532 710.44,-528.5 700.44,-525 700.44,-532"/>
+</a>
+</g>
+</g>
+<!-- FAE&#45;&gt;PAE -->
+<g id="edge2" class="edge">
+<title>FAE-&gt;PAE</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title=" FAE -&gt; PAE Min. att. -429%  max: 4%">
+<path fill="none" stroke="black" stroke-width="8" d="M719.9,-132.29C698.38,-115.32 666.73,-91.29 634.45,-78.5 610.49,-69.01 583.82,-62.72 557.89,-58.38"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="559.25,-51.59 548.3,-56.99 557.12,-65.43 559.25,-51.59"/>
+</a>
+</g>
+</g>
+<!-- FAE&#45;&gt;FY -->
+<g id="edge19" class="edge">
+<title>FAE-&gt;FY</title>
+<g id="a_edge19"><a xlink:href="bogus" xlink:title=" FAE -&gt; FY Min. att. -1649%  max: 220%">
+<path fill="none" stroke="black" stroke-width="8" d="M765.13,-168.77C789.12,-196.36 834.86,-248.96 863.85,-282.31"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="858.21,-286.1 870.06,-289.05 868.78,-276.91 858.21,-286.1"/>
+</a>
+</g>
+</g>
+<!-- Y -->
+<g id="node18" class="node">
+<title>Y</title>
+<g id="a_node18"><a xlink:title="BNP
+FRML &lt;_I&gt; Y             = CP + CO + I - M + E $">
+<polygon fill="#63b8ff" stroke="black" points="456.52,-330.5 402.52,-330.5 402.52,-294.5 456.52,-294.5 456.52,-330.5"/>
+<text text-anchor="start" x="410.02" y="-307.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">Y:BNP</text>
+</a>
+</g>
+</g>
+<!-- Y&#45;&gt;PY -->
+<g id="edge21" class="edge">
+<title>Y-&gt;PY</title>
+<g id="a_edge21"><a xlink:href="bogus" xlink:title=" Y -&gt; PY Min. att. 92%  max: 399%">
+<path fill="none" stroke="black" stroke-width="8" d="M456.98,-312.5C505.5,-312.5 610.09,-312.5 679.57,-312.5"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="679.55,-319.5 689.55,-312.5 679.55,-305.5 679.55,-319.5"/>
+</a>
+</g>
+</g>
+<!-- PMS -->
+<g id="node19" class="node">
+<title>PMS</title>
+<g id="a_node19"><a xlink:title="Pris på import af søfart
+Exogen">
+<polygon fill="yellow" stroke="black" points="514.45,-492.5 344.6,-492.5 344.6,-456.5 514.45,-456.5 514.45,-492.5"/>
+<text text-anchor="start" x="350.4" y="-469.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PMS:Pris på import af søfart</text>
+</a>
+</g>
+</g>
+<!-- PMS&#45;&gt;FM -->
+<g id="edge22" class="edge">
+<title>PMS-&gt;FM</title>
+<g id="a_edge22"><a xlink:href="bogus" xlink:title=" PMS -&gt; FM Min. att. -0%  max: 0%">
+<path fill="none" stroke="black" d="M514.67,-483.66C551.57,-488.18 595.3,-494.24 634.45,-501.5 656.44,-505.58 680.57,-511.2 700.86,-516.25"/>
+<polygon fill="black" stroke="black" points="699.83,-519.86 710.38,-518.91 701.55,-513.07 699.83,-519.86"/>
+</a>
+</g>
+</g>
+<!-- FMT -->
+<g id="node20" class="node">
+<title>FMT</title>
+<g id="a_node20"><a xlink:title="Import af turisme
+FRML &lt;_I&gt; FMT           = FCT$">
+<polygon fill="#63b8ff" stroke="black" points="499.45,-438.5 359.6,-438.5 359.6,-402.5 499.45,-402.5 499.45,-438.5"/>
+<text text-anchor="start" x="365.4" y="-415.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">FMT:Import af turisme</text>
+</a>
+</g>
+</g>
+<!-- FMT&#45;&gt;FM -->
+<g id="edge13" class="edge">
+<title>FMT-&gt;FM</title>
+<g id="a_edge13"><a xlink:href="bogus" xlink:title=" FMT -&gt; FM Min. att. 4%  max: 26%">
+<path fill="none" stroke="black" stroke-width="2.57" d="M499.67,-421.31C540.17,-423.81 591.62,-430.53 634.45,-447.5 666.04,-460.02 697.04,-483.3 718.52,-501.7"/>
+<polygon fill="black" stroke="black" stroke-width="2.57" points="716.44,-504.3 726.26,-508.28 721.06,-499.04 716.44,-504.3"/>
+</a>
+</g>
+</g>
+<!-- PE -->
+<g id="node21" class="node">
+<title>PE</title>
+<g id="a_node21"><a xlink:title="Pris på eksport
+FRML &lt;_D&gt; PE            = E/FE $">
+<polygon fill="#63b8ff" stroke="black" points="485.57,-114.5 373.47,-114.5 373.47,-78.5 485.57,-78.5 485.57,-114.5"/>
+<text text-anchor="start" x="379.27" y="-91.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PE:Pris på eksport</text>
+</a>
+</g>
+</g>
+<!-- PE&#45;&gt;FAE -->
+<g id="edge6" class="edge">
+<title>PE-&gt;FAE</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title=" PE -&gt; FAE Min. att. -2445%  max: 4418%">
+<path fill="none" stroke="black" stroke-width="8" d="M485.73,-102.25C526.89,-106.91 584.41,-114.22 634.45,-123.5 642.58,-125.01 651,-126.72 659.41,-128.55"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="657.69,-135.68 668.97,-131.03 660.74,-122.02 657.69,-135.68"/>
+</a>
+</g>
+</g>
+</g>
+</svg>
