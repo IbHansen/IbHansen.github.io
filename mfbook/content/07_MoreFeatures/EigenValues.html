@@ -155,14 +155,15 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">2.2. Modelflow and the MFMod models of the World Bank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Acknowledgements.html">2. Acknowledgements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">4.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
 </ul>
 </li>
 </ul>
@@ -171,8 +172,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">4. Modelflow extensions to pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">4.6. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Jupyter%20notebook%20setup.html">4. Jupyter notebook set up</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">5. Update and transform Pandas dataframes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">5.2. <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>  Return an updated dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">5.3. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> Returns a transformed dataframe</a></li>
 </ul>
 </li>
 </ul>
@@ -396,20 +399,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization-of-modelflow-environment">2.1. Initialization of modelflow environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">2.2. Load a pre-existing model, data and descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-newton-diff">2.3. the method .newton_diff()</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-eigenvalues-method">2.3.1. .get_eigenvalues method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolating-potentially-problematic-eigenvalues">2.3.2. Isolating potentially problematic eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">2.1. Load a pre-existing model, data and descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-newton-diff">2.2. the method .newton_diff()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-eigenvalues-method">2.2.1. .get_eigenvalues method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolating-potentially-problematic-eigenvalues">2.2.2. Isolating potentially problematic eigenvalues</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jackknife-resampeling">2.4. Jackknife resampeling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-largest-eigenvalue-from-dropping-equations">2.4.1. Impact on the largest eigenvalue from dropping equations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-20-largest-eigenvalue-from-dropping-equations">2.4.2. Impact on the 20 largest eigenvalue from dropping equations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-100-largest-eigenvalue-from-dropping-equations">2.4.3. Impact on the 100 largest eigenvalue from dropping equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jackknife-resampeling">2.3. Jackknife resampeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-largest-eigenvalue-from-dropping-equations">2.3.1. Impact on the largest eigenvalue from dropping equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-20-largest-eigenvalue-from-dropping-equations">2.3.2. Impact on the 20 largest eigenvalue from dropping equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-100-largest-eigenvalue-from-dropping-equations">2.3.3. Impact on the 100 largest eigenvalue from dropping equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step-modify-an-equation">2.5. Next step, modify an equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step-modify-an-equation">2.4. Next step, modify an equation</a></li>
 </ul>
             </nav>
         </div>
@@ -421,45 +423,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="model-eigenvalues">
+  <section class="tex2jax_ignore mathjax_ignore" id="model-eigenvalues">
 <h1><span class="section-number">2. </span>Model eigenvalues<a class="headerlink" href="#model-eigenvalues" title="Permalink to this headline">#</a></h1>
 <p>Eigenvalues are a fundamental concept in dynamic models. In simple terms, they summarize the adjustment process within a model. In the context of dynamic models, the sign and magnitude of the eigenvalues determine whether a system of equations will converge to a stable equilibrium, oscillate, or diverge.</p>
 <p>In the case of a macromodel, which is effectively a system of differential equations, the eigenvalues of the coefficient matrix determine whether the system is stable, marginally stable, or unstable. If all the eigenvalues have negative real parts, then the system is stable and will converge to a steady state over time. If at least one eigenvalue has a positive real part, then the system is unstable, and the solutions will diverge over time.</p>
 <p>The modelflow library includes a range of methods to calculate the eigenvalues of a model, which can be used to help to assure that a model’s dynamics will be stable and to identify sources of instability where they exist.</p>
-<section id="initialization-of-modelflow-environment">
-<h2><span class="section-number">2.1. </span>Initialization of modelflow environment<a class="headerlink" href="#initialization-of-modelflow-environment" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import to handle imaginary numbers </span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="kn">import</span> <span class="nn">re</span>
 
-<span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span> 
+<span class="c1"># Import of modelflow lineraization methods. </span>
 <span class="kn">from</span> <span class="nn">modelnewton</span> <span class="kn">import</span> <span class="n">newton_diff</span>
-
-<span class="n">model</span><span class="o">.</span><span class="n">widescreen</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <style>
-            div#notebook-container    { width: 95%; }
-            div#menubar-container     { width: 65%; }
-            div#maintoolbar-container { width: 99%; }
-        </style>
-        </div></div>
 </div>
-</section>
 <section id="load-a-pre-existing-model-data-and-descriptions">
-<h2><span class="section-number">2.2. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
 <p>For the purposes of this exposition the climate aware model forPakistan described <span id="id1"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span> is used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -476,7 +457,7 @@ document.write(`
 </div>
 <span class="target" id="index-0"></span><span class="target" id="index-1"></span><span class="target" id="index-2"></span></section>
 <section id="the-method-newton-diff">
-<span id="index-3"></span><h2><span class="section-number">2.3. </span>the method .newton_diff()<a class="headerlink" href="#the-method-newton-diff" title="Permalink to this headline">#</a></h2>
+<span id="index-3"></span><h2><span class="section-number">2.2. </span>the method .newton_diff()<a class="headerlink" href="#the-method-newton-diff" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> method <code class="docutils literal notranslate"><span class="pre">.newtondiff()</span></code> calculates the derivatives of the mpak model.</p>
 <p>The object mpak_newton is an object of typenewton_diff assigned the derivatives from the model.</p>
 <div class="cell docutils container">
@@ -490,7 +471,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="get-eigenvalues-method">
-<h3><span class="section-number">2.3.1. </span>.get_eigenvalues method<a class="headerlink" href="#get-eigenvalues-method" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.1. </span>.get_eigenvalues method<a class="headerlink" href="#get-eigenvalues-method" title="Permalink to this headline">#</a></h3>
 <p>The get_eigenvectors function calculates the actual eigenvectors of the model.  For a large model this can be a fairly time consuming calculation taking several minutes  even on relatively powerful multicore i9 computers.</p>
 <p id="index-4">Once the eigenvalues are calculated they can be displayed graphically with the <code class="docutils literal notranslate"><span class="pre">.eigplot_all()</span></code> method.</p>
 <div class="cell docutils container">
@@ -501,7 +482,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0e25c87309e2811db93db9c9effd4d5383cecbaf986edbd9aee6c84d5fcaeb8e.png" src="../../_images/0e25c87309e2811db93db9c9effd4d5383cecbaf986edbd9aee6c84d5fcaeb8e.png" />
+<img alt="../../_images/3eff33d48eaef7f678c1416174c3f15770c66d7a910082abdfbb87e3d76b9125.png" src="../../_images/3eff33d48eaef7f678c1416174c3f15770c66d7a910082abdfbb87e3d76b9125.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -519,7 +500,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5c2048455d93e3d947b67bba30ccadeab87744431fac2f509d5bb182080ad8ed.png" src="../../_images/5c2048455d93e3d947b67bba30ccadeab87744431fac2f509d5bb182080ad8ed.png" />
+<img alt="../../_images/2d51cbe36253b6e6da1b4f6d2cd736faa3014bdc8c297b558f82c71d40774027.png" src="../../_images/2d51cbe36253b6e6da1b4f6d2cd736faa3014bdc8c297b558f82c71d40774027.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -536,7 +517,7 @@ document.write(`
 </div>
 </section>
 <section id="isolating-potentially-problematic-eigenvalues">
-<h3><span class="section-number">2.3.2. </span>Isolating potentially problematic eigenvalues<a class="headerlink" href="#isolating-potentially-problematic-eigenvalues" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2. </span>Isolating potentially problematic eigenvalues<a class="headerlink" href="#isolating-potentially-problematic-eigenvalues" title="Permalink to this headline">#</a></h3>
 <p>In the charts above it is clear that the vast majority of eigenvalues lie within the real unit circle, implying that the associated equations are dynamically stable.  However, there are several that lie outside of the unit circle.</p>
 <p>The code below identifies and prints out those elements that are greater than one.</p>
 <div class="cell docutils container">
@@ -560,11 +541,11 @@ element 1321 length: 1.06952
 element 1319 length: 1.06368 
 element 1318 length: 1.06998 
 element 1317 length: 1.00287 
-element 1316 length: 1.06036 
-element 1315 length: 1.08554 
-element 1304 length: 1.09349 
-element 1303 length: 1.12010 
-element 1301 length: 1.12521 
+element 1316 length: 1.08554 
+element 1315 length: 1.06036 
+element 1304 length: 1.12521 
+element 1303 length: 1.09349 
+element 1302 length: 1.12010 
 element 531 length: 1.00816 
 element 492 length: 1.13663 
 element 490 length: 1.02299 
@@ -581,13 +562,13 @@ element 1313 length: 1.00303 1.00282 0.02084
 </section>
 </section>
 <section id="jackknife-resampeling">
-<h2><span class="section-number">2.4. </span>Jackknife resampeling<a class="headerlink" href="#jackknife-resampeling" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3. </span>Jackknife resampeling<a class="headerlink" href="#jackknife-resampeling" title="Permalink to this headline">#</a></h2>
 <p>In order to try to identify interesting equation a jackknife resampeling is performed. That is the rows and columns in the companion matrix corrosponding to an equation is dropped and the eigenvalues and eigenvectors are recalculated.</p>
 <p>Take care this takes time (+7 minutes depending on the processor) therefor testing can be done
 by setting the parameter maxnames, which restrict the number of resampelings.</p>
 <p>To measure the impact the sum of the 20 largest eigenvalues are calculated.</p>
 <section id="impact-on-the-largest-eigenvalue-from-dropping-equations">
-<h3><span class="section-number">2.4.1. </span>Impact on the largest eigenvalue from dropping equations<a class="headerlink" href="#impact-on-the-largest-eigenvalue-from-dropping-equations" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.1. </span>Impact on the largest eigenvalue from dropping equations<a class="headerlink" href="#impact-on-the-largest-eigenvalue-from-dropping-equations" title="Permalink to this headline">#</a></h3>
 <p>The larges eigenvalue is hardly impacted</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,20 +580,20 @@ by setting the parameter maxnames, which restrict the number of resampelings.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time for a cup of coffee and a nap
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating eigenvalues of 302 different matrices takes time, so make cup of coffee and a take a short nap
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PAKBXGSRGNFSCD_excluded   1.1252054642497
-ALL                       1.1366307931898
-PAKNVOILNIMPCN_excluded   1.1366307931898
-PAKNVINDTOTLXN_excluded   1.1366307931898
-PAKNVINDTOTLKN_excluded   1.1366307931898
-ALL                       1.1366307931898
-PAKINTREXN_excluded       1.1366307931898
-PAKMNGSINTCN_excluded     1.1366307931898
-TURPCEXN05_excluded       1.1366307931898
-PAKNECONOTHRXN_excluded   1.2465375997059
-PAKNECONPRVTXN_excluded   1.2465375997059
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PAKBXGSRGNFSCD_excluded   1.1252054648639
+ALL                       1.1366307932833
+PAKNVOILNIMPCN_excluded   1.1366307932833
+PAKNVINDTOTLXN_excluded   1.1366307932833
+PAKNVINDTOTLKN_excluded   1.1366307932833
+ALL                       1.1366307932833
+PAKINTREXN_excluded       1.1366307932833
+PAKMNGSINTCN_excluded     1.1366307932833
+TURPCEXN05_excluded       1.1366307932833
+PAKNECONOTHRXN_excluded   1.2465380316740
+PAKNECONPRVTXN_excluded   1.2465380316740
 dtype: float64
 </pre></div>
 </div>
@@ -621,7 +602,7 @@ dtype: float64
 </div>
 </section>
 <section id="impact-on-the-20-largest-eigenvalue-from-dropping-equations">
-<h3><span class="section-number">2.4.2. </span>Impact on the 20 largest eigenvalue from dropping equations<a class="headerlink" href="#impact-on-the-20-largest-eigenvalue-from-dropping-equations" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.2. </span>Impact on the 20 largest eigenvalue from dropping equations<a class="headerlink" href="#impact-on-the-20-largest-eigenvalue-from-dropping-equations" title="Permalink to this headline">#</a></h3>
 <p>The larges eigenvalue is hardly impacted</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -632,17 +613,17 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PAKNECONGOVTCN_excluded   20.9117211259216
-PAKBXGSRGNFSCD_excluded   20.9214776158386
-PAKNEGDIFGOVCN_excluded   20.9240172487171
-PAKBMGSRMRCHCD_excluded   20.9594245751385
-PAKBMGSRGNFSCD_excluded   20.9629821320206
-ALL                       21.0804561230106
-PAKNYGDPGAP__excluded     21.1554023733606
-PAKGGEXPTOTLCN_excluded   21.1587317115024
-PAKNYGDPMKTPKN_excluded   21.1768876137313
-PAKNECONOTHRXN_excluded   21.2092393353746
-PAKNECONPRVTXN_excluded   21.3057324701927
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PAKNECONGOVTCN_excluded   20.9117201045529
+PAKBXGSRGNFSCD_excluded   20.9214775049259
+PAKNEGDIFGOVCN_excluded   20.9240166717358
+PAKBMGSRMRCHCD_excluded   20.9594244631689
+PAKBMGSRGNFSCD_excluded   20.9629820200547
+ALL                       21.0804554765416
+PAKNYGDPGAP__excluded     21.1554026959633
+PAKGGEXPTOTLCN_excluded   21.1587306077809
+PAKNYGDPMKTPKN_excluded   21.1768865988827
+PAKNECONOTHRXN_excluded   21.2092400236489
+PAKNECONPRVTXN_excluded   21.3057336204730
 dtype: float64
 </pre></div>
 </div>
@@ -651,7 +632,7 @@ dtype: float64
 </div>
 </section>
 <section id="impact-on-the-100-largest-eigenvalue-from-dropping-equations">
-<h3><span class="section-number">2.4.3. </span>Impact on the 100 largest eigenvalue from dropping equations<a class="headerlink" href="#impact-on-the-100-largest-eigenvalue-from-dropping-equations" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.3. </span>Impact on the 100 largest eigenvalue from dropping equations<a class="headerlink" href="#impact-on-the-100-largest-eigenvalue-from-dropping-equations" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span> <span class="o">=</span> <span class="n">mpak_newton</span><span class="o">.</span><span class="n">get_eigen_jackknife_abs_select</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="n">maxnames</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">largest</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
@@ -661,17 +642,17 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PAKNVSRVHSNGXN_excluded     61.5265241869195
-PAKNVAGRFSTYXN_excluded     61.6004696183771
-PAKNYGDPFCSTXN_excluded     61.6900264682222
-PAKNVSRVGOVSXN_excluded     61.7034544680037
-PAKNECONGOVTXN_excluded     61.7346756649268
-ALL                         63.2947725491846
-PAKNEIMPGNFSCN_excluded     63.3341848033622
-PAKPSTAR_excluded           63.4327865996856
-PAKNEGDETTOTKN_excluded     63.4590279247486
-PAKNECONPRVTXN_excluded     63.4720029895073
-PAKRECOVINVESTKN_excluded   64.2947725282632
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PAKNVSRVHSNGXN_excluded     61.5265245975476
+PAKNVAGRFSTYXN_excluded     61.6004700079127
+PAKNYGDPFCSTXN_excluded     61.6900269076541
+PAKNVSRVGOVSXN_excluded     61.7034548559590
+PAKNECONGOVTXN_excluded     61.7346760514066
+ALL                         63.2947729223428
+PAKNEIMPGNFSCN_excluded     63.3341851801028
+PAKPSTAR_excluded           63.4327869790214
+PAKNEGDETTOTKN_excluded     63.4590280271869
+PAKNECONPRVTXN_excluded     63.4720036692921
+PAKRECOVINVESTKN_excluded   64.2947729299690
 dtype: float64
 </pre></div>
 </div>
@@ -681,7 +662,7 @@ dtype: float64
 </section>
 </section>
 <section id="next-step-modify-an-equation">
-<h2><span class="section-number">2.5. </span>Next step, modify an equation<a class="headerlink" href="#next-step-modify-an-equation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4. </span>Next step, modify an equation<a class="headerlink" href="#next-step-modify-an-equation" title="Permalink to this headline">#</a></h2>
 <p>Ideas please</p>
 </section>
 </section>
@@ -753,20 +734,19 @@ dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization-of-modelflow-environment">2.1. Initialization of modelflow environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">2.2. Load a pre-existing model, data and descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-newton-diff">2.3. the method .newton_diff()</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-eigenvalues-method">2.3.1. .get_eigenvalues method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolating-potentially-problematic-eigenvalues">2.3.2. Isolating potentially problematic eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">2.1. Load a pre-existing model, data and descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-newton-diff">2.2. the method .newton_diff()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-eigenvalues-method">2.2.1. .get_eigenvalues method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolating-potentially-problematic-eigenvalues">2.2.2. Isolating potentially problematic eigenvalues</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jackknife-resampeling">2.4. Jackknife resampeling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-largest-eigenvalue-from-dropping-equations">2.4.1. Impact on the largest eigenvalue from dropping equations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-20-largest-eigenvalue-from-dropping-equations">2.4.2. Impact on the 20 largest eigenvalue from dropping equations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-100-largest-eigenvalue-from-dropping-equations">2.4.3. Impact on the 100 largest eigenvalue from dropping equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jackknife-resampeling">2.3. Jackknife resampeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-largest-eigenvalue-from-dropping-equations">2.3.1. Impact on the largest eigenvalue from dropping equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-20-largest-eigenvalue-from-dropping-equations">2.3.2. Impact on the 20 largest eigenvalue from dropping equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-the-100-largest-eigenvalue-from-dropping-equations">2.3.3. Impact on the 100 largest eigenvalue from dropping equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step-modify-an-equation">2.5. Next step, modify an equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step-modify-an-equation">2.4. Next step, modify an equation</a></li>
 </ul>
   </nav></div>
 

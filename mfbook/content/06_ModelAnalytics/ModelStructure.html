@@ -155,14 +155,15 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">2.2. Modelflow and the MFMod models of the World Bank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Acknowledgements.html">2. Acknowledgements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">4.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
 </ul>
 </li>
 </ul>
@@ -171,8 +172,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">4. Modelflow extensions to pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">4.6. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Jupyter%20notebook%20setup.html">4. Jupyter notebook set up</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">5. Update and transform Pandas dataframes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">5.2. <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>  Return an updated dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">5.3. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> Returns a transformed dataframe</a></li>
 </ul>
 </li>
 </ul>
@@ -434,9 +437,7 @@ document.write(`
 <h2><span class="section-number">1.1. </span>Setting up the python environment and loading a pre-exisitng model<a class="headerlink" href="#setting-up-the-python-environment-and-loading-a-pre-exisitng-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span>
-
-<span class="n">mpak</span><span class="p">,</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">,</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">mpak</span><span class="o">.</span><span class="n">model_description</span><span class="o">=</span><span class="s2">&quot;World Bank climate aware model of Pakistan as described in Burns et al. (2019)&quot;</span>
 </pre></div>
@@ -514,7 +515,7 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bc98a26300dcead40343b8daae94ce827848fbebee2ea2625c0a5cb367d05fd3.png" src="../../_images/bc98a26300dcead40343b8daae94ce827848fbebee2ea2625c0a5cb367d05fd3.png" />
+<img alt="../../_images/251ab7fe3adfcac3e7d6a175ab025d76866e500c6f761c4041b3388d07876ab3.png" src="../../_images/251ab7fe3adfcac3e7d6a175ab025d76866e500c6f761c4041b3388d07876ab3.png" />
 </div>
 </div>
 <span class="target" id="index-33"></span><span class="target" id="index-34"></span><span class="target" id="index-35"></span></section>
@@ -558,7 +559,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6b25c5c419e671d84bf9b27946eb04ab7cbdaef322248b3a5129f6de51416179.png" src="../../_images/6b25c5c419e671d84bf9b27946eb04ab7cbdaef322248b3a5129f6de51416179.png" />
+<img alt="../../_images/43374d85376f20474e5b980df4dd655a0e4381fe40175215c5d480d19077138a.png" src="../../_images/43374d85376f20474e5b980df4dd655a0e4381fe40175215c5d480d19077138a.png" />
 </div>
 </div>
 <p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and reveals the relative importance of each variable in the change of the dependent variable.</p>
@@ -582,7 +583,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d181499adb4c6baeff5aa3687647f58ef8ccca4b337bb030f538b8ca5d10b91b.png" src="../../_images/d181499adb4c6baeff5aa3687647f58ef8ccca4b337bb030f538b8ca5d10b91b.png" />
+<img alt="../../_images/d588d437a7a5441d43bf29b1cc53c5eb984bc5d8db6f9749a63cc8919a0db3a0.png" src="../../_images/d588d437a7a5441d43bf29b1cc53c5eb984bc5d8db6f9749a63cc8919a0db3a0.png" />
 </div>
 </div>
 <span class="target" id="index-37"></span><span class="target" id="index-38"></span></section>
@@ -597,7 +598,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/42f1190f5795fcc0239f277a16d2bd6d638df751dc6e83bd37f5b7d48365e40c.png" src="../../_images/42f1190f5795fcc0239f277a16d2bd6d638df751dc6e83bd37f5b7d48365e40c.png" />
+<img alt="../../_images/020b41490108e9fffd10c54d83819edc67f7df9a0e2305aa81c34bbdde68a5fc.png" src="../../_images/020b41490108e9fffd10c54d83819edc67f7df9a0e2305aa81c34bbdde68a5fc.png" />
 </div>
 </div>
 </section>
@@ -611,7 +612,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/78b3a127bc39967e504292ee4382b8e91521169bef03005e4ce1222e200cd7b1.png" src="../../_images/78b3a127bc39967e504292ee4382b8e91521169bef03005e4ce1222e200cd7b1.png" />
+<img alt="../../_images/e87b385a089ab96cfb28ab54a21790de9e4565945243868205e2ae15910a1211.png" src="../../_images/e87b385a089ab96cfb28ab54a21790de9e4565945243868205e2ae15910a1211.png" />
 </div>
 </div>
 </section>
@@ -625,7 +626,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e8915a59e01abac1fba0d9c03c61dc2e1c17f38546dfd47088d8e365f4828f7a.png" src="../../_images/e8915a59e01abac1fba0d9c03c61dc2e1c17f38546dfd47088d8e365f4828f7a.png" />
+<img alt="../../_images/0a83856ca7f6fb8ef1043f2e1aa33a8147caa9651c95b8baea46a030542cd0b6.png" src="../../_images/0a83856ca7f6fb8ef1043f2e1aa33a8147caa9651c95b8baea46a030542cd0b6.png" />
 </div>
 </div>
 <section id="the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output">
@@ -638,7 +639,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0756327522d315334ab6546795f5f8fd26c39949d42708b7855c20ff35ebc76d.png" src="../../_images/0756327522d315334ab6546795f5f8fd26c39949d42708b7855c20ff35ebc76d.png" />
+<img alt="../../_images/2d3664e666bf5816be4ff0720dbfc623b435257cfa8e720b5c906825b2417a81.png" src="../../_images/2d3664e666bf5816be4ff0720dbfc623b435257cfa8e720b5c906825b2417a81.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
@@ -656,7 +657,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f8057e5a510c9801b0ceb0bfad78d8a1e69b9b9570eec68d7374c8c9b4ad80f3.png" src="../../_images/f8057e5a510c9801b0ceb0bfad78d8a1e69b9b9570eec68d7374c8c9b4ad80f3.png" />
+<img alt="../../_images/d943abd3dddd42ee9e60cb9496eecba3395a7b9b2be0c82a747935de81075cfd.png" src="../../_images/d943abd3dddd42ee9e60cb9496eecba3395a7b9b2be0c82a747935de81075cfd.png" />
 </div>
 </div>
 </section>

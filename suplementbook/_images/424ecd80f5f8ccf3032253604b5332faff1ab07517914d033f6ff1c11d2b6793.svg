@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="274pt" viewBox="0.00 0.00 432.00 273.82">
+<g id="graph0" class="graph" transform="scale(0.808913 0.808913) rotate(0) translate(4 334.5)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-334.5 530.05,-334.5 530.05,4 -4,4"/>
+<text text-anchor="middle" x="263.03" y="-7.2" font-family="Times New Roman,serif" font-size="14.00">_LCR_C62</text>
+<!-- _LCR_C59 -->
+<g id="node1" class="node">
+<title>_LCR_C59</title>
+<g id="a_node1"><a xlink:title="Total net outflows
+FRML XX _LCR_C59=_LCR_C39-MIN(_LCR_C55,_LCR_C39)-MIN(_LCR_C53,0.75*MAX(_LCR_C39-_LCR_C55,0)) $">
+<polygon fill="#63b8ff" stroke="black" points="338.2,-154.5 161.6,-154.5 161.6,-118.5 338.2,-118.5 338.2,-154.5"/>
+<text text-anchor="start" x="167.4" y="-131.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C59:Total net outflows</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C62 -->
+<g id="node8" class="node">
+<title>_LCR_C62</title>
+<g id="a_node8"><a xlink:title="LCR
+FRML XX _LCR_C62=_LCR_C25/_LCR_C59 $">
+<polygon fill="red" stroke="black" points="526.05,-181.5 422.2,-181.5 422.2,-145.5 526.05,-145.5 526.05,-181.5"/>
+<text text-anchor="start" x="428" y="-158.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C62:LCR</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C59&#45;&gt;_LCR_C62 -->
+<g id="edge3" class="edge">
+<title>_LCR_C59-&gt;_LCR_C62</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M338.41,-147.13C363.06,-150.13 389.34,-153.32 412.08,-156.08"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="411.58,-159.55 421.92,-157.28 412.42,-152.6 411.58,-159.55"/>
+</a>
+</g>
+</g>
+<!-- _LCR_C55 -->
+<g id="node2" class="node">
+<title>_LCR_C55</title>
+<g id="a_node2"><a xlink:title="_LCR_C55
+FRML XX _LCR_C55=_53_N144 $">
+<polygon fill="#63b8ff" stroke="black" points="77.6,-168.5 0,-168.5 0,-132.5 77.6,-132.5 77.6,-168.5"/>
+<text text-anchor="start" x="5.8" y="-145.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C55:</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C55&#45;&gt;_LCR_C59 -->
+<g id="edge5" class="edge">
+<title>_LCR_C55-&gt;_LCR_C59</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M77.67,-147.96C98.53,-146.57 125.46,-144.76 151.77,-143"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="151.68,-146.52 161.42,-142.36 151.21,-139.53 151.68,-146.52"/>
+</a>
+</g>
+</g>
+<!-- _LCR_C25 -->
+<g id="node3" class="node">
+<title>_LCR_C25</title>
+<g id="a_node3"><a xlink:title="Total Liquid assets after adjustment
+FRML XX _LCR_C25=_LCR_C11+_LCR_C15-MIN(_LCR_C11+_LCR_C15,_LCR_C24) $">
+<polygon fill="#63b8ff" stroke="black" points="386.2,-235.5 113.6,-235.5 113.6,-199.5 386.2,-199.5 386.2,-235.5"/>
+<text text-anchor="start" x="119.4" y="-212.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C25:Total Liquid assets after adjustment</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C25&#45;&gt;_LCR_C62 -->
+<g id="edge1" class="edge">
+<title>_LCR_C25-&gt;_LCR_C62</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M326.76,-199.07C354.64,-192.29 385.83,-184.71 412.23,-178.3"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="412.83,-181.75 421.72,-175.99 411.18,-174.95 412.83,-181.75"/>
+</a>
+</g>
+</g>
+<!-- _LCR_C15 -->
+<g id="node4" class="node">
+<title>_LCR_C15</title>
+<g id="a_node4"><a xlink:title="_LCR_C15
+FRML XX _LCR_C15=SUM_EXCEL(_LCR_C12,_LCR_C13,_LCR_C14) $">
+<polygon fill="#63b8ff" stroke="black" points="77.6,-330.5 0,-330.5 0,-294.5 77.6,-294.5 77.6,-330.5"/>
+<text text-anchor="start" x="5.8" y="-307.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C15:</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C15&#45;&gt;_LCR_C25 -->
+<g id="edge8" class="edge">
+<title>_LCR_C15-&gt;_LCR_C25</title>
+<g id="a_edge8"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M77.67,-295.3C111.88,-279.75 162.44,-256.78 199.76,-239.83"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="200.8,-243.2 208.46,-235.87 197.91,-236.82 200.8,-243.2"/>
+</a>
+</g>
+</g>
+<!-- _LCR_C11 -->
+<g id="node5" class="node">
+<title>_LCR_C11</title>
+<g id="a_node5"><a xlink:title="_LCR_C11
+FRML XX _LCR_C11=SUM_EXCEL(_LCR_C9,_LCR_C10) $">
+<polygon fill="#63b8ff" stroke="black" points="77.6,-276.5 0,-276.5 0,-240.5 77.6,-240.5 77.6,-276.5"/>
+<text text-anchor="start" x="5.8" y="-253.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C11:</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C11&#45;&gt;_LCR_C25 -->
+<g id="edge7" class="edge">
+<title>_LCR_C11-&gt;_LCR_C25</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M77.67,-251.08C96.78,-247.33 121.01,-242.58 145.17,-237.84"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="145.64,-241.31 154.78,-235.96 144.29,-234.45 145.64,-241.31"/>
+</a>
+</g>
+</g>
+<!-- _LCR_C24 -->
+<g id="node6" class="node">
+<title>_LCR_C24</title>
+<g id="a_node6"><a xlink:title="_LCR_C24
+FRML XX _LCR_C24=SUM_EXCEL(_LCR_C20,_LCR_C21,_LCR_C22,_LCR_C23)-MIN(SUM_EXCEL(_LCR_C20,_LCR_C21,_LCR_C22,_LCR_C23),_LCR_C20/0.3,(_LCR_C20+_LCR_C21)/0.6,(_LCR_C20+_LCR_C21+_LCR_C22)/0.85) $">
+<polygon fill="#63b8ff" stroke="black" points="77.6,-222.5 0,-222.5 0,-186.5 77.6,-186.5 77.6,-222.5"/>
+<text text-anchor="start" x="5.8" y="-199.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C24:</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C24&#45;&gt;_LCR_C25 -->
+<g id="edge6" class="edge">
+<title>_LCR_C24-&gt;_LCR_C25</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M77.67,-206.85C85.53,-207.34 94.25,-207.89 103.48,-208.46"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="103.07,-211.94 113.27,-209.07 103.5,-204.95 103.07,-211.94"/>
+</a>
+</g>
+</g>
+<!-- _LCR_C39 -->
+<g id="node7" class="node">
+<title>_LCR_C39</title>
+<g id="a_node7"><a xlink:title="_LCR_C39
+FRML XX _LCR_C39=SUM_EXCEL(_LCR_C28,_LCR_C29,_LCR_C30,_LCR_C31,_LCR_C32,_LCR_C33,_LCR_C34,_LCR_C35,_LCR_C36,_LCR_C37,_LCR_C38) $">
+<polygon fill="#63b8ff" stroke="black" points="77.6,-114.5 0,-114.5 0,-78.5 77.6,-78.5 77.6,-114.5"/>
+<text text-anchor="start" x="5.8" y="-91.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C39:</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C39&#45;&gt;_LCR_C59 -->
+<g id="edge4" class="edge">
+<title>_LCR_C39-&gt;_LCR_C59</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M77.67,-103.74C98.53,-107.73 125.46,-112.89 151.77,-117.92"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="150.94,-121.32 161.42,-119.77 152.25,-114.45 150.94,-121.32"/>
+</a>
+</g>
+</g>
+<!-- _LCR_C53 -->
+<g id="node9" class="node">
+<title>_LCR_C53</title>
+<g id="a_node9"><a xlink:title="_LCR_C53
+FRML XX _LCR_C53=SUM_EXCEL(_LCR_C42,_LCR_C43,_LCR_C44,_LCR_C45,_LCR_C46,_LCR_C47,_LCR_C48,_LCR_C49,_LCR_C50,_LCR_C51,_LCR_C52) $">
+<polygon fill="#63b8ff" stroke="black" points="77.6,-60.5 0,-60.5 0,-24.5 77.6,-24.5 77.6,-60.5"/>
+<text text-anchor="start" x="5.8" y="-37.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">_LCR_C53:</text>
+</a>
+</g>
+</g>
+<!-- _LCR_C53&#45;&gt;_LCR_C59 -->
+<g id="edge2" class="edge">
+<title>_LCR_C53-&gt;_LCR_C59</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M77.67,-59.52C111.77,-74.85 162.12,-97.49 199.4,-114.25"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="197.54,-117.25 208.1,-118.16 200.41,-110.87 197.54,-117.25"/>
+</a>
+</g>
+</g>
+</g>
+</svg>

@@ -155,14 +155,15 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">2.2. Modelflow and the MFMod models of the World Bank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Acknowledgements.html">2. Acknowledgements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">4.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
 </ul>
 </li>
 </ul>
@@ -171,8 +172,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">4. Modelflow extensions to pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">4.6. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Jupyter%20notebook%20setup.html">4. Jupyter notebook set up</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">5. Update and transform Pandas dataframes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">5.2. <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>  Return an updated dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">5.3. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> Returns a transformed dataframe</a></li>
 </ul>
 </li>
 </ul>
@@ -396,21 +399,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">5.1. Setting up the environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">5.2. Load a pre-existing model, data and descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-policy-problem">5.3. The policy problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-variable-descriptions">5.4. Add variable descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-impact-of-imposing-a-carbon-price">5.5. Simulating the impact of imposing a carbon price</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-model">5.5.1. Solve the model</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-results">5.5.1.1. Examining the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">5.1. Load a pre-existing model, data and descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-policy-problem">5.2. The policy problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-variable-descriptions">5.3. Add variable descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-impact-of-imposing-a-carbon-price">5.4. Simulating the impact of imposing a carbon price</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-model">5.4.1. Solve the model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-results">5.4.1.1. Examining the results</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-thinking-the-shock-as-an-ex-ante-real-shock">5.6. Re-thinking the shock as an ex-ante real shock</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-model-modifying-and-or-adding-equations">5.7. Changing the model – modifying and or adding equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-revised-model">5.7.1. Solving the revised model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">5.7.2. Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-thinking-the-shock-as-an-ex-ante-real-shock">5.5. Re-thinking the shock as an ex-ante real shock</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-model-modifying-and-or-adding-equations">5.6. Changing the model – modifying and or adding equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-revised-model">5.6.1. Solving the revised model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">5.6.2. Results</a></li>
 </ul>
 </li>
 </ul>
@@ -424,42 +426,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="more-complex-scenarios">
+  <section class="tex2jax_ignore mathjax_ignore" id="more-complex-scenarios">
 <h1><span class="section-number">5. </span>More complex scenarios<a class="headerlink" href="#more-complex-scenarios" title="Permalink to this headline">#</a></h1>
 <p>The preceding chapter introduced four different ways of preparing a solution and the forms the backbone of running simulations on World Bank models in <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>. This chapter builds on those examples and delves into some of the challenges involved in translating a real-world policy challenge into the model-world and then back again.</p>
 <p>The particular problem to be examined is in the introduction of a Carbon Tax. The model used and the example presented are both taken from the model of Pakistan presented here: <span id="id1"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>.</p>
-<section id="setting-up-the-environment">
-<h2><span class="section-number">5.1. </span>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h2>
-<p>As always the modelflow and other python libraries that are to be used must be imported into the current session.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span> 
-<span class="n">model</span><span class="o">.</span><span class="n">widescreen</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">scroll_off</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <style>
-            div#notebook-container    { width: 95%; }
-            div#menubar-container     { width: 65%; }
-            div#maintoolbar-container { width: 99%; }
-        </style>
-        </div><script type="application/javascript">
-                    IPython.OutputArea.prototype._should_scroll = function(lines){
-                        return false;
-                    }
-                </script></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pandas options ot make output more eligeble: </span>
@@ -469,9 +439,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
 <section id="load-a-pre-existing-model-data-and-descriptions">
-<h2><span class="section-number">5.2. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
 <p>Load the Pakistan model, which is comprised of the model object, its estimated equations and the data.  The <code class="docutils literal notranslate"><span class="pre">pcim</span></code> file was created by the World Bank from the original EViews model used in the paper <span id="id2"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -487,7 +456,7 @@ document.write(`
 </div>
 <span class="target" id="index-0"></span></section>
 <section id="the-policy-problem">
-<span id="index-1"></span><h2><span class="section-number">5.3. </span>The policy problem<a class="headerlink" href="#the-policy-problem" title="Permalink to this headline">#</a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.2. </span>The policy problem<a class="headerlink" href="#the-policy-problem" title="Permalink to this headline">#</a></h2>
 <p>The objective of this chapter is to produce a simulation of the economic and climate effects of the introduction of a carbon tax in Pakistan.</p>
 <p>The variable <code class="docutils literal notranslate"><span class="pre">mpak</span></code> loaded above contains the model instance, the variables, equations and the data for the model.  On load the model was solved, and the results of that initial solve was assigned to the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <code class="docutils literal notranslate"><span class="pre">baseline</span></code>.</p>
 <p>The Pakistan model contains three carbon tax variables:</p>
@@ -542,7 +511,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 <span class="target" id="index-4"></span></section>
 <section id="add-variable-descriptions">
-<span id="index-5"></span><h2><span class="section-number">5.4. </span>Add variable descriptions<a class="headerlink" href="#add-variable-descriptions" title="Permalink to this headline">#</a></h2>
+<span id="index-5"></span><h2><span class="section-number">5.3. </span>Add variable descriptions<a class="headerlink" href="#add-variable-descriptions" title="Permalink to this headline">#</a></h2>
 <p>A modelflow model imported from EViews will inherit the variable descriptors coming from Eviews.  The variable descriptors are stored in a dictionary named: <code class="docutils literal notranslate"><span class="pre">.var_description</span></code>. Not all EViews variables will necessarily have a description so such descriptions can be added to the existing as shown below.</p>
 <p>As coded, the call</p>
 <p><code class="docutils literal notranslate"><span class="pre">mpak.var_description</span> <span class="pre">=</span> <span class="pre">{**mpak.var_description,**extra_description}</span></code></p>
@@ -571,7 +540,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </section>
 <section id="simulating-the-impact-of-imposing-a-carbon-price">
-<h2><span class="section-number">5.5. </span>Simulating the impact of imposing a carbon price<a class="headerlink" href="#simulating-the-impact-of-imposing-a-carbon-price" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.4. </span>Simulating the impact of imposing a carbon price<a class="headerlink" href="#simulating-the-impact-of-imposing-a-carbon-price" title="Permalink to this headline">#</a></h2>
 <p>To run a simulation, the following steps must invariably be followed.</p>
 <ol class="arabic simple">
 <li><p>Create a new DataFrame, typically a copy of an existing one.</p></li>
@@ -599,7 +568,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 <span class="target" id="index-8"></span><span class="target" id="index-9"></span><section id="solve-the-model">
-<span id="index-10"></span><h3><span class="section-number">5.5.1. </span>Solve the model<a class="headerlink" href="#solve-the-model" title="Permalink to this headline">#</a></h3>
+<span id="index-10"></span><h3><span class="section-number">5.4.1. </span>Solve the model<a class="headerlink" href="#solve-the-model" title="Permalink to this headline">#</a></h3>
 <p>Solving the model is as simple as calling the mpak function with the altered <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and assigning the results to dataframe (<code class="docutils literal notranslate"><span class="pre">resultsdf</span></code> in this instance).  The <code class="docutils literal notranslate"><span class="pre">keep</span></code> option causes a copy of the dataframe to be stores within the mpak model object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -609,7 +578,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 <section id="examining-the-results">
-<h4><span class="section-number">5.5.1.1. </span>Examining the results<a class="headerlink" href="#examining-the-results" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">5.4.1.1. </span>Examining the results<a class="headerlink" href="#examining-the-results" title="Permalink to this headline">#</a></h4>
 <p>Every time the model is solved the results of the simulation are assigned to a variable on the left hands side of the solve call (<code class="docutils literal notranslate"><span class="pre">resultdf</span></code> in the example above.  The results of the most recent scenario are also always stored in the <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that is part of the properties of any <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> model. the <code class="docutils literal notranslate"><span class="pre">basedf</span></code> property of <code class="docutils literal notranslate"><span class="pre">mpak</span></code> (an instantiation of a modelflow model object) contains a copy of the initial DataFrame from which the model was built.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> <code class="docutils literal notranslate"><span class="pre">baseline</span></code> and <code class="docutils literal notranslate"><span class="pre">resultsdf</span></code> were created when the model was solved the model (initially on load) and now with the simulation.  Currently their contents are the same as, but separate from, the contents of <code class="docutils literal notranslate"><span class="pre">basedf</span></code> and <code class="docutils literal notranslate"><span class="pre">lastdf</span></code>.</p>
 <div class="admonition note">
@@ -667,7 +636,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </section>
 </section>
 <section id="re-thinking-the-shock-as-an-ex-ante-real-shock">
-<h2><span class="section-number">5.6. </span>Re-thinking the shock as an ex-ante real shock<a class="headerlink" href="#re-thinking-the-shock-as-an-ex-ante-real-shock" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.5. </span>Re-thinking the shock as an ex-ante real shock<a class="headerlink" href="#re-thinking-the-shock-as-an-ex-ante-real-shock" title="Permalink to this headline">#</a></h2>
 <p>Inflation in Pakistan is relatively high so a $30 shock quickly loses its relative price effect. Increasing the nominal value of the Carbon Tax by the amount of domestic inflation (converted into USD each year) would resolve the problem.</p>
 <p>Below a new dataframe is created as a copy of the baseline and the three Carbon taxes are first set to $30 in 2025 and then grown at the rate of domestic inflation to keep the relative price of the Carbon Tax constant.</p>
 <p>Finally the model is re-solved.</p>
@@ -748,7 +717,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 <span class="target" id="index-18"></span><span class="target" id="index-19"></span><span class="target" id="index-20"></span></section>
 <section id="changing-the-model-modifying-and-or-adding-equations">
-<span id="index-21"></span><h2><span class="section-number">5.7. </span>Changing the model – modifying and or adding equations<a class="headerlink" href="#changing-the-model-modifying-and-or-adding-equations" title="Permalink to this headline">#</a></h2>
+<span id="index-21"></span><h2><span class="section-number">5.6. </span>Changing the model – modifying and or adding equations<a class="headerlink" href="#changing-the-model-modifying-and-or-adding-equations" title="Permalink to this headline">#</a></h2>
 <p>To endogenize the carbon price, an equation for each carbon price has to be added to the model.   This cane be done with the <code class="docutils literal notranslate"><span class="pre">.equpdate()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -965,7 +934,7 @@ PAKGGREVCO2OER
 </div></div></div>
 </div>
 <section id="solving-the-revised-model">
-<h3><span class="section-number">5.7.1. </span>Solving the revised model<a class="headerlink" href="#solving-the-revised-model" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.6.1. </span>Solving the revised model<a class="headerlink" href="#solving-the-revised-model" title="Permalink to this headline">#</a></h3>
 <p>With the new model generated, it can now be solved with the real tax rate endogenized in the forecast period.  This involves three steps.</p>
 <ol class="arabic simple">
 <li><p>Set the nominal tax rate to 30 in 2025</p></li>
@@ -1244,7 +1213,7 @@ PAKGGREVCO2OER
 </div>
 </section>
 <section id="results">
-<h3><span class="section-number">5.7.2. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.6.2. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h3>
 <p>The results from the simulation with the Carbon Tax rate endogenized so as to maintain its real value over time, are broadly consistent with the results from the ex ante real scenario performed above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1368,7 +1337,7 @@ PAKGGREVCO2OER
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/77f6e939c49de95ffc8ca7d08052aca501a7d8ecb80525388398012bb0751897.png" src="../../_images/77f6e939c49de95ffc8ca7d08052aca501a7d8ecb80525388398012bb0751897.png" />
+<img alt="../../_images/539c7f0f0f04952ecb4e1f9cf7148d7db8368d33cf1946039f5fe83e7fad12b3.png" src="../../_images/539c7f0f0f04952ecb4e1f9cf7148d7db8368d33cf1946039f5fe83e7fad12b3.png" />
 </div>
 </div>
 <p>The modified model, which preserves the real value of the carbon tax has a permanent and substantive negative effect on emissions. The impact is not at an unchanging level, reflecting in part adaptation within the economy. Of particular import is what is being done with the revenues from the Carbon tax. As the structure of GDP (shifts to less carbon intensive activities) carbon tax revenues fall even as the Carbon Tax rate rises. Note, the percent deviation of emissions tends to decrease over time in this scenario principally because the level of activity (GDP) is higher with the Carbon Tax than without it. As a result,  emissions are higher than they would have been had GDP remained unchanged. For the Pakistan model, the positive impact of the Carbon tax is mainly explained by co-benefits, notably reduced reliance on more distortive taxes such as payroll taxes and because of reductions in informality (see <span id="id3">Burns <em>et al.</em> [<a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">2021</a>]</span> for more details how these effects operate in the Pakistan model).</p>
@@ -1443,21 +1412,20 @@ PAKGGREVCO2OER
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">5.1. Setting up the environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">5.2. Load a pre-existing model, data and descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-policy-problem">5.3. The policy problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-variable-descriptions">5.4. Add variable descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-impact-of-imposing-a-carbon-price">5.5. Simulating the impact of imposing a carbon price</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-model">5.5.1. Solve the model</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-results">5.5.1.1. Examining the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-pre-existing-model-data-and-descriptions">5.1. Load a pre-existing model, data and descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-policy-problem">5.2. The policy problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-variable-descriptions">5.3. Add variable descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-impact-of-imposing-a-carbon-price">5.4. Simulating the impact of imposing a carbon price</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-model">5.4.1. Solve the model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-results">5.4.1.1. Examining the results</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-thinking-the-shock-as-an-ex-ante-real-shock">5.6. Re-thinking the shock as an ex-ante real shock</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-model-modifying-and-or-adding-equations">5.7. Changing the model – modifying and or adding equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-revised-model">5.7.1. Solving the revised model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">5.7.2. Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#re-thinking-the-shock-as-an-ex-ante-real-shock">5.5. Re-thinking the shock as an ex-ante real shock</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-model-modifying-and-or-adding-equations">5.6. Changing the model – modifying and or adding equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-revised-model">5.6.1. Solving the revised model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">5.6.2. Results</a></li>
 </ul>
 </li>
 </ul>

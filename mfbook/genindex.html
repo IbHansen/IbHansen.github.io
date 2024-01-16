@@ -149,14 +149,15 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="content/02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/02_MacrostructuralModels/MFModAndModelFlow.html">2.2. Modelflow and the MFMod models of the World Bank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/01_Introduction/Acknowledgements.html">2. Acknowledgements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="content/03_Installation/InstallingModelFlow.html">3. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/03_Installation/InstallingModelFlowpackage.html">4.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
 </ul>
 </li>
 </ul>
@@ -165,8 +166,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="content/04_PythonEssentials/UpdateCommand.html">4. Modelflow extensions to pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/mfcalc.html">4.6. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> an extension of standard Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/Jupyter%20notebook%20setup.html">4. Jupyter notebook set up</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html">5. Update and transform Pandas dataframes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/UpdateCommand.html">5.2. <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>  Return an updated dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/mfcalc.html">5.3. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> Returns a transformed dataframe</a></li>
 </ul>
 </li>
 </ul>
@@ -438,7 +441,7 @@ document.write(`
     Boxes
 
       <ul>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-18">Box   2. Time scope of .upd() commands</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-7">Box   2. Time scope of .upd() commands</a>
 </li>
       </ul></li>
   </ul></td>
@@ -462,7 +465,7 @@ document.write(`
     Compare solutions
 
       <ul>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-23">keep_plot options -- keep_switch -- specify the kept scenarios to be displayed</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-25">keep_plot options -- keep_switch -- specify the kept scenarios to be displayed</a>
 </li>
       </ul></li>
   </ul></td>
@@ -500,49 +503,43 @@ document.write(`
 </li>
         <li><a href="content/04_PythonEssentials/mfcalc.html#index-4">.mfcalc()showeq option</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-21">.upd() % operator</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-9">.upd() % operator</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-20">.upd() + operator</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-8">.upd() + operator</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-23">.upd() +GROWTH operator</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-11">.upd() +GROWTH operator</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-19">.upd() = operator</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-12">.upd() =diff operator</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-24">.upd() =diff operator</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-10">.upd() =GROWTH operator</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-22">.upd() =GROWTH operator</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-2">.upd() examples</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-12">.upd() a Modelflow extension to pandas DataFrame</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-0">.upd() extension to update dataframes</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-13">.upd() examples</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-15">.upd() keep_growth KG, NKG  option</a>, <a href="content/04_PythonEssentials/UpdateCommand.html#index-17">[1]</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-27">.upd() keep_growth KG, NKG  option</a>, <a href="content/04_PythonEssentials/UpdateCommand.html#index-29">[1]</a>
-</li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-31">.upd() lprint option</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-19">.upd() lprint option</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-39">.upd() method KG Option</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-38">.upd() method the Keep_Growth option</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-0">.upd() modelflow extension to pandass</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-4">.upd() multiple lines</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-10">.upd() modelflow method</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-1">.upd() operators</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-15">.upd() multiple lines</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-14">.upd() options</a>, <a href="content/04_PythonEssentials/UpdateCommand.html#index-16">[1]</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-11">.upd() operators</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-18">.upd() scale option</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-26">.upd() options</a>, <a href="content/04_PythonEssentials/UpdateCommand.html#index-28">[1]</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-5">.upd() specific time periods</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-30">.upd() scale option</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-6">.upd() Time scope of commands</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-16">.upd() specific time periods</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-3">.upd() to create new variable</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-17">.upd() Time scope of commands</a>
-</li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-14">.upd() to create new variable</a>
-</li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-25">.upd() update several variables simultaneously</a>
+        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-13">.upd() update several variables simultaneously</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-42">.upd(): example of the KG (KEEP_GROWTH) in an exogenous simulation</a>
 </li>
@@ -550,15 +547,19 @@ document.write(`
 </li>
         <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-9">Dated Indexes</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-7">leads and lags in Modelflow</a>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-8">leads and lags in Modelflow</a>
 </li>
         <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-13">List columns</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-3">Modelflow naming conventions</a>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-1">Modelflow extensions</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-1">Modelflow specific features</a>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-4">Modelflow naming conventions</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-6">Modelflow time index</a>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-2">Modelflow specific features</a>
+</li>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-7">Modelflow time index</a>
+</li>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-0">Modelflow use</a>
 </li>
         <li><a href="content/04_PythonEssentials/PandasDataFrames.html#index-12">Revise existing series or column</a>
 </li>
@@ -596,12 +597,19 @@ document.write(`
 </li>
       <li><a href="content/07_MoreFeatures/EigenValues.html#index-2">eigenvalues</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-4">Equation dependencies</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="content/05_WBModels/WorkingwWBModels.html#index-3">Error Correction models and specification</a>
 </li>
+      <li>
+    executing in
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/Jupyter%20notebook%20setup.html#index-1">Google Colab</a>
+</li>
+      </ul></li>
       <li><a href="content/02_MacrostructuralModels/MacroStructuralModels.html#index-1">Exogenous variables</a>, <a href="content/02_MacrostructuralModels/MacroStructuralModels.html#index-4">[1]</a>
 </li>
   </ul></td>
@@ -631,6 +639,15 @@ document.write(`
         <li><a href="content/07_MoreFeatures/Targeting.html#index-4">Defining Targets</a>
 </li>
         <li><a href="content/07_MoreFeatures/Targeting.html#index-8">solve for instruments</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Google Colab
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/Jupyter%20notebook%20setup.html#index-1">executing in</a>
 </li>
       </ul></li>
   </ul></td>
@@ -796,6 +813,15 @@ document.write(`
 </li>
       </ul></li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    jupyter notebook
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/Jupyter%20notebook%20setup.html#index-0">modelflow initialization</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="K">K</h2>
@@ -812,40 +838,65 @@ document.write(`
     Keep_plot
 
       <ul>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-20">examples - showtype=diffpct</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-22">examples - showtype=diffpct</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-17">examples - showtype=growth</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-19">examples - showtype=growth</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-14">examples - the diff option</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-16">examples - the diff option</a>
+</li>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-12">options</a>
+</li>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-13">savefig</a>
 </li>
       </ul></li>
-      <li><a href="content/05_WBModels/ReportWriting.html#index-11">Keep_plot options</a>
-</li>
       <li>
     keep_plot options
 
       <ul>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-24">keep_switch -- specify the kept scenarios to be displayed</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-26">keep_switch -- specify the kept scenarios to be displayed</a>
+</li>
+      </ul></li>
+      <li>
+    keep_plot_multi
+
+      <ul>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-38">comparison of scenario results impacts on multiple series</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
-    keep_plot_multi
+    keep_show()
 
       <ul>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-36">comparison of scenario results impacts on multiple series</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-42">interactive keep_plot</a>
+</li>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-43">save chart to file</a>
+</li>
+      </ul></li>
+      <li>
+    Keep_solution
+
+      <ul>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-9">keep_variables</a>
 </li>
       </ul></li>
       <li><a href="content/05_WBModels/ReportWriting.html#index-8">Keep_solution dictionary</a>
 </li>
-      <li><a href="content/05_WBModels/ReportWriting.html#index-21">keep_solutions.keys()</a>
+      <li><a href="content/05_WBModels/ReportWriting.html#index-23">keep_solutions.keys()</a>
 </li>
       <li>
     keep_switch
 
       <ul>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-25">selection using wildcard</a>, <a href="content/05_WBModels/ReportWriting.html#index-28">[1]</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-27">selection using wildcard</a>, <a href="content/05_WBModels/ReportWriting.html#index-30">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    keep_variables
+
+      <ul>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-9">Keep_solution</a>
 </li>
       </ul></li>
       <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-3">Kinds of simulation</a>
@@ -856,9 +907,9 @@ document.write(`
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-9">Lags in modelflow</a>
+      <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-10">Lags in modelflow</a>
 </li>
-      <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-8">Leads in modelflow</a>
+      <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-9">Leads in modelflow</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -895,9 +946,9 @@ document.write(`
       <li><a href="content/07_MoreFeatures/GettingHelp.html#index-9">Mathplotlib</a>
 
       <ul>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-37">plots - Delete figure from grid of charts</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-39">plots - Delete figure from grid of charts</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-39">revise charts after built</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-41">revise charts after built</a>
 </li>
       </ul></li>
       <li><a href="content/04_PythonEssentials/mfcalc.html#index-3">mfcalc() grow at specific growth rate</a>
@@ -1049,15 +1100,15 @@ document.write(`
       <ul>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-7">.upd() used to initialize shock dataframe</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-2">Allowed column names</a>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-3">Allowed column names</a>
 </li>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-4">Dataframe - variable descriptions</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-4">DataFrame naming conventions</a>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-5">DataFrame naming conventions</a>
 </li>
         <li><a href="content/05_WBModels/WorkingwWBModels.html#index-0">information about equations</a>
 </li>
-        <li><a href="content/04_PythonEssentials/UpdateCommand.html#index-5">time index</a>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-6">time index</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-2">types of simulation</a>
 </li>
@@ -1075,8 +1126,29 @@ document.write(`
       </ul></li>
       <li><a href="content/07_MoreFeatures/EigenValues.html#index-3">modelflow eigenvalues</a>
 </li>
+      <li>
+    Modelflow extensions
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-1">DataFrame</a>
+</li>
+      </ul></li>
       <li><a href="content/02_MacrostructuralModels/MFModAndModelFlow.html#index-0">Modelflow History</a>
 </li>
+      <li>
+    modelflow initialization
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/Jupyter%20notebook%20setup.html#index-0">jupyter notebook</a>
+</li>
+      </ul></li>
+      <li>
+    Modelflow use
+
+      <ul>
+        <li><a href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html#index-0">DataFrame</a>
+</li>
+      </ul></li>
       <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-1">More complex scenarios  - carbon tax</a>
 </li>
   </ul></td>
@@ -1149,9 +1221,9 @@ document.write(`
     Report-writing
 
       <ul>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-35">.keep_plot_multi - comparison of scenario results impacts on multiple series</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-37">.keep_plot_multi - comparison of scenario results impacts on multiple series</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-38">Delete figure from grid of charts (mathplotlib functionality)</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-40">Delete figure from grid of charts (mathplotlib functionality)</a>
 </li>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-13">difpctlevel</a>
 </li>
@@ -1226,9 +1298,9 @@ document.write(`
 </li>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-20">changing equations</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-34">Compare solutions - comparison of scenario results impacts on multiple series</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-36">Compare solutions - comparison of scenario results impacts on multiple series</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-27">Compare solutions - keep_switch with wildcard</a>, <a href="content/05_WBModels/ReportWriting.html#index-30">[1]</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-29">Compare solutions - keep_switch with wildcard</a>, <a href="content/05_WBModels/ReportWriting.html#index-32">[1]</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-5">Equation impact decomposition</a>
 </li>
@@ -1248,17 +1320,17 @@ document.write(`
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-53">Impact decomposition summed over all years</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-18">Keep_plot examples - showtype=diffpct</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-20">Keep_plot examples - showtype=diffpct</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-15">Keep_plot examples - showtype=growth</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-17">Keep_plot examples - showtype=growth</a>
 </li>
         <li><a href="content/05_WBModels/ReportWriting.html#index-2">Report writing</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-9">report-writing - keep_plot options</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-10">report-writing - keep_plot options</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-7">Report-writing - the Keep_plot method</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-7">Report-writing - the keep_plot method</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-33">Report-writing keep_plot_multi - comparison of scenario results impacts on multiple series</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-35">Report-writing keep_plot_multi - comparison of scenario results impacts on multiple series</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-23">Results - display results as percent change from baseline</a>
 </li>
@@ -1295,7 +1367,7 @@ document.write(`
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="content/05_WBModels/ReportWriting.html#index-12">Scenarios: Keep_plot examples - the diff option</a>
+      <li><a href="content/05_WBModels/ReportWriting.html#index-14">Scenarios: Keep_plot examples - the diff option</a>
 </li>
       <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-13">Scenarios: Print scenario results</a>
 </li>
@@ -1356,33 +1428,33 @@ document.write(`
 </li>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-19">changing equations</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-32">Compare solutions - comparison of scenario results impacts on multiple series</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-34">Compare solutions - comparison of scenario results impacts on multiple series</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-26">Compare solutions - keep_switch with wildcard</a>, <a href="content/05_WBModels/ReportWriting.html#index-29">[1]</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-28">Compare solutions - keep_switch with wildcard</a>, <a href="content/05_WBModels/ReportWriting.html#index-31">[1]</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-45">Endogenous simulation</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-25">Exogenous shocks</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-19">Keep_plot examples - showtype=diffpct</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-21">Keep_plot examples - showtype=diffpct</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-16">Keep_plot examples - showtype=growth</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-18">Keep_plot examples - showtype=growth</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-22">keep_plot options -- keep_switch -- specify the kept scenarios to be displayed</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-24">keep_plot options -- keep_switch -- specify the kept scenarios to be displayed</a>
 </li>
         <li><a href="content/05_WBModels/ReportWriting.html#index-1">Report writing</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-10">report-writing - keep_plot options</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-11">report-writing - keep_plot options</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-6">Report-writing - the Keep_plot method</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-6">Report-writing - the keep_plot method</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-31">Report-writing keep_plot_multi - comparison of scenario results impacts on multiple series</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-33">Report-writing keep_plot_multi - comparison of scenario results impacts on multiple series</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-43">temporarily exogenize endogenous variable</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-34">Temporarily exognization of a behavioural equation</a>
 </li>
-        <li><a href="content/05_WBModels/ReportWriting.html#index-3">the Keep option</a>
+        <li><a href="content/05_WBModels/ReportWriting.html#index-3">the keep option</a>
 </li>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-16">use .mfcalc() to initialize shocked dataframe</a>
 </li>
@@ -1393,7 +1465,7 @@ document.write(`
       </ul></li>
       <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-37">Simulations: Exogenous shock over a limited time period</a>
 </li>
-      <li><a href="content/05_WBModels/ReportWriting.html#index-13">Simulations: Keep_plot examples - the diff option</a>
+      <li><a href="content/05_WBModels/ReportWriting.html#index-15">Simulations: Keep_plot examples - the diff option</a>
 </li>
       <li><a href="content/06_ModelAnalytics/ModelStructure.html#index-29">Simultaneous equation block</a>
 </li>
