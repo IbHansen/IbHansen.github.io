@@ -15,18 +15,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# pandas options ot make output more eligeble: 
-pd.set_option('display.width', 100)
-pd.set_option('display.float_format', '{:.2f}'.format)
+
+#Solve the model for the new baseline
+res = mpakreal(baseline_real,2021,2100,alfa=0.5,keep='Baseline - adjusted model') 
+
+mpakreal['PAKNYGDPMKTPKN PAKNECONPRVTXN PAKGGBALOVRL PAKGGREVCO2CER PAKCCEMISCO2TKN'].difpctlevel.mul100.rename().df
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mNameError[0m                                 Traceback (most recent call last)
-Cell [1;32mIn[4], line 2[0m
-[0;32m      1[0m [38;5;66;03m# pandas options ot make output more eligeble: [39;00m
-[1;32m----> 2[0m [43mpd[49m[38;5;241m.[39mset_option([38;5;124m'[39m[38;5;124mdisplay.width[39m[38;5;124m'[39m, [38;5;241m100[39m)
-[0;32m      3[0m pd[38;5;241m.[39mset_option([38;5;124m'[39m[38;5;124mdisplay.float_format[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;132;01m{:.2f}[39;00m[38;5;124m'[39m[38;5;241m.[39mformat)
+Cell [1;32mIn[21], line 2[0m
+[0;32m      1[0m [38;5;66;03m#Solve the model for the new baseline[39;00m
+[1;32m----> 2[0m res [38;5;241m=[39m mpakreal([43mbaseline_real[49m,[38;5;241m2021[39m,[38;5;241m2100[39m,alfa[38;5;241m=[39m[38;5;241m0.5[39m,keep[38;5;241m=[39m[38;5;124m'[39m[38;5;124mBaseline - adjusted model[39m[38;5;124m'[39m) 
+[0;32m      4[0m mpakreal[[38;5;124m'[39m[38;5;124mPAKNYGDPMKTPKN PAKNECONPRVTXN PAKGGBALOVRL PAKGGREVCO2CER PAKCCEMISCO2TKN[39m[38;5;124m'[39m][38;5;241m.[39mdifpctlevel[38;5;241m.[39mmul100[38;5;241m.[39mrename()[38;5;241m.[39mdf
 
-[1;31mNameError[0m: name 'pd' is not defined
+[1;31mNameError[0m: name 'baseline_real' is not defined
 

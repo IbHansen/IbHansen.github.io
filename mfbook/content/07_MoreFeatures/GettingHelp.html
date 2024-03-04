@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Modelflow methods reference" href="ModelFlowCommandReference.html" />
-    <link rel="prev" title="2. Analyzing the impact of a shock" href="../06_ModelAnalytics/AttributionSomeFeatures.html" />
+    <link rel="prev" title="2. Which equations matters for eigenvalues and thus the dynamic behavior" href="Sources_of_instability.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -157,12 +157,9 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Acknowledgements.html">2. Acknowledgements</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">4.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
@@ -174,36 +171,39 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Jupyter%20notebook%20setup.html">4. Jupyter notebook set up</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">5. Update and transform Pandas dataframes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">5.2. <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>  Return an updated dataframe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">5.3. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> Returns a transformed dataframe</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method. Return a dataframe with updated variables.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with a World Bank Model under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="System_dynamic_and_EigenValues.html">1. Model eigenvalues and impulse response</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sources_of_instability.html">2. Which equations matters for eigenvalues and thus the dynamic behavior</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="stability%20introduction.html">1. Model stability, some background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -407,9 +407,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">1.1.3. Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">1.1.4. Pandas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathplotlib">1.1.5. Mathplotlib</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operator">1.1.6. the ? operator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-13">1.1.7. The ?? operator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-method">1.1.8. help() method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#help-on-modelflow">1.2. Help on modelflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-modelflow-workspace">1.2.1. Setting up modelflow workspace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-information-about-a-functions-options-the-operator">1.2.2. Get information about a functions options:  the ? operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operator">1.2.3. The ?? operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-method">1.2.4. help() method</a></li>
 </ul>
 </li>
 </ul>
@@ -461,11 +465,17 @@ document.write(`
 <li><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/index.html">Mathplotlib</a> – the principle graphing software used by modelflow</p></li>
 <li><p><a class="reference external" href="https://www.w3schools.com/python/matplotlib_intro.asp">More Mathplotlib</a></p></li>
 </ul>
-<span class="target" id="index-10"></span><div class="highlight-default notranslate" id="index-11"><div class="highlight"><pre><span></span><span class="c1">## Help on modelflow</span>
-
-<span class="n">First</span> <span class="n">prepare</span> <span class="n">the</span> <span class="n">modelflow</span> <span class="n">python</span> <span class="n">environment</span><span class="p">,</span><span class="n">load</span> <span class="ow">and</span> <span class="n">solve</span> <span class="n">a</span> <span class="n">model</span><span class="o">.</span>
-</pre></div>
-</div>
+<span class="target" id="index-10"></span></section>
+</section>
+<section id="help-on-modelflow">
+<span id="index-11"></span><h2><span class="section-number">1.2. </span>Help on modelflow<a class="headerlink" href="#help-on-modelflow" title="Permalink to this headline">#</a></h2>
+<section id="setting-up-modelflow-workspace">
+<h3><span class="section-number">1.2.1. </span>Setting up modelflow workspace<a class="headerlink" href="#setting-up-modelflow-workspace" title="Permalink to this headline">#</a></h3>
+<p>Everytime you want to work with modelflow you will need</p>
+<ol class="arabic simple">
+<li><p>activate the modelflow environment: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">modelflow</span></code></p></li>
+<li><p>Import the libraries into your python</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is code to manage dependencies if the notebook is executed in the google colab cloud service</span>
@@ -503,14 +513,18 @@ document.write(`
                     IPython.OutputArea.prototype._should_scroll = function(lines){
                         return false;
                     }
-                </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file read:  C:\modelflow manual\papers\mfbook\content\models\pak.pcim
+                </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file read:  C:\mflow\papers\mfbook\content\models\pak.pcim
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="the-operator">
-<span id="index-12"></span><h3><span class="section-number">1.1.6. </span>the ? operator<a class="headerlink" href="#the-operator" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple" start="3">
+<li><p>load a model <code class="docutils literal notranslate"><span class="pre">mpak,bline</span> <span class="pre">=</span> <span class="pre">model.modelload('pak.pcim',run=1,silent=1)</span></code></p></li>
+<li><p>Start setting up your simulations</p></li>
+</ol>
+<span class="target" id="index-12"></span></section>
+<section id="get-information-about-a-functions-options-the-operator">
+<span id="index-13"></span><h3><span class="section-number">1.2.2. </span>Get information about a functions options:  the ? operator<a class="headerlink" href="#get-information-about-a-functions-options-the-operator" title="Permalink to this headline">#</a></h3>
 <p>The operator <code class="docutils literal notranslate"><span class="pre">?</span></code> outputs help on the command that it follows.  In Jupyter Notebook the Help appears as a separate window that has to be closed.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">?</span></code> help focuses on operators.</p>
 <div class="cell docutils container">
@@ -541,8 +555,8 @@ dataframe (TYPE): the resulting daaframe .
 File:      c:\users\yourUserName.conda\envs\modelflow\lib\site-packages\modelflow-1.0.8-py3.10.egg\modelclass.py
 Type:      method</p>
 </section>
-<section id="index-13">
-<span id="id1"></span><h3><span class="section-number">1.1.7. </span>The ?? operator<a class="headerlink" href="#index-13" title="Permalink to this headline">#</a></h3>
+<section id="the-operator">
+<h3><span class="section-number">1.2.3. </span>The ?? operator<a class="headerlink" href="#the-operator" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">??</span></code> operator provides a more detailed version of the same help information, notably showing features of classes from which a method has inherited features.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -624,9 +638,9 @@ Type:      method</p>
 </div>
 </section>
 <section id="help-method">
-<h3><span class="section-number">1.1.8. </span>help() method<a class="headerlink" href="#help-method" title="Permalink to this headline">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">help()</span></code> command returns the same information as ?, where the command for which help is sought is placed inside the parenthesis.</p>
-<div class="cell docutils container" id="index-14">
+<h3><span class="section-number">1.2.4. </span>help() method<a class="headerlink" href="#help-method" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">help()</span></code> command is a built in python method that returns the same information as ?, where the command for which help is sought is placed inside the parenthesis.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">fix</span><span class="p">)</span>
 </pre></div>
@@ -698,12 +712,12 @@ fix(df, pat=&#39;*&#39;, start=&#39;&#39;, end=&#39;&#39;, silent=0) method of m
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../06_ModelAnalytics/AttributionSomeFeatures.html"
+       href="Sources_of_instability.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Analyzing the impact of a shock</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Which equations matters for eigenvalues and thus the dynamic behavior</p>
       </div>
     </a>
     <a class="right-next"
@@ -739,9 +753,13 @@ fix(df, pat=&#39;*&#39;, start=&#39;&#39;, end=&#39;&#39;, silent=0) method of m
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">1.1.3. Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">1.1.4. Pandas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathplotlib">1.1.5. Mathplotlib</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operator">1.1.6. the ? operator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-13">1.1.7. The ?? operator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-method">1.1.8. help() method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#help-on-modelflow">1.2. Help on modelflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-modelflow-workspace">1.2.1. Setting up modelflow workspace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-information-about-a-functions-options-the-operator">1.2.2. Get information about a functions options:  the ? operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operator">1.2.3. The ?? operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-method">1.2.4. help() method</a></li>
 </ul>
 </li>
 </ul>

@@ -151,12 +151,9 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/01_Introduction/Acknowledgements.html">2. Acknowledgements</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="content/02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="content/03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="content/02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/03_Installation/InstallingModelFlowpackage.html">4.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
@@ -168,36 +165,39 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/04_PythonEssentials/Jupyter%20notebook%20setup.html">4. Jupyter notebook set up</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html">5. Update and transform Pandas dataframes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/UpdateCommand.html">5.2. <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>  Return an updated dataframe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/mfcalc.html">5.3. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> Returns a transformed dataframe</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/04_PythonEssentials/Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method. Return a dataframe with updated variables.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/04_PythonEssentials/mfcalc.html">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/WorkingwWBModels.html">3. Working with a World Bank Model under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/System_dynamic_and_EigenValues.html">1. Model eigenvalues and impulse response</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/Sources_of_instability.html">2. Which equations matters for eigenvalues and thus the dynamic behavior</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/stability%20introduction.html">1. Model stability, some background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="current nav bd-sidenav">
@@ -374,7 +374,7 @@ document.write(`
 <dd><p>Doug Addison. <em>The World Bank revised minimum standard model (RMSM) : concepts and issues</em>. Number WPS231 in Policy Research Working Papers. World Bank, Washington DC., 1989. URL: <a class="reference external" href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/997721468765042532/the-world-bank-revised-minimum-standard-model-rmsm-concepts-and-issues">https://documents.worldbank.org/en/publication/documents-reports/documentdetail/997721468765042532/the-world-bank-revised-minimum-standard-model-rmsm-concepts-and-issues</a>.</p>
 </dd>
 <dt class="label" id="id2"><span class="brackets">2</span></dt>
-<dd><p>Ron Berndsen. Causal ordering in economic models. <em>Decision Support Systems</em>, 1995. ISBN: 0167-9236. <a class="reference external" href="https://doi.org/10.1016/0167-9236(94)00034-P">doi:10.1016/0167-9236(94)00034-P</a>.</p>
+<dd><p>Ron Berndsen. Causal ordering in economic models. <em>Decision Support Systems</em>, 1995. <a class="reference external" href="https://doi.org/10.1016/0167-9236(94)00034-P">doi:10.1016/0167-9236(94)00034-P</a>.</p>
 </dd>
 <dt class="label" id="id17"><span class="brackets">3</span></dt>
 <dd><p>Olivier Blanchard. On the future of Macroeconomic models. <em>Oxford Review of Economic Policy</em>, 34(1-2):43–54, 2018. URL: <a class="reference external" href="https://academic.oup.com/oxrep/article/34/1-2/43/4781808">https://academic.oup.com/oxrep/article/34/1-2/43/4781808</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1093/oxrep/grx045">doi:https://doi.org/10.1093/oxrep/grx045</a>.</p>

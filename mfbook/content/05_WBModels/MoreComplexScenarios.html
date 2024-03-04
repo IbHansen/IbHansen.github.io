@@ -66,8 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/05_WBModels/MoreComplexScenarios';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. A simulation that targets a specific outcome" href="../07_MoreFeatures/Targeting.html" />
-    <link rel="prev" title="4. Report writing and scenario results" href="ReportWriting.html" />
+    <link rel="next" title="6. A simulation that targets a specific outcome" href="Targeting.html" />
+    <link rel="prev" title="4. Scenario analysis" href="ScenarioAnalysis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -155,12 +155,9 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Acknowledgements.html">2. Acknowledgements</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">4.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
@@ -172,36 +169,39 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Jupyter%20notebook%20setup.html">4. Jupyter notebook set up</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">5. Update and transform Pandas dataframes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">5.2. <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>  Return an updated dataframe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">5.3. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> Returns a transformed dataframe</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method. Return a dataframe with updated variables.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="WorkingwWBModels.html">3. Working with a World Bank Model under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/System_dynamic_and_EigenValues.html">1. Model eigenvalues and impulse response</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Sources_of_instability.html">2. Which equations matters for eigenvalues and thus the dynamic behavior</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/stability%20introduction.html">1. Model stability, some background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -429,7 +429,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="more-complex-scenarios">
 <h1><span class="section-number">5. </span>More complex scenarios<a class="headerlink" href="#more-complex-scenarios" title="Permalink to this headline">#</a></h1>
 <p>The preceding chapter introduced four different ways of preparing a solution and the forms the backbone of running simulations on World Bank models in <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>. This chapter builds on those examples and delves into some of the challenges involved in translating a real-world policy challenge into the model-world and then back again.</p>
-<p>The particular problem to be examined is in the introduction of a Carbon Tax. The model used and the example presented are both taken from the model of Pakistan presented here: <span id="id1"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>.</p>
+<p>The particular problem to be examined is in the introduction of a Carbon Tax. The model used and the example presented are both taken from the model of Pakistan presented here: <span id="id1"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>(2021).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pandas options ot make output more eligeble: </span>
@@ -441,10 +441,10 @@ document.write(`
 </div>
 <section id="load-a-pre-existing-model-data-and-descriptions">
 <h2><span class="section-number">5.1. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Permalink to this headline">#</a></h2>
-<p>Load the Pakistan model, which is comprised of the model object, its estimated equations and the data.  The <code class="docutils literal notranslate"><span class="pre">pcim</span></code> file was created by the World Bank from the original EViews model used in the paper <span id="id2"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>.</p>
+<p>Load the Pakistan model, which is comprised of the model object, its estimated equations and the data.  The <code class="docutils literal notranslate"><span class="pre">pcim</span></code> file was created by the World Bank from the original EViews model used in the paper <span id="id2"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>(2021).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">,</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;Baseline&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">,</span><span class="n">bline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;Baseline&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -458,7 +458,7 @@ document.write(`
 <section id="the-policy-problem">
 <span id="index-1"></span><h2><span class="section-number">5.2. </span>The policy problem<a class="headerlink" href="#the-policy-problem" title="Permalink to this headline">#</a></h2>
 <p>The objective of this chapter is to produce a simulation of the economic and climate effects of the introduction of a carbon tax in Pakistan.</p>
-<p>The variable <code class="docutils literal notranslate"><span class="pre">mpak</span></code> loaded above contains the model instance, the variables, equations and the data for the model.  On load the model was solved, and the results of that initial solve was assigned to the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <code class="docutils literal notranslate"><span class="pre">baseline</span></code>.</p>
+<p>The model object <code class="docutils literal notranslate"><span class="pre">mpak</span></code> loaded above contains the model instance, the variables, equations and the data for the model.  On load, the model was solved, and the results of that initial solve was assigned to the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <code class="docutils literal notranslate"><span class="pre">bline</span></code>.</p>
 <p>The Pakistan model contains three carbon tax variables:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -478,7 +478,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>As discussed in earlier chapters the meaning of the mnemonics can be retrieved from the model:</p>
+<p>As discussed in earlier chapters the meaning of the mnemonics can be retrieved from the model object <code class="docutils literal notranslate"><span class="pre">mpak</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKGGREVCO2*ER&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">des</span>
@@ -512,11 +512,8 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <span class="target" id="index-4"></span></section>
 <section id="add-variable-descriptions">
 <span id="index-5"></span><h2><span class="section-number">5.3. </span>Add variable descriptions<a class="headerlink" href="#add-variable-descriptions" title="Permalink to this headline">#</a></h2>
-<p>A modelflow model imported from EViews will inherit the variable descriptors coming from Eviews.  The variable descriptors are stored in a dictionary named: <code class="docutils literal notranslate"><span class="pre">.var_description</span></code>. Not all EViews variables will necessarily have a description so such descriptions can be added to the existing as shown below.</p>
-<p>As coded, the call</p>
-<p><code class="docutils literal notranslate"><span class="pre">mpak.var_description</span> <span class="pre">=</span> <span class="pre">{**mpak.var_description,**extra_description}</span></code></p>
-<p>adds the extra_description dictionary to the pre-existing mpak,var_description dictionary.</p>
-<p>Several <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> methods include a <code class="docutils literal notranslate"><span class="pre">rename</span></code> option, which if set to True will substitute the description for the variable name in any outputs.  Variables can also be selected for by using the <code class="docutils literal notranslate"><span class="pre">mpak['!*subtext*']</span></code> syntax, where subtext is some text that appears in the variable descriptor.</p>
+<p>A modelflow model imported from EViews will inherit the variable descriptors coming from Eviews.  The variable descriptors are stored in a dictionary named: <code class="docutils literal notranslate"><span class="pre">.var_description</span></code>. Not all EViews variables will necessarily have a description so additional definitions (descriptions) may need to be provided.</p>
+<p>Below we define a python dictionary in the same format as the dictionary var_description that is contained in the model object <code class="docutils literal notranslate"><span class="pre">mpak</span></code>.  Each dictionary entry is comprised of a key “the variables mnemonic and a value the description of the variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extra_description</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PAKNYGDPMKTPKN&#39;</span><span class="p">:</span> <span class="s1">&#39;GDP&#39;</span><span class="p">,</span>
@@ -532,12 +529,22 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
  <span class="s1">&#39;PAKGGDBTTOTLCN_&#39;</span><span class="p">:</span> <span class="s1">&#39;Debt (</span><span class="si">%G</span><span class="s1">DP)&#39;</span><span class="p">,</span>
  <span class="s1">&#39;PAKGGREVTOTLCN&#39;</span><span class="p">:</span> <span class="s1">&#39;Fiscal revenues&#39;</span><span class="p">,</span>
  <span class="s1">&#39;PAKWDL&#39;</span><span class="p">:</span> <span class="s1">&#39;Working days lost due to pollution&#39;</span><span class="p">}</span>
-
-<span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span><span class="p">,</span><span class="o">**</span><span class="n">extra_description</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>These new definitions can be appended to the existing description by using python pointers which are denoted by ** preceding a variable name.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">mpak.var_description</span> <span class="pre">=</span> <span class="pre">{**mpak.var_description,**extra_description}</span></code> tells python to assign to the variable <code class="docutils literal notranslate"><span class="pre">mpak.var_description</span></code> the concatenation of the contents of the variables <code class="docutils literal notranslate"><span class="pre">mpak.var_description</span></code> (its current content) and <code class="docutils literal notranslate"><span class="pre">extra_description</span></code> the ** preceding the variable names is the pointer operator and indicates to python to replace the symbol with the contents of the existing variables.</p>
+<p>Following execution, the <code class="docutils literal notranslate"><span class="pre">var_desciption</span></code> will be changed to contain both its old values and those added in the extra_description dictionary defined above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span><span class="p">,</span><span class="o">**</span><span class="n">extra_description</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Several <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> methods take advantage of this dictionary to provide more reader-friendly descriptions of variables – typically through the <code class="docutils literal notranslate"><span class="pre">rename</span></code> option. For those methods that define it, if rename is set to True, the method will substitute the description for the variable name in any outputs.</p>
+<p>Variables with descriptions can also be selected for by using the <code class="docutils literal notranslate"><span class="pre">mpak['!*subtext*']</span></code> syntax, where subtext is some text that appears in the variable descriptor.</p>
 </section>
 <section id="simulating-the-impact-of-imposing-a-carbon-price">
 <h2><span class="section-number">5.4. </span>Simulating the impact of imposing a carbon price<a class="headerlink" href="#simulating-the-impact-of-imposing-a-carbon-price" title="Permalink to this headline">#</a></h2>
@@ -549,8 +556,8 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create copy of the baseline df</span>
-<span class="n">alternative_df</span> <span class="o">=</span> <span class="n">baseline</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create copy of the bline df</span>
+<span class="n">alternative_df</span> <span class="o">=</span> <span class="n">bline</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="c1">#set the effective carbon tax of all three carbon tax variables equal to 30 USD</span>
 <span class="n">alternative_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2025</span><span class="p">:</span><span class="mi">2100</span><span class="p">,[</span><span class="s1">&#39;PAKGGREVCO2CER&#39;</span><span class="p">,</span><span class="s1">&#39;PAKGGREVCO2GER&#39;</span><span class="p">,</span> <span class="s1">&#39;PAKGGREVCO2OER&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">30</span> 
 </pre></div>
@@ -558,18 +565,18 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 <p>The above used the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> to change the Carbon Tax rate variables.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> method <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> could be used to perform the same change. <a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html#upd"><span class="std std-ref">Here</span></a> is a description of the method.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> method <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> could be used to perform the same change. The earlier chapter <span class="xref myst">xxxx</span> provided an  extensive coverage of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> ansd <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> methods of <code class="docutils literal notranslate"><span class="pre">modelflow</span></code>.</p>
 <span class="target" id="index-6"></span><div class="cell docutils container" id="index-7">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This modelflow command is equivalent to the previous standard pandas command abive that used the .loc[] syntax</span>
-<span class="n">CT30df</span>  <span class="o">=</span>  <span class="n">baseline</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s2">&quot;&lt;2025 2100&gt; PAKGGREVCO2CER PAKGGREVCO2GER PAKGGREVCO2OER = 30&quot;</span><span class="p">)</span>
+<span class="n">CT30df</span>  <span class="o">=</span>  <span class="n">bline</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s2">&quot;&lt;2025 2100&gt; PAKGGREVCO2CER PAKGGREVCO2GER PAKGGREVCO2OER = 30&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <span class="target" id="index-8"></span><span class="target" id="index-9"></span><section id="solve-the-model">
 <span id="index-10"></span><h3><span class="section-number">5.4.1. </span>Solve the model<a class="headerlink" href="#solve-the-model" title="Permalink to this headline">#</a></h3>
-<p>Solving the model is as simple as calling the mpak function with the altered <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and assigning the results to dataframe (<code class="docutils literal notranslate"><span class="pre">resultsdf</span></code> in this instance).  The <code class="docutils literal notranslate"><span class="pre">keep</span></code> option causes a copy of the dataframe to be stores within the mpak model object.</p>
+<p>Solving the model is as simple as calling the mpak function with the altered <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as an input and assigning the results to a new dataframe (<code class="docutils literal notranslate"><span class="pre">resultsdf</span></code> in this instance).  The <code class="docutils literal notranslate"><span class="pre">keep</span></code> option (discussed in the previous chapter)  causes a copy of the dataframe to be stored within the <code class="docutils literal notranslate"><span class="pre">mpak</span></code> model object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultsdf</span> <span class="o">=</span> <span class="n">mpak</span><span class="p">(</span><span class="n">CT30df</span><span class="p">,</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2100</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;Nominal $30USD Carbon tax&quot;</span><span class="p">)</span> <span class="c1"># simulates the model </span>
@@ -577,10 +584,15 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This simulation is a shock on an exogenous variable (the first kind of shock discussed in the previous chapter), although in this case the shock is applied to three exogenous variables simultaneously, whereas in earlier examples only one variable was shocked.</p>
+</div>
+<p>The impact of the imposition of the carbon tax in the model is relatively quick, resulting in an overall decline in emissions of 22.2% in the first year, with coal emissions recording the biggest hit at -41.2 percent.</p>
 <section id="examining-the-results">
 <h4><span class="section-number">5.4.1.1. </span>Examining the results<a class="headerlink" href="#examining-the-results" title="Permalink to this headline">#</a></h4>
-<p>Every time the model is solved the results of the simulation are assigned to a variable on the left hands side of the solve call (<code class="docutils literal notranslate"><span class="pre">resultdf</span></code> in the example above.  The results of the most recent scenario are also always stored in the <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that is part of the properties of any <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> model. the <code class="docutils literal notranslate"><span class="pre">basedf</span></code> property of <code class="docutils literal notranslate"><span class="pre">mpak</span></code> (an instantiation of a modelflow model object) contains a copy of the initial DataFrame from which the model was built.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> <code class="docutils literal notranslate"><span class="pre">baseline</span></code> and <code class="docutils literal notranslate"><span class="pre">resultsdf</span></code> were created when the model was solved the model (initially on load) and now with the simulation.  Currently their contents are the same as, but separate from, the contents of <code class="docutils literal notranslate"><span class="pre">basedf</span></code> and <code class="docutils literal notranslate"><span class="pre">lastdf</span></code>.</p>
+<p>Every time the model is solved the results of the simulation are assigned to a variable on the left hands side of the solve call (<code class="docutils literal notranslate"><span class="pre">resultdf</span></code> in the example above).  The results of the most recent scenario are also always stored in the <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that is one of the properties of any <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> model object (<code class="docutils literal notranslate"><span class="pre">mpak</span></code> in this case). <code class="docutils literal notranslate"><span class="pre">basedf</span></code> is also a property of <code class="docutils literal notranslate"><span class="pre">mpak</span></code> and contains a copy of the initial DataFrame from which the model was built.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">bline</span></code>, <code class="docutils literal notranslate"><span class="pre">.basedf</span></code> and the original <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code> <code class="docutils literal notranslate"><span class="pre">Dataframes</span></code> were created when the model was initally loaded and solved. The <code class="docutils literal notranslate"><span class="pre">resultsdf</span></code> database and a new revised <code class="docutils literal notranslate"><span class="pre">.lastdf</span></code> were generated when the  model was solbed for the new carbon prices.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The standard dataframes are part of the <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> object and managed by it.</p>
@@ -589,8 +601,8 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <li><p><strong>mpak.lastdf</strong>: Dataframe with the values from the most recent simulation</p></li>
 </ul>
 </div>
-<p>The impact of the imposition of the carbon tax in the model is relatively quick, resulting in an overall decline in emissions of 22.2% in the first year, with coal emissions recording the biggest hit at -41.2 percent.</p>
-<span class="target" id="index-11"></span><div class="cell docutils container" id="index-12">
+<span class="target" id="index-11"></span><p id="index-12">The command below shows the results of the simulation on the four emissions variables in the model expressed as a percent deviation from the level of the baseline (the <code class="docutils literal notranslate"><span class="pre">.difpctlevel</span></code> operator below), multiplied by 100 (the <code class="docutils literal notranslate"><span class="pre">.mul100</span></code> operator) and where the mnemonics have been replaced by their descriptions using the <code class="docutils literal notranslate"><span class="pre">.rename</span></code> option.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">2030</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="p">[</span><span class="s1">&#39;PAKCCEMISCO2*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">df</span><span class="p">);</span>
@@ -631,19 +643,18 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <img alt="../../_images/be10a8b0a0bc3437657b244c7a1a62ee98bb485d030b53b7ee6a5f03993555c1.png" src="../../_images/be10a8b0a0bc3437657b244c7a1a62ee98bb485d030b53b7ee6a5f03993555c1.png" />
 </div>
 </div>
-<p>Abstracting from the fact that the impact is occurring too quickly (it would take time for the substitution towards alternative sources of power to occur), the fact that impacts are fading with time suggests an error in the specification of the shock.  High domestic inflation means that the relative price change of a given Carbon price is declining over time.</p>
+<p>Abstracting from the fact that the impact is occurring too quickly (it would take time for the substitution towards alternative sources of power to occur), the fact that impacts are fading with time suggests an error in the specification of the shock.  High domestic inflation means that the real price change of a the $30 nominal increase in the Carbon price is declining over time.</p>
 </section>
 </section>
 </section>
 <section id="re-thinking-the-shock-as-an-ex-ante-real-shock">
 <h2><span class="section-number">5.5. </span>Re-thinking the shock as an ex-ante real shock<a class="headerlink" href="#re-thinking-the-shock-as-an-ex-ante-real-shock" title="Permalink to this headline">#</a></h2>
 <p>Inflation in Pakistan is relatively high so a $30 shock quickly loses its relative price effect. Increasing the nominal value of the Carbon Tax by the amount of domestic inflation (converted into USD each year) would resolve the problem.</p>
-<p>Below a new dataframe is created as a copy of the baseline and the three Carbon taxes are first set to $30 in 2025 and then grown at the rate of domestic inflation to keep the relative price of the Carbon Tax constant.</p>
+<p>Below a new dataframe is created as a copy of the baseline and the three Carbon taxes are first set to $30 in 2025 and then grown at the rate of domestic inflation to keep the <strong>ex ante</strong> relative price of the Carbon Tax constant.</p>
 <p>Finally the model is re-solved.</p>
 <span class="target" id="index-15"></span><span class="target" id="index-16"></span><div class="cell docutils container" id="index-17">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">modelmf</span>  <span class="c1"># import the mfcalc functionality and append it to standard pandas</span>
-<span class="n">CT30realdf</span>  <span class="o">=</span>  <span class="n">baseline</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CT30realdf</span>  <span class="o">=</span>  <span class="n">bline</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">CT30realdf</span><span class="o">=</span><span class="n">CT30realdf</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s2">&quot;&lt;2025 2025&gt; PAKGGREVCO2CER PAKGGREVCO2OER PAKGGREVCO2GER = 30&quot;</span><span class="p">)</span>
 
 <span class="c1">#NB: Variables used </span>
@@ -658,7 +669,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <span class="n">CT30realdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2023</span><span class="p">:</span><span class="mi">2030</span><span class="p">,</span><span class="s1">&#39;PAKGGREVCO2CER&#39;</span><span class="p">]</span>
 
 
-<span class="n">resultsdf</span> <span class="o">=</span> <span class="n">mpak</span><span class="p">(</span><span class="n">CT30realdf</span><span class="p">,</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2100</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;Real $30USD Carbon tax&quot;</span><span class="p">)</span> <span class="c1"># simulates the model </span>
+<span class="n">resultsdf</span> <span class="o">=</span> <span class="n">mpak</span><span class="p">(</span><span class="n">CT30realdf</span><span class="p">,</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2100</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;Ex ante Real $30USD Carbon tax&quot;</span><span class="p">)</span> <span class="c1"># simulates the model </span>
 </pre></div>
 </div>
 </div>
@@ -722,12 +733,12 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Reload original model and data</span>
-<span class="n">mpak1</span><span class="p">,</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;Baseline&quot;</span><span class="p">)</span>
+<span class="n">mpak1</span><span class="p">,</span><span class="n">bline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s2">&quot;Baseline&quot;</span><span class="p">)</span>
 <span class="c1">#Create a new model object mpakreal and new baseline dataframe-- baselinereal </span>
 <span class="c1">#The nominal carbon taxes (expressed in USD) are now endogenous </span>
 <span class="c1"># and increase with domestic inflation and the exchange rate</span>
 
-<span class="n">mpakreal</span><span class="p">,</span><span class="n">baselinereal</span> <span class="o">=</span> <span class="n">mpak1</span><span class="o">.</span><span class="n">equpdate</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="n">mpakreal</span><span class="p">,</span><span class="n">blinereal</span> <span class="o">=</span> <span class="n">mpak1</span><span class="o">.</span><span class="n">equpdate</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">&lt;fixable&gt; PAKGGREVCO2CER = PAKGGREVCO2CER(-1) * (PAKNYGDPMKTPXN*PAKPANUSATLS) / (PAKNYGDPMKTPXN(-1)*PAKPANUSATLS(-1))</span>
 <span class="s1">&lt;fixable&gt; PAKGGREVCO2OER = PAKGGREVCO2OER(-1) * (PAKNYGDPMKTPXN*PAKPANUSATLS) / (PAKNYGDPMKTPXN(-1)*PAKPANUSATLS(-1))</span>
 <span class="s1">&lt;fixable&gt; PAKGGREVCO2GER = PAKGGREVCO2GER(-1) * (PAKNYGDPMKTPXN*PAKPANUSATLS) / (PAKNYGDPMKTPXN(-1)*PAKPANUSATLS(-1))</span>
@@ -737,9 +748,8 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file read:  C:\modelflow manual\papers\mfbook\content\models\pak.pcim
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model:&quot;PAK&quot; got new equations, new model name is:&quot;Pak model, with real Carbon price equations&quot;
+
+The model:&quot;PAK&quot; got new equations, new model name is:&quot;Pak model, with real Carbon price equations&quot;
 New equation for For PAKGGREVCO2CER
 Old frml   :new endogeneous variable 
 New frml   :FRML &lt;fixable&gt; PAKGGREVCO2CER = (PAKGGREVCO2CER(-1)*(PAKNYGDPMKTPXN*PAKPANUSATLS)/(PAKNYGDPMKTPXN(-1)*PAKPANUSATLS(-1)))* (1-PAKGGREVCO2CER_D)+ PAKGGREVCO2CER_X*PAKGGREVCO2CER_D$
@@ -758,7 +768,7 @@ Adjust calc:No frml for adjustment calc
 </div>
 </div>
 </div>
-<p>As with the mpak model the variable description is updated.</p>
+<p>As with the mpak model the variable descriptions are updated.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpakreal</span><span class="o">.</span><span class="n">var_description</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">mpakreal</span><span class="o">.</span><span class="n">var_description</span><span class="p">,</span><span class="o">**</span><span class="n">extra_description</span><span class="p">}</span>
@@ -767,7 +777,7 @@ Adjust calc:No frml for adjustment calc
 </div>
 </div>
 <span class="target" id="index-22"></span><span class="target" id="index-23"></span><p id="index-24">As written, the <code class="docutils literal notranslate"><span class="pre">.equpdate()</span></code> command creates a new model, which is a copy of the existing model with three new equations.</p>
-<p>Each equation grows the nominal rate of the carbon tax at the same rate as <em>ex ante</em> inflation (<code class="docutils literal notranslate"><span class="pre">PAKNECONPRVTXN</span></code>) converted into USD via the exchange rate <code class="docutils literal notranslate"><span class="pre">PAKPANUSATLS</span></code>. The equations are introduced as exogenizable equations (as distinct from an identity which must always hold) by adding the &lt;fixable&gt; prefix to each equation. The equations are not estimated, so no add-factors are included in the equations.</p>
+<p>Each equation grows the nominal rate of the carbon tax at the same rate as <em>ex post</em> inflation (<code class="docutils literal notranslate"><span class="pre">PAKNECONPRVTXN</span></code>) converted into USD via the exchange rate <code class="docutils literal notranslate"><span class="pre">PAKPANUSATLS</span></code>. The equations are introduced as exogenizable equations (as distinct from an identity which must always hold) by adding the &lt;fixable&gt; prefix to each equation. The equations are not estimated, so no add-factors are included in the equations.</p>
 <p>The output for the <code class="docutils literal notranslate"><span class="pre">.equpdate()</span></code> reports the actual formulae included in the model.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>New equation for For PAKGGREVCO2CER
 Old frml   :new endogeneous variable 
@@ -785,7 +795,7 @@ Adjust calc:No frml for adjustment calc
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Exogenizes the newly added equations and sets the dummy =1 amd the _x to the current value of the dependent variable  </span>
-<span class="n">baseline_real</span><span class="o">=</span><span class="n">mpakreal</span><span class="o">.</span><span class="n">fix</span><span class="p">(</span><span class="n">baselinereal</span><span class="p">,</span><span class="s1">&#39;PAKGGREVCO2CER PAKGGREVCO2GER PAKGGREVCO2OER&#39;</span><span class="p">)</span>
+<span class="n">bline_real</span><span class="o">=</span><span class="n">mpakreal</span><span class="o">.</span><span class="n">fix</span><span class="p">(</span><span class="n">blinereal</span><span class="p">,</span><span class="s1">&#39;PAKGGREVCO2CER PAKGGREVCO2GER PAKGGREVCO2OER&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -799,7 +809,7 @@ PAKGGREVCO2OER
 </div>
 </div>
 <p>The fix command above effectively does in one line all of the following code.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_real</span><span class="o">=</span><span class="n">baselinereal</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bline_real</span><span class="o">=</span><span class="n">bline</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="c1">#Create the _X variables if we exogenize the equation</span>
 <span class="n">baseline_real</span> <span class="o">=</span> <span class="n">baseline_real</span><span class="o">.</span><span class="n">mfcalc</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
@@ -819,7 +829,7 @@ PAKGGREVCO2OER
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Solve the model for the new baseline</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">mpakreal</span><span class="p">(</span><span class="n">baseline_real</span><span class="p">,</span><span class="mi">2021</span><span class="p">,</span><span class="mi">2100</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;Baseline - adjusted model&#39;</span><span class="p">)</span> 
+<span class="n">res</span> <span class="o">=</span> <span class="n">mpakreal</span><span class="p">(</span><span class="n">bline_real</span><span class="p">,</span><span class="mi">2021</span><span class="p">,</span><span class="mi">2100</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;Baseline - adjusted model&#39;</span><span class="p">)</span> 
 
 <span class="n">mpakreal</span><span class="p">[</span><span class="s1">&#39;PAKNYGDPMKTPKN PAKNECONPRVTXN PAKGGBALOVRL PAKGGREVCO2CER PAKCCEMISCO2TKN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">difpctlevel</span><span class="o">.</span><span class="n">mul100</span><span class="o">.</span><span class="n">rename</span><span class="p">()</span><span class="o">.</span><span class="n">df</span>
 </pre></div>
@@ -943,11 +953,11 @@ PAKGGREVCO2OER
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario_real_CTax</span> <span class="o">=</span> <span class="n">baseline_real</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario_real_CTax</span> <span class="o">=</span> <span class="n">bline_real</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">&lt;2025 2025&gt; </span>
-<span class="s1">PAKGGREVCO2CER_x PAKGGREVCO2GER_x PAKGGREVCO2OER_x = 30 # Sets the exogenous value to 30 in 2025</span>
+<span class="s1">PAKGGREVCO2CER_X PAKGGREVCO2GER_X PAKGGREVCO2OER_X = 30 # Sets the exogenous value to 30 in 2025</span>
 <span class="s1">&lt;2026 2100 &gt; </span>
-<span class="s1">PAKGGREVCO2CER_D PAKGGREVCO2GER_D PAKGGREVCO2OER_d = 0   # Endogenizes the new equations for the rest of time so that the real-rate stays at 30USD</span>
+<span class="s1">PAKGGREVCO2CER_D PAKGGREVCO2GER_D PAKGGREVCO2OER_D = 0   # Endogenizes the new equations for the rest of time so that the real-rate stays at 30USD</span>
 <span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
 
 
@@ -1337,10 +1347,10 @@ PAKGGREVCO2OER
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/539c7f0f0f04952ecb4e1f9cf7148d7db8368d33cf1946039f5fe83e7fad12b3.png" src="../../_images/539c7f0f0f04952ecb4e1f9cf7148d7db8368d33cf1946039f5fe83e7fad12b3.png" />
+<img alt="../../_images/3eb60cde2c3cab6ecfa6c69c879b574994358352cb69210e03a56cdb81ecba38.png" src="../../_images/3eb60cde2c3cab6ecfa6c69c879b574994358352cb69210e03a56cdb81ecba38.png" />
 </div>
 </div>
-<p>The modified model, which preserves the real value of the carbon tax has a permanent and substantive negative effect on emissions. The impact is not at an unchanging level, reflecting in part adaptation within the economy. Of particular import is what is being done with the revenues from the Carbon tax. As the structure of GDP (shifts to less carbon intensive activities) carbon tax revenues fall even as the Carbon Tax rate rises. Note, the percent deviation of emissions tends to decrease over time in this scenario principally because the level of activity (GDP) is higher with the Carbon Tax than without it. As a result,  emissions are higher than they would have been had GDP remained unchanged. For the Pakistan model, the positive impact of the Carbon tax is mainly explained by co-benefits, notably reduced reliance on more distortive taxes such as payroll taxes and because of reductions in informality (see <span id="id3">Burns <em>et al.</em> [<a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">2021</a>]</span> for more details how these effects operate in the Pakistan model).</p>
+<p>The modified model, which preserves the real value of the carbon tax has a permanent and substantive negative effect on emissions. The impact is not at an unchanging level, reflecting in part adaptation within the economy. Of particular import is what is being done with the revenues from the Carbon tax. As the structure of GDP (shifts to less carbon intensive activities) carbon tax revenues fall even as the Carbon Tax rate rises. Note, the percent deviation of emissions tends to decrease over time in this scenario principally because the level of activity (GDP) is higher with the Carbon Tax than without it. As a result,  emissions are higher than they would have been had GDP remained unchanged. For the Pakistan model, the positive impact of the Carbon tax is mainly explained by co-benefits, notably reduced reliance on more distortive taxes such as payroll taxes and because of reductions in informality (see <span id="id3"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>(2021) for more details how these effects operate in the Pakistan model).</p>
 </section>
 </section>
 </section>
@@ -1377,16 +1387,16 @@ PAKGGREVCO2OER
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ReportWriting.html"
+       href="ScenarioAnalysis.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Report writing and scenario results</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Scenario analysis</p>
       </div>
     </a>
     <a class="right-next"
-       href="../07_MoreFeatures/Targeting.html"
+       href="Targeting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

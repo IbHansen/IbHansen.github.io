@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Analyzing the impact of a shock" href="AttributionSomeFeatures.html" />
-    <link rel="prev" title="6. A simulation that targets a specific outcome" href="../07_MoreFeatures/Targeting.html" />
+    <link rel="prev" title="7. Report writing and scenario results" href="../05_WBModels/ReportWriting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -155,12 +155,9 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">The World Bank's MFMod Framework and Modelflow</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Acknowledgements.html">2. Acknowledgements</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">3. Macrostructural models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_MacrostructuralModels/MFModAndModelFlow.html">3.2. Modelflow and the MFMod models of the World Bank</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">4. Installation of Modelflow</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">4.1. Installation of Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">4.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">4.3. Updating Modelflow</a></li>
@@ -172,36 +169,39 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Intro_Jupyter_notebook.html">1. Introduction to  Jupyter Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PythonBasics.html">2. Some Python basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/PandasDataFrames.html">3. Introduction to Pandas, Pandas Series and Pandas dataframes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04_PythonEssentials/Jupyter%20notebook%20setup.html">4. Jupyter notebook set up</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">5. Update and transform Pandas dataframes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">5.2. <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>  Return an updated dataframe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">5.3. <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> Returns a transformed dataframe</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method. Return a dataframe with updated variables.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/UsingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with PakMod under modelflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">4. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> with World Bank models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">3. Working with a World Bank Model under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Model analytics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/System_dynamic_and_EigenValues.html">1. Model eigenvalues and impulse response</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/Sources_of_instability.html">2. Which equations matters for eigenvalues and thus the dynamic behavior</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stability</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/stability%20introduction.html">1. Model stability, some background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/EigenValues.html">2. Model eigenvalues</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -405,9 +405,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dependencies-of-individual-endogenous-variables-the-tracepre-method">1.4. The dependencies of individual endogenous variables (the <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> method)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-the-model">1.5. Shock the model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#following-a-shock-tracepre-indicates-the-relative-importance-of-different-variables-in-explaining-the-change-in-the-dependent-variable">1.6. Following a shock <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> indicates the relative importance of different variables in explaining the change in the dependent variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-filter-option-restricting-the-output-of-tracepre">1.7. The filter option, restricting the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-up-option-extending-the-tracepre-beyond-the-first-level-causal-variables">1.8. The up option, extending the <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> beyond the first level causal variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output">1.8.1. The Fokus2 option with the showtable option adds a table to the output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-filter-option-restricts-the-output-of-tracepre">1.7. The filter option, restricts the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-up-option-extends-the-tracepre-plot-beyond-the-first-level-of-causal-variables">1.8. The up option, extends the <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> plot beyond the first level of causal variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-table-to-the-causal-graph">1.8.1. Adding a table to the causal graph</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables">1.9. <code class="docutils literal notranslate"><span class="pre">.tracedep(down=xx)</span></code> traces the impact of a variable on other variables</a></li>
@@ -425,14 +425,14 @@ document.write(`
                   
   <span class="target" id="index-0"></span><span class="target" id="index-1"></span><span class="target" id="index-2"></span><span class="target" id="index-3"></span><span class="target" id="index-4"></span><section class="tex2jax_ignore mathjax_ignore" id="model-analytics">
 <span id="index-5"></span><h1><span class="section-number">1. </span>Model analytics<a class="headerlink" href="#model-analytics" title="Permalink to this headline">#</a></h1>
-<p>A model has a well defined logical and causal structure. <span id="id1"><a class="reference internal" href="../../Reference.html#id4" title="K.C. Kogiku. An Introduction to Macroeconomic Models. McGwaw-Hill, 1968. URL: https://books.google.de/books?id=jp4LzQEACAAJ.">Kogiku</a></span> provides an introduction to causal analysis of models, while <span id="id2"><a class="reference internal" href="../../Reference.html#id2" title="Ron Berndsen. Causal ordering in economic models. Decision Support Systems, 1995. ISBN: 0167-9236. doi:10.1016/0167-9236(94)00034-P.">Berndsen</a></span> gives a more elaborate discussion.</p>
+<p>A model has a well defined logical and causal structure. <span id="id1"><a class="reference internal" href="../../Reference.html#id4" title="K.C. Kogiku. An Introduction to Macroeconomic Models. McGwaw-Hill, 1968. URL: https://books.google.de/books?id=jp4LzQEACAAJ.">Kogiku</a></span>(1968) provides an introduction to causal analysis of models, while <span id="id2"><a class="reference internal" href="../../Reference.html#id2" title="Ron Berndsen. Causal ordering in economic models. Decision Support Systems, 1995. doi:10.1016/0167-9236(94)00034-P.">Berndsen</a></span>(1995) gives a more elaborate discussion.</p>
 <p>At the simplest level, the equations of a model can be organized into blocks.</p>
 <ul class="simple">
 <li><p><strong>Simultaneous block</strong> include equations that have are co-determined simultaneously. They contain feedback loops that may require several iterations before a solution that satisfies them all is found. A classic simultaneous block would include GDP, Income and Consumption. Consumption depends on income. Income depends on GDP, but Consumption determines GDP.</p></li>
 <li><p><strong>Recursive blocks</strong> include equations that are a simple function of other variables. For example, the current account balance is just the difference between Export Revenues and Import Revenues.  These can be solved with just one pass once the values of the simultaneous blocks have been resolved.</p></li>
 </ul>
-<p>At the equation level, each endogenous variable is a function of one or more variables, but because these variables are also dependent on other variables in the model, those right hand side variables that are endogenous can have their equations substituted into the first level equation to get an extended set of dependencies.  Moreover, the endogenous right hand side variables of these second level variables can also have their right hand sides substituted into the equation etc.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> uses the <a class="reference external" href="https://networkx.org/">networkx</a> python package to analyze the interrelation ships within the model and between equations and includes a number of methods and properties to present these interrelationships both in tabular and graphical form [^Graphvix], a subset of which is exposed in this chapter.</p>
+<p>At the equation level, each endogenous variable is a function of one or more variables, but because some of these variables are also dependent on other variables in the model, those right hand side variables that are endogenous can have their equations substituted into the first level equation to get an extended set of dependencies.  Moreover, the endogenous right hand side variables of these second level variables can also have their right hand sides substituted into the equation etc.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> uses the <a class="reference external" href="https://networkx.org/">networkx</a> python package to analyze the interrelationships within the model and between equations and includes a number of methods and properties to present these interrelationships both in tabular and graphical form [^Graphvix], a subset of which is exposed in this chapter.</p>
 <section id="setting-up-the-python-environment-and-loading-a-pre-exisitng-model">
 <h2><span class="section-number">1.1. </span>Setting up the python environment and loading a pre-exisitng model<a class="headerlink" href="#setting-up-the-python-environment-and-loading-a-pre-exisitng-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
@@ -461,13 +461,13 @@ document.write(`
 <p><strong>png=latex</strong></p>
 <p>The default behavior when displaying graphs in a <em>jupyter notebook</em> is to produce images in .svg format.
 These images scale well and the mouseover feature can be used. That is: On mouseover of a node, the variable and the equation are displayed.  On mouseover on an joining line, the extent to which the variable contributed to the change in the dependent variable is displayed.</p>
-<p>Unfortunately this <em>jupyter book</em> (that is not a notebook) requires images be in he jpg or PNG format so this functionality has been disabled, by specifying that the png format be used instead of svg.</p>
-<p>For other purposes, the variable latex could be set equal to False in which case the same code will generate SVGs.</p>
+<p>Unfortunately this <em>jupyter book</em> (book – not notebook) requires images be in he jpg or PNG format so this functionality has been disabled, by specifying that the png format be used instead of svg.</p>
+<p>For other purposes, the variable latex could be set equal to False in which case the same code will generate graphics in the more versatile SVG format.</p>
 </div>
 </section>
 <section id="model-information">
 <h2><span class="section-number">1.2. </span>Model information<a class="headerlink" href="#model-information" title="Permalink to this headline">#</a></h2>
-<p>The model object contains information about the model itself, its name, its structure (does it contain simultaneous equations or is it recursive), the number of variables it contains and the number that are exogenous and endogenous (have associated equations).</p>
+<p>As noted before, the model object contains information about the model itself, its name, its structure (does it contain simultaneous equations or is it recursive), the number of variables it contains and the number that are exogenous and endogenous (have associated equations).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span>
@@ -486,44 +486,29 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 </div>
-<span class="target" id="index-19"></span><span class="target" id="index-20"></span><p id="index-21">The model work space also has a time dimension, its sample period. This can be retrieved and changed.</p>
-<p>`mpak.per_current’</p>
-<span class="target" id="index-22"></span><span class="target" id="index-23"></span><span class="target" id="index-24"></span><div class="cell docutils container" id="index-25">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">current_per</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026,
-            2027, 2028, 2029, 2030],
-           dtype=&#39;int64&#39;)
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="model-structure">
-<span id="id3"></span><h2><span class="section-number">1.3. </span>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">#</a></h2>
-<p>A quick way to visualize the structure of a model is to plot its <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_matrix">adjacency matrix</a>.</p>
+<h2><span class="section-number">1.3. </span>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">#</a></h2>
+<p>A quick way to visualize the structure of a model is to plot its adjacency matrix (https://en.wikipedia.org/wiki/Adjacency_matrix).</p>
 <p>The adjacency matrix plots the relationships between endogenous variables in the model, dividing them into one or more simultaneous blocks and one or more recursive blocks.</p>
-<p>Below is the adjacency matrix for the Pakistan model. Variables in the red square block (simultaneous block) depend on one or more variables that in turn depends upon them, requiring the mode to solve for their values simultaneously.  The variables in the green triangles (iterative blocks)  do not enter directly or indirectly as an argument in the variables that determine them and therefore can be solved in one iteration once the values for the simultaneous variables are determined.</p>
-<span class="target" id="index-26"></span><span class="target" id="index-27"></span><span class="target" id="index-28"></span><span class="target" id="index-29"></span><span class="target" id="index-30"></span><span class="target" id="index-31"></span><div class="cell docutils container" id="index-32">
+<p>Below is the adjacency matrix for the Pakistan model. Variables in the red square block (simultaneous block) depend on one or more variables that in turn depend upon them, requiring the model to solve for their values simultaneously.  The variables in the green triangles (iterative blocks) do not enter directly or indirectly as an argument in the variables that determine them and therefore can be solved in one iteration once the values for the simultaneous variables are determined.</p>
+<span class="target" id="index-19"></span><span class="target" id="index-20"></span><span class="target" id="index-21"></span><span class="target" id="index-22"></span><span class="target" id="index-23"></span><span class="target" id="index-24"></span><div class="cell docutils container" id="index-25">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">plotadjacency</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">nolag</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/251ab7fe3adfcac3e7d6a175ab025d76866e500c6f761c4041b3388d07876ab3.png" src="../../_images/251ab7fe3adfcac3e7d6a175ab025d76866e500c6f761c4041b3388d07876ab3.png" />
+<img alt="../../_images/aa0ae5a190f148660eeaa65a8583730d04090512bc047ee8502f2deb1f99bc63.png" src="../../_images/aa0ae5a190f148660eeaa65a8583730d04090512bc047ee8502f2deb1f99bc63.png" />
 </div>
 </div>
-<span class="target" id="index-33"></span><span class="target" id="index-34"></span><span class="target" id="index-35"></span></section>
+<p>As is evident in the above chart, the majority of the variables in MFMod Pakistan are recursive (green) and depend simply on the values of other variables.  The core of the model lies in the simultaneous (red) block, where the main wages, prices, real and nominal variables that drive other variables are determined.</p>
+<span class="target" id="index-26"></span><span class="target" id="index-27"></span><span class="target" id="index-28"></span></section>
 <section id="the-dependencies-of-individual-endogenous-variables-the-tracepre-method">
-<span id="index-36"></span><h2><span class="section-number">1.4. </span>The dependencies of individual endogenous variables (the <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> method)<a class="headerlink" href="#the-dependencies-of-individual-endogenous-variables-the-tracepre-method" title="Permalink to this headline">#</a></h2>
-<p>As noted above, every endogenous variables is directly dependent on the variables that occur on its right hand side, but us also indirectly dependent on the variables that determine its RHS variables and in turn those that determine the variables to the right of them <em>ad infinitum</em>.</p>
+<span id="index-29"></span><h2><span class="section-number">1.4. </span>The dependencies of individual endogenous variables (the <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> method)<a class="headerlink" href="#the-dependencies-of-individual-endogenous-variables-the-tracepre-method" title="Permalink to this headline">#</a></h2>
+<p>As noted above, every endogenous variables is directly dependent on the variables that occur on its right hand side, but is also indirectly dependent on the variables that determine its RHS variables and in turn those that determine the variables to the right of them <em>ad infinitum</em>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> includes several methods and properties that allow these dependencies to be explored.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> property returns the normalized formula of an equation, from which the right hand variables for the equation can be discerned.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> property returns the normalized formula of an equation, from which the right hand variables for the equation can be discerned and these are reported along with their descriptions following the formula.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNECONPRVTKN</span><span class="o">.</span><span class="n">frml</span>
@@ -559,7 +544,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/43374d85376f20474e5b980df4dd655a0e4381fe40175215c5d480d19077138a.png" src="../../_images/43374d85376f20474e5b980df4dd655a0e4381fe40175215c5d480d19077138a.png" />
+<img alt="../../_images/8596834634339bbd6135794217aa257605475cf357794bfd5c9732bb1912fa9d.png" src="../../_images/8596834634339bbd6135794217aa257605475cf357794bfd5c9732bb1912fa9d.png" />
 </div>
 </div>
 <p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and reveals the relative importance of each variable in the change of the dependent variable.</p>
@@ -583,13 +568,13 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d588d437a7a5441d43bf29b1cc53c5eb984bc5d8db6f9749a63cc8919a0db3a0.png" src="../../_images/d588d437a7a5441d43bf29b1cc53c5eb984bc5d8db6f9749a63cc8919a0db3a0.png" />
+<img alt="../../_images/2e9db895fddedc8b4275b6e2f3fd8e21d0b9ba3eb5eba9153136eb9fc88af525.png" src="../../_images/2e9db895fddedc8b4275b6e2f3fd8e21d0b9ba3eb5eba9153136eb9fc88af525.png" />
 </div>
 </div>
-<span class="target" id="index-37"></span><span class="target" id="index-38"></span></section>
+<span class="target" id="index-30"></span><span class="target" id="index-31"></span></section>
 <section id="following-a-shock-tracepre-indicates-the-relative-importance-of-different-variables-in-explaining-the-change-in-the-dependent-variable">
-<span id="index-39"></span><h2><span class="section-number">1.6. </span>Following a shock <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> indicates the relative importance of different variables in explaining the change in the dependent variable<a class="headerlink" href="#following-a-shock-tracepre-indicates-the-relative-importance-of-different-variables-in-explaining-the-change-in-the-dependent-variable" title="Permalink to this headline">#</a></h2>
-<p>Below the same <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> command is executed, but because of the shock, the width of the lines indicating representing the causal links between variables is thicker the more important the change  in a given variable was in the previous simulation in explaining the change in the level of the dependent variable (GDP).</p>
+<span id="index-32"></span><h2><span class="section-number">1.6. </span>Following a shock <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> indicates the relative importance of different variables in explaining the change in the dependent variable<a class="headerlink" href="#following-a-shock-tracepre-indicates-the-relative-importance-of-different-variables-in-explaining-the-change-in-the-dependent-variable" title="Permalink to this headline">#</a></h2>
+<p>Below the same <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> command is executed, but because a shock has been executed, the width of the lines representing the causal links between variables is thicker the more important the change  in a given variable was in the previous simulation in explaining the change in the level of the dependent variable (GDP).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latex</span><span class="o">=</span><span class="mi">1</span>
@@ -598,13 +583,13 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/020b41490108e9fffd10c54d83819edc67f7df9a0e2305aa81c34bbdde68a5fc.png" src="../../_images/020b41490108e9fffd10c54d83819edc67f7df9a0e2305aa81c34bbdde68a5fc.png" />
+<img alt="../../_images/8f3799692bd604a33094754566e7c1393b43eb423408df997a976384f5f42a90.png" src="../../_images/8f3799692bd604a33094754566e7c1393b43eb423408df997a976384f5f42a90.png" />
 </div>
 </div>
 </section>
-<section id="the-filter-option-restricting-the-output-of-tracepre">
-<span id="index-40"></span><h2><span class="section-number">1.7. </span>The filter option, restricting the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code><a class="headerlink" href="#the-filter-option-restricting-the-output-of-tracepre" title="Permalink to this headline">#</a></h2>
-<p>Using the filter option, the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> can be restricted to RHS variables that have had large impacts on the dependent variable.v</p>
+<section id="the-filter-option-restricts-the-output-of-tracepre">
+<span id="index-33"></span><h2><span class="section-number">1.7. </span>The filter option, restricts the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code><a class="headerlink" href="#the-filter-option-restricts-the-output-of-tracepre" title="Permalink to this headline">#</a></h2>
+<p>The filter option can be used to restrict the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> to RHS variables that have had a large impact on the dependent variable. In the example below, the option <code class="docutils literal notranslate"><span class="pre">filter=20</span></code> instructs tracepre to only draw those rhs variables taht contributed 20 percent or more to the total change in GDP.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
@@ -612,13 +597,13 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e87b385a089ab96cfb28ab54a21790de9e4565945243868205e2ae15910a1211.png" src="../../_images/e87b385a089ab96cfb28ab54a21790de9e4565945243868205e2ae15910a1211.png" />
+<img alt="../../_images/f4976ed1d8a98cd4a5a8323d2f5a950eaa6349ed4cc261d36c312de25c30943e.png" src="../../_images/f4976ed1d8a98cd4a5a8323d2f5a950eaa6349ed4cc261d36c312de25c30943e.png" />
 </div>
 </div>
 </section>
-<section id="the-up-option-extending-the-tracepre-beyond-the-first-level-causal-variables">
-<span id="index-41"></span><h2><span class="section-number">1.8. </span>The up option, extending the <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> beyond the first level causal variables<a class="headerlink" href="#the-up-option-extending-the-tracepre-beyond-the-first-level-causal-variables" title="Permalink to this headline">#</a></h2>
-<p>The up option allows <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> dependencies to be followed through beyond the first level of causal variables.  Below it is extended to variables as much as three levels back, and restricted to those whose variation explains at least 20 percent of the change in the variable of which they are a right-hand-side variable.</p>
+<section id="the-up-option-extends-the-tracepre-plot-beyond-the-first-level-of-causal-variables">
+<span id="index-34"></span><h2><span class="section-number">1.8. </span>The up option, extends the <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> plot beyond the first level of causal variables<a class="headerlink" href="#the-up-option-extends-the-tracepre-plot-beyond-the-first-level-of-causal-variables" title="Permalink to this headline">#</a></h2>
+<p>The up option allows <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> dependencies to be followed beyond the first level of causal variables. Below, it is extended to variables as much as three levels back, and restricted to those whose variation explains at least 20 percent of the change in the variable of which they are a right-hand-side variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">up</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
@@ -626,11 +611,12 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0a83856ca7f6fb8ef1043f2e1aa33a8147caa9651c95b8baea46a030542cd0b6.png" src="../../_images/0a83856ca7f6fb8ef1043f2e1aa33a8147caa9651c95b8baea46a030542cd0b6.png" />
+<img alt="../../_images/c7c8b05ea89690f1a3b8d42360d098eaad22ab34956a4ecfa8824b10f4e8f0e6.png" src="../../_images/c7c8b05ea89690f1a3b8d42360d098eaad22ab34956a4ecfa8824b10f4e8f0e6.png" />
 </div>
 </div>
-<section id="the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output">
-<span id="index-42"></span><h3><span class="section-number">1.8.1. </span>The Fokus2 option with the showtable option adds a table to the output<a class="headerlink" href="#the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output" title="Permalink to this headline">#</a></h3>
+<section id="adding-a-table-to-the-causal-graph">
+<span id="index-35"></span><h3><span class="section-number">1.8.1. </span>Adding a table to the causal graph<a class="headerlink" href="#adding-a-table-to-the-causal-graph" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Fokus2</span></code> option causes a table of values to be added to the casual flow graph, with inthis example the <code class="docutils literal notranslate"><span class="pre">showgrowth=True</span></code> option instructing modelflow to show both the table in level and growth rate terms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span><span class="mi">2027</span><span class="p">):</span>
@@ -639,17 +625,17 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2d3664e666bf5816be4ff0720dbfc623b435257cfa8e720b5c906825b2417a81.png" src="../../_images/2d3664e666bf5816be4ff0720dbfc623b435257cfa8e720b5c906825b2417a81.png" />
+<img alt="../../_images/6e1fc6a74aae370f581f7eb5edb9d9ec83271ec36178e8caa50bb82e0045edd9.png" src="../../_images/6e1fc6a74aae370f581f7eb5edb9d9ec83271ec36178e8caa50bb82e0045edd9.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
 </div>
 </div>
-<span class="target" id="index-43"></span></section>
+<span class="target" id="index-36"></span></section>
 </section>
 <section id="tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables">
-<span id="index-44"></span><h2><span class="section-number">1.9. </span><code class="docutils literal notranslate"><span class="pre">.tracedep(down=xx)</span></code> traces the impact of a variable on other variables<a class="headerlink" href="#tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables" title="Permalink to this headline">#</a></h2>
-<p>By specifying the option down=xx, the direction of the dependency graph is reversed and the chart shows the impact that the changes in the selected variable had on those which depend upon it.  Below is the impact of change in consumption on all of the variables up to 3 levels below the consumption equation.</p>
+<span id="index-37"></span><h2><span class="section-number">1.9. </span><code class="docutils literal notranslate"><span class="pre">.tracedep(down=xx)</span></code> traces the impact of a variable on other variables<a class="headerlink" href="#tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables" title="Permalink to this headline">#</a></h2>
+<p>The preceding examples have focussed on understanding how changes in other variables have impacted the variable of interest.  The closely related <code class="docutils literal notranslate"><span class="pre">tracedep()</span></code> method shows what other variables depend on the specified variable, with the <code class="docutils literal notranslate"><span class="pre">down=xx</span></code> option indicating how many levels of substitution to display. Here, the direction of the dependency graph is reversed and the chart shows the impact that the changes in the selected variable had on those which depend upon it.  Below is the impact of change in consumption on all of the variables up to 3 levels below the consumption equation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNECONPRVTKN</span><span class="o">.</span><span class="n">tracedep</span><span class="p">(</span><span class="n">down</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="nb">filter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
@@ -657,12 +643,12 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d943abd3dddd42ee9e60cb9496eecba3395a7b9b2be0c82a747935de81075cfd.png" src="../../_images/d943abd3dddd42ee9e60cb9496eecba3395a7b9b2be0c82a747935de81075cfd.png" />
+<img alt="../../_images/ad5570abc9c297b2ef2f40233b317017e49be36921219d980f6318dbf21b32f0.png" src="../../_images/ad5570abc9c297b2ef2f40233b317017e49be36921219d980f6318dbf21b32f0.png" />
 </div>
 </div>
 </section>
 <section id="modeldash-an-interactive-way-to-explore-dependencies">
-<span id="index-45"></span><h2><span class="section-number">1.10. </span><code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> An interactive way to explore dependencies<a class="headerlink" href="#modeldash-an-interactive-way-to-explore-dependencies" title="Permalink to this headline">#</a></h2>
+<span id="index-38"></span><h2><span class="section-number">1.10. </span><code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> An interactive way to explore dependencies<a class="headerlink" href="#modeldash-an-interactive-way-to-explore-dependencies" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> method (when executed in a Jupyter Notebook) generates a widget that allows you to dynamicaly adjust the arguments to the <code class="docutils literal notranslate"><span class="pre">tracepre()</span></code> and <code class="docutils literal notranslate"><span class="pre">tracedep</span></code> functions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">2026</span><span class="p">):</span>
         <span class="n">mpak</span><span class="o">.</span><span class="n">modeldash</span><span class="p">(</span><span class="s1">&#39;PAKNYGDPMKTPKN&#39;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -685,10 +671,8 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apprun
 Dash is running on http://127.0.0.1:5001/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No Dash, Address &#39;http://127.0.0.1:5001&#39; already in use.
-    Try passing a different port to run_server.
+
+Dash app running on http://127.0.0.1:5001/
 </pre></div>
 </div>
 </div>
@@ -729,12 +713,12 @@ Dash is running on http://127.0.0.1:5001/
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../07_MoreFeatures/Targeting.html"
+       href="../05_WBModels/ReportWriting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>A simulation that targets a specific outcome</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Report writing and scenario results</p>
       </div>
     </a>
     <a class="right-next"
@@ -770,9 +754,9 @@ Dash is running on http://127.0.0.1:5001/
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dependencies-of-individual-endogenous-variables-the-tracepre-method">1.4. The dependencies of individual endogenous variables (the <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> method)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-the-model">1.5. Shock the model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#following-a-shock-tracepre-indicates-the-relative-importance-of-different-variables-in-explaining-the-change-in-the-dependent-variable">1.6. Following a shock <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> indicates the relative importance of different variables in explaining the change in the dependent variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-filter-option-restricting-the-output-of-tracepre">1.7. The filter option, restricting the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-up-option-extending-the-tracepre-beyond-the-first-level-causal-variables">1.8. The up option, extending the <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> beyond the first level causal variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fokus2-option-with-the-showtable-option-adds-a-table-to-the-output">1.8.1. The Fokus2 option with the showtable option adds a table to the output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-filter-option-restricts-the-output-of-tracepre">1.7. The filter option, restricts the output of <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-up-option-extends-the-tracepre-plot-beyond-the-first-level-of-causal-variables">1.8. The up option, extends the <code class="docutils literal notranslate"><span class="pre">.tracepre</span></code> plot beyond the first level of causal variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-table-to-the-causal-graph">1.8.1. Adding a table to the causal graph</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracedep-down-xx-traces-the-impact-of-a-variable-on-other-variables">1.9. <code class="docutils literal notranslate"><span class="pre">.tracedep(down=xx)</span></code> traces the impact of a variable on other variables</a></li>

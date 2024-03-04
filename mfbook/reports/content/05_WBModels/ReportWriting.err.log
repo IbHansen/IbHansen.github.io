@@ -15,20 +15,29 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-del fig1
-del fig2
-fig1=var_figs.axes[0]
-fig2=var_figs.axes[1]
+#run a solution using the revised model and replacing the dataframe with the new one (exostart)  (that includes the exogenized variables) with their values.  Store thre results in a dataframecalled Baseline
+# they will also be stored in mpak.latestdf
 
+update_variables = {'Carbon tax on Coal (USD/Ton)'       :'PAKGGREVCO2CER',
+                    'Carbon tax on Oil (USD/Ton'         :'PAKGGREVCO2OER',
+                    'Carbon tax on Natural Gas (USD/Ton' :'PAKGGREVCO2GER'}
+value = 29
+
+for tax,var in update_variables.items():
+        alternative_exo.loc[2020:2100,var] = value  # sets the carbon tax on all three products to value (29)
+     
+        
+res= mpak(alternative_exo,2020,2100,alfa = 0.7,silent=1,solver = 'sim',relconv = 0.00000001) #runs the solutiona nd saves it with the name to teh left
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mNameError[0m                                 Traceback (most recent call last)
-Cell [1;32mIn[18], line 1[0m
-[1;32m----> 1[0m [38;5;28;01mdel[39;00m fig1
-[0;32m      2[0m [38;5;28;01mdel[39;00m fig2
-[0;32m      3[0m fig1[38;5;241m=[39mvar_figs[38;5;241m.[39maxes[[38;5;241m0[39m]
+Cell [1;32mIn[15], line 10[0m
+[0;32m      7[0m value [38;5;241m=[39m [38;5;241m29[39m
+[0;32m      9[0m [38;5;28;01mfor[39;00m tax,var [38;5;129;01min[39;00m update_variables[38;5;241m.[39mitems():
+[1;32m---> 10[0m         [43malternative_exo[49m[38;5;241m.[39mloc[[38;5;241m2020[39m:[38;5;241m2100[39m,var] [38;5;241m=[39m value  [38;5;66;03m# sets the carbon tax on all three products to value (29)[39;00m
+[0;32m     13[0m res[38;5;241m=[39m mpak(alternative_exo,[38;5;241m2020[39m,[38;5;241m2100[39m,alfa [38;5;241m=[39m [38;5;241m0.7[39m,silent[38;5;241m=[39m[38;5;241m1[39m,solver [38;5;241m=[39m [38;5;124m'[39m[38;5;124msim[39m[38;5;124m'[39m,relconv [38;5;241m=[39m [38;5;241m0.00000001[39m) [38;5;66;03m#runs the solutiona nd saves it with the name to teh left[39;00m
 
-[1;31mNameError[0m: name 'fig1' is not defined
+[1;31mNameError[0m: name 'alternative_exo' is not defined
 
