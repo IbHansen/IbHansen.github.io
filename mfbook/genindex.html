@@ -189,7 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/07_MoreFeatures/ModelFlowCommandReference.html">2. Useful Jupyter Notebook commands and features</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="current nav bd-sidenav">
@@ -330,6 +331,7 @@ document.write(`
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
@@ -366,6 +368,22 @@ document.write(`
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    .dekomp\_plot()
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-35">Waterfall impact decomposition</a>
+</li>
+      </ul></li>
+      <li>
+    .dekomp_plot()
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-37">per=x option</a>
+</li>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-38">sort=xx option</a>
+</li>
+      </ul></li>
       <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-22">.equpdate() method</a>
 </li>
       <li>
@@ -673,7 +691,7 @@ document.write(`
     Impact Decomposition
 
       <ul>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-55">.dekomp() option Lag=True</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-59">.dekomp() option Lag=True</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-23">.dekomp_plot()</a>
 </li>
@@ -681,21 +699,21 @@ document.write(`
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-25">.dekomp_plot() option rename=True/False</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-37">.exodif() method</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-41">.exodif() method</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-42">.explain_all() method Total differential graph</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-46">.explain_all() method Total differential graph</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-51">.explain_last() of the last year</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-55">.explain_last() of the last year</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-45">.explain_per()</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-49">.explain_per()</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-52">.explain_sum()  accumulated effects</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-56">.explain_sum()  accumulated effects</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-29">.get_att() option time_att</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-48">.get_att_gui() interactive widget</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-52">.get_att_gui() interactive widget</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-36">.totdif() method</a>, <a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-39">[1]</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-40">.totdif() method</a>, <a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-43">[1]</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-30">.tracedep() Add data table</a>
 </li>
@@ -709,11 +727,11 @@ document.write(`
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-21">graphs</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-44">Total differential for specific period</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-48">Total differential for specific period</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-43">Total differential graph .explain_all() method</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-47">Total differential graph .explain_all() method</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-56">Total differential grouping variables</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-60">Total differential grouping variables</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1120,6 +1138,19 @@ document.write(`
   </ul></td>
 </tr></table>
 
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Quantfiying impacts over time
+
+      <ul>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-61">Influence of</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -1195,19 +1226,19 @@ document.write(`
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-22">.dekomp_plot()</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-40">.explain_all() method Total differential graph</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-44">.explain_all() method Total differential graph</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-50">.explain_last()</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-54">.explain_last()</a>
 </li>
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-33">.fix() Exogenizing an endogenous variable</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-28">.get_att() option time_att</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-47">.get_att_gui() method</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-51">.get_att_gui() method</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-4">.totdif() - calculate model&#39;s total differential</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-38">.totdif() method</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-42">.totdif() method</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-2">.tracedep()</a>
 </li>
@@ -1225,17 +1256,17 @@ document.write(`
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-0">Impact Decomposition</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-35">Impact decomposition - total differential of model</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-39">Impact decomposition - total differential of model</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-18">Impact Decomposition examples</a>
 </li>
         <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-20">Impact Decomposition graphs</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-46">Impact decomposition interactive widget</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-50">Impact decomposition interactive widget</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-49">Impact decomposition of the last year</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-53">Impact decomposition of the last year</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-53">Impact decomposition summed over all years</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-57">Impact decomposition summed over all years</a>
 </li>
         <li><a href="content/05_WBModels/ReportWriting.html#index-2">Report writing</a>
 </li>
@@ -1257,7 +1288,7 @@ document.write(`
 </li>
         <li><a href="content/05_WBModels/ReportWriting.html#index-4">the Keep option</a>
 </li>
-        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-54">Total differential grouping variables</a>
+        <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-58">Total differential grouping variables</a>
 </li>
         <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-15">use .mfcalc() to initialize shocked dataframe</a>
 </li>
@@ -1450,7 +1481,7 @@ document.write(`
         <li><a href="content/05_WBModels/Targeting.html#index-8">solve for Instruments</a>
 </li>
       </ul></li>
-      <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-41">Total differential graph .explain_all() method</a>
+      <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-45">Total differential graph .explain_all() method</a>
 </li>
       <li>
     tracedep()
@@ -1529,6 +1560,8 @@ document.write(`
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="content/06_ModelAnalytics/AttributionSomeFeatures.html#index-36">Waterfall impact decomposition</a>
+</li>
       <li>
     Wildcard
 
@@ -1538,6 +1571,8 @@ document.write(`
       </ul></li>
       <li><a href="content/05_WBModels/MoreComplexScenarios.html#index-2">Wildcard searches| The ! operator: search on variable descriptions</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     with .set_smpl
 
@@ -1545,8 +1580,6 @@ document.write(`
         <li><a href="content/05_WBModels/ScenarioAnalysis.html#index-12">limiting the display time frame</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     with clause
 
