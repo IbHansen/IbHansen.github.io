@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3. Introduction to Pandas, Series and dataframes &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
   
@@ -15,58 +14,56 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/04_PythonEssentials/PandasDataFrames';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Modelflow and Pandas DataFrames" href="Modelflow%20and%20Dataframes.html" />
     <link rel="prev" title="2. Some Python basics" href="PythonBasics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -128,6 +137,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../introduction.html">
@@ -136,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">The World Bank's MFMod Framework in Python with Modelflow</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -153,12 +177,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_Introduction/Introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some python essentials for using World Bank models with modelflow</span></p>
 <ul class="current nav bd-sidenav">
@@ -168,11 +192,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with updated variables.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mfcalc.html">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
@@ -192,8 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Useful Jupyter Notebook commands and features</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -214,7 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -223,14 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -255,14 +278,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/main/papers/mfbook/content/04_PythonEssentials/PandasDataFrames.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -351,26 +374,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -430,10 +455,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-pandas-series-and-dataframes">
-<span id="index-0"></span><h1><span class="section-number">3. </span>Introduction to Pandas,  Series and dataframes<a class="headerlink" href="#introduction-to-pandas-series-and-dataframes" title="Permalink to this headline">#</a></h1>
+<span id="index-0"></span><h1><span class="section-number">3. </span>Introduction to Pandas,  Series and dataframes<a class="headerlink" href="#introduction-to-pandas-series-and-dataframes" title="Link to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> is built on top of the <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> library. <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> is the Swiss Army knife of data science and can perform an impressive array of data oriented tasks.</p>
 <p>This tutorial is a very short introduction to how pandas <code class="docutils literal notranslate"><span class="pre">Series</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataframes</span></code> are used with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. For a more complete discussion see any of the many tutorials on the internet, notably:</p>
 <ul class="simple">
@@ -441,7 +466,7 @@ document.write(`
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html"><em>Pandas community tutorials</em></a></p></li>
 </ul>
 <section id="import-the-pandas-library">
-<h2><span class="section-number">3.1. </span>Import the pandas library<a class="headerlink" href="#import-the-pandas-library" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1. </span>Import the pandas library<a class="headerlink" href="#import-the-pandas-library" title="Link to this heading">#</a></h2>
 <p>As with any python program, in order to use a package or library it must first be imported into the session. As noted above, by  convention pandas is imported as pd (assigning the alias pd to the imported pandas library).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -456,13 +481,13 @@ document.write(`
 </div>
 <p>The Pandas  library contains many classes and methods.  The discussion below focuses on <strong>Series</strong> and <strong>DataFrames</strong>, two classes that are part of the pandas library.  Both <code class="docutils literal notranslate"><span class="pre">series</span></code> and <code class="docutils literal notranslate"><span class="pre">dataframes</span></code> are containers that can be used to store time-series data and that have associated with them a number of very useful methods for displaying and manipulating time-series data.</p>
 <p>Unlike other statistical packages neither <code class="docutils literal notranslate"><span class="pre">series</span></code> nor <code class="docutils literal notranslate"><span class="pre">dataframes</span></code> are inherently or exclusively time-series in nature. <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and macro-economists use them in this way, but the classes themselves are not necessarily dated or exclusively numerical out-of-the-box.</p>
-<span class="target" id="index-1"></span></section>
+</section>
 <section id="the-series-class-in-pandas">
-<span id="index-2"></span><h2><span class="section-number">3.2. </span>The <code class="docutils literal notranslate"><span class="pre">series</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-series-class-in-pandas" title="Permalink to this headline">#</a></h2>
+<span id="index-2"></span><span id="index-1"></span><h2><span class="section-number">3.2. </span>The <code class="docutils literal notranslate"><span class="pre">series</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-series-class-in-pandas" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Series</span></code> is a class that is part of the pandas package and can be used to instantiate an object that holds a two dimensional array comprised of values and an index.</p>
 <p>The constructor for a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object is <code class="docutils literal notranslate"><span class="pre">pandas.Series()</span></code>.  The content inside the parentheses will determine the nature of the series-object generated.  As an object-oriented language, Python supports <code class="docutils literal notranslate"><span class="pre">overrides</span></code>. Overrides mean a method – including constructors – can have more than one way in which they can be called. Specifically there can be different constructors for a class, depending on how the data used to initialize the object are organized.</p>
 <section id="series-declared-from-a-list">
-<h3><span class="section-number">3.2.1. </span>Series declared from a list<a class="headerlink" href="#series-declared-from-a-list" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.2.1. </span>Series declared from a list<a class="headerlink" href="#series-declared-from-a-list" title="Link to this heading">#</a></h3>
 <p>The simplest way to create a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is to pass an array of values as a Python list to the Series constructor.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -541,7 +566,7 @@ dtype: object
 <p>Note that all three series have different length.</p>
 </section>
 <section id="series-declared-using-a-specific-index">
-<span id="index-3"></span><h3><span class="section-number">3.2.2. </span>Series declared using a specific index<a class="headerlink" href="#series-declared-using-a-specific-index" title="Permalink to this headline">#</a></h3>
+<span id="index-3"></span><h3><span class="section-number">3.2.2. </span>Series declared using a specific index<a class="headerlink" href="#series-declared-using-a-specific-index" title="Link to this heading">#</a></h3>
 <p>In the example below, the series Simplest and Simple2 are recreated (overwritten), but this time an index is specified. Here the index is declared as a(nother) list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -582,9 +607,9 @@ dtype: int64
 </div>
 </div>
 <p>Now these Series look more like time-series data!</p>
-<span class="target" id="index-4"></span></section>
+</section>
 <section id="create-series-from-a-dictionary">
-<span id="index-5"></span><h3><span class="section-number">3.2.3. </span>Create Series from a dictionary<a class="headerlink" href="#create-series-from-a-dictionary" title="Permalink to this headline">#</a></h3>
+<span id="index-5"></span><span id="index-4"></span><h3><span class="section-number">3.2.3. </span>Create Series from a dictionary<a class="headerlink" href="#create-series-from-a-dictionary" title="Link to this heading">#</a></h3>
 <p>In python, a dictionary is a data structure that is more generally known in computer science as an associative array. A dictionary consists of a collection of key-value pairs, where each key-value pair <em>maps</em> or <em>links</em> the key to its associated value.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -618,15 +643,15 @@ dtype: int64
 </div>
 </div>
 </div>
-<span class="target" id="index-7"></span></section>
+</section>
 </section>
 <section id="the-dataframe-class-in-pandas">
-<span id="index-8"></span><h2><span class="section-number">3.3. </span>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-dataframe-class-in-pandas" title="Permalink to this headline">#</a></h2>
+<span id="index-8"></span><span id="index-7"></span><h2><span class="section-number">3.3. </span>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-dataframe-class-in-pandas" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is the primary structure of pandas. It is a two-dimensional data structure with named rows and columns.  Each column can have different data types (numeric, string, etc).</p>
 <p>By convention, a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> is often called df or some other modifier followed by df, to assist in reading the code.</p>
 <p>Much more detail on standard pandas dataframes can be found on the <em>official pandas website</em> <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">https://pandas.pydata.org/docs/reference/frame.html</a>.</p>
 <section id="creating-or-instantiating-a-dataframe">
-<h3><span class="section-number">3.3.1. </span>Creating or instantiating a dataframe<a class="headerlink" href="#creating-or-instantiating-a-dataframe" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.3.1. </span>Creating or instantiating a dataframe<a class="headerlink" href="#creating-or-instantiating-a-dataframe" title="Link to this heading">#</a></h3>
 <p>Like any object, a <code class="docutils literal notranslate"><span class="pre">dataFrame</span></code> can be created by calling the constructor of the pandas class <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame()</span></code> method is constructor for the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class. It can take several forms (as with <code class="docutils literal notranslate"><span class="pre">Series</span></code>), but always returns (instantiates) an instance of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object – i.e. a variable whose contents are a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>The code example below creates a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">df</span></code> comprised of three columns B,C and E; indexed between 2018 and 2021. Macroeconomists may interpret the index as dates, but for pandas they are just numbers.</p>
@@ -697,9 +722,9 @@ dtype: int64
 <p>In the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s that are used in macrostructural models like MFMod, each  column is often interpreted as a time-series of an economic variable. So in this dataframe,  normally B, C and E would each be interpreted as an economic time-series.</p>
 <p>That said, there is nothing in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class that suggests that the data it stores must be time-series or even numeric in nature.</p>
 </div>
-<span class="target" id="index-9"></span></section>
+</section>
 <section id="alternative-ways-to-set-the-time-period-of-a-dated-index">
-<span id="index-10"></span><h3><span class="section-number">3.3.2. </span>Alternative ways to set the time period of a dated index<a class="headerlink" href="#alternative-ways-to-set-the-time-period-of-a-dated-index" title="Permalink to this headline">#</a></h3>
+<span id="index-10"></span><span id="index-9"></span><h3><span class="section-number">3.3.2. </span>Alternative ways to set the time period of a dated index<a class="headerlink" href="#alternative-ways-to-set-the-time-period-of-a-dated-index" title="Link to this heading">#</a></h3>
 <p>A somewhat more creative way to initialize the <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> for dates would use a loop to specify the dates that get passed to the constructor as an argument.</p>
 <p>Below a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <code class="docutils literal notranslate"><span class="pre">df</span></code> with two Series (A and B), is initialized with the values 100 for all data points.</p>
 <p>The index is defined dynamically by a loop <code class="docutils literal notranslate"><span class="pre">index=[2020+v</span> <span class="pre">for</span> <span class="pre">v</span> <span class="pre">in</span> <span class="pre">range(number_of_rows)]</span></code> that runs <code class="docutils literal notranslate"><span class="pre">number_of_rows</span></code> times (6 times in this example) setting v equal to 2020+0, 2020+1,…,2020+5 (recall, that python is zero-indexed so the first value of v is 0, not one). The resulting list whose values are assigned to index is [2020,2021,2022,2023,2024,2025].</p>
@@ -871,7 +896,7 @@ dtype: int64
 </div>
 </section>
 <section id="adding-a-column-to-a-dataframe">
-<span id="index-11"></span><h3><span class="section-number">3.3.3. </span>Adding a column to a dataframe<a class="headerlink" href="#adding-a-column-to-a-dataframe" title="Permalink to this headline">#</a></h3>
+<span id="index-11"></span><h3><span class="section-number">3.3.3. </span>Adding a column to a dataframe<a class="headerlink" href="#adding-a-column-to-a-dataframe" title="Link to this heading">#</a></h3>
 <p>If a value is assigned to a column that does not exist, pandas will add a column with that name and fill it with values resulting from  the calculation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -951,7 +976,7 @@ dtype: int64
 </div>
 </section>
 <section id="revising-values">
-<span id="index-12"></span><h3><span class="section-number">3.3.4. </span>Revising values<a class="headerlink" href="#revising-values" title="Permalink to this headline">#</a></h3>
+<span id="index-12"></span><h3><span class="section-number">3.3.4. </span>Revising values<a class="headerlink" href="#revising-values" title="Link to this heading">#</a></h3>
 <p>If the column exists, then the = method will revise the values of the rows with the values assigned in the statement.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1116,10 +1141,10 @@ would generate an error because the string created with <code class="docutils li
 </section>
 </section>
 <section id="selected-pandas-methods">
-<span id="index-13"></span><h2><span class="section-number">3.4. </span>Selected pandas methods<a class="headerlink" href="#selected-pandas-methods" title="Permalink to this headline">#</a></h2>
+<span id="index-13"></span><h2><span class="section-number">3.4. </span>Selected pandas methods<a class="headerlink" href="#selected-pandas-methods" title="Link to this heading">#</a></h2>
 <p>Pandas has a number of methods (functions that operate on the underlying data of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> object).  Several of them are used when working with a World Bank model in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and these are discussed below.</p>
 <section id="columns-lists-the-column-names-of-a-dataframe">
-<h3><span class="section-number">3.4.1. </span>.columns lists the column names of a dataframe<a class="headerlink" href="#columns-lists-the-column-names-of-a-dataframe" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.4.1. </span>.columns lists the column names of a dataframe<a class="headerlink" href="#columns-lists-the-column-names-of-a-dataframe" title="Link to this heading">#</a></h3>
 <p>The method <code class="docutils literal notranslate"><span class="pre">.columns</span></code> returns the names of the columns in the dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1135,7 +1160,7 @@ would generate an error because the string created with <code class="docutils li
 </div>
 </section>
 <section id="size-indicates-the-dimension-of-a-list">
-<span id="index-14"></span><h3><span class="section-number">3.4.2. </span>.size indicates the dimension of a list<a class="headerlink" href="#size-indicates-the-dimension-of-a-list" title="Permalink to this headline">#</a></h3>
+<span id="index-14"></span><h3><span class="section-number">3.4.2. </span>.size indicates the dimension of a list<a class="headerlink" href="#size-indicates-the-dimension-of-a-list" title="Link to this heading">#</a></h3>
 <p>so <code class="docutils literal notranslate"><span class="pre">df.columns.size</span></code> returns the number of columns in a dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1152,7 +1177,7 @@ would generate an error because the string created with <code class="docutils li
 <p>The <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> <code class="docutils literal notranslate"><span class="pre">df</span></code> has 3 columns.</p>
 </section>
 <section id="eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe">
-<span id="index-15"></span><h3><span class="section-number">3.4.3. </span>.eval() evaluates (calculates) an expression on the data of a dataframe<a class="headerlink" href="#eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe" title="Permalink to this headline">#</a></h3>
+<span id="index-15"></span><h3><span class="section-number">3.4.3. </span>.eval() evaluates (calculates) an expression on the data of a dataframe<a class="headerlink" href="#eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.eval</span></code> is a native dataframe method, which does calculations on a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> and returns a revised <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>. With this method expressions can be evaluated and new columns created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1234,9 +1259,9 @@ would generate an error because the string created with <code class="docutils li
 </div>
 </section>
 <section id="multiple-expressions-can-be-evaluated-with-eval">
-<h3><span class="section-number">3.4.4. </span>multiple expressions can be evaluated with .eval()<a class="headerlink" href="#multiple-expressions-can-be-evaluated-with-eval" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.4.4. </span>multiple expressions can be evaluated with .eval()<a class="headerlink" href="#multiple-expressions-can-be-evaluated-with-eval" title="Link to this heading">#</a></h3>
 <p>With <code class="docutils literal notranslate"><span class="pre">.eval()</span></code> multiple expressions can be evaluated at the same time.  In the example below three apostrophe’s are used to indicate a multiple-line block of text.  Each line is executed separately by eval.</p>
-<span class="target" id="index-16"></span><span class="target" id="index-17"></span><p id="index-18">In this example, two new variables X and THE_ANSWER are crated in a single call to .eval().</p>
+<p id="index-18"><span id="index-17"></span><span id="index-16"></span>In this example, two new variables X and THE_ANSWER are crated in a single call to .eval().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;X = B*NEW</span>
@@ -1581,13 +1606,13 @@ would generate an error because the string created with <code class="docutils li
 </div></div></div>
 </div>
 <p>Here the results are assigned to a new dataframe <code class="docutils literal notranslate"><span class="pre">df2</span></code>.</p>
-<span class="target" id="index-19"></span><span class="target" id="index-20"></span></section>
+</section>
 </section>
 <section id="the-loc-method">
-<span id="index-21"></span><h2><span class="section-number">3.5. </span>The .loc[] method<a class="headerlink" href="#the-loc-method" title="Permalink to this headline">#</a></h2>
+<span id="index-21"></span><span id="index-20"></span><span id="index-19"></span><h2><span class="section-number">3.5. </span>The .loc[] method<a class="headerlink" href="#the-loc-method" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> method is a powerful pandas routine used extensively in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> selects a portion (slice) of a dataframe and  allows the user to display and/or revise specific sub-sections of a column or row in a dataframe.</p>
 <section id="selecting-a-single-element-in-a-dataframe-loc-row-column">
-<h3><span class="section-number">3.5.1. </span>Selecting a single element in a dataframe:  <code class="docutils literal notranslate"><span class="pre">.loc[row,column]</span></code><a class="headerlink" href="#selecting-a-single-element-in-a-dataframe-loc-row-column" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.5.1. </span>Selecting a single element in a dataframe:  <code class="docutils literal notranslate"><span class="pre">.loc[row,column]</span></code><a class="headerlink" href="#selecting-a-single-element-in-a-dataframe-loc-row-column" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.loc[row,column]</span></code> operates on a single cell in the dataframe.  Thus, the below displays the value of the cell with index=2023 observation from the column NEW.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1596,14 +1621,14 @@ would generate an error because the string created with <code class="docutils li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(14)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="selecting-a-single-columns-loc-column">
-<h3><span class="section-number">3.5.2. </span>Selecting a single columns: <code class="docutils literal notranslate"><span class="pre">.loc[:,column]</span></code><a class="headerlink" href="#selecting-a-single-columns-loc-column" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.5.2. </span>Selecting a single columns: <code class="docutils literal notranslate"><span class="pre">.loc[:,column]</span></code><a class="headerlink" href="#selecting-a-single-columns-loc-column" title="Link to this heading">#</a></h3>
 <p>The lone colon in a <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> statement indicates all the rows or columns.  Here all of the rows of the column labeled NEW are displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1625,7 +1650,7 @@ Name: NEW, dtype: int64
 </div>
 </section>
 <section id="selecting-a-single-row-loc-row">
-<h3><span class="section-number">3.5.3. </span>Selecting a single row: <code class="docutils literal notranslate"><span class="pre">.loc[row,:]</span> </code><a class="headerlink" href="#selecting-a-single-row-loc-row" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.5.3. </span>Selecting a single row: <code class="docutils literal notranslate"><span class="pre">.loc[row,:]</span> </code><a class="headerlink" href="#selecting-a-single-row-loc-row" title="Link to this heading">#</a></h3>
 <p>Here all of the columns, for the selected row are displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1646,7 +1671,7 @@ Name: 2023, dtype: int64
 </div>
 </section>
 <section id="selecting-specific-rows-and-columns-loc-xxx-xxx-names">
-<span id="index-22"></span><h3><span class="section-number">3.5.4. </span>Selecting specific rows and columns: .loc[xxx,xxx],[names…]]<a class="headerlink" href="#selecting-specific-rows-and-columns-loc-xxx-xxx-names" title="Permalink to this headline">#</a></h3>
+<span id="index-22"></span><h3><span class="section-number">3.5.4. </span>Selecting specific rows and columns: .loc[xxx,xxx],[names…]]<a class="headerlink" href="#selecting-specific-rows-and-columns-loc-xxx-xxx-names" title="Link to this heading">#</a></h3>
 <p>Passing a list in either the rows or columns portion of the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> statement will allow multiple rows or columns to be displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1694,7 +1719,7 @@ Name: 2023, dtype: int64
 </div>
 </section>
 <section id="select-a-range-the-operator-in-a-loc-statement">
-<span id="index-23"></span><h3><span class="section-number">3.5.5. </span>Select a range: the “:” operator in a ‘.loc’ statement<a class="headerlink" href="#select-a-range-the-operator-in-a-loc-statement" title="Permalink to this headline">#</a></h3>
+<span id="index-23"></span><h3><span class="section-number">3.5.5. </span>Select a range: the “:” operator in a ‘.loc’ statement<a class="headerlink" href="#select-a-range-the-operator-in-a-loc-statement" title="Link to this heading">#</a></h3>
 <p>with the colon operator we can also select a range of results.</p>
 <p>Here from 2018 to 2019.</p>
 <div class="cell docutils container">
@@ -1746,9 +1771,9 @@ Name: 2023, dtype: int64
 </table>
 </div></div></div>
 </div>
-<span class="target" id="index-24"></span></section>
+</section>
 <section id="revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells">
-<span id="index-25"></span><h3><span class="section-number">3.5.6. </span>Revising a sub-section of a <code class="docutils literal notranslate"><span class="pre">DataFrame,</span></code> using  <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> on the left hand side to assign values to specific cells<a class="headerlink" href="#revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells" title="Permalink to this headline">#</a></h3>
+<span id="index-25"></span><span id="index-24"></span><h3><span class="section-number">3.5.6. </span>Revising a sub-section of a <code class="docutils literal notranslate"><span class="pre">DataFrame,</span></code> using  <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> on the left hand side to assign values to specific cells<a class="headerlink" href="#revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells" title="Link to this heading">#</a></h3>
 <p>This can be handy when revising a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> in preparation for running a scenario.<br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1844,7 +1869,7 @@ Name: 2023, dtype: int64
 <p><strong>For more info on the .loc[] method</strong></p>
 <ul class="simple">
 <li><p>Description <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html</a>.</p></li>
-<li><p>Search <a class="reference external" href="https://www.google.com/search?q=pandas+dataframe+loc&amp;newwindow=1">https://www.google.com/search?q=pandas+dataframe+loc&amp;newwindow=1</a>.</p></li>
+<li><p>Search <a class="reference external" href="https://www.google.com/search?q=pandas+dataframe+loc&amp;amp;newwindow=1">https://www.google.com/search?q=pandas+dataframe+loc&amp;newwindow=1</a>.</p></li>
 </ul>
 <p><strong>For more info on pandas:</strong></p>
 <ul class="simple">
@@ -1880,11 +1905,10 @@ Name: 2023, dtype: int64
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="PythonBasics.html"
@@ -1904,10 +1928,7 @@ Name: 2023, dtype: int64
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1915,6 +1936,7 @@ Name: 2023, dtype: int64
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1973,6 +1995,7 @@ By Andrew Burns and Ib Hansen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright World Bank. 2024.
@@ -1999,8 +2022,8 @@ By Andrew Burns and Ib Hansen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
