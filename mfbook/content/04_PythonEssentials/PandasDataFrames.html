@@ -609,7 +609,7 @@ dtype: int64
 <p>Now these Series look more like time-series data!</p>
 </section>
 <section id="create-series-from-a-dictionary">
-<span id="index-5"></span><span id="index-4"></span><h3><span class="section-number">3.2.3. </span>Create Series from a dictionary<a class="headerlink" href="#create-series-from-a-dictionary" title="Link to this heading">#</a></h3>
+<span id="index-4"></span><h3><span class="section-number">3.2.3. </span>Create Series from a dictionary<a class="headerlink" href="#create-series-from-a-dictionary" title="Link to this heading">#</a></h3>
 <p>In python, a dictionary is a data structure that is more generally known in computer science as an associative array. A dictionary consists of a collection of key-value pairs, where each key-value pair <em>maps</em> or <em>links</em> the key to its associated value.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -623,7 +623,7 @@ dtype: int64
 <p>In the following example the keys are numeric</p>
 <p><code class="docutils literal notranslate"><span class="pre">mydict2={1966:2,1967:3,1968:4,1969:5,2000:-15}</span></code></p>
 <p>Here, mydict2  links (maps) the key 1966 to the value 2 and “1969” links to the value 5.</p>
-<p id="index-6">The series constructor can also accept a dictionary. In this instance, the index of the series becomes the key of the dictionary that was used to instantiate the series.</p>
+<p>The series constructor can also accept a dictionary. In this instance, the index of the series becomes the key of the dictionary that was used to instantiate the series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mydict2</span><span class="o">=</span><span class="p">{</span><span class="mi">1966</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">1967</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1968</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="mi">1969</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">2000</span><span class="p">:</span><span class="mi">6</span><span class="p">}</span>
@@ -646,7 +646,7 @@ dtype: int64
 </section>
 </section>
 <section id="the-dataframe-class-in-pandas">
-<span id="index-8"></span><span id="index-7"></span><h2><span class="section-number">3.3. </span>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-dataframe-class-in-pandas" title="Link to this heading">#</a></h2>
+<span id="index-6"></span><span id="index-5"></span><h2><span class="section-number">3.3. </span>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-dataframe-class-in-pandas" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is the primary structure of pandas. It is a two-dimensional data structure with named rows and columns.  Each column can have different data types (numeric, string, etc).</p>
 <p>By convention, a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> is often called df or some other modifier followed by df, to assist in reading the code.</p>
 <p>Much more detail on standard pandas dataframes can be found on the <em>official pandas website</em> <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">https://pandas.pydata.org/docs/reference/frame.html</a>.</p>
@@ -724,7 +724,7 @@ dtype: int64
 </div>
 </section>
 <section id="alternative-ways-to-set-the-time-period-of-a-dated-index">
-<span id="index-10"></span><span id="index-9"></span><h3><span class="section-number">3.3.2. </span>Alternative ways to set the time period of a dated index<a class="headerlink" href="#alternative-ways-to-set-the-time-period-of-a-dated-index" title="Link to this heading">#</a></h3>
+<span id="index-8"></span><span id="index-7"></span><h3><span class="section-number">3.3.2. </span>Alternative ways to set the time period of a dated index<a class="headerlink" href="#alternative-ways-to-set-the-time-period-of-a-dated-index" title="Link to this heading">#</a></h3>
 <p>A somewhat more creative way to initialize the <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> for dates would use a loop to specify the dates that get passed to the constructor as an argument.</p>
 <p>Below a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <code class="docutils literal notranslate"><span class="pre">df</span></code> with two Series (A and B), is initialized with the values 100 for all data points.</p>
 <p>The index is defined dynamically by a loop <code class="docutils literal notranslate"><span class="pre">index=[2020+v</span> <span class="pre">for</span> <span class="pre">v</span> <span class="pre">in</span> <span class="pre">range(number_of_rows)]</span></code> that runs <code class="docutils literal notranslate"><span class="pre">number_of_rows</span></code> times (6 times in this example) setting v equal to 2020+0, 2020+1,…,2020+5 (recall, that python is zero-indexed so the first value of v is 0, not one). The resulting list whose values are assigned to index is [2020,2021,2022,2023,2024,2025].</p>
@@ -896,7 +896,7 @@ dtype: int64
 </div>
 </section>
 <section id="adding-a-column-to-a-dataframe">
-<span id="index-11"></span><h3><span class="section-number">3.3.3. </span>Adding a column to a dataframe<a class="headerlink" href="#adding-a-column-to-a-dataframe" title="Link to this heading">#</a></h3>
+<span id="index-9"></span><h3><span class="section-number">3.3.3. </span>Adding a column to a dataframe<a class="headerlink" href="#adding-a-column-to-a-dataframe" title="Link to this heading">#</a></h3>
 <p>If a value is assigned to a column that does not exist, pandas will add a column with that name and fill it with values resulting from  the calculation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -976,7 +976,7 @@ dtype: int64
 </div>
 </section>
 <section id="revising-values">
-<span id="index-12"></span><h3><span class="section-number">3.3.4. </span>Revising values<a class="headerlink" href="#revising-values" title="Link to this heading">#</a></h3>
+<span id="index-10"></span><h3><span class="section-number">3.3.4. </span>Revising values<a class="headerlink" href="#revising-values" title="Link to this heading">#</a></h3>
 <p>If the column exists, then the = method will revise the values of the rows with the values assigned in the statement.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1141,7 +1141,7 @@ would generate an error because the string created with <code class="docutils li
 </section>
 </section>
 <section id="selected-pandas-methods">
-<span id="index-13"></span><h2><span class="section-number">3.4. </span>Selected pandas methods<a class="headerlink" href="#selected-pandas-methods" title="Link to this heading">#</a></h2>
+<span id="index-11"></span><h2><span class="section-number">3.4. </span>Selected pandas methods<a class="headerlink" href="#selected-pandas-methods" title="Link to this heading">#</a></h2>
 <p>Pandas has a number of methods (functions that operate on the underlying data of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> object).  Several of them are used when working with a World Bank model in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and these are discussed below.</p>
 <section id="columns-lists-the-column-names-of-a-dataframe">
 <h3><span class="section-number">3.4.1. </span>.columns lists the column names of a dataframe<a class="headerlink" href="#columns-lists-the-column-names-of-a-dataframe" title="Link to this heading">#</a></h3>
@@ -1160,7 +1160,7 @@ would generate an error because the string created with <code class="docutils li
 </div>
 </section>
 <section id="size-indicates-the-dimension-of-a-list">
-<span id="index-14"></span><h3><span class="section-number">3.4.2. </span>.size indicates the dimension of a list<a class="headerlink" href="#size-indicates-the-dimension-of-a-list" title="Link to this heading">#</a></h3>
+<span id="index-12"></span><h3><span class="section-number">3.4.2. </span>.size indicates the dimension of a list<a class="headerlink" href="#size-indicates-the-dimension-of-a-list" title="Link to this heading">#</a></h3>
 <p>so <code class="docutils literal notranslate"><span class="pre">df.columns.size</span></code> returns the number of columns in a dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1177,7 +1177,7 @@ would generate an error because the string created with <code class="docutils li
 <p>The <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> <code class="docutils literal notranslate"><span class="pre">df</span></code> has 3 columns.</p>
 </section>
 <section id="eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe">
-<span id="index-15"></span><h3><span class="section-number">3.4.3. </span>.eval() evaluates (calculates) an expression on the data of a dataframe<a class="headerlink" href="#eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe" title="Link to this heading">#</a></h3>
+<span id="index-13"></span><h3><span class="section-number">3.4.3. </span>.eval() evaluates (calculates) an expression on the data of a dataframe<a class="headerlink" href="#eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.eval</span></code> is a native dataframe method, which does calculations on a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> and returns a revised <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>. With this method expressions can be evaluated and new columns created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1261,7 +1261,7 @@ would generate an error because the string created with <code class="docutils li
 <section id="multiple-expressions-can-be-evaluated-with-eval">
 <h3><span class="section-number">3.4.4. </span>multiple expressions can be evaluated with .eval()<a class="headerlink" href="#multiple-expressions-can-be-evaluated-with-eval" title="Link to this heading">#</a></h3>
 <p>With <code class="docutils literal notranslate"><span class="pre">.eval()</span></code> multiple expressions can be evaluated at the same time.  In the example below three apostrophe’s are used to indicate a multiple-line block of text.  Each line is executed separately by eval.</p>
-<p id="index-18"><span id="index-17"></span><span id="index-16"></span>In this example, two new variables X and THE_ANSWER are crated in a single call to .eval().</p>
+<p id="index-14">In this example, two new variables X and THE_ANSWER are crated in a single call to .eval().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;X = B*NEW</span>
@@ -1609,7 +1609,7 @@ would generate an error because the string created with <code class="docutils li
 </section>
 </section>
 <section id="the-loc-method">
-<span id="index-21"></span><span id="index-20"></span><span id="index-19"></span><h2><span class="section-number">3.5. </span>The .loc[] method<a class="headerlink" href="#the-loc-method" title="Link to this heading">#</a></h2>
+<span id="index-16"></span><span id="index-15"></span><h2><span class="section-number">3.5. </span>The .loc[] method<a class="headerlink" href="#the-loc-method" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> method is a powerful pandas routine used extensively in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> selects a portion (slice) of a dataframe and  allows the user to display and/or revise specific sub-sections of a column or row in a dataframe.</p>
 <section id="selecting-a-single-element-in-a-dataframe-loc-row-column">
 <h3><span class="section-number">3.5.1. </span>Selecting a single element in a dataframe:  <code class="docutils literal notranslate"><span class="pre">.loc[row,column]</span></code><a class="headerlink" href="#selecting-a-single-element-in-a-dataframe-loc-row-column" title="Link to this heading">#</a></h3>
@@ -1671,7 +1671,7 @@ Name: 2023, dtype: int64
 </div>
 </section>
 <section id="selecting-specific-rows-and-columns-loc-xxx-xxx-names">
-<span id="index-22"></span><h3><span class="section-number">3.5.4. </span>Selecting specific rows and columns: .loc[xxx,xxx],[names…]]<a class="headerlink" href="#selecting-specific-rows-and-columns-loc-xxx-xxx-names" title="Link to this heading">#</a></h3>
+<span id="index-17"></span><h3><span class="section-number">3.5.4. </span>Selecting specific rows and columns: .loc[xxx,xxx],[names…]]<a class="headerlink" href="#selecting-specific-rows-and-columns-loc-xxx-xxx-names" title="Link to this heading">#</a></h3>
 <p>Passing a list in either the rows or columns portion of the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> statement will allow multiple rows or columns to be displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1719,7 +1719,7 @@ Name: 2023, dtype: int64
 </div>
 </section>
 <section id="select-a-range-the-operator-in-a-loc-statement">
-<span id="index-23"></span><h3><span class="section-number">3.5.5. </span>Select a range: the “:” operator in a ‘.loc’ statement<a class="headerlink" href="#select-a-range-the-operator-in-a-loc-statement" title="Link to this heading">#</a></h3>
+<span id="index-18"></span><h3><span class="section-number">3.5.5. </span>Select a range: the “:” operator in a ‘.loc’ statement<a class="headerlink" href="#select-a-range-the-operator-in-a-loc-statement" title="Link to this heading">#</a></h3>
 <p>with the colon operator we can also select a range of results.</p>
 <p>Here from 2018 to 2019.</p>
 <div class="cell docutils container">
@@ -1773,7 +1773,7 @@ Name: 2023, dtype: int64
 </div>
 </section>
 <section id="revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells">
-<span id="index-25"></span><span id="index-24"></span><h3><span class="section-number">3.5.6. </span>Revising a sub-section of a <code class="docutils literal notranslate"><span class="pre">DataFrame,</span></code> using  <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> on the left hand side to assign values to specific cells<a class="headerlink" href="#revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells" title="Link to this heading">#</a></h3>
+<span id="index-20"></span><span id="index-19"></span><h3><span class="section-number">3.5.6. </span>Revising a sub-section of a <code class="docutils literal notranslate"><span class="pre">DataFrame,</span></code> using  <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> on the left hand side to assign values to specific cells<a class="headerlink" href="#revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells" title="Link to this heading">#</a></h3>
 <p>This can be handy when revising a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> in preparation for running a scenario.<br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

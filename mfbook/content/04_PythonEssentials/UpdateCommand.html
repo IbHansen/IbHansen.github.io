@@ -481,14 +481,14 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">df=df.upd('B</span> <span class="pre">=</span> <span class="pre">7')</span></code></p>
 <p>performs the same operation but assigns the results of the operation to df – overwriting its earlier values.</p>
 </div>
-<div class="admonition warning" id="index-1">
-<span id="index-0"></span><p class="admonition-title">Warning</p>
+<div class="admonition warning" id="index-0">
+<p class="admonition-title">Warning</p>
 <p>The syntax of an update command requires that there be a space between variable names and the operators.</p>
 <p>Thus <code class="docutils literal notranslate"><span class="pre">df.upd(&quot;A</span> <span class="pre">=</span> <span class="pre">7&quot;)</span></code> is fine, but <code class="docutils literal notranslate"><span class="pre">df.upd(&quot;A</span> <span class="pre">=7&quot;)</span></code> will generate an error.</p>
 <p>Similarly  <code class="docutils literal notranslate"><span class="pre">df.upd(&quot;A</span> <span class="pre">*</span> <span class="pre">1.1&quot;)</span></code> is fine, but <code class="docutils literal notranslate"><span class="pre">df.upd(&quot;A*</span> <span class="pre">1.1&quot;)</span></code> will generate an error.</p>
 </div>
 <section id="some-examples-of-the-upd-method">
-<span id="index-2"></span><h2><span class="section-number">1.4.1. </span>some examples of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method<a class="headerlink" href="#some-examples-of-the-upd-method" title="Link to this heading">#</a></h2>
+<span id="index-1"></span><h2><span class="section-number">1.4.1. </span>some examples of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method<a class="headerlink" href="#some-examples-of-the-upd-method" title="Link to this heading">#</a></h2>
 <p>First, create a dataframe using standard pandas syntax.  In this instance with years as the index and a dictionary defining the variables and their data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -566,13 +566,13 @@ document.write(`
 </div></div></div>
 </div>
 <section id="use-upd-to-create-a-new-variable">
-<span id="index-3"></span><h3><span class="section-number">1.4.1.1. </span>Use <code class="docutils literal notranslate"><span class="pre">.upd</span></code> to create a new variable<a class="headerlink" href="#use-upd-to-create-a-new-variable" title="Link to this heading">#</a></h3>
+<span id="index-2"></span><h3><span class="section-number">1.4.1.1. </span>Use <code class="docutils literal notranslate"><span class="pre">.upd</span></code> to create a new variable<a class="headerlink" href="#use-upd-to-create-a-new-variable" title="Link to this heading">#</a></h3>
 <p>With standard pandas a user can add a column (series) to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> simply by assigning a value to an new column name (NEW2 had existed its values would have been updated.  For example:</p>
 <p><code class="docutils literal notranslate"><span class="pre">df['NEW2']=[17,12,14,15]</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">.upd()</span></code> provides this functionality as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;c = 142&#39;</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s1">&#39;c = 142.0&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -604,37 +604,37 @@ document.write(`
     <tr>
       <th>2020</th>
       <td>1</td>
-      <td>142</td>
+      <td>142.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2021</th>
       <td>1</td>
-      <td>142</td>
+      <td>142.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2022</th>
       <td>1</td>
-      <td>142</td>
+      <td>142.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2023</th>
       <td>1</td>
-      <td>142</td>
+      <td>142.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2024</th>
       <td>1</td>
-      <td>142</td>
+      <td>142.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2025</th>
       <td>1</td>
-      <td>142</td>
+      <td>142.0</td>
       <td>4</td>
     </tr>
   </tbody>
@@ -703,48 +703,48 @@ The third line inherits the time period of the previous line.</p>
   <tbody>
     <tr>
       <th>2020</th>
-      <td>200</td>
-      <td>500</td>
+      <td>200.0</td>
+      <td>500.0</td>
       <td>4</td>
       <td>0.0</td>
       <td>33.0</td>
     </tr>
     <tr>
       <th>2021</th>
-      <td>1</td>
-      <td>2</td>
+      <td>1.0</td>
+      <td>2.0</td>
       <td>4</td>
       <td>42.0</td>
       <td>33.0</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>1</td>
-      <td>3</td>
+      <td>1.0</td>
+      <td>3.0</td>
       <td>4</td>
       <td>44.0</td>
       <td>33.0</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>1</td>
-      <td>6</td>
+      <td>1.0</td>
+      <td>6.0</td>
       <td>4</td>
       <td>45.0</td>
       <td>33.0</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>1</td>
-      <td>8</td>
+      <td>1.0</td>
+      <td>8.0</td>
       <td>4</td>
       <td>46.0</td>
       <td>33.0</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>1</td>
-      <td>9</td>
+      <td>1.0</td>
+      <td>9.0</td>
       <td>4</td>
       <td>0.0</td>
       <td>33.0</td>
@@ -892,8 +892,8 @@ The third line inherits the time period of the previous line.</p>
 </table>
 </div></div></div>
 </div>
-<div class="admonition-box-2-time-scope-of-upd-commands admonition" id="index-5">
-<span id="index-4"></span><p class="admonition-title">Box 2. Time scope of .upd() commands</p>
+<div class="admonition-box-3-time-scope-of-upd-commands admonition" id="index-4">
+<span id="index-3"></span><p class="admonition-title">Box 3. Time scope of .upd() commands</p>
 <p>If the user wants to modify a series or group of series for only a specific point in time or a period of time, she can indicate the period in the command line.</p>
 <ul class="simple">
 <li><p>If <strong>one date</strong> is specified the operation is applied to a single point in time</p></li>
@@ -961,43 +961,43 @@ The third line inherits the time period of the previous line.</p>
   <tbody>
     <tr>
       <th>2020</th>
-      <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>4</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>2021</th>
-      <td>1</td>
-      <td>2</td>
+      <td>1.0</td>
+      <td>2.0</td>
       <td>4</td>
       <td>42.0</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>1</td>
-      <td>3</td>
+      <td>1.0</td>
+      <td>3.0</td>
       <td>4</td>
       <td>44.0</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>200</td>
-      <td>500</td>
+      <td>200.0</td>
+      <td>500.0</td>
       <td>4</td>
       <td>45.0</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>1</td>
-      <td>8</td>
+      <td>1.0</td>
+      <td>8.0</td>
       <td>4</td>
       <td>46.0</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>1</td>
-      <td>9</td>
+      <td>1.0</td>
+      <td>9.0</td>
       <td>4</td>
       <td>0.0</td>
     </tr>
@@ -1127,7 +1127,7 @@ The third line inherits the time period of the previous line.</p>
 </div>
 </section>
 <section id="the-operator-adds-to-the-existing-values-in-the-specified-range">
-<span id="index-6"></span><h3><span class="section-number">1.4.4.2. </span>The “+” operator adds  to the existing values in the specified range<a class="headerlink" href="#the-operator-adds-to-the-existing-values-in-the-specified-range" title="Link to this heading">#</a></h3>
+<span id="index-5"></span><h3><span class="section-number">1.4.4.2. </span>The “+” operator adds  to the existing values in the specified range<a class="headerlink" href="#the-operator-adds-to-the-existing-values-in-the-specified-range" title="Link to this heading">#</a></h3>
 <p>In the example below 42 is added to the pre-existing values of the variable B over the period 2022 and 2024, and a different value is subtracted from each of teh three rows selected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1166,39 +1166,39 @@ The third line inherits the time period of the previous line.</p>
   <tbody>
     <tr>
       <th>2020</th>
+      <td>1.0</td>
       <td>1</td>
-      <td>1</td>
-      <td>4</td>
+      <td>4.0</td>
     </tr>
     <tr>
       <th>2021</th>
-      <td>1</td>
+      <td>1.0</td>
       <td>2</td>
-      <td>4</td>
+      <td>4.0</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>43</td>
+      <td>43.0</td>
       <td>3</td>
-      <td>3</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>43</td>
+      <td>43.0</td>
       <td>6</td>
-      <td>2</td>
+      <td>2.0</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>43</td>
+      <td>43.0</td>
       <td>8</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>1</td>
+      <td>1.0</td>
       <td>9</td>
-      <td>4</td>
+      <td>4.0</td>
     </tr>
   </tbody>
 </table>
@@ -1244,37 +1244,37 @@ The third line inherits the time period of the previous line.</p>
   <tbody>
     <tr>
       <th>2020</th>
-      <td>1</td>
+      <td>1.0</td>
       <td>1</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2021</th>
-      <td>42</td>
+      <td>42.0</td>
       <td>2</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>44</td>
+      <td>44.0</td>
       <td>3</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>55</td>
+      <td>55.0</td>
       <td>6</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>1</td>
+      <td>1.0</td>
       <td>8</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>1</td>
+      <td>1.0</td>
       <td>9</td>
       <td>4</td>
     </tr>
@@ -1284,7 +1284,7 @@ The third line inherits the time period of the previous line.</p>
 </div>
 </section>
 <section id="the-operator-increases-all-values-in-a-range-by-a-specified-percent-amount">
-<span id="index-7"></span><h3><span class="section-number">1.4.4.4. </span>The % operator increases all  values in a range by a  specified percent amount<a class="headerlink" href="#the-operator-increases-all-values-in-a-range-by-a-specified-percent-amount" title="Link to this heading">#</a></h3>
+<span id="index-6"></span><h3><span class="section-number">1.4.4.4. </span>The % operator increases all  values in a range by a  specified percent amount<a class="headerlink" href="#the-operator-increases-all-values-in-a-range-by-a-specified-percent-amount" title="Link to this heading">#</a></h3>
 <p>In this example:</p>
 <ul class="simple">
 <li><p>A new column  is generated with value 1 in every year</p></li>
@@ -1306,10 +1306,6 @@ The third line inherits the time period of the previous line.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\modelflow2\modelflow\modelhelp.py:121: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value &#39;[1.1 1.1 1.1 1.1 1.1 1.1]&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  databank.loc[current_per,var]=outputserie
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1338,42 +1334,42 @@ The third line inherits the time period of the previous line.</p>
     <tr>
       <th>2020</th>
       <td>1.1</td>
-      <td>100</td>
+      <td>100.0</td>
       <td>4</td>
       <td>1.00</td>
     </tr>
     <tr>
       <th>2021</th>
       <td>1.1</td>
-      <td>100</td>
+      <td>100.0</td>
       <td>4</td>
       <td>1.42</td>
     </tr>
     <tr>
       <th>2022</th>
       <td>1.1</td>
-      <td>100</td>
+      <td>100.0</td>
       <td>4</td>
       <td>1.44</td>
     </tr>
     <tr>
       <th>2023</th>
       <td>1.1</td>
-      <td>88</td>
+      <td>88.0</td>
       <td>4</td>
       <td>1.00</td>
     </tr>
     <tr>
       <th>2024</th>
       <td>1.1</td>
-      <td>88</td>
+      <td>88.0</td>
       <td>4</td>
       <td>1.00</td>
     </tr>
     <tr>
       <th>2025</th>
       <td>1.1</td>
-      <td>88</td>
+      <td>88.0</td>
       <td>4</td>
       <td>1.00</td>
     </tr>
@@ -1383,7 +1379,7 @@ The third line inherits the time period of the previous line.</p>
 </div>
 </section>
 <section id="the-growth-operator-sets-the-percent-growth-rate-to-specified-values">
-<span id="index-8"></span><h3><span class="section-number">1.4.4.5. </span>The =GROWTH operator sets the percent growth rate to specified values<a class="headerlink" href="#the-growth-operator-sets-the-percent-growth-rate-to-specified-values" title="Link to this heading">#</a></h3>
+<span id="index-7"></span><h3><span class="section-number">1.4.4.5. </span>The =GROWTH operator sets the percent growth rate to specified values<a class="headerlink" href="#the-growth-operator-sets-the-percent-growth-rate-to-specified-values" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">=GROWTH</span></code> operator sets the growth rate of the variable to the indicated level.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1395,7 +1391,7 @@ The third line inherits the time period of the previous line.</p>
 <span class="s1">&lt;2021 2025&gt; c =GROWTH 2 </span>
 <span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
 <span class="c1"># print the resulting DataFrame (res) first as levels and then as a growth rate uising the pandas pct_change() method</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dataframe:</span><span class="se">\n</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">Growth:</span><span class="se">\n</span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dataframe:</span><span class="se">\n</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">Growth:</span><span class="se">\n</span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">*</span><span class="mf">100.0</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -1419,15 +1415,11 @@ Growth:
 2025  0.0  2.0  0.0  0.000000
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\modelflow2\modelflow\modelhelp.py:121: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value &#39;[102.         104.04       106.1208     108.243216   110.40808032]&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  databank.loc[current_per,var]=outputserie
-</pre></div>
-</div>
 </div>
 </div>
 </section>
 <section id="the-growth-operator-adds-or-subtracts-from-the-existing-percent-growth-rate">
-<span id="index-9"></span><h3><span class="section-number">1.4.4.6. </span>The +GROWTH operator adds or subtracts from the existing percent growth rate<a class="headerlink" href="#the-growth-operator-adds-or-subtracts-from-the-existing-percent-growth-rate" title="Link to this heading">#</a></h3>
+<span id="index-8"></span><h3><span class="section-number">1.4.4.6. </span>The +GROWTH operator adds or subtracts from the existing percent growth rate<a class="headerlink" href="#the-growth-operator-adds-or-subtracts-from-the-existing-percent-growth-rate" title="Link to this heading">#</a></h3>
 <p>The below example is a bit more complicated, reflecting the fact that each line is executed sequentially.</p>
 <p>The first line sets the value of A  to 1 for the whole period.</p>
 <p>The second line sets the growth rate of A and STEP2 in 2021 to 1% (STEP2 is changed so that we can inspect the intermediate value that A would had after execution of line 2 but before the execution of line 3).</p>
@@ -1468,7 +1460,7 @@ Growth:
 </div>
 </section>
 <section id="the-diff-operator-recursively-sets-the-value-of-a-pre-existing-variable-to-rise-or-fall-by-the-specified-amount">
-<span id="index-10"></span><h3><span class="section-number">1.4.4.7. </span>The =diff operator recursively sets the value of a pre-existing  variable to rise or fall by the specified amount<a class="headerlink" href="#the-diff-operator-recursively-sets-the-value-of-a-pre-existing-variable-to-rise-or-fall-by-the-specified-amount" title="Link to this heading">#</a></h3>
+<span id="index-9"></span><h3><span class="section-number">1.4.4.7. </span>The =diff operator recursively sets the value of a pre-existing  variable to rise or fall by the specified amount<a class="headerlink" href="#the-diff-operator-recursively-sets-the-value-of-a-pre-existing-variable-to-rise-or-fall-by-the-specified-amount" title="Link to this heading">#</a></h3>
 <p>The command <code class="docutils literal notranslate"><span class="pre">=diff</span></code> (mathematically <span class="math notranslate nohighlight">\(\Delta = var_t - var_{t-1} = some\ number\)</span>) below sets the value of A in 2021 to 2 more than the value of 2020, and the 2022 value as 4 more than the <strong>revised</strong> value of 2021.</p>
 <p>The second line creates a new variable “UPBY2” to the data frame and sets it equal to 100 for all periods,</p>
 <p>The third line recursively adds 2 to UPBY2’s previous period’s revised value.  As a result it increments over time by 2.</p>
@@ -1565,7 +1557,7 @@ Growth:
 </section>
 </section>
 <section id="options-of-the-upd-method">
-<span id="index-13"></span><span id="index-12"></span><span id="index-11"></span><h2><span class="section-number">1.4.5. </span>Options of the  <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method<a class="headerlink" href="#options-of-the-upd-method" title="Link to this heading">#</a></h2>
+<span id="index-12"></span><span id="index-11"></span><span id="index-10"></span><h2><span class="section-number">1.4.5. </span>Options of the  <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method<a class="headerlink" href="#options-of-the-upd-method" title="Link to this heading">#</a></h2>
 <p>In addition to the operators discussed abovem the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method has several options that affect the way that it behaves.  The most important of these are summarized below.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1624,11 +1616,16 @@ Growth:
 <p>Consider the following concrete example. A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> df has two variables A and B, that each grow by 2% per period, with A initialized at a level of 100 and B at a level of 110 so that we can see each separately on a graph.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mf">100.</span><span class="p">,</span>
      <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2025</span><span class="p">)],</span>
        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span> 
-
-<span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;2021 -1&gt; A =growth 2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;2021 -1&gt; A =growth 2</span>
 <span class="s2">           &lt;2020 -1&gt;   B = 110</span>
 <span class="s2">          &lt;2021 -1&gt;    B =growth 2</span>
 <span class="s2">          &quot;&quot;&quot;</span><span class="p">)</span>
@@ -1640,12 +1637,6 @@ Growth:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\modelflow2\modelflow\modelhelp.py:121: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value &#39;[102.       104.04     106.1208   108.243216]&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  databank.loc[current_per,var]=outputserie
-C:\modelflow2\modelflow\modelhelp.py:121: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value &#39;[112.2       114.444     116.73288   119.0675376]&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  databank.loc[current_per,var]=outputserie
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1755,12 +1746,12 @@ C:\modelflow2\modelflow\modelhelp.py:121: FutureWarning: Setting an item of inco
 </div>
 </div>
 <section id="keep-growth-additional-examples">
-<span id="index-15"></span><span id="index-14"></span><h4><span class="section-number">1.4.5.2.1. </span>Keep_growth additional examples<a class="headerlink" href="#keep-growth-additional-examples" title="Link to this heading">#</a></h4>
+<span id="index-14"></span><span id="index-13"></span><h4><span class="section-number">1.4.5.2.1. </span>Keep_growth additional examples<a class="headerlink" href="#keep-growth-additional-examples" title="Link to this heading">#</a></h4>
 <p>Initialize a new dataframe, with some growth rate</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># instantiate a new dataframe with one column &#39;A&#39; with avlue 100 everywhere and index 2020-2025</span>
-<span class="n">dftest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># instantiate a new dataframe with one column &#39;A&#39; with a value 100 everywhere and index 2020-2025</span>
+<span class="n">dftest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span>
        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2026</span><span class="p">)],</span> <span class="c1"># create row index</span>
        <span class="c1"># equivalent to index=[2020,2021,2022,2023,2024,2025] </span>
        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>                                 <span class="c1"># create column name</span>
@@ -1793,27 +1784,27 @@ C:\modelflow2\modelflow\modelhelp.py:121: FutureWarning: Setting an item of inco
   <tbody>
     <tr>
       <th>2020</th>
-      <td>100</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2021</th>
-      <td>100</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>100</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>100</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>100</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2025</th>
-      <td>100</td>
+      <td>100.0</td>
     </tr>
   </tbody>
 </table>
@@ -1845,10 +1836,6 @@ Growth:
 2023  3.0
 2024  4.0
 2025  5.0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\modelflow2\modelflow\modelhelp.py:121: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value &#39;[101.        103.02      106.1106    110.355024  115.8727752]&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  databank.loc[current_per,var]=outputserie
 </pre></div>
 </div>
 </div>
@@ -1921,7 +1908,7 @@ Growth
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a data frame</span>
-<span class="n">dftest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span>
+<span class="n">dftest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span>
        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">2025</span><span class="p">)],</span> <span class="c1"># create row index</span>
        <span class="c1"># equivalent to index=[2020,2021,2022,2023,2024] </span>
        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">])</span>                                 <span class="c1"># create column name </span>
@@ -1958,43 +1945,43 @@ Growth
   <tbody>
     <tr>
       <th>2020</th>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2021</th>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
     </tr>
     <tr>
       <th>2024</th>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
     </tr>
   </tbody>
 </table>
@@ -2027,12 +2014,12 @@ Growth
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataframe:
-        A    B      C      D    E
-2020  100  100  100.0  100.0  100
-2021  100  100  100.0  100.0  100
-2022  100  100  200.0  300.0  400
-2023  100  100  200.0  300.0  400
-2024  100  100  200.0  300.0  100
+          A      B      C      D      E
+2020  100.0  100.0  100.0  100.0  100.0
+2021  100.0  100.0  100.0  100.0  100.0
+2022  100.0  100.0  200.0  300.0  400.0
+2023  100.0  100.0  200.0  300.0  400.0
+2024  100.0  100.0  200.0  300.0  100.0
 
 Growth:
         A    B      C      D      E
@@ -2043,18 +2030,12 @@ Growth:
 2024  0.0  0.0    0.0    0.0  -75.0
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\modelflow2\modelflow\modelclass.py:1748: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value &#39;[np.float64(200.0)]&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  df.loc[resttime,varname]= [lastvalue * m for m in multiplier]
-C:\modelflow2\modelflow\modelclass.py:1748: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value &#39;[np.float64(300.0)]&#39; has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
-  df.loc[resttime,varname]= [lastvalue * m for m in multiplier]
-</pre></div>
-</div>
 </div>
 </div>
 </section>
 </section>
 <section id="scale-option-of-the-upd-method">
-<span id="index-16"></span><h3><span class="section-number">1.4.5.3. </span>Scale option of the  <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method<a class="headerlink" href="#scale-option-of-the-upd-method" title="Link to this heading">#</a></h3>
+<span id="index-15"></span><h3><span class="section-number">1.4.5.3. </span>Scale option of the  <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method<a class="headerlink" href="#scale-option-of-the-upd-method" title="Link to this heading">#</a></h3>
 <p>When running scenarios it can be useful to sensitivity analyses of model results, to better understand how the model responds when varying the intensity of a shock.</p>
 <p>The scale option provides a mechanism for calculating a range of shocks as different proportions of the initially indicated one.</p>
 <p>When using the scale option, scale=0 implies no change (effectively the baseline) while scale=0.5 is a scenario half of the full severity.</p>
@@ -2088,9 +2069,9 @@ C:\modelflow2\modelflow\modelclass.py:1748: FutureWarning: Setting an item of in
 2023  106.110600  100.0
 2024  110.355024  100.0
 2025  115.872775  100.0
-
-
-severity=0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>severity=0
 Dataframe:
             Orig      A    B
 2020  100.000000  100.0  0.0
@@ -2154,7 +2135,7 @@ Growth:
 </div>
 </section>
 <section id="lprint-option-of-the-upd-method-prints-pre-and-post-update-values-update">
-<span id="index-17"></span><h3><span class="section-number">1.4.5.4. </span>lprint option of the <code class="docutils literal notranslate"> <span class="pre">.upd()</span></code> method prints pre- and post- update values update<a class="headerlink" href="#lprint-option-of-the-upd-method-prints-pre-and-post-update-values-update" title="Link to this heading">#</a></h3>
+<span id="index-16"></span><h3><span class="section-number">1.4.5.4. </span>lprint option of the <code class="docutils literal notranslate"> <span class="pre">.upd()</span></code> method prints pre- and post- update values update<a class="headerlink" href="#lprint-option-of-the-upd-method-prints-pre-and-post-update-values-update" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">lPrint</span></code> option of the method <code class="docutils literal notranslate"><span class="pre">upd()</span></code> is set to <code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">False</span></code> by default.  By setting it true, an update command will output the results of the calculation comparing the values of the dataframe (over the impacted period) before, after and the difference between the two.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
