@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Modelflow and Pandas DataFrames &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
+    <title>1. ModelFlow and Pandas DataFrames &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
   
   
   
@@ -181,8 +181,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating ModelFlow</a></li>
 </ul>
 </details></li>
 </ul>
@@ -194,7 +194,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Modelflow and Pandas DataFrames</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. ModelFlow and Pandas DataFrames</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with updated variables.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mfcalc.html">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
@@ -203,7 +203,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
@@ -218,7 +218,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. ModelFlow methods reference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -408,7 +408,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Modelflow and Pandas DataFrames</h1>
+    <h1>ModelFlow and Pandas DataFrames</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -418,8 +418,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-names-in-modelflow">1.1. Column names in  Modelflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#index-and-time-dimensions-in-modelflow">1.2. .index and time dimensions in Modelflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-names-in-modelflow">1.1. Column names in  ModelFlow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#index-and-time-dimensions-in-modelflow">1.2. .index and time dimensions in ModelFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leads-and-lags">1.3. Leads and lags</a></li>
 </ul>
             </nav>
@@ -433,18 +433,18 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modelflow-and-pandas-dataframes">
-<span id="index-1"></span><span id="index-0"></span><h1><span class="section-number">1. </span>Modelflow and Pandas DataFrames<a class="headerlink" href="#modelflow-and-pandas-dataframes" title="Link to this heading">#</a></h1>
+<span id="index-1"></span><span id="index-0"></span><h1><span class="section-number">1. </span>ModelFlow and Pandas DataFrames<a class="headerlink" href="#modelflow-and-pandas-dataframes" title="Link to this heading">#</a></h1>
 <p>Any class can have both properties (data) and methods (functions that operate on the data of the particular instance of the class). With object-oriented programming languages like python, classes can be built as supersets of existing classes. The <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> class <code class="docutils literal notranslate"><span class="pre">model</span></code> inherits or encapsulates all of the features of the pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and extends it in many ways.  Some of the methods below are standard pandas methods, others have been added to by <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> features.</p>
 <p>Data in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> can be modified directly with built-in pandas functionalities like <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">eval()</span></code> discussed in the previous chapter but <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> extends these capabilities in important ways.</p>
 <section id="column-names-in-modelflow">
-<span id="index-3"></span><span id="index-2"></span><h2><span class="section-number">1.1. </span>Column names in  Modelflow<a class="headerlink" href="#column-names-in-modelflow" title="Link to this heading">#</a></h2>
+<span id="index-3"></span><span id="index-2"></span><h2><span class="section-number">1.1. </span>Column names in  ModelFlow<a class="headerlink" href="#column-names-in-modelflow" title="Link to this heading">#</a></h2>
 <p>While pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s are very liberal in what names can be given to columns, <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> is more restrictive.</p>
 <p>Specifically, in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> a variable name must:</p>
 <ul class="simple">
 <li><p>start with a letter</p></li>
 <li><p>be upper case</p></li>
 </ul>
-<p>```{note} <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> variable names
+<p>```{note} <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> variable names
 <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> places more restrictions on column names than do <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <em>per se</em>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 Thus while all the below are legal column names in pandas, some are illegal in `ModelFlow`.
@@ -486,7 +486,7 @@ table,td,tr,th {border:none!important}
 </div>
 </section>
 <section id="index-and-time-dimensions-in-modelflow">
-<span id="index-7"></span><span id="index-6"></span><h2><span class="section-number">1.2. </span>.index and time dimensions in Modelflow<a class="headerlink" href="#index-and-time-dimensions-in-modelflow" title="Link to this heading">#</a></h2>
+<span id="index-7"></span><span id="index-6"></span><h2><span class="section-number">1.2. </span>.index and time dimensions in ModelFlow<a class="headerlink" href="#index-and-time-dimensions-in-modelflow" title="Link to this heading">#</a></h2>
 <p>As we saw above, series have indices.  <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s also have indices, which are the row names of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> the index series is typically understood to represent a date.</p>
 <p>For yearly models a list of integers like in the above example works fine.<br></p>
@@ -576,8 +576,8 @@ table,td,tr,th {border:none!important}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-names-in-modelflow">1.1. Column names in  Modelflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#index-and-time-dimensions-in-modelflow">1.2. .index and time dimensions in Modelflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-names-in-modelflow">1.1. Column names in  ModelFlow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#index-and-time-dimensions-in-modelflow">1.2. .index and time dimensions in ModelFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leads-and-lags">1.3. Leads and lags</a></li>
 </ul>
   </nav></div>

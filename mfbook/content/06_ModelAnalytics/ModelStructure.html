@@ -182,8 +182,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating ModelFlow</a></li>
 </ul>
 </details></li>
 </ul>
@@ -195,7 +195,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">1. ModelFlow and Pandas DataFrames</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with updated variables.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
@@ -204,7 +204,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
@@ -219,7 +219,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. ModelFlow methods reference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -454,7 +454,7 @@ document.write(`
 <li><p><strong>Recursive blocks</strong> include equations that are a simple function of other variables. For example, the current account balance is just the difference between Export Revenues and Import Revenues.  These can be solved with just one pass once the values of the simultaneous blocks have been resolved.</p></li>
 </ul>
 <p>At the equation level, each endogenous variable is a function of one or more variables, but because some of these variables are also dependent on other variables in the model, those right hand side variables that are endogenous can have their equations substituted into the first level equation to get an extended set of dependencies.  Moreover, the endogenous right hand side variables of these second level variables can also have their right hand sides substituted into the equation etc.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> uses the <a class="reference external" href="https://networkx.org/">networkx</a> python package to analyze the interrelationships within the model and between equations and includes a number of methods and properties to present these interrelationships both in tabular and graphical form <a class="footnote-reference brackets" href="#graphviz" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, a subset of which is exposed in this chapter.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> uses the <a class="reference external" href="https://networkx.org/">networkx</a> python package to analyze the interrelationships within the model and between equations and includes a number of methods and properties to present these interrelationships both in tabular and graphical form <a class="footnote-reference brackets" href="#graphviz" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, a subset of which is exposed in this chapter.</p>
 <section id="setting-up-the-python-environment-and-loading-a-pre-existing-model">
 <h2><span class="section-number">1.1. </span>Setting up the python environment and loading a pre-existing model<a class="headerlink" href="#setting-up-the-python-environment-and-loading-a-pre-existing-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -521,7 +521,7 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dc3a5dce64173ecb4b87fe85253abefb494f9cfbd431ec503611c958ced34a8b.png" src="../../_images/dc3a5dce64173ecb4b87fe85253abefb494f9cfbd431ec503611c958ced34a8b.png" />
+<img alt="../../_images/b947c4f36032dea30ab3dcb3a13ecb610bfef71986628a8ac99d5b14e2792345.png" src="../../_images/b947c4f36032dea30ab3dcb3a13ecb610bfef71986628a8ac99d5b14e2792345.png" />
 </div>
 </div>
 <p>As is evident in the above chart, the majority of the variables in MFMod Pakistan are recursive (green) and depend simply on the values of other variables.  The core of the model lies in the simultaneous (red) block, where the main wages, prices, real and nominal variables that drive other variables are determined.</p>
@@ -529,7 +529,7 @@ Number of endogeneous variables         :                  378
 <section id="the-dependencies-of-individual-endogenous-variables-the-tracepre-method">
 <span id="index-29"></span><span id="index-28"></span><span id="index-27"></span><span id="index-26"></span><h2><span class="section-number">1.4. </span>The dependencies of individual endogenous variables (the <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> method)<a class="headerlink" href="#the-dependencies-of-individual-endogenous-variables-the-tracepre-method" title="Link to this heading">#</a></h2>
 <p>As noted above, every endogenous variables is directly dependent on the variables that occur on its right hand side, but is also indirectly dependent on the variables that determine its RHS variables and in turn those that determine the variables to the right of them <em>ad infinitum</em>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> includes several methods and properties that allow these dependencies to be explored.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> includes several methods and properties that allow these dependencies to be explored.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.frml</span></code> property returns the normalized formula of an equation, from which the right hand variables for the equation can be discerned and these are reported along with their descriptions following the formula.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -566,7 +566,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1ce05daea11a9e6a43bade523698385f7daba43e5cf340308e8df98a915d64a9.png" src="../../_images/1ce05daea11a9e6a43bade523698385f7daba43e5cf340308e8df98a915d64a9.png" />
+<img alt="../../_images/192aeba2c2f8460e1dfc607d766e745911de8e3bc5b95212bc11fde770402ac6.png" src="../../_images/192aeba2c2f8460e1dfc607d766e745911de8e3bc5b95212bc11fde770402ac6.png" />
 </div>
 </div>
 <p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and reveals the relative importance of each variable in the change of the dependent variable in the preceding scenario.</p>
@@ -589,7 +589,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/89ebcbf22109b1be906afbe950a3baecf20b20baba82d833c589b3a73f9aefb2.png" src="../../_images/89ebcbf22109b1be906afbe950a3baecf20b20baba82d833c589b3a73f9aefb2.png" />
+<img alt="../../_images/041847ea7dd111516f6fd7c770eb5e22cfadfb81a376dc1e046776823dceb83f.png" src="../../_images/041847ea7dd111516f6fd7c770eb5e22cfadfb81a376dc1e046776823dceb83f.png" />
 </div>
 </div>
 </section>
@@ -604,7 +604,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fde9f547911bbe34e41df4a2a1276cb76e9aa2da2507cc8f6b4972005e47729b.png" src="../../_images/fde9f547911bbe34e41df4a2a1276cb76e9aa2da2507cc8f6b4972005e47729b.png" />
+<img alt="../../_images/c4c7972aaef5173d72b803e811cda488a5e6d2e128e63b59160a6ad223c0682e.png" src="../../_images/c4c7972aaef5173d72b803e811cda488a5e6d2e128e63b59160a6ad223c0682e.png" />
 </div>
 </div>
 </section>
@@ -618,7 +618,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c28fbf0f42d3af44aa94c55c2e8a31207eb60c966beecef52944b3365a3ef127.png" src="../../_images/c28fbf0f42d3af44aa94c55c2e8a31207eb60c966beecef52944b3365a3ef127.png" />
+<img alt="../../_images/7a3ffcfb4ffd681a75b06576a2ecf44cebd2ef04042765b48be6b67564ec78e2.png" src="../../_images/7a3ffcfb4ffd681a75b06576a2ecf44cebd2ef04042765b48be6b67564ec78e2.png" />
 </div>
 </div>
 </section>
@@ -632,7 +632,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/17e74327de1059a47e0af2fbb77b11dc69aa29377944539e4b9c2a8835deca1f.png" src="../../_images/17e74327de1059a47e0af2fbb77b11dc69aa29377944539e4b9c2a8835deca1f.png" />
+<img alt="../../_images/23b124b9f9c25db7a548e3b5f0ffb95e8b518ba843f5f2cadce05dfe314bc747.png" src="../../_images/23b124b9f9c25db7a548e3b5f0ffb95e8b518ba843f5f2cadce05dfe314bc747.png" />
 </div>
 </div>
 <section id="adding-a-table-to-the-causal-graph">
@@ -646,7 +646,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c94b8cb8fc0ccf30ef45c2454699350bc7cc18c70abf0d07a8a954b1c036f90f.png" src="../../_images/c94b8cb8fc0ccf30ef45c2454699350bc7cc18c70abf0d07a8a954b1c036f90f.png" />
+<img alt="../../_images/94a89905893a95c398f5ad1fc819c8de2cade6f0d82313f8fb02bf8219f3c25f.png" src="../../_images/94a89905893a95c398f5ad1fc819c8de2cade6f0d82313f8fb02bf8219f3c25f.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
@@ -664,7 +664,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/462f2f7f90f53a94f68ed96b90e24083763dc57e643ec9619de68859868f67de.png" src="../../_images/462f2f7f90f53a94f68ed96b90e24083763dc57e643ec9619de68859868f67de.png" />
+<img alt="../../_images/e205a13ace8f482da958805cc0bc4f37ba6e50df3a315ba17b398b22781cf890.png" src="../../_images/e205a13ace8f482da958805cc0bc4f37ba6e50df3a315ba17b398b22781cf890.png" />
 </div>
 </div>
 </section>
@@ -681,7 +681,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="graphviz" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
-<p>The relational graphs produced by <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> use the Graphviz <a class="reference external" href="https://graphviz.org/">https://graphviz.org/</a> program, and are based on the relationships determined by the Networkx package.</p>
+<p>The relational graphs produced by <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> use the Graphviz <a class="reference external" href="https://graphviz.org/">https://graphviz.org/</a> program, and are based on the relationships determined by the Networkx package.</p>
 </aside>
 </aside>
 </section>

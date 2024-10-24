@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/03_Installation/InstallingPython';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.2. Installation of Modelflow" href="InstallingModelFlowpackage.html" />
+    <link rel="next" title="3.2. Installation of ModelFlow" href="InstallingModelFlowpackage.html" />
     <link rel="prev" title="3. Installation" href="InstallingModelFlow.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,8 +179,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="InstallingModelFlow.html">3. Installation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="UpdateModelFlow.html">3.3. Updating ModelFlow</a></li>
 </ul>
 </details></li>
 </ul>
@@ -192,7 +192,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_PythonEssentials/Modelflow%20and%20Dataframes.html">1. ModelFlow and Pandas DataFrames</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with updated variables.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_PythonEssentials/mfcalc.html">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
@@ -201,7 +201,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
@@ -216,7 +216,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. ModelFlow methods reference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -436,16 +436,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installation-of-python">
 <h1><span class="section-number">3.1. </span>Installation of Python<a class="headerlink" href="#installation-of-python" title="Link to this heading">#</a></h1>
-<p id="index-0"><code class="docutils literal notranslate"><span class="pre">Python</span></code> is a powerful, versatile and extensible open-source programming language. It is widely used for artificial intelligence applications, interactive web sites, and scientific processing. As of May 2023, the <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Package</span> <span class="pre">Index</span></code> (PyPI), the official repository for third-party Python software, contained over 450,000 packages that extend its functionality <a class="footnote-reference brackets" href="#pythonlibrary" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Modelflow is one of these packages.</p>
-<p>Python comes in many flavors and <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> will work with most of them. Nevertheless, users are <strong>strongly advised</strong> to use either the <strong>Anaconda</strong> version of Python or the closely related <strong>MiniConda</strong> version.</p>
+<p id="index-0"><code class="docutils literal notranslate"><span class="pre">Python</span></code> is a powerful, versatile and extensible open-source programming language. It is widely used for artificial intelligence applications, interactive web sites, and scientific processing. As of May 2023, the <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Package</span> <span class="pre">Index</span></code> (PyPI), the official repository for third-party Python software, contained over 450,000 packages that extend its functionality <a class="footnote-reference brackets" href="#pythonlibrary" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. ModelFlow is one of these packages.</p>
+<p>Python comes in many flavors and <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> will work with most of them. Nevertheless, users are <strong>strongly advised</strong> to use either the <strong>Anaconda</strong> version of Python or the closely related <strong>MiniConda</strong> version.</p>
 <p id="index-1"><strong>Anaconda</strong> is a full-featured distribution of python that comes with a comprehensive set of pre-installed packages and tools for scientific computing and data analysis. It is best suited for users who want a ready-to-use platform with a wide range of packages and don’t mind the larger installation size.</p>
 <p><strong>MiniConda</strong> is a more streamlined distribution, providing only the essential components for running python. It offers faster installation and a smaller footprint, making it suitable for users who prefer a more streamlined environment and want more control over package selection. Features that are in Anaconda, but not installed by miniconda by default, can be added manually.</p>
 <section id="which-is-better-for-me">
 <h2><span class="section-number">3.1.1. </span>Which is better for me<a class="headerlink" href="#which-is-better-for-me" title="Link to this heading">#</a></h2>
-<p>In general, <strong>Anaconda</strong> is preferred by users who value convenience and desire a comprehensive package ecosystem. <strong>MiniConda</strong> is preferred by users who seek a minimalistic setup and have specific package requirements. If you are already familiar with python, plan to use it with <code class="docutils literal notranslate"><span class="pre">modelflow</span></code> and have space limitations <code class="docutils literal notranslate"><span class="pre">MiniConda</span></code> is probably the best solution for you.  For users new to python <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> may be a better solution.</p>
+<p>In general, <strong>Anaconda</strong> is preferred by users who value convenience and desire a comprehensive package ecosystem. <strong>MiniConda</strong> is preferred by users who seek a minimalistic setup and have specific package requirements. If you are already familiar with python, plan to use it with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and have space limitations <code class="docutils literal notranslate"><span class="pre">MiniConda</span></code> is probably the best solution for you.  For users new to python <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> may be a better solution.</p>
 <p>The processes for installing  <strong>Anaconda</strong> and <strong>MiniConda</strong> are very similar. The main difference is which installer is downloaded and then where the distribution is stored in the file system.</p>
 <p>It is possible to install both distributions on the same machine without them interfering with each other.</p>
-<p>Both are available for the Windows, MacOS and Linux operating systems and <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> should work equally well under all three operating systems. However, only the Windows version has been thoroughly tested and  was used in producing this manual.</p>
+<p>Both are available for the Windows, MacOS and Linux operating systems and <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> should work equally well under all three operating systems. However, only the Windows version has been thoroughly tested and  was used in producing this manual.</p>
 </section>
 <section id="anaconda-miniconda-installation-instructions">
 <h2><span class="section-number">3.1.2. </span>Anaconda/MiniConda installation instructions<a class="headerlink" href="#anaconda-miniconda-installation-instructions" title="Link to this heading">#</a></h2>
@@ -453,7 +453,7 @@ document.write(`
 <h3><span class="section-number">3.1.2.1. </span>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
 <p>The definitive source for installing <strong>Anaconda under windows</strong> can be found <a class="reference external" href="https://docs.anaconda.com/anaconda/install/windows/">here</a>.</p>
 <p>The definitive source for installing <strong>MiniConda under windows</strong> can be found <a class="reference external" href="https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html">here</a>.</p>
-<p>The version of <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code> and the examples in this manual were developed and tested using the 3.10 version of python.</p>
+<p>The version of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and the examples in this manual were developed and tested using the 3.10 version of python.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>It is strongly advised that Anaconda/Miniconda be installed for a single user (Just Me)</strong>  This is much easier to maintain over time, especially in a professional environment where users may not have administrator rights on their computers.  Installing “For all users on this computer” (the other option offered by the installers) will substantially increase the complexity of maintaining python on your computer.</p>
@@ -461,13 +461,13 @@ document.write(`
 </section>
 <section id="macos">
 <h3><span class="section-number">3.1.2.2. </span>MacOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h3>
-<p>The definitive source for installing <strong>Anaconda under macOS</strong> can be found <a class="reference external" href="https://docs.anaconda.com/anaconda/install/mac-os/">here</a>](https://docs.anaconda.com/anaconda/install/mac-os/).</p>
-<p>The definitive source for installing <strong>MiniConda under macOS</strong> can be found <a class="reference external" href="https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/">here</a>.</p>
+<p>The definitive source for installing <strong>Anaconda under macOS</strong> can be found here:<a class="reference external" href="https://docs.anaconda.com/anaconda/install/mac-os/">https://docs.anaconda.com/anaconda/install/mac-os/</a>.</p>
+<p>The definitive source for installing <strong>MiniConda under macOS</strong> can be found here:<a class="reference external" href="https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/">https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/</a>.</p>
 </section>
 <section id="linux">
 <h3><span class="section-number">3.1.2.3. </span>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
-<p>The definitive source for installing <strong>Anaconda under Linux</strong> can be found [here] (https://docs.anaconda.com/anaconda/install/linux/).</p>
-<p>The definitive source for installing <strong>MiniConda under Linux</strong> can be found <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>.</p>
+<p>The definitive source for installing <strong>Anaconda under Linux</strong> can be found here:<a class="reference external" href="https://docs.anaconda.com/anaconda/install/linux/">https://docs.anaconda.com/anaconda/install/linux/</a>.</p>
+<p>The definitive source for installing <strong>MiniConda under Linux</strong> can be found here:<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html</a>.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="pythonlibrary" role="doc-footnote">
@@ -523,7 +523,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.2. </span>Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Installation of  <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

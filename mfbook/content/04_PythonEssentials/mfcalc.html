@@ -181,8 +181,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_MacrostructuralModels/MacroStructuralModels.html">2. Macrostructural models</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../03_Installation/InstallingModelFlow.html">3. Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingPython.html">3.1. Installation of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">Modelflow</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating Modelflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/InstallingModelFlowpackage.html">3.2. Installation of  <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Installation/UpdateModelFlow.html">3.3. Updating ModelFlow</a></li>
 </ul>
 </details></li>
 </ul>
@@ -194,7 +194,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Selected modelflow extensions to pandas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Modelflow%20and%20Dataframes.html">1. Modelflow and Pandas DataFrames</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Modelflow%20and%20Dataframes.html">1. ModelFlow and Pandas DataFrames</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="UpdateCommand.html">1.4. The <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with updated variables.</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.</a></li>
 </ul>
@@ -203,7 +203,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Using modelflow with World Bank models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
@@ -218,7 +218,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. Modelflow methods reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. ModelFlow methods reference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -438,7 +438,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-mfcalc-method-return-a-dataframe-with-transformed-variables">
-<span id="index-0"></span><h1><span class="section-number">1.5. </span>The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.<a class="headerlink" href="#the-mfcalc-method-return-a-dataframe-with-transformed-variables" title="Link to this heading">#</a></h1>
+<span id="index-1"></span><span id="index-0"></span><h1><span class="section-number">1.5. </span>The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.<a class="headerlink" href="#the-mfcalc-method-return-a-dataframe-with-transformed-variables" title="Link to this heading">#</a></h1>
 <p>Like<code class="docutils literal notranslate"><span class="pre">.upd()</span></code>, the <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> extends the functionality of standard pandas.  It is actually a much more powerful method that can be used to solve models or mini-models or see how <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> normalizes equations.  It can be particularly useful when creating scenarios – uses that are presented elsewhere.</p>
 <p>The purpose of  <code class="docutils literal notranslate"><span class="pre">mfcalc()</span></code>is to perform quick and dirty calculations and modify <code class="docutils literal notranslate"><span class="pre">datafame</span></code>s.</p>
 <section id="workspace-initialization">
@@ -515,7 +515,7 @@ document.write(`
 </div>
 </section>
 <section id="create-a-new-series-from-an-existing-series">
-<span id="index-2"></span><span id="index-1"></span><h2><span class="section-number">1.5.2. </span>Create a new series from an existing series<a class="headerlink" href="#create-a-new-series-from-an-existing-series" title="Link to this heading">#</a></h2>
+<span id="index-2"></span><h2><span class="section-number">1.5.2. </span>Create a new series from an existing series<a class="headerlink" href="#create-a-new-series-from-an-existing-series" title="Link to this heading">#</a></h2>
 <p>Use  mfcalc to calculate a new column (series) as a function of the existing A column series</p>
 <p>The below call creates a new column x.</p>
 <div class="cell docutils container">
@@ -729,7 +729,7 @@ document.write(`
 </div>
 </section>
 <section id="recalculate-a-so-it-grows-by-2-percent">
-<span id="index-4"></span><span id="index-3"></span><h2><span class="section-number">1.5.4. </span>Recalculate A so  it grows by 2 percent<a class="headerlink" href="#recalculate-a-so-it-grows-by-2-percent" title="Link to this heading">#</a></h2>
+<span id="index-3"></span><h2><span class="section-number">1.5.4. </span>Recalculate A so  it grows by 2 percent<a class="headerlink" href="#recalculate-a-so-it-grows-by-2-percent" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">mfcalc()</span></code> understands lagged variables and can do recursive calculations. Recall that if a lagged value does not exist the calculation will not be made for that period.  Below this results in the warning:</p>
 <p>```* Take care. Lags or leads in the equations, mfcalc results calculated for the period 2021 to 2025`</p>
 <div class="cell docutils container">
@@ -854,7 +854,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> therefore begins its calculation in 2021. Note, the existing value for 2020 is preserved.  This behaviour differs from other programs or python methods (such as <code class="docutils literal notranslate"><span class="pre">.pct_change()</span></code> above) that might return a n/a value for the 2020 observation.</p>
 </section>
 <section id="display-the-normalization-of-an-equation-the-showeq-option">
-<span id="index-5"></span><h2><span class="section-number">1.5.5. </span>Display the normalization of an equation (the <code class="docutils literal notranslate"><span class="pre">showeq</span></code> option)<a class="headerlink" href="#display-the-normalization-of-an-equation-the-showeq-option" title="Link to this heading">#</a></h2>
+<span id="index-4"></span><h2><span class="section-number">1.5.5. </span>Display the normalization of an equation (the <code class="docutils literal notranslate"><span class="pre">showeq</span></code> option)<a class="headerlink" href="#display-the-normalization-of-an-equation-the-showeq-option" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">showeq</span></code> option is by default <code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">False</span></code>.</p>
 <p>By setting equal to <code class="docutils literal notranslate"><span class="pre">True</span></code>, mfcalc can be used to express the normalization of an entered equation.</p>
 <div class="cell docutils container">
@@ -887,7 +887,7 @@ a &amp;=a_{t-1}*e^{0.02}\\
 <p>A=EXP(LOG(A(-1))+0.02)</p>
 </section>
 <section id="the-diff-operator-with-mfcalc">
-<span id="index-6"></span><h2><span class="section-number">1.5.6. </span>The <code class="docutils literal notranslate"><span class="pre">.diff()</span></code> operator with mfcalc<a class="headerlink" href="#the-diff-operator-with-mfcalc" title="Link to this heading">#</a></h2>
+<span id="index-5"></span><h2><span class="section-number">1.5.6. </span>The <code class="docutils literal notranslate"><span class="pre">.diff()</span></code> operator with mfcalc<a class="headerlink" href="#the-diff-operator-with-mfcalc" title="Link to this heading">#</a></h2>
 <p>The diff() operator, effectively normalizes to an equation that will add the value to the right of the equals sign to the lagged value of the variable passed to the diff operator.  Thus,  diff(a)=x normalizes to a=a(-1)+x</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -952,7 +952,7 @@ FRML &lt;&gt; A=A(-1)+(2)$
 </div>
 </section>
 <section id="mfcalc-with-several-equations-and-arguments">
-<span id="index-7"></span><h2><span class="section-number">1.5.7. </span>mfcalc with several equations and arguments<a class="headerlink" href="#mfcalc-with-several-equations-and-arguments" title="Link to this heading">#</a></h2>
+<span id="index-6"></span><h2><span class="section-number">1.5.7. </span>mfcalc with several equations and arguments<a class="headerlink" href="#mfcalc-with-several-equations-and-arguments" title="Link to this heading">#</a></h2>
 <p>In addition to a single equation multiple commands can be executed with one command.</p>
 <p>However, <strong>be careful</strong> because the equation commands are executed simultaneously, which, combined with the treatments of lags, means that results may differ from what they would be if the commands were run sequentially.</p>
 <p>For example:</p>
@@ -1116,7 +1116,7 @@ FRML &lt;&gt; A=A(-1)+(2)$
 </div>
 </section>
 <section id="setting-a-time-frame-with-mfcalc">
-<span id="index-8"></span><h2><span class="section-number">1.5.8. </span>Setting a time frame with mfcalc.<a class="headerlink" href="#setting-a-time-frame-with-mfcalc" title="Link to this heading">#</a></h2>
+<span id="index-7"></span><h2><span class="section-number">1.5.8. </span>Setting a time frame with mfcalc.<a class="headerlink" href="#setting-a-time-frame-with-mfcalc" title="Link to this heading">#</a></h2>
 <p>It can useful in some circumstances to limit the time frame for which the calculations are performed. Specifying a start date and end date enclosed in &lt;&gt; in a line restricts the time period over which subsequent calculations are performed.</p>
 <p>In the example below zeroes are generated for x prior to 2023 when the expressions are executed.</p>
 <div class="admonition note">
