@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>modelhelp module &mdash; ModelFlow  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/Core.html">Core Modules, creates and solves model instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onboard/onboard.html">Processing model specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../attribution/Attribution.html">Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vis/modelvis.html">Quick result visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/modelreport.html">Report writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly/modeldashsidebar.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/jupyter.html">Jupyter Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelinvert.html">Targets and instruments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelmf.html">Enrich dataframes with modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/model_cvx.html">Convex optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelsandbox.html">Template for a user defined  model class based on the model class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ModelFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">modelhelp module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/unsorted/modelhelp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-modelhelp">
+<span id="modelhelp-module"></span><h1>modelhelp module<a class="headerlink" href="#module-modelhelp" title="Link to this heading"></a></h1>
+<p>Created on Tue Mar  7 10:38:28 2017</p>
+<p>&#64;author: hanseni</p>
+<p>utilities for Stampe models</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="modelhelp.update_var">
+<span class="sig-prename descclassname"><span class="pre">modelhelp.</span></span><span class="sig-name descname"><span class="pre">update_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">databank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xvar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'='</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lprint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelhelp.html#update_var"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhelp.update_var" title="Link to this definition"></a></dt>
+<dd><p>Updates a variable in the databank. Possible update choices are:
+n = : val = inputval
+n + : val = val + inputval
+n - : val = val - inputval
+n * : val = val * inputval
+n =growth  : val = val(t-1)+inputval +
+n % : val = val(1+inputval/100)
+n
+n scale scales the input variables default =1.0</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelhelp.tovarlag">
+<span class="sig-prename descclassname"><span class="pre">modelhelp.</span></span><span class="sig-name descname"><span class="pre">tovarlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelhelp.html#tovarlag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhelp.tovarlag" title="Link to this definition"></a></dt>
+<dd><p>creates a stringof var(lag) if lag else just lag</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelhelp.cutout">
+<span class="sig-prename descclassname"><span class="pre">modelhelp.</span></span><span class="sig-name descname"><span class="pre">cutout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelhelp.html#cutout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhelp.cutout" title="Link to this definition"></a></dt>
+<dd><p>get rid of rows below treshold and returns the dataframe or serie</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelhelp.ttimer">
+<span class="sig-prename descclassname"><span class="pre">modelhelp.</span></span><span class="sig-name descname"><span class="pre">ttimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">short</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelhelp.html#ttimer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhelp.ttimer" title="Link to this definition"></a></dt>
+<dd><p>A timer context manager, implemented using a
+generator function. This one will report time even if an exception occurs”””</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>string</em><em>, </em><em>optional</em>) – a name. The default is ‘test’.</p></li>
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>optional</em>) – show the results. The default is True.</p></li>
+<li><p><strong>short</strong> (<em>bool</em><em>, </em><em>optional</em>) – . The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelhelp.finddec">
+<span class="sig-prename descclassname"><span class="pre">modelhelp.</span></span><span class="sig-name descname"><span class="pre">finddec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelhelp.html#finddec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhelp.finddec" title="Link to this definition"></a></dt>
+<dd><p>find a suitable number of decimal places from the magnitudes of a dataframe</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelhelp.insertModelVar">
+<span class="sig-prename descclassname"><span class="pre">modelhelp.</span></span><span class="sig-name descname"><span class="pre">insertModelVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelhelp.html#insertModelVar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhelp.insertModelVar" title="Link to this definition"></a></dt>
+<dd><p>Inserts all variables from model, not already in the dataframe.
+Model can be a list of models</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelhelp.df_extend">
+<span class="sig-prename descclassname"><span class="pre">modelhelp.</span></span><span class="sig-name descname"><span class="pre">df_extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelhelp.html#df_extend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhelp.df_extend" title="Link to this definition"></a></dt>
+<dd><p>Extends a Dataframe, assumes that the indes is of period_range type</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ib Hansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

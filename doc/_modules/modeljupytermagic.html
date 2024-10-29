@@ -1,0 +1,490 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>modeljupytermagic &mdash; ModelFlow  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/Core.html">Core Modules, creates and solves model instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onboard/onboard.html">Processing model specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../attribution/Attribution.html">Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vis/modelvis.html">Quick result visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/modelreport.html">Report writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly/modeldashsidebar.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/jupyter.html">Jupyter Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelinvert.html">Targets and instruments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelmf.html">Enrich dataframes with modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/model_cvx.html">Convex optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelsandbox.html">Template for a user defined  model class based on the model class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ModelFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">modeljupytermagic</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for modeljupytermagic</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># coding: utf-8</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This module defines several magic jupyter functions\:</span>
+
+<span class="sd">:graphviz: Draw Graphviz graph</span>
+<span class="sd">:dataframe: Create Pandas Dataframe    </span>
+<span class="sd">:latexflow: Create a modelflow modelinstance from latex script </span>
+
+<span class="sd">he doc strings can only be displayed when the module is used from Jupyter. So they are not shown in the Sphinx documentation To display the doc strings use the functions in jupyter. </span>
+
+<span class="sd">&#39;&#39;&#39;</span> 
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span><span class="p">,</span> <span class="n">Latex</span><span class="p">,</span> <span class="n">Markdown</span> <span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">SVG</span><span class="p">,</span> <span class="n">display_svg</span><span class="p">,</span><span class="n">IFrame</span>    
+<span class="kn">from</span> <span class="nn">IPython.lib.latextools</span> <span class="kn">import</span> <span class="n">latex_to_png</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.core.magic</span> <span class="kn">import</span> <span class="n">register_line_magic</span><span class="p">,</span> <span class="n">register_cell_magic</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">run</span> 
+<span class="kn">import</span> <span class="nn">re</span> 
+
+
+<span class="kn">from</span> <span class="nn">model_latex</span> <span class="kn">import</span> <span class="n">latextotxt</span>
+<span class="kn">from</span> <span class="nn">modelclass</span> <span class="kn">import</span> <span class="n">model</span>
+<span class="kn">from</span> <span class="nn">modelmanipulation</span> <span class="kn">import</span> <span class="n">explode</span>
+<span class="kn">from</span> <span class="nn">model_latex_class</span> <span class="kn">import</span> <span class="n">a_latex_model</span>
+
+
+<div class="viewcode-block" id="get_options">
+<a class="viewcode-back" href="../jupyter/modeljupytermagic.html#modeljupytermagic.get_options">[docs]</a>
+<span class="k">def</span> <span class="nf">get_options</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">defaultname</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Retrives options from the first line</span>
+
+
+<span class="sd">    Args:</span>
+<span class="sd">        line (TYPE): DESCRIPTION.</span>
+<span class="sd">        defaultname (TYPE, optional): DESCRIPTION. Defaults to &#39;test&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        name (string): name .</span>
+<span class="sd">        opt (dict): options.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">line</span><span class="p">:</span> 
+        <span class="n">arglistfull</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">name</span><span class="o">=</span> <span class="n">arglistfull</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">arglist</span><span class="o">=</span><span class="n">arglistfull</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arglistfull</span><span class="p">)</span><span class="o">&gt;=</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">defaultname</span>
+        <span class="n">arglist</span><span class="o">=</span><span class="p">[]</span>
+
+    <span class="n">opt</span> <span class="o">=</span> <span class="p">{</span><span class="n">o</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span> <span class="n">o</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">))</span><span class="o">==</span><span class="mi">2</span> <span class="k">else</span> <span class="kc">True</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">arglist</span><span class="p">}</span>
+    <span class="n">opt</span> <span class="o">=</span> <span class="p">{</span><span class="n">o</span> <span class="p">:</span> <span class="kc">False</span> <span class="k">if</span> <span class="p">(</span> <span class="n">v</span><span class="o">==</span> <span class="s1">&#39;0&#39;</span> <span class="ow">or</span> <span class="n">v</span><span class="o">==</span><span class="s1">&#39;False&#39;</span><span class="p">)</span>  <span class="k">else</span> <span class="n">v</span> <span class="k">for</span> <span class="n">o</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">opt</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    
+    <span class="k">return</span> <span class="n">name</span><span class="p">,</span><span class="n">opt</span>           </div>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># this is to </span>
+
+    <span class="nd">@register_cell_magic</span>
+    <span class="k">def</span> <span class="nf">graphviz</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Creates a ModelFlow model from a Latex document&#39;&#39;&#39;</span>
+        <span class="n">name</span><span class="p">,</span><span class="n">options</span> <span class="o">=</span> <span class="n">get_options</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="s1">&#39;Testgraph&#39;</span><span class="p">)</span>    
+        <span class="n">gv</span> <span class="o">=</span> <span class="n">cell</span>
+        <span class="c1"># print(options)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">display_graph</span><span class="p">(</span><span class="n">gv</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
+        <span class="k">return</span>
+
+<span class="c1"># In[29]:</span>
+
+
+    <span class="nd">@register_cell_magic</span>
+    <span class="k">def</span> <span class="nf">latexflow</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Creates a ModelFlow model from a Latex document&#39;&#39;&#39;</span>
+        <span class="n">name</span><span class="p">,</span><span class="n">options</span> <span class="o">=</span> <span class="n">get_options</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            
+        <span class="n">lmodel</span> <span class="o">=</span> <span class="n">cell</span>
+        
+        
+        <span class="c1"># display(Markdown(f&#39;## Now creating the model **{name}**&#39;))</span>
+        
+        <span class="n">fmodel</span> <span class="o">=</span> <span class="n">latextotxt</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">):</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;## Creating this Template model&#39;</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">fmodel</span><span class="p">)</span>
+        <span class="n">mmodel</span>  <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">from_eq</span><span class="p">(</span><span class="n">fmodel</span><span class="p">)</span>
+        <span class="n">mmodel</span><span class="o">.</span><span class="n">equations_latex</span> <span class="o">=</span> <span class="n">cell</span>
+    
+        
+        <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mmodel</span>
+        
+        <span class="n">ia</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+        <span class="n">ia</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;render&#39;</span><span class="p">,</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+        
+        <span class="c1"># display(Markdown(&#39;## The model&#39;))</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">):</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;## Creating this Template model&#39;</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">mmodel</span><span class="o">.</span><span class="n">equations_original</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;## And this Business Logic Language  model&#39;</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">mmodel</span><span class="o">.</span><span class="n">equations</span><span class="p">)</span>
+    
+        <span class="k">return</span>
+
+    <span class="nd">@register_cell_magic</span>
+    <span class="k">def</span> <span class="nf">latexmodelgrab</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+<span class="w">       </span><span class="sd">&#39;&#39;&#39;Creates a ModelFlow model from a Latex document&#39;&#39;&#39;</span>
+       <span class="n">name</span><span class="p">,</span><span class="n">options</span> <span class="o">=</span> <span class="n">get_options</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+       <span class="n">ia</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+
+       <span class="c1"># print(f&#39;{options=}&#39;)</span>
+       <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;segment&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">):</span>
+          
+           <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+              <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+              <span class="n">ia</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span><span class="p">,</span><span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+           <span class="n">modelsegment</span><span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;segment&#39;</span><span class="p">,</span><span class="s1">&#39;rest&#39;</span><span class="p">)</span>
+           <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span><span class="p">][</span><span class="n">modelsegment</span><span class="p">]</span><span class="o">=</span><span class="n">cell</span>   
+           
+           <span class="k">if</span> <span class="n">modelsegment</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;list&#39;</span><span class="p">):</span>
+               <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+               <span class="k">return</span>  
+           <span class="k">if</span> <span class="n">modelsegment</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">):</span>
+               <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+               <span class="k">return</span>  
+           
+           <span class="c1"># we want this cell plus all list cells to make this small model</span>
+           <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">):</span>
+               <span class="n">model_text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">text</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span><span class="n">text</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span> <span class="p">)</span>
+    
+           <span class="k">else</span><span class="p">:</span>     
+               <span class="n">model_text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">text</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span><span class="n">text</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> 
+                                  <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;list&#39;</span><span class="p">)])</span><span class="o">+</span><span class="n">cell</span> 
+       <span class="k">else</span><span class="p">:</span>
+           <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+               <span class="n">temp</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+               <span class="n">model_text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">text</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span><span class="n">text</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span> <span class="p">)</span>
+           <span class="k">else</span><span class="p">:</span> 
+               <span class="n">model_text</span> <span class="o">=</span> <span class="n">cell</span> 
+               
+           <span class="n">model_text</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">\documentclass</span><span class="si">{article}</span>
+
+<span class="s1">% Add necessary packages</span>
+
+
+<span class="s1">\usepackage</span><span class="si">{amsmath}</span><span class="s1"> </span><span class="si">% F</span><span class="s1">or mathematical equations</span>
+
+
+<span class="s1">\begin</span><span class="si">{document}</span><span class="s1"> </span>
+
+
+
+<span class="s1">&#39;&#39;&#39;</span> <span class="o">+</span>  <span class="n">model_text</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+
+
+<span class="s1">\end</span><span class="si">{document}</span><span class="s1">&#39;&#39;&#39;</span>
+           <span class="n">replace</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;##&#39;</span><span class="p">,</span><span class="s1">&#39;title&#39;</span><span class="p">),(</span><span class="s1">&#39;###&#39;</span><span class="p">,</span><span class="s1">&#39;section&#39;</span><span class="p">)]</span>
+           <span class="k">for</span> <span class="n">pat</span><span class="p">,</span><span class="n">rep</span> <span class="ow">in</span> <span class="n">replace</span><span class="p">:</span> 
+                <span class="n">pattern</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;^</span><span class="si">{</span><span class="n">pat</span><span class="si">}</span><span class="s1"> (.*?)\s*$&#39;</span>
+                <span class="n">replacement</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;</span><span class="se">\\</span><span class="si">{</span><span class="n">rep</span><span class="si">}</span><span class="se">{{</span><span class="s1">\1</span><span class="se">}}</span><span class="s1">&#39;</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+                <span class="n">model_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">model_text</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+    
+
+
+       
+       <span class="n">latex_model</span> <span class="o">=</span> <span class="n">a_latex_model</span><span class="p">(</span><span class="n">model_text</span><span class="p">,</span><span class="n">modelname</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+       <span class="n">mmodel</span>  <span class="o">=</span> <span class="n">latex_model</span><span class="o">.</span><span class="n">mmodel</span>
+       <span class="n">mmodel</span><span class="o">.</span><span class="n">equations_latex</span> <span class="o">=</span> <span class="n">model_text</span>
+   
+       
+       <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mmodel</span>
+       <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_latex_model_instance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">latex_model</span>
+       
+       <span class="n">ia</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+       <span class="n">ia</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_latex_model_instance&#39;</span><span class="p">,</span><span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+       
+       <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;render&#39;</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">):</span>
+           <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+       
+       <span class="c1"># display(Markdown(&#39;## The model&#39;))</span>
+       <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">):</span>
+           <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+           <span class="k">try</span><span class="p">:</span>
+               <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Model:</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> is created from these segments:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">temp</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">s</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()])</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+           <span class="k">except</span><span class="p">:</span>
+               <span class="o">...</span>
+           <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;## Creating this Template model&#39;</span><span class="p">))</span>
+           <span class="nb">print</span><span class="p">(</span><span class="n">mmodel</span><span class="o">.</span><span class="n">equations_original</span><span class="p">)</span>
+           <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;## And this Business Logic Language  model&#39;</span><span class="p">))</span>
+           <span class="nb">print</span><span class="p">(</span><span class="n">mmodel</span><span class="o">.</span><span class="n">equations</span><span class="p">)</span>
+   
+       <span class="k">return</span>
+
+
+
+    <span class="k">def</span> <span class="nf">ibmelt</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">per</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="c1"># breakpoint()</span>
+        <span class="n">temp</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span><span class="s1">&#39;row&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">,</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;column&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">prefix</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">row</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">column</span><span class="p">)</span>        <span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="s1">&#39;var_name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;var_name&#39;</span><span class="p">)</span>
+        <span class="n">newdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">temp</span><span class="p">]</span><span class="o">*</span><span class="n">per</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">newdf</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">per</span><span class="p">)</span>
+        <span class="n">newdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>
+        <span class="k">return</span> <span class="n">newdf</span>
+    
+    <span class="c1"># @register_cell_magic</span>
+    <span class="c1"># def dataframe(line, cell):</span>
+    <span class="c1">#     &#39;&#39;&#39;Converts this cell to a dataframe. and create a melted dataframe</span>
+       
+    <span class="c1">#     options can be added to the inpput line\:</span>
+        
+    <span class="c1">#     - t transposes the dataframe</span>
+    <span class="c1">#     - periods=&lt;number&gt; repeats the melted datframe</span>
+    <span class="c1">#     - repeat = &lt;number&gt; repeats the original  dataframe - for parameters </span>
+    <span class="c1">#     - melt will create a melted dataframe </span>
+    <span class="c1">#     - prefix=&lt;a string&gt; prefix  columns in the melted dataframe</span>
+    <span class="c1">#     - show will show the resulting dataframes</span>
+    <span class="c1">#     - start=index   will set the index (default 2021) </span>
+    <span class="c1">#     &#39;&#39;&#39; </span>
+        
+    <span class="c1">#     name,options = get_options(line,&#39;Testgraph&#39;)    </span>
+            
+    <span class="c1">#     trans = options.get(&#39;t&#39;,False )    </span>
+        
+    <span class="c1">#     if (options.get(&#39;help&#39;,False )):</span>
+    <span class="c1">#         print(__doc__)</span>
+            
+       
+    <span class="c1">#     prefix = options.get(&#39;prefix&#39;,&#39;&#39;) </span>
+    <span class="c1">#     periods = int(options.get(&#39;periods&#39;,&#39;1&#39;))</span>
+    <span class="c1">#     melt = options.get(&#39;melt&#39;,False)</span>
+    <span class="c1">#     start = int(options.get(&#39;start&#39;,&#39;2021&#39;))</span>
+    <span class="c1">#     silent =  options.get(&#39;silent&#39;,True)</span>
+    <span class="c1">#     ia = get_ipython()</span>
+        
+    <span class="c1">#     xtrans = (lambda xx:xx.T) if trans else (lambda xx:xx)</span>
+    <span class="c1">#     xcell= cell.replace(&#39;%&#39;,&#39;&#39;).replace(&#39;,&#39;,&#39;.&#39;)</span>
+    <span class="c1">#     mul = 0.01 if &#39;%&#39; in cell else 1.</span>
+    <span class="c1">#     sio = StringIO(xcell)</span>
+        
+    <span class="c1">#     df = pd.read_csv(sio,sep=r&quot;\s+|\t+|\s+\t+|\t+\s+&quot;,engine=&#39;python&#39;)\</span>
+    <span class="c1">#         .pipe(xtrans)\</span>
+    <span class="c1">#         .pipe(lambda xx:xx.rename(index = {i:i.upper() if type(i) == str else i for i in xx.index}</span>
+    <span class="c1">#                                   ,columns={c:c.upper() for c in xx.columns}))            *mul</span>
+    <span class="c1">#     # breakpoint()    </span>
+    <span class="c1">#     if not melt: </span>
+    <span class="c1">#         df= pd.concat([df]*periods,axis=0)            </span>
+    <span class="c1">#         df.index = pd.period_range(start=start,freq = &#39;Y&#39;,periods=len(df))</span>
+    <span class="c1">#         df.index.name = &#39;index&#39;</span>
+            
+        
+    <span class="c1">#     globals()[f&#39;{name}&#39;] = df</span>
+    <span class="c1">#     ia.push(f&#39;{name}&#39;,interactive=True)</span>
+    <span class="c1">#     if melt:</span>
+    <span class="c1">#         df_melted = ibmelt(df,prefix=prefix.upper(),per=periods)</span>
+    <span class="c1">#         df_melted.index = pd.period_range(start=start,freq = &#39;Y&#39;,periods=len(df_melted))</span>
+    <span class="c1">#         df_melted.index.name = &#39;index&#39;</span>
+    
+    <span class="c1">#         globals()[f&#39;{name}_melted&#39;] = df_melted</span>
+    <span class="c1">#         ia.push(f&#39;{name}_melted&#39;,interactive=True)</span>
+    <span class="c1">#     if not silent:</span>
+    <span class="c1">#         melttext = f&#39; and {name}_melted&#39; if melt else &#39;&#39;</span>
+    <span class="c1">#         display(Markdown(f&#39;## Created the dataframes: {name}{melttext}&#39;))</span>
+    <span class="c1">#     if options.get(&#39;show&#39;,False):         </span>
+    <span class="c1">#         display(df)</span>
+    <span class="c1">#         if melt: display(df_melted)</span>
+    <span class="c1">#     return </span>
+    
+    <span class="nd">@register_cell_magic</span>
+    <span class="k">def</span> <span class="nf">modeleviews</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Creates a ModelFlow model from a Latex document</span>
+<span class="sd">        </span>
+<span class="sd">        In developement </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        
+        <span class="k">try</span><span class="p">:</span> 
+            <span class="kn">import</span> <span class="nn">pyeviews</span> <span class="k">as</span> <span class="nn">evp</span>
+        <span class="k">except</span><span class="p">:</span> 
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no pyeviews&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;No pyeviews &#39;</span><span class="p">)</span>
+        <span class="kn">from</span>  <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span><span class="p">,</span> <span class="n">PureWindowsPath</span>
+     
+        <span class="n">name</span><span class="p">,</span><span class="n">options</span> <span class="o">=</span> <span class="n">get_options</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                
+        
+        <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;# Now creating the model **</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">**&#39;</span><span class="p">))</span>
+        
+        <span class="n">commands</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">):</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;# executing these eviews commands&#39;</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+     
+        <span class="n">eviewsapp</span> <span class="o">=</span> <span class="n">evp</span><span class="o">.</span><span class="n">GetEViewsApp</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">,</span><span class="n">showwindow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span> 
+              <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+              <span class="n">evp</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">eviewsapp</span><span class="p">)</span>
+    
+    
+        <span class="n">evp</span><span class="o">.</span><span class="n">Cleanup</span><span class="p">()</span>
+
+    
+        <span class="k">return</span>
+    
+    
+    <span class="k">def</span> <span class="nf">ibmelt</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">per</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="c1"># breakpoint()</span>
+        <span class="n">temp</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span><span class="s1">&#39;row&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">,</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;column&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">prefix</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">row</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">column</span><span class="p">)</span>        <span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="s1">&#39;var_name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;var_name&#39;</span><span class="p">)</span>
+        <span class="n">newdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">temp</span><span class="p">]</span><span class="o">*</span><span class="n">per</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">newdf</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">per</span><span class="p">)</span>
+        <span class="n">newdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span>
+        <span class="k">return</span> <span class="n">newdf</span>
+    
+    <span class="nd">@register_cell_magic</span>
+    <span class="k">def</span> <span class="nf">dataframe</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Converts this cell to a dataframe. and create a melted dataframe</span>
+<span class="sd">        </span>
+<span class="sd">        Works for yearly data. </span>
+<span class="sd">       </span>
+<span class="sd">        Options can be added to the input line</span>
+<span class="sd">        - t transposes the dataframe</span>
+<span class="sd">        - periods=&lt;number&gt; repeats the melted datframe</span>
+<span class="sd">        - melt will create a melted dataframe </span>
+<span class="sd">        - prefix=&lt;a string&gt; prefix  columns in the melted dataframe</span>
+<span class="sd">        - show will show the resulting dataframes</span>
+<span class="sd">        - start will set the start index (default to 2021) &#39;&#39;&#39;</span> 
+        
+        <span class="n">name</span><span class="p">,</span><span class="n">options</span> <span class="o">=</span> <span class="n">get_options</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="s1">&#39;Testgraph&#39;</span><span class="p">)</span>    
+            
+        <span class="n">trans</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="kc">False</span> <span class="p">)</span>    
+        
+        <span class="n">prefix</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;prefix&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span> 
+        <span class="n">periods</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;periods&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
+        <span class="n">melt</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;melt&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span><span class="s1">&#39;2021&#39;</span><span class="p">))</span>
+        <span class="n">silent</span> <span class="o">=</span>  <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;silent&#39;</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">ia</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+        
+        <span class="n">xtrans</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="k">if</span> <span class="n">trans</span> <span class="k">else</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">)</span>
+        <span class="n">xcell</span><span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+        <span class="n">mul</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="k">if</span> <span class="s1">&#39;%&#39;</span> <span class="ow">in</span> <span class="n">cell</span> <span class="k">else</span> <span class="mf">1.</span>
+        <span class="n">sio</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">xcell</span><span class="p">)</span>
+        
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">sio</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\s+|\t+|\s+\t+|\t+\s+&quot;</span><span class="p">,</span><span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>\
+            <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">xtrans</span><span class="p">)</span>\
+            <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="k">lambda</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span> <span class="k">else</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xx</span><span class="o">.</span><span class="n">index</span><span class="p">}</span>
+                                      <span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">c</span><span class="p">:</span><span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">xx</span><span class="o">.</span><span class="n">columns</span><span class="p">}))</span>            <span class="o">*</span><span class="n">mul</span>
+        <span class="c1"># breakpoint()    </span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">melt</span><span class="p">:</span> 
+            <span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">]</span><span class="o">*</span><span class="n">periods</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>            
+            <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
+            
+        
+        <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span>
+        <span class="n">ia</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">melt</span><span class="p">:</span>
+            <span class="n">df_melted</span> <span class="o">=</span> <span class="n">ibmelt</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span><span class="n">per</span><span class="o">=</span><span class="n">periods</span><span class="p">)</span>
+            <span class="n">df_melted</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df_melted</span><span class="p">))</span>
+            <span class="n">df_melted</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
+    
+            <span class="nb">globals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_melted&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_melted</span>
+            <span class="n">ia</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_melted&#39;</span><span class="p">,</span><span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
+            <span class="n">melttext</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39; and </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_melted&#39;</span> <span class="k">if</span> <span class="n">melt</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;## Created the dataframes: </span><span class="si">{</span><span class="n">name</span><span class="si">}{</span><span class="n">melttext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">):</span>         
+            <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">melt</span><span class="p">:</span> <span class="n">display</span><span class="p">(</span><span class="n">df_melted</span><span class="p">)</span>
+        <span class="k">return</span> 
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no magic&#39;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ib Hansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

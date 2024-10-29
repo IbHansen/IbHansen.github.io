@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Processing model specification &mdash; ModelFlow  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="modelmanipulation module" href="modelmanipulation.html" />
+    <link rel="prev" title="modeluserfunk module" href="../core/modeluserfunk.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/Core.html">Core Modules, creates and solves model instances</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Processing model specification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#text-processing-and-normalization-of-model-specification">Text processing and normalization of model specification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modelmanipulation.html">modelmanipulation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modelnormalize.html">modelnormalize module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_doable.html">model_doable module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#onboarding-models">Onboarding models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modelgrabwf2.html">modelgrabwf2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_Excel.html">model_Excel module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_dynare.html">model_dynare module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_latex.html">model_latex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#old-stuff">Old Stuff</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modelgrab.html">modelgrab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modelgrabwf2.html">modelgrabwf2 module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modelmacrograb.html">modelmacrograb module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../attribution/Attribution.html">Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vis/modelvis.html">Quick result visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/modelreport.html">Report writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly/modeldashsidebar.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/jupyter.html">Jupyter Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelinvert.html">Targets and instruments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelmf.html">Enrich dataframes with modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/model_cvx.html">Convex optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelsandbox.html">Template for a user defined  model class based on the model class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ModelFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Processing model specification</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/onboard/onboard.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../core/modeluserfunk.html" class="btn btn-neutral float-left" title="modeluserfunk module" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modelmanipulation.html" class="btn btn-neutral float-right" title="modelmanipulation module" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="processing-model-specification">
+<h1>Processing model specification<a class="headerlink" href="#processing-model-specification" title="Link to this heading"></a></h1>
+<p>The purpose is to process models specified in different ways
+- Macro business language
+- Eviews
+- Excel
+- Latex</p>
+<p>and make them into the modelflows business Logic language.</p>
+<section id="text-processing-and-normalization-of-model-specification">
+<h2>Text processing and normalization of model specification<a class="headerlink" href="#text-processing-and-normalization-of-model-specification" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modelmanipulation.html">modelmanipulation module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.oldsafesub"><code class="docutils literal notranslate"><span class="pre">oldsafesub</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.safesub"><code class="docutils literal notranslate"><span class="pre">safesub</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.sub"><code class="docutils literal notranslate"><span class="pre">sub()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.oldsub_frml"><code class="docutils literal notranslate"><span class="pre">oldsub_frml()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.sub_frml"><code class="docutils literal notranslate"><span class="pre">sub_frml()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.find_res"><code class="docutils literal notranslate"><span class="pre">find_res()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.find_res_dynare"><code class="docutils literal notranslate"><span class="pre">find_res_dynare()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.find_res_dynare_new"><code class="docutils literal notranslate"><span class="pre">find_res_dynare_new()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.find_hist_model"><code class="docutils literal notranslate"><span class="pre">find_hist_model()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.exounroll"><code class="docutils literal notranslate"><span class="pre">exounroll()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.tofrml"><code class="docutils literal notranslate"><span class="pre">tofrml()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.dounloop"><code class="docutils literal notranslate"><span class="pre">dounloop()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.find_arg"><code class="docutils literal notranslate"><span class="pre">find_arg()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.sumunroll_old"><code class="docutils literal notranslate"><span class="pre">sumunroll_old()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.lagarray_unroll"><code class="docutils literal notranslate"><span class="pre">lagarray_unroll()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.sumunroll"><code class="docutils literal notranslate"><span class="pre">sumunroll()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.funkunroll"><code class="docutils literal notranslate"><span class="pre">funkunroll()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.argunroll"><code class="docutils literal notranslate"><span class="pre">argunroll()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.creatematrix"><code class="docutils literal notranslate"><span class="pre">creatematrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.createarray"><code class="docutils literal notranslate"><span class="pre">createarray()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.kaedeunroll"><code class="docutils literal notranslate"><span class="pre">kaedeunroll()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.check_syntax_frml"><code class="docutils literal notranslate"><span class="pre">check_syntax_frml()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.check_syntax_udtryk"><code class="docutils literal notranslate"><span class="pre">check_syntax_udtryk()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.normalize_a_frml"><code class="docutils literal notranslate"><span class="pre">normalize_a_frml()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.nomalize_a_model"><code class="docutils literal notranslate"><span class="pre">nomalize_a_model()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.udrul_model"><code class="docutils literal notranslate"><span class="pre">udrul_model()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.explode"><code class="docutils literal notranslate"><span class="pre">explode()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.modelprint"><code class="docutils literal notranslate"><span class="pre">modelprint()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.lagone"><code class="docutils literal notranslate"><span class="pre">lagone()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.lag_n"><code class="docutils literal notranslate"><span class="pre">lag_n()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.lag_n_tup"><code class="docutils literal notranslate"><span class="pre">lag_n_tup()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.pastestring"><code class="docutils literal notranslate"><span class="pre">pastestring()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.stripstring"><code class="docutils literal notranslate"><span class="pre">stripstring()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.findindex"><code class="docutils literal notranslate"><span class="pre">findindex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.doablelist"><code class="docutils literal notranslate"><span class="pre">doablelist()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.dosubst"><code class="docutils literal notranslate"><span class="pre">dosubst()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.doablekeep"><code class="docutils literal notranslate"><span class="pre">doablekeep()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.doable"><code class="docutils literal notranslate"><span class="pre">doable()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.findindex_gams"><code class="docutils literal notranslate"><span class="pre">findindex_gams()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.un_normalize_expression"><code class="docutils literal notranslate"><span class="pre">un_normalize_expression()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.un_normalize_model"><code class="docutils literal notranslate"><span class="pre">un_normalize_model()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.un_normalize_simpel"><code class="docutils literal notranslate"><span class="pre">un_normalize_simpel()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelmanipulation.html#modelmanipulation.eksempel"><code class="docutils literal notranslate"><span class="pre">eksempel()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modelnormalize.html">modelnormalize module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.Normalized_frml"><code class="docutils literal notranslate"><span class="pre">Normalized_frml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.endovar"><code class="docutils literal notranslate"><span class="pre">endovar()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.funk_in"><code class="docutils literal notranslate"><span class="pre">funk_in()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.funk_replace"><code class="docutils literal notranslate"><span class="pre">funk_replace()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.funk_replace_list"><code class="docutils literal notranslate"><span class="pre">funk_replace_list()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.funk_find_arg"><code class="docutils literal notranslate"><span class="pre">funk_find_arg()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.preprocess"><code class="docutils literal notranslate"><span class="pre">preprocess()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.fixleads"><code class="docutils literal notranslate"><span class="pre">fixleads()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.normal"><code class="docutils literal notranslate"><span class="pre">normal()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelnormalize.html#modelnormalize.elem_trans"><code class="docutils literal notranslate"><span class="pre">elem_trans()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_doable.html">model_doable module</a></li>
+</ul>
+</div>
+</section>
+<section id="onboarding-models">
+<h2>Onboarding models<a class="headerlink" href="#onboarding-models" title="Link to this heading"></a></h2>
+<p>Modules to onboard models from different sources.</p>
+<p>The process of onboarding involves transforming the original specification
+to <strong>Modelflow Business Logic Language</strong> using what ever tools needed. As Python has very
+powerfull string and datatools it is possible to onboard many models - but by all means not all models.</p>
+<p>Be aware, that the functions presented here are made for specific model(families) following specific conventions. If these
+conventions are not followed, another model can’t be onboarded</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modelgrabwf2.html">modelgrabwf2 module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modelgrabwf2.html#modelgrabwf2.remove_url_and_replace_nbsp"><code class="docutils literal notranslate"><span class="pre">remove_url_and_replace_nbsp()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelgrabwf2.html#modelgrabwf2.wf1_to_wf2"><code class="docutils literal notranslate"><span class="pre">wf1_to_wf2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelgrabwf2.html#modelgrabwf2.wf2_to_clean"><code class="docutils literal notranslate"><span class="pre">wf2_to_clean()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelgrabwf2.html#modelgrabwf2.GrabWfModel"><code class="docutils literal notranslate"><span class="pre">GrabWfModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_Excel.html">model_Excel module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.findequations"><code class="docutils literal notranslate"><span class="pre">findequations()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.showcells"><code class="docutils literal notranslate"><span class="pre">showcells()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.findvalues"><code class="docutils literal notranslate"><span class="pre">findvalues()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.wstrans"><code class="docutils literal notranslate"><span class="pre">wstrans()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.findcoordinates"><code class="docutils literal notranslate"><span class="pre">findcoordinates()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.getexcelmodel"><code class="docutils literal notranslate"><span class="pre">getexcelmodel()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.indextrans"><code class="docutils literal notranslate"><span class="pre">indextrans()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.df_to_sheet"><code class="docutils literal notranslate"><span class="pre">df_to_sheet()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.obj_to_sheet"><code class="docutils literal notranslate"><span class="pre">obj_to_sheet()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.sheet_to_df"><code class="docutils literal notranslate"><span class="pre">sheet_to_df()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_Excel.html#model_Excel.sheet_to_dict"><code class="docutils literal notranslate"><span class="pre">sheet_to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_dynare.html">model_dynare module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_dynare.html#model_dynare.grap_modfile"><code class="docutils literal notranslate"><span class="pre">grap_modfile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_latex.html">model_latex module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.rebank"><code class="docutils literal notranslate"><span class="pre">rebank()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.txttolatex"><code class="docutils literal notranslate"><span class="pre">txttolatex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.defrack"><code class="docutils literal notranslate"><span class="pre">defrack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.debrace"><code class="docutils literal notranslate"><span class="pre">debrace()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.defunk"><code class="docutils literal notranslate"><span class="pre">defunk()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.findindex"><code class="docutils literal notranslate"><span class="pre">findindex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.doable"><code class="docutils literal notranslate"><span class="pre">doable()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.findlists"><code class="docutils literal notranslate"><span class="pre">findlists()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.findlistsnew"><code class="docutils literal notranslate"><span class="pre">findlistsnew()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.findlistsx"><code class="docutils literal notranslate"><span class="pre">findlistsx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.latextotxt"><code class="docutils literal notranslate"><span class="pre">latextotxt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.latextotxtnew"><code class="docutils literal notranslate"><span class="pre">latextotxtnew()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_latex.html#model_latex.dynlatextotxt"><code class="docutils literal notranslate"><span class="pre">dynlatextotxt()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="old-stuff">
+<h3>Old Stuff<a class="headerlink" href="#old-stuff" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modelgrab.html">modelgrab module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modelgrab.html#modelgrab.GrapWbModel"><code class="docutils literal notranslate"><span class="pre">GrapWbModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modelgrabwf2.html">modelgrabwf2 module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modelgrabwf2.html#modelgrabwf2.remove_url_and_replace_nbsp"><code class="docutils literal notranslate"><span class="pre">remove_url_and_replace_nbsp()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelgrabwf2.html#modelgrabwf2.wf1_to_wf2"><code class="docutils literal notranslate"><span class="pre">wf1_to_wf2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelgrabwf2.html#modelgrabwf2.wf2_to_clean"><code class="docutils literal notranslate"><span class="pre">wf2_to_clean()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelgrabwf2.html#modelgrabwf2.GrabWfModel"><code class="docutils literal notranslate"><span class="pre">GrabWfModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modelmacrograb.html">modelmacrograb module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modelmacrograb.html#modelmacrograb.GrabMacroModel"><code class="docutils literal notranslate"><span class="pre">GrabMacroModel</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../core/modeluserfunk.html" class="btn btn-neutral float-left" title="modeluserfunk module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modelmanipulation.html" class="btn btn-neutral float-right" title="modelmanipulation module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ib Hansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

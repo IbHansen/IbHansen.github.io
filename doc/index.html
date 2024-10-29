@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to ModelFlow’s documentation! &mdash; ModelFlow  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="Introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="#">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core/Core.html">Core Modules, creates and solves model instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="onboard/onboard.html">Processing model specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attribution/Attribution.html">Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vis/modelvis.html">Quick result visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report/modelreport.html">Report writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotly/modeldashsidebar.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter/jupyter.html">Jupyter Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="used/modelinvert.html">Targets and instruments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="used/modelmf.html">Enrich dataframes with modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="used/model_cvx.html">Convex optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="used/modelsandbox.html">Template for a user defined  model class based on the model class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">ModelFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to ModelFlow’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="Introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-modelflow-s-documentation">
+<h1>Welcome to ModelFlow’s documentation!<a class="headerlink" href="#welcome-to-modelflow-s-documentation" title="Link to this heading"></a></h1>
+<p>A Python toolkit to manage models</p>
+<p>The <strong>Pandas</strong> library is a great library to handle all kinds of datamanipulation and transformations.</p>
+<p>However when it comes to models which contains lags or models which requires solving simultanous equations, Pandas is not quite helpful.</p>
+<p>ModelFlow extends Pandas to handle a range of such models. And they can be large.</p>
+<p>It requires you to specify the <em>model</em> specified as equations (the <strong>business logic</strong>) and place the <em>data</em> in a Pandas  <strong>DataFrame</strong>.  ModelFlow allows the model to meet the data and return the result as a new DataFrame.</p>
+<p>A number of <strong>analytical tools for model and result analytic</strong> helps to understand the model and its results.</p>
+<p>The user can <strong>extend and modify the tools</strong> to her or his needs.</p>
+<p><strong>Onboarding models and combining models from different sources</strong>. Creating a Macro prudential model often entails recycling several models specified in different ways: Excel, Latex, Dynare, Python or other languages. Python’s ecosystem makes it possible to transform many different models into ModelFlow models or to wrap them into functions which can be called from ModelFlow models.</p>
+<p><strong>Models can be specified in a high level Business logic language (a Domain Specific language)</strong>. This allows the formulation of a model in a concise and expressive language which is close to the economic of the model. The user can concentrate on the economic or financial content - not the coding of the solution. The code for solving the model is generated by the tool. Then you can <em>solve the
+simultaneous</em> (or <em>non-simultaneous</em> model) in an efficient way.</p>
+<p>If you need a feature or have a model which can’t be handled in ModelFlow,
+you are encouraged to improve ModelFlow. Please share the
+improvement, other users may have the same need, or can be inspired by
+your work.</p>
+<p>Bear in mind that ModelFlow is experimental. It is provided ”as is”, without any representation or warranty of any kind either express or implied.</p>
+<p>You will find a tutorial here: <a class="reference external" href="https://ibhansen.github.io/index.html">https://ibhansen.github.io/index.html</a></p>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#install-miniconda">Install Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#install-modelflow-in-the-separate-enviroment">Install Modelflow in the separate enviroment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#in-windows-this-can-be-useful">In windows this can be useful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#to-update-modelflow">To update ModelFlow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="core/Core.html">Core Modules, creates and solves model instances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="core/modelclass.html">modelclass module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Org_model_Mixin"><code class="docutils literal notranslate"><span class="pre">Org_model_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Model_help_Mixin"><code class="docutils literal notranslate"><span class="pre">Model_help_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Dekomp_Mixin"><code class="docutils literal notranslate"><span class="pre">Dekomp_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Description_Mixin"><code class="docutils literal notranslate"><span class="pre">Description_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Modify_Mixin"><code class="docutils literal notranslate"><span class="pre">Modify_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Graph_Mixin"><code class="docutils literal notranslate"><span class="pre">Graph_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Graph_Draw_Mixin"><code class="docutils literal notranslate"><span class="pre">Graph_Draw_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Display_Mixin"><code class="docutils literal notranslate"><span class="pre">Display_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Json_Mixin"><code class="docutils literal notranslate"><span class="pre">Json_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Zip_Mixin"><code class="docutils literal notranslate"><span class="pre">Zip_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Excel_Mixin"><code class="docutils literal notranslate"><span class="pre">Excel_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Solver_Mixin"><code class="docutils literal notranslate"><span class="pre">Solver_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Dash_Mixin"><code class="docutils literal notranslate"><span class="pre">Dash_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Fix_Mixin"><code class="docutils literal notranslate"><span class="pre">Fix_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Stability_Mixin"><code class="docutils literal notranslate"><span class="pre">Stability_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.Report_Mixin"><code class="docutils literal notranslate"><span class="pre">Report_Mixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.model"><code class="docutils literal notranslate"><span class="pre">model</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.upd"><code class="docutils literal notranslate"><span class="pre">upd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.node"><code class="docutils literal notranslate"><span class="pre">node</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.ttimer"><code class="docutils literal notranslate"><span class="pre">ttimer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.create_model"><code class="docutils literal notranslate"><span class="pre">create_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.get_a_value"><code class="docutils literal notranslate"><span class="pre">get_a_value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.set_a_value"><code class="docutils literal notranslate"><span class="pre">set_a_value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.insertModelVar"><code class="docutils literal notranslate"><span class="pre">insertModelVar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.lineout"><code class="docutils literal notranslate"><span class="pre">lineout()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.dfout"><code class="docutils literal notranslate"><span class="pre">dfout()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.upddfold"><code class="docutils literal notranslate"><span class="pre">upddfold()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.upddf"><code class="docutils literal notranslate"><span class="pre">upddf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.randomdf"><code class="docutils literal notranslate"><span class="pre">randomdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.join_name_lag"><code class="docutils literal notranslate"><span class="pre">join_name_lag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelclass.html#modelclass.timer_old"><code class="docutils literal notranslate"><span class="pre">timer_old()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="core/modelnewton.html">modelnewton module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/modelnewton.html#modelnewton.diff_value_base"><code class="docutils literal notranslate"><span class="pre">diff_value_base</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelnewton.html#modelnewton.diff_value_col"><code class="docutils literal notranslate"><span class="pre">diff_value_col</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelnewton.html#modelnewton.diff_value"><code class="docutils literal notranslate"><span class="pre">diff_value</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelnewton.html#modelnewton.newton_diff"><code class="docutils literal notranslate"><span class="pre">newton_diff</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="core/modelpattern.html">modelpattern module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.nterm"><code class="docutils literal notranslate"><span class="pre">nterm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.udtrykre"><code class="docutils literal notranslate"><span class="pre">udtrykre()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.find_frml"><code class="docutils literal notranslate"><span class="pre">find_frml()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.split_frml"><code class="docutils literal notranslate"><span class="pre">split_frml()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.find_statements"><code class="docutils literal notranslate"><span class="pre">find_statements()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.model_parse_old"><code class="docutils literal notranslate"><span class="pre">model_parse_old()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.model_parse"><code class="docutils literal notranslate"><span class="pre">model_parse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.list_extract"><code class="docutils literal notranslate"><span class="pre">list_extract()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.check_syntax_model"><code class="docutils literal notranslate"><span class="pre">check_syntax_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.udtryk_parse"><code class="docutils literal notranslate"><span class="pre">udtryk_parse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.kw_frml_name"><code class="docutils literal notranslate"><span class="pre">kw_frml_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.f1"><code class="docutils literal notranslate"><span class="pre">f1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelpattern.html#modelpattern.f2"><code class="docutils literal notranslate"><span class="pre">f2()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="core/modelBLfunk.html">modelBLfunk module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/modelBLfunk.html#modelBLfunk.logit_inverse"><code class="docutils literal notranslate"><span class="pre">logit_inverse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelBLfunk.html#modelBLfunk.sum_excel"><code class="docutils literal notranslate"><span class="pre">sum_excel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelBLfunk.html#modelBLfunk.logit"><code class="docutils literal notranslate"><span class="pre">logit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelBLfunk.html#modelBLfunk.normcdf"><code class="docutils literal notranslate"><span class="pre">normcdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelBLfunk.html#modelBLfunk.qgamma"><code class="docutils literal notranslate"><span class="pre">qgamma()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modelBLfunk.html#modelBLfunk.clognorm"><code class="docutils literal notranslate"><span class="pre">clognorm()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="core/modeluserfunk.html">modeluserfunk module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/modeluserfunk.html#modeluserfunk.recode"><code class="docutils literal notranslate"><span class="pre">recode()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="onboard/onboard.html">Processing model specification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="onboard/onboard.html#text-processing-and-normalization-of-model-specification">Text processing and normalization of model specification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="onboard/modelmanipulation.html">modelmanipulation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onboard/modelnormalize.html">modelnormalize module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onboard/model_doable.html">model_doable module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="onboard/onboard.html#onboarding-models">Onboarding models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="onboard/modelgrabwf2.html">modelgrabwf2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onboard/model_Excel.html">model_Excel module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onboard/model_dynare.html">model_dynare module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onboard/model_latex.html">model_latex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onboard/onboard.html#old-stuff">Old Stuff</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attribution/Attribution.html">Attribution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attribution/Attribution.html#equation-level">Equation level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="attribution/Attribution.html#model-level">Model level</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="attribution/modeldekom.html">modeldekom module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vis/modelvis.html">Quick result visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.meltdim"><code class="docutils literal notranslate"><span class="pre">meltdim()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.DummyVis"><code class="docutils literal notranslate"><span class="pre">DummyVis</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.vis"><code class="docutils literal notranslate"><span class="pre">vis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.explain"><code class="docutils literal notranslate"><span class="pre">vis.explain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.draw"><code class="docutils literal notranslate"><span class="pre">vis.draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.dekomp"><code class="docutils literal notranslate"><span class="pre">vis.dekomp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.heat"><code class="docutils literal notranslate"><span class="pre">vis.heat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.plot"><code class="docutils literal notranslate"><span class="pre">vis.plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.plot_alt"><code class="docutils literal notranslate"><span class="pre">vis.plot_alt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.box"><code class="docutils literal notranslate"><span class="pre">vis.box()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.violin"><code class="docutils literal notranslate"><span class="pre">vis.violin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.swarm"><code class="docutils literal notranslate"><span class="pre">vis.swarm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.df"><code class="docutils literal notranslate"><span class="pre">vis.df</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.base"><code class="docutils literal notranslate"><span class="pre">vis.base</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.pct"><code class="docutils literal notranslate"><span class="pre">vis.pct</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.growth"><code class="docutils literal notranslate"><span class="pre">vis.growth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.year_pct"><code class="docutils literal notranslate"><span class="pre">vis.year_pct</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.yoy_growth"><code class="docutils literal notranslate"><span class="pre">vis.yoy_growth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.qoq_ar"><code class="docutils literal notranslate"><span class="pre">vis.qoq_ar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.frml"><code class="docutils literal notranslate"><span class="pre">vis.frml</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.des"><code class="docutils literal notranslate"><span class="pre">vis.des</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.eviews"><code class="docutils literal notranslate"><span class="pre">vis.eviews</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.dif"><code class="docutils literal notranslate"><span class="pre">vis.dif</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.difpctlevel"><code class="docutils literal notranslate"><span class="pre">vis.difpctlevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.difpct"><code class="docutils literal notranslate"><span class="pre">vis.difpct</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.difgrowth"><code class="docutils literal notranslate"><span class="pre">vis.difgrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.exo"><code class="docutils literal notranslate"><span class="pre">vis.exo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.print"><code class="docutils literal notranslate"><span class="pre">vis.print</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.show"><code class="docutils literal notranslate"><span class="pre">vis.show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.rename"><code class="docutils literal notranslate"><span class="pre">vis.rename()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.endo"><code class="docutils literal notranslate"><span class="pre">vis.endo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.mul"><code class="docutils literal notranslate"><span class="pre">vis.mul()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.vis.mul100"><code class="docutils literal notranslate"><span class="pre">vis.mul100</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.compvis"><code class="docutils literal notranslate"><span class="pre">compvis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.compvis.box"><code class="docutils literal notranslate"><span class="pre">compvis.box()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.compvis.swarm"><code class="docutils literal notranslate"><span class="pre">compvis.swarm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.compvis.violin"><code class="docutils literal notranslate"><span class="pre">compvis.violin()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.container"><code class="docutils literal notranslate"><span class="pre">container</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.container.smpl"><code class="docutils literal notranslate"><span class="pre">container.smpl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.container.vlist"><code class="docutils literal notranslate"><span class="pre">container.vlist()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis"><code class="docutils literal notranslate"><span class="pre">varvis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.explain"><code class="docutils literal notranslate"><span class="pre">varvis.explain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.draw"><code class="docutils literal notranslate"><span class="pre">varvis.draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.tracedep"><code class="docutils literal notranslate"><span class="pre">varvis.tracedep()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.tracepre"><code class="docutils literal notranslate"><span class="pre">varvis.tracepre()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.dash"><code class="docutils literal notranslate"><span class="pre">varvis.dash</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.dash2"><code class="docutils literal notranslate"><span class="pre">varvis.dash2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.dashport"><code class="docutils literal notranslate"><span class="pre">varvis.dashport()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.get_att"><code class="docutils literal notranslate"><span class="pre">varvis.get_att()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.dekomp"><code class="docutils literal notranslate"><span class="pre">varvis.dekomp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.var_des"><code class="docutils literal notranslate"><span class="pre">varvis.var_des()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.show"><code class="docutils literal notranslate"><span class="pre">varvis.show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.showdif"><code class="docutils literal notranslate"><span class="pre">varvis.showdif</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.frml"><code class="docutils literal notranslate"><span class="pre">varvis.frml</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vis/modelvis.html#modelvis.varvis.eviews"><code class="docutils literal notranslate"><span class="pre">varvis.eviews</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.vis_alt"><code class="docutils literal notranslate"><span class="pre">vis_alt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.plotshow"><code class="docutils literal notranslate"><span class="pre">plotshow()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.melt"><code class="docutils literal notranslate"><span class="pre">melt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.heatshow"><code class="docutils literal notranslate"><span class="pre">heatshow()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.attshow"><code class="docutils literal notranslate"><span class="pre">attshow()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.attshowone"><code class="docutils literal notranslate"><span class="pre">attshowone()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.water"><code class="docutils literal notranslate"><span class="pre">water()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vis/modelvis.html#modelvis.waterplot"><code class="docutils literal notranslate"><span class="pre">waterplot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report/modelreport.html">Report writing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.track_fields"><code class="docutils literal notranslate"><span class="pre">track_fields()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.DatatypeAccessor"><code class="docutils literal notranslate"><span class="pre">DatatypeAccessor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DatatypeAccessor.parse_config_table"><code class="docutils literal notranslate"><span class="pre">DatatypeAccessor.parse_config_table()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef"><code class="docutils literal notranslate"><span class="pre">DisplayDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.mmodel"><code class="docutils literal notranslate"><span class="pre">DisplayDef.mmodel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.spec"><code class="docutils literal notranslate"><span class="pre">DisplayDef.spec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.name"><code class="docutils literal notranslate"><span class="pre">DisplayDef.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.set_name"><code class="docutils literal notranslate"><span class="pre">DisplayDef.set_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.get_report_smpl"><code class="docutils literal notranslate"><span class="pre">DisplayDef.get_report_smpl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.save_spec"><code class="docutils literal notranslate"><span class="pre">DisplayDef.save_spec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.get_rowdes"><code class="docutils literal notranslate"><span class="pre">DisplayDef.get_rowdes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.pdf"><code class="docutils literal notranslate"><span class="pre">DisplayDef.pdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.set_options"><code class="docutils literal notranslate"><span class="pre">DisplayDef.set_options()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayDef.figwrap"><code class="docutils literal notranslate"><span class="pre">DisplayDef.figwrap()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.LatexRepo"><code class="docutils literal notranslate"><span class="pre">LatexRepo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.LatexRepo.latex"><code class="docutils literal notranslate"><span class="pre">LatexRepo.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.LatexRepo.name"><code class="docutils literal notranslate"><span class="pre">LatexRepo.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.LatexRepo.set_name"><code class="docutils literal notranslate"><span class="pre">LatexRepo.set_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.LatexRepo.latexwrap"><code class="docutils literal notranslate"><span class="pre">LatexRepo.latexwrap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.LatexRepo.pdf"><code class="docutils literal notranslate"><span class="pre">LatexRepo.pdf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.make_var_df"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.make_var_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.df_str_old"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.df_str_old</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.df_str"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.df_str</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.df_str_disp"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.df_str_disp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.df_str_disp_transpose"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.df_str_disp_transpose</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.show"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.sheetwidget"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.out_html"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.out_html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.htmlwidget_old"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.htmlwidget_old</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.htmlwidget"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.htmlwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.latex_straight"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.latex_straight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.latex_transpose_old"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.latex_transpose_old</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.latex_transpose"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.latex_transpose</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayVarTableDef.make_html_style"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.make_html_style()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayKeepFigDef"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayKeepFigDef.make_df"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.make_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayKeepFigDef.make_figs"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.make_figs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayKeepFigDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayKeepFigDef.savefigs"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.savefigs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayKeepFigDef.sheetwidget"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayKeepFigDef.out_html"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.out_html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayKeepFigDef.show"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.show</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayTextDef"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayTextDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayTextDef.out_html"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef.out_html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayTextDef.sheetwidget"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef.sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayTextDef.show"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef.show</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.mmodel"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.mmodel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.reports"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.reports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.name"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.options"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.set_name"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.set_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.set_scenarios"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.set_scenarios()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.pdf"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.pdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.spec_list"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.spec_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.save_spec"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.save_spec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.to_json"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.to_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.reports_restore"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.reports_restore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.show"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.sheetwidget"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayContainerDef.out_html"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.out_html</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayFigWrapDef"><code class="docutils literal notranslate"><span class="pre">DisplayFigWrapDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayFigWrapDef.figs"><code class="docutils literal notranslate"><span class="pre">DisplayFigWrapDef.figs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayFigWrapDef.extensions"><code class="docutils literal notranslate"><span class="pre">DisplayFigWrapDef.extensions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplayFigWrapDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayFigWrapDef.latex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.HtmlSplitTable"><code class="docutils literal notranslate"><span class="pre">HtmlSplitTable</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.HtmlSplitTable.html"><code class="docutils literal notranslate"><span class="pre">HtmlSplitTable.html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.HtmlSplitTable.split_html"><code class="docutils literal notranslate"><span class="pre">HtmlSplitTable.split_html()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.HTMLSplitData"><code class="docutils literal notranslate"><span class="pre">HTMLSplitData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.HTMLSplitData.html"><code class="docutils literal notranslate"><span class="pre">HTMLSplitData.html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.HTMLSplitData.split_html"><code class="docutils literal notranslate"><span class="pre">HTMLSplitData.split_html()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.center_title_under_years"><code class="docutils literal notranslate"><span class="pre">center_title_under_years()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.create_instance_from_json"><code class="docutils literal notranslate"><span class="pre">create_instance_from_json()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.create_column_multiindex"><code class="docutils literal notranslate"><span class="pre">create_column_multiindex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.center_multiindex_headers"><code class="docutils literal notranslate"><span class="pre">center_multiindex_headers()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.create_column_multiindex__"><code class="docutils literal notranslate"><span class="pre">create_column_multiindex__()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.format_list_with_numbers"><code class="docutils literal notranslate"><span class="pre">format_list_with_numbers()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.add_footer_to_styler"><code class="docutils literal notranslate"><span class="pre">add_footer_to_styler()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.split_text_html_latex"><code class="docutils literal notranslate"><span class="pre">split_text_html_latex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.split_text"><code class="docutils literal notranslate"><span class="pre">split_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.get_DisplayTextDef"><code class="docutils literal notranslate"><span class="pre">get_DisplayTextDef()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.insert_centered_row"><code class="docutils literal notranslate"><span class="pre">insert_centered_row()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.SplitTextResult"><code class="docutils literal notranslate"><span class="pre">SplitTextResult</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.SplitTextResult.input_string"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.input_string</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.SplitTextResult.text_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.text_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.SplitTextResult.latex_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.latex_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.SplitTextResult.html_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.html_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.SplitTextResult.markdown_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.markdown_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.SplitTextResult.split_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.split_text()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.Options"><code class="docutils literal notranslate"><span class="pre">Options</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Options.__add__"><code class="docutils literal notranslate"><span class="pre">Options.__add__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.Line"><code class="docutils literal notranslate"><span class="pre">Line</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.datatype"><code class="docutils literal notranslate"><span class="pre">Line.datatype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.textlinetype"><code class="docutils literal notranslate"><span class="pre">Line.textlinetype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.centertext"><code class="docutils literal notranslate"><span class="pre">Line.centertext</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.rename"><code class="docutils literal notranslate"><span class="pre">Line.rename</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.dec"><code class="docutils literal notranslate"><span class="pre">Line.dec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.pat"><code class="docutils literal notranslate"><span class="pre">Line.pat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.latexfont"><code class="docutils literal notranslate"><span class="pre">Line.latexfont</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.default_ax_title_template"><code class="docutils literal notranslate"><span class="pre">Line.default_ax_title_template</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.Line.ax_title_template"><code class="docutils literal notranslate"><span class="pre">Line.ax_title_template</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="report/modelreport.html#modelreport.DisplaySpec"><code class="docutils literal notranslate"><span class="pre">DisplaySpec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplaySpec.options"><code class="docutils literal notranslate"><span class="pre">DisplaySpec.options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="report/modelreport.html#modelreport.DisplaySpec.lines"><code class="docutils literal notranslate"><span class="pre">DisplaySpec.lines</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotly/modeldashsidebar.html">Dashboard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.app_setup"><code class="docutils literal notranslate"><span class="pre">app_setup()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.app_run"><code class="docutils literal notranslate"><span class="pre">app_run()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.get_stack"><code class="docutils literal notranslate"><span class="pre">get_stack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.get_no_stack"><code class="docutils literal notranslate"><span class="pre">get_no_stack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.get_line_old"><code class="docutils literal notranslate"><span class="pre">get_line_old()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.get_line"><code class="docutils literal notranslate"><span class="pre">get_line()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.generate_table"><code class="docutils literal notranslate"><span class="pre">generate_table()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph"><code class="docutils literal notranslate"><span class="pre">Dash_graph</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.mmodel"><code class="docutils literal notranslate"><span class="pre">Dash_graph.mmodel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.pre_var"><code class="docutils literal notranslate"><span class="pre">Dash_graph.pre_var</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.filter"><code class="docutils literal notranslate"><span class="pre">Dash_graph.filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.up"><code class="docutils literal notranslate"><span class="pre">Dash_graph.up</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.down"><code class="docutils literal notranslate"><span class="pre">Dash_graph.down</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.time_att"><code class="docutils literal notranslate"><span class="pre">Dash_graph.time_att</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.attshow"><code class="docutils literal notranslate"><span class="pre">Dash_graph.attshow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.all"><code class="docutils literal notranslate"><span class="pre">Dash_graph.all</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.dashport"><code class="docutils literal notranslate"><span class="pre">Dash_graph.dashport</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.debug"><code class="docutils literal notranslate"><span class="pre">Dash_graph.debug</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.jupyter"><code class="docutils literal notranslate"><span class="pre">Dash_graph.jupyter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.show_trigger"><code class="docutils literal notranslate"><span class="pre">Dash_graph.show_trigger</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.inline"><code class="docutils literal notranslate"><span class="pre">Dash_graph.inline</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.lag"><code class="docutils literal notranslate"><span class="pre">Dash_graph.lag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.threshold"><code class="docutils literal notranslate"><span class="pre">Dash_graph.threshold</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly/modeldashsidebar.html#modeldashsidebar.Dash_graph.growthshow"><code class="docutils literal notranslate"><span class="pre">Dash_graph.growthshow</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter/jupyter.html">Jupyter Stuff</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter/modeljupyter.html">modeljupyter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.vis_alt3"><code class="docutils literal notranslate"><span class="pre">vis_alt3()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.vis_alt4"><code class="docutils literal notranslate"><span class="pre">vis_alt4()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.jup_keepviz"><code class="docutils literal notranslate"><span class="pre">jup_keepviz</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.jupviz"><code class="docutils literal notranslate"><span class="pre">jupviz</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.get_alt"><code class="docutils literal notranslate"><span class="pre">get_alt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.get_alt_dic"><code class="docutils literal notranslate"><span class="pre">get_alt_dic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.inputwidget"><code class="docutils literal notranslate"><span class="pre">inputwidget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.get_att_gui"><code class="docutils literal notranslate"><span class="pre">get_att_gui()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.get_att_gui2"><code class="docutils literal notranslate"><span class="pre">get_att_gui2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.vtol"><code class="docutils literal notranslate"><span class="pre">vtol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.an_expression_to_latex"><code class="docutils literal notranslate"><span class="pre">an_expression_to_latex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.expressions_to_latex"><code class="docutils literal notranslate"><span class="pre">expressions_to_latex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.frml_as_latex"><code class="docutils literal notranslate"><span class="pre">frml_as_latex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupyter.html#modeljupyter.get_frml_latex"><code class="docutils literal notranslate"><span class="pre">get_frml_latex()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter/modelwidget_input.html">Jupyter interactive widgets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.singelwidget"><code class="docutils literal notranslate"><span class="pre">singelwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.basewidget"><code class="docutils literal notranslate"><span class="pre">basewidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.tabwidget"><code class="docutils literal notranslate"><span class="pre">tabwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.sheetwidget"><code class="docutils literal notranslate"><span class="pre">sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.slidewidget"><code class="docutils literal notranslate"><span class="pre">slidewidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.sumslidewidget"><code class="docutils literal notranslate"><span class="pre">sumslidewidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.radiowidget"><code class="docutils literal notranslate"><span class="pre">radiowidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.checkwidget"><code class="docutils literal notranslate"><span class="pre">checkwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.updatewidget"><code class="docutils literal notranslate"><span class="pre">updatewidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.fig_to_image"><code class="docutils literal notranslate"><span class="pre">fig_to_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.keep_plot_widget"><code class="docutils literal notranslate"><span class="pre">keep_plot_widget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.savefigs_widget"><code class="docutils literal notranslate"><span class="pre">savefigs_widget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.shinywidget"><code class="docutils literal notranslate"><span class="pre">shinywidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget_input.html#modelwidget_input.make_widget"><code class="docutils literal notranslate"><span class="pre">make_widget()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter/modelwidget.html">modelwidget module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.basewidget"><code class="docutils literal notranslate"><span class="pre">basewidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.tabwidget"><code class="docutils literal notranslate"><span class="pre">tabwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.sheetwidget"><code class="docutils literal notranslate"><span class="pre">sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.slidewidget"><code class="docutils literal notranslate"><span class="pre">slidewidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.sumslidewidget"><code class="docutils literal notranslate"><span class="pre">sumslidewidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.updatewidget"><code class="docutils literal notranslate"><span class="pre">updatewidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.fig_to_image"><code class="docutils literal notranslate"><span class="pre">fig_to_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.htmlwidget_df"><code class="docutils literal notranslate"><span class="pre">htmlwidget_df</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.htmlwidget_fig"><code class="docutils literal notranslate"><span class="pre">htmlwidget_fig</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.htmlwidget_style"><code class="docutils literal notranslate"><span class="pre">htmlwidget_style</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.htmlwidget_label"><code class="docutils literal notranslate"><span class="pre">htmlwidget_label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.htmlwidget_text"><code class="docutils literal notranslate"><span class="pre">htmlwidget_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modelwidget.html#modelwidget.visshow"><code class="docutils literal notranslate"><span class="pre">visshow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter/modeljupytermagic.html">modeljupytermagic module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter/modeljupytermagic.html#modeljupytermagic.get_options"><code class="docutils literal notranslate"><span class="pre">get_options()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="used/modelinvert.html">Targets and instruments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="used/modelinvert.html#modelinvert.targets_instruments"><code class="docutils literal notranslate"><span class="pre">targets_instruments</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="used/modelinvert.html#modelinvert.targets_instruments.jacobi"><code class="docutils literal notranslate"><span class="pre">targets_instruments.jacobi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="used/modelinvert.html#modelinvert.targets_instruments.invjacobi"><code class="docutils literal notranslate"><span class="pre">targets_instruments.invjacobi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="used/modelinvert.html#modelinvert.targets_instruments.targetseek"><code class="docutils literal notranslate"><span class="pre">targets_instruments.targetseek()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="used/modelinvert.html#modelinvert.targets_instruments.__call__"><code class="docutils literal notranslate"><span class="pre">targets_instruments.__call__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="used/modelmf.html">Enrich dataframes with modelflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="used/modelmf.html#modelmf.mf"><code class="docutils literal notranslate"><span class="pre">mf</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="used/modelmf.html#modelmf.mf.copy"><code class="docutils literal notranslate"><span class="pre">mf.copy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="used/modelmf.html#modelmf.mf.solve"><code class="docutils literal notranslate"><span class="pre">mf.solve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="used/modelmf.html#modelmf.mf.makemodel"><code class="docutils literal notranslate"><span class="pre">mf.makemodel()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="used/modelmf.html#modelmf.mfcalc"><code class="docutils literal notranslate"><span class="pre">mfcalc</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="used/modelmf.html#modelmf.mfupdate"><code class="docutils literal notranslate"><span class="pre">mfupdate</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="used/modelmf.html#modelmf.mfupdate.second"><code class="docutils literal notranslate"><span class="pre">mfupdate.second()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="used/modelmf.html#modelmf.ibloc"><code class="docutils literal notranslate"><span class="pre">ibloc</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="used/modelmf.html#modelmf.f"><code class="docutils literal notranslate"><span class="pre">f()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="used/model_cvx.html">Convex optimization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="used/model_cvx.html#model_cvx.MV_test"><code class="docutils literal notranslate"><span class="pre">MV_test()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="used/model_cvx.html#model_cvx.mv_opt"><code class="docutils literal notranslate"><span class="pre">mv_opt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="used/model_cvx.html#model_cvx.mv_opt_bs"><code class="docutils literal notranslate"><span class="pre">mv_opt_bs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="used/model_cvx.html#model_cvx.mv_opt_prop"><code class="docutils literal notranslate"><span class="pre">mv_opt_prop()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="used/modelsandbox.html">Template for a user defined  model class based on the model class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="used/modelsandbox.html#modelsandbox.newmodel"><code class="docutils literal notranslate"><span class="pre">newmodel</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="used/modelsandbox.html#modelsandbox.newvis"><code class="docutils literal notranslate"><span class="pre">newvis</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ib Hansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

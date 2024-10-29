@@ -1,0 +1,1189 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report writing &mdash; ModelFlow  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="modeldashsidebar module" href="../plotly/modeldashsidebar.html" />
+    <link rel="prev" title="modelvis module" href="../vis/modelvis.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/Core.html">Core Modules, creates and solves model instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onboard/onboard.html">Processing model specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../attribution/Attribution.html">Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vis/modelvis.html">Quick result visualization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Report writing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.track_fields"><code class="docutils literal notranslate"><span class="pre">track_fields()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.DatatypeAccessor"><code class="docutils literal notranslate"><span class="pre">DatatypeAccessor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DatatypeAccessor.parse_config_table"><code class="docutils literal notranslate"><span class="pre">DatatypeAccessor.parse_config_table()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.DisplayDef"><code class="docutils literal notranslate"><span class="pre">DisplayDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.mmodel"><code class="docutils literal notranslate"><span class="pre">DisplayDef.mmodel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.spec"><code class="docutils literal notranslate"><span class="pre">DisplayDef.spec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.name"><code class="docutils literal notranslate"><span class="pre">DisplayDef.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.set_name"><code class="docutils literal notranslate"><span class="pre">DisplayDef.set_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.get_report_smpl"><code class="docutils literal notranslate"><span class="pre">DisplayDef.get_report_smpl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.save_spec"><code class="docutils literal notranslate"><span class="pre">DisplayDef.save_spec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.get_rowdes"><code class="docutils literal notranslate"><span class="pre">DisplayDef.get_rowdes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.pdf"><code class="docutils literal notranslate"><span class="pre">DisplayDef.pdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.set_options"><code class="docutils literal notranslate"><span class="pre">DisplayDef.set_options()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayDef.figwrap"><code class="docutils literal notranslate"><span class="pre">DisplayDef.figwrap()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.LatexRepo"><code class="docutils literal notranslate"><span class="pre">LatexRepo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.LatexRepo.latex"><code class="docutils literal notranslate"><span class="pre">LatexRepo.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.LatexRepo.name"><code class="docutils literal notranslate"><span class="pre">LatexRepo.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.LatexRepo.set_name"><code class="docutils literal notranslate"><span class="pre">LatexRepo.set_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.LatexRepo.latexwrap"><code class="docutils literal notranslate"><span class="pre">LatexRepo.latexwrap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.LatexRepo.pdf"><code class="docutils literal notranslate"><span class="pre">LatexRepo.pdf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.DisplayVarTableDef"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.make_var_df"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.make_var_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.df_str_old"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.df_str_old</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.df_str"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.df_str</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.df_str_disp"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.df_str_disp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.df_str_disp_transpose"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.df_str_disp_transpose</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.show"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.sheetwidget"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.out_html"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.out_html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.htmlwidget_old"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.htmlwidget_old</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.htmlwidget"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.htmlwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.latex_straight"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.latex_straight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.latex_transpose_old"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.latex_transpose_old</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.latex_transpose"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.latex_transpose</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayVarTableDef.make_html_style"><code class="docutils literal notranslate"><span class="pre">DisplayVarTableDef.make_html_style()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.DisplayKeepFigDef"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayKeepFigDef.make_df"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.make_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayKeepFigDef.make_figs"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.make_figs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayKeepFigDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayKeepFigDef.savefigs"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.savefigs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayKeepFigDef.sheetwidget"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayKeepFigDef.out_html"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.out_html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayKeepFigDef.show"><code class="docutils literal notranslate"><span class="pre">DisplayKeepFigDef.show</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.DisplayTextDef"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayTextDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayTextDef.out_html"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef.out_html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayTextDef.sheetwidget"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef.sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayTextDef.show"><code class="docutils literal notranslate"><span class="pre">DisplayTextDef.show</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.DisplayContainerDef"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.mmodel"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.mmodel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.reports"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.reports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.name"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.options"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.set_name"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.set_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.set_scenarios"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.set_scenarios()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.latex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.pdf"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.pdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.spec_list"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.spec_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.save_spec"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.save_spec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.to_json"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.to_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.reports_restore"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.reports_restore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.show"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.sheetwidget"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.sheetwidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayContainerDef.out_html"><code class="docutils literal notranslate"><span class="pre">DisplayContainerDef.out_html</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.DisplayFigWrapDef"><code class="docutils literal notranslate"><span class="pre">DisplayFigWrapDef</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayFigWrapDef.figs"><code class="docutils literal notranslate"><span class="pre">DisplayFigWrapDef.figs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayFigWrapDef.extensions"><code class="docutils literal notranslate"><span class="pre">DisplayFigWrapDef.extensions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplayFigWrapDef.latex"><code class="docutils literal notranslate"><span class="pre">DisplayFigWrapDef.latex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.HtmlSplitTable"><code class="docutils literal notranslate"><span class="pre">HtmlSplitTable</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.HtmlSplitTable.html"><code class="docutils literal notranslate"><span class="pre">HtmlSplitTable.html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.HtmlSplitTable.split_html"><code class="docutils literal notranslate"><span class="pre">HtmlSplitTable.split_html()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.HTMLSplitData"><code class="docutils literal notranslate"><span class="pre">HTMLSplitData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.HTMLSplitData.html"><code class="docutils literal notranslate"><span class="pre">HTMLSplitData.html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.HTMLSplitData.split_html"><code class="docutils literal notranslate"><span class="pre">HTMLSplitData.split_html()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.center_title_under_years"><code class="docutils literal notranslate"><span class="pre">center_title_under_years()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.create_instance_from_json"><code class="docutils literal notranslate"><span class="pre">create_instance_from_json()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.create_column_multiindex"><code class="docutils literal notranslate"><span class="pre">create_column_multiindex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.center_multiindex_headers"><code class="docutils literal notranslate"><span class="pre">center_multiindex_headers()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.create_column_multiindex__"><code class="docutils literal notranslate"><span class="pre">create_column_multiindex__()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.format_list_with_numbers"><code class="docutils literal notranslate"><span class="pre">format_list_with_numbers()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.add_footer_to_styler"><code class="docutils literal notranslate"><span class="pre">add_footer_to_styler()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.split_text_html_latex"><code class="docutils literal notranslate"><span class="pre">split_text_html_latex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.split_text"><code class="docutils literal notranslate"><span class="pre">split_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.get_DisplayTextDef"><code class="docutils literal notranslate"><span class="pre">get_DisplayTextDef()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.insert_centered_row"><code class="docutils literal notranslate"><span class="pre">insert_centered_row()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.SplitTextResult"><code class="docutils literal notranslate"><span class="pre">SplitTextResult</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.SplitTextResult.input_string"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.input_string</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.SplitTextResult.text_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.text_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.SplitTextResult.latex_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.latex_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.SplitTextResult.html_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.html_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.SplitTextResult.markdown_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.markdown_text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.SplitTextResult.split_text"><code class="docutils literal notranslate"><span class="pre">SplitTextResult.split_text()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.Options"><code class="docutils literal notranslate"><span class="pre">Options</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Options.__add__"><code class="docutils literal notranslate"><span class="pre">Options.__add__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.Line"><code class="docutils literal notranslate"><span class="pre">Line</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.datatype"><code class="docutils literal notranslate"><span class="pre">Line.datatype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.textlinetype"><code class="docutils literal notranslate"><span class="pre">Line.textlinetype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.centertext"><code class="docutils literal notranslate"><span class="pre">Line.centertext</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.rename"><code class="docutils literal notranslate"><span class="pre">Line.rename</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.dec"><code class="docutils literal notranslate"><span class="pre">Line.dec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.pat"><code class="docutils literal notranslate"><span class="pre">Line.pat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.latexfont"><code class="docutils literal notranslate"><span class="pre">Line.latexfont</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.default_ax_title_template"><code class="docutils literal notranslate"><span class="pre">Line.default_ax_title_template</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.Line.ax_title_template"><code class="docutils literal notranslate"><span class="pre">Line.ax_title_template</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelreport.DisplaySpec"><code class="docutils literal notranslate"><span class="pre">DisplaySpec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplaySpec.options"><code class="docutils literal notranslate"><span class="pre">DisplaySpec.options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelreport.DisplaySpec.lines"><code class="docutils literal notranslate"><span class="pre">DisplaySpec.lines</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly/modeldashsidebar.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/jupyter.html">Jupyter Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelinvert.html">Targets and instruments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelmf.html">Enrich dataframes with modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/model_cvx.html">Convex optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelsandbox.html">Template for a user defined  model class based on the model class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ModelFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Report writing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/report/modelreport.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../vis/modelvis.html" class="btn btn-neutral float-left" title="modelvis module" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../plotly/modeldashsidebar.html" class="btn btn-neutral float-right" title="modeldashsidebar module" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-modelreport">
+<span id="report-writing"></span><h1>Report writing<a class="headerlink" href="#module-modelreport" title="Link to this heading"></a></h1>
+<p>Created on Mon Apr  8 14:58:26 2024</p>
+<p>&#64;author: ibhan</p>
+<p>The <cite>modelreport</cite> module facilitates the generation, management, and display of data visualizations and tables
+derived from ModelFlow models. It is designed to support a wide range of output formats including LaTeX documents,
+HTML, and interactive IPyWidgets, making it highly versatile for different reporting and analysis needs in Jupyter
+notebook environments.</p>
+<p>This module provides a structured and extendible  approach to organizing and rendering data analysis results, enabling users to
+easily convert complex model outputs into digestible visual representations and tables. It is especially useful
+for automating the reporting process in data analysis, financial modeling, and research projects, leveraging Python’s
+capabilities for data processing and visualization along with advanced document presentation features.</p>
+<p>Key Features:</p>
+<ul class="simple">
+<li><p>Dynamic generation of LaTeX and HTML content for integrating data visualizations and tables into reports and
+presentations.</p></li>
+<li><p>Compatibility with IPyWidgets for creating interactive, widget-based displays that enhance the interactivity of
+Jupyter notebooks.</p></li>
+<li><p>Seamless integration with matplotlib for figure generation and pandas for table formatting, providing a comprehensive
+toolkit for data display.</p></li>
+<li><p>Customizable display options and specifications through dataclasses, allowing for tailored presentation styles
+and formats.</p></li>
+</ul>
+<p>Classes:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#modelreport.Options" title="modelreport.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a>: Configures display options for managing how data and figures are presented, including naming conventions,
+formatting preferences, and title settings.</p></li>
+<li><p><a class="reference internal" href="#modelreport.Line" title="modelreport.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">Line</span></code></a>: Defines line configurations for table displays, supporting various data representation and difference
+calculations to suit different analysis needs.</p></li>
+<li><p><a class="reference internal" href="#modelreport.DisplaySpec" title="modelreport.DisplaySpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisplaySpec</span></code></a>: Groups display options and line configurations, facilitating the management of complex display setups
+in a structured manner.</p></li>
+<li><p><a class="reference internal" href="#modelreport.DisplayDef" title="modelreport.DisplayDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisplayDef</span></code></a>: Base class for display definitions, capable of compiling various display components into cohesive
+specifications for rendering.</p></li>
+<li><p><a class="reference internal" href="#modelreport.LatexRepo" title="modelreport.LatexRepo"><code class="xref py py-class docutils literal notranslate"><span class="pre">LatexRepo</span></code></a>: Handles the generation of LaTeX content, compilation into PDFs, and embedding within Jupyter notebooks,
+supporting both static and dynamic content creation.</p></li>
+<li><p><a class="reference internal" href="#modelreport.DisplayVarTableDef" title="modelreport.DisplayVarTableDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisplayVarTableDef</span></code></a>: Specializes in displaying variable tables, automating the creation and formatting of tables
+from ModelFlow model outputs.</p></li>
+<li><p><a class="reference internal" href="#modelreport.DisplayFigWrapDef" title="modelreport.DisplayFigWrapDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisplayFigWrapDef</span></code></a>: Focuses on wrapping and adjusting matplotlib figures for inclusion in various display formats,
+ensuring figures are presentation-ready.</p></li>
+<li><p><a class="reference internal" href="#modelreport.SplitTextResult" title="modelreport.SplitTextResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">SplitTextResult</span></code></a>: Parses a string containing text with embedded &lt;html&gt;, &lt;latex&gt;, and &lt;markdown&gt; tags and separates
+the content accordingly.</p></li>
+<li><p><a class="reference internal" href="#modelreport.DatatypeAccessor" title="modelreport.DatatypeAccessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatatypeAccessor</span></code></a>: Manages configurations for different datatypes, allowing for easy access and parsing of
+configuration tables provided in Markdown format.</p></li>
+</ul>
+<p>The <cite>modeldisplay</cite> module bridges the gap between analytical modeling and result presentation, offering a streamlined
+workflow for transforming ModelFlow model outputs into high-quality visual and tabular displays suitable for a wide
+range of purposes.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.track_fields">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">track_fields</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#track_fields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.track_fields" title="Link to this definition"></a></dt>
+<dd><p>A decorator to track which fields in a dataclass have been explicitly set during initialization.</p>
+<p>This decorator modifies the <cite>__init__</cite> method of a dataclass to keep track of which fields
+have been explicitly set by the user when an instance is created. The explicitly set fields
+are stored in a set called <cite>__explicitly_set__</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A decorator function that modifies the dataclass to track explicitly set fields.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>wrap (function)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.DatatypeAccessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">DatatypeAccessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datatype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DatatypeAccessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DatatypeAccessor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initializes the ConfigAccessor with a datatype and a configuration table in Markdown format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datatype</strong> – A string keyword to fetch configuration for.</p></li>
+<li><p><strong>config_table</strong> – A string representing the configuration in Markdown table format.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DatatypeAccessor.parse_config_table">
+<span class="sig-name descname"><span class="pre">parse_config_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DatatypeAccessor.parse_config_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DatatypeAccessor.parse_config_table" title="Link to this definition"></a></dt>
+<dd><p>Parses a Markdown table into a dictionary of configurations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config_table</strong> – Markdown table as a string.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary with datatype keys and property dictionaries as values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.DisplayDef">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">DisplayDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec:</span> <span class="pre">modelreport.DisplaySpec</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayDef" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.mmodel">
+<span class="sig-name descname"><span class="pre">mmodel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#modelreport.DisplayDef.mmodel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.spec">
+<span class="sig-name descname"><span class="pre">spec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#modelreport.DisplaySpec" title="modelreport.DisplaySpec"><span class="pre">DisplaySpec</span></a></em><a class="headerlink" href="#modelreport.DisplayDef.spec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#modelreport.DisplayDef.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayDef.set_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayDef.set_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.get_report_smpl">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_report_smpl</span></span><a class="headerlink" href="#modelreport.DisplayDef.get_report_smpl" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.save_spec">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_spec</span></span><a class="headerlink" href="#modelreport.DisplayDef.save_spec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.get_rowdes">
+<span class="sig-name descname"><span class="pre">get_rowdes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayDef.get_rowdes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayDef.get_rowdes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.pdf">
+<span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdfopen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'100%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'400px'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typesetter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xelatex</span>&#160; <span class="pre">-interaction=batchmode</span> <span class="pre">-no-shell-escape'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayDef.pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayDef.pdf" title="Link to this definition"></a></dt>
+<dd><p>Generates a PDF file from the LaTeX content and optionally displays it.</p>
+<p>This method creates a directory for LaTeX files, writes the LaTeX content
+to a <cite>.tex</cite> file, and uses a specified typesetter to compile it into a PDF.
+The resulting PDF can be displayed in an <cite>IFrame</cite> or opened in the default
+PDF viewer.</p>
+<p>Requires that miktex or another appropiate latex framework is installed.</p>
+<p>Inspect the latex source by specifying: typesetter=’texworks’</p>
+<p>The files are located in the folder called latex/{name}</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The .tex file is called {name.tex}</p></li>
+<li><p>the .pdf file is called {name.pdf}</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pdfopen</strong> (<em>bool</em>) – If True, opens the generated PDF file in the default viewer.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – If True, shows the pdf as a IFrame in Jupyter notebook .</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – The width of the <cite>IFrame</cite> if <cite>show</cite> is True.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – The height of the <cite>IFrame</cite> if <cite>show</cite> is True.</p></li>
+<li><p><strong>typesetter</strong> (<em>str</em>) – The LaTeX engine to use for compilation (e.g., ‘xelatex (default), pdflatex, texworks or latexmk’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iframe displaying the PDF file if <cite>show</cite> is True.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – If the typesetter returns a non-zero exit code, indicating an error</p></li>
+<li><p><strong>in generating the PDF. Opens the directory containing the LaTeX file for inspection.</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.set_options">
+<span class="sig-name descname"><span class="pre">set_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayDef.set_options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayDef.set_options" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayDef.figwrap">
+<span class="sig-name descname"><span class="pre">figwrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chart</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pgf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayDef.figwrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayDef.figwrap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.LatexRepo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">LatexRepo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'latex_test'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#LatexRepo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.LatexRepo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.LatexRepo.latex">
+<span class="sig-name descname"><span class="pre">latex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#modelreport.LatexRepo.latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.LatexRepo.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'latex_test'</span></em><a class="headerlink" href="#modelreport.LatexRepo.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.LatexRepo.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#LatexRepo.set_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.LatexRepo.set_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.LatexRepo.latexwrap">
+<span class="sig-name descname"><span class="pre">latexwrap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#LatexRepo.latexwrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.LatexRepo.latexwrap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.LatexRepo.pdf">
+<span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdfopen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'100%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'400px'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typesetter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xelatex</span>&#160; <span class="pre">-interaction=batchmode</span> <span class="pre">-no-shell-escape</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#LatexRepo.pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.LatexRepo.pdf" title="Link to this definition"></a></dt>
+<dd><p>Generates a PDF file from the LaTeX content and optionally displays it.</p>
+<p>This method creates a directory for LaTeX files, writes the LaTeX content
+to a <cite>.tex</cite> file, and uses a specified typesetter to compile it into a PDF.
+The resulting PDF can be displayed in an <cite>IFrame</cite> or opened in the default
+PDF viewer.</p>
+<p>Requires that miktex or another appropiate latex framework is installed.</p>
+<p>Inspect the latex source by specifying: typesetter=’texworks’</p>
+<p>The files are located in the folder called latex/{name}</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The .tex file is called {name.tex}</p></li>
+<li><p>the .pdf file is called {name.pdf}</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pdfopen</strong> (<em>bool</em>) – If True, opens the generated PDF file in the default viewer.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – If True, shows the pdf as a IFrame in Jupyter notebook .</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – The width of the <cite>IFrame</cite> if <cite>show</cite> is True.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – The height of the <cite>IFrame</cite> if <cite>show</cite> is True.</p></li>
+<li><p><strong>typesetter</strong> (<em>str</em>) – The LaTeX engine to use for compilation (e.g., ‘xelatex (default), pdflatex, texworks or latexmk’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iframe displaying the PDF file if <cite>show</cite> is True.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – If the typesetter returns a non-zero exit code, indicating an error</p></li>
+<li><p><strong>in generating the PDF. Opens the directory containing the LaTeX file for inspection.</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">DisplayVarTableDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec:</span> <span class="pre">modelreport.DisplaySpec</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayVarTableDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayVarTableDef" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#modelreport.DisplayDef" title="modelreport.DisplayDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisplayDef</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.make_var_df">
+<span class="sig-name descname"><span class="pre">make_var_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayVarTableDef.make_var_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayVarTableDef.make_var_df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.df_str_old">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">df_str_old</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.df_str_old" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.df_str">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">df_str</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.df_str" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.df_str_disp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">df_str_disp</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.df_str_disp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.df_str_disp_transpose">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">df_str_disp_transpose</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.df_str_disp_transpose" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.show">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.show" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.sheetwidget">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sheetwidget</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.sheetwidget" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.out_html">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">out_html</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.out_html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.htmlwidget_old">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">htmlwidget_old</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.htmlwidget_old" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.htmlwidget">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">htmlwidget</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.htmlwidget" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.latex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latex</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.latex_straight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latex_straight</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.latex_straight" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.latex_transpose_old">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latex_transpose_old</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.latex_transpose_old" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.latex_transpose">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latex_transpose</span></span><a class="headerlink" href="#modelreport.DisplayVarTableDef.latex_transpose" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayVarTableDef.make_html_style">
+<span class="sig-name descname"><span class="pre">make_html_style</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_tooltips</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayVarTableDef.make_html_style"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayVarTableDef.make_html_style" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.DisplayKeepFigDef">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">DisplayKeepFigDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec:</span> <span class="pre">modelreport.DisplaySpec</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayKeepFigDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayKeepFigDef" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#modelreport.DisplayDef" title="modelreport.DisplayDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisplayDef</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayKeepFigDef.make_df">
+<span class="sig-name descname"><span class="pre">make_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayKeepFigDef.make_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayKeepFigDef.make_df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayKeepFigDef.make_figs">
+<span class="sig-name descname"><span class="pre">make_figs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">showfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayKeepFigDef.make_figs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayKeepFigDef.make_figs" title="Link to this definition"></a></dt>
+<dd><p>Generate and display plots for specified scenarios and variables.
+:returns: A dictionary of Matplotlib figures, with keys being the variable names and values being the figure objects.
+:rtype: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ZeroDivisionError</strong> – If no kept solution is available for plotting.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayKeepFigDef.latex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latex</span></span><a class="headerlink" href="#modelreport.DisplayKeepFigDef.latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayKeepFigDef.savefigs">
+<span class="sig-name descname"><span class="pre">savefigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayKeepFigDef.savefigs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayKeepFigDef.savefigs" title="Link to this definition"></a></dt>
+<dd><p>Saves a collection of matplotlib figures to a specified directory.</p>
+<p>Parameters:
+- location (str): The base folder in which to save the charts. Defaults to ‘./graph’.
+- experimentname (str): A subfolder under ‘location’ where charts are saved. Defaults to ‘experiment1’.
+- addname (str): An additional name added to each figure filename. Defaults to an empty string.
+- extensions (list): A list of string file extensions for saving the figures. Defaults to [‘svg’].
+- xopen (bool): If True, open the saved figure locations in a web browser.</p>
+<p>Returns:
+str: The absolute path to the folder where figures are saved.</p>
+<p>Raises:
+Exception: If the folder cannot be created or a figure cannot be saved/opened.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayKeepFigDef.sheetwidget">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sheetwidget</span></span><a class="headerlink" href="#modelreport.DisplayKeepFigDef.sheetwidget" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayKeepFigDef.out_html">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">out_html</span></span><a class="headerlink" href="#modelreport.DisplayKeepFigDef.out_html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayKeepFigDef.show">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show</span></span><a class="headerlink" href="#modelreport.DisplayKeepFigDef.show" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.DisplayTextDef">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">DisplayTextDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec:</span> <span class="pre">modelreport.DisplaySpec</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayTextDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayTextDef" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#modelreport.DisplayDef" title="modelreport.DisplayDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisplayDef</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayTextDef.latex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latex</span></span><a class="headerlink" href="#modelreport.DisplayTextDef.latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayTextDef.out_html">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">out_html</span></span><a class="headerlink" href="#modelreport.DisplayTextDef.out_html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayTextDef.sheetwidget">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sheetwidget</span></span><a class="headerlink" href="#modelreport.DisplayTextDef.sheetwidget" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayTextDef.show">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show</span></span><a class="headerlink" href="#modelreport.DisplayTextDef.show" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">DisplayContainerDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reports:</span> <span class="pre">List[modelreport.DisplayDef]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'Report_test'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayContainerDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayContainerDef" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.mmodel">
+<span class="sig-name descname"><span class="pre">mmodel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#modelreport.DisplayContainerDef.mmodel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.reports">
+<span class="sig-name descname"><span class="pre">reports</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#modelreport.DisplayDef" title="modelreport.DisplayDef"><span class="pre">DisplayDef</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modelreport.DisplayContainerDef.reports" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Report_test'</span></em><a class="headerlink" href="#modelreport.DisplayContainerDef.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.options">
+<span class="sig-name descname"><span class="pre">options</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#modelreport.DisplayContainerDef.options" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayContainerDef.set_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayContainerDef.set_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.set_scenarios">
+<span class="sig-name descname"><span class="pre">set_scenarios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scenarios</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayContainerDef.set_scenarios"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayContainerDef.set_scenarios" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.latex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latex</span></span><a class="headerlink" href="#modelreport.DisplayContainerDef.latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.pdf">
+<span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdfopen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'100%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'400px'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typesetter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xelatex</span>&#160; <span class="pre">-interaction=batchmode</span> <span class="pre">-no-shell-escape'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayContainerDef.pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayContainerDef.pdf" title="Link to this definition"></a></dt>
+<dd><p>Generates a PDF file from the LaTeX content and optionally displays it.</p>
+<p>This method creates a directory for LaTeX files, writes the LaTeX content
+to a <cite>.tex</cite> file, and uses a specified typesetter to compile it into a PDF.
+The resulting PDF can be displayed in an <cite>IFrame</cite> or opened in the default
+PDF viewer.</p>
+<p>Requires that miktex or another appropiate latex framework is installed.</p>
+<p>Inspect the latex source by specifying: typesetter=’texworks’</p>
+<p>The files are located in the folder called latex/{name}</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The .tex file is called {name.tex}</p></li>
+<li><p>the .pdf file is called {name.pdf}</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pdfopen</strong> (<em>bool</em>) – If True, opens the generated PDF file in the default viewer.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – If True, shows the pdf as a IFrame in Jupyter notebook .</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – The width of the <cite>IFrame</cite> if <cite>show</cite> is True.</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – The height of the <cite>IFrame</cite> if <cite>show</cite> is True.</p></li>
+<li><p><strong>typesetter</strong> (<em>str</em>) – The LaTeX engine to use for compilation (e.g., ‘xelatex (default), pdflatex, texworks or latexmk’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iframe displaying the PDF file if <cite>show</cite> is True.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – If the typesetter returns a non-zero exit code, indicating an error</p></li>
+<li><p><strong>in generating the PDF. Opens the directory containing the LaTeX file for inspection.</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.spec_list">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">spec_list</span></span><a class="headerlink" href="#modelreport.DisplayContainerDef.spec_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.save_spec">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_spec</span></span><a class="headerlink" href="#modelreport.DisplayContainerDef.save_spec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayContainerDef.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayContainerDef.to_json" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.reports_restore">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reports_restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayContainerDef.reports_restore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayContainerDef.reports_restore" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.show">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show</span></span><a class="headerlink" href="#modelreport.DisplayContainerDef.show" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.sheetwidget">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sheetwidget</span></span><a class="headerlink" href="#modelreport.DisplayContainerDef.sheetwidget" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayContainerDef.out_html">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">out_html</span></span><a class="headerlink" href="#modelreport.DisplayContainerDef.out_html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.DisplayFigWrapDef">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">DisplayFigWrapDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec:</span> <span class="pre">modelreport.DisplaySpec</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figs:</span> <span class="pre">Dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extensions:</span> <span class="pre">List[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplayFigWrapDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplayFigWrapDef" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#modelreport.DisplayDef" title="modelreport.DisplayDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisplayDef</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayFigWrapDef.figs">
+<span class="sig-name descname"><span class="pre">figs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#modelreport.DisplayFigWrapDef.figs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplayFigWrapDef.extensions">
+<span class="sig-name descname"><span class="pre">extensions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modelreport.DisplayFigWrapDef.extensions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelreport.DisplayFigWrapDef.latex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latex</span></span><a class="headerlink" href="#modelreport.DisplayFigWrapDef.latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.HtmlSplitTable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">HtmlSplitTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#HtmlSplitTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.HtmlSplitTable" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.HtmlSplitTable.html">
+<span class="sig-name descname"><span class="pre">html</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modelreport.HtmlSplitTable.html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.HtmlSplitTable.split_html">
+<span class="sig-name descname"><span class="pre">split_html</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#HtmlSplitTable.split_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.HtmlSplitTable.split_html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.HTMLSplitData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">HTMLSplitData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#HTMLSplitData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.HTMLSplitData" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.HTMLSplitData.html">
+<span class="sig-name descname"><span class="pre">html</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modelreport.HTMLSplitData.html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.HTMLSplitData.split_html">
+<span class="sig-name descname"><span class="pre">split_html</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#HTMLSplitData.split_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.HTMLSplitData.split_html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.center_title_under_years">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">center_title_under_years</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_row_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year_row_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#center_title_under_years"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.center_title_under_years" title="Link to this definition"></a></dt>
+<dd><p>Center a title (specified by its index in the list) under the years row in a list of strings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – List of strings representing the data.</p></li>
+<li><p><strong>title_row_index</strong> – Index of the title row in the list. Defaults to 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new list of strings with the centered title.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.create_instance_from_json">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">create_instance_from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#create_instance_from_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.create_instance_from_json" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.create_column_multiindex">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">create_column_multiindex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#create_column_multiindex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.create_column_multiindex" title="Link to this definition"></a></dt>
+<dd><p>Transforms the columns of a DataFrame into a MultiIndex, where the first column’s name
+becomes the top level, and the names of the remaining columns serve as the second level.</p>
+<p>Parameters:
+df (pd.DataFrame): The DataFrame to convert.</p>
+<p>Returns:
+pd.DataFrame: A DataFrame with MultiIndex columns.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.center_multiindex_headers">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">center_multiindex_headers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#center_multiindex_headers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.center_multiindex_headers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.create_column_multiindex__">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">create_column_multiindex__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#create_column_multiindex__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.create_column_multiindex__" title="Link to this definition"></a></dt>
+<dd><p>Transforms the columns of a DataFrame into a MultiIndex, where the first column’s name
+becomes the top level, and the names of the remaining columns serve as the second level.
+The top level name will only be shown once in the MultiIndex representation.</p>
+<p>Parameters:
+df (pd.DataFrame): The DataFrame to convert.</p>
+<p>Returns:
+pd.DataFrame: A DataFrame with MultiIndex columns.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.format_list_with_numbers">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">format_list_with_numbers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#format_list_with_numbers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.format_list_with_numbers" title="Link to this definition"></a></dt>
+<dd><p>Format a list of items with numbered prefixes.</p>
+<p>Args:
+items (list of str): The list of items to be formatted, where each item is a string separated by ‘|’.</p>
+<p>Returns:
+list of str: The formatted list with numbered prefixes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.add_footer_to_styler">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">add_footer_to_styler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">styler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">footer_text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#add_footer_to_styler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.add_footer_to_styler" title="Link to this definition"></a></dt>
+<dd><p>Extend a Pandas Styler object with a footer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>styler</strong> (<em>pandas.io.formats.style.Styler</em>) – The Pandas Styler object.</p></li>
+<li><p><strong>footer_text</strong> (<em>str</em>) – The text to be included in the footer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The styled HTML with the added footer.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.split_text_html_latex">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">split_text_html_latex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#split_text_html_latex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.split_text_html_latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.split_text">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">split_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#split_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.split_text" title="Link to this definition"></a></dt>
+<dd><p>Split the input string based on the specified terminals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_string</strong> (<em>str</em>) – The input string to be split.</p>
+</dd>
+</dl>
+<p>Returns:
+tuple: A tuple containing three substrings:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The first substring before any terminals.</p></li>
+<li><p>The substring between &lt;latex&gt; and &lt;/latex&gt; terminals.</p></li>
+<li><p>The substring between &lt;html&gt; and &lt;/html&gt; terminals.</p></li>
+<li><p>The substring between &lt;markdown&gt; and &lt;/markdown&gt; terminals.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.get_DisplayTextDef">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">get_DisplayTextDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#get_DisplayTextDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.get_DisplayTextDef" title="Link to this definition"></a></dt>
+<dd><p>Create a DisplayTextDef object based on the input string.</p>
+<p>Args:
+input_string (str): The input string to be processed.</p>
+<p>Returns:
+DisplayTextDef: A DisplayTextDef object with the text, HTML, LaTeX, and Markdown content.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelreport.insert_centered_row">
+<span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">insert_centered_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centered_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_columns</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#insert_centered_row"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.insert_centered_row" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.SplitTextResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">SplitTextResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latex_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">markdown_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#SplitTextResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.SplitTextResult" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.SplitTextResult.input_string">
+<span class="sig-name descname"><span class="pre">input_string</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modelreport.SplitTextResult.input_string" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.SplitTextResult.text_text">
+<span class="sig-name descname"><span class="pre">text_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#modelreport.SplitTextResult.text_text" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.SplitTextResult.latex_text">
+<span class="sig-name descname"><span class="pre">latex_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#modelreport.SplitTextResult.latex_text" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.SplitTextResult.html_text">
+<span class="sig-name descname"><span class="pre">html_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#modelreport.SplitTextResult.html_text" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.SplitTextResult.markdown_text">
+<span class="sig-name descname"><span class="pre">markdown_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#modelreport.SplitTextResult.markdown_text" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.SplitTextResult.split_text">
+<span class="sig-name descname"><span class="pre">split_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#SplitTextResult.split_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.SplitTextResult.split_text" title="Link to this definition"></a></dt>
+<dd><p>Split the input string based on the specified terminals.</p>
+<p>Args:
+input_string (str): The input string to be split.</p>
+<p>Returns:
+None</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.Options">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">Options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#Options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.Options" title="Link to this definition"></a></dt>
+<dd><p>Represents configuration options for data display definitions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this display. Default is ‘Display’.</p></li>
+<li><p><strong>foot</strong> (<em>str</em>) – Footer if relevant. Default is an empty string.</p></li>
+<li><p><strong>rename</strong> (<em>bool</em>) – If True, allows renaming of data columns. Default is True.</p></li>
+<li><p><strong>decorate</strong> (<em>bool</em>) – If True, decorates row descriptions based on the showtype. Default is True.</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Specifies the width for formatting output in characters. Default is 20.</p></li>
+<li><p><strong>custom_description</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Custom descriptions to augment or override default descriptions. Empty by default.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Text for the title. Default is an empty string.</p></li>
+<li><p><strong>chunk_size</strong> (<em>int</em>) – Specifies the number of columns per chunk in the display output. Default is 0 (no chunking).</p></li>
+<li><p><strong>timeslice</strong> (<em>List</em>) – Specifies the time slice for data display. Empty by default.</p></li>
+<li><p><strong>max_cols</strong> (<em>int</em>) – Maximum columns when displayed as string. Default is 6.</p></li>
+<li><p><strong>last_cols</strong> (<em>int</em>) – In Latex, specifies the number of last columns to include in a display slice. Default is 1.</p></li>
+<li><p><strong>ncol</strong> (<em>int</em>) – Number of columns in figures. Default is 2.</p></li>
+<li><p><strong>samefig</strong> (<em>bool</em>) – If True, use the same figure for multiple plots. Default is False.</p></li>
+<li><p><strong>size</strong> (<em>tuple</em>) – Tuple specifying the figure size (width, height). Default is (10, 6).</p></li>
+<li><p><strong>legend</strong> (<em>bool</em>) – If True, display legend in plots. Default is True.</p></li>
+<li><p><strong>transpose</strong> (<em>bool</em>) – If True, transpose the data when displaying. Default is False.</p></li>
+<li><p><strong>scenarios</strong> (<em>str</em>) – Text specifying the scenarios for the display. Default is an empty string. if Empty use basedf/lastdf</p></li>
+<li><p><strong>smpl</strong> (<em>tuple</em>) – Tuple specifying start and end periods. Default is (‘’, ‘’).</p></li>
+<li><p><strong>landscape</strong> (<em>bool</em>) – If True, the table will be displayed in landscape mode. Default is False.</p></li>
+<li><p><strong>latex_text</strong> (<em>str</em>) – Text for a LaTeX output. Default is an empty string.</p></li>
+<li><p><strong>html_text</strong> (<em>str</em>) – Text for an HTML output. Default is an empty string.</p></li>
+<li><p><strong>text_text</strong> (<em>str</em>) – Text for a plain text output. Default is an empty string.</p></li>
+<li><p><strong>markdown_text</strong> (<em>str</em>) – Text for a Markdown output. Default is an empty string.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelreport.Options.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#Options.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.Options.__add__" title="Link to this definition"></a></dt>
+<dd><p>Merges this Options instance with another ‘Options’ instance or a dictionary. It returns a new Options
+instance that combines settings from both, preferring non-default values from ‘other’. If ‘other’ is a
+dictionary, attributes not existing in this instance will raise an AttributeError. TypeErrors are raised
+when ‘other’ is neither a dictionary nor an Options instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.Line">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">Line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datatype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'level'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'line'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centertext</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#Headline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latexfont</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mul</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yunit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datatype_desc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax_title_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textlinetype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#Line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.Line" title="Link to this definition"></a></dt>
+<dd><p>A dataclass for representing and validating line configurations for data display.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.datatype">
+<span class="sig-name descname"><span class="pre">datatype</span></span><a class="headerlink" href="#modelreport.Line.datatype" title="Link to this definition"></a></dt>
+<dd><p>Specifies the datatype as defines in DatatypeAccessor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.textlinetype">
+<span class="sig-name descname"><span class="pre">textlinetype</span></span><a class="headerlink" href="#modelreport.Line.textlinetype" title="Link to this definition"></a></dt>
+<dd><p>= ‘textline’ if the line is a textline in a table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.centertext">
+<span class="sig-name descname"><span class="pre">centertext</span></span><a class="headerlink" href="#modelreport.Line.centertext" title="Link to this definition"></a></dt>
+<dd><p>Center text used when showtype is ‘textline’. Default is a space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.rename">
+<span class="sig-name descname"><span class="pre">rename</span></span><a class="headerlink" href="#modelreport.Line.rename" title="Link to this definition"></a></dt>
+<dd><p>If True, allows renaming of data columns. Default is True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.dec">
+<span class="sig-name descname"><span class="pre">dec</span></span><a class="headerlink" href="#modelreport.Line.dec" title="Link to this definition"></a></dt>
+<dd><p>Specifies the number of decimal places to use for numerical output. Default is 2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.pat">
+<span class="sig-name descname"><span class="pre">pat</span></span><a class="headerlink" href="#modelreport.Line.pat" title="Link to this definition"></a></dt>
+<dd><p>Pattern or identifier used to select data for the line. Default is ‘#Headline’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.latexfont">
+<span class="sig-name descname"><span class="pre">latexfont</span></span><a class="headerlink" href="#modelreport.Line.latexfont" title="Link to this definition"></a></dt>
+<dd><p>Modifier used in lates for instande r’        extbf’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.default_ax_title_template">
+<span class="sig-name descname"><span class="pre">default_ax_title_template</span></span><a class="headerlink" href="#modelreport.Line.default_ax_title_template" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.Line.ax_title_template">
+<span class="sig-name descname"><span class="pre">ax_title_template</span></span><a class="headerlink" href="#modelreport.Line.ax_title_template" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelreport.DisplaySpec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelreport.</span></span><span class="sig-name descname"><span class="pre">DisplaySpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display_type:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options:</span> <span class="pre">~modelreport.Options</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines:</span> <span class="pre">~typing.List[~modelreport.Line]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelreport.html#DisplaySpec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelreport.DisplaySpec" title="Link to this definition"></a></dt>
+<dd><p>A dataclass to encapsulate display specifications including options and a list of line configurations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplaySpec.options">
+<span class="sig-name descname"><span class="pre">options</span></span><a class="headerlink" href="#modelreport.DisplaySpec.options" title="Link to this definition"></a></dt>
+<dd><p>An instance of the Options dataclass specifying configuration options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#modelreport.Options" title="modelreport.Options">Options</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelreport.DisplaySpec.lines">
+<span class="sig-name descname"><span class="pre">lines</span></span><a class="headerlink" href="#modelreport.DisplaySpec.lines" title="Link to this definition"></a></dt>
+<dd><p>A list of Line instances specifying individual line configurations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#modelreport.Line" title="modelreport.Line">Line</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../vis/modelvis.html" class="btn btn-neutral float-left" title="modelvis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../plotly/modeldashsidebar.html" class="btn btn-neutral float-right" title="modeldashsidebar module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ib Hansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

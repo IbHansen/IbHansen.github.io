@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>modeljupyter module &mdash; ModelFlow  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Jupyter interactive widgets" href="modelwidget_input.html" />
+    <link rel="prev" title="Jupyter Stuff" href="jupyter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/Core.html">Core Modules, creates and solves model instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onboard/onboard.html">Processing model specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../attribution/Attribution.html">Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vis/modelvis.html">Quick result visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/modelreport.html">Report writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly/modeldashsidebar.html">Dashboard</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="jupyter.html">Jupyter Stuff</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">modeljupyter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.vis_alt3"><code class="docutils literal notranslate"><span class="pre">vis_alt3()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.vis_alt4"><code class="docutils literal notranslate"><span class="pre">vis_alt4()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.jup_keepviz"><code class="docutils literal notranslate"><span class="pre">jup_keepviz</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modeljupyter.jup_keepviz.plot_level"><code class="docutils literal notranslate"><span class="pre">jup_keepviz.plot_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modeljupyter.jup_keepviz.plot_dif"><code class="docutils literal notranslate"><span class="pre">jup_keepviz.plot_dif()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modeljupyter.jup_keepviz.formatnumber"><code class="docutils literal notranslate"><span class="pre">jup_keepviz.formatnumber()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.jupviz"><code class="docutils literal notranslate"><span class="pre">jupviz</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modeljupyter.jupviz.vis"><code class="docutils literal notranslate"><span class="pre">jupviz.vis()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.get_alt"><code class="docutils literal notranslate"><span class="pre">get_alt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.get_alt_dic"><code class="docutils literal notranslate"><span class="pre">get_alt_dic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.inputwidget"><code class="docutils literal notranslate"><span class="pre">inputwidget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.get_att_gui"><code class="docutils literal notranslate"><span class="pre">get_att_gui()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.get_att_gui2"><code class="docutils literal notranslate"><span class="pre">get_att_gui2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.vtol"><code class="docutils literal notranslate"><span class="pre">vtol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.an_expression_to_latex"><code class="docutils literal notranslate"><span class="pre">an_expression_to_latex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.expressions_to_latex"><code class="docutils literal notranslate"><span class="pre">expressions_to_latex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.frml_as_latex"><code class="docutils literal notranslate"><span class="pre">frml_as_latex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeljupyter.get_frml_latex"><code class="docutils literal notranslate"><span class="pre">get_frml_latex()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modelwidget_input.html">Jupyter interactive widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelwidget.html">modelwidget module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modeljupytermagic.html">modeljupytermagic module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelinvert.html">Targets and instruments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelmf.html">Enrich dataframes with modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/model_cvx.html">Convex optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelsandbox.html">Template for a user defined  model class based on the model class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ModelFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="jupyter.html">Jupyter Stuff</a></li>
+      <li class="breadcrumb-item active">modeljupyter module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/jupyter/modeljupyter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="jupyter.html" class="btn btn-neutral float-left" title="Jupyter Stuff" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modelwidget_input.html" class="btn btn-neutral float-right" title="Jupyter interactive widgets" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-modeljupyter">
+<span id="modeljupyter-module"></span><h1>modeljupyter module<a class="headerlink" href="#module-modeljupyter" title="Link to this heading"></a></h1>
+<p>Created on Sat Jun 22 21:26:13 2019</p>
+<p>&#64;author: hanseni</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.vis_alt3">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">vis_alt3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Show</span> <span class="pre">variables'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Baseline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">altname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Alternative'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#vis_alt3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.vis_alt3" title="Link to this definition"></a></dt>
+<dd><p>display tabbed widget with results from different dataframes, usuallly 2 but more can be shown</p>
+<p>dfs is a list of dataframes. They should be of same dimensionalities</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.vis_alt4">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">vis_alt4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Show</span> <span class="pre">variables'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#vis_alt4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.vis_alt4" title="Link to this definition"></a></dt>
+<dd><p>display tabbed widget with results from different dataframes, usuallly 2 but more can be shown</p>
+<p>dfs is a list of dataframes. They should be of same dimensionalities</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modeljupyter.jup_keepviz">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">jup_keepviz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Show</span> <span class="pre">variables'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#jup_keepviz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.jup_keepviz" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to vizualize a number of runs, primary in Jupyter
+:dfs: A dict with runs {name :{‘result’ : df}}
+:title: A title
+:trans: a translation of variable names to more redable names
+:legend: if legends has to be shown</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modeljupyter.jup_keepviz.plot_level">
+<span class="sig-name descname"><span class="pre">plot_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#jup_keepviz.plot_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.jup_keepviz.plot_level" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modeljupyter.jup_keepviz.plot_dif">
+<span class="sig-name descname"><span class="pre">plot_dif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#jup_keepviz.plot_dif"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.jup_keepviz.plot_dif" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modeljupyter.jup_keepviz.formatnumber">
+<span class="sig-name descname"><span class="pre">formatnumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#jup_keepviz.formatnumber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.jup_keepviz.formatnumber" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modeljupyter.jupviz">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">jupviz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Show</span> <span class="pre">variables'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#jupviz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.jupviz" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#modeljupyter.jup_keepviz" title="modeljupyter.jup_keepviz"><code class="xref py py-class docutils literal notranslate"><span class="pre">jup_keepviz</span></code></a></p>
+<p>Class to vizualize a number of experiments in an tabbed ipywidget in a jupyter notebook</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modeljupyter.jupviz.vis">
+<span class="sig-name descname"><span class="pre">vis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#jupviz.vis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.jupviz.vis" title="Link to this definition"></a></dt>
+<dd><p>display tabbed widget with results from different dataframes, usuallly 2 but more can be shown</p>
+<p>dfs is a list of dataframes. They should be of same dimensionalities</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.get_alt">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">get_alt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onlyendo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#get_alt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.get_alt" title="Link to this definition"></a></dt>
+<dd><p>Retrieves variables matching pat from a model</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.get_alt_dic">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">get_alt_dic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmodel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onlyendo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#get_alt_dic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.get_alt_dic" title="Link to this definition"></a></dt>
+<dd><p>Retrieves variables matching pat from a model</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.inputwidget">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">inputwidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basedf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slidedef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radiodef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkdef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modelopt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varpat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RFF</span> <span class="pre">XGDPN</span> <span class="pre">RFFMIN</span> <span class="pre">GFSRPN</span> <span class="pre">DMPTRSH</span> <span class="pre">XXIBDUMMY'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base1name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt1name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">go_now</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showvar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#inputwidget"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.inputwidget" title="Link to this definition"></a></dt>
+<dd><p>Creates an input widgets for updating variables</p>
+<dl class="field-list simple">
+<dt class="field-odd">Df<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Baseline dataframe</p>
+</dd>
+<dt class="field-even">Slidedef<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict with definition of variables to be updated by slider</p>
+</dd>
+<dt class="field-odd">Radiodef<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of lists. each at first level defines a collection of radiobuttoms
+second level defines the text for each leved and the variable to set or reset to 0</p>
+</dd>
+<dt class="field-even">Varpat<span class="colon">:</span></dt>
+<dd class="field-even"><p>the variables to show in the output widget</p>
+</dd>
+<dt class="field-odd">Showout<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1 if the output widget is to be called</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.get_att_gui">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">get_att_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">totdif</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FY'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desdic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'level'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perselect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'per'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ysize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#get_att_gui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.get_att_gui" title="Link to this definition"></a></dt>
+<dd><p>Creates a jupyter ipywidget to display model level
+attributions</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.get_att_gui2">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">get_att_gui2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">totdif</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RP'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desdic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'level'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bar'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#get_att_gui2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.get_att_gui2" title="Link to this definition"></a></dt>
+<dd><p>Creates a jupyter ipywidget to display model level
+attributions for datily dates</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.vtol">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">vtol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#vtol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.vtol" title="Link to this definition"></a></dt>
+<dd><p>replaces special characters in variable name to latex</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.an_expression_to_latex">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">an_expression_to_latex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#an_expression_to_latex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.an_expression_to_latex" title="Link to this definition"></a></dt>
+<dd><p>Returns a latex string from a list of terms (defined in the modelpattern module)</p>
+<p>funks is a list of localy defines functions</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.expressions_to_latex">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">expressions_to_latex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expressions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#expressions_to_latex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.expressions_to_latex" title="Link to this definition"></a></dt>
+<dd><p>Returns a latex string from a list of a list of terms</p>
+<dl class="field-list simple">
+<dt class="field-odd">Funks<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a list of local functions in the model</p>
+</dd>
+<dt class="field-even">Allign<span class="colon">:</span></dt>
+<dd class="field-even"><p>the first = is enclosed in &amp; for alligning several equations in latex</p>
+</dd>
+<dt class="field-odd">Disp<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the result is displayed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.frml_as_latex">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">frml_as_latex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frml_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#frml_as_latex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.frml_as_latex" title="Link to this definition"></a></dt>
+<dd><p>Display formula</p>
+<dl class="field-list simple">
+<dt class="field-odd">Funks<span class="colon">:</span></dt>
+<dd class="field-odd"><p>local functions</p>
+</dd>
+<dt class="field-even">Allign<span class="colon">:</span></dt>
+<dd class="field-even"><p>allign =</p>
+</dd>
+<dt class="field-odd">Name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>also display the frml name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modeljupyter.get_frml_latex">
+<span class="sig-prename descclassname"><span class="pre">modeljupyter.</span></span><span class="sig-name descname"><span class="pre">get_frml_latex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modeljupyter.html#get_frml_latex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modeljupyter.get_frml_latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="jupyter.html" class="btn btn-neutral float-left" title="Jupyter Stuff" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modelwidget_input.html" class="btn btn-neutral float-right" title="Jupyter interactive widgets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ib Hansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

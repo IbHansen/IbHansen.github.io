@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>modelvis module &mdash; ModelFlow  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Report writing" href="../report/modelreport.html" />
+    <link rel="prev" title="modeldekom module" href="../attribution/modeldekom.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/Core.html">Core Modules, creates and solves model instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onboard/onboard.html">Processing model specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../attribution/Attribution.html">Attribution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick result visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.meltdim"><code class="docutils literal notranslate"><span class="pre">meltdim()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.DummyVis"><code class="docutils literal notranslate"><span class="pre">DummyVis</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.vis"><code class="docutils literal notranslate"><span class="pre">vis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.explain"><code class="docutils literal notranslate"><span class="pre">vis.explain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.draw"><code class="docutils literal notranslate"><span class="pre">vis.draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.dekomp"><code class="docutils literal notranslate"><span class="pre">vis.dekomp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.heat"><code class="docutils literal notranslate"><span class="pre">vis.heat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.plot"><code class="docutils literal notranslate"><span class="pre">vis.plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.plot_alt"><code class="docutils literal notranslate"><span class="pre">vis.plot_alt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.box"><code class="docutils literal notranslate"><span class="pre">vis.box()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.violin"><code class="docutils literal notranslate"><span class="pre">vis.violin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.swarm"><code class="docutils literal notranslate"><span class="pre">vis.swarm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.df"><code class="docutils literal notranslate"><span class="pre">vis.df</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.base"><code class="docutils literal notranslate"><span class="pre">vis.base</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.pct"><code class="docutils literal notranslate"><span class="pre">vis.pct</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.growth"><code class="docutils literal notranslate"><span class="pre">vis.growth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.year_pct"><code class="docutils literal notranslate"><span class="pre">vis.year_pct</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.yoy_growth"><code class="docutils literal notranslate"><span class="pre">vis.yoy_growth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.qoq_ar"><code class="docutils literal notranslate"><span class="pre">vis.qoq_ar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.frml"><code class="docutils literal notranslate"><span class="pre">vis.frml</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.des"><code class="docutils literal notranslate"><span class="pre">vis.des</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.eviews"><code class="docutils literal notranslate"><span class="pre">vis.eviews</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.dif"><code class="docutils literal notranslate"><span class="pre">vis.dif</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.difpctlevel"><code class="docutils literal notranslate"><span class="pre">vis.difpctlevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.difpct"><code class="docutils literal notranslate"><span class="pre">vis.difpct</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.difgrowth"><code class="docutils literal notranslate"><span class="pre">vis.difgrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.exo"><code class="docutils literal notranslate"><span class="pre">vis.exo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.print"><code class="docutils literal notranslate"><span class="pre">vis.print</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.show"><code class="docutils literal notranslate"><span class="pre">vis.show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.rename"><code class="docutils literal notranslate"><span class="pre">vis.rename()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.endo"><code class="docutils literal notranslate"><span class="pre">vis.endo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.mul"><code class="docutils literal notranslate"><span class="pre">vis.mul()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.vis.mul100"><code class="docutils literal notranslate"><span class="pre">vis.mul100</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.compvis"><code class="docutils literal notranslate"><span class="pre">compvis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.compvis.box"><code class="docutils literal notranslate"><span class="pre">compvis.box()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.compvis.swarm"><code class="docutils literal notranslate"><span class="pre">compvis.swarm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.compvis.violin"><code class="docutils literal notranslate"><span class="pre">compvis.violin()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.container"><code class="docutils literal notranslate"><span class="pre">container</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.container.smpl"><code class="docutils literal notranslate"><span class="pre">container.smpl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.container.vlist"><code class="docutils literal notranslate"><span class="pre">container.vlist()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.varvis"><code class="docutils literal notranslate"><span class="pre">varvis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.explain"><code class="docutils literal notranslate"><span class="pre">varvis.explain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.draw"><code class="docutils literal notranslate"><span class="pre">varvis.draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.tracedep"><code class="docutils literal notranslate"><span class="pre">varvis.tracedep()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.tracepre"><code class="docutils literal notranslate"><span class="pre">varvis.tracepre()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.dash"><code class="docutils literal notranslate"><span class="pre">varvis.dash</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.dash2"><code class="docutils literal notranslate"><span class="pre">varvis.dash2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.dashport"><code class="docutils literal notranslate"><span class="pre">varvis.dashport()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.get_att"><code class="docutils literal notranslate"><span class="pre">varvis.get_att()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.dekomp"><code class="docutils literal notranslate"><span class="pre">varvis.dekomp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.var_des"><code class="docutils literal notranslate"><span class="pre">varvis.var_des()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.show"><code class="docutils literal notranslate"><span class="pre">varvis.show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.showdif"><code class="docutils literal notranslate"><span class="pre">varvis.showdif</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.frml"><code class="docutils literal notranslate"><span class="pre">varvis.frml</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelvis.varvis.eviews"><code class="docutils literal notranslate"><span class="pre">varvis.eviews</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.vis_alt"><code class="docutils literal notranslate"><span class="pre">vis_alt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.plotshow"><code class="docutils literal notranslate"><span class="pre">plotshow()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.melt"><code class="docutils literal notranslate"><span class="pre">melt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.heatshow"><code class="docutils literal notranslate"><span class="pre">heatshow()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.attshow"><code class="docutils literal notranslate"><span class="pre">attshow()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.attshowone"><code class="docutils literal notranslate"><span class="pre">attshowone()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.water"><code class="docutils literal notranslate"><span class="pre">water()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelvis.waterplot"><code class="docutils literal notranslate"><span class="pre">waterplot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../report/modelreport.html">Report writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly/modeldashsidebar.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/jupyter.html">Jupyter Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelinvert.html">Targets and instruments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelmf.html">Enrich dataframes with modelflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/model_cvx.html">Convex optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../used/modelsandbox.html">Template for a user defined  model class based on the model class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ModelFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">modelvis module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/vis/modelvis.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../attribution/modeldekom.html" class="btn btn-neutral float-left" title="modeldekom module" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../report/modelreport.html" class="btn btn-neutral float-right" title="Report writing" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-modelvis">
+<span id="modelvis-module"></span><h1>modelvis module<a class="headerlink" href="#module-modelvis" title="Link to this heading"></a></h1>
+<p>Created on Fri May 12 11:07:02 2017</p>
+<p>&#64;author: hanseni</p>
+<p>This module creates functions and classes for visualizing results.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.meltdim">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">meltdim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['dima',</span> <span class="pre">'dimb']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Latest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#meltdim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.meltdim" title="Link to this definition"></a></dt>
+<dd><p>Melts a wide dataframe the variable names are split to dimensions acording
+to the list of texts in dims. in variablenames
+the tall dataframe have a variable name for each dimensions
+also values and source are introduced ac column names in the dataframe</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelvis.DummyVis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">DummyVis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#DummyVis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.DummyVis" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelvis.vis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">vis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Visualization class. used as a method on a model instance.</p>
+<p>The purpose is to select variables acording to a pattern, potential with wildcards</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.explain">
+<span class="sig-name descname"><span class="pre">explain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.explain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.explain" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.draw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.dekomp">
+<span class="sig-name descname"><span class="pre">dekomp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.dekomp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.dekomp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.heat">
+<span class="sig-name descname"><span class="pre">heat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.heat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.heat" title="Link to this definition"></a></dt>
+<dd><p>Displays a heatmap of the resulting dataframe</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.plot" title="Link to this definition"></a></dt>
+<dd><dl>
+<dt>Plots a subplot for each column in a datafra.</dt><dd><p>ppos determins which split by __ to use
+kind determins which kind of matplotlib chart to use</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>df (TYPE): Dataframe .
+name (TYPE, optional): title. Defaults to ‘’.
+ppos (TYPE, optional): # of position to use if split. Defaults to -1.
+kind (TYPE, optional): matplotlib kind . Defaults to ‘line’.
+colrow/ncol (TYPE, optional): columns per row . Defaults to 2.
+sharey (TYPE, optional): Share y axis between plots. Defaults to True.
+splitchar (TYPE, optional): if the name should be split . Defaults to ‘__’.
+savefig (TYPE, optional): save figure. Defaults to ‘’.
+xsize  (TYPE, optional): x size default to 10
+ysize  (TYPE, optional): y size per row, defaults to 2</p>
+</dd>
+<dt>Returns:</dt><dd><p>a matplotlib fig.</p>
+</dd>
+</dl>
+<p>note: ncol can be used instead of colrow to compatible with keep_plot</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.plot_alt">
+<span class="sig-name descname"><span class="pre">plot_alt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Title'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.plot_alt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.plot_alt" title="Link to this definition"></a></dt>
+<dd><p>Displays a plot for each of the columns in the resulting dataframe</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.box">
+<span class="sig-name descname"><span class="pre">box</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.box"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.box" title="Link to this definition"></a></dt>
+<dd><p>Displays a boxplot comparing basedf and lastdf</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.violin">
+<span class="sig-name descname"><span class="pre">violin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.violin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.violin" title="Link to this definition"></a></dt>
+<dd><p>Displays a violinplot comparing basedf and lastdf</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.swarm">
+<span class="sig-name descname"><span class="pre">swarm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.swarm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.swarm" title="Link to this definition"></a></dt>
+<dd><p>Displays a swarmlot comparing basedf and lastdf</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.df">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">df</span></span><a class="headerlink" href="#modelvis.vis.df" title="Link to this definition"></a></dt>
+<dd><p>Returns the result of this instance as a dataframe</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.base">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#modelvis.vis.base" title="Link to this definition"></a></dt>
+<dd><p>Returns basedf</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.pct">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pct</span></span><a class="headerlink" href="#modelvis.vis.pct" title="Link to this definition"></a></dt>
+<dd><p>Returns the pct change</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.growth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">growth</span></span><a class="headerlink" href="#modelvis.vis.growth" title="Link to this definition"></a></dt>
+<dd><p>Returns the pct growth</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.year_pct">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">year_pct</span></span><a class="headerlink" href="#modelvis.vis.year_pct" title="Link to this definition"></a></dt>
+<dd><p>Returns the pct change over 4 periods (used for quarterly data)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.yoy_growth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">yoy_growth</span></span><a class="headerlink" href="#modelvis.vis.yoy_growth" title="Link to this definition"></a></dt>
+<dd><p>Returns the pct change over 4 periods (used for quarterly data)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.qoq_ar">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">qoq_ar</span></span><a class="headerlink" href="#modelvis.vis.qoq_ar" title="Link to this definition"></a></dt>
+<dd><p>Returns the pct change over 4 periods (used for quarterly data)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.frml">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frml</span></span><a class="headerlink" href="#modelvis.vis.frml" title="Link to this definition"></a></dt>
+<dd><p>Returns formulas</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.des">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">des</span></span><a class="headerlink" href="#modelvis.vis.des" title="Link to this definition"></a></dt>
+<dd><p>Returns variable descriptions</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.eviews">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eviews</span></span><a class="headerlink" href="#modelvis.vis.eviews" title="Link to this definition"></a></dt>
+<dd><p>Returns variable descriptions</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.dif">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dif</span></span><a class="headerlink" href="#modelvis.vis.dif" title="Link to this definition"></a></dt>
+<dd><p>Returns the differens between the basedf and lastdf</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.difpctlevel">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">difpctlevel</span></span><a class="headerlink" href="#modelvis.vis.difpctlevel" title="Link to this definition"></a></dt>
+<dd><p>Returns the differens between the basedf and lastdf in percent</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.difpct">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">difpct</span></span><a class="headerlink" href="#modelvis.vis.difpct" title="Link to this definition"></a></dt>
+<dd><p>Returns the differens between the pct changes in basedf and lastdf</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.difgrowth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">difgrowth</span></span><a class="headerlink" href="#modelvis.vis.difgrowth" title="Link to this definition"></a></dt>
+<dd><p>Returns the differens between the pct changes in basedf and lastdf</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.exo">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">exo</span></span><a class="headerlink" href="#modelvis.vis.exo" title="Link to this definition"></a></dt>
+<dd><p>Selects only exogenous variables</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.print">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">print</span></span><a class="headerlink" href="#modelvis.vis.print" title="Link to this definition"></a></dt>
+<dd><p>prints the current result</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.show">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show</span></span><a class="headerlink" href="#modelvis.vis.show" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.rename">
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.rename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.rename" title="Link to this definition"></a></dt>
+<dd><p>rename columns</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.endo">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">endo</span></span><a class="headerlink" href="#modelvis.vis.endo" title="Link to this definition"></a></dt>
+<dd><p>only endogennous variables.  columns</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.vis.mul">
+<span class="sig-name descname"><span class="pre">mul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis.mul"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis.mul" title="Link to this definition"></a></dt>
+<dd><p>Multiply the curent result with other</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.vis.mul100">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mul100</span></span><a class="headerlink" href="#modelvis.vis.mul100" title="Link to this definition"></a></dt>
+<dd><p>Multiply the current result with 1,  used to be 100-</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelvis.compvis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">compvis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#compvis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.compvis" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to compare to runs in boxplots</p>
+<p>Combines basedf and lastdf to one tall dataframe useful for the Seaborn library</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.compvis.box">
+<span class="sig-name descname"><span class="pre">box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#compvis.box"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.compvis.box" title="Link to this definition"></a></dt>
+<dd><p>Displays a boxplot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.compvis.swarm">
+<span class="sig-name descname"><span class="pre">swarm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#compvis.swarm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.compvis.swarm" title="Link to this definition"></a></dt>
+<dd><p>Displays a swarmplot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.compvis.violin">
+<span class="sig-name descname"><span class="pre">violin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#compvis.violin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.compvis.violin" title="Link to this definition"></a></dt>
+<dd><p>Displays a violinplot</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelvis.container">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">container</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lastdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basedf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#container"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.container" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A container, used if to izualize dataframes without a model</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.container.smpl">
+<span class="sig-name descname"><span class="pre">smpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#container.smpl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.container.smpl" title="Link to this definition"></a></dt>
+<dd><p>Defines the model.current_per which is used for calculation period/index
+when no parameters are issues the current current period is returned</p>
+<p>Either none or all parameters have to be provided</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.container.vlist">
+<span class="sig-name descname"><span class="pre">vlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#container.vlist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.container.vlist" title="Link to this definition"></a></dt>
+<dd><p>returns a list of variable matching the pattern</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modelvis.varvis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">varvis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Visualization class. used as a method on a model instance.</p>
+<p>The purpose is to select variables acording to a pattern, potential with wildcards</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.varvis.explain">
+<span class="sig-name descname"><span class="pre">explain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis.explain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis.explain" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.varvis.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis.draw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.varvis.tracedep">
+<span class="sig-name descname"><span class="pre">tracedep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">down</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis.tracedep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis.tracedep" title="Link to this definition"></a></dt>
+<dd><p>Trace dependensies of name down to level down</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.varvis.tracepre">
+<span class="sig-name descname"><span class="pre">tracepre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">up</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis.tracepre"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis.tracepre" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Trace dependensies of name down to level down</dt><dd><ul class="simple">
+<li><p><cite>showdata|sd=True</cite> will include a table of values for each variable</p></li>
+<li><p><cite>showdata|sd=’pattern of variable names’</cite> will include a table of values for each variable matching the pattern (including wildcharts</p></li>
+<li><p><cite>attshow|ats = True</cite> will include a table of attributions for each variable</p></li>
+<li><p><cite>growthshow|gs = True</cite> will include a table of growth for each variable</p></li>
+<li><p><cite>HR = True</cite> will reorient the dependency graph</p></li>
+<li><p><cite>up = &lt;integer&gt;</cite> will determine how many levels of parents to include</p></li>
+<li><p><cite>png = True</cite> will display as a png picture</p></li>
+<li><p><cite>svg = True</cite> will display as a svg picture which can be zoomed</p></li>
+<li><p><cite>pdf = True</cite> will display as a pdf picture</p></li>
+<li><p><cite>eps = True</cite> will create a eps file</p></li>
+<li><p><cite>browser = True</cite> will open a browser with the resulting dependency graph - useful for zooming on a big graph</p></li>
+<li><p><cite>saveas = &lt;a file name without extension&gt;</cite> will save the picture wit the filename with an added extension reflection the picture type</p></li>
+</ul>
+</dd>
+</dl>
+<p>To allow the use of the display in presentations or publications The resulting file(s) are placed in the graph/subfolder</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.varvis.dash">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dash</span></span><a class="headerlink" href="#modelvis.varvis.dash" title="Link to this definition"></a></dt>
+<dd><p>Trace dependensies of name down to level down</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.varvis.dash2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dash2</span></span><a class="headerlink" href="#modelvis.varvis.dash2" title="Link to this definition"></a></dt>
+<dd><p>Trace dependensies of name down to level down poer = 5002</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.varvis.dashport">
+<span class="sig-name descname"><span class="pre">dashport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5002</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis.dashport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis.dashport" title="Link to this definition"></a></dt>
+<dd><p>Trace dependensies of name down to level down</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.varvis.get_att">
+<span class="sig-name descname"><span class="pre">get_att</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bare</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis.get_att"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis.get_att" title="Link to this definition"></a></dt>
+<dd><p>Retrieve and display the attribution for a variable within a specified period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>str</em>) – Start date of the period (default: ‘’).</p></li>
+<li><p><strong>end</strong> (<em>str</em>) – End date of the period (default: ‘’).</p></li>
+<li><p><strong>dec</strong> (<em>int</em>) – Number of decimal places for formatting (default: None).</p></li>
+<li><p><strong>bare</strong> (<em>bool</em>) – If True, display only the attribution result; if False, display both the difference and attribution results (default: True).</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – One of ‘pct’, ‘growth’, ‘level’ (default: ‘pct’)</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments for specifying attribution type and other options.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None (displays the attribution result)</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The method retrieves the difference and attribution results using the specified period and attribution type.</p></li>
+<li><p>The <cite>dec</cite> parameter controls the number of decimal places for formatting. If not provided, the default number of decimal places is determined based on the attribution type.</p></li>
+<li><p>The <cite>bare</cite> parameter determines whether to display only the attribution result or both the difference and attribution results.</p></li>
+<li><p>The <cite>type</cite> parameter wether to display the level, pct or growth attribution determines whether to display level, growth or pct attribution</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.varvis.dekomp">
+<span class="sig-name descname"><span class="pre">dekomp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis.dekomp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis.dekomp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modelvis.varvis.var_des">
+<span class="sig-name descname"><span class="pre">var_des</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#varvis.var_des"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.varvis.var_des" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.varvis.show">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show</span></span><a class="headerlink" href="#modelvis.varvis.show" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.varvis.showdif">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">showdif</span></span><a class="headerlink" href="#modelvis.varvis.showdif" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.varvis.frml">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frml</span></span><a class="headerlink" href="#modelvis.varvis.frml" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modelvis.varvis.eviews">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eviews</span></span><a class="headerlink" href="#modelvis.varvis.eviews" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.vis_alt">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">vis_alt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grund</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mul</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Show</span> <span class="pre">variables'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#vis_alt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.vis_alt" title="Link to this definition"></a></dt>
+<dd><p>Graph of one of more variables each variable is displayed for 3 banks</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.plotshow">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">plotshow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ppos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'line'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colrow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sharey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">splitchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'__'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savefig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#plotshow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.plotshow" title="Link to this definition"></a></dt>
+<dd><dl>
+<dt>Plots a subplot for each column in a datafra.</dt><dd><p>ppos determins which split by __ to use
+kind determins which kind of matplotlib chart to use</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>df (TYPE): Dataframe .
+name (TYPE, optional): title. Defaults to ‘’.
+ppos (TYPE, optional): # of position to use if split. Defaults to -1.
+kind (TYPE, optional): matplotlib kind . Defaults to ‘line’.
+colrow/ncol (TYPE, optional): columns per row . Defaults to 2.
+sharey (TYPE, optional): Share y axis between plots. Defaults to True.
+splitchar (TYPE, optional): if the name should be split . Defaults to ‘__’.
+savefig (TYPE, optional): save figure. Defaults to ‘’.
+xsize  (TYPE, optional): x size default to 10
+ysize  (TYPE, optional): y size per row, defaults to 2</p>
+</dd>
+<dt>Returns:</dt><dd><p>a matplotlib fig.</p>
+</dd>
+</dl>
+<p>note: ncol can be used instead of colrow to compatible with keep_plot</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.melt">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">melt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Latest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#melt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.melt" title="Link to this definition"></a></dt>
+<dd><p>melts a wide dataframe to a tall dataframe , appends a soruce column</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.heatshow">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">heatshow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Reds'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mul</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(11.69,</span> <span class="pre">8.27)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#heatshow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.heatshow" title="Link to this definition"></a></dt>
+<dd><p>A heatmap of a dataframe problems in 3.12</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.attshow">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">attshow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showsum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(11.69,</span> <span class="pre">8.27)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tshow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jet'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savefig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#attshow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.attshow" title="Link to this definition"></a></dt>
+<dd><p>Shows heatmap of impacts of exogeneous variables
+:df: Dataframe with impact
+:treshold: Take exogeneous variables with max impact of treshold or larger
+:numhigh: take the numhigh largest impacts
+:t: transpose the heatmap
+:annot: Annotate the heatmap
+:head: take the head largest
+.tail: take the tail smalest
+:showsum: Add a column with the sum
+:sort: Sort the data
+.tshow: Show a longer title
+:cbar:  if a colorbar shoud be displayes
+:cmap: the colormap
+:save: Save the chart (in png format)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.attshowone">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">attshowone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#attshowone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.attshowone" title="Link to this definition"></a></dt>
+<dd><p>shows the contribution to row=name from each column
+the coulumns can optional be selected as starting with pre</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.water">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">water</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serxinput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allsort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#water"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.water" title="Link to this definition"></a></dt>
+<dd><p>Creates a dataframe with information for a watrfall diagram</p>
+<dl class="field-list simple">
+<dt class="field-odd">Serx<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the input serie of values</p>
+</dd>
+<dt class="field-even">Sort<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the bars except the first and last should be sorted (default = False)</p>
+</dd>
+<dt class="field-odd">Allsort<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if all bars should be sorted (default = False)</p>
+</dd>
+<dt class="field-even">Autosum<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if a Total bar are added in the end</p>
+</dd>
+<dt class="field-odd">Ascending<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if sortorder = ascending</p>
+</dd>
+</dl>
+<p>Returns a dataframe with theese columns:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Hbegin<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Height of the first bar</p>
+</dd>
+<dt class="field-even">Hend<span class="colon">:</span></dt>
+<dd class="field-even"><p>Height of the last bar</p>
+</dd>
+<dt class="field-odd">Hpos<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Height of positive bars</p>
+</dd>
+<dt class="field-even">Hneg<span class="colon">:</span></dt>
+<dd class="field-even"><p>Height of negative bars</p>
+</dd>
+<dt class="field-odd">Start<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ofset at which each bar starts</p>
+</dd>
+<dt class="field-even">Height<span class="colon">:</span></dt>
+<dd class="field-even"><p>Height of each bar (just for information)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelvis.waterplot">
+<span class="sig-prename descclassname"><span class="pre">modelvis.</span></span><span class="sig-name descname"><span class="pre">waterplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bartype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allsort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Attribution</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desdic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ysize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwarg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modelvis.html#waterplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelvis.waterplot" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../attribution/modeldekom.html" class="btn btn-neutral float-left" title="modeldekom module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../report/modelreport.html" class="btn btn-neutral float-right" title="Report writing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ib Hansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
