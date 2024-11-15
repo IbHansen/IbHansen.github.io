@@ -219,7 +219,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/GettingHelp.html">1. Getting Help</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html">2. ModelFlow methods reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_MoreFeatures/ModelFlowReference.html">2. Modelflow methods reference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backmatter</span></p>
 <ul class="nav bd-sidenav">
@@ -450,21 +450,6 @@ document.write(`
 <h1><span class="section-number">5. </span>More complex scenarios<a class="headerlink" href="#more-complex-scenarios" title="Link to this heading">#</a></h1>
 <p>The preceding chapter introduced four different ways of preparing a solution and the forms the backbone of running simulations on World Bank models in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. This chapter builds on those examples and delves into some of the challenges involved in translating a real-world policy problem into the model-world and then back again.</p>
 <p>The particular scenario to be examined is the introduction of a Carbon Tax. The model used, and the example presented are both taken from the model of Pakistan presented in <span id="id1"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>(2021).</p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pandas options ot make output more eligeble: </span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.width&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-</div>
 <section id="load-a-pre-existing-model-data-and-descriptions">
 <h2><span class="section-number">5.1. </span>Load a pre-existing model, data and descriptions<a class="headerlink" href="#load-a-pre-existing-model-data-and-descriptions" title="Link to this heading">#</a></h2>
 <p>After initializing a <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> pandas session in the usual way,  the Pakistan model, which is comprised of the model object, its estimated equations and the data is loaded.  The <code class="docutils literal notranslate"><span class="pre">pcim</span></code> file was created by the World Bank from the original EViews model used in the paper (<span id="id2"><a class="reference internal" href="../../Reference.html#id14" title="Andrew Burns, Charl Jooste, and Gregor Schwerhoff. Climate Modeling for Macroeconomic Policy : A Case Study for Pakistan. Number 9780 in Policy Research Working Papers. World Bank, Washington, DC, 2021. URL: https://openknowledge.worldbank.org/bitstream/handle/10986/36307/Climate-Modeling-for-Macroeconomic-Policy-A-Case-Study-for-Pakistan.pdf?sequence=1&amp;isAllowed=y.">Burns <em>et al.</em></a></span>,2021).</p>
@@ -559,12 +544,16 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 </div>
-<p id="index-3">These new definitions can be appended to the existing description by using python pointers which are denoted by ** preceding a variable name.</p>
-<p>The command <code class="docutils literal notranslate"><span class="pre">mpak.var_description</span> <span class="pre">=</span> <span class="pre">{**mpak.var_description,**extra_description}</span></code> tells python to assign to the variable <code class="docutils literal notranslate"><span class="pre">mpak.var_description</span></code> the concatenation of the contents of the variables <code class="docutils literal notranslate"><span class="pre">mpak.var_description</span></code> (its current content) and <code class="docutils literal notranslate"><span class="pre">extra_description</span></code> the ** preceding the variable names is the pointer operator and indicates to python to replace the symbol with the contents of the existing variables.</p>
-<p>Following execution, the <code class="docutils literal notranslate"><span class="pre">var_desciption</span></code> will be changed to contain both its old values and those added in the extra_description dictionary defined above.</p>
+<p>These new definitions can be merged with the existing description by using the | operator.</p>
+<p>The command</p>
+<blockquote>
+<div><p>mpak.var_description = mpak.var_description | extra_description</p>
+</div></blockquote>
+<p>Sets  <code class="docutils literal notranslate"><span class="pre">mpak.var_description</span></code> to a merge between the contents of the dictionary: <code class="docutils literal notranslate"><span class="pre">mpak.var_description</span></code> (its current content) and the dictionary: <code class="docutils literal notranslate"><span class="pre">extra_description</span></code></p>
+<p>Following execution, the <code class="docutils literal notranslate"><span class="pre">.var_desciption</span></code> will be changed to contain both its old values and those added in the extra_description dictionary defined above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span><span class="p">,</span><span class="o">**</span><span class="n">extra_description</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span> <span class="o">=</span> <span class="n">mpak</span><span class="o">.</span><span class="n">var_description</span> <span class="o">|</span> <span class="n">extra_description</span>
 </pre></div>
 </div>
 </div>
@@ -592,8 +581,8 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 <p>The above used the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> to change the Carbon Tax rate variables.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> method <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> could be used to perform the same change.</p>
-<div class="cell docutils container" id="index-5">
-<span id="index-4"></span><div class="cell_input docutils container">
+<div class="cell docutils container" id="index-4">
+<span id="index-3"></span><div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This ModelFlow command is equivalent to the previous standard pandas command abive that used the .loc[] syntax</span>
 <span class="n">CT30df</span>  <span class="o">=</span>  <span class="n">bline</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s2">&quot;&lt;2025 2100&gt; PAKGGREVCO2CER PAKGGREVCO2GER PAKGGREVCO2OER = 30&quot;</span><span class="p">)</span>
 </pre></div>
@@ -601,7 +590,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </div>
 <section id="solve-the-model">
-<span id="index-8"></span><span id="index-7"></span><span id="index-6"></span><h3><span class="section-number">5.4.1. </span>Solve the model<a class="headerlink" href="#solve-the-model" title="Link to this heading">#</a></h3>
+<span id="index-7"></span><span id="index-6"></span><span id="index-5"></span><h3><span class="section-number">5.4.1. </span>Solve the model<a class="headerlink" href="#solve-the-model" title="Link to this heading">#</a></h3>
 <p>Solving the model is as simple as calling the mpak function with the altered <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as an input and assigning the results to a new dataframe (<code class="docutils literal notranslate"><span class="pre">resultsdf</span></code> in this instance).  The <code class="docutils literal notranslate"><span class="pre">keep</span></code> option causes a copy of the dataframe to be stored within the <code class="docutils literal notranslate"><span class="pre">mpak</span></code> model object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,7 +615,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <li><p><strong>mpak.lastdf</strong>: <code class="docutils literal notranslate"><span class="pre">Dataframe</span></code> with the values from the most recent simulation</p></li>
 </ul>
 </div>
-<p id="index-10"><span id="index-9"></span>The command below shows the results of the simulation on the four emissions variables in the model expressed as a percent deviation from the level of the baseline (the <code class="docutils literal notranslate"><span class="pre">.difpctlevel</span></code> operator below),  and where the mnemonics have been replaced by their descriptions using the <code class="docutils literal notranslate"><span class="pre">.rename</span></code> option.</p>
+<p id="index-9"><span id="index-8"></span>The command below shows the results of the simulation on the four emissions variables in the model expressed as a percent deviation from the level of the baseline (the <code class="docutils literal notranslate"><span class="pre">.difpctlevel</span></code> operator below),  and where the mnemonics have been replaced by their descriptions using the <code class="docutils literal notranslate"><span class="pre">.rename</span></code> option.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">2030</span><span class="p">):</span>
@@ -679,8 +668,8 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 <p>Inflation in Pakistan is relatively high so a $30 shock quickly loses its relative price effect. Increasing the nominal value of the Carbon Tax by the amount of domestic inflation (converted into USD each year) would resolve the problem.</p>
 <p>Below a new d<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is created as a copy of the baseline and the three Carbon taxes are first set to $30 in 2025 and then grown at the rate of domestic inflation to keep the <strong>ex ante</strong> relative price of the Carbon Tax constant.</p>
 <p>Finally the model is re-solved.</p>
-<div class="cell docutils container" id="index-13">
-<span id="index-12"></span><span id="index-11"></span><div class="cell_input docutils container">
+<div class="cell docutils container" id="index-12">
+<span id="index-11"></span><span id="index-10"></span><div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CT30realdf</span>  <span class="o">=</span>  <span class="n">bline</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">CT30realdf</span><span class="o">=</span><span class="n">CT30realdf</span><span class="o">.</span><span class="n">upd</span><span class="p">(</span><span class="s2">&quot;&lt;2025 2025&gt; PAKGGREVCO2CER PAKGGREVCO2OER PAKGGREVCO2GER = 30&quot;</span><span class="p">)</span>
 
@@ -756,7 +745,7 @@ PAKGGREVCO2OER : Carbon tax on oil (USD/t)
 </div>
 </section>
 <section id="changing-the-model-modifying-and-or-adding-equations">
-<span id="index-18"></span><span id="index-17"></span><span id="index-16"></span><span id="index-15"></span><span id="index-14"></span><h2><span class="section-number">5.6. </span>Changing the model – modifying and or adding equations<a class="headerlink" href="#changing-the-model-modifying-and-or-adding-equations" title="Link to this heading">#</a></h2>
+<span id="index-17"></span><span id="index-16"></span><span id="index-15"></span><span id="index-14"></span><span id="index-13"></span><h2><span class="section-number">5.6. </span>Changing the model – modifying and or adding equations<a class="headerlink" href="#changing-the-model-modifying-and-or-adding-equations" title="Link to this heading">#</a></h2>
 <p>To endogenize the carbon price, an equation for each carbon price has to be added to the model.   This can be done with the <code class="docutils literal notranslate"><span class="pre">.equpdate()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -807,7 +796,7 @@ Adjust calc:No frml for adjustment calc
 </div>
 </div>
 </div>
-<p id="index-21"><span id="index-20"></span><span id="index-19"></span>As written, the <code class="docutils literal notranslate"><span class="pre">.equpdate()</span></code> command creates a new model, which is a copy of the existing model with three new equations.</p>
+<p id="index-20"><span id="index-19"></span><span id="index-18"></span>As written, the <code class="docutils literal notranslate"><span class="pre">.equpdate()</span></code> command creates a new model, which is a copy of the existing model with three new equations.</p>
 <p>Each equation grows the nominal rate of the carbon tax at the same rate as <em>ex post</em> inflation (<code class="docutils literal notranslate"><span class="pre">PAKNECONPRVTXN</span></code>) converted into USD via the exchange rate <code class="docutils literal notranslate"><span class="pre">PAKPANUSATLS</span></code>. The equations are introduced as exogenizable equations (as distinct from an identity which must always hold) by adding the &lt;fixable&gt; prefix to each equation. The equations are not estimated, so no add-factors are included in the equations.</p>
 <p>The output for the <code class="docutils literal notranslate"><span class="pre">.equpdate()</span></code> reports the actual formulae included in the model.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>New equation for For PAKGGREVCO2CER
@@ -1369,7 +1358,7 @@ PAKGGREVCO2OER
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="selection" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
-<p>On variable selection look here: <a class="reference internal" href="../07_MoreFeatures/ModelFlowCommandReference.html#variable-selection"><span class="std std-ref">Variable selection with wildcharts</span></a></p>
+<p>On variable selection look here: <a class="reference internal" href="../07_MoreFeatures/ModelFlowReference.html#variable-selection"><span class="std std-ref">Variable selection with wildcharts</span></a></p>
 </aside>
 </aside>
 </section>
