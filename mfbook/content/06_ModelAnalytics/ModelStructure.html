@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Analyzing the impact of a shock" href="AttributionSomeFeatures.html" />
-    <link rel="prev" title="7. Report writing and scenario results" href="../05_WBModels/ReportWriting.html" />
+    <link rel="prev" title="6. Report writing and scenario results" href="../05_WBModels/ReportWriting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -205,11 +205,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="current nav bd-sidenav">
@@ -457,6 +456,32 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> uses the <a class="reference external" href="https://networkx.org/">networkx</a> python package to analyze the interrelationships within the model and between equations and includes a number of methods and properties to present these interrelationships both in tabular and graphical form <a class="footnote-reference brackets" href="#graphviz" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, a subset of which is exposed in this chapter.</p>
 <section id="setting-up-the-python-environment-and-loading-a-pre-existing-model">
 <h2><span class="section-number">1.1. </span>Setting up the python environment and loading a pre-existing model<a class="headerlink" href="#setting-up-the-python-environment-and-loading-a-pre-existing-model" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">In this chapter - Model Analytics</p>
+<p>This chapter provides tools and techniques for analyzing the structure and behavior of models in the ModelFlow framework. Key points include:</p>
+<ul class="simple">
+<li><p><strong>Setup</strong>:</p>
+<ul>
+<li><p>Load the model, data, and equations into the ModelFlow environment.</p></li>
+<li><p>Access methods for exploring model components and their interdependencies.</p></li>
+</ul>
+</li>
+<li><p><strong>Key Features</strong>:</p>
+<ul>
+<li><p><strong>Model Information</strong>: Retrieve details about variables, equations, and their relationships.</p></li>
+<li><p><strong>Dependencies</strong>: Trace how variables depend on each other using <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> to uncover causal links.</p></li>
+<li><p><strong>Interactive Causality and decomposition dashboard</strong> <code class="docutils literal notranslate"><span class="pre">.Modeldash()</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Applications</strong>:</p>
+<ul>
+<li><p>Diagnose model behavior under different scenarios.</p></li>
+<li><p>Identify key drivers of changes in economic outcomes.</p></li>
+</ul>
+</li>
+</ul>
+<p>This chapter equips users with powerful analytics to understand and improve macroeconomic models, ensuring robust and insightful simulations.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="p">,</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">modelload</span><span class="p">(</span><span class="s1">&#39;../models/pak.pcim&#39;</span><span class="p">,</span><span class="n">alfa</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">run</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -466,7 +491,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file read:  ..\models\pak.pcim
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zipped file read:  ..\models\pak.pcim
 </pre></div>
 </div>
 </div>
@@ -521,7 +546,7 @@ Number of endogeneous variables         :                  378
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d47354b2458032e4fe98d6cb8b93d93588f94ccd332cd429bbec1b26ce187aec.png" src="../../_images/d47354b2458032e4fe98d6cb8b93d93588f94ccd332cd429bbec1b26ce187aec.png" />
+<img alt="../../_images/0145f7f1ccf4a326762767854da6abebbcd9d5e296b4b91e6b6f0a051012c9c0.png" src="../../_images/0145f7f1ccf4a326762767854da6abebbcd9d5e296b4b91e6b6f0a051012c9c0.png" />
 </div>
 </div>
 <p>As is evident in the above chart, the majority of the variables in MFMod Pakistan are recursive (green) and depend simply on the values of other variables.  The core of the model lies in the simultaneous (red) block, where the main wages, prices, real and nominal variables that drive other variables are determined.</p>
@@ -566,7 +591,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c3e88c604751ea11ad1ce2e3ae591a0b97b6c902047a77fa7e6face5b0664019.png" src="../../_images/c3e88c604751ea11ad1ce2e3ae591a0b97b6c902047a77fa7e6face5b0664019.png" />
+<img alt="../../_images/1ae0cbfd0547487851637990ac1ad3e838a7e555dbc26d5bae285357b6b09ce6.png" src="../../_images/1ae0cbfd0547487851637990ac1ad3e838a7e555dbc26d5bae285357b6b09ce6.png" />
 </div>
 </div>
 <p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and reveals the relative importance of each variable in the change of the dependent variable in the preceding scenario.</p>
@@ -589,7 +614,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b0b66c767912d3c06beb55b077634012dccbd0fdadbd2b22edad8a137b237bef.png" src="../../_images/b0b66c767912d3c06beb55b077634012dccbd0fdadbd2b22edad8a137b237bef.png" />
+<img alt="../../_images/fc29e01d3c1af84b6ced4959a448bb5d23a21d5fd185da73d3d339bcde802580.png" src="../../_images/fc29e01d3c1af84b6ced4959a448bb5d23a21d5fd185da73d3d339bcde802580.png" />
 </div>
 </div>
 </section>
@@ -604,7 +629,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1c9fb14ddaa93061ef31ea5c615e133b1ed1bae31f9130db311ce97735bd8a53.png" src="../../_images/1c9fb14ddaa93061ef31ea5c615e133b1ed1bae31f9130db311ce97735bd8a53.png" />
+<img alt="../../_images/dfff8e5c997975bb69ec5cfd384bce35e56f1c3ad70d0b9cd9f2904ee9a9ae91.png" src="../../_images/dfff8e5c997975bb69ec5cfd384bce35e56f1c3ad70d0b9cd9f2904ee9a9ae91.png" />
 </div>
 </div>
 </section>
@@ -618,7 +643,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a48045eb6dd73047c5bc0cd5721b51803cfea81cf18865aa268e20a9b4cef2c7.png" src="../../_images/a48045eb6dd73047c5bc0cd5721b51803cfea81cf18865aa268e20a9b4cef2c7.png" />
+<img alt="../../_images/fe902ef988d1759c5d290948ef32199616df0784b36751d66ce10da06e972941.png" src="../../_images/fe902ef988d1759c5d290948ef32199616df0784b36751d66ce10da06e972941.png" />
 </div>
 </div>
 </section>
@@ -632,7 +657,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ee19c869508ef8b95186c99cfc778c74b9b85c3c6090741a744bca6c79cfa708.png" src="../../_images/ee19c869508ef8b95186c99cfc778c74b9b85c3c6090741a744bca6c79cfa708.png" />
+<img alt="../../_images/a5213fd2c7fde472992e940562e7bd6629af8a693f5137d0dabc70b99eddc748.png" src="../../_images/a5213fd2c7fde472992e940562e7bd6629af8a693f5137d0dabc70b99eddc748.png" />
 </div>
 </div>
 <section id="adding-a-table-to-the-causal-graph">
@@ -646,7 +671,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b26bb0f1dccdf2c27714c7770cd7048f967a6f38ffaf331cfe1575903cddb29e.png" src="../../_images/b26bb0f1dccdf2c27714c7770cd7048f967a6f38ffaf331cfe1575903cddb29e.png" />
+<img alt="../../_images/4c1ecacc5d4217f327f5cf0f4328010b8940beaaaa43e6712a3961afc6f82d99.png" src="../../_images/4c1ecacc5d4217f327f5cf0f4328010b8940beaaaa43e6712a3961afc6f82d99.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
@@ -664,12 +689,12 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c0512e6265c7fd0bee7a6a863039e176586336744e0e1524018c8dfaeb21f578.png" src="../../_images/c0512e6265c7fd0bee7a6a863039e176586336744e0e1524018c8dfaeb21f578.png" />
+<img alt="../../_images/02fc8473c8f6a4093ac17df173a2e6acedaefe2907deab7319de70ac5a1bf32f.png" src="../../_images/02fc8473c8f6a4093ac17df173a2e6acedaefe2907deab7319de70ac5a1bf32f.png" />
 </div>
 </div>
 </section>
 <section id="modeldash-an-interactive-way-to-explore-dependencies">
-<span id="index-38"></span><h3><span class="section-number">1.4.6. </span><code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> An interactive way to explore dependencies<a class="headerlink" href="#modeldash-an-interactive-way-to-explore-dependencies" title="Link to this heading">#</a></h3>
+<span id="index-39"></span><span id="index-38"></span><h3><span class="section-number">1.4.6. </span><code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> An interactive way to explore dependencies<a class="headerlink" href="#modeldash-an-interactive-way-to-explore-dependencies" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">.modeldash()</span></code> method  generates a widget that allows you to dynamicaly adjust the arguments to the <code class="docutils literal notranslate"><span class="pre">tracepre()</span></code> and <code class="docutils literal notranslate"><span class="pre">tracedep</span></code> functions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">2026</span><span class="p">):</span>
         <span class="n">mpak</span><span class="o">.</span><span class="n">modeldash</span><span class="p">(</span><span class="s1">&#39;PAKNYGDPMKTPKN&#39;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -724,7 +749,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Report writing and scenario results</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Report writing and scenario results</p>
       </div>
     </a>
     <a class="right-next"
@@ -791,7 +816,7 @@ By Andrew Burns and Ib Hansen
 
   <p class="copyright">
     
-      © Copyright World Bank. 2024.
+      © Copyright World Bank. 2025.
       <br/>
     
   </p>

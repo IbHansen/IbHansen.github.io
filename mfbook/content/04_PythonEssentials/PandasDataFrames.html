@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -202,11 +202,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -465,6 +464,44 @@ document.write(`
 <li><p><a class="reference external" href="https://pandas.pydata.org/"><em>Pandas homepage</em></a></p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html"><em>Pandas community tutorials</em></a></p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">In this chapter - Introduction to Pandas</p>
+<p>This chapter introduces <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, a powerful Python library for data manipulation and analysis, essential for working with World Bank models. Key points include:</p>
+<ul class="simple">
+<li><p><strong>Core Data Structures</strong>:</p>
+<ul>
+<li><p><strong>Series</strong>: One-dimensional arrays for handling single-variable data.</p></li>
+<li><p><strong>DataFrames</strong>: Two-dimensional, tabular data structures with labeled rows and columns.</p></li>
+</ul>
+</li>
+<li><p><strong>Basic Operations</strong>:</p>
+<ul>
+<li><p>Create Series and DataFrames from lists, dictionaries, or external files (e.g., CSV, Excel).</p></li>
+<li><p>Access and manipulate data using indexing, slicing, and filtering.</p></li>
+</ul>
+</li>
+<li><p><strong>Common Methods</strong>:</p>
+<ul>
+<li><p>Analyze data with methods like <code class="docutils literal notranslate"><span class="pre">.mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">.sum()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p></li>
+<li><p>Clean data using <code class="docutils literal notranslate"><span class="pre">.dropna()</span></code> to handle missing values and <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> for transformations.</p></li>
+<li><p>Select and modify data subsets using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Advanced Features</strong>:</p>
+<ul>
+<li><p>Merge and join datasets for integrating multiple sources.</p></li>
+<li><p>Reshape data using pivot tables and group operations.</p></li>
+</ul>
+</li>
+<li><p><strong>Best Practices</strong>:</p>
+<ul>
+<li><p>Structure data clearly for easier analysis.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">pandas</span></code>’ extensive functionality for efficient handling of large datasets.</p></li>
+</ul>
+</li>
+</ul>
+<p>This chapter equips users with the skills to manage and analyze data effectively, providing a solid foundation for macroeconomic modeling.</p>
+</div>
 <section id="import-the-pandas-library">
 <h2><span class="section-number">3.1. </span>Import the pandas library<a class="headerlink" href="#import-the-pandas-library" title="Link to this heading">#</a></h2>
 <p>As with any python program, in order to use a package or library it must first be imported into the session. As noted above, by  convention pandas is imported as pd (assigning the alias pd to the imported pandas library).</p>
@@ -1998,7 +2035,7 @@ By Andrew Burns and Ib Hansen
 
   <p class="copyright">
     
-      © Copyright World Bank. 2024.
+      © Copyright World Bank. 2025.
       <br/>
     
   </p>

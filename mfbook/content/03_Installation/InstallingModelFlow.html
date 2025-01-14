@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -202,11 +202,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -426,6 +425,36 @@ document.write(`
 <p>ModelFlow defines the <code class="docutils literal notranslate"><span class="pre">model</span></code> class, its methods and a number of other functions that extend and combine pre-existing python functions to allow the easy solution of complex systems of equations including macro-structural models like MFMod.  To work with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>, a user needs to first install python (preferably the Anaconda or MiniConda variants). Then install the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> package and several supporting packages.</p>
 <p>While <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> can be run directly from the python command-line or IDEs (Interactive Development Environments) like <code class="docutils literal notranslate"><span class="pre">Spyder</span></code> or Microsoft’s <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Code</span></code>, it is suggested that users also install the Jupyter notebook system. Jupyter Notebook facilitates an interactive approach to building python programs, annotating them and ultimately doing simulations using <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> under <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. This entire manual and the examples in it were all written and executed in the Jupyter Notebook environment using the <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a> package.</p>
 <p>To use the ModelFlow package <strong>First</strong> Python has to be installed. <strong>Then</strong> the ModelFlow package can be installed together with all the libraries on which it depends.</p>
+<div class="tip admonition">
+<p class="admonition-title">In this chapter - Installation</p>
+<p>This chapter provides step-by-step instructions for setting up the ModelFlow framework to work with World Bank macroeconomic models. Key points include:</p>
+<ul class="simple">
+<li><p><strong>Python Installation</strong>:</p>
+<ul>
+<li><p>Use Anaconda or MiniConda for managing Python environments.</p></li>
+<li><p>Anaconda offers a comprehensive package ecosystem, while MiniConda is more lightweight and customizable.</p></li>
+</ul>
+</li>
+<li><p><strong>ModelFlow Environment</strong>:</p>
+<ul>
+<li><p>Create a dedicated Python environment for ModelFlow to avoid package conflicts.</p></li>
+<li><p>Install ModelFlow and its dependencies using the provided commands.</p></li>
+</ul>
+</li>
+<li><p><strong>System Compatibility</strong>:</p>
+<ul>
+<li><p>Supported on Windows, MacOS, and Linux.</p></li>
+<li><p>Installation is straightforward, with Windows being the primary platform tested.</p></li>
+</ul>
+</li>
+<li><p><strong>Updating ModelFlow</strong>:</p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">conda</span></code> command to update ModelFlow packages within the created environment.</p></li>
+</ul>
+</li>
+</ul>
+<p>This chapter ensures users are equipped to set up a reliable and reproducible ModelFlow environment for advanced modeling tasks.</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -504,7 +533,7 @@ By Andrew Burns and Ib Hansen
 
   <p class="copyright">
     
-      © Copyright World Bank. 2024.
+      © Copyright World Bank. 2025.
       <br/>
     
   </p>

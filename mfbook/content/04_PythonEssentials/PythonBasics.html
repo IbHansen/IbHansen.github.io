@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -202,11 +202,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -442,6 +441,43 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="some-python-basics">
 <span id="index-0"></span><h1><span class="section-number">2. </span>Some Python basics<a class="headerlink" href="#some-python-basics" title="Link to this heading">#</a></h1>
 <p>Before using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with the World Bank’s <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> models, users  will have to understand at least some basic elements of <code class="docutils literal notranslate"><span class="pre">python</span></code> syntax and usage.  Notably they will need to understand about packages, libraries and classes, and how to access them.</p>
+<div class="tip admonition">
+<p class="admonition-title">In this chapter - Python Basics</p>
+<p>This chapter provides an introduction to essential Python concepts for using World Bank models in ModelFlow. Key points include:</p>
+<ul class="simple">
+<li><p><strong>Getting Started with Python</strong>:</p>
+<ul>
+<li><p>Launch Python through the terminal, an IDE, or Jupyter Notebook.</p></li>
+<li><p>Use the Anaconda environment for managing dependencies and versions.</p></li>
+</ul>
+</li>
+<li><p><strong>Core Concepts</strong>:</p>
+<ul>
+<li><p>Variables and data types: Store and manipulate data using integers, floats, strings, and lists.</p></li>
+<li><p>Control structures: Use loops and conditionals for automating repetitive tasks and decision-making.</p></li>
+</ul>
+</li>
+<li><p><strong>Libraries and Packages</strong>:</p>
+<ul>
+<li><p>Leverage Python libraries like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for data handling and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> for visualization.</p></li>
+<li><p>Import libraries, modules, and classes to extend Python’s functionality.</p></li>
+</ul>
+</li>
+<li><p><strong>Interactivity in Jupyter Notebook</strong>:</p>
+<ul>
+<li><p>Write, execute, and document Python code interactively.</p></li>
+<li><p>Use context-sensitive help and auto-completion for efficient coding.</p></li>
+</ul>
+</li>
+<li><p><strong>Best Practices</strong>:</p>
+<ul>
+<li><p>Organize your code for readability and reusability.</p></li>
+<li><p>Validate results step-by-step to ensure correctness.</p></li>
+</ul>
+</li>
+</ul>
+<p>This chapter establishes a foundational understanding of Python, equipping users with the skills to engage in macroeconomic modeling tasks.</p>
+</div>
 <section id="starting-python-in-windows">
 <h2><span class="section-number">2.1. </span>Starting python in windows<a class="headerlink" href="#starting-python-in-windows" title="Link to this heading">#</a></h2>
 <p>To begin using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>, python itself needs to be started.  This can be done either using the <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> navigator or from the command line shell. In either case, the user will need to start python and select the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> environment.</p>
@@ -707,7 +743,7 @@ By Andrew Burns and Ib Hansen
 
   <p class="copyright">
     
-      © Copyright World Bank. 2024.
+      © Copyright World Bank. 2025.
       <br/>
     
   </p>

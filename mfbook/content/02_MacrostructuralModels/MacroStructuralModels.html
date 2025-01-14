@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -204,11 +204,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -436,6 +435,38 @@ document.write(`
 <p>The economics profession uses a wide range of models for different purposes.  Macro-structural models (also known as semi-structural or Macro-econometric models) are a class of models that seek to summarize the most important interconnections and determinants of economic activity in an economy. Computable General Equilibrium (CGE), and Dynamic Stochastic General Equilibrium (DSGE) models are other classes of models that also seek, using somewhat different methodologies, to capture the main economic channels by which the actions of agents (firms, households, governments) interact and help determine the structure, level and rate of growth of economic activity in an economy.</p>
 <p>Typically, organizations, including the World Bank, use all of these tools, privileging one or the other for specific purposes. Macrostructural models like those that comprise the <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> framework are widely used by Central Banks, Ministries of Finance; and professional forecasters both for the purposes of generating forecasts and for undertaking policy analysis.</p>
 <p>While macrostructural models fell out of favor with academic economists, they remain central tools in policy making and forecasting circles. In a series of discussions and papers Olivier Blanchard <span id="id1">Blanchard [<a class="reference internal" href="../../Reference.html#id17" title="Olivier Blanchard. On the future of Macroeconomic models. Oxford Review of Economic Policy, 34(1-2):43–54, 2018. URL: https://academic.oup.com/oxrep/article/34/1-2/43/4781808, doi:https://doi.org/10.1093/oxrep/grx045.">2018</a>]</span>, former Chief Economist at the International Monetary Fund, concluded that academic economists are wrong to discard out-of-hand policy models such as macro-structural models.  Those conclusions were reinforced in a recent collection of papers by leading academics <span id="id2">Vines and Wills [<a class="reference internal" href="../../Reference.html#id25" title="David Vines and Samuel Wills. The rebuilding macroeconomic theory project part II: multiple equilibria, toy models, and policy models in a new macroeconomic paradigm. Oxford Review of Economic Policy, 2020. URL: https://doi.org/10.1093/oxrep/graa066.">2020</a>]</span> that argued that until a better framework could be developed, ‘policy-makers need to rely on structural economic models and the detailed econometric work which they embody’ rather than the DSGE models that had been previously favored by academics.</p>
+<div class="tip admonition">
+<p class="admonition-title">In this chapter - Macrostructural Models</p>
+<p>Macrostructural models summarize key economic relationships and determinants, often used for forecasting and policy analysis. Key points include:</p>
+<ul class="simple">
+<li><p><strong>Equation Types</strong>:</p>
+<ul>
+<li><p>Identities: Accounting rules that always hold (e.g., GDP = C + I + G + X - M).</p></li>
+<li><p>Behavioral Equations: Relationships based on economic theory, estimated econometrically and subject to error.</p></li>
+</ul>
+</li>
+<li><p><strong>variable Types</strong>:</p>
+<ul>
+<li><p>Exogenous Variables: Inputs determined outside the model, such as global oil prices.</p></li>
+<li><p>Endogenous Variables: Variables determined by equations</p></li>
+</ul>
+</li>
+<li><p><strong>Components</strong>:</p>
+<ul>
+<li><p>GDP and its subcomponents from expenditure, production, and income accounts.</p></li>
+<li><p>Detailed government, monetary policy, and balance of payments accounts.</p></li>
+<li><p>General equilibrium flow of funds linking households, firms, government, and foreign sectors.</p></li>
+</ul>
+</li>
+<li><p><strong>Uses</strong>:</p>
+<ul>
+<li><p>Widely applied by policymakers for scenario analysis and forecasting.</p></li>
+<li><p>Central to the World Bank’s MFMod framework for analyzing developing economies.</p></li>
+</ul>
+</li>
+</ul>
+<p>Macrostructural models balance theoretical rigor with practical utility, enabling comprehensive insights into economic systems.</p>
+</div>
 <section id="a-system-of-equations">
 <h2><span class="section-number">2.1. </span>A system of equations<a class="headerlink" href="#a-system-of-equations" title="Link to this heading">#</a></h2>
 <p>Mathematically, a macro-structural model is a system of equations comprised of two kinds of equations and three kinds of variables. Variables that are determined by an equation are classified by the type of equation that determines them, variables without an equation are deemed exogenous as they are determined outside of the model.</p>
@@ -444,7 +475,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">Identities</span></code>, which are variables that are determined by an identity: an equation that is a well-defined accounting rule that always holds. The famous GDP formula Y=C+I+G+(X-M) is one such identity, it indicates that GDP at market prices is <strong>definitionally</strong> equal to Consumption plus Investment plus Government spending plus Exports less Imports.  The equation is an identity and the variable (Y in this instance) is also called an identity.</p></li>
 </ul>
 <ul class="simple" id="index-0">
-<li><p><code class="docutils literal notranslate"><span class="pre">Behavioural</span></code>, which are variables that are determined by equations that attempt to statistically summarize the economic (vs accounting) relationship between variables, where the relationship is derived from economic theory. Thus, the neo-classical equation that says Real Consumption is determined by households maximizing their utility through the consumption of goods and services subject to a budget constraint is a behavioural equation. Because these behavioural equations only explain part of the variation in the variable they seek to explain, and because the sensitivities of variables to the changes in other variables are uncertain, these equations and their parameters are  typically estimated econometrically and are subject to error.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Behavioural</span></code>, which are variables that are determined by equations that attempt to statistically summarize the economic (vs accounting) relationship between variables, where the relationship is derived from economic theory. Thus, the neo-classical equation that says Real Consumption is determined by households maximizing their utility through the consumption of goods and services subject to a budget constraint is a behavioral equation. Because these behavioral equations only explain part of the variation in the variable they seek to explain, and because the sensitivities of variables to the changes in other variables are uncertain, these equations and their parameters are  typically estimated econometrically and are subject to error.</p></li>
 </ul>
 <ul class="simple" id="index-1">
 <li><p><code class="docutils literal notranslate"><span class="pre">Exogenous</span></code>, which are variables that do not have equations and are not determined by the model. Typically there are set either by assumption or from data external to the model.  For an individual country model, the exogenous variables might include the global price of crude oil  because the level of activity of a small economy itself is unlikely to affect the world price of oil. Similarly, the rate of growth of GDP in other economies may be treated as an exogenous variable, important to determining exports in the modeled developing country but are unlikely to be affected by activity in the modeled country (small country assumption).</p></li>
@@ -473,7 +504,7 @@ X_t &amp;= x(X_{t-1},X_{t-2},C_t,I_t,G_t,M_t,P_t,P^f_t)\\
 M_t &amp;= m(M_{t-1},M_{t-2},C_t,I_t,G_t,X_t,P_t,P^f_t)
 \end{align*}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(Y_t\)</span> is an identity and <span class="math notranslate nohighlight">\(C_t, I_t, G_t, X_t, M_t\)</span> are behavioral variables and <span class="math notranslate nohighlight">\(P_t, P^f_t\)</span> (domestic and foreign prices, respectively) are exogenous in this simple model.</p>
-<p id="index-2">Such a system of equations can then be solved for the endogenous variables <span class="math notranslate nohighlight">\(Y_t, C_t, I_t, G_t, X_t\)</span> and <span class="math notranslate nohighlight">\(M_t\)</span> as a function of the exogenous variables in the system, notably as written above <span class="math notranslate nohighlight">\(P_t\)</span> and <span class="math notranslate nohighlight">\(P^f_t\)</span>, and the estimated parameters and fucntional forms of the behavioral equations that link them, represented here by: <span class="math notranslate nohighlight">\(c(), i(), g(), x()\)</span> and <span class="math notranslate nohighlight">\(m()\)</span>.</p>
+<p id="index-2">Such a system of equations can then be solved for the endogenous variables <span class="math notranslate nohighlight">\(Y_t, C_t, I_t, G_t, X_t\)</span> and <span class="math notranslate nohighlight">\(M_t\)</span> as a function of the exogenous variables in the system, notably as written above <span class="math notranslate nohighlight">\(P_t\)</span> and <span class="math notranslate nohighlight">\(P^f_t\)</span>, and the estimated parameters and functional forms of the behavioral equations that link them, represented here by: <span class="math notranslate nohighlight">\(c(), i(), g(), x()\)</span> and <span class="math notranslate nohighlight">\(m()\)</span>.</p>
 </section>
 <section id="the-mfmod-framework">
 <h2><span class="section-number">2.2. </span>The MFMod Framework<a class="headerlink" href="#the-mfmod-framework" title="Link to this heading">#</a></h2>
@@ -557,7 +588,7 @@ M_t &amp;= m(M_{t-1},M_{t-2},C_t,I_t,G_t,X_t,P_t,P^f_t)
 </ul>
 </li>
 </ul>
-<p>Within the models, these accounts are related in a general equilibirum flow of funds perspective, where households (as the owners of the factors of production) supply labor and capital to firms and the government via factor markets and earn salaries and profits by the firms. Their earnings are spent on goods and services, taxes or saved, with their savings being intermediated through financial markets where they are either loaned to domestic firms and households and the government or to foreign firms and governments. Domestic households, firms and the government also lend to and borrow from the  foreign sector.  The output of firms is sold to household, the government or the rest of the world and the inputs they require are purchased from other firms, or the rest of the world.</p>
+<p>Within the models, these accounts are related in a general equilibrium flow of funds perspective, where households (as the owners of the factors of production) supply labor and capital to firms and the government via factor markets and earn salaries and profits by the firms. Their earnings are spent on goods and services, taxes or saved, with their savings being intermediated through financial markets where they are either loaned to domestic firms and households and the government or to foreign firms and governments. Domestic households, firms and the government also lend to and borrow from the  foreign sector.  The output of firms is sold to household, the government or the rest of the world and the inputs they require are purchased from other firms, or the rest of the world.</p>
 <p id="index-7"><span id="index-6"></span><span id="index-5"></span><span id="index-4"></span><span id="index-3"></span>Importantly every expenditure of a given actor in the economy is a revenue of another and as a result has impacts on the rest of the economy.  This flow of funds idea common to most macroeconomic models and is illustrated in the following schematic.</p>
 <figure class="align-default" id="flow-of-funds-diagram">
 <a class="reference internal image-reference" href="../../_images/FlowofFunds.png"><img alt="../../_images/FlowofFunds.png" src="../../_images/FlowofFunds.png" style="height: 225px;" /></a>
@@ -658,7 +689,7 @@ By Andrew Burns and Ib Hansen
 
   <p class="copyright">
     
-      © Copyright World Bank. 2024.
+      © Copyright World Bank. 2025.
       <br/>
     
   </p>
