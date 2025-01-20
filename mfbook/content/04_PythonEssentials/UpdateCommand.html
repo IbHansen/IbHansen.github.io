@@ -204,10 +204,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/BehavioralEquations.html">3. Equations in MFMod and <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -435,7 +436,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#options-of-the-upd-method">1.4.5. Options of the  <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-keep-growth-option-kg-and-nkg">1.4.5.1. The keep_growth option (–kg and –nkg)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-keep-growth-behaviour">1.4.5.2. The default keep_growth behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-keep-growth-behavior">1.4.5.2. The default keep_growth behavior</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-growth-additional-examples">1.4.5.2.1. Keep_growth additional examples</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-growth-option-set-globally">1.4.5.2.2. keep_growth option set globally</a></li>
 </ul>
@@ -444,7 +445,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lprint-option-of-the-upd-method-prints-pre-and-post-update-values-update">1.4.5.4. lprint option of the <code class="docutils literal notranslate"> <span class="pre">.upd()</span></code> method prints pre- and post- update values update</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-create-option-of-the-upd-determines-behaviour-when-a-lhs-variable-does-not-exist">1.4.6. The Create option of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> determines behaviour when a LHS variable does not exist</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-create-option-of-the-upd-determines-behavior-when-a-lhs-variable-does-not-exist">1.4.6. The Create option of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> determines behavior when a LHS variable does not exist</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#below-the-python-error-generated-in-the-absence-of-the-try-catch-expression-above">1.4.6.1. Below the python error generated in the absence of the try / catch expression above.</a></li>
 </ul>
 </li>
@@ -1598,8 +1599,8 @@ Growth:
 <p>When changing data and for certain kinds of simulations, it can sometime be useful to be able to update variables but keep the growth rate in subsequent periods unchanged. In database management this is frequently done when two time-series with different levels are spliced together. When forecasting this is useful if you have updated historical data but your views on future growth rates are unchanged.</p>
 <p>The -kg or –keep_growth option instructs <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> to calculate the growth rate of the existing pre-change series, and then use it to preserve the pre-change growth rates of the series for the periods that were <strong>not</strong> changed.</p>
 </section>
-<section id="the-default-keep-growth-behaviour">
-<h3><span class="section-number">1.4.5.2. </span>The default keep_growth behaviour<a class="headerlink" href="#the-default-keep-growth-behaviour" title="Link to this heading">#</a></h3>
+<section id="the-default-keep-growth-behavior">
+<h3><span class="section-number">1.4.5.2. </span>The default keep_growth behavior<a class="headerlink" href="#the-default-keep-growth-behavior" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">keep_growth</span></code> option determines how data in  the time periods after those where an update is executed are treated.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">keep_growth</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> then data in the sub-period after a change are left unchanged.</p>
 <p>if <code class="docutils literal notranslate"><span class="pre">keep_growth</span></code> is set to “<code class="docutils literal notranslate"><span class="pre">True</span></code>” then the system will preserve the pre-change growth rate of the affected variable in the time period <em>after the change</em>.</p>
@@ -1840,7 +1841,7 @@ Growth:
 </div>
 </div>
 <p><strong>Now update A in 2021 to 2023 to a new value</strong></p>
-<p>Below performs the same operation twice, the first time the updated value is assigned to the <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> <code class="docutils literal notranslate"><span class="pre">nkg</span></code> and the default behaviour of <code class="docutils literal notranslate"><span class="pre">keep_growth</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<p>Below performs the same operation twice, the first time the updated value is assigned to the <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> <code class="docutils literal notranslate"><span class="pre">nkg</span></code> and the default behavior of <code class="docutils literal notranslate"><span class="pre">keep_growth</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
 <p>In the second example the <code class="docutils literal notranslate"><span class="pre">-kg</span></code> line option is specified, telling <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> to maintain the growth rates of the dependent variable in the periods after the update is executed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2035,7 +2036,7 @@ Growth:
 </section>
 <section id="scale-option-of-the-upd-method">
 <span id="index-14"></span><h3><span class="section-number">1.4.5.3. </span>Scale option of the  <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method<a class="headerlink" href="#scale-option-of-the-upd-method" title="Link to this heading">#</a></h3>
-<p>When running scenarios it can be useful to sensitivity analyses of model results, to better understand how the model responds when varying the intensity of a shock.</p>
+<p>When running scenarios it can be useful to sensitivity analyzes of model results, to better understand how the model responds when varying the intensity of a shock.</p>
 <p>The scale option provides a mechanism for calculating a range of shocks as different proportions of the initially indicated one.</p>
 <p>When using the scale option, scale=0 implies no change (effectively the baseline) while scale=0.5 is a scenario half of the full severity.</p>
 <p>In the example below <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> is executed three times for severity equals 0. 0.5 and 1.  If the list passed to scale (named severity in this case) had five items in it, the update would be run five times – one time for each item in the list.</p>
@@ -2156,8 +2157,8 @@ A                    Before                After                 Diff
 </div>
 </section>
 </section>
-<section id="the-create-option-of-the-upd-determines-behaviour-when-a-lhs-variable-does-not-exist">
-<span id="upd-create"></span><h2><span class="section-number">1.4.6. </span>The Create option of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> determines behaviour when a LHS variable does not exist<a class="headerlink" href="#the-create-option-of-the-upd-determines-behaviour-when-a-lhs-variable-does-not-exist" title="Link to this heading">#</a></h2>
+<section id="the-create-option-of-the-upd-determines-behavior-when-a-lhs-variable-does-not-exist">
+<span id="upd-create"></span><h2><span class="section-number">1.4.6. </span>The Create option of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> determines behavior when a LHS variable does not exist<a class="headerlink" href="#the-create-option-of-the-upd-determines-behavior-when-a-lhs-variable-does-not-exist" title="Link to this heading">#</a></h2>
 <p>By default Create=True.  As a result, in the examples above, when a left-hand side variable has not existed the  <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> commands have created the variables if they did not exist in the input dataframe.</p>
 <p>To catch misspellings the parameter <code class="docutils literal notranslate"><span class="pre">create</span></code> can be set to False.  In this instance, if update is executed on a variable that does not exist the specified variable(s) will not be created.  Instead, an exception (an error)  will be raised.</p>
 <p>In the example below, the error is captured in a try catch statement (a python method for handling errors) so that the notebook will continue to run despite the error. If the try Catch had not been in place the notebook would stop executing and thrown the error.</p>
@@ -2362,7 +2363,7 @@ Set create=True if you want the variable created:
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#options-of-the-upd-method">1.4.5. Options of the  <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-keep-growth-option-kg-and-nkg">1.4.5.1. The keep_growth option (–kg and –nkg)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-keep-growth-behaviour">1.4.5.2. The default keep_growth behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-keep-growth-behavior">1.4.5.2. The default keep_growth behavior</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-growth-additional-examples">1.4.5.2.1. Keep_growth additional examples</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-growth-option-set-globally">1.4.5.2.2. keep_growth option set globally</a></li>
 </ul>
@@ -2371,7 +2372,7 @@ Set create=True if you want the variable created:
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lprint-option-of-the-upd-method-prints-pre-and-post-update-values-update">1.4.5.4. lprint option of the <code class="docutils literal notranslate"> <span class="pre">.upd()</span></code> method prints pre- and post- update values update</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-create-option-of-the-upd-determines-behaviour-when-a-lhs-variable-does-not-exist">1.4.6. The Create option of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> determines behaviour when a LHS variable does not exist</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-create-option-of-the-upd-determines-behavior-when-a-lhs-variable-does-not-exist">1.4.6. The Create option of the <code class="docutils literal notranslate"><span class="pre">.upd()</span></code> determines behavior when a LHS variable does not exist</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#below-the-python-error-generated-in-the-absence-of-the-try-catch-expression-above">1.4.6.1. Below the python error generated in the absence of the try / catch expression above.</a></li>
 </ul>
 </li>

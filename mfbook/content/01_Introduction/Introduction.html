@@ -204,10 +204,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/BehavioralEquations.html">3. Equations in MFMod and <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -443,16 +444,9 @@ document.write(`
 <p>MFMod is the World Bank’s work-horse macro-structural economic modeling framework. It exists both as a linked system of 184 country-specific models that can be solved independently or as a larger system (<code class="docutils literal notranslate"><span class="pre">MFMod</span></code>), and as a series of  standalone customized models, known collectively as MFMod Standalones (MFModSA). These Standalone models have been developed from the central model to fit the specific needs of individual countries. Both the central and Standalone models were developed using the <code class="docutils literal notranslate"><span class="pre">EViews</span></code> modeling language, and are run in that environment directly or through the intermediation of an easy-to-use excel front-end developed by the Bank.</p>
 <p>The main <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> global model evolved from earlier macro-structural models developed during the 2000s to strengthen the basis for the forecasts produced by the World Bank. Some examples of these models were released on the World Bank’s isimulate platform <a class="reference external" href="https://isimulate.worldbank.org">(https://isimulate.worldbank.org)</a> early in 2010, along with several CGE models dating from this period. These earlier models were substantially extended into what has become the main MFMod model. Since 2015, MFMod has been the Bank’s main tool for forecasting and economic analysis, and is used by all of the Bank’s country economists for the World Bank’s twice annual forecasting exercise <em>The Macro Poverty Outlook</em> (https://www.worldbank.org/en/publication/macro-poverty-outlook).</p>
 <p>The main documentation for <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> are <span id="id3">Burns <em>et al.</em> [<a class="reference internal" href="../../Reference.html#id27" title="Andrew Burns, Benoit Campagne, Charl Jooste, David Stephan, and Thi Thanh Bui. The World Bank Macro-Fiscal Model Technical Description. Number 8965 in Policy Research Working Papers. World Bank, Washington DC., 2019. URL: https://openknowledge.worldbank.org/handle/10986/32217.">2019</a>]</span> and <span id="id4">Burns and Jooste [<a class="reference internal" href="../../Reference.html#id15" title="Andrew Burns and Charl Jooste. Estimating and Calibrating MFMod: A Panel Data Approach to Identifying the Parameters of Data Poor Countries in the World Bank's Structural Macro Model. Number 8939 in Policy Research Working Papers. World Bank, Washington DC., 2019. URL: https://openknowledge.worldbank.org/entities/publication/2122957a-fa68-5761-8141-5f54934668bd.">2019</a>]</span>.</p>
-<div class="admonition-box-1-tldr-too-long-did-not-read admonition" id="index-0">
-<p class="admonition-title">Box 1. TLDR  - Too long did not read</p>
-<p>This book exists in four  forms:</p>
-<ol class="arabic simple">
-<li><p>A printed book.</p></li>
-<li><p>A PDF file</p></li>
-<li><p>An html web site</p></li>
-<li><p>A series of Jupyter Notebooks</p></li>
-</ol>
-<p>It can be consumed either sequentially as a book, or readers who are familiar with python or modeling can jump around.  Each Jupyter notebook is completely independent of every other one. Assuming that python and ModelFlow has been installed as outlined in Chapter 3, each Jpuyter notebook can be executed independently of other Jupyter notebooks.</p>
+<div class="admonition-in-this-chapter-introduction admonition">
+<p class="admonition-title">In  this Chapter – Introduction</p>
+<p>This chapter provides a high-level overview of the MFMod system and the motivation for releasing some of the models in an open-source format using the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> python package.</p>
 </div>
 <section id="climate-aware-version-of-mfmod">
 <h3><span class="section-number">1.1.1. </span>Climate-aware version of MFMod<a class="headerlink" href="#climate-aware-version-of-mfmod" title="Link to this heading">#</a></h3>

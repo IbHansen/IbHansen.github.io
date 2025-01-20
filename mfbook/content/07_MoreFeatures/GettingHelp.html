@@ -207,10 +207,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/BehavioralEquations.html">3. Equations in MFMod and <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -451,40 +452,8 @@ document.write(`
 <p>In addition to this document, there are any number of tutorials and guidance about python, pandas, and mathplotlib on the internet.  Good starting points include:</p>
 <div class="tip admonition" id="index-9">
 <span id="index-8"></span><span id="index-7"></span><span id="index-6"></span><span id="index-5"></span><span id="index-4"></span><span id="index-3"></span><span id="index-2"></span><span id="index-1"></span><span id="index-0"></span><p class="admonition-title">In this chapter - Getting Help</p>
-<p>This chapter outlines resources and strategies for obtaining assistance with ModelFlow and World Bank models. Key points include:</p>
-<ul class="simple">
-<li><p><strong>Tutorials and Documentation</strong>:</p>
-<ul>
-<li><p>Access official tutorials on ModelFlow and its applications.</p></li>
-<li><p>Explore detailed documentation for methods, workflows, and use cases.</p></li>
-</ul>
-</li>
-<li><p><strong>Community Support</strong>:</p>
-<ul>
-<li><p>Engage with the ModelFlow and World Bank modeling communities for insights and advice.</p></li>
-<li><p>Share challenges and solutions to improve collaborative learning.</p></li>
-</ul>
-</li>
-<li><p><strong>Built-in Help</strong>:</p>
-<ul>
-<li><p>Use Jupyter Notebook’s help features for context-sensitive guidance.</p></li>
-<li><p>Access method documentation directly in Python using commands like <code class="docutils literal notranslate"><span class="pre">help()</span></code> or <code class="docutils literal notranslate"><span class="pre">?method</span></code>.</p></li>
-</ul>
-</li>
-<li><p><strong>Additional Resources</strong>:</p>
-<ul>
-<li><p>Visit the official ModelFlow website for updates, examples, and FAQs.</p></li>
-<li><p>Leverage open-source forums and repositories for additional support materials.</p></li>
-</ul>
-</li>
-<li><p><strong>Best Practices</strong>:</p>
-<ul>
-<li><p>Start with tutorials to build foundational knowledge.</p></li>
-<li><p>Document questions and attempts to solve them for efficient troubleshooting.</p></li>
-</ul>
-</li>
-</ul>
-<p>This chapter ensures users can effectively utilize available resources to resolve challenges and enhance their modeling proficiency.</p>
+<p>This chapter outlines resources and strategies for obtaining assistance with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and World Bank models.</p>
+<p>It includes links to official tutorials on <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>, various python libraries and <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>s.  It also demonstrates how to use some of the built in functions of python and <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> to get information about options for the methods embodied in the tools.</p>
 </div>
 <section id="tutorials-on">
 <h2><span class="section-number">1.1. </span>Tutorials on:<a class="headerlink" href="#tutorials-on" title="Link to this heading">#</a></h2>
@@ -681,7 +650,7 @@ Fixes variables to the current values.</p>
         dataframe.loc[self.current_per,exo] = selected_values.loc[self.current_per,exo]
         
     if not silent: 
-        print(&#39;The folowing variables are fixed&#39;)
+        print(&#39;The following variables are fixed&#39;)
         print(*selected,sep=&#39;\n&#39;)
 
     return dataframe

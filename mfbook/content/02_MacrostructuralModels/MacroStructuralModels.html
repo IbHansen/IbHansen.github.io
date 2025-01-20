@@ -204,10 +204,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/BehavioralEquations.html">3. Equations in MFMod and <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -437,7 +438,14 @@ document.write(`
 <p>While macrostructural models fell out of favor with academic economists, they remain central tools in policy making and forecasting circles. In a series of discussions and papers Olivier Blanchard <span id="id1">Blanchard [<a class="reference internal" href="../../Reference.html#id17" title="Olivier Blanchard. On the future of Macroeconomic models. Oxford Review of Economic Policy, 34(1-2):43–54, 2018. URL: https://academic.oup.com/oxrep/article/34/1-2/43/4781808, doi:https://doi.org/10.1093/oxrep/grx045.">2018</a>]</span>, former Chief Economist at the International Monetary Fund, concluded that academic economists are wrong to discard out-of-hand policy models such as macro-structural models.  Those conclusions were reinforced in a recent collection of papers by leading academics <span id="id2">Vines and Wills [<a class="reference internal" href="../../Reference.html#id25" title="David Vines and Samuel Wills. The rebuilding macroeconomic theory project part II: multiple equilibria, toy models, and policy models in a new macroeconomic paradigm. Oxford Review of Economic Policy, 2020. URL: https://doi.org/10.1093/oxrep/graa066.">2020</a>]</span> that argued that until a better framework could be developed, ‘policy-makers need to rely on structural economic models and the detailed econometric work which they embody’ rather than the DSGE models that had been previously favored by academics.</p>
 <div class="tip admonition">
 <p class="admonition-title">In this chapter - Macrostructural Models</p>
-<p>Macrostructural models summarize key economic relationships and determinants, often used for forecasting and policy analysis. Key points include:</p>
+<p>The Chapter provides a high-level introduction to macro-structural models in general and the <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> system in particular. It presents them as systems that balance theoretical rigor with practical utility, enabling comprehensive insights into economic systems. Macrostructural models are widely used by policymakers for scenario analysis and forecasting and <code class="docutils literal notranslate"><span class="pre">MFmod</span></code> is the main framework used by the World Bank for analyzing the economic progress and policies of developing economies.</p>
+<p>It notes that these models are effectively a system of equations that describe the economic transactions (flow of funds) that occur in the economy, including those captured by the main economic accounting systems covered by the <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> system. including:</p>
+<ul class="simple">
+<li><p>GDP and its subcomponents from expenditure, production, and income accounts.</p></li>
+<li><p>Detailed government, monetary policy, and balance of payments accounts.</p></li>
+<li><p>General equilibrium flow of funds linking households, firms, government, and foreign sectors.</p></li>
+</ul>
+<p>The chapter introduces key concepts like:</p>
 <ul class="simple">
 <li><p><strong>Equation Types</strong>:</p>
 <ul>
@@ -451,21 +459,8 @@ document.write(`
 <li><p>Endogenous Variables: Variables determined by equations</p></li>
 </ul>
 </li>
-<li><p><strong>Components</strong>:</p>
-<ul>
-<li><p>GDP and its subcomponents from expenditure, production, and income accounts.</p></li>
-<li><p>Detailed government, monetary policy, and balance of payments accounts.</p></li>
-<li><p>General equilibrium flow of funds linking households, firms, government, and foreign sectors.</p></li>
 </ul>
-</li>
-<li><p><strong>Uses</strong>:</p>
-<ul>
-<li><p>Widely applied by policymakers for scenario analysis and forecasting.</p></li>
-<li><p>Central to the World Bank’s MFMod framework for analyzing developing economies.</p></li>
-</ul>
-</li>
-</ul>
-<p>Macrostructural models balance theoretical rigor with practical utility, enabling comprehensive insights into economic systems.</p>
+<p>The chapter also provides a brief description of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> the python package used to run these models in an open source context.</p>
 </div>
 <section id="a-system-of-equations">
 <h2><span class="section-number">2.1. </span>A system of equations<a class="headerlink" href="#a-system-of-equations" title="Link to this heading">#</a></h2>
@@ -475,7 +470,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">Identities</span></code>, which are variables that are determined by an identity: an equation that is a well-defined accounting rule that always holds. The famous GDP formula Y=C+I+G+(X-M) is one such identity, it indicates that GDP at market prices is <strong>definitionally</strong> equal to Consumption plus Investment plus Government spending plus Exports less Imports.  The equation is an identity and the variable (Y in this instance) is also called an identity.</p></li>
 </ul>
 <ul class="simple" id="index-0">
-<li><p><code class="docutils literal notranslate"><span class="pre">Behavioural</span></code>, which are variables that are determined by equations that attempt to statistically summarize the economic (vs accounting) relationship between variables, where the relationship is derived from economic theory. Thus, the neo-classical equation that says Real Consumption is determined by households maximizing their utility through the consumption of goods and services subject to a budget constraint is a behavioral equation. Because these behavioral equations only explain part of the variation in the variable they seek to explain, and because the sensitivities of variables to the changes in other variables are uncertain, these equations and their parameters are  typically estimated econometrically and are subject to error.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Behavioral</span></code>, which are variables that are determined by equations that attempt to statistically summarize the economic (vs accounting) relationship between variables, where the relationship is derived from economic theory. Thus, the neo-classical equation that says Real Consumption is determined by households maximizing their utility through the consumption of goods and services subject to a budget constraint is a behavioral equation. Because these behavioral equations only explain part of the variation in the variable they seek to explain, and because the sensitivities of variables to the changes in other variables are uncertain, these equations and their parameters are  typically estimated econometrically and are subject to error.</p></li>
 </ul>
 <ul class="simple" id="index-1">
 <li><p><code class="docutils literal notranslate"><span class="pre">Exogenous</span></code>, which are variables that do not have equations and are not determined by the model. Typically there are set either by assumption or from data external to the model.  For an individual country model, the exogenous variables might include the global price of crude oil  because the level of activity of a small economy itself is unlikely to affect the world price of oil. Similarly, the rate of growth of GDP in other economies may be treated as an exogenous variable, important to determining exports in the modeled developing country but are unlikely to be affected by activity in the modeled country (small country assumption).</p></li>

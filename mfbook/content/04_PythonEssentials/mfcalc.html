@@ -204,10 +204,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/AccessingWBModels.html">1. Using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> with World Bank models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_WBModels/WorkingwWBModels.html">2. Working with a World Bank Model under ModelFlow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">3. Scenario analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">4. More complex scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">5. A simulation that targets a specific outcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">6. Report writing and scenario results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/BehavioralEquations.html">3. Equations in MFMod and <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ScenarioAnalysis.html">4. Scenario analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/MoreComplexScenarios.html">5. More complex scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/Targeting.html">6. A simulation that targets a specific outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_WBModels/ReportWriting.html">7. Report writing and scenario results</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -850,7 +851,7 @@ document.write(`
 </div></div></div>
 </div>
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">mfcalc()</span></code>knows that it can not start to calculate in 2020, because A (the lagged variable) has no value in 2019.</p>
-<p><code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> therefore begins its calculation in 2021. Note, the existing value for 2020 is preserved.  This behaviour differs from other programs or python methods (such as <code class="docutils literal notranslate"><span class="pre">.pct_change()</span></code> above) that might return a n/a value for the 2020 observation.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> therefore begins its calculation in 2021. Note, the existing value for 2020 is preserved.  This behavior differs from other programs or python methods (such as <code class="docutils literal notranslate"><span class="pre">.pct_change()</span></code> above) that might return a n/a value for the 2020 observation.</p>
 </section>
 <section id="display-the-normalization-of-an-equation-the-showeq-option">
 <span id="index-4"></span><h2><span class="section-number">1.5.5. </span>Display the normalization of an equation (the <code class="docutils literal notranslate"><span class="pre">showeq</span></code> option)<a class="headerlink" href="#display-the-normalization-of-an-equation-the-showeq-option" title="Link to this heading">#</a></h2>
@@ -1029,7 +1030,7 @@ FRML &lt;&gt; A=A(-1)+(2)$
 </table>
 </div></div></div>
 </div>
-<p>In this example the variable <code class="docutils literal notranslate"><span class="pre">A</span></code> in the <code class="docutils literal notranslate"><span class="pre">DataFarame</span></code> df was initialized to 100 for the period 2020 through 2025.</p>
+<p>In this example the variable <code class="docutils literal notranslate"><span class="pre">A</span></code> in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> df was initialized to 100 for the period 2020 through 2025.</p>
 <p>The first line of the <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> routine produces results only for the period 2021 - 2025 because there is no value for <code class="docutils literal notranslate"><span class="pre">A</span></code> in 2019.  The value of a in 2020 is unchanged, and the following values rise by 2 in each period.</p>
 <p>When calculating X however, <code class="docutils literal notranslate"><span class="pre">.mfcalc</span></code> does not use the final result of the calculation of <code class="docutils literal notranslate"><span class="pre">A</span></code>, but the intermediate result (the values for 2021 through 2025).</p>
 <p>As a result, it is this shorter series that is passed to the second question which adds 42 to that result.</p>
