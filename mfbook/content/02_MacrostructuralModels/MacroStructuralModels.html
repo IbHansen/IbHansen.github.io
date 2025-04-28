@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -424,10 +424,10 @@
 <p>While macrostructural models fell out of favor with academic economists, they remain central tools in policy making and forecasting circles. In a series of discussions and papers Olivier Blanchard <span id="id1">Blanchard [<a class="reference internal" href="../../Reference.html#id17" title="Olivier Blanchard. On the future of Macroeconomic models. Oxford Review of Economic Policy, 34(1-2):43–54, 2018. URL: https://academic.oup.com/oxrep/article/34/1-2/43/4781808, doi:https://doi.org/10.1093/oxrep/grx045.">2018</a>]</span>, former Chief Economist at the International Monetary Fund, concluded that academic economists are wrong to discard out-of-hand policy models such as macro-structural models.  Those conclusions were reinforced in a recent collection of papers by leading academics <span id="id2">Vines and Wills [<a class="reference internal" href="../../Reference.html#id25" title="David Vines and Samuel Wills. The rebuilding macroeconomic theory project part II: multiple equilibria, toy models, and policy models in a new macroeconomic paradigm. Oxford Review of Economic Policy, 2020. URL: https://doi.org/10.1093/oxrep/graa066.">2020</a>]</span> that argued that until a better framework could be developed, ‘policy-makers need to rely on structural economic models and the detailed econometric work which they embody’ rather than the DSGE models that had been previously favored by academics.</p>
 <div class="tip admonition">
 <p class="admonition-title">In this chapter - Macrostructural Models</p>
-<p>The Chapter provides a high-level introduction to macro-structural models in general and the <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> system in particular. It presents them as systems that balance theoretical rigor with practical utility, enabling comprehensive insights into economic systems. Macrostructural models are widely used by policymakers for scenario analysis and forecasting and <code class="docutils literal notranslate"><span class="pre">MFmod</span></code> is the main framework used by the World Bank for analyzing the economic progress and policies of developing economies.</p>
-<p>It notes that these models are effectively a system of equations that describe the economic transactions (flow of funds) that occur in the economy, including those captured by the main economic accounting systems covered by the <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> system. including:</p>
+<p>This Chapter provides a high-level introduction to macro-structural models in general and the <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> system in particular. It presents them as systems that balance theoretical rigor with practical utility, enabling comprehensive insights into economic systems. Macrostructural models are widely used by policymakers for scenario analysis and forecasting and <code class="docutils literal notranslate"><span class="pre">MFmod</span></code> is the main framework used by the World Bank for analyzing the economic progress and policies of developing economies.</p>
+<p>It notes that these models are effectively a system of equations that describe the economic transactions (flow of funds) that occur in the economy, including those captured by the main economic accounting systems, including:</p>
 <ul class="simple">
-<li><p>GDP and its subcomponents from expenditure, production, and income accounts.</p></li>
+<li><p>GDP and its subcomponents from the National Accounts expenditure, production, and income accounts.</p></li>
 <li><p>Detailed government, monetary policy, and balance of payments accounts.</p></li>
 <li><p>General equilibrium flow of funds linking households, firms, government, and foreign sectors.</p></li>
 </ul>
@@ -436,7 +436,7 @@
 <li><p><strong>Equation Types</strong>:</p>
 <ul>
 <li><p>Identities: Accounting rules that always hold (e.g., GDP = C + I + G + X - M).</p></li>
-<li><p>Behavioral Equations: Relationships based on economic theory, estimated econometrically and subject to error.</p></li>
+<li><p>Behavioral Equations: Relationships based on economic theory, that are estimated econometrically and subject to error.</p></li>
 </ul>
 </li>
 <li><p><strong>variable Types</strong>:</p>
@@ -465,7 +465,7 @@
 <p class="admonition-title">Note</p>
 <p>What dictates whether a variable is exogenous or endogenous is not set in stone. A variable that is exogenous in one model may be endogenous in another. For example in an single-country model, GDP growth in other countries may be exogenous, but in a multi-country model the GDP growth of those other countries might be endogenous (an identity).</p>
 </div>
-<p>Mathematically system of equations can be expressed as below:</p>
+<p>Mathematically, a system of equations can be expressed as below:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 y_t^1  &amp;=  f^1(y_{t+u}^1...,y_{t+u}^n...,y_t^2...,y_{t}^n...y_{t-r}^1...,y_{t-r}^n,x_t^1...x_{t}^k,...x_{t-s}^1...,x_{t-s}^k) \\
@@ -473,8 +473,8 @@ y_t^2  &amp;=  f^2(y_{t+u}^1...,y_{t+u}^n...,y_t^1...,y_{t}^n...y_{t-r}^1...,y_{
 \vdots \\
 y_t^n  &amp;=  f^n(y_{t+u}^1...,y_{t+u}^n...,y_t^1...,y_{t}^{n-1}...y_{t-r}^1...,y_{t-r}^n,x_t^1...x_{t}^r,x..._{t-s}^1...,x_{t-s}^k)
 \end{align*}\]</div>
-<p>where <span class="math notranslate nohighlight">\( y_t^1 \)</span> is one of n endogenous variables and <span class="math notranslate nohighlight">\(x_t^1\)</span> is an exogenous variable and there are as many equations as there are unknown (endogenous variables).</p>
-<p>Substituting the variable mnemonics Y,C,I,G,X,M for the y’s above, a simple macrostructural model can be written as as a system of 6 equations in 6 unknowns:</p>
+<p>where <span class="math notranslate nohighlight">\( y_t^1 \)</span> is one of n endogenous variables and <span class="math notranslate nohighlight">\(x_t^1\)</span> is an exogenous variable. To have a solution the system must have  as many equations as there are unknown (endogenous variables).</p>
+<p>Substituting the variable mnemonics Y,C,I,G,X,M for the y’s and x’s above, a simple macrostructural model can be written as as a system of 6 equations in 6 unknowns:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 Y_t  &amp;=  C_t+I_t+G+t+ (X_t-M_t) \\
@@ -569,8 +569,8 @@ M_t &amp;= m(M_{t-1},M_{t-2},C_t,I_t,G_t,X_t,P_t,P^f_t)
 </ul>
 </li>
 </ul>
-<p>Within the models, these accounts are related in a general equilibrium flow of funds perspective, where households (as the owners of the factors of production) supply labor and capital to firms and the government via factor markets and earn salaries and profits by the firms. Their earnings are spent on goods and services, taxes or saved, with their savings being intermediated through financial markets where they are either loaned to domestic firms and households and the government or to foreign firms and governments. Domestic households, firms and the government also lend to and borrow from the  foreign sector.  The output of firms is sold to household, the government or the rest of the world and the inputs they require are purchased from other firms, or the rest of the world.</p>
-<p id="index-7"><span id="index-6"></span><span id="index-5"></span><span id="index-4"></span><span id="index-3"></span>Importantly every expenditure of a given actor in the economy is a revenue of another and as a result has impacts on the rest of the economy.  This flow of funds idea common to most macroeconomic models and is illustrated in the following schematic.</p>
+<p>Within the models, these accounts are related in a general equilibrium flow of funds perspective, where households (as the owners of the factors of production) supply labor and capital to firms and the government via factor markets and earn salaries and profits paid for by the firms. Their earnings are spent on goods and services, taxes or saved, with their savings being intermediated through financial markets where they are either loaned to domestic firms, households and the government or to foreign firms and governments. Domestic households, firms and the government also lend to and borrow from the  foreign sector.  The output of firms is sold to households, the government or the rest of the world and the intermediate inputs they require are purchased from other firms, or the rest of the world.</p>
+<p id="index-7"><span id="index-6"></span><span id="index-5"></span><span id="index-4"></span><span id="index-3"></span>Importantly every expenditure of a given actor in the economy is a revenue of another and, as a result, has impacts on the rest of the economy.  This flow of funds idea is common to most macroeconomic models and is illustrated in the following schematic.</p>
 <figure class="align-default" id="flow-of-funds-diagram">
 <a class="reference internal image-reference" href="../../_images/FlowofFunds.png"><img alt="../../_images/FlowofFunds.png" src="../../_images/FlowofFunds.png" style="height: 225px;" /></a>
 <figcaption>

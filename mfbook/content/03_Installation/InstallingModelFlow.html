@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -406,15 +406,15 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installation">
 <h1><span class="section-number">3. </span>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
-<p>At the World Bank models built using the MFMod framework are developed in <a class="reference external" href="http://www.eviews.com">EViews</a>. When disseminated to clients, the models are solved and simulated using EViews, although often through the intermediary of an easy-to-use customized excel EViews environment developed by the World Bank. That said, as a systems of equations and associated data, the models can be solved and operated under any software capable of solving a system of simultaneous equations. <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> is such a package and offers a wide range of features that permit not only solving the model, but also provide a rich and powerful suite of tools for analyzing the model and reporting results.</p>
-<p>ModelFlow is a python library that was developed by Ib Hansen over several years while working at the Danish Central Bank and the European Central Bank. The framework has been used both to port the U.S. Federal Reserve’s macro-structural  model to python, but also been used to bring several stress-testing models developed by Central Banks into the python environment.</p>
+<p>At the World Bank models built using the MFMod framework are developed in <a class="reference external" href="http://www.eviews.com">EViews</a>. When disseminated to clients, the models are solved and simulated using EViews – often through the intermediary of an easy-to-use customized excel environment developed by the World Bank. That said, as a systems of equations and associated data, the models can be solved and operated under any software capable of solving a system of simultaneous equations. <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> is such a package that permit not only solving the model, but also provide a rich and powerful suite of tools for analyzing the model and reporting results.<br />
+<code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> is a python library that was developed by Ib Hansen over several years while working at the Danish Central Bank and the European Central Bank. The framework has been used both to port the U.S. Federal Reserve’s macro-structural  model to python, but also been used to bring several stress-testing models developed by Central Banks into the python environment.</p>
 <p>Beginning in 2019, Hansen has worked with the World Bank to develop additional features that facilitate working with models built using the Bank’s MFMod Framework, with the objective of creating an open source platform through which the Bank’s models can be made available to the public.</p>
 <p>ModelFlow defines the <code class="docutils literal notranslate"><span class="pre">model</span></code> class, its methods and a number of other functions that extend and combine pre-existing python functions to allow the easy solution of complex systems of equations including macro-structural models like MFMod.  To work with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>, a user needs to first install python (preferably the Anaconda or MiniConda variants). Then install the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> package and several supporting packages.</p>
-<p>While <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> can be run directly from the python command-line or IDEs (Interactive Development Environments) like <code class="docutils literal notranslate"><span class="pre">Spyder</span></code> or Microsoft’s <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Code</span></code>, it is suggested that users also install the Jupyter notebook system. Jupyter Notebook facilitates an interactive approach to building python programs, annotating them and ultimately doing simulations using <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> under <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. This entire manual and the examples in it were all written and executed in the Jupyter Notebook environment using the <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a> package.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> can be run directly from the python command-line or IDEs (Interactive Development Environments) like <code class="docutils literal notranslate"><span class="pre">Spyder</span></code> or Microsoft’s <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Code</span></code>, it is suggested that users install the Jupyter notebook system. Jupyter Notebook facilitates an interactive approach to building python programs, annotating them and ultimately doing simulations using <code class="docutils literal notranslate"><span class="pre">MFMod</span></code> under <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. This entire manual, and the examples in it, was written and executed in the Jupyter Notebook environment using the <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a> package.</p>
 <p>To use the ModelFlow package <strong>First</strong> Python has to be installed. <strong>Then</strong> the ModelFlow package can be installed together with all the libraries on which it depends.</p>
 <div class="tip admonition">
 <p class="admonition-title">In this chapter - Installation</p>
-<p>This chapter provides step-by-step instructions for setting up the ModelFlow framework to work with World Bank macroeconomic models. It provides clear instructions for both novice and experienced python users on the steps necessary to install  a reliable and reproducible ModelFlow environment for advanced modeling tasks.</p>
+<p>This chapter provides step-by-step instructions for setting up the ModelFlow framework to work with World Bank macroeconomic models. It provides both novice and experienced python users with clear instructions on the steps necessary to install a reliable and reproducible <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> environment for advanced modeling tasks.</p>
 <p>Key covered topics include:</p>
 <ul class="simple">
 <li><p><strong>Python Installation</strong>:</p>
@@ -425,8 +425,8 @@
 </li>
 <li><p><strong>Installing the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> Environment</strong>:</p>
 <ul>
-<li><p>Create a dedicated Python environment for ModelFlow to avoid package conflicts.</p></li>
-<li><p>Install ModelFlow and its dependencies using the provided commands.</p></li>
+<li><p>Create a dedicated Python environment for <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> to avoid package conflicts.</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and its dependencies using the provided commands.</p></li>
 </ul>
 </li>
 <li><p><strong>System Compatibility</strong>:</p>
@@ -435,7 +435,7 @@
 <li><p>Installation is straightforward, with Windows being the primary platform tested.</p></li>
 </ul>
 </li>
-<li><p><strong>Updating ModelFlow</strong>:</p>
+<li><p><strong>Updating <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code></strong>:</p>
 <ul>
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">conda</span></code> command to update <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> packages within the created environment.</p></li>
 </ul>

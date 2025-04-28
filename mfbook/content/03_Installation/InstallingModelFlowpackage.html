@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -416,7 +416,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installation-of-modelflow">
 <span id="id1"></span><h1><span class="section-number">3.2. </span>Installation of  <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code><a class="headerlink" href="#installation-of-modelflow" title="Link to this heading">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> is a python package that defines the model class, its methods and a number of other functions that extend and combine pre-existing python functions to allow the easy solution of complex systems of equations including macro-structural models like MFMod. To work with ModelFlow, a user needs to first install python (preferably the Anaconda or MiniConda variants). Then install the ModelFlow package and several supporting packages.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> is a python package that defines the model class, its methods and a number of other functions that extend and combine pre-existing python functions to allow the easy solution of complex systems of equations including macro-structural models like <code class="docutils literal notranslate"><span class="pre">MFMod</span></code>. To work with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>, a user needs to first install python (preferably the <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> or <code class="docutils literal notranslate"><span class="pre">MiniConda</span></code> variants). Then install the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> package and several other supporting packages.</p>
 <section id="creation-of-a-modelflow-environment">
 <h2><span class="section-number">3.2.1. </span>Creation of a ModelFlow environment<a class="headerlink" href="#creation-of-a-modelflow-environment" title="Link to this heading">#</a></h2>
 <p id="index-1"><span id="index-0"></span>Although it is not strictly necessary, it is a good idea to create a specific python environment[^environ] for <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>, this will be a space where the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> package itself will be installed and in which the specific dependencies on which <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> relies will be installed. Other environments may require packages that conflict with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. Declaring a separate environment for <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> will help prevent conflicts between different versions of packages from arising.</p>
@@ -439,7 +439,7 @@
 <span class="c1">##################</span>
 <span class="c1"># Note skip the next line if installing under linux or Macintosh</span>
 <span class="c1">#################</span>
-<span class="n">conda</span> <span class="n">install</span> <span class="n">pyeviews</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">py2eviews</span> <span class="o">-</span><span class="n">c</span> <span class="n">eviews</span>
 
 <span class="c1">#############</span>
 <span class="c1"># Continue from here on all Operating Systems</span>
@@ -461,9 +461,9 @@
 <li><p>The second command selects “activates” the newly created ModelFlow environment.</p></li>
 <li><p>The subsequent commands install some additional packages into the ModelFlow environment that are used by <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>.</p>
 <ul>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">pyeviews</span></code> package allows python to execute EViews commands on a machine where EViews has also been installed (this is only useful if the user intends to import existing EViews workfiles into the python environment of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">py2eviews</span></code> package allows python to execute EViews commands on a machine where EViews has also been installed (this is only useful if the user intends to import existing EViews workfiles into the python environment of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>).</p></li>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">dash_interactive_graphviz</span></code> package enables a series of interactive dashboards which can be handy when using ModelFlow in Jupyter Notebooks.</p></li>
-<li><p>The last 5 commands enable and select some useful jupyter notebook extensions.</p></li>
+<li><p>The last 5 commands activate some useful jupyter notebook extensions.</p></li>
 </ul>
 </li>
 </ul>
