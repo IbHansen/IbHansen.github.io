@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -201,7 +201,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model structure and causal chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
@@ -425,7 +425,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-mfcalc-method-return-a-dataframe-with-transformed-variables">
 <span id="index-1"></span><span id="index-0"></span><h1><span class="section-number">1.5. </span>The <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method. Return a dataframe with transformed variables.<a class="headerlink" href="#the-mfcalc-method-return-a-dataframe-with-transformed-variables" title="Link to this heading">#</a></h1>
-<p>Like<code class="docutils literal notranslate"><span class="pre">.upd()</span></code>, the <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> extends the functionality of standard pandas.  It is actually a much more powerful method that can be used to solve models or mini-models or see how <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> normalizes equations.  It can be particularly useful when creating scenarios – uses that are presented elsewhere.</p>
+<p>Like <code class="docutils literal notranslate"><span class="pre">.upd()</span></code>, the <code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> method of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> extends the functionality of standard pandas.  It is actually a much more powerful method that can be used to solve models or mini-models or see how <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> normalizes equations.  It can be particularly useful when creating scenarios – uses that are presented later in this volume.</p>
 <p>The purpose of  <code class="docutils literal notranslate"><span class="pre">mfcalc()</span></code>is to perform quick and dirty calculations and modify <code class="docutils literal notranslate"><span class="pre">datafame</span></code>s.</p>
 <section id="workspace-initialization">
 <h2><span class="section-number">1.5.1. </span>Workspace initialization<a class="headerlink" href="#workspace-initialization" title="Link to this heading">#</a></h2>
@@ -574,7 +574,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>By default <code class="docutils literal notranslate"><span class="pre">.mfcalc</span></code> will initialize a new variable with zeroes.</p>
-<p>Moreover, if a formula passed to <code class="docutils literal notranslate"><span class="pre">.mfcalc</span></code> contains a lag a value will be calculated for a row only if there is data in the series for the preceding row.</p>
+<p>Moreover, if a formula passed to <code class="docutils literal notranslate"><span class="pre">.mfcalc</span></code> contains a lag, the result of the operation will be calculated for a row only if there is data in the series for the preceding row.</p>
 <p>These two behaviors affect how calculations generated with <code class="docutils literal notranslate"><span class="pre">.mfcalc</span></code> are executed and can generate results that may sometimes by unexpected.</p>
 </div>
 <p>The initialization of new variables with zero and the treatment of lags combined means that when the command <code class="docutils literal notranslate"><span class="pre">df.mfcalc('x</span> <span class="pre">=</span> <span class="pre">x(-1)</span> <span class="pre">+</span> <span class="pre">a')</span></code> is executed, the value for X in 2020 will be zero (not n/a). This results because there was no X variable defined for 2019 (no such row exists). <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> first initializes all values of X with zero.  It then goes to calculate X in 2020.  There is no X value for 2019 so it skips ahead to 2021 and calculates X as equal to 0 (the value of x in 2020) + the value for a in 2021 – etc.</p>
@@ -858,7 +858,7 @@ FRML &lt;&gt; A=EXP(LOG(A(-1))+0.02)$
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> the expression <code class="docutils literal notranslate"><span class="pre">dlog(a)</span></code> refers to the difference in the natural logarithm <span class="math notranslate nohighlight">\(dlog(x_t) \equiv ln(x_t)-ln(x_{t-1})\)</span> and is equal to the growth rate for the variable.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> the expression <code class="docutils literal notranslate"><span class="pre">dlog(a)</span></code> refers to the difference in the natural logarithm <span class="math notranslate nohighlight">\(dlog(x_t) \equiv ln(x_t)-ln(x_{t-1})\)</span> and is equal to the growth rate for the variable. The dlog() syntax is borrowed from EViews.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.mfcalc()</span></code> normalizes the equation such that the systems solves for a as follows:<br></p>
 <div class="amsmath math notranslate nohighlight">

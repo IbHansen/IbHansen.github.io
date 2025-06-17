@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -199,7 +199,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model structure and causal chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
@@ -505,7 +505,7 @@
 </section>
 <section id="python-packages-libraries-and-classes">
 <span id="index-5"></span><span id="index-4"></span><span id="index-3"></span><h2><span class="section-number">2.2. </span>Python  packages, libraries and classes<a class="headerlink" href="#python-packages-libraries-and-classes" title="Link to this heading">#</a></h2>
-<p>Some features of <code class="docutils literal notranslate"><span class="pre">python</span></code> are built-in out-of-the-box.  Others )like <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> are optional.  They build on basic python features but have to be installed separately.</p>
+<p>Some features of <code class="docutils literal notranslate"><span class="pre">python</span></code> are built-in.  Others (like <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>) are optional.  Optional packages build on basic python features (and those of other packages) but have to be installed separately.</p>
 <p>A <strong>python class</strong> is a code template that defines a python object. Classes can have properties [variables or data] associated with them and methods (behaviors or functions) associated with them. In python, a class is created by the keyword class. An object of type class is created (instantiated) using the class’s “constructor” – a special method that creates an object that is an instance of a class.</p>
 <p>A <strong>module</strong> is a Python object consisting of Python code. A module can define functions, classes and variables. A module can also include runnable code.</p>
 <p>A <strong>python package</strong> is a collection of modules that are related to each other. When a module from an external package is required by a program, that package (or module in the package) must  be <strong>imported</strong> into the current session in order for its modules to be accessible.</p>
@@ -516,15 +516,14 @@
 <span id="index-7"></span><span id="index-6"></span><h2><span class="section-number">2.3. </span>Importing packages, libraries, modules and classes<a class="headerlink" href="#importing-packages-libraries-modules-and-classes" title="Link to this heading">#</a></h2>
 <p>Some libraries, packages, and modules are part of the core python package and will be available (importable) from the get-go.  Others are not, and need to be installed before importing them into a session.</p>
 <p>If you followed the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> installation instructions you have already downloaded and installed on your computer all the packages necessary for running World Bank models under <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>.  But to work with them in a given <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> session or in a program context, you will also need to <code class="docutils literal notranslate"><span class="pre">import</span></code> them into your session before you call them.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Installation</strong> of a package is not the same as <strong>import</strong>ing a package. Installation downloads a package’s programs from the internet into a specific environment on the user’s machine, making them available to be imported when required.  To be imported, a package must be installed once into the environment on the computer that wishes to use it.  Once it has been installed, the package must be imported into each python session where it is to be used.</p>
+<div class="{note}**Installation** docutils">
+<p>Installation downloads a package’s programs from the internet into a specific environment on the user’s machine, making them available to be imported when required.  Once it has been installed, the environment into which it was installed must be activated and the package must be imported into each python session where it is to be used.</p>
 </div>
 <p>Typically a python program will start with the importation of the libraries, classes and modules that will be used.  Because a <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> is essentially a heavily annotated program, it also requires that packages used be imported.</p>
 <section id="import-a-package">
 <h3><span class="section-number">2.3.1. </span>Import a package<a class="headerlink" href="#import-a-package" title="Link to this heading">#</a></h3>
 <p>As described above: packages, libraries and modules are containers that can include other elements.  Take for example the package Math.</p>
-<p>To import the Math Package we execute the command <code class="docutils literal notranslate"> <span class="pre">import</span> <span class="pre">math</span></code>.  Having done that we can call the functions and data that are defined in it.</p>
+<p>To import the Math Package we execute the command <code class="docutils literal notranslate"> <span class="pre">import</span> <span class="pre">math</span></code>.  Having done that we can call the functions and data that are defined in it (math is a standard package so we do not need to install it separately).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the &quot;#&quot; in a code cell indicates a comment, test after the # will not be executed</span>

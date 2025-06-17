@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -199,7 +199,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model structure and causal chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
@@ -407,9 +407,15 @@
   <section class="tex2jax_ignore mathjax_ignore" id="updating-modelflow">
 <h1><span class="section-number">3.3. </span>Updating ModelFlow<a class="headerlink" href="#updating-modelflow" title="Link to this heading">#</a></h1>
 <p id="index-0">Once installed, a <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> environment can be updated. This is done first by first opening the anaconda command line environment (see earlier instructions), then running the following two commands.</p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">ModelFlow</span></code>
-<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">ModelFlow_stable</span> <span class="pre">-c</span> <span class="pre">ibh</span> <span class="pre">--no-deps</span></code></p>
-<p>The first activates the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> environment created above.  The second instructs <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> to update the system.</p>
+<ol class="arabic simple">
+<li><p>Open the anaconda/miniconda command prompt</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">ModelFlow</span></code></p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">ModelFlow_stable</span> <span class="pre">-c</span> <span class="pre">ibh</span> <span class="pre">--no-deps</span></code></p></li>
+</ol>
+<p>For the purposes of working with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and the features and examples in this book it is advised not to update <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. While this will deprive users of access to bug fixes and package enhancements that may come, it will insulate users from some of the chalenges of managing a complex Conda environment.</p>
+<p>Once a user becomes more familair with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and python, the environment can be updated or perhaps a new one created <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">ModelFlow_new</span></code> which would have the advantage of preserving the current one.</p>
+<p>The command to install (and update the most recent version of modelflow, which might intoduce changes that break some of the examples in this book.</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">ModelFlow_stable</span> <span class="pre">-c</span> <span class="pre">ibh</span> <span class="pre">--no-deps</span></code></p>
 </section>
 
     <script type="text/x-thebe-config">

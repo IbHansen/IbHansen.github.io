@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -199,7 +199,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model structure and causal chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
@@ -420,21 +420,21 @@
 <section id="creation-of-a-modelflow-environment">
 <h2><span class="section-number">3.2.1. </span>Creation of a ModelFlow environment<a class="headerlink" href="#creation-of-a-modelflow-environment" title="Link to this heading">#</a></h2>
 <p id="index-1"><span id="index-0"></span>Although it is not strictly necessary, it is a good idea to create a specific python environment[^environ] for <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>, this will be a space where the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> package itself will be installed and in which the specific dependencies on which <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> relies will be installed. Other environments may require packages that conflict with <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. Declaring a separate environment for <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> will help prevent conflicts between different versions of packages from arising.</p>
-<p>The commands below will create a <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> environment and install into it the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> package and several supporting packages that are useful when using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> in conjunction with <code class="docutils literal notranslate"><span class="pre">EViews</span></code> or <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>.</p>
+<p>The commands below create a <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> environment and install into it the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> package and several supporting packages that are useful when using <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> in conjunction with <code class="docutils literal notranslate"><span class="pre">EViews</span></code> or <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>[^JN6vs7].</p>
 <p>The commands should be cut and paste (either one by one, or as a block) into the Anaconda or Miniconda command prompt environment. Instructions for activating the environment in windows are included in the box.</p>
 <div class="tip admonition" id="index-2">
-<p class="admonition-title">Box 2. Opening the Anaconda/MiniConda prompt under windows</p>
+<p class="admonition-title">Box 1. Opening the Anaconda/MiniConda prompt under windows</p>
 <p>To open the Anaconda/MiniConda prompt:</p>
 <ol class="arabic simple">
-<li><p>In the windows command prompt, type Anaconda (or Minoconda)</p></li>
-<li><p>If Anaconda/Miniconda have been successfully installed an icon entitled Anaconda(Minoconda) Command Prompt will appear. Click on this.</p></li>
+<li><p>In the windows command prompt, type Anaconda (or Miniconda)</p></li>
+<li><p>If Anaconda/Miniconda have been successfully installed an icon entitled Anaconda(Minoconda) Prompt will be available in windows. Click on this.</p></li>
 <li><p>This will open a python command shell where the commands listed in the main text can be entered.</p></li>
 </ol>
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/WindowsCommandPrompt.PNG"><img alt="Windows Command Prompt" class="bg-primary mb-1 align-center" src="../../_images/WindowsCommandPrompt.PNG" style="width: 50%;" /></a>
 </div>
 <div class="docutils">
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">ModelFlow</span> <span class="o">-</span><span class="n">c</span> <span class="n">ibh</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">ModelFlow_stable</span> <span class="o">-</span><span class="n">y</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">ModelFlow</span> <span class="o">-</span><span class="n">c</span> <span class="n">ibh</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">ModelFlow_book</span> <span class="o">-</span><span class="n">y</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">ModelFlow</span>
 <span class="c1">##################</span>
 <span class="c1"># Note skip the next line if installing under linux or Macintosh</span>
@@ -453,12 +453,12 @@
 
 </pre></div>
 </div>
-<div class="admonition note">
+<div class="admonition note" id="index-3">
 <p class="admonition-title">Note</p>
 <p>Meaning of the command lines</p>
 <ul class="simple">
-<li><p>The first line in the code snippet above simultaneously creates the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> environment (the -n argument) and installs the <code class="docutils literal notranslate"><span class="pre">ModelFlow_stable</span></code> package from conda-forge into this environment.</p></li>
-<li><p>The second command selects “activates” the newly created ModelFlow environment.</p></li>
+<li><p>The first line in the code snippet above simultaneously creates the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> environment (the -n argument names the environment) and installs the <code class="docutils literal notranslate"><span class="pre">ModelFlow_book</span></code> package from conda-forge into this environment.[NB:There also exists a <code class="docutils literal notranslate"><span class="pre">ModelFlow_stable</span></code> package.  While the book package will be frozen at its current state of evolution to ensure that all the examples in this book will run <code class="docutils literal notranslate"><span class="pre">ModelFlow_book</span></code>, the stable version may evolve over time and potentially break specific examples.  Longer-term users may wish to switch to the stable version, onc ethey have absorbed the material in t his book.]</p></li>
+<li><p>The second command “activates” the newly created ModelFlow environment.</p></li>
 <li><p>The subsequent commands install some additional packages into the ModelFlow environment that are used by <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>.</p>
 <ul>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">py2eviews</span></code> package allows python to execute EViews commands on a machine where EViews has also been installed (this is only useful if the user intends to import existing EViews workfiles into the python environment of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>).</p></li>
@@ -469,7 +469,7 @@
 </ul>
 </div>
 <p>Depending on the speed of your computer and of your internet connection, installation could take as little as 5 minutes or more than 1/2 an hour.</p>
-<span class="target" id="index-4"><span id="index-3"></span></span></section>
+<span class="target" id="index-5"><span id="index-4"></span></span></section>
 </section>
 
     <script type="text/x-thebe-config">

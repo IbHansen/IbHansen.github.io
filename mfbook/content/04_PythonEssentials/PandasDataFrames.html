@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -199,7 +199,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model structure and causal chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
@@ -403,7 +403,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-pandas-library">3.1. Import the pandas library</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-series-class-in-pandas">3.2. The <code class="docutils literal notranslate"><span class="pre">series</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-series-class-in-pandas">3.2. The <code class="docutils literal notranslate"><span class="pre">Series</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-declared-from-a-list">3.2.1. Series declared from a list</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-declared-using-a-specific-index">3.2.2. Series declared using a specific index</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-series-from-a-dictionary">3.2.3. Create Series from a dictionary</a></li>
@@ -489,7 +489,6 @@
 </ul>
 </li>
 </ul>
-<p>T</p>
 </div>
 <section id="import-the-pandas-library">
 <h2><span class="section-number">3.1. </span>Import the pandas library<a class="headerlink" href="#import-the-pandas-library" title="Link to this heading">#</a></h2>
@@ -506,16 +505,16 @@
 <p>By importing <code class="docutils literal notranslate"><span class="pre">pandas</span></code> with the alias pd (<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>), future references to the pandas library can be truncated as by using <code class="docutils literal notranslate"><span class="pre">pd.</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pandas.</span></code></p>
 </div>
 <p>The Pandas  library contains many classes and methods.  The discussion below focuses on <strong>Series</strong> and <strong>DataFrames</strong>, two classes that are part of the pandas library.  Both <code class="docutils literal notranslate"><span class="pre">series</span></code> and <code class="docutils literal notranslate"><span class="pre">dataframes</span></code> are containers that can be used to store time-series data and that have associated with them a number of very useful methods for displaying and manipulating time-series data.</p>
-<p>Unlike other statistical packages neither <code class="docutils literal notranslate"><span class="pre">series</span></code> nor <code class="docutils literal notranslate"><span class="pre">dataframes</span></code> are inherently or exclusively time-series in nature. <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and macro-economists use them in this way, but the classes themselves are not necessarily dated or exclusively numerical out-of-the-box.</p>
+<p>Unlike other statistical packages neither <code class="docutils literal notranslate"><span class="pre">series</span></code> nor <code class="docutils literal notranslate"><span class="pre">dataframes</span></code> are inherently or exclusively time-series in nature. <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and macro-economists use them in this way, but the classes themselves are not necessarily dated or numerical.</p>
 </section>
 <section id="the-series-class-in-pandas">
-<span id="index-2"></span><span id="index-1"></span><h2><span class="section-number">3.2. </span>The <code class="docutils literal notranslate"><span class="pre">series</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-series-class-in-pandas" title="Link to this heading">#</a></h2>
+<span id="index-2"></span><span id="index-1"></span><h2><span class="section-number">3.2. </span>The <code class="docutils literal notranslate"><span class="pre">Series</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-series-class-in-pandas" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Series</span></code> is a class that is part of the pandas package and can be used to instantiate an object that holds a two dimensional array comprised of values and an index.</p>
 <p>The constructor for a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object is <code class="docutils literal notranslate"><span class="pre">pandas.Series()</span></code>.  The content inside the parentheses will determine the nature of the series-object generated.  As an object-oriented language, Python supports <code class="docutils literal notranslate"><span class="pre">overrides</span></code>. Overrides mean a method – including constructors – can have more than one way in which they can be called. Specifically there can be different constructors for a class, depending on how the data used to initialize the object are organized.</p>
 <section id="series-declared-from-a-list">
 <h3><span class="section-number">3.2.1. </span>Series declared from a list<a class="headerlink" href="#series-declared-from-a-list" title="Link to this heading">#</a></h3>
 <p>The simplest way to create a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is to pass an array of values as a Python list to the Series constructor.</p>
-<div class="admonition note">
+<div class="admonition note" id="index-3">
 <p class="admonition-title">Note</p>
 <p>A list in python is a comma delimited collection of items.  It could be text, numbers or even more complex objects.  When declared (and returned) lists are enclosed in square brackets.</p>
 <p>For example both of the following two lines are perfectly good examples of lists.</p>
@@ -553,7 +552,7 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In this case the constructor is passed a variable that was deined above as a list </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In this case the constructor is passed a variable that was defined above as a list </span>
 <span class="n">simple2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 <span class="n">simple2</span>
 </pre></div>
@@ -589,10 +588,10 @@ dtype: object
 </div>
 </div>
 </div>
-<p>Note that all three series have different length.</p>
+<p>Note that all three series have different length (6 datapoints for <code class="docutils literal notranslate"><span class="pre">simplest</span></code>;5 for <code class="docutils literal notranslate"><span class="pre">simple2</span></code> and 4 for <code class="docutils literal notranslate"><span class="pre">simple3</span></code>).</p>
 </section>
 <section id="series-declared-using-a-specific-index">
-<span id="index-3"></span><h3><span class="section-number">3.2.2. </span>Series declared using a specific index<a class="headerlink" href="#series-declared-using-a-specific-index" title="Link to this heading">#</a></h3>
+<span id="index-4"></span><h3><span class="section-number">3.2.2. </span>Series declared using a specific index<a class="headerlink" href="#series-declared-using-a-specific-index" title="Link to this heading">#</a></h3>
 <p>In the example below, the series Simplest and Simple2 are recreated (overwritten), but this time an index is specified. Here the index is declared as a(nother) list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +634,7 @@ dtype: int64
 <p>Now these Series look more like time-series data!</p>
 </section>
 <section id="create-series-from-a-dictionary">
-<span id="index-4"></span><h3><span class="section-number">3.2.3. </span>Create Series from a dictionary<a class="headerlink" href="#create-series-from-a-dictionary" title="Link to this heading">#</a></h3>
+<span id="index-5"></span><h3><span class="section-number">3.2.3. </span>Create Series from a dictionary<a class="headerlink" href="#create-series-from-a-dictionary" title="Link to this heading">#</a></h3>
 <p>In python, a dictionary is a data structure that is more generally known in computer science as an associative array. A dictionary consists of a collection of key-value pairs, where each key-value pair <em>maps</em> or <em>links</em> the key to its associated value.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -649,7 +648,7 @@ dtype: int64
 <p>In the following example the keys are numeric</p>
 <p><code class="docutils literal notranslate"><span class="pre">mydict2={1966:2,1967:3,1968:4,1969:5,2000:-15}</span></code></p>
 <p>Here, mydict2  links (maps) the key 1966 to the value 2 and “1969” links to the value 5.</p>
-<p>The series constructor can also accept a dictionary. In this instance, the index of the series becomes the key of the dictionary that was used to instantiate the series.</p>
+<p>The series constructor can also accept a dictionary. In this instance, the key of the dictionary becomes the index of the series that was used to instantiate the series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mydict2</span><span class="o">=</span><span class="p">{</span><span class="mi">1966</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">1967</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1968</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="mi">1969</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">2000</span><span class="p">:</span><span class="mi">6</span><span class="p">}</span>
@@ -672,13 +671,13 @@ dtype: int64
 </section>
 </section>
 <section id="the-dataframe-class-in-pandas">
-<span id="index-6"></span><span id="index-5"></span><h2><span class="section-number">3.3. </span>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-dataframe-class-in-pandas" title="Link to this heading">#</a></h2>
+<span id="index-7"></span><span id="index-6"></span><h2><span class="section-number">3.3. </span>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code><a class="headerlink" href="#the-dataframe-class-in-pandas" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is the primary structure of pandas. It is a two-dimensional data structure with named rows and columns.  Each column can have different data types (numeric, string, etc).</p>
 <p>By convention, a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> is often called df or some other modifier followed by df, to assist in reading the code.</p>
 <p>Much more detail on standard pandas dataframes can be found on the <em>official pandas website</em> <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">https://pandas.pydata.org/docs/reference/frame.html</a>.</p>
 <section id="creating-or-instantiating-a-dataframe">
 <h3><span class="section-number">3.3.1. </span>Creating or instantiating a dataframe<a class="headerlink" href="#creating-or-instantiating-a-dataframe" title="Link to this heading">#</a></h3>
-<p>Like any object, a <code class="docutils literal notranslate"><span class="pre">dataFrame</span></code> can be created by calling the constructor of the pandas class <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>Like any object, a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> can be created by calling the constructor of the pandas class <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame()</span></code> method is constructor for the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class. It can take several forms (as with <code class="docutils literal notranslate"><span class="pre">Series</span></code>), but always returns (instantiates) an instance of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object – i.e. a variable whose contents are a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>The code example below creates a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">df</span></code> comprised of three columns B,C and E; indexed between 2018 and 2021. Macroeconomists may interpret the index as dates, but for pandas they are just numbers.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is instantiated from a dictionary and assigned a specific index by passing a list of years as the index.</p>
@@ -750,11 +749,11 @@ dtype: int64
 </div>
 </section>
 <section id="alternative-ways-to-set-the-time-period-of-a-dated-index">
-<span id="index-8"></span><span id="index-7"></span><h3><span class="section-number">3.3.2. </span>Alternative ways to set the time period of a dated index<a class="headerlink" href="#alternative-ways-to-set-the-time-period-of-a-dated-index" title="Link to this heading">#</a></h3>
+<span id="index-9"></span><span id="index-8"></span><h3><span class="section-number">3.3.2. </span>Alternative ways to set the time period of a dated index<a class="headerlink" href="#alternative-ways-to-set-the-time-period-of-a-dated-index" title="Link to this heading">#</a></h3>
 <p>A somewhat more creative way to initialize the <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> for dates would use a loop to specify the dates that get passed to the constructor as an argument.</p>
 <p>Below a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <code class="docutils literal notranslate"><span class="pre">df</span></code> with two Series (A and B), is initialized with the values 100 for all data points.</p>
 <p>The index is defined dynamically by a loop <code class="docutils literal notranslate"><span class="pre">index=[2020+v</span> <span class="pre">for</span> <span class="pre">v</span> <span class="pre">in</span> <span class="pre">range(number_of_rows)]</span></code> that runs <code class="docutils literal notranslate"><span class="pre">number_of_rows</span></code> times (6 times in this example) setting v equal to 2020+0, 2020+1,…,2020+5 (recall, that python is zero-indexed so the first value of v is 0, not one). The resulting list whose values are assigned to index is [2020,2021,2022,2023,2024,2025].</p>
-<p>The big advantage of this method is that if the user wanted to have data created for the period 1990 to 2030, they would only have to change number_of_rows from 6 to 41, and the change the staring date in the loop from 2020 to 1990.</p>
+<p>The big advantage of this method is that if the user wanted to have data created for the period 1990 to 2030, they would only have to change number_of_rows from 6 to 41, and then change the staring date in the loop from 2020 to 1990.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define the number of years for which the data is to be created.</span>
@@ -922,7 +921,7 @@ dtype: int64
 </div>
 </section>
 <section id="adding-a-column-to-a-dataframe">
-<span id="index-9"></span><h3><span class="section-number">3.3.3. </span>Adding a column to a dataframe<a class="headerlink" href="#adding-a-column-to-a-dataframe" title="Link to this heading">#</a></h3>
+<span id="index-10"></span><h3><span class="section-number">3.3.3. </span>Adding a column to a dataframe<a class="headerlink" href="#adding-a-column-to-a-dataframe" title="Link to this heading">#</a></h3>
 <p>If a value is assigned to a column that does not exist, pandas will add a column with that name and fill it with values resulting from  the calculation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1002,12 +1001,13 @@ dtype: int64
 </div>
 </section>
 <section id="revising-values">
-<span id="index-10"></span><h3><span class="section-number">3.3.4. </span>Revising values<a class="headerlink" href="#revising-values" title="Link to this heading">#</a></h3>
+<span id="index-11"></span><h3><span class="section-number">3.3.4. </span>Revising values<a class="headerlink" href="#revising-values" title="Link to this heading">#</a></h3>
 <p>If the column exists, then the = method will revise the values of the rows with the values assigned in the statement.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The dimensions of the list assigned via the <code class="docutils literal notranslate"><span class="pre">=</span></code> method must be the same as the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> (i.e. there must be exactly as many values as there are rows).  Alternatively if only one value is provided, then that value will replace all of the values in the specified column (be broadcast to the other rows in the column).</p>
 </div>
+<p>Below we change the values of the <code class="docutils literal notranslate"><span class="pre">NEW</span></code> Column that we generated earlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;NEW&quot;</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -1167,7 +1167,7 @@ would generate an error because the string created with <code class="docutils li
 </section>
 </section>
 <section id="selected-pandas-methods">
-<span id="index-11"></span><h2><span class="section-number">3.4. </span>Selected pandas methods<a class="headerlink" href="#selected-pandas-methods" title="Link to this heading">#</a></h2>
+<span id="index-12"></span><h2><span class="section-number">3.4. </span>Selected pandas methods<a class="headerlink" href="#selected-pandas-methods" title="Link to this heading">#</a></h2>
 <p>Pandas has a number of methods (functions that operate on the underlying data of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> object).  Several of them are used when working with a World Bank model in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> and these are discussed below.</p>
 <section id="columns-lists-the-column-names-of-a-dataframe">
 <h3><span class="section-number">3.4.1. </span>.columns lists the column names of a dataframe<a class="headerlink" href="#columns-lists-the-column-names-of-a-dataframe" title="Link to this heading">#</a></h3>
@@ -1186,7 +1186,7 @@ would generate an error because the string created with <code class="docutils li
 </div>
 </section>
 <section id="size-indicates-the-dimension-of-a-list">
-<span id="index-12"></span><h3><span class="section-number">3.4.2. </span>.size indicates the dimension of a list<a class="headerlink" href="#size-indicates-the-dimension-of-a-list" title="Link to this heading">#</a></h3>
+<span id="index-13"></span><h3><span class="section-number">3.4.2. </span>.size indicates the dimension of a list<a class="headerlink" href="#size-indicates-the-dimension-of-a-list" title="Link to this heading">#</a></h3>
 <p>so <code class="docutils literal notranslate"><span class="pre">df.columns.size</span></code> returns the number of columns in a dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1203,7 +1203,7 @@ would generate an error because the string created with <code class="docutils li
 <p>The <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> <code class="docutils literal notranslate"><span class="pre">df</span></code> has 3 columns.</p>
 </section>
 <section id="eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe">
-<span id="index-13"></span><h3><span class="section-number">3.4.3. </span>.eval() evaluates (calculates) an expression on the data of a dataframe<a class="headerlink" href="#eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe" title="Link to this heading">#</a></h3>
+<span id="index-14"></span><h3><span class="section-number">3.4.3. </span>.eval() evaluates (calculates) an expression on the data of a dataframe<a class="headerlink" href="#eval-evaluates-calculates-an-expression-on-the-data-of-a-dataframe" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.eval</span></code> is a native dataframe method, which does calculations on a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> and returns a revised <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>. With this method expressions can be evaluated and new columns created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1287,7 +1287,7 @@ would generate an error because the string created with <code class="docutils li
 <section id="multiple-expressions-can-be-evaluated-with-eval">
 <h3><span class="section-number">3.4.4. </span>multiple expressions can be evaluated with .eval()<a class="headerlink" href="#multiple-expressions-can-be-evaluated-with-eval" title="Link to this heading">#</a></h3>
 <p>With <code class="docutils literal notranslate"><span class="pre">.eval()</span></code> multiple expressions can be evaluated at the same time.  In the example below three apostrophe’s are used to indicate a multiple-line block of text.  Each line is executed separately by eval.</p>
-<p id="index-14">In this example, two new variables X and THE_ANSWER are created in a single call to .eval().</p>
+<p id="index-15">In this example, two new variables X and THE_ANSWER are created in a single call to .eval().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;X = B*NEW</span>
@@ -1635,8 +1635,8 @@ would generate an error because the string created with <code class="docutils li
 </section>
 </section>
 <section id="the-loc-method">
-<span id="index-16"></span><span id="index-15"></span><h2><span class="section-number">3.5. </span>The .loc[] method<a class="headerlink" href="#the-loc-method" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> method is a powerful pandas routine used extensively in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> selects a portion (slice) of a dataframe and  allows the user to display and/or revise specific sub-sections of a column or row in a dataframe.</p>
+<span id="index-17"></span><span id="index-16"></span><h2><span class="section-number">3.5. </span>The .loc[] method<a class="headerlink" href="#the-loc-method" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> method is a powerful pandas routine used extensively in <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>. <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> selects a portion (slice) of a dataframe and  allows the user to display and/or revise specific sub-sections of a single or several columns or rows in a dataframe.</p>
 <section id="selecting-a-single-element-in-a-dataframe-loc-row-column">
 <h3><span class="section-number">3.5.1. </span>Selecting a single element in a dataframe:  <code class="docutils literal notranslate"><span class="pre">.loc[row,column]</span></code><a class="headerlink" href="#selecting-a-single-element-in-a-dataframe-loc-row-column" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.loc[row,column]</span></code> operates on a single cell in the dataframe.  Thus, the below displays the value of the cell with index=2023 observation from the column NEW.</p>
@@ -1697,7 +1697,7 @@ Name: 2023, dtype: int64
 </div>
 </section>
 <section id="selecting-specific-rows-and-columns-loc-xxx-xxx-names">
-<span id="index-17"></span><h3><span class="section-number">3.5.4. </span>Selecting specific rows and columns: .loc[xxx,xxx],[names…]]<a class="headerlink" href="#selecting-specific-rows-and-columns-loc-xxx-xxx-names" title="Link to this heading">#</a></h3>
+<span id="index-18"></span><h3><span class="section-number">3.5.4. </span>Selecting specific rows and columns: .loc[xxx,xxx],[names…]]<a class="headerlink" href="#selecting-specific-rows-and-columns-loc-xxx-xxx-names" title="Link to this heading">#</a></h3>
 <p>Passing a list in either the rows or columns portion of the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> statement will allow multiple rows or columns to be displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1745,7 +1745,7 @@ Name: 2023, dtype: int64
 </div>
 </section>
 <section id="select-a-range-the-operator-in-a-loc-statement">
-<span id="index-18"></span><h3><span class="section-number">3.5.5. </span>Select a range: the “:” operator in a ‘.loc’ statement<a class="headerlink" href="#select-a-range-the-operator-in-a-loc-statement" title="Link to this heading">#</a></h3>
+<span id="index-19"></span><h3><span class="section-number">3.5.5. </span>Select a range: the “:” operator in a ‘.loc’ statement<a class="headerlink" href="#select-a-range-the-operator-in-a-loc-statement" title="Link to this heading">#</a></h3>
 <p>with the colon operator we can also select a range of results.</p>
 <p>Here from 2018 to 2019.</p>
 <div class="cell docutils container">
@@ -1799,7 +1799,7 @@ Name: 2023, dtype: int64
 </div>
 </section>
 <section id="revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells">
-<span id="index-20"></span><span id="index-19"></span><h3><span class="section-number">3.5.6. </span>Revising a sub-section of a <code class="docutils literal notranslate"><span class="pre">DataFrame,</span></code> using  <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> on the left hand side to assign values to specific cells<a class="headerlink" href="#revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells" title="Link to this heading">#</a></h3>
+<span id="index-21"></span><span id="index-20"></span><h3><span class="section-number">3.5.6. </span>Revising a sub-section of a <code class="docutils literal notranslate"><span class="pre">DataFrame,</span></code> using  <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> on the left hand side to assign values to specific cells<a class="headerlink" href="#revising-a-sub-section-of-a-dataframe-using-loc-on-the-left-hand-side-to-assign-values-to-specific-cells" title="Link to this heading">#</a></h3>
 <p>This can be handy when revising a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> in preparation for running a scenario.<br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1889,7 +1889,7 @@ Name: 2023, dtype: int64
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The dimensions on the right hand side of = and the left hand side should match. That is: either the dimensions should be the same, or the right hand side should be a single value that is then <code class="docutils literal notranslate"><span class="pre">broadcast</span></code> into the left hand slice.</p>
+<p>The dimensions on the right hand side of = and the left hand side should match. That is: either the dimensions should be the same, or the right hand side should be a single value that is then <code class="docutils literal notranslate"><span class="pre">broadcast</span></code> into all of the lements of the left hand slice.</p>
 <p>For more on broadcasting see here (https://jakevdp.github.io/PythonDataScienceHandbook/02.05-computation-on-arrays-broadcasting.html)</p>
 </div>
 <p><strong>For more info on the .loc[] method</strong></p>
@@ -1972,7 +1972,7 @@ Name: 2023, dtype: int64
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-pandas-library">3.1. Import the pandas library</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-series-class-in-pandas">3.2. The <code class="docutils literal notranslate"><span class="pre">series</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-series-class-in-pandas">3.2. The <code class="docutils literal notranslate"><span class="pre">Series</span></code> class in <code class="docutils literal notranslate"><span class="pre">Pandas</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-declared-from-a-list">3.2.1. Series declared from a list</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-declared-using-a-specific-index">3.2.2. Series declared using a specific index</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-series-from-a-dictionary">3.2.3. Create Series from a dictionary</a></li>

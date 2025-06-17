@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Model analytics &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
+    <title>1. Model structure and causal chains &#8212; The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -202,7 +202,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Model analytics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Model structure and causal chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
@@ -395,7 +395,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Model analytics</h1>
+    <h1>Model structure and causal chains</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -431,8 +431,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="model-analytics">
-<span id="index-5"></span><span id="index-4"></span><span id="index-3"></span><span id="index-2"></span><span id="index-1"></span><span id="index-0"></span><h1><span class="section-number">1. </span>Model analytics<a class="headerlink" href="#model-analytics" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="model-structure-and-causal-chains">
+<span id="index-5"></span><span id="index-4"></span><span id="index-3"></span><span id="index-2"></span><span id="index-1"></span><span id="index-0"></span><h1><span class="section-number">1. </span>Model structure and causal chains<a class="headerlink" href="#model-structure-and-causal-chains" title="Link to this heading">#</a></h1>
 <p>A model has a well defined logical and causal structure. <span id="id1"><a class="reference internal" href="../../Reference.html#id4" title="K.C. Kogiku. An Introduction to Macroeconomic Models. McGwaw-Hill, 1968. URL: https://books.google.de/books?id=jp4LzQEACAAJ.">Kogiku</a></span>(1968) provides an introduction to causal analysis of models, while <span id="id2"><a class="reference internal" href="../../Reference.html#id2" title="Ron Berndsen. Causal ordering in economic models. Decision Support Systems, 1995. doi:10.1016/0167-9236(94)00034-P.">Berndsen</a></span>(1995) gives a more elaborate discussion.</p>
 <p>At the simplest level, the equations of a model can be organized into blocks.</p>
 <ul class="simple">
@@ -444,8 +444,8 @@
 <section id="setting-up-the-python-environment-and-loading-a-pre-existing-model">
 <h2><span class="section-number">1.1. </span>Setting up the python environment and loading a pre-existing model<a class="headerlink" href="#setting-up-the-python-environment-and-loading-a-pre-existing-model" title="Link to this heading">#</a></h2>
 <div class="tip admonition">
-<p class="admonition-title">In this chapter - Model Analytics</p>
-<p>This chapter introduces tools and techniques for analyzing the structure and behavior of models in the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> framework. In a system of equations like World Bank models, impacts on variables in a simulation can be both the direct effect of changes imposed on variables in the equation of a variable, but also indirect effects caused by changes in variables that are not in the equation of a specific variable, but do generate changes in variables that are in the equation.</p>
+<p class="admonition-title">In this chapter - Model struicture and causal chains</p>
+<p>This chapter introduces tools and techniques for analyzing the structure and behavior of models in the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> framework. In a system of equations like World Bank models, impacts on variables in a simulation can be the results of the direct effect from changes imposed on variables in the equation of a variable, but also indirect effects caused by changes in variables that are not in the equation of a specific variable, but do generate changes in variables that are in the equation.</p>
 <p>The chapter presents tools that explore the structure of a model, and display both the direct and indirect determinants of given equations.</p>
 <p>Following a simulation, the routines presented can display the precise contribution of a given variable to the change in another.</p>
 <p>In addition to displaying which variables impacted a given variable, the routines can also be used to understand which variables are most impacted by changes in a given variable.</p>
@@ -474,11 +474,11 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>png=latex</strong></p>
+<p><strong>latex=True</strong></p>
 <p>The default behavior when displaying graphs in a <em>jupyter notebook</em> is to produce images in .svg format.
 These images scale well and the mouseover feature can be used. That is: On mouseover of a node, the variable and the equation are displayed.  On mouseover on a joining line, the extent to which the variable contributed to the change in the dependent variable is displayed.</p>
-<p>Unfortunately this <em>jupyter book</em> (book – not notebook) requires images be in the jpg or PNG format so this functionality has been disabled, by specifying that the png format be used instead of svg.</p>
-<p>For other purposes, the variable latex could be set equal to False in which case the same code will generate graphics in the more versatile SVG format.</p>
+<p>Unfortunately this <em>jupyter book</em> (book – not notebook) requires images be in the jpg or PNG format. To enable generation of PDFs the latex=True option is set, which forces <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> routines to render graphics in the PNG format – effectively disabling the features of svg.</p>
+<p>If using the Notebooks that for this book, the variable latex could be set equal to False in which case the same code will generate graphics in the more versatile SVG format.</p>
 </div>
 </section>
 <section id="model-information">
@@ -508,14 +508,15 @@ Number of endogeneous variables         :                  378
 <p>A quick way to visualize the structure of a model is to plot its adjacency matrix <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_matrix">(https://en.wikipedia.org/wiki/Adjacency_matrix)</a>.</p>
 <p>The adjacency matrix plots the relationships between endogenous variables in the model, dividing them into one or more simultaneous blocks and one or more recursive blocks.</p>
 <p>Below is the adjacency matrix for the Pakistan model. Variables in the red square block (simultaneous block) depend on one or more variables that in turn depend upon them, requiring the model to solve for their values simultaneously.  The variables in the green triangles (recursive blocks) do not enter directly or indirectly as an argument in the variables that determine them and therefore can be solved in one iteration once the values for the simultaneous variables are determined.</p>
+<p>Internally <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> takes these factors into consideration and solves the simultanrous block(s) first and then solves the recursive blocks.</p>
 <div class="cell docutils container" id="index-25">
 <span id="index-24"></span><span id="index-23"></span><span id="index-22"></span><span id="index-21"></span><span id="index-20"></span><span id="index-19"></span><div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">plotadjacency</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">nolag</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpak</span><span class="o">.</span><span class="n">plotadjacency</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">nolag</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/989fec0a2c1bbcb6f378c5bf532fb3053cc1d01bbe129171f4637afac07929c9.png" src="../../_images/989fec0a2c1bbcb6f378c5bf532fb3053cc1d01bbe129171f4637afac07929c9.png" />
+<img alt="../../_images/292fd4d017ca45b4556ace046da721bb72dc047c48450f4a85479fcbaed3fc38.png" src="../../_images/292fd4d017ca45b4556ace046da721bb72dc047c48450f4a85479fcbaed3fc38.png" />
 </div>
 </div>
 <p>As is evident in the above chart, the majority of the variables in MFMod Pakistan are recursive (green) and depend simply on the values of other variables.  The core of the model lies in the simultaneous (red) block, where the main wages, prices, real and nominal variables that drive other variables are determined.</p>
@@ -560,10 +561,10 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/464af9121c0bb48b2218845b083117e302937899372f88cf3bdcb1c8b0e0e749.png" src="../../_images/464af9121c0bb48b2218845b083117e302937899372f88cf3bdcb1c8b0e0e749.png" />
+<img alt="../../_images/4c1072d3923bad2c325fbfe4403131175501a487cd46b897d3e8daf0e896f4fc.png" src="../../_images/4c1072d3923bad2c325fbfe4403131175501a487cd46b897d3e8daf0e896f4fc.png" />
 </div>
 </div>
-<p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and reveals the relative importance of each variable in the change of the dependent variable in the preceding scenario.</p>
+<p>If the model has been solved, <code class="docutils literal notranslate"><span class="pre">.tracepre()</span></code> goes one step further and uses the thickness of the lines to reflect the relative importance of each variable in the change of the dependent variable in the preceding scenario.</p>
 <section id="shock-the-model">
 <h3><span class="section-number">1.4.1. </span>Shock the model<a class="headerlink" href="#shock-the-model" title="Link to this heading">#</a></h3>
 <p>Below a $30 nominal Carbon tax is applied beginning in 2025.</p>
@@ -583,7 +584,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2830b4e00b937ce998f613406eb5220bf702dc64d2e0cdee3b6aa80b84f332cd.png" src="../../_images/2830b4e00b937ce998f613406eb5220bf702dc64d2e0cdee3b6aa80b84f332cd.png" />
+<img alt="../../_images/320325c0e32321ac702a9885b2e1b7c4f88ff9f5b8dab61200926cdf2565b35c.png" src="../../_images/320325c0e32321ac702a9885b2e1b7c4f88ff9f5b8dab61200926cdf2565b35c.png" />
 </div>
 </div>
 </section>
@@ -598,7 +599,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7c6973a2fcf8c241ff9787d7e8cd6e674d3038d977b8f65645ef5187a8ed6d74.png" src="../../_images/7c6973a2fcf8c241ff9787d7e8cd6e674d3038d977b8f65645ef5187a8ed6d74.png" />
+<img alt="../../_images/043c23b0b3063fab97eb2524358f4a4acf86fb340190d36174666db212616233.png" src="../../_images/043c23b0b3063fab97eb2524358f4a4acf86fb340190d36174666db212616233.png" />
 </div>
 </div>
 </section>
@@ -612,7 +613,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9796169229e47b0b75d659cebdf16563e1b30dab10494b807b8e5091270980b8.png" src="../../_images/9796169229e47b0b75d659cebdf16563e1b30dab10494b807b8e5091270980b8.png" />
+<img alt="../../_images/aa9d3993de25a5683743af6999c6cc2b14a1b65dfc58300a64deec70ea7bd00a.png" src="../../_images/aa9d3993de25a5683743af6999c6cc2b14a1b65dfc58300a64deec70ea7bd00a.png" />
 </div>
 </div>
 </section>
@@ -626,7 +627,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cc9fcca2a80cc2278d4c85ec0706ace12036d239b79d79efcf32af3729587744.png" src="../../_images/cc9fcca2a80cc2278d4c85ec0706ace12036d239b79d79efcf32af3729587744.png" />
+<img alt="../../_images/afd40066b3d85495251b37be9979f7a31f156aa0b3b0ecc7c11e2c202cb2f0d9.png" src="../../_images/afd40066b3d85495251b37be9979f7a31f156aa0b3b0ecc7c11e2c202cb2f0d9.png" />
 </div>
 </div>
 <section id="adding-a-table-to-the-causal-graph">
@@ -635,12 +636,16 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mpak</span><span class="o">.</span><span class="n">set_smpl</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span><span class="mi">2027</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">fokus2</span><span class="o">=</span><span class="s1">&#39;PAKNEGDIFTOTKN PAKNECONPRVTKN PAKNECONGOVTKN PAKNYGDPMKTPKN PAKNEIMPGNFSKN&#39;</span><span class="p">,</span><span class="n">growthshow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mpak</span><span class="o">.</span><span class="n">PAKNYGDPMKTPKN</span><span class="o">.</span><span class="n">tracepre</span><span class="p">(</span><span class="nb">filter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+                <span class="n">fokus2</span><span class="o">=</span><span class="s1">&#39;PAKNEGDIFTOTKN PAKNECONPRVTKN PAKNECONGOVTKN PAKNYGDPMKTPKN PAKNEIMPGNFSKN&#39;</span><span class="p">,</span>
+                <span class="n">growthshow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">png</span><span class="o">=</span><span class="n">latex</span><span class="p">)</span>
+         <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d1c30be52ac55c73afbc5bb759a220ea75aeba718f3374a59699b5b73354c1de.png" src="../../_images/d1c30be52ac55c73afbc5bb759a220ea75aeba718f3374a59699b5b73354c1de.png" />
+<img alt="../../_images/fe447f5fa87e5de5dea90688edbfaf16d53def182afb118eb7dbd84e2e31ca8b.png" src="../../_images/fe447f5fa87e5de5dea90688edbfaf16d53def182afb118eb7dbd84e2e31ca8b.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
@@ -658,7 +663,7 @@ PAKPANUSATLS    : Exchange rate LCU / US$ - Pakistan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2314da58f98281a19a4584f3397289bd1c10343e589aa911880f0c44df8a4ed7.png" src="../../_images/2314da58f98281a19a4584f3397289bd1c10343e589aa911880f0c44df8a4ed7.png" />
+<img alt="../../_images/fde04fd779d6631815617c698aeecebe3a4d17c5e92dc53be8334cfb879c222c.png" src="../../_images/fde04fd779d6631815617c698aeecebe3a4d17c5e92dc53be8334cfb879c222c.png" />
 </div>
 </div>
 </section>

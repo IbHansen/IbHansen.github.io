@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -201,7 +201,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Analytics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/ModelStructure.html">1. Model structure and causal chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_ModelAnalytics/AttributionSomeFeatures.html">2. Analyzing the impact of a shock</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical how tos</span></p>
@@ -458,6 +458,7 @@
 </ul>
 <p>```{note} <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> variable names
 <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> places more restrictions on column names than do <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <em>per se</em>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> variable names must <strong>start with a letter</strong> and <strong>be upper case</strong>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 Thus while all the below are legal column names in pandas, some are illegal in `ModelFlow`.
 </pre></div>
@@ -502,8 +503,8 @@ table,td,tr,th {border:none!important}
 <p>As we saw above, series have indices.  <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s also have indices, which are the row names of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> the index series is typically understood to represent a date.</p>
 <p>For yearly models a list of integers like in the above example works fine.<br></p>
-<p>For higher frequency models (quarterly, monthly, weekly,daily, etc.) the index can be one of several pandas date types, but users are encouraged to use <code class="docutils literal notranslate"><span class="pre">pd.period_range()</span></code> to create date indexes.</p>
-<div class="admonition warning">
+<p>For higher frequency models (quarterly, monthly, weekly,daily, etc.) the index can be one of several pandas date types, but users are encouraged to use <code class="docutils literal notranslate"><span class="pre">pd.period_range()</span></code> to create date indexes, because the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> reporting methods (tables and graphs) work well with indexes generated using this method.</p>
+<div class="admonition warning" id="index-8">
 <p class="admonition-title">Warning</p>
 <p>Not all python <code class="docutils literal notranslate"><span class="pre">datetypes</span></code> work well with the graphics routines of <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code>.  Users are advised to use the <code class="docutils literal notranslate"><span class="pre">pd.period_range()</span></code> method to generate date indexes for higher-frequency data (i.e. monthly or quarterly data).</p>
 <p>For example:</p>
@@ -514,8 +515,8 @@ table,td,tr,th {border:none!important}
 </div>
 </section>
 <section id="leads-and-lags">
-<span id="index-10"></span><span id="index-9"></span><span id="index-8"></span><h2><span class="section-number">1.3. </span>Leads and lags<a class="headerlink" href="#leads-and-lags" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> does not support the economic idea of leads and lags <em>per se</em> (although the <code class="docutils literal notranslate"><span class="pre">.shift()</span></code> operator can be used to emulate the same idea in ordered <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s.</p>
+<span id="index-11"></span><span id="index-10"></span><span id="index-9"></span><h2><span class="section-number">1.3. </span>Leads and lags<a class="headerlink" href="#leads-and-lags" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> does not support the economic idea of leads and lags <em>per se</em> (although the <code class="docutils literal notranslate"><span class="pre">.shift()</span></code> operator can be used to emulate the same idea in ordered <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s).</p>
 <p><code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> explicitly supports the idea of leads and lags. In <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> leads and lags can be indicated by following the variable with a parenthesis and either -1 or -2 for one or two period lags (where the number following the negative sign indicates the number of time periods that are lagged). Positive numbers are used for forward leads (no +sign required).</p>
 <p>When a method defined by the <code class="docutils literal notranslate"><span class="pre">ModelFlow</span></code> class encounters something like <code class="docutils literal notranslate"><span class="pre">A(-1)</span></code>, it will take the value from the row above the current row. No matter if the index is an integer, a year, quarter or a millisecond. The same goes for leads, <code class="docutils literal notranslate"><span class="pre">A(+1)</span></code> will return the value of <code class="docutils literal notranslate"><span class="pre">A</span></code> in the next row.</p>
 <p>As a result in a quarterly model <code class="docutils literal notranslate"><span class="pre">B=A(-4)</span></code> would assign B the value of A from the same quarter in the previous year.</p>
