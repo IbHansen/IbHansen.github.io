@@ -1,0 +1,74 @@
+Traceback (most recent call last):
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\asyncio\base_events.py", line 686, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+baseline = mpak(initial,2022,2100,alfa=0.7,silent=1,ljit=True)
+mpak.basedf = baseline.copy()
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[8], line 1[0m
+[1;32m----> 1[0m baseline [38;5;241m=[39m [43mmpak[49m[43m([49m[43minitial[49m[43m,[49m[38;5;241;43m2022[39;49m[43m,[49m[38;5;241;43m2100[39;49m[43m,[49m[43malfa[49m[38;5;241;43m=[39;49m[38;5;241;43m0.7[39;49m[43m,[49m[43msilent[49m[38;5;241;43m=[39;49m[38;5;241;43m1[39;49m[43m,[49m[43mljit[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[0;32m      2[0m mpak[38;5;241m.[39mbasedf [38;5;241m=[39m baseline[38;5;241m.[39mcopy()
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:6386[0m, in [0;36mSolver_Mixin.__call__[1;34m(self, *args, **kwargs)[0m
+[0;32m   6382[0m [38;5;28mself[39m[38;5;241m.[39mmodel_solver [38;5;241m=[39m [38;5;28mgetattr[39m([38;5;28mself[39m, solver)
+[0;32m   6384[0m [38;5;66;03m# print(f'solver:{solver},solverkwargs:{newkwargs}')[39;00m
+[0;32m   6385[0m [38;5;66;03m# breakpoint()[39;00m
+[1;32m-> 6386[0m outdf [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmodel_solver[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mnewkwargs[49m[43m)[49m
+[0;32m   6389[0m [38;5;66;03m# now calculate adjustment factors if the calc adjust model is there [39;00m
+[0;32m   6390[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39msplit_calc_add_factor [38;5;129;01mand[39;00m do_calc_add_factor: 
+[0;32m   6391[0m     [38;5;66;03m# breakpoint() [39;00m
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:6633[0m, in [0;36mSolver_Mixin.sim[1;34m(self, databank, start, end, silent, samedata, alfa, stats, first_test, max_iterations, conv, absconv, relconv, stringjit, transpile_reset, dumpvar, init, ldumpvar, dumpwith, dumpdecimal, chunk, ljit, timeon, fairopt, progressbar, **kwargs)[0m
+[0;32m   6623[0m [38;5;66;03m# if not self.eqcolumns(self.genrcolumns,databank.columns):[39;00m
+[0;32m   6624[0m [38;5;66;03m#     databank=insertModelVar(databank,self)   # fill all Missing value with 0.0[39;00m
+[0;32m   6625[0m [38;5;66;03m#     for i in [j for j in self.allvar.keys() if self.allvar[j]['matrix']]:[39;00m
+[1;32m   (...)[0m
+[0;32m   6628[0m [38;5;66;03m# else:[39;00m
+[0;32m   6629[0m [38;5;66;03m#     newdata = False[39;00m
+[0;32m   6631[0m newdata, databank [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mis_newdata(databank)
+[1;32m-> 6633[0m [38;5;28mself[39m[38;5;241m.[39mpro2d, [38;5;28mself[39m[38;5;241m.[39msolve2d, [38;5;28mself[39m[38;5;241m.[39mepi2d [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmakelos[49m[43m([49m
+[0;32m   6634[0m [43m    [49m[43mdatabank[49m[43m,[49m[43m [49m[43msolvename[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43msim[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mljit[49m[38;5;241;43m=[39;49m[43mljit[49m[43m,[49m[43m [49m[43mstringjit[49m[38;5;241;43m=[39;49m[43mstringjit[49m[43m,[49m[43m [49m[43mtranspile_reset[49m[38;5;241;43m=[39;49m[43mtranspile_reset[49m[43m,[49m[43m [49m
+[0;32m   6635[0m [43m    [49m[43mchunk[49m[38;5;241;43m=[39;49m[43mchunk[49m[43m,[49m[43m [49m[43mnewdata[49m[38;5;241;43m=[39;49m[43mnewdata[49m[43m,[49m[43msilent[49m[38;5;241;43m=[39;49m[43msilent[49m[43m)[49m
+[0;32m   6637[0m values [38;5;241m=[39m databank[38;5;241m.[39mvalues[38;5;241m.[39mcopy()  [38;5;66;03m#[39;00m
+[0;32m   6638[0m [38;5;28mself[39m[38;5;241m.[39mgenrcolumns [38;5;241m=[39m databank[38;5;241m.[39mcolumns[38;5;241m.[39mcopy()
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:6508[0m, in [0;36mSolver_Mixin.makelos[1;34m(self, databank, ljit, stringjit, solvename, chunk, transpile_reset, newdata, silent, **kwargs)[0m
+[0;32m   6506[0m         [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m silent:
+[0;32m   6507[0m             [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m'[39m[38;5;124mImporting [39m[38;5;132;01m{[39;00mjitfile[38;5;132;01m}[39;00m[38;5;124m'[39m)    
+[1;32m-> 6508[0m         m1 [38;5;241m=[39m [43mimportlib[49m[38;5;241;43m.[39;49m[43mimport_module[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m.[39;49m[38;5;124;43m'[39;49m[38;5;241;43m+[39;49m[43mjitfile[49m[38;5;241;43m.[39;49m[43mstem[49m[43m,[49m[43mjitfile[49m[38;5;241;43m.[39;49m[43mparent[49m[38;5;241;43m.[39;49m[43mname[49m[43m)[49m
+[0;32m   6510[0m         pro_jit, core_jit, epi_jit [38;5;241m=[39m m1[38;5;241m.[39mprolog, m1[38;5;241m.[39mcore, m1[38;5;241m.[39mepilog
+[0;32m   6511[0m [38;5;28msetattr[39m([38;5;28mself[39m, [38;5;124mf[39m[38;5;124m'[39m[38;5;124mpro_[39m[38;5;132;01m{[39;00mjitname[38;5;132;01m}[39;00m[38;5;124m'[39m, pro_jit)
+
+File [1;32m~\miniconda3\envs\newbook312\Lib\importlib\__init__.py:90[0m, in [0;36mimport_module[1;34m(name, package)[0m
+[0;32m     88[0m             [38;5;28;01mbreak[39;00m
+[0;32m     89[0m         level [38;5;241m+[39m[38;5;241m=[39m [38;5;241m1[39m
+[1;32m---> 90[0m [38;5;28;01mreturn[39;00m [43m_bootstrap[49m[38;5;241;43m.[39;49m[43m_gcd_import[49m[43m([49m[43mname[49m[43m[[49m[43mlevel[49m[43m:[49m[43m][49m[43m,[49m[43m [49m[43mpackage[49m[43m,[49m[43m [49m[43mlevel[49m[43m)[49m
+
+File [1;32m<frozen importlib._bootstrap>:1387[0m, in [0;36m_gcd_import[1;34m(name, package, level)[0m
+
+File [1;32m<frozen importlib._bootstrap>:1360[0m, in [0;36m_find_and_load[1;34m(name, import_)[0m
+
+File [1;32m<frozen importlib._bootstrap>:1324[0m, in [0;36m_find_and_load_unlocked[1;34m(name, import_)[0m
+
+[1;31mModuleNotFoundError[0m: No module named 'modelsource.PAK_sim_jit_jitsolver'
+
