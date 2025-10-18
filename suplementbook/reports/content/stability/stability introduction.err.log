@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\asyncio\base_events.py", line 686, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\ibhan\miniconda3\envs\newbook312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+geteigen(mul=0.8,acc=0,show=1);
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mAttributeError[0m                            Traceback (most recent call last)
+Cell [1;32mIn[9], line 1[0m
+[1;32m----> 1[0m [43mgeteigen[49m[43m([49m[43mmul[49m[38;5;241;43m=[39;49m[38;5;241;43m0.8[39;49m[43m,[49m[43macc[49m[38;5;241;43m=[39;49m[38;5;241;43m0[39;49m[43m,[49m[43mshow[49m[38;5;241;43m=[39;49m[38;5;241;43m1[39;49m[43m)[49m;
+
+Cell [1;32mIn[8], line 10[0m, in [0;36mgeteigen[1;34m(mul, acc, years, show, showmore)[0m
+[0;32m      7[0m baseline  [38;5;241m=[39m mma(baseline_not_solved,silent[38;5;241m=[39m[38;5;28;01mTrue[39;00m)     [38;5;66;03m# Solve the model [39;00m
+[0;32m      9[0m [38;5;66;03m# Retrieve a dictionary with a dataframe with eigenvalues and eigenvectors for each year [39;00m
+[1;32m---> 10[0m eig_dict [38;5;241m=[39m [43mmma[49m[38;5;241;43m.[39;49m[43mget_df_eigen_dict[49m()
+[0;32m     12[0m display(Markdown([38;5;124mf[39m[38;5;124m'[39m[38;5;124m**Model where multiplier = [39m[38;5;132;01m{[39;00mmul[38;5;132;01m}[39;00m[38;5;124m and accelerator = [39m[38;5;132;01m{[39;00macc[38;5;132;01m}[39;00m[38;5;124m**[39m[38;5;124m'[39m))
+[0;32m     13[0m display(mma[38;5;241m.[39mstability_newton[38;5;241m.[39meigenvector_plot(size[38;5;241m=[39m([38;5;241m4[39m,[38;5;241m4[39m),per[38;5;241m=[39m[38;5;241m2023[39m));       [38;5;66;03m# show the eigenvalues [39;00m
+
+File [1;32mC:\modelflow2\modelflow\modelclass.py:1354[0m, in [0;36mOrg_model_Mixin.__getattr__[1;34m(self, name)[0m
+[0;32m   1352[0m     [38;5;28;01mreturn[39;00m mv[38;5;241m.[39mvarvis(model[38;5;241m=[39m[38;5;28mself[39m, var[38;5;241m=[39mname[38;5;241m.[39mupper())
+[0;32m   1353[0m [38;5;28;01melse[39;00m: 
+[1;32m-> 1354[0m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m([38;5;124mf[39m[38;5;124m'[39m[38;5;124mThe specification:[39m[38;5;124m"[39m[38;5;132;01m{[39;00mname[38;5;132;01m}[39;00m[38;5;124m"[39m[38;5;124m did not match a method, property or variable name[39m[38;5;124m'[39m)
+
+[1;31mAttributeError[0m: The specification:"get_df_eigen_dict" did not match a method, property or variable name
+
