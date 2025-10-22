@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Graphviz in Jupyter Cells &#8212; Some additional draft (very) material on The World Bank&#39;s MFMod Framework in Python with Modelflow</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/magic/Graphviz';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="2. A population model" href="../cohorte/population_with_sexes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../introduction.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Some additional draft (very) material on The World Bank's MFMod Framework in Python with Modelflow</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../introduction.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../specification/model%20specification.html">1. Modelflow brings together a model and a Pandas DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cohorte/population_with_sexes.html">2. A population model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Graphviz in Jupyter Cells</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/IbHansen/modelflow-manual/blob/main/papers/suplementbook/content/magic/Graphviz.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/IbHansen/modelflow-manual" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/magic/Graphviz.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Graphviz in Jupyter Cells</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="graphviz-in-jupyter-cells">
+<h1><span class="section-number">3. </span>Graphviz in Jupyter Cells<a class="headerlink" href="#graphviz-in-jupyter-cells" title="Link to this heading">#</a></h1>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">%%graphviz</span></code> cell magic to render graphs written in the <a class="reference external" href="https://graphviz.org/doc/info/lang.html">Graphviz DOT language</a>.<br />
+The rendered graph will be displayed inline in your Jupyter notebook.</p>
+<p>A subfolder named <code class="docutils literal notranslate"><span class="pre">graph</span></code> is automatically created, where both the source file (<code class="docutils literal notranslate"><span class="pre">.gv</span></code>) and the rendered outputs (<code class="docutils literal notranslate"><span class="pre">.svg</span></code> and <code class="docutils literal notranslate"><span class="pre">.png</span></code>) are saved.<br />
+The files are named using the first word following the <code class="docutils literal notranslate"><span class="pre">%%graphviz</span></code> magic command.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Option</strong></p></th>
+<th class="head text-left"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td class="text-left"><p>Name of the graph, used for saving files in the <code class="docutils literal notranslate"><span class="pre">graph</span></code> subfolder.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">browser</span></code></p></td>
+<td class="text-left"><p>Opens the rendered graph in a separate browser window.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">pdf</span></code></p></td>
+<td class="text-left"><p>Renders the graph as a PDF file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">modeljupytermagic</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">graphviz</span> simple 
+digraph G {
+    A -&gt; B;
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="62pt" height="116pt"
+ viewBox="0.00 0.00 62.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-112 58,-112 58,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-84.95" font-family="Times New Roman,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-12.95" font-family="Times New Roman,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-64.41 27,-55.73 27,-47.54"/>
+<polygon fill="black" stroke="black" points="30.5,-47.62 27,-37.62 23.5,-47.62 30.5,-47.62"/>
+</g>
+</g>
+</svg>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">graphviz</span> advanced
+
+digraph TD { rankdir =&quot;LR&quot; 
+{node  [margin=0.025 fontcolor=blue style=filled ] 
+ &quot;PAKNEIMPGNFSKN&quot; [ shape=box fillcolor= steelblue1 tooltip=&quot;Imports real&amp;#10;FRML &amp;lt;DAMP,STOC&amp;gt; PAKNEIMPGNFSKN = (PAKNEIMPGNFSKN(-1)*EXP(PAKNEIMPGNFSKN_A+ (-0.324143718656754*(LOG(PAKNEIMPGNFSKN(-1))-LOG(PAKNEGDETTOTKN(-1))+0.8*LOG(PAKNEIMPGNFSXN(-1)/PAKNYGDPFCSTXN(-1)))-0.583459272245018+1*((LOG(PAKNEGDETTOTKN))-(LOG(PAKNEGDETTOTKN(-1))))-0.0921874580409631*((LOG(PAKNEIMPGNFSXN/PAKNYGDPFCSTXN))-(LOG(PAKNEIMPGNFSXN(-1)/PAKNYGDPFCSTXN(-1))))-0.0361746331863615*DURING_2012) )) * (1-PAKNEIMPGNFSKN_D)+ PAKNEIMPGNFSKN_X*PAKNEIMPGNFSKN_D  &amp;#36;&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;Imports real&amp;#10;FRML &amp;lt;DAMP,STOC&amp;gt; PAKNEIMPGNFSKN = (PAKNEIMPGNFSKN(-1)*EXP(PAKNEIMPGNFSKN_A+ (-0.324143718656754*(LOG(PAKNEIMPGNFSKN(-1))-LOG(PAKNEGDETTOTKN(-1))+0.8*LOG(PAKNEIMPGNFSXN(-1)/PAKNYGDPFCSTXN(-1)))-0.583459272245018+1*((LOG(PAKNEGDETTOTKN))-(LOG(PAKNEGDETTOTKN(-1))))-0.0921874580409631*((LOG(PAKNEIMPGNFSXN/PAKNYGDPFCSTXN))-(LOG(PAKNEIMPGNFSXN(-1)/PAKNYGDPFCSTXN(-1))))-0.0361746331863615*DURING_2012) )) * (1-PAKNEIMPGNFSKN_D)+ PAKNEIMPGNFSKN_X*PAKNEIMPGNFSKN_D  &amp;#36;&quot;&gt;PAKNEIMPGNFSKN:Imports real&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKNEGDIFTOTKN&quot; [ shape=box fillcolor= steelblue1 tooltip=&quot;Investment real&amp;#10;FRML &amp;lt;IDENT&amp;gt; PAKNEGDIFTOTKN = PAKNEGDIFGOVKN+PAKNEGDIFPRVKN &amp;#36;&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;Investment real&amp;#10;FRML &amp;lt;IDENT&amp;gt; PAKNEGDIFTOTKN = PAKNEGDIFGOVKN+PAKNEGDIFPRVKN &amp;#36;&quot;&gt;PAKNEGDIFTOTKN:Investment real&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKNYGDPDISCKN&quot; [ shape=box fillcolor= yellow tooltip=&quot;GDP Disc., 2000 LCU mn&amp;#10;Exogen&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;GDP Disc., 2000 LCU mn&amp;#10;Exogen&quot;&gt;PAKNYGDPDISCKN:GDP Disc., 2000 LCU mn&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKNEGDISTKBKN&quot; [ shape=box fillcolor= yellow tooltip=&quot;Stock real&amp;#10;Exogen&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;Stock real&amp;#10;Exogen&quot;&gt;PAKNEGDISTKBKN:Stock real&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKNYGDPMKTPKN&quot; [ shape=box fillcolor= red tooltip=&quot;Real GDP&amp;#10;FRML &amp;lt;IDENT&amp;gt; PAKNYGDPMKTPKN = PAKNECONPRVTKN+PAKNECONGOVTKN+PAKNEGDIFTOTKN+PAKNEGDISTKBKN+PAKNEEXPGNFSKN-PAKNEIMPGNFSKN+PAKNYGDPDISCKN+PAKADAP*PAKDISPREPKN &amp;#36;&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;Real GDP&amp;#10;FRML &amp;lt;IDENT&amp;gt; PAKNYGDPMKTPKN = PAKNECONPRVTKN+PAKNECONGOVTKN+PAKNEGDIFTOTKN+PAKNEGDISTKBKN+PAKNEEXPGNFSKN-PAKNEIMPGNFSKN+PAKNYGDPDISCKN+PAKADAP*PAKDISPREPKN &amp;#36;&quot;&gt;PAKNYGDPMKTPKN:Real GDP&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKNEEXPGNFSKN&quot; [ shape=box fillcolor= steelblue1 tooltip=&quot;Exports real&amp;#10;FRML &amp;lt;DAMP,STOC&amp;gt; PAKNEEXPGNFSKN = (PAKNEEXPGNFSKN(-1)*EXP(PAKNEEXPGNFSKN_A+ (-0.35*(LOG(PAKNEEXPGNFSKN(-1))-LOG(PAKXMKT(-1))-0.6*LOG(PAKNEEXPGNFSXN(-1)/(PAKNYGDPFCSTXN(-1))))+1*((LOG(PAKXMKT))-(LOG(PAKXMKT(-1))))+0.3*((LOG(PAKNEEXPGNFSXN/(PAKNYGDPFCSTXN)))-(LOG(PAKNEEXPGNFSXN(-1)/(PAKNYGDPFCSTXN(-1)))))+4.38465374402991-0.237469889780178*DURING_1999-0.230689812873392*DURING_1998+0.320967524344658*DURING_1991+0.250252413901575*DURING_1986) )) * (1-PAKNEEXPGNFSKN_D)+ PAKNEEXPGNFSKN_X*PAKNEEXPGNFSKN_D  &amp;#36;&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;Exports real&amp;#10;FRML &amp;lt;DAMP,STOC&amp;gt; PAKNEEXPGNFSKN = (PAKNEEXPGNFSKN(-1)*EXP(PAKNEEXPGNFSKN_A+ (-0.35*(LOG(PAKNEEXPGNFSKN(-1))-LOG(PAKXMKT(-1))-0.6*LOG(PAKNEEXPGNFSXN(-1)/(PAKNYGDPFCSTXN(-1))))+1*((LOG(PAKXMKT))-(LOG(PAKXMKT(-1))))+0.3*((LOG(PAKNEEXPGNFSXN/(PAKNYGDPFCSTXN)))-(LOG(PAKNEEXPGNFSXN(-1)/(PAKNYGDPFCSTXN(-1)))))+4.38465374402991-0.237469889780178*DURING_1999-0.230689812873392*DURING_1998+0.320967524344658*DURING_1991+0.250252413901575*DURING_1986) )) * (1-PAKNEEXPGNFSKN_D)+ PAKNEEXPGNFSKN_X*PAKNEEXPGNFSKN_D  &amp;#36;&quot;&gt;PAKNEEXPGNFSKN:Exports real&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKNECONPRVTKN&quot; [ shape=box fillcolor= steelblue1 tooltip=&quot;HH. Cons Real&amp;#10;FRML &amp;lt;DAMP,STOC&amp;gt; PAKNECONPRVTKN = (PAKNECONPRVTKN(-1)*EXP(PAKNECONPRVTKN_A+ (-0.2*(LOG(PAKNECONPRVTKN(-1))-LOG(1.21203101101442)-LOG((((PAKBXFSTREMTCD(-1)-PAKBMFSTREMTCD(-1))*PAKPANUSATLS(-1))+PAKGGEXPTRNSCN(-1)+PAKNYYWBTOTLCN(-1)*(1-PAKGGREVDRCTXN(-1)/100))/PAKNECONPRVTXN(-1)))+0.763938860758873*((LOG((((PAKBXFSTREMTCD-PAKBMFSTREMTCD)*PAKPANUSATLS)+PAKGGEXPTRNSCN+PAKNYYWBTOTLCN*(1-PAKGGREVDRCTXN/100))/PAKNECONPRVTXN))-(LOG((((PAKBXFSTREMTCD(-1)-PAKBMFSTREMTCD(-1))*PAKPANUSATLS(-1))+PAKGGEXPTRNSCN(-1)+PAKNYYWBTOTLCN(-1)*(1-PAKGGREVDRCTXN(-1)/100))/PAKNECONPRVTXN(-1))))-0.0634474791568939*DURING_2009-0.3*(PAKFMLBLPOLYXN/100-((LOG(PAKNECONPRVTXN))-(LOG(PAKNECONPRVTXN(-1)))))) )) * (1-PAKNECONPRVTKN_D)+ PAKNECONPRVTKN_X*PAKNECONPRVTKN_D  &amp;#36;&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;HH. Cons Real&amp;#10;FRML &amp;lt;DAMP,STOC&amp;gt; PAKNECONPRVTKN = (PAKNECONPRVTKN(-1)*EXP(PAKNECONPRVTKN_A+ (-0.2*(LOG(PAKNECONPRVTKN(-1))-LOG(1.21203101101442)-LOG((((PAKBXFSTREMTCD(-1)-PAKBMFSTREMTCD(-1))*PAKPANUSATLS(-1))+PAKGGEXPTRNSCN(-1)+PAKNYYWBTOTLCN(-1)*(1-PAKGGREVDRCTXN(-1)/100))/PAKNECONPRVTXN(-1)))+0.763938860758873*((LOG((((PAKBXFSTREMTCD-PAKBMFSTREMTCD)*PAKPANUSATLS)+PAKGGEXPTRNSCN+PAKNYYWBTOTLCN*(1-PAKGGREVDRCTXN/100))/PAKNECONPRVTXN))-(LOG((((PAKBXFSTREMTCD(-1)-PAKBMFSTREMTCD(-1))*PAKPANUSATLS(-1))+PAKGGEXPTRNSCN(-1)+PAKNYYWBTOTLCN(-1)*(1-PAKGGREVDRCTXN(-1)/100))/PAKNECONPRVTXN(-1))))-0.0634474791568939*DURING_2009-0.3*(PAKFMLBLPOLYXN/100-((LOG(PAKNECONPRVTXN))-(LOG(PAKNECONPRVTXN(-1)))))) )) * (1-PAKNECONPRVTKN_D)+ PAKNECONPRVTKN_X*PAKNECONPRVTKN_D  &amp;#36;&quot;&gt;PAKNECONPRVTKN:HH. Cons Real&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKDISPREPKN&quot; [ shape=box fillcolor= steelblue1 tooltip=&quot;PAKDISPREPKN&amp;#10;FRML &amp;lt;IDENT&amp;gt; PAKDISPREPKN = PAKDISPREPCN/PAKNYGDPMKTPXN &amp;#36;&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;PAKDISPREPKN&amp;#10;FRML &amp;lt;IDENT&amp;gt; PAKDISPREPKN = PAKDISPREPCN/PAKNYGDPMKTPXN &amp;#36;&quot;&gt;PAKDISPREPKN:&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKADAP&quot; [ shape=box fillcolor= yellow tooltip=&quot;PAKADAP&amp;#10;Exogen&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;PAKADAP&amp;#10;Exogen&quot;&gt;PAKADAP:&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ]
+&quot;PAKNECONGOVTKN&quot; [ shape=box fillcolor= steelblue1 tooltip=&quot;Gov. Cons real&amp;#10;FRML &amp;lt;IDENT&amp;gt; PAKNECONGOVTKN = PAKNECONGOVTCN/PAKNECONGOVTXN &amp;#36;&quot;  margin=0.025 fontcolor=blue style = filled  label=&lt;&lt;TABLE BORDER=&#39;0&#39; CELLBORDER = &#39;0&#39; style = &quot;filled&quot;  &gt; &lt;TR&gt;&lt;TD tooltip=&quot;Gov. Cons real&amp;#10;FRML &amp;lt;IDENT&amp;gt; PAKNECONGOVTKN = PAKNECONGOVTCN/PAKNECONGOVTXN &amp;#36;&quot;&gt;PAKNECONGOVTKN:Gov. Cons real&lt;/TD&gt;&lt;/TR&gt; &lt;/TABLE&gt;&gt; ] 
+} 
+&quot;PAKADAP&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKADAP -&gt; PAKNYGDPMKTPKN Min. att. 0%  max: 0%&quot; href=&quot;bogus&quot; penwidth = 1.0 ]
+&quot;PAKNECONGOVTKN&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKNECONGOVTKN -&gt; PAKNYGDPMKTPKN Min. att. -276%  max: 36%&quot; href=&quot;bogus&quot; penwidth = 8.0 ]
+&quot;PAKNECONPRVTKN&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKNECONPRVTKN -&gt; PAKNYGDPMKTPKN Min. att. -156%  max: 193%&quot; href=&quot;bogus&quot; penwidth = 8.0 ]
+&quot;PAKDISPREPKN&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKDISPREPKN -&gt; PAKNYGDPMKTPKN Min. att. 0%  max: 0%&quot; href=&quot;bogus&quot; penwidth = 1.0 ]
+&quot;PAKNEGDIFTOTKN&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKNEGDIFTOTKN -&gt; PAKNYGDPMKTPKN Min. att. -21%  max: 438%&quot; href=&quot;bogus&quot; penwidth = 8.0 ]
+&quot;PAKNYGDPDISCKN&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKNYGDPDISCKN -&gt; PAKNYGDPMKTPKN Min. att. 0%  max: 0%&quot; href=&quot;bogus&quot; penwidth = 1.0 ]
+&quot;PAKNEIMPGNFSKN&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKNEIMPGNFSKN -&gt; PAKNYGDPMKTPKN Min. att. -131%  max: 167%&quot; href=&quot;bogus&quot; penwidth = 8.0 ]
+&quot;PAKNEGDISTKBKN&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKNEGDISTKBKN -&gt; PAKNYGDPMKTPKN Min. att. 0%  max: 0%&quot; href=&quot;bogus&quot; penwidth = 1.0 ]
+&quot;PAKNEEXPGNFSKN&quot; -&gt; &quot;PAKNYGDPMKTPKN&quot; [ style = filled tooltip=&quot; PAKNEEXPGNFSKN -&gt; PAKNYGDPMKTPKN Min. att. -2%  max: 56%&quot; href=&quot;bogus&quot; penwidth = 5.642320644004448 ]
+{ rank = sink; &quot;PAKNYGDPMKTPKN&quot;  ; }
+ label = &quot;PAKNYGDPMKTPKN&quot;;
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.0.0 (0)
+ -->
+<!-- Title: TD Pages: 1 -->
+<svg width="432pt" height="408pt"
+ viewBox="0.00 0.00 432.00 407.99" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.815171 0.815171) rotate(0) translate(4 496.5)">
+<title>TD</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-496.5 525.95,-496.5 525.95,4 -4,4"/>
+<text text-anchor="middle" x="260.98" y="-7.2" font-family="Times New Roman,serif" font-size="14.00">PAKNYGDPMKTPKN</text>
+<!-- PAKNEIMPGNFSKN -->
+<g id="node1" class="node">
+<title>PAKNEIMPGNFSKN</title>
+<g id="a_node1"><a xlink:title="Imports real&#10;FRML &lt;DAMP,STOC&gt; PAKNEIMPGNFSKN = (PAKNEIMPGNFSKN(&#45;1)*EXP(PAKNEIMPGNFSKN_A+ (&#45;0.324143718656754*(LOG(PAKNEIMPGNFSKN(&#45;1))&#45;LOG(PAKNEGDETTOTKN(&#45;1))+0.8*LOG(PAKNEIMPGNFSXN(&#45;1)/PAKNYGDPFCSTXN(&#45;1)))&#45;0.583459272245018+1*((LOG(PAKNEGDETTOTKN))&#45;(LOG(PAKNEGDETTOTKN(&#45;1))))&#45;0.0921874580409631*((LOG(PAKNEIMPGNFSXN/PAKNYGDPFCSTXN))&#45;(LOG(PAKNEIMPGNFSXN(&#45;1)/PAKNYGDPFCSTXN(&#45;1))))&#45;0.0361746331863615*DURING_2012) )) * (1&#45;PAKNEIMPGNFSKN_D)+ PAKNEIMPGNFSKN_X*PAKNEIMPGNFSKN_D &#160;$">
+<polygon fill="#63b8ff" stroke="black" points="244.85,-492.5 39.75,-492.5 39.75,-456.5 244.85,-456.5 244.85,-492.5"/>
+<text text-anchor="start" x="45.55" y="-469.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEIMPGNFSKN:Imports real</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPMKTPKN -->
+<g id="node5" class="node">
+<title>PAKNYGDPMKTPKN</title>
+<g id="a_node5"><a xlink:title="Real GDP&#10;FRML &lt;IDENT&gt; PAKNYGDPMKTPKN = PAKNECONPRVTKN+PAKNECONGOVTKN+PAKNEGDIFTOTKN+PAKNEGDISTKBKN+PAKNEEXPGNFSKN&#45;PAKNEIMPGNFSKN+PAKNYGDPDISCKN+PAKADAP*PAKDISPREPKN $">
+<polygon fill="red" stroke="black" points="521.95,-276.5 320.6,-276.5 320.6,-240.5 521.95,-240.5 521.95,-276.5"/>
+<text text-anchor="start" x="326.4" y="-253.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPMKTPKN:Real GDP</text>
+</a>
+</g>
+</g>
+<!-- PAKNEIMPGNFSKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge7" class="edge">
+<title>PAKNEIMPGNFSKN&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title=" PAKNEIMPGNFSKN &#45;&gt; PAKNYGDPMKTPKN Min. att. &#45;131% &#160;max: 167%">
+<path fill="none" stroke="black" stroke-width="8" d="M245.32,-464.71C259.18,-460.66 272.71,-455.1 284.6,-447.5 344.08,-409.5 385.57,-335.32 405.92,-292.05"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="412.17,-295.22 409.92,-283.22 399.42,-289.45 412.17,-295.22"/>
+</a>
+</g>
+</g>
+<!-- PAKNEGDIFTOTKN -->
+<g id="node2" class="node">
+<title>PAKNEGDIFTOTKN</title>
+<g id="a_node2"><a xlink:title="Investment real&#10;FRML &lt;IDENT&gt; PAKNEGDIFTOTKN = PAKNEGDIFGOVKN+PAKNEGDIFPRVKN $">
+<polygon fill="#63b8ff" stroke="black" points="253.1,-438.5 31.5,-438.5 31.5,-402.5 253.1,-402.5 253.1,-438.5"/>
+<text text-anchor="start" x="37.3" y="-415.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEGDIFTOTKN:Investment real</text>
+</a>
+</g>
+</g>
+<!-- PAKNEGDIFTOTKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge5" class="edge">
+<title>PAKNEGDIFTOTKN&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title=" PAKNEGDIFTOTKN &#45;&gt; PAKNYGDPMKTPKN Min. att. &#45;21% &#160;max: 438%">
+<path fill="none" stroke="black" stroke-width="8" d="M253.52,-406.18C264.33,-402.8 274.88,-398.63 284.6,-393.5 331.99,-368.47 373.53,-321.39 397.77,-289.98"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="403.08,-294.57 403.47,-282.37 391.87,-286.18 403.08,-294.57"/>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPDISCKN -->
+<g id="node3" class="node">
+<title>PAKNYGDPDISCKN</title>
+<g id="a_node3"><a xlink:title="GDP Disc., 2000 LCU mn&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="284.6,-384.5 0,-384.5 0,-348.5 284.6,-348.5 284.6,-384.5"/>
+<text text-anchor="start" x="5.8" y="-361.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNYGDPDISCKN:GDP Disc., 2000 LCU mn</text>
+</a>
+</g>
+</g>
+<!-- PAKNYGDPDISCKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge6" class="edge">
+<title>PAKNYGDPDISCKN&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title=" PAKNYGDPDISCKN &#45;&gt; PAKNYGDPMKTPKN Min. att. 0% &#160;max: 0%">
+<path fill="none" stroke="black" d="M258.38,-348.03C267.36,-345.53 276.2,-342.7 284.6,-339.5 321.59,-325.43 359.99,-301.49 386.45,-283.27"/>
+<polygon fill="black" stroke="black" points="388.2,-286.32 394.39,-277.72 384.19,-280.58 388.2,-286.32"/>
+</a>
+</g>
+</g>
+<!-- PAKNEGDISTKBKN -->
+<g id="node4" class="node">
+<title>PAKNEGDISTKBKN</title>
+<g id="a_node4"><a xlink:title="Stock real&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="238.48,-330.5 46.13,-330.5 46.13,-294.5 238.48,-294.5 238.48,-330.5"/>
+<text text-anchor="start" x="51.93" y="-307.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEGDISTKBKN:Stock real</text>
+</a>
+</g>
+</g>
+<!-- PAKNEGDISTKBKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge8" class="edge">
+<title>PAKNEGDISTKBKN&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge8"><a xlink:href="bogus" xlink:title=" PAKNEGDISTKBKN &#45;&gt; PAKNYGDPMKTPKN Min. att. 0% &#160;max: 0%">
+<path fill="none" stroke="black" d="M238.71,-294.37C254.06,-291.43 269.77,-288.39 284.6,-285.5 295.01,-283.47 305.87,-281.34 316.7,-279.2"/>
+<polygon fill="black" stroke="black" points="317.36,-282.63 326.49,-277.26 316,-275.77 317.36,-282.63"/>
+</a>
+</g>
+</g>
+<!-- PAKNEEXPGNFSKN -->
+<g id="node6" class="node">
+<title>PAKNEEXPGNFSKN</title>
+<g id="a_node6"><a xlink:title="Exports real&#10;FRML &lt;DAMP,STOC&gt; PAKNEEXPGNFSKN = (PAKNEEXPGNFSKN(&#45;1)*EXP(PAKNEEXPGNFSKN_A+ (&#45;0.35*(LOG(PAKNEEXPGNFSKN(&#45;1))&#45;LOG(PAKXMKT(&#45;1))&#45;0.6*LOG(PAKNEEXPGNFSXN(&#45;1)/(PAKNYGDPFCSTXN(&#45;1))))+1*((LOG(PAKXMKT))&#45;(LOG(PAKXMKT(&#45;1))))+0.3*((LOG(PAKNEEXPGNFSXN/(PAKNYGDPFCSTXN)))&#45;(LOG(PAKNEEXPGNFSXN(&#45;1)/(PAKNYGDPFCSTXN(&#45;1)))))+4.38465374402991&#45;0.237469889780178*DURING_1999&#45;0.230689812873392*DURING_1998+0.320967524344658*DURING_1991+0.250252413901575*DURING_1986) )) * (1&#45;PAKNEEXPGNFSKN_D)+ PAKNEEXPGNFSKN_X*PAKNEEXPGNFSKN_D &#160;$">
+<polygon fill="#63b8ff" stroke="black" points="244.85,-276.5 39.75,-276.5 39.75,-240.5 244.85,-240.5 244.85,-276.5"/>
+<text text-anchor="start" x="45.55" y="-253.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNEEXPGNFSKN:Exports real</text>
+</a>
+</g>
+</g>
+<!-- PAKNEEXPGNFSKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge9" class="edge">
+<title>PAKNEEXPGNFSKN&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge9"><a xlink:href="bogus" xlink:title=" PAKNEEXPGNFSKN &#45;&gt; PAKNYGDPMKTPKN Min. att. &#45;2% &#160;max: 56%">
+<path fill="none" stroke="black" stroke-width="5.64" d="M245.26,-258.5C264.42,-258.5 284.58,-258.5 304.14,-258.5"/>
+<polygon fill="black" stroke="black" stroke-width="5.64" points="304.01,-263.44 314.01,-258.5 304.01,-253.56 304.01,-263.44"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN -->
+<g id="node7" class="node">
+<title>PAKNECONPRVTKN</title>
+<g id="a_node7"><a xlink:title="HH. Cons Real&#10;FRML &lt;DAMP,STOC&gt; PAKNECONPRVTKN = (PAKNECONPRVTKN(&#45;1)*EXP(PAKNECONPRVTKN_A+ (&#45;0.2*(LOG(PAKNECONPRVTKN(&#45;1))&#45;LOG(1.21203101101442)&#45;LOG((((PAKBXFSTREMTCD(&#45;1)&#45;PAKBMFSTREMTCD(&#45;1))*PAKPANUSATLS(&#45;1))+PAKGGEXPTRNSCN(&#45;1)+PAKNYYWBTOTLCN(&#45;1)*(1&#45;PAKGGREVDRCTXN(&#45;1)/100))/PAKNECONPRVTXN(&#45;1)))+0.763938860758873*((LOG((((PAKBXFSTREMTCD&#45;PAKBMFSTREMTCD)*PAKPANUSATLS)+PAKGGEXPTRNSCN+PAKNYYWBTOTLCN*(1&#45;PAKGGREVDRCTXN/100))/PAKNECONPRVTXN))&#45;(LOG((((PAKBXFSTREMTCD(&#45;1)&#45;PAKBMFSTREMTCD(&#45;1))*PAKPANUSATLS(&#45;1))+PAKGGEXPTRNSCN(&#45;1)+PAKNYYWBTOTLCN(&#45;1)*(1&#45;PAKGGREVDRCTXN(&#45;1)/100))/PAKNECONPRVTXN(&#45;1))))&#45;0.0634474791568939*DURING_2009&#45;0.3*(PAKFMLBLPOLYXN/100&#45;((LOG(PAKNECONPRVTXN))&#45;(LOG(PAKNECONPRVTXN(&#45;1)))))) )) * (1&#45;PAKNECONPRVTKN_D)+ PAKNECONPRVTKN_X*PAKNECONPRVTKN_D &#160;$">
+<polygon fill="#63b8ff" stroke="black" points="254.6,-222.5 30,-222.5 30,-186.5 254.6,-186.5 254.6,-222.5"/>
+<text text-anchor="start" x="35.8" y="-199.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONPRVTKN:HH. Cons Real</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONPRVTKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge3" class="edge">
+<title>PAKNECONPRVTKN&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title=" PAKNECONPRVTKN &#45;&gt; PAKNYGDPMKTPKN Min. att. &#45;156% &#160;max: 193%">
+<path fill="none" stroke="black" stroke-width="8" d="M240.61,-222.99C255.35,-225.82 270.38,-228.73 284.6,-231.5 293.37,-233.21 302.45,-234.99 311.57,-236.79"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="309.96,-243.61 321.13,-238.68 312.68,-229.87 309.96,-243.61"/>
+</a>
+</g>
+</g>
+<!-- PAKDISPREPKN -->
+<g id="node8" class="node">
+<title>PAKDISPREPKN</title>
+<g id="a_node8"><a xlink:title="PAKDISPREPKN&#10;FRML &lt;IDENT&gt; PAKDISPREPKN = PAKDISPREPCN/PAKNYGDPMKTPXN $">
+<polygon fill="#63b8ff" stroke="black" points="199.85,-168.5 84.75,-168.5 84.75,-132.5 199.85,-132.5 199.85,-168.5"/>
+<text text-anchor="start" x="90.55" y="-145.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKDISPREPKN:</text>
+</a>
+</g>
+</g>
+<!-- PAKDISPREPKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge4" class="edge">
+<title>PAKDISPREPKN&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title=" PAKDISPREPKN &#45;&gt; PAKNYGDPMKTPKN Min. att. 0% &#160;max: 0%">
+<path fill="none" stroke="black" d="M200.25,-156.76C226.52,-160.8 257.76,-167.29 284.6,-177.5 321.59,-191.57 359.99,-215.51 386.45,-233.73"/>
+<polygon fill="black" stroke="black" points="384.19,-236.42 394.39,-239.28 388.2,-230.68 384.19,-236.42"/>
+</a>
+</g>
+</g>
+<!-- PAKADAP -->
+<g id="node9" class="node">
+<title>PAKADAP</title>
+<g id="a_node9"><a xlink:title="PAKADAP&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="181.48,-114.5 103.13,-114.5 103.13,-78.5 181.48,-78.5 181.48,-114.5"/>
+<text text-anchor="start" x="108.93" y="-91.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKADAP:</text>
+</a>
+</g>
+</g>
+<!-- PAKADAP&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge1" class="edge">
+<title>PAKADAP&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge1"><a xlink:href="bogus" xlink:title=" PAKADAP &#45;&gt; PAKNYGDPMKTPKN Min. att. 0% &#160;max: 0%">
+<path fill="none" stroke="black" d="M181.9,-97.79C211.5,-100.17 252.58,-106.59 284.6,-123.5 334.13,-149.66 377.26,-199.9 400.94,-231.17"/>
+<polygon fill="black" stroke="black" points="397.98,-233.05 406.75,-239 403.6,-228.88 397.98,-233.05"/>
+</a>
+</g>
+</g>
+<!-- PAKNECONGOVTKN -->
+<g id="node10" class="node">
+<title>PAKNECONGOVTKN</title>
+<g id="a_node10"><a xlink:title="Gov. Cons real&#10;FRML &lt;IDENT&gt; PAKNECONGOVTKN = PAKNECONGOVTCN/PAKNECONGOVTXN $">
+<polygon fill="#63b8ff" stroke="black" points="255.73,-60.5 28.88,-60.5 28.88,-24.5 255.73,-24.5 255.73,-60.5"/>
+<text text-anchor="start" x="34.68" y="-37.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">PAKNECONGOVTKN:Gov. Cons real</text>
+</a>
+</g>
+</g>
+<!-- PAKNECONGOVTKN&#45;&gt;PAKNYGDPMKTPKN -->
+<g id="edge2" class="edge">
+<title>PAKNECONGOVTKN&#45;&gt;PAKNYGDPMKTPKN</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title=" PAKNECONGOVTKN &#45;&gt; PAKNYGDPMKTPKN Min. att. &#45;276% &#160;max: 36%">
+<path fill="none" stroke="black" stroke-width="8" d="M255.91,-55.72C266.02,-59.33 275.76,-63.85 284.6,-69.5 344.08,-107.5 385.57,-181.68 405.92,-224.95"/>
+<polygon fill="black" stroke="black" stroke-width="8" points="399.42,-227.55 409.92,-233.78 412.17,-221.78 399.42,-227.55"/>
+</a>
+</g>
+</g>
+</g>
+</svg>
+</div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\magic"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../cohorte/population_with_sexes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>A population model</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ib Hansen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright World Bank. 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -65,6 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/specification/model specification';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. A population model" href="../cohorte/population_with_sexes.html" />
     <link rel="prev" title="Foreword" href="../introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -165,6 +166,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Modelflow brings together a model and a Pandas DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cohorte/population_with_sexes.html">2. A population model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magic/Graphviz.html">3. Graphviz in Jupyter Cells</a></li>
 </ul>
 
     </div>
@@ -396,15 +399,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-calculation-of-add-factors">1.9.3. Reverse Calculation of Add Factors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-of-add-factors">1.9.4. Naming of Add Factors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-calculated-fitted-values">1.9.5. Including Calculated Fitted Values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-str-replace-to-simplify-multi-dimensional-formulas">1.9.6. Using <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> to simplify multi-dimensional formulas</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.9.6.1. Example</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-replacements-or-str-replace-to-simplify-multi-dimensional-formulas">1.10. Using <code class="docutils literal notranslate"><span class="pre">replacements=</span></code> or <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> to simplify multi-dimensional formulas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-helps">1.10.1. 💡 Why this helps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.10.2. 🧮 Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.10.2. 🧮 Example</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-list-defs-to-define-lists-in-mexplode">1.11. Using <code class="docutils literal notranslate"><span class="pre">list_defs=</span></code> to define lists in <code class="docutils literal notranslate"><span class="pre">Mexplode</span></code></a><ul class="nav section-nav flex-column">
@@ -413,12 +412,12 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-functools-partial-to-create-simplified-mexplode-constructors">1.12. Using <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code> to create simplified <code class="docutils literal notranslate"><span class="pre">Mexplode</span></code> constructors</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.12.1. 💡 Why this helps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.12.1. 💡 Why this helps</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-modular-models-by-combining-smaller-formula-groups">1.13. Building modular models by combining smaller formula groups</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-approach-is-beneficial">1.13.1. 💡 Why this approach is beneficial</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.13.2. ⚙️ How it works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.13.2. ⚙️ How it works</a></li>
 </ul>
 </li>
 </ul>
@@ -1347,21 +1346,6 @@ FRML &lt;CALC_ADD_FACTOR&gt;  PROFIT__TOTAL_A = (PROFIT__TOTAL) - ((PROFIT__DANS
 </div>
 </div>
 </section>
-<section id="using-str-replace-to-simplify-multi-dimensional-formulas">
-<h3><span class="section-number">1.9.6. </span>Using <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> to simplify multi-dimensional formulas<a class="headerlink" href="#using-str-replace-to-simplify-multi-dimensional-formulas" title="Link to this heading">#</a></h3>
-<p>When a formula includes several dimensions (e.g., <code class="docutils literal notranslate"><span class="pre">banks</span></code>, <code class="docutils literal notranslate"><span class="pre">country</span></code>, <code class="docutils literal notranslate"><span class="pre">ports</span></code>), its variable names can quickly become long and hard to read.<br />
-To keep your model definitions compact and readable, you can define formulas with a <strong>placeholder</strong> (like <code class="docutils literal notranslate"><span class="pre">__dim</span></code>) and use Python’s <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> afterward to insert the actual dimension patterns.</p>
-<p>This approach has several benefits:</p>
-<ul class="simple">
-<li><p><strong>Cleaner input:</strong> You can focus on the formula’s logic first, without worrying about complex dimension naming.</p></li>
-<li><p><strong>Consistency:</strong> The same placeholder pattern can be reused for multiple formulas.</p></li>
-<li><p><strong>Maintainability:</strong> If your dimension structure changes, you only update one replacement string.</p></li>
-</ul>
-<section id="id2">
-<h4><span class="section-number">1.9.6.1. </span>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
-<p>Below, the formula is first defined using a generic placeholder <code class="docutils literal notranslate"><span class="pre">__dim</span></code>, then replaced with the full dimensional structure <code class="docutils literal notranslate"><span class="pre">__{banks}__{country}__{ports}</span></code>.</p>
-</section>
-</section>
 </section>
 <section id="using-replacements-or-str-replace-to-simplify-multi-dimensional-formulas">
 <h2><span class="section-number">1.10. </span>Using <code class="docutils literal notranslate"><span class="pre">replacements=</span></code> or <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> to simplify multi-dimensional formulas<a class="headerlink" href="#using-replacements-or-str-replace-to-simplify-multi-dimensional-formulas" title="Link to this heading">#</a></h2>
@@ -1383,8 +1367,8 @@ or <strong>a list of such tuples</strong> for multiple substitutions.</p>
 <li><p><strong>Convenience:</strong> The <code class="docutils literal notranslate"><span class="pre">replacements=</span></code> argument avoids having to call <code class="docutils literal notranslate"><span class="pre">.replace()</span></code> manually.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h3><span class="section-number">1.10.2. </span>🧮 Example<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3><span class="section-number">1.10.2. </span>🧮 Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Below, the same model is defined in two equivalent ways — first using <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>, and then using the  <code class="docutils literal notranslate"><span class="pre">replacements=</span></code> argument.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -1531,8 +1515,8 @@ FRML &lt;&gt; PROFIT__IBS = REVENUE_IBS-EXPENSES_IBS $
 you can simplify your workflow by creating a <strong>pre-configured version</strong> of <code class="docutils literal notranslate"><span class="pre">Mexplode</span></code> using <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code>.</p>
 <p>This avoids repeating the same arguments for every model block and makes your code cleaner and more consistent.</p>
 <hr class="docutils" />
-<section id="id4">
-<h3><span class="section-number">1.12.1. </span>💡 Why this helps<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3><span class="section-number">1.12.1. </span>💡 Why this helps<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Less repetition:</strong> No need to retype the same <code class="docutils literal notranslate"><span class="pre">list_defs</span></code> or <code class="docutils literal notranslate"><span class="pre">replacements</span></code> each time.</p></li>
 <li><p><strong>Consistency:</strong> All model blocks use identical definitions and structural setup.</p></li>
@@ -1601,8 +1585,8 @@ Instead of defining one large block of equations in a single string, it’s ofte
 </ul>
 </section>
 <hr class="docutils" />
-<section id="id5">
-<h3><span class="section-number">1.13.2. </span>⚙️ How it works<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3><span class="section-number">1.13.2. </span>⚙️ How it works<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator merges multiple <code class="docutils literal notranslate"><span class="pre">Mexplode</span></code> objects into a single <code class="docutils literal notranslate"><span class="pre">Lexplode</span></code> container, which behaves like a unified model.<br />
 This aggregation does not recompute anything — it simply combines their normalized forms, making it fast and memory-efficient.</p>
 <p>Below, we define two small model blocks:</p>
@@ -4517,6 +4501,15 @@ FRML &lt;&gt; EXPECTED_LOSS_IBS = ((EL__IBS__DENMARK__HOUSEHOLDS+EL__IBS__DENMAR
         <p class="prev-next-title">Foreword</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../cohorte/population_with_sexes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>A population model</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -4574,15 +4567,11 @@ FRML &lt;&gt; EXPECTED_LOSS_IBS = ((EL__IBS__DENMARK__HOUSEHOLDS+EL__IBS__DENMAR
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-calculation-of-add-factors">1.9.3. Reverse Calculation of Add Factors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-of-add-factors">1.9.4. Naming of Add Factors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-calculated-fitted-values">1.9.5. Including Calculated Fitted Values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-str-replace-to-simplify-multi-dimensional-formulas">1.9.6. Using <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> to simplify multi-dimensional formulas</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.9.6.1. Example</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-replacements-or-str-replace-to-simplify-multi-dimensional-formulas">1.10. Using <code class="docutils literal notranslate"><span class="pre">replacements=</span></code> or <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> to simplify multi-dimensional formulas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-helps">1.10.1. 💡 Why this helps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.10.2. 🧮 Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.10.2. 🧮 Example</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-list-defs-to-define-lists-in-mexplode">1.11. Using <code class="docutils literal notranslate"><span class="pre">list_defs=</span></code> to define lists in <code class="docutils literal notranslate"><span class="pre">Mexplode</span></code></a><ul class="nav section-nav flex-column">
@@ -4591,12 +4580,12 @@ FRML &lt;&gt; EXPECTED_LOSS_IBS = ((EL__IBS__DENMARK__HOUSEHOLDS+EL__IBS__DENMAR
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-functools-partial-to-create-simplified-mexplode-constructors">1.12. Using <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code> to create simplified <code class="docutils literal notranslate"><span class="pre">Mexplode</span></code> constructors</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.12.1. 💡 Why this helps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.12.1. 💡 Why this helps</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-modular-models-by-combining-smaller-formula-groups">1.13. Building modular models by combining smaller formula groups</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-approach-is-beneficial">1.13.1. 💡 Why this approach is beneficial</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.13.2. ⚙️ How it works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.13.2. ⚙️ How it works</a></li>
 </ul>
 </li>
 </ul>
