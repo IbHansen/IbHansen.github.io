@@ -362,7 +362,10 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specification-of-a-model-describing-population-dynamics">2.2. Specification of a model describing population dynamics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracing-the-causality-structure">2.3. Tracing the causality structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-this-input">2.3. From This Input:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-high-level-model-is-extracted">2.4. This high level model is extracted:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-low-level-model-is-generated">2.5. This low level model is generated:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracing-the-causality-structure">2.6. Tracing the causality structure</a></li>
 </ul>
             </nav>
         </div>
@@ -387,10 +390,10 @@
 <p>Through automatic list expansion and dependency tracing, <em>ModelFlow</em> enables clear and compact equation definitions while maintaining full transparency of the underlying causal structure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from pprint import pprint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span><span class="p">,</span> <span class="n">Latex</span><span class="p">,</span> <span class="n">Markdown</span> <span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">SVG</span><span class="p">,</span> <span class="n">display_svg</span><span class="p">,</span><span class="n">IFrame</span>    
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">modelconstruct</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mexplode</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">modelpattern</span><span class="w"> </span><span class="kn">import</span> <span class="n">list_extract</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">modelconstruct</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mexplode</span><span class="p">,</span><span class="n">mfmod_list_to_codeblock</span>
 </pre></div>
 </div>
 </div>
@@ -464,8 +467,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mexplode</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">list ages = ages : age_0 * age_5</span>
-<span class="s1">doable [ages ages_nostart]  pop_primo__</span><span class="si">{ages}</span><span class="s1"> = pop__</span><span class="si">{ages_before}</span><span class="s1">(-1)&#39;&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span>
+<span class="s1">&gt;list ages = ages : age_0 * age_5</span>
+<span class="s1">&gt;doable [ages ages_nostart]  pop_primo__</span><span class="si">{ages}</span><span class="s1"> = pop__</span><span class="si">{ages_before}</span><span class="s1">(-1)&#39;&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span>
 </pre></div>
 </div>
 </div>
@@ -506,50 +509,141 @@ To make the specification more concise and readable, two string replacements are
 </div>
 <p>This approach reduces visual clutter in the equation definitions and helps express structured relationships more clearly across <strong>sex</strong> and <strong>age</strong> dimensions.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">list ages = ages : age_0 * age_11 </span>
-<span class="s1">list sexes = sexes   : female male /</span>
-<span class="s1">             fertile :     1     0</span>
-<span class="s1">£ primo population is (ultimo)population in age group before</span>
-<span class="s1">doable [ages ages_nostart]  pop_primo__a = pop__ab(-1)</span>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1"># A Demography Model - Detailed Explanation</span>
 
-<span class="s1">£ for first age group the population depends on all births </span>
-<span class="s1">doable [ages ages_start]   pop_before_death__a   = birth__total__</span><span class="si">{sexes}</span><span class="s1"> + migration__a</span>
-<span class="s1">doable [ages ages_nostart] pop_before_death__a   = pop_primo__a + migration__a </span>
+<span class="s1">This model describes the evolution of a population over time, divided by age groups and sex.</span>
+<span class="s1">It captures the fundamental demographic dynamics - births, deaths, and migration - which together determine </span>
+<span class="s1">how the total population changes from one period to the next.</span>
 
-<span class="s1">£ --- Step 3: Deaths ---</span>
-<span class="s1">doable  [ages ages_end ]  death_rate__a =1.0 </span>
-<span class="s1">doable  &lt;sum=total&gt;          death__a = pop_before_death__a  * death_rate__a</span>
+<span class="s1">---</span>
 
-<span class="s1">£ --- Step 4: End-of-period population ---</span>
-<span class="s1">doable  &lt;sum=total&gt;          pop__a  = pop_before_death__a  - death__a </span>
+<span class="s1">## 1. List Definitions</span>
 
-<span class="s1">£ --- Step 5: Births  (all except AGE_0 ) fertility is assumed 0 for low and high ages  ---</span>
+<span class="s1">&gt;list ages = ages : age_0 * age_11  </span>
+<span class="s1">&gt;list sexes = sexes   : female male /  </span>
+<span class="s1">&gt;             fertile :     1     0  </span>
 
-<span class="s1">doable &lt;sum=total&gt; [ages ages_nostart,  sexes    fertile] birth__a = pop_primo__a * fertility__a</span>
+<span class="s1">These lists define the model’s structural dimensions:</span>
 
-<span class="s1">birth_total = sum(ages ages_nostart=1,sum(sexes fertile=1,birth__a))        </span>
+<span class="s1">- &quot;ages&quot; enumerates age groups, from age_0 (newborns) up to age_11 (the oldest group).  </span>
+<span class="s1">- &quot;sexes&quot; distinguishes between female and male.  </span>
+<span class="s1">- The &quot;fertile&quot; flag marks whether a sex is fertile (1 for females, 0 for males), which determines participation in the fertility equations.</span>
 
-<span class="s1">£ --- Some are born female and some are born male :</span>
+<span class="s1">---</span>
 
-<span class="s1">birth__total__female = FRAC_BIRTH__female * birth_total</span>
-<span class="s1">birth__total__male = (1 - FRAC_BIRTH__female) * birth_total</span>
+<span class="s1">## 2. Population Dynamics</span>
+
+<span class="s1">The population is tracked at various stages within each period.</span>
+
+<span class="s1">### a. Primo Population</span>
+
+<span class="s1">&gt;doable [ages ages_nostart]  pop_primo__a = pop__ab(-1)</span>
+
+<span class="s1">For all age groups except the youngest (`ages_nostart` excludes the start group),</span>
+<span class="s1">the beginning-of-period (primo) population in an age group is equal to the end-of-period (ultimo) population of the previous age group in </span>
+<span class="s1">the previous period.</span>
+<span class="s1">This represents aging: people move from one age group to the next as time progresses.</span>
+
+<span class="s1">### b. Population Before Death</span>
+
+<span class="s1">For the youngest age group:</span>
+
+<span class="s1">&gt;doable [ages ages_start]   pop_before_death__a   = birth__total__</span><span class="si">{sexes}</span><span class="s1"> + migration__a</span>
+
+<span class="s1">The youngest group’s population before death depends on births of that sex in the current period and net migration for that age group.</span>
+<span class="s1">This reflects that new members of the population come from births and migration, since there is no prior age group for newborns.</span>
+
+<span class="s1">For all other age groups:</span>
+
+<span class="s1">&gt;doable [ages ages_nostart] pop_before_death__a   = pop_primo__a + migration__a</span>
+
+<span class="s1">Older groups’ populations before death are determined by the primo population (those who aged into the group) and migration inflows or outflows.</span>
+
+<span class="s1">---</span>
+
+<span class="s1">## 3. Mortality and Deaths</span>
+
+<span class="s1">&gt;doable  [ages ages_end ]  death_rate__a =1.0  </span>
+<span class="s1">&gt;doable  &lt;sum=total&gt; death__a = pop_before_death__a  * death_rate__a</span>
+
+<span class="s1">For the last age group, the death rate is set to 1.0, implying that everyone in this group dies within the period - </span>
+<span class="s1">a closure condition preventing population overflow beyond the oldest cohort.</span>
+<span class="s1">Deaths in all groups are computed as the product of the population before death and the age-specific death rate.</span>
+
+<span class="s1">## 4. End-of-Period (Ultimo) Population</span>
+
+<span class="s1">&gt;doable  &lt;sum=total&gt; pop__a  = pop_before_death__a  - death__a</span>
+
+<span class="s1">The end-of-period population equals the population before death minus deaths.</span>
+<span class="s1">This is the surviving population that will age into the next group in the following period.</span>
 
 
-<span class="s1">£ --- Step 6: Totals and consistency check ---</span>
-<span class="s1">migration__total = sum(ages,sum(sexes,migration__a))</span>
-<span class="s1">pop__total_check  = (pop__total(-1) + birth__total + migration__total - death__total) - pop__total</span>
+<span class="s1">## 5. Births and Fertility</span>
 
+<span class="s1">&gt;doable &lt;sum=total&gt; [ages ages_nostart,  sexes fertile] birth__a = pop_primo__a * fertility__a</span>
+
+<span class="s1">Births are generated by fertile females in each age group.</span>
+<span class="s1">Fertility rates (fertility__a) vary by age, and are in the dataframe set to zero outside reproductive ages.</span>
+<span class="s1">The total number of births is thus the sum across fertile age groups.</span>
+
+<span class="s1">---</span>
+
+<span class="s1">## 6. Sex Ratio at Birth</span>
+
+<span class="s1">&gt;birth__total__female = FRAC_BIRTH__female * birth_total  </span>
+<span class="s1">&gt;birth__total__male = (1 - FRAC_BIRTH__female) * birth_total</span>
+
+<span class="s1">The total births are split into female and male newborns using the fraction `FRAC_BIRTH__female`.</span>
+<span class="s1">This ensures a biologically realistic sex distribution at birth.</span>
+
+<span class="s1">---</span>
+
+<span class="s1">## 7. Totals and Consistency Check</span>
+
+<span class="s1">&gt;migration__total = sum(ages,sum(sexes,migration__a))  </span>
+<span class="s1">migration__total aggregates migration flows over all ages and sexes.</span>
+
+<span class="s1">&gt;pop__total_check  = (pop__total(-1) + birth__total + migration__total - death__total) - pop__total</span>
+
+<span class="s1">pop__total_check serves as a consistency test for the model:</span>
+<span class="s1">The change in total population should equal births + migration – deaths.</span>
+<span class="s1">Any deviation indicates potential modeling or data inconsistencies.</span>
+
+<span class="s1">---</span>
+
+<span class="s1">## Summary</span>
+
+<span class="s1">This demographic model captures the fundamental accounting identities of population dynamics:</span>
+
+<span class="s1">Population&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;age&lt;/sup&gt; = Population&lt;sub&gt;t-1&lt;/sub&gt;&lt;sup&gt;age-1&lt;/sup&gt; + Births&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;age&lt;/sup&gt; + Migration&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;age&lt;/sup&gt; - Deaths&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;age&lt;/sup&gt;</span>
+
+<span class="s1">For the youngest cohort (age = 0), there is no inflow from age − 1,  </span>
+<span class="s1">so the equation simplifies to:</span>
+
+<span class="s1">Population&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;0&lt;/sup&gt; = Births&lt;sub&gt;t&lt;/sub&gt; + Migration&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;0&lt;/sup&gt; - Deaths&lt;sub&gt;t&lt;/sub&gt;&lt;sup&gt;0&lt;/sup&gt;</span>
+
+<span class="s1">It distinguishes individuals by age and sex, allowing for realistic aging, fertility, and mortality processes.</span>
+<span class="s1">The model is modular and extendable - one could add features such as:</span>
+<span class="s1">- Age-dependent migration patterns</span>
+<span class="s1">- Variable mortality shocks (for example, pandemics)</span>
+<span class="s1">- Policy impacts on fertility rates</span>
+<span class="s1">- Regional or socioeconomic subpopulations</span>
 
 <span class="s1">&#39;&#39;&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This Input:&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">mm</span> <span class="o">:=</span> <span class="n">Mexplode</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span>
-<span class="n">replacements</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;__ab&#39;</span><span class="p">,</span><span class="s1">&#39;__</span><span class="si">{sexes}</span><span class="s1">__</span><span class="si">{ages_before}</span><span class="s1">&#39;</span><span class="p">),(</span><span class="s1">&#39;__a&#39;</span><span class="p">,</span><span class="s1">&#39;__</span><span class="si">{sexes}</span><span class="s1">__</span><span class="si">{ages}</span><span class="s1">&#39;</span><span class="p">)]</span>
-               
-               <span class="p">))</span><span class="o">.</span><span class="n">showclean_frml_statements</span>  
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Creates this Output&#39;</span><span class="p">)</span>
-<span class="n">mm</span><span class="o">.</span><span class="n">show</span>
+<span class="n">mm</span> <span class="o">=</span> <span class="n">Mexplode</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span>
+<span class="n">replacements</span><span class="o">=</span><span class="p">[(</span><span class="sa">r</span><span class="s1">&#39;__ab&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;__</span><span class="si">{sexes}</span><span class="s1">__</span><span class="si">{ages_before}</span><span class="s1">&#39;</span><span class="p">),(</span><span class="sa">r</span><span class="s1">&#39;__a&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;__</span><span class="si">{sexes}</span><span class="s1">__</span><span class="si">{ages}</span><span class="s1">&#39;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="from-this-input">
+<h2><span class="section-number">2.3. </span>From This Input:<a class="headerlink" href="#from-this-input" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span><span class="o">.</span><span class="n">render</span>
 </pre></div>
 </div>
 </div>
@@ -559,45 +653,158 @@ To make the specification more concise and readable, two string replacements are
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This Input:
-Clean_frml_statements: 
-LIST AGES =
+<h1 class="rubric" id="a-demography-model-detailed-explanation">A Demography Model - Detailed Explanation</h1>
+<p>This model describes the evolution of a population over time, divided by age groups and sex.
+It captures the fundamental demographic dynamics - births, deaths, and migration - which together determine
+how the total population changes from one period to the next.</p>
+<hr class="docutils" />
+<h2 class="rubric" id="list-definitions">1. List Definitions</h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;list ages = ages : age_0 * age_11  
+&gt;list sexes = sexes   : female male /  
+&gt;             fertile :     1     0  
+</pre></div>
+</div>
+<p>These lists define the model’s structural dimensions:</p>
+<ul class="simple">
+<li><p>“ages” enumerates age groups, from age_0 (newborns) up to age_11 (the oldest group).</p></li>
+<li><p>“sexes” distinguishes between female and male.</p></li>
+<li><p>The “fertile” flag marks whether a sex is fertile (1 for females, 0 for males), which determines participation in the fertility equations.</p></li>
+</ul>
+<hr class="docutils" />
+<h2 class="rubric" id="population-dynamics">2. Population Dynamics</h2>
+<p>The population is tracked at various stages within each period.</p>
+<h3 class="rubric" id="a-primo-population">a. Primo Population</h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;doable [ages ages_nostart]  pop_primo__a = pop__ab(-1)
+</pre></div>
+</div>
+<p>For all age groups except the youngest (<code class="docutils literal notranslate"><span class="pre">ages_nostart</span></code> excludes the start group),
+the beginning-of-period (primo) population in an age group is equal to the end-of-period (ultimo) population of the previous age group in
+the previous period.
+This represents aging: people move from one age group to the next as time progresses.</p>
+<h3 class="rubric" id="b-population-before-death">b. Population Before Death</h3>
+<p>For the youngest age group:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;doable [ages ages_start]   pop_before_death__a   = birth__total__{sexes} + migration__a
+</pre></div>
+</div>
+<p>The youngest group’s population before death depends on births of that sex in the current period and net migration for that age group.
+This reflects that new members of the population come from births and migration, since there is no prior age group for newborns.</p>
+<p>For all other age groups:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;doable [ages ages_nostart] pop_before_death__a   = pop_primo__a + migration__a
+</pre></div>
+</div>
+<p>Older groups’ populations before death are determined by the primo population (those who aged into the group) and migration inflows or outflows.</p>
+<hr class="docutils" />
+<h2 class="rubric" id="mortality-and-deaths">3. Mortality and Deaths</h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;doable  [ages ages_end ]  death_rate__a =1.0  
+&gt;doable  &lt;sum=total&gt; death__a = pop_before_death__a  * death_rate__a
+</pre></div>
+</div>
+<p>For the last age group, the death rate is set to 1.0, implying that everyone in this group dies within the period -
+a closure condition preventing population overflow beyond the oldest cohort.
+Deaths in all groups are computed as the product of the population before death and the age-specific death rate.</p>
+<h2 class="rubric" id="end-of-period-ultimo-population">4. End-of-Period (Ultimo) Population</h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;doable  &lt;sum=total&gt; pop__a  = pop_before_death__a  - death__a
+</pre></div>
+</div>
+<p>The end-of-period population equals the population before death minus deaths.
+This is the surviving population that will age into the next group in the following period.</p>
+<h2 class="rubric" id="births-and-fertility">5. Births and Fertility</h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;doable &lt;sum=total&gt; [ages ages_nostart,  sexes fertile] birth__a = pop_primo__a * fertility__a
+</pre></div>
+</div>
+<p>Births are generated by fertile females in each age group.
+Fertility rates (fertility__a) vary by age, and are in the dataframe set to zero outside reproductive ages.
+The total number of births is thus the sum across fertile age groups.</p>
+<hr class="docutils" />
+<h2 class="rubric" id="sex-ratio-at-birth">6. Sex Ratio at Birth</h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;birth__total__female = FRAC_BIRTH__female * birth_total  
+&gt;birth__total__male = (1 - FRAC_BIRTH__female) * birth_total
+</pre></div>
+</div>
+<p>The total births are split into female and male newborns using the fraction <code class="docutils literal notranslate"><span class="pre">FRAC_BIRTH__female</span></code>.
+This ensures a biologically realistic sex distribution at birth.</p>
+<hr class="docutils" />
+<h2 class="rubric" id="totals-and-consistency-check">7. Totals and Consistency Check</h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;migration__total = sum(ages,sum(sexes,migration__a))  
+</pre></div>
+</div>
+<p>migration__total aggregates migration flows over all ages and sexes.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;pop__total_check  = (pop__total(-1) + birth__total + migration__total - death__total) - pop__total
+</pre></div>
+</div>
+<p>pop__total_check serves as a consistency test for the model:
+The change in total population should equal births + migration – deaths.
+Any deviation indicates potential modeling or data inconsistencies.</p>
+<hr class="docutils" />
+<h2 class="rubric" id="summary">Summary</h2>
+<p>This demographic model captures the fundamental accounting identities of population dynamics:</p>
+<p>Population<sub>t</sub><sup>age</sup> = Population<sub>t-1</sub><sup>age-1</sup> + Births<sub>t</sub><sup>age</sup> + Migration<sub>t</sub><sup>age</sup> - Deaths<sub>t</sub><sup>age</sup></p>
+<p>For the youngest cohort (age = 0), there is no inflow from age − 1,<br />
+so the equation simplifies to:</p>
+<p>Population<sub>t</sub><sup>0</sup> = Births<sub>t</sub> + Migration<sub>t</sub><sup>0</sup> - Deaths<sub>t</sub><sup>0</sup></p>
+<p>It distinguishes individuals by age and sex, allowing for realistic aging, fertility, and mortality processes.
+The model is modular and extendable - one could add features such as:</p>
+<ul class="simple">
+<li><p>Age-dependent migration patterns</p></li>
+<li><p>Variable mortality shocks (for example, pandemics)</p></li>
+<li><p>Policy impacts on fertility rates</p></li>
+<li><p>Regional or socioeconomic subpopulations</p></li>
+</ul>
+</div>
+</details>
+</div>
+</section>
+<section id="this-high-level-model-is-extracted">
+<h2><span class="section-number">2.4. </span>This high level model is extracted:<a class="headerlink" href="#this-high-level-model-is-extracted" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mm</span><span class="o">.</span><span class="n">clean_frml_statements</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LIST AGES =
     AGES : AGE_0 * AGE_11  $
 LIST SEXES =
     SEXES   : FEMALE MALE /
     FERTILE : 1      0  $
-£ PRIMO POPULATION IS (ULTIMO)POPULATION IN AGE GROUP BEFORE
 DOABLE [AGES AGES_NOSTART]  POP_PRIMO__{SEXES}__{AGES} = POP__{SEXES}__{AGES_BEFORE}(-1)$
-
-£ FOR FIRST AGE GROUP THE POPULATION DEPENDS ON ALL BIRTHS 
 DOABLE [AGES AGES_START]   POP_BEFORE_DEATH__{SEXES}__{AGES}   = BIRTH__TOTAL__{SEXES} + MIGRATION__{SEXES}__{AGES}$
-DOABLE [AGES AGES_NOSTART] POP_BEFORE_DEATH__{SEXES}__{AGES}   = POP_PRIMO__{SEXES}__{AGES} + MIGRATION__{SEXES}__{AGES} $
-
-£ --- STEP 3: DEATHS ---
-DOABLE  [AGES AGES_END ]  DEATH_RATE__{SEXES}__{AGES} =1.0 $
-DOABLE  &lt;SUM=TOTAL&gt;          DEATH__{SEXES}__{AGES} = POP_BEFORE_DEATH__{SEXES}__{AGES}  * DEATH_RATE__{SEXES}__{AGES}$
-
-£ --- STEP 4: END-OF-PERIOD POPULATION ---
-DOABLE  &lt;SUM=TOTAL&gt;          POP__{SEXES}__{AGES}  = POP_BEFORE_DEATH__{SEXES}__{AGES}  - DEATH__{SEXES}__{AGES} $
-
-£ --- STEP 5: BIRTHS  (ALL EXCEPT AGE_0 ) FERTILITY IS ASSUMED 0 FOR LOW AND HIGH AGES  ---
-
-DOABLE &lt;SUM=TOTAL&gt; [AGES AGES_NOSTART,  SEXES    FERTILE] BIRTH__{SEXES}__{AGES} = POP_PRIMO__{SEXES}__{AGES} * FERTILITY__{SEXES}__{AGES}$
-
-FRML  &lt;&gt; BIRTH_TOTAL = SUM(AGES AGES_NOSTART=1,SUM(SEXES FERTILE=1,BIRTH__{SEXES}__{AGES}))         $
-
-£ --- SOME ARE BORN FEMALE AND SOME ARE BORN MALE :
-
-FRML  &lt;&gt; BIRTH__TOTAL__FEMALE = FRAC_BIRTH__FEMALE * BIRTH_TOTAL $
+DOABLE [AGES AGES_NOSTART] POP_BEFORE_DEATH__{SEXES}__{AGES}   = POP_PRIMO__{SEXES}__{AGES} + MIGRATION__{SEXES}__{AGES}$
+DOABLE  [AGES AGES_END ]  DEATH_RATE__{SEXES}__{AGES} =1.0  $
+DOABLE  &lt;SUM=TOTAL&gt; DEATH__{SEXES}__{AGES} = POP_BEFORE_DEATH__{SEXES}__{AGES}  * DEATH_RATE__{SEXES}__{AGES}$
+DOABLE  &lt;SUM=TOTAL&gt; POP__{SEXES}__{AGES}  = POP_BEFORE_DEATH__{SEXES}__{AGES}  - DEATH__{SEXES}__{AGES}$
+DOABLE &lt;SUM=TOTAL&gt; [AGES AGES_NOSTART,  SEXES FERTILE] BIRTH__{SEXES}__{AGES} = POP_PRIMO__{SEXES}__{AGES} * FERTILITY__{SEXES}__{AGES}$
+FRML  &lt;&gt; BIRTH__TOTAL__FEMALE = FRAC_BIRTH__FEMALE * BIRTH_TOTAL   $
 FRML  &lt;&gt; BIRTH__TOTAL__MALE = (1 - FRAC_BIRTH__FEMALE) * BIRTH_TOTAL $
-
-
-£ --- STEP 6: TOTALS AND CONSISTENCY CHECK ---
-FRML  &lt;&gt; MIGRATION__TOTAL = SUM(AGES,SUM(SEXES,MIGRATION__{SEXES}__{AGES})) $
+FRML  &lt;&gt; MIGRATION__TOTAL = SUM(AGES,SUM(SEXES,MIGRATION__{SEXES}__{AGES}))   $
 FRML  &lt;&gt; POP__TOTAL_CHECK  = (POP__TOTAL(-1) + BIRTH__TOTAL + MIGRATION__TOTAL - DEATH__TOTAL) - POP__TOTAL $
-
-Creates this Output
-FRML &lt;&gt; POP_PRIMO__FEMALE__AGE_1 = POP__FEMALE__AGE_0(-1) $
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="this-low-level-model-is-generated">
+<h2><span class="section-number">2.5. </span>This low level model is generated:<a class="headerlink" href="#this-low-level-model-is-generated" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FRML &lt;&gt; POP_PRIMO__FEMALE__AGE_1 = POP__FEMALE__AGE_0(-1) $
 FRML &lt;&gt; POP_PRIMO__FEMALE__AGE_2 = POP__FEMALE__AGE_1(-1) $
 FRML &lt;&gt; POP_PRIMO__FEMALE__AGE_3 = POP__FEMALE__AGE_2(-1) $
 FRML &lt;&gt; POP_PRIMO__FEMALE__AGE_4 = POP__FEMALE__AGE_3(-1) $
@@ -698,7 +905,6 @@ FRML &lt;SUM=TOTAL&gt; BIRTH__FEMALE__AGE_8 = POP_PRIMO__FEMALE__AGE_8*FERTILITY
 FRML &lt;SUM=TOTAL&gt; BIRTH__FEMALE__AGE_9 = POP_PRIMO__FEMALE__AGE_9*FERTILITY__FEMALE__AGE_9 $
 FRML &lt;SUM=TOTAL&gt; BIRTH__FEMALE__AGE_10 = POP_PRIMO__FEMALE__AGE_10*FERTILITY__FEMALE__AGE_10 $
 FRML &lt;SUM=TOTAL&gt; BIRTH__TOTAL = ((BIRTH__FEMALE__AGE_1+BIRTH__FEMALE__AGE_2+BIRTH__FEMALE__AGE_3+BIRTH__FEMALE__AGE_4+BIRTH__FEMALE__AGE_5+BIRTH__FEMALE__AGE_6+BIRTH__FEMALE__AGE_7+BIRTH__FEMALE__AGE_8+BIRTH__FEMALE__AGE_9+BIRTH__FEMALE__AGE_10)) $
-FRML &lt;&gt; BIRTH_TOTAL = ((BIRTH__FEMALE__AGE_1)+(BIRTH__FEMALE__AGE_2)+(BIRTH__FEMALE__AGE_3)+(BIRTH__FEMALE__AGE_4)+(BIRTH__FEMALE__AGE_5)+(BIRTH__FEMALE__AGE_6)+(BIRTH__FEMALE__AGE_7)+(BIRTH__FEMALE__AGE_8)+(BIRTH__FEMALE__AGE_9)+(BIRTH__FEMALE__AGE_10)) $
 FRML &lt;&gt; BIRTH__TOTAL__FEMALE = FRAC_BIRTH__FEMALE*BIRTH_TOTAL $
 FRML &lt;&gt; BIRTH__TOTAL__MALE = (1-FRAC_BIRTH__FEMALE)*BIRTH_TOTAL $
 FRML &lt;&gt; MIGRATION__TOTAL = ((MIGRATION__FEMALE__AGE_0+MIGRATION__MALE__AGE_0)+(MIGRATION__FEMALE__AGE_1+MIGRATION__MALE__AGE_1)+(MIGRATION__FEMALE__AGE_2+MIGRATION__MALE__AGE_2)+(MIGRATION__FEMALE__AGE_3+MIGRATION__MALE__AGE_3)+(MIGRATION__FEMALE__AGE_4+MIGRATION__MALE__AGE_4)+(MIGRATION__FEMALE__AGE_5+MIGRATION__MALE__AGE_5)+(MIGRATION__FEMALE__AGE_6+MIGRATION__MALE__AGE_6)+(MIGRATION__FEMALE__AGE_7+MIGRATION__MALE__AGE_7)+(MIGRATION__FEMALE__AGE_8+MIGRATION__MALE__AGE_8)+(MIGRATION__FEMALE__AGE_9+MIGRATION__MALE__AGE_9)+(MIGRATION__FEMALE__AGE_10+MIGRATION__MALE__AGE_10)) $
@@ -710,7 +916,7 @@ FRML &lt;&gt; POP__TOTAL_CHECK = (POP__TOTAL(-1)+BIRTH__TOTAL+MIGRATION__TOTAL-D
 </div>
 </section>
 <section id="tracing-the-causality-structure">
-<h2><span class="section-number">2.3. </span>Tracing the causality structure<a class="headerlink" href="#tracing-the-causality-structure" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>Tracing the causality structure<a class="headerlink" href="#tracing-the-causality-structure" title="Link to this heading">#</a></h2>
 <p>In the example below, the <strong>causal chain</strong> leading to the variable <code class="docutils literal notranslate"><span class="pre">POP__MALE__AGE_2</span></code> is traced upward through <strong>8 dependency levels</strong>.</p>
 <blockquote>
 <div><p>mm.mmodel.pop__male__age_2.tracepre(up=8, size=(10,10))</p>
@@ -736,90 +942,342 @@ This visualization helps understand how demographic processes propagate through 
 <!-- Generated by graphviz version 12.0.0 (0)
  -->
 <!-- Title: TD Pages: 1 -->
-<svg width="720pt" height="53pt"
- viewBox="0.00 0.00 720.00 52.92" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(0.265247 0.265247) rotate(0) translate(4 195.5)">
+<svg width="720pt" height="66pt"
+ viewBox="0.00 0.00 720.00 66.18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.265247 0.265247) rotate(0) translate(4 245.5)">
 <title>TD</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-195.5 2710.45,-195.5 2710.45,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-245.5 2710.45,-245.5 2710.45,4 -4,4"/>
 <text text-anchor="middle" x="1353.22" y="-7.2" font-family="Times New Roman,serif" font-size="14.00">POP__MALE__AGE_2</text>
-<!-- POP_PRIMO__MALE__AGE_2 -->
+<!-- DEATH__MALE__AGE_0 -->
 <g id="node1" class="node">
-<title>POP_PRIMO__MALE__AGE_2</title>
-<g id="a_node1"><a xlink:title="POP_PRIMO__MALE__AGE_2&#10;FRML &lt;&gt; POP_PRIMO__MALE__AGE_2 = POP__MALE__AGE_1(&#45;1) $">
-<polygon fill="#63b8ff" stroke="black" points="2026.65,-110.5 1829.05,-110.5 1829.05,-74.5 2026.65,-74.5 2026.65,-110.5"/>
-<text text-anchor="start" x="1834.85" y="-87.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_PRIMO__MALE__AGE_2:</text>
+<title>DEATH__MALE__AGE_0</title>
+<g id="a_node1"><a xlink:title="DEATH__MALE__AGE_0&#10;FRML &lt;SUM=TOTAL&gt; DEATH__MALE__AGE_0 = POP_BEFORE_DEATH__MALE__AGE_0*DEATH_RATE__MALE__AGE_0 $">
+<polygon fill="#63b8ff" stroke="black" points="694.8,-133.5 527.95,-133.5 527.95,-97.5 694.8,-97.5 694.8,-133.5"/>
+<text text-anchor="start" x="533.75" y="-110.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH__MALE__AGE_0:</text>
 </a>
 </g>
 </g>
-<!-- POP_BEFORE_DEATH__MALE__AGE_2 -->
-<g id="node4" class="node">
-<title>POP_BEFORE_DEATH__MALE__AGE_2</title>
-<g id="a_node4"><a xlink:title="POP_BEFORE_DEATH__MALE__AGE_2&#10;FRML &lt;&gt; POP_BEFORE_DEATH__MALE__AGE_2 = POP_PRIMO__MALE__AGE_2+MIGRATION__MALE__AGE_2 $">
-<polygon fill="#63b8ff" stroke="black" points="2320.25,-137.5 2063.4,-137.5 2063.4,-101.5 2320.25,-101.5 2320.25,-137.5"/>
-<text text-anchor="start" x="2069.2" y="-114.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_BEFORE_DEATH__MALE__AGE_2:</text>
+<!-- POP__MALE__AGE_0 -->
+<g id="node3" class="node">
+<title>POP__MALE__AGE_0</title>
+<g id="a_node3"><a xlink:title="POP__MALE__AGE_0&#10;FRML &lt;SUM=TOTAL&gt; POP__MALE__AGE_0 = POP_BEFORE_DEATH__MALE__AGE_0&#45;DEATH__MALE__AGE_0 $">
+<polygon fill="#63b8ff" stroke="black" points="878.15,-110.5 730.8,-110.5 730.8,-74.5 878.15,-74.5 878.15,-110.5"/>
+<text text-anchor="start" x="736.6" y="-87.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP__MALE__AGE_0:</text>
 </a>
 </g>
 </g>
-<!-- POP_PRIMO__MALE__AGE_2&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_2 -->
-<g id="edge14" class="edge">
-<title>POP_PRIMO__MALE__AGE_2&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_2</title>
-<g id="a_edge14"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M2027.15,-102.63C2035.51,-103.49 2044.06,-104.37 2052.65,-105.26"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="2052.08,-108.72 2062.39,-106.26 2052.8,-101.76 2052.08,-108.72"/>
-</a>
-</g>
-</g>
-<!-- DEATH__MALE__AGE_2 -->
-<g id="node2" class="node">
-<title>DEATH__MALE__AGE_2</title>
-<g id="a_node2"><a xlink:title="DEATH__MALE__AGE_2&#10;FRML &lt;SUM=TOTAL&gt; DEATH__MALE__AGE_2 = POP_BEFORE_DEATH__MALE__AGE_2*DEATH_RATE__MALE__AGE_2 $">
-<polygon fill="#63b8ff" stroke="black" points="2523.1,-183.5 2356.25,-183.5 2356.25,-147.5 2523.1,-147.5 2523.1,-183.5"/>
-<text text-anchor="start" x="2362.05" y="-160.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH__MALE__AGE_2:</text>
-</a>
-</g>
-</g>
-<!-- POP__MALE__AGE_2 -->
-<g id="node17" class="node">
-<title>POP__MALE__AGE_2</title>
-<g id="a_node17"><a xlink:title="POP__MALE__AGE_2&#10;FRML &lt;SUM=TOTAL&gt; POP__MALE__AGE_2 = POP_BEFORE_DEATH__MALE__AGE_2&#45;DEATH__MALE__AGE_2 $">
-<polygon fill="red" stroke="black" points="2706.45,-160.5 2559.1,-160.5 2559.1,-124.5 2706.45,-124.5 2706.45,-160.5"/>
-<text text-anchor="start" x="2564.9" y="-137.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP__MALE__AGE_2:</text>
-</a>
-</g>
-</g>
-<!-- DEATH__MALE__AGE_2&#45;&gt;POP__MALE__AGE_2 -->
-<g id="edge3" class="edge">
-<title>DEATH__MALE__AGE_2&#45;&gt;POP__MALE__AGE_2</title>
-<g id="a_edge3"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M2523.38,-155.55C2531.68,-154.55 2540.11,-153.53 2548.42,-152.53"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="2548.59,-156.04 2558.1,-151.37 2547.75,-149.09 2548.59,-156.04"/>
+<!-- DEATH__MALE__AGE_0&#45;&gt;POP__MALE__AGE_0 -->
+<g id="edge19" class="edge">
+<title>DEATH__MALE__AGE_0&#45;&gt;POP__MALE__AGE_0</title>
+<g id="a_edge19"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M695.08,-105.55C703.38,-104.55 711.81,-103.53 720.12,-102.53"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="720.29,-106.04 729.8,-101.37 719.45,-99.09 720.29,-106.04"/>
 </a>
 </g>
 </g>
 <!-- DEATH_RATE__MALE__AGE_2 -->
-<g id="node3" class="node">
+<g id="node2" class="node">
 <title>DEATH_RATE__MALE__AGE_2</title>
-<g id="a_node3"><a xlink:title="DEATH_RATE__MALE__AGE_2&#10;Exogen">
-<polygon fill="yellow" stroke="black" points="2295.5,-191.5 2088.15,-191.5 2088.15,-155.5 2295.5,-155.5 2295.5,-191.5"/>
-<text text-anchor="start" x="2093.95" y="-168.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH_RATE__MALE__AGE_2:</text>
+<g id="a_node2"><a xlink:title="DEATH_RATE__MALE__AGE_2&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="2295.5,-241.5 2088.15,-241.5 2088.15,-205.5 2295.5,-205.5 2295.5,-241.5"/>
+<text text-anchor="start" x="2093.95" y="-218.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH_RATE__MALE__AGE_2:</text>
+</a>
+</g>
+</g>
+<!-- DEATH__MALE__AGE_2 -->
+<g id="node9" class="node">
+<title>DEATH__MALE__AGE_2</title>
+<g id="a_node9"><a xlink:title="DEATH__MALE__AGE_2&#10;FRML &lt;SUM=TOTAL&gt; DEATH__MALE__AGE_2 = POP_BEFORE_DEATH__MALE__AGE_2*DEATH_RATE__MALE__AGE_2 $">
+<polygon fill="#63b8ff" stroke="black" points="2523.1,-233.5 2356.25,-233.5 2356.25,-197.5 2523.1,-197.5 2523.1,-233.5"/>
+<text text-anchor="start" x="2362.05" y="-210.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH__MALE__AGE_2:</text>
 </a>
 </g>
 </g>
 <!-- DEATH_RATE__MALE__AGE_2&#45;&gt;DEATH__MALE__AGE_2 -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>DEATH_RATE__MALE__AGE_2&#45;&gt;DEATH__MALE__AGE_2</title>
+<g id="a_edge2"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M2295.66,-220.15C2312.18,-219.62 2329.19,-219.06 2345.46,-218.53"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2345.4,-222.04 2355.28,-218.21 2345.17,-215.04 2345.4,-222.04"/>
+</a>
+</g>
+</g>
+<!-- POP_PRIMO__MALE__AGE_1 -->
+<g id="node8" class="node">
+<title>POP_PRIMO__MALE__AGE_1</title>
+<g id="a_node8"><a xlink:title="POP_PRIMO__MALE__AGE_1&#10;FRML &lt;&gt; POP_PRIMO__MALE__AGE_1 = POP__MALE__AGE_0(&#45;1) $">
+<polygon fill="#63b8ff" stroke="black" points="1112.5,-110.5 914.9,-110.5 914.9,-74.5 1112.5,-74.5 1112.5,-110.5"/>
+<text text-anchor="start" x="920.7" y="-87.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_PRIMO__MALE__AGE_1:</text>
+</a>
+</g>
+</g>
+<!-- POP__MALE__AGE_0&#45;&gt;POP_PRIMO__MALE__AGE_1 -->
+<g id="edge18" class="edge">
+<title>POP__MALE__AGE_0&#45;&gt;POP_PRIMO__MALE__AGE_1</title>
+<g id="a_edge18"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M878.53,-92.5C886.82,-92.5 895.39,-92.5 904.01,-92.5"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="903.77,-96 913.77,-92.5 903.77,-89 903.77,-96"/>
+</a>
+</g>
+</g>
+<!-- DEATH__MALE__AGE_1 -->
+<g id="node4" class="node">
+<title>DEATH__MALE__AGE_1</title>
+<g id="a_node4"><a xlink:title="DEATH__MALE__AGE_1&#10;FRML &lt;SUM=TOTAL&gt; DEATH__MALE__AGE_1 = POP_BEFORE_DEATH__MALE__AGE_1*DEATH_RATE__MALE__AGE_1 $">
+<polygon fill="#63b8ff" stroke="black" points="1608.95,-183.5 1442.1,-183.5 1442.1,-147.5 1608.95,-147.5 1608.95,-183.5"/>
+<text text-anchor="start" x="1447.9" y="-160.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH__MALE__AGE_1:</text>
+</a>
+</g>
+</g>
+<!-- POP__MALE__AGE_1 -->
+<g id="node17" class="node">
+<title>POP__MALE__AGE_1</title>
+<g id="a_node17"><a xlink:title="POP__MALE__AGE_1&#10;FRML &lt;SUM=TOTAL&gt; POP__MALE__AGE_1 = POP_BEFORE_DEATH__MALE__AGE_1&#45;DEATH__MALE__AGE_1 $">
+<polygon fill="#63b8ff" stroke="black" points="1792.3,-160.5 1644.95,-160.5 1644.95,-124.5 1792.3,-124.5 1792.3,-160.5"/>
+<text text-anchor="start" x="1650.75" y="-137.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP__MALE__AGE_1:</text>
+</a>
+</g>
+</g>
+<!-- DEATH__MALE__AGE_1&#45;&gt;POP__MALE__AGE_1 -->
+<g id="edge1" class="edge">
+<title>DEATH__MALE__AGE_1&#45;&gt;POP__MALE__AGE_1</title>
 <g id="a_edge1"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M2295.66,-170.15C2312.18,-169.62 2329.19,-169.06 2345.46,-168.53"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="2345.4,-172.04 2355.28,-168.21 2345.17,-165.04 2345.4,-172.04"/>
+<path fill="none" stroke="black" stroke-width="0.5" d="M1609.23,-155.55C1617.53,-154.55 1625.96,-153.53 1634.27,-152.53"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1634.44,-156.04 1643.95,-151.37 1633.6,-149.09 1634.44,-156.04"/>
+</a>
+</g>
+</g>
+<!-- MIGRATION__MALE__AGE_0 -->
+<g id="node5" class="node">
+<title>MIGRATION__MALE__AGE_0</title>
+<g id="a_node5"><a xlink:title="MIGRATION__MALE__AGE_0&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="199.1,-114.5 0,-114.5 0,-78.5 199.1,-78.5 199.1,-114.5"/>
+<text text-anchor="start" x="5.8" y="-91.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">MIGRATION__MALE__AGE_0:</text>
+</a>
+</g>
+</g>
+<!-- POP_BEFORE_DEATH__MALE__AGE_0 -->
+<g id="node6" class="node">
+<title>POP_BEFORE_DEATH__MALE__AGE_0</title>
+<g id="a_node6"><a xlink:title="POP_BEFORE_DEATH__MALE__AGE_0&#10;FRML &lt;&gt; POP_BEFORE_DEATH__MALE__AGE_0 = BIRTH__TOTAL__MALE+MIGRATION__MALE__AGE_0 $">
+<polygon fill="#63b8ff" stroke="black" points="491.95,-87.5 235.1,-87.5 235.1,-51.5 491.95,-51.5 491.95,-87.5"/>
+<text text-anchor="start" x="240.9" y="-64.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_BEFORE_DEATH__MALE__AGE_0:</text>
+</a>
+</g>
+</g>
+<!-- MIGRATION__MALE__AGE_0&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_0 -->
+<g id="edge7" class="edge">
+<title>MIGRATION__MALE__AGE_0&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_0</title>
+<g id="a_edge7"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M199.59,-86.29C207.74,-85.45 216.07,-84.59 224.43,-83.73"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="224.7,-87.22 234.29,-82.72 223.98,-80.26 224.7,-87.22"/>
+</a>
+</g>
+</g>
+<!-- POP_BEFORE_DEATH__MALE__AGE_0&#45;&gt;DEATH__MALE__AGE_0 -->
+<g id="edge16" class="edge">
+<title>POP_BEFORE_DEATH__MALE__AGE_0&#45;&gt;DEATH__MALE__AGE_0</title>
+<g id="a_edge16"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M463.11,-87.94C480.97,-91.29 499.55,-94.76 517.26,-98.08"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="516.35,-101.47 526.83,-99.87 517.64,-94.59 516.35,-101.47"/>
+</a>
+</g>
+</g>
+<!-- POP_BEFORE_DEATH__MALE__AGE_0&#45;&gt;POP__MALE__AGE_0 -->
+<g id="edge5" class="edge">
+<title>POP_BEFORE_DEATH__MALE__AGE_0&#45;&gt;POP__MALE__AGE_0</title>
+<g id="a_edge5"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M492.37,-76.2C565.73,-80.04 655.74,-84.76 720.04,-88.13"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="719.6,-91.61 729.77,-88.64 719.97,-84.62 719.6,-91.61"/>
+</a>
+</g>
+</g>
+<!-- MIGRATION__MALE__AGE_2 -->
+<g id="node7" class="node">
+<title>MIGRATION__MALE__AGE_2</title>
+<g id="a_node7"><a xlink:title="MIGRATION__MALE__AGE_2&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="2027.4,-214.5 1828.3,-214.5 1828.3,-178.5 2027.4,-178.5 2027.4,-214.5"/>
+<text text-anchor="start" x="1834.1" y="-191.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">MIGRATION__MALE__AGE_2:</text>
+</a>
+</g>
+</g>
+<!-- POP_BEFORE_DEATH__MALE__AGE_2 -->
+<g id="node18" class="node">
+<title>POP_BEFORE_DEATH__MALE__AGE_2</title>
+<g id="a_node18"><a xlink:title="POP_BEFORE_DEATH__MALE__AGE_2&#10;FRML &lt;&gt; POP_BEFORE_DEATH__MALE__AGE_2 = POP_PRIMO__MALE__AGE_2+MIGRATION__MALE__AGE_2 $">
+<polygon fill="#63b8ff" stroke="black" points="2320.25,-187.5 2063.4,-187.5 2063.4,-151.5 2320.25,-151.5 2320.25,-187.5"/>
+<text text-anchor="start" x="2069.2" y="-164.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_BEFORE_DEATH__MALE__AGE_2:</text>
+</a>
+</g>
+</g>
+<!-- MIGRATION__MALE__AGE_2&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_2 -->
+<g id="edge11" class="edge">
+<title>MIGRATION__MALE__AGE_2&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_2</title>
+<g id="a_edge11"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M2027.89,-186.29C2036.04,-185.45 2044.37,-184.59 2052.73,-183.73"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2053,-187.22 2062.59,-182.72 2052.28,-180.26 2053,-187.22"/>
+</a>
+</g>
+</g>
+<!-- POP_BEFORE_DEATH__MALE__AGE_1 -->
+<g id="node15" class="node">
+<title>POP_BEFORE_DEATH__MALE__AGE_1</title>
+<g id="a_node15"><a xlink:title="POP_BEFORE_DEATH__MALE__AGE_1&#10;FRML &lt;&gt; POP_BEFORE_DEATH__MALE__AGE_1 = POP_PRIMO__MALE__AGE_1+MIGRATION__MALE__AGE_1 $">
+<polygon fill="#63b8ff" stroke="black" points="1406.1,-137.5 1149.25,-137.5 1149.25,-101.5 1406.1,-101.5 1406.1,-137.5"/>
+<text text-anchor="start" x="1155.05" y="-114.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_BEFORE_DEATH__MALE__AGE_1:</text>
+</a>
+</g>
+</g>
+<!-- POP_PRIMO__MALE__AGE_1&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_1 -->
+<g id="edge6" class="edge">
+<title>POP_PRIMO__MALE__AGE_1&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_1</title>
+<g id="a_edge6"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1113,-102.63C1121.36,-103.49 1129.91,-104.37 1138.5,-105.26"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1137.93,-108.72 1148.24,-106.26 1138.65,-101.76 1137.93,-108.72"/>
+</a>
+</g>
+</g>
+<!-- POP__MALE__AGE_2 -->
+<g id="node13" class="node">
+<title>POP__MALE__AGE_2</title>
+<g id="a_node13"><a xlink:title="POP__MALE__AGE_2&#10;FRML &lt;SUM=TOTAL&gt; POP__MALE__AGE_2 = POP_BEFORE_DEATH__MALE__AGE_2&#45;DEATH__MALE__AGE_2 $">
+<polygon fill="red" stroke="black" points="2706.45,-210.5 2559.1,-210.5 2559.1,-174.5 2706.45,-174.5 2706.45,-210.5"/>
+<text text-anchor="start" x="2564.9" y="-187.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP__MALE__AGE_2:</text>
+</a>
+</g>
+</g>
+<!-- DEATH__MALE__AGE_2&#45;&gt;POP__MALE__AGE_2 -->
+<g id="edge14" class="edge">
+<title>DEATH__MALE__AGE_2&#45;&gt;POP__MALE__AGE_2</title>
+<g id="a_edge14"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M2523.38,-205.55C2531.68,-204.55 2540.11,-203.53 2548.42,-202.53"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2548.59,-206.04 2558.1,-201.37 2547.75,-199.09 2548.59,-206.04"/>
+</a>
+</g>
+</g>
+<!-- POP_PRIMO__MALE__AGE_2 -->
+<g id="node10" class="node">
+<title>POP_PRIMO__MALE__AGE_2</title>
+<g id="a_node10"><a xlink:title="POP_PRIMO__MALE__AGE_2&#10;FRML &lt;&gt; POP_PRIMO__MALE__AGE_2 = POP__MALE__AGE_1(&#45;1) $">
+<polygon fill="#63b8ff" stroke="black" points="2026.65,-160.5 1829.05,-160.5 1829.05,-124.5 2026.65,-124.5 2026.65,-160.5"/>
+<text text-anchor="start" x="1834.85" y="-137.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_PRIMO__MALE__AGE_2:</text>
+</a>
+</g>
+</g>
+<!-- POP_PRIMO__MALE__AGE_2&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_2 -->
+<g id="edge13" class="edge">
+<title>POP_PRIMO__MALE__AGE_2&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_2</title>
+<g id="a_edge13"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M2027.15,-152.63C2035.51,-153.49 2044.06,-154.37 2052.65,-155.26"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2052.08,-158.72 2062.39,-156.26 2052.8,-151.76 2052.08,-158.72"/>
+</a>
+</g>
+</g>
+<!-- BIRTH__TOTAL__MALE -->
+<g id="node11" class="node">
+<title>BIRTH__TOTAL__MALE</title>
+<g id="a_node11"><a xlink:title="BIRTH__TOTAL__MALE&#10;FRML &lt;&gt; BIRTH__TOTAL__MALE = (1&#45;FRAC_BIRTH__FEMALE)*BIRTH_TOTAL $">
+<polygon fill="#63b8ff" stroke="black" points="181.85,-60.5 17.25,-60.5 17.25,-24.5 181.85,-24.5 181.85,-60.5"/>
+<text text-anchor="start" x="23.05" y="-37.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">BIRTH__TOTAL__MALE:</text>
+</a>
+</g>
+</g>
+<!-- BIRTH__TOTAL__MALE&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_0 -->
+<g id="edge15" class="edge">
+<title>BIRTH__TOTAL__MALE&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_0</title>
+<g id="a_edge15"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M182,-50.89C195.54,-52.29 209.91,-53.77 224.39,-55.26"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="223.88,-58.73 234.19,-56.27 224.6,-51.77 223.88,-58.73"/>
+</a>
+</g>
+</g>
+<!-- MIGRATION__MALE__AGE_1 -->
+<g id="node12" class="node">
+<title>MIGRATION__MALE__AGE_1</title>
+<g id="a_node12"><a xlink:title="MIGRATION__MALE__AGE_1&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="1113.25,-164.5 914.15,-164.5 914.15,-128.5 1113.25,-128.5 1113.25,-164.5"/>
+<text text-anchor="start" x="919.95" y="-141.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">MIGRATION__MALE__AGE_1:</text>
+</a>
+</g>
+</g>
+<!-- MIGRATION__MALE__AGE_1&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_1 -->
+<g id="edge10" class="edge">
+<title>MIGRATION__MALE__AGE_1&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_1</title>
+<g id="a_edge10"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1113.74,-136.29C1121.89,-135.45 1130.22,-134.59 1138.58,-133.73"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1138.85,-137.22 1148.44,-132.72 1138.13,-130.26 1138.85,-137.22"/>
+</a>
+</g>
+</g>
+<!-- DEATH_RATE__MALE__AGE_1 -->
+<g id="node14" class="node">
+<title>DEATH_RATE__MALE__AGE_1</title>
+<g id="a_node14"><a xlink:title="DEATH_RATE__MALE__AGE_1&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="1381.35,-191.5 1174,-191.5 1174,-155.5 1381.35,-155.5 1381.35,-191.5"/>
+<text text-anchor="start" x="1179.8" y="-168.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH_RATE__MALE__AGE_1:</text>
+</a>
+</g>
+</g>
+<!-- DEATH_RATE__MALE__AGE_1&#45;&gt;DEATH__MALE__AGE_1 -->
+<g id="edge9" class="edge">
+<title>DEATH_RATE__MALE__AGE_1&#45;&gt;DEATH__MALE__AGE_1</title>
+<g id="a_edge9"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1381.51,-170.15C1398.03,-169.62 1415.04,-169.06 1431.31,-168.53"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1431.25,-172.04 1441.13,-168.21 1431.02,-165.04 1431.25,-172.04"/>
+</a>
+</g>
+</g>
+<!-- POP_BEFORE_DEATH__MALE__AGE_1&#45;&gt;DEATH__MALE__AGE_1 -->
+<g id="edge4" class="edge">
+<title>POP_BEFORE_DEATH__MALE__AGE_1&#45;&gt;DEATH__MALE__AGE_1</title>
+<g id="a_edge4"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1377.26,-137.94C1395.12,-141.29 1413.7,-144.76 1431.41,-148.08"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1430.5,-151.47 1440.98,-149.87 1431.79,-144.59 1430.5,-151.47"/>
+</a>
+</g>
+</g>
+<!-- POP_BEFORE_DEATH__MALE__AGE_1&#45;&gt;POP__MALE__AGE_1 -->
+<g id="edge12" class="edge">
+<title>POP_BEFORE_DEATH__MALE__AGE_1&#45;&gt;POP__MALE__AGE_1</title>
+<g id="a_edge12"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1406.52,-126.2C1479.88,-130.04 1569.89,-134.76 1634.19,-138.13"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1633.75,-141.61 1643.92,-138.64 1634.12,-134.62 1633.75,-141.61"/>
+</a>
+</g>
+</g>
+<!-- DEATH_RATE__MALE__AGE_0 -->
+<g id="node16" class="node">
+<title>DEATH_RATE__MALE__AGE_0</title>
+<g id="a_node16"><a xlink:title="DEATH_RATE__MALE__AGE_0&#10;Exogen">
+<polygon fill="yellow" stroke="black" points="467.2,-141.5 259.85,-141.5 259.85,-105.5 467.2,-105.5 467.2,-141.5"/>
+<text text-anchor="start" x="265.65" y="-118.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH_RATE__MALE__AGE_0:</text>
+</a>
+</g>
+</g>
+<!-- DEATH_RATE__MALE__AGE_0&#45;&gt;DEATH__MALE__AGE_0 -->
+<g id="edge3" class="edge">
+<title>DEATH_RATE__MALE__AGE_0&#45;&gt;DEATH__MALE__AGE_0</title>
+<g id="a_edge3"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M467.36,-120.15C483.88,-119.62 500.89,-119.06 517.16,-118.53"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="517.1,-122.04 526.98,-118.21 516.87,-115.04 517.1,-122.04"/>
+</a>
+</g>
+</g>
+<!-- POP__MALE__AGE_1&#45;&gt;POP_PRIMO__MALE__AGE_2 -->
+<g id="edge8" class="edge">
+<title>POP__MALE__AGE_1&#45;&gt;POP_PRIMO__MALE__AGE_2</title>
+<g id="a_edge8"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M1792.68,-142.5C1800.97,-142.5 1809.54,-142.5 1818.16,-142.5"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="1817.92,-146 1827.92,-142.5 1817.92,-139 1817.92,-146"/>
 </a>
 </g>
 </g>
 <!-- POP_BEFORE_DEATH__MALE__AGE_2&#45;&gt;DEATH__MALE__AGE_2 -->
-<g id="edge15" class="edge">
+<g id="edge20" class="edge">
 <title>POP_BEFORE_DEATH__MALE__AGE_2&#45;&gt;DEATH__MALE__AGE_2</title>
-<g id="a_edge15"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M2291.41,-137.94C2309.27,-141.29 2327.85,-144.76 2345.56,-148.08"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="2344.65,-151.47 2355.13,-149.87 2345.94,-144.59 2344.65,-151.47"/>
+<g id="a_edge20"><a xlink:href="bogus" xlink:title="NA">
+<path fill="none" stroke="black" stroke-width="0.5" d="M2291.41,-187.94C2309.27,-191.29 2327.85,-194.76 2345.56,-198.08"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2344.65,-201.47 2355.13,-199.87 2345.94,-194.59 2344.65,-201.47"/>
 </a>
 </g>
 </g>
@@ -827,260 +1285,8 @@ This visualization helps understand how demographic processes propagate through 
 <g id="edge17" class="edge">
 <title>POP_BEFORE_DEATH__MALE__AGE_2&#45;&gt;POP__MALE__AGE_2</title>
 <g id="a_edge17"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M2320.67,-126.2C2394.03,-130.04 2484.04,-134.76 2548.34,-138.13"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="2547.9,-141.61 2558.07,-138.64 2548.27,-134.62 2547.9,-141.61"/>
-</a>
-</g>
-</g>
-<!-- MIGRATION__MALE__AGE_2 -->
-<g id="node5" class="node">
-<title>MIGRATION__MALE__AGE_2</title>
-<g id="a_node5"><a xlink:title="MIGRATION__MALE__AGE_2&#10;Exogen">
-<polygon fill="yellow" stroke="black" points="2027.4,-164.5 1828.3,-164.5 1828.3,-128.5 2027.4,-128.5 2027.4,-164.5"/>
-<text text-anchor="start" x="1834.1" y="-141.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">MIGRATION__MALE__AGE_2:</text>
-</a>
-</g>
-</g>
-<!-- MIGRATION__MALE__AGE_2&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_2 -->
-<g id="edge4" class="edge">
-<title>MIGRATION__MALE__AGE_2&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_2</title>
-<g id="a_edge4"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M2027.89,-136.29C2036.04,-135.45 2044.37,-134.59 2052.73,-133.73"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="2053,-137.22 2062.59,-132.72 2052.28,-130.26 2053,-137.22"/>
-</a>
-</g>
-</g>
-<!-- POP_PRIMO__MALE__AGE_1 -->
-<g id="node6" class="node">
-<title>POP_PRIMO__MALE__AGE_1</title>
-<g id="a_node6"><a xlink:title="POP_PRIMO__MALE__AGE_1&#10;FRML &lt;&gt; POP_PRIMO__MALE__AGE_1 = POP__MALE__AGE_0(&#45;1) $">
-<polygon fill="#63b8ff" stroke="black" points="1112.5,-114.5 914.9,-114.5 914.9,-78.5 1112.5,-78.5 1112.5,-114.5"/>
-<text text-anchor="start" x="920.7" y="-91.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_PRIMO__MALE__AGE_1:</text>
-</a>
-</g>
-</g>
-<!-- POP_BEFORE_DEATH__MALE__AGE_1 -->
-<g id="node8" class="node">
-<title>POP_BEFORE_DEATH__MALE__AGE_1</title>
-<g id="a_node8"><a xlink:title="POP_BEFORE_DEATH__MALE__AGE_1&#10;FRML &lt;&gt; POP_BEFORE_DEATH__MALE__AGE_1 = POP_PRIMO__MALE__AGE_1+MIGRATION__MALE__AGE_1 $">
-<polygon fill="#63b8ff" stroke="black" points="1406.1,-87.5 1149.25,-87.5 1149.25,-51.5 1406.1,-51.5 1406.1,-87.5"/>
-<text text-anchor="start" x="1155.05" y="-64.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_BEFORE_DEATH__MALE__AGE_1:</text>
-</a>
-</g>
-</g>
-<!-- POP_PRIMO__MALE__AGE_1&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_1 -->
-<g id="edge19" class="edge">
-<title>POP_PRIMO__MALE__AGE_1&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_1</title>
-<g id="a_edge19"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1113,-86.37C1121.36,-85.51 1129.91,-84.63 1138.5,-83.74"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1138.65,-87.24 1148.24,-82.74 1137.93,-80.28 1138.65,-87.24"/>
-</a>
-</g>
-</g>
-<!-- MIGRATION__MALE__AGE_0 -->
-<g id="node7" class="node">
-<title>MIGRATION__MALE__AGE_0</title>
-<g id="a_node7"><a xlink:title="MIGRATION__MALE__AGE_0&#10;Exogen">
-<polygon fill="yellow" stroke="black" points="199.1,-118.5 0,-118.5 0,-82.5 199.1,-82.5 199.1,-118.5"/>
-<text text-anchor="start" x="5.8" y="-95.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">MIGRATION__MALE__AGE_0:</text>
-</a>
-</g>
-</g>
-<!-- POP_BEFORE_DEATH__MALE__AGE_0 -->
-<g id="node10" class="node">
-<title>POP_BEFORE_DEATH__MALE__AGE_0</title>
-<g id="a_node10"><a xlink:title="POP_BEFORE_DEATH__MALE__AGE_0&#10;FRML &lt;&gt; POP_BEFORE_DEATH__MALE__AGE_0 = BIRTH__TOTAL__MALE+MIGRATION__MALE__AGE_0 $">
-<polygon fill="#63b8ff" stroke="black" points="491.95,-91.5 235.1,-91.5 235.1,-55.5 491.95,-55.5 491.95,-91.5"/>
-<text text-anchor="start" x="240.9" y="-68.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP_BEFORE_DEATH__MALE__AGE_0:</text>
-</a>
-</g>
-</g>
-<!-- MIGRATION__MALE__AGE_0&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_0 -->
-<g id="edge16" class="edge">
-<title>MIGRATION__MALE__AGE_0&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_0</title>
-<g id="a_edge16"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M199.59,-90.29C207.74,-89.45 216.07,-88.59 224.43,-87.73"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="224.7,-91.22 234.29,-86.72 223.98,-84.26 224.7,-91.22"/>
-</a>
-</g>
-</g>
-<!-- POP__MALE__AGE_1 -->
-<g id="node13" class="node">
-<title>POP__MALE__AGE_1</title>
-<g id="a_node13"><a xlink:title="POP__MALE__AGE_1&#10;FRML &lt;SUM=TOTAL&gt; POP__MALE__AGE_1 = POP_BEFORE_DEATH__MALE__AGE_1&#45;DEATH__MALE__AGE_1 $">
-<polygon fill="#63b8ff" stroke="black" points="1792.3,-110.5 1644.95,-110.5 1644.95,-74.5 1792.3,-74.5 1792.3,-110.5"/>
-<text text-anchor="start" x="1650.75" y="-87.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP__MALE__AGE_1:</text>
-</a>
-</g>
-</g>
-<!-- POP_BEFORE_DEATH__MALE__AGE_1&#45;&gt;POP__MALE__AGE_1 -->
-<g id="edge11" class="edge">
-<title>POP_BEFORE_DEATH__MALE__AGE_1&#45;&gt;POP__MALE__AGE_1</title>
-<g id="a_edge11"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1406.52,-76.2C1479.88,-80.04 1569.89,-84.76 1634.19,-88.13"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1633.75,-91.61 1643.92,-88.64 1634.12,-84.62 1633.75,-91.61"/>
-</a>
-</g>
-</g>
-<!-- DEATH__MALE__AGE_1 -->
-<g id="node16" class="node">
-<title>DEATH__MALE__AGE_1</title>
-<g id="a_node16"><a xlink:title="DEATH__MALE__AGE_1&#10;FRML &lt;SUM=TOTAL&gt; DEATH__MALE__AGE_1 = POP_BEFORE_DEATH__MALE__AGE_1*DEATH_RATE__MALE__AGE_1 $">
-<polygon fill="#63b8ff" stroke="black" points="1608.95,-133.5 1442.1,-133.5 1442.1,-97.5 1608.95,-97.5 1608.95,-133.5"/>
-<text text-anchor="start" x="1447.9" y="-110.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH__MALE__AGE_1:</text>
-</a>
-</g>
-</g>
-<!-- POP_BEFORE_DEATH__MALE__AGE_1&#45;&gt;DEATH__MALE__AGE_1 -->
-<g id="edge9" class="edge">
-<title>POP_BEFORE_DEATH__MALE__AGE_1&#45;&gt;DEATH__MALE__AGE_1</title>
-<g id="a_edge9"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1377.26,-87.94C1395.12,-91.29 1413.7,-94.76 1431.41,-98.08"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1430.5,-101.47 1440.98,-99.87 1431.79,-94.59 1430.5,-101.47"/>
-</a>
-</g>
-</g>
-<!-- BIRTH__TOTAL__MALE -->
-<g id="node9" class="node">
-<title>BIRTH__TOTAL__MALE</title>
-<g id="a_node9"><a xlink:title="BIRTH__TOTAL__MALE&#10;FRML &lt;&gt; BIRTH__TOTAL__MALE = (1&#45;FRAC_BIRTH__FEMALE)*BIRTH_TOTAL $">
-<polygon fill="#63b8ff" stroke="black" points="181.85,-64.5 17.25,-64.5 17.25,-28.5 181.85,-28.5 181.85,-64.5"/>
-<text text-anchor="start" x="23.05" y="-41.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">BIRTH__TOTAL__MALE:</text>
-</a>
-</g>
-</g>
-<!-- BIRTH__TOTAL__MALE&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_0 -->
-<g id="edge10" class="edge">
-<title>BIRTH__TOTAL__MALE&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_0</title>
-<g id="a_edge10"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M182,-54.89C195.54,-56.29 209.91,-57.77 224.39,-59.26"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="223.88,-62.73 234.19,-60.27 224.6,-55.77 223.88,-62.73"/>
-</a>
-</g>
-</g>
-<!-- POP__MALE__AGE_0 -->
-<g id="node14" class="node">
-<title>POP__MALE__AGE_0</title>
-<g id="a_node14"><a xlink:title="POP__MALE__AGE_0&#10;FRML &lt;SUM=TOTAL&gt; POP__MALE__AGE_0 = POP_BEFORE_DEATH__MALE__AGE_0&#45;DEATH__MALE__AGE_0 $">
-<polygon fill="#63b8ff" stroke="black" points="878.15,-114.5 730.8,-114.5 730.8,-78.5 878.15,-78.5 878.15,-114.5"/>
-<text text-anchor="start" x="736.6" y="-91.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">POP__MALE__AGE_0:</text>
-</a>
-</g>
-</g>
-<!-- POP_BEFORE_DEATH__MALE__AGE_0&#45;&gt;POP__MALE__AGE_0 -->
-<g id="edge12" class="edge">
-<title>POP_BEFORE_DEATH__MALE__AGE_0&#45;&gt;POP__MALE__AGE_0</title>
-<g id="a_edge12"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M492.37,-80.2C565.73,-84.04 655.74,-88.76 720.04,-92.13"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="719.6,-95.61 729.77,-92.64 719.97,-88.62 719.6,-95.61"/>
-</a>
-</g>
-</g>
-<!-- DEATH__MALE__AGE_0 -->
-<g id="node15" class="node">
-<title>DEATH__MALE__AGE_0</title>
-<g id="a_node15"><a xlink:title="DEATH__MALE__AGE_0&#10;FRML &lt;SUM=TOTAL&gt; DEATH__MALE__AGE_0 = POP_BEFORE_DEATH__MALE__AGE_0*DEATH_RATE__MALE__AGE_0 $">
-<polygon fill="#63b8ff" stroke="black" points="694.8,-137.5 527.95,-137.5 527.95,-101.5 694.8,-101.5 694.8,-137.5"/>
-<text text-anchor="start" x="533.75" y="-114.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH__MALE__AGE_0:</text>
-</a>
-</g>
-</g>
-<!-- POP_BEFORE_DEATH__MALE__AGE_0&#45;&gt;DEATH__MALE__AGE_0 -->
-<g id="edge13" class="edge">
-<title>POP_BEFORE_DEATH__MALE__AGE_0&#45;&gt;DEATH__MALE__AGE_0</title>
-<g id="a_edge13"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M463.11,-91.94C480.97,-95.29 499.55,-98.76 517.26,-102.08"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="516.35,-105.47 526.83,-103.87 517.64,-98.59 516.35,-105.47"/>
-</a>
-</g>
-</g>
-<!-- DEATH_RATE__MALE__AGE_1 -->
-<g id="node11" class="node">
-<title>DEATH_RATE__MALE__AGE_1</title>
-<g id="a_node11"><a xlink:title="DEATH_RATE__MALE__AGE_1&#10;Exogen">
-<polygon fill="yellow" stroke="black" points="1381.35,-141.5 1174,-141.5 1174,-105.5 1381.35,-105.5 1381.35,-141.5"/>
-<text text-anchor="start" x="1179.8" y="-118.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH_RATE__MALE__AGE_1:</text>
-</a>
-</g>
-</g>
-<!-- DEATH_RATE__MALE__AGE_1&#45;&gt;DEATH__MALE__AGE_1 -->
-<g id="edge5" class="edge">
-<title>DEATH_RATE__MALE__AGE_1&#45;&gt;DEATH__MALE__AGE_1</title>
-<g id="a_edge5"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1381.51,-120.15C1398.03,-119.62 1415.04,-119.06 1431.31,-118.53"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1431.25,-122.04 1441.13,-118.21 1431.02,-115.04 1431.25,-122.04"/>
-</a>
-</g>
-</g>
-<!-- DEATH_RATE__MALE__AGE_0 -->
-<g id="node12" class="node">
-<title>DEATH_RATE__MALE__AGE_0</title>
-<g id="a_node12"><a xlink:title="DEATH_RATE__MALE__AGE_0&#10;Exogen">
-<polygon fill="yellow" stroke="black" points="467.2,-145.5 259.85,-145.5 259.85,-109.5 467.2,-109.5 467.2,-145.5"/>
-<text text-anchor="start" x="265.65" y="-122.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">DEATH_RATE__MALE__AGE_0:</text>
-</a>
-</g>
-</g>
-<!-- DEATH_RATE__MALE__AGE_0&#45;&gt;DEATH__MALE__AGE_0 -->
-<g id="edge18" class="edge">
-<title>DEATH_RATE__MALE__AGE_0&#45;&gt;DEATH__MALE__AGE_0</title>
-<g id="a_edge18"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M467.36,-124.15C483.88,-123.62 500.89,-123.06 517.16,-122.53"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="517.1,-126.04 526.98,-122.21 516.87,-119.04 517.1,-126.04"/>
-</a>
-</g>
-</g>
-<!-- POP__MALE__AGE_1&#45;&gt;POP_PRIMO__MALE__AGE_2 -->
-<g id="edge2" class="edge">
-<title>POP__MALE__AGE_1&#45;&gt;POP_PRIMO__MALE__AGE_2</title>
-<g id="a_edge2"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1792.68,-92.5C1800.97,-92.5 1809.54,-92.5 1818.16,-92.5"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1817.92,-96 1827.92,-92.5 1817.92,-89 1817.92,-96"/>
-</a>
-</g>
-</g>
-<!-- POP__MALE__AGE_0&#45;&gt;POP_PRIMO__MALE__AGE_1 -->
-<g id="edge8" class="edge">
-<title>POP__MALE__AGE_0&#45;&gt;POP_PRIMO__MALE__AGE_1</title>
-<g id="a_edge8"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M878.53,-96.5C886.82,-96.5 895.39,-96.5 904.01,-96.5"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="903.77,-100 913.77,-96.5 903.77,-93 903.77,-100"/>
-</a>
-</g>
-</g>
-<!-- DEATH__MALE__AGE_0&#45;&gt;POP__MALE__AGE_0 -->
-<g id="edge20" class="edge">
-<title>DEATH__MALE__AGE_0&#45;&gt;POP__MALE__AGE_0</title>
-<g id="a_edge20"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M695.08,-109.55C703.38,-108.55 711.81,-107.53 720.12,-106.53"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="720.29,-110.04 729.8,-105.37 719.45,-103.09 720.29,-110.04"/>
-</a>
-</g>
-</g>
-<!-- DEATH__MALE__AGE_1&#45;&gt;POP__MALE__AGE_1 -->
-<g id="edge6" class="edge">
-<title>DEATH__MALE__AGE_1&#45;&gt;POP__MALE__AGE_1</title>
-<g id="a_edge6"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1609.23,-105.55C1617.53,-104.55 1625.96,-103.53 1634.27,-102.53"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1634.44,-106.04 1643.95,-101.37 1633.6,-99.09 1634.44,-106.04"/>
-</a>
-</g>
-</g>
-<!-- MIGRATION__MALE__AGE_1 -->
-<g id="node18" class="node">
-<title>MIGRATION__MALE__AGE_1</title>
-<g id="a_node18"><a xlink:title="MIGRATION__MALE__AGE_1&#10;Exogen">
-<polygon fill="yellow" stroke="black" points="1113.25,-60.5 914.15,-60.5 914.15,-24.5 1113.25,-24.5 1113.25,-60.5"/>
-<text text-anchor="start" x="919.95" y="-37.45" font-family="Times New Roman,serif" font-size="14.00" fill="blue">MIGRATION__MALE__AGE_1:</text>
-</a>
-</g>
-</g>
-<!-- MIGRATION__MALE__AGE_1&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_1 -->
-<g id="edge7" class="edge">
-<title>MIGRATION__MALE__AGE_1&#45;&gt;POP_BEFORE_DEATH__MALE__AGE_1</title>
-<g id="a_edge7"><a xlink:href="bogus" xlink:title="NA">
-<path fill="none" stroke="black" stroke-width="0.5" d="M1113.74,-52.71C1121.89,-53.55 1130.22,-54.41 1138.58,-55.27"/>
-<polygon fill="black" stroke="black" stroke-width="0.5" points="1138.13,-58.74 1148.44,-56.28 1138.85,-51.78 1138.13,-58.74"/>
+<path fill="none" stroke="black" stroke-width="0.5" d="M2320.67,-176.2C2394.03,-180.04 2484.04,-184.76 2548.34,-188.13"/>
+<polygon fill="black" stroke="black" stroke-width="0.5" points="2547.9,-191.61 2558.07,-188.64 2548.27,-184.62 2547.9,-191.61"/>
 </a>
 </g>
 </g>
@@ -1161,7 +1367,10 @@ This visualization helps understand how demographic processes propagate through 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specification-of-a-model-describing-population-dynamics">2.2. Specification of a model describing population dynamics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracing-the-causality-structure">2.3. Tracing the causality structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-this-input">2.3. From This Input:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-high-level-model-is-extracted">2.4. This high level model is extracted:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-low-level-model-is-generated">2.5. This low level model is generated:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracing-the-causality-structure">2.6. Tracing the causality structure</a></li>
 </ul>
   </nav></div>
 

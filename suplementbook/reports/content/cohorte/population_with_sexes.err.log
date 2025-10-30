@@ -18,13 +18,30 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-To support modeling of cohortes and debt/asset developements modelflow creats sublists based on the first sublist 
+mm.pdf()
+
 ------------------
 
 
-[1;36m  Cell [1;32mIn[3], line 1[1;36m[0m
-[1;33m    To support modeling of cohortes and debt/asset developements modelflow creats sublists based on the first sublist[0m
-[1;37m       ^[0m
-[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mException[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[9], line 1[0m
+[1;32m----> 1[0m [43mmm[49m[38;5;241;43m.[39;49m[43mpdf[49m[43m([49m[43m)[49m
 
+File [1;32mC:\modelflow2\modelflow\modelconstruct.py:747[0m, in [0;36mMexplode.pdf[1;34m(self, **kwargs)[0m
+[0;32m    741[0m     [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mpdf[39m([38;5;28mself[39m,[38;5;241m*[39m[38;5;241m*[39mkwargs):
+[0;32m    742[0m         pre[38;5;241m=[39m [38;5;124mr[39m[38;5;124m'''[39m
+[0;32m    743[0m [38;5;124m{[39m[38;5;124m\[39m[38;5;124msetlength[39m[38;5;124m{[39m[38;5;124m\[39m[38;5;124mparskip}[39m[38;5;132;01m{1em}[39;00m
+[0;32m    744[0m [38;5;124m [39m[38;5;124m\[39m[38;5;124msetlength[39m[38;5;124m{[39m[38;5;124m\[39m[38;5;124mparindent}[39m[38;5;132;01m{0pt}[39;00m
+[0;32m    745[0m [38;5;124m [39m[38;5;124m'''[39m 
+[1;32m--> 747[0m         [38;5;28;01mreturn[39;00m [43mLatexRepo[49m[43m([49m[38;5;124;43mfr[39;49m[38;5;124;43m'[39;49m[38;5;132;43;01m{[39;49;00m[43mpre[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m [39;49m[38;5;132;43;01m{[39;49;00m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moriginal_statements[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m   [39;49m[38;5;130;43;01m}}[39;49;00m[38;5;124;43m'[39;49m[43m)[49m[38;5;241;43m.[39;49m[43mpdf[49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [1;32mC:\modelflow2\modelflow\modelreport.py:798[0m, in [0;36mLatexRepo.pdf[1;34m(self, pdfopen, show, width, height, typesetter)[0m
+[0;32m    795[0m [38;5;28;01mif[39;00m xx0[38;5;241m.[39mreturncode: 
+[0;32m    796[0m      wb[38;5;241m.[39mopen(latex_dir[38;5;241m.[39mabsolute(), new[38;5;241m=[39m[38;5;241m1[39m)
+[1;32m--> 798[0m      [38;5;28;01mraise[39;00m [38;5;167;01mException[39;00m([38;5;124mf[39m[38;5;124m'[39m[38;5;124mError creating PDF file, [39m[38;5;132;01m{[39;00mxx0[38;5;241m.[39mreturncode[38;5;132;01m}[39;00m[38;5;124m, is latex installed. If so look in the latex file, [39m[38;5;132;01m{[39;00mlatex_file[38;5;132;01m}[39;00m[38;5;124m'[39m)
+[0;32m    800[0m [38;5;28;01mif[39;00m pdfopen:
+[0;32m    801[0m     fileurl [38;5;241m=[39m [38;5;124mf[39m[38;5;124m'[39m[38;5;124mfile://[39m[38;5;132;01m{[39;00mpdf_file[38;5;241m.[39mresolve()[38;5;132;01m}[39;00m[38;5;124m'[39m
+
+[1;31mException[0m: Error creating PDF file, 1, is latex installed. If so look in the latex file, latex\latex_test\latex_test.tex
 
