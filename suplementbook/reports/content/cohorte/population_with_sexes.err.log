@@ -18,30 +18,82 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-mm.pdf()
+exo_df = pd.read_parquet("data/exo_population.parquet")
 
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mException[0m                                 Traceback (most recent call last)
-Cell [1;32mIn[9], line 1[0m
-[1;32m----> 1[0m [43mmm[49m[38;5;241;43m.[39;49m[43mpdf[49m[43m([49m[43m)[49m
+[1;31mOSError[0m                                   Traceback (most recent call last)
+Cell [1;32mIn[10], line 1[0m
+[1;32m----> 1[0m exo_df [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_parquet[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mdata/exo_population.parquet[39;49m[38;5;124;43m"[39;49m[43m)[49m
 
-File [1;32mC:\modelflow2\modelflow\modelconstruct.py:747[0m, in [0;36mMexplode.pdf[1;34m(self, **kwargs)[0m
-[0;32m    741[0m     [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mpdf[39m([38;5;28mself[39m,[38;5;241m*[39m[38;5;241m*[39mkwargs):
-[0;32m    742[0m         pre[38;5;241m=[39m [38;5;124mr[39m[38;5;124m'''[39m
-[0;32m    743[0m [38;5;124m{[39m[38;5;124m\[39m[38;5;124msetlength[39m[38;5;124m{[39m[38;5;124m\[39m[38;5;124mparskip}[39m[38;5;132;01m{1em}[39;00m
-[0;32m    744[0m [38;5;124m [39m[38;5;124m\[39m[38;5;124msetlength[39m[38;5;124m{[39m[38;5;124m\[39m[38;5;124mparindent}[39m[38;5;132;01m{0pt}[39;00m
-[0;32m    745[0m [38;5;124m [39m[38;5;124m'''[39m 
-[1;32m--> 747[0m         [38;5;28;01mreturn[39;00m [43mLatexRepo[49m[43m([49m[38;5;124;43mfr[39;49m[38;5;124;43m'[39;49m[38;5;132;43;01m{[39;49;00m[43mpre[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m [39;49m[38;5;132;43;01m{[39;49;00m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moriginal_statements[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m   [39;49m[38;5;130;43;01m}}[39;49;00m[38;5;124;43m'[39;49m[43m)[49m[38;5;241;43m.[39;49m[43mpdf[49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+File [1;32m~\miniconda3\envs\newbook312\Lib\site-packages\pandas\io\parquet.py:667[0m, in [0;36mread_parquet[1;34m(path, engine, columns, storage_options, use_nullable_dtypes, dtype_backend, filesystem, filters, **kwargs)[0m
+[0;32m    664[0m     use_nullable_dtypes [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+[0;32m    665[0m check_dtype_backend(dtype_backend)
+[1;32m--> 667[0m [38;5;28;01mreturn[39;00m [43mimpl[49m[38;5;241;43m.[39;49m[43mread[49m[43m([49m
+[0;32m    668[0m [43m    [49m[43mpath[49m[43m,[49m
+[0;32m    669[0m [43m    [49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mcolumns[49m[43m,[49m
+[0;32m    670[0m [43m    [49m[43mfilters[49m[38;5;241;43m=[39;49m[43mfilters[49m[43m,[49m
+[0;32m    671[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
+[0;32m    672[0m [43m    [49m[43muse_nullable_dtypes[49m[38;5;241;43m=[39;49m[43muse_nullable_dtypes[49m[43m,[49m
+[0;32m    673[0m [43m    [49m[43mdtype_backend[49m[38;5;241;43m=[39;49m[43mdtype_backend[49m[43m,[49m
+[0;32m    674[0m [43m    [49m[43mfilesystem[49m[38;5;241;43m=[39;49m[43mfilesystem[49m[43m,[49m
+[0;32m    675[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[0;32m    676[0m [43m[49m[43m)[49m
 
-File [1;32mC:\modelflow2\modelflow\modelreport.py:798[0m, in [0;36mLatexRepo.pdf[1;34m(self, pdfopen, show, width, height, typesetter)[0m
-[0;32m    795[0m [38;5;28;01mif[39;00m xx0[38;5;241m.[39mreturncode: 
-[0;32m    796[0m      wb[38;5;241m.[39mopen(latex_dir[38;5;241m.[39mabsolute(), new[38;5;241m=[39m[38;5;241m1[39m)
-[1;32m--> 798[0m      [38;5;28;01mraise[39;00m [38;5;167;01mException[39;00m([38;5;124mf[39m[38;5;124m'[39m[38;5;124mError creating PDF file, [39m[38;5;132;01m{[39;00mxx0[38;5;241m.[39mreturncode[38;5;132;01m}[39;00m[38;5;124m, is latex installed. If so look in the latex file, [39m[38;5;132;01m{[39;00mlatex_file[38;5;132;01m}[39;00m[38;5;124m'[39m)
-[0;32m    800[0m [38;5;28;01mif[39;00m pdfopen:
-[0;32m    801[0m     fileurl [38;5;241m=[39m [38;5;124mf[39m[38;5;124m'[39m[38;5;124mfile://[39m[38;5;132;01m{[39;00mpdf_file[38;5;241m.[39mresolve()[38;5;132;01m}[39;00m[38;5;124m'[39m
+File [1;32m~\miniconda3\envs\newbook312\Lib\site-packages\pandas\io\parquet.py:274[0m, in [0;36mPyArrowImpl.read[1;34m(self, path, columns, filters, use_nullable_dtypes, dtype_backend, storage_options, filesystem, **kwargs)[0m
+[0;32m    267[0m path_or_handle, handles, filesystem [38;5;241m=[39m _get_path_or_handle(
+[0;32m    268[0m     path,
+[0;32m    269[0m     filesystem,
+[0;32m    270[0m     storage_options[38;5;241m=[39mstorage_options,
+[0;32m    271[0m     mode[38;5;241m=[39m[38;5;124m"[39m[38;5;124mrb[39m[38;5;124m"[39m,
+[0;32m    272[0m )
+[0;32m    273[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 274[0m     pa_table [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mapi[49m[38;5;241;43m.[39;49m[43mparquet[49m[38;5;241;43m.[39;49m[43mread_table[49m[43m([49m
+[0;32m    275[0m [43m        [49m[43mpath_or_handle[49m[43m,[49m
+[0;32m    276[0m [43m        [49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mcolumns[49m[43m,[49m
+[0;32m    277[0m [43m        [49m[43mfilesystem[49m[38;5;241;43m=[39;49m[43mfilesystem[49m[43m,[49m
+[0;32m    278[0m [43m        [49m[43mfilters[49m[38;5;241;43m=[39;49m[43mfilters[49m[43m,[49m
+[0;32m    279[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[0;32m    280[0m [43m    [49m[43m)[49m
+[0;32m    281[0m     result [38;5;241m=[39m pa_table[38;5;241m.[39mto_pandas([38;5;241m*[39m[38;5;241m*[39mto_pandas_kwargs)
+[0;32m    283[0m     [38;5;28;01mif[39;00m manager [38;5;241m==[39m [38;5;124m"[39m[38;5;124marray[39m[38;5;124m"[39m:
 
-[1;31mException[0m: Error creating PDF file, 1, is latex installed. If so look in the latex file, latex\latex_test\latex_test.tex
+File [1;32m~\miniconda3\envs\newbook312\Lib\site-packages\pyarrow\parquet\core.py:1843[0m, in [0;36mread_table[1;34m(source, columns, use_threads, schema, use_pandas_metadata, read_dictionary, memory_map, buffer_size, partitioning, filesystem, filters, use_legacy_dataset, ignore_prefixes, pre_buffer, coerce_int96_timestamp_unit, decryption_properties, thrift_string_size_limit, thrift_container_size_limit, page_checksum_verification)[0m
+[0;32m   1831[0m     [38;5;66;03m# TODO test that source is not a directory or a list[39;00m
+[0;32m   1832[0m     dataset [38;5;241m=[39m ParquetFile(
+[0;32m   1833[0m         source, read_dictionary[38;5;241m=[39mread_dictionary,
+[0;32m   1834[0m         memory_map[38;5;241m=[39mmemory_map, buffer_size[38;5;241m=[39mbuffer_size,
+[1;32m   (...)[0m
+[0;32m   1840[0m         page_checksum_verification[38;5;241m=[39mpage_checksum_verification,
+[0;32m   1841[0m     )
+[1;32m-> 1843[0m [38;5;28;01mreturn[39;00m [43mdataset[49m[38;5;241;43m.[39;49m[43mread[49m[43m([49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mcolumns[49m[43m,[49m[43m [49m[43muse_threads[49m[38;5;241;43m=[39;49m[43muse_threads[49m[43m,[49m
+[0;32m   1844[0m [43m                    [49m[43muse_pandas_metadata[49m[38;5;241;43m=[39;49m[43muse_pandas_metadata[49m[43m)[49m
+
+File [1;32m~\miniconda3\envs\newbook312\Lib\site-packages\pyarrow\parquet\core.py:1485[0m, in [0;36mParquetDataset.read[1;34m(self, columns, use_threads, use_pandas_metadata)[0m
+[0;32m   1477[0m         index_columns [38;5;241m=[39m [
+[0;32m   1478[0m             col [38;5;28;01mfor[39;00m col [38;5;129;01min[39;00m _get_pandas_index_columns(metadata)
+[0;32m   1479[0m             [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(col, [38;5;28mdict[39m)
+[0;32m   1480[0m         ]
+[0;32m   1481[0m         columns [38;5;241m=[39m (
+[0;32m   1482[0m             [38;5;28mlist[39m(columns) [38;5;241m+[39m [38;5;28mlist[39m([38;5;28mset[39m(index_columns) [38;5;241m-[39m [38;5;28mset[39m(columns))
+[0;32m   1483[0m         )
+[1;32m-> 1485[0m table [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_dataset[49m[38;5;241;43m.[39;49m[43mto_table[49m[43m([49m
+[0;32m   1486[0m [43m    [49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mcolumns[49m[43m,[49m[43m [49m[38;5;28;43mfilter[39;49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_filter_expression[49m[43m,[49m
+[0;32m   1487[0m [43m    [49m[43muse_threads[49m[38;5;241;43m=[39;49m[43muse_threads[49m
+[0;32m   1488[0m [43m[49m[43m)[49m
+[0;32m   1490[0m [38;5;66;03m# if use_pandas_metadata, restore the pandas metadata (which gets[39;00m
+[0;32m   1491[0m [38;5;66;03m# lost if doing a specific `columns` selection in to_table)[39;00m
+[0;32m   1492[0m [38;5;28;01mif[39;00m use_pandas_metadata:
+
+File [1;32m~\miniconda3\envs\newbook312\Lib\site-packages\pyarrow\_dataset.pyx:574[0m, in [0;36mpyarrow._dataset.Dataset.to_table[1;34m()[0m
+
+File [1;32m~\miniconda3\envs\newbook312\Lib\site-packages\pyarrow\_dataset.pyx:3865[0m, in [0;36mpyarrow._dataset.Scanner.to_table[1;34m()[0m
+
+File [1;32m~\miniconda3\envs\newbook312\Lib\site-packages\pyarrow\error.pxi:155[0m, in [0;36mpyarrow.lib.pyarrow_internal_check_status[1;34m()[0m
+
+File [1;32m~\miniconda3\envs\newbook312\Lib\site-packages\pyarrow\error.pxi:92[0m, in [0;36mpyarrow.lib.check_status[1;34m()[0m
+
+[1;31mOSError[0m: Repetition level histogram size mismatch
 
