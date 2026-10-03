@@ -1,0 +1,1 @@
+import{a as e,b as r}from"/jbthebe/build/_shared/chunk-7FGDXJSL.js";import"/jbthebe/build/_shared/chunk-GEZIJWLJ.js";import"/jbthebe/build/_shared/chunk-RAQ24GF6.js";export{e as ArchitectureModule,r as createArchitectureServices};
